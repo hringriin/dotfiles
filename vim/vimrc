@@ -1,9 +1,27 @@
 set clipboard=unnamedplus
 set guioptions+=a
 
-noremap <Leader>y "<Space>+y
-noremap <Leader>p "<Space>+p
+" Press F12 to trigger Makefile
+nnoremap <buffer> <F12> :w<CR>:!make<CR>
 
+" place/remove # at the beginning of the current/visual selected line
+vnoremap ibc :s/^/#/g<CR>:let @/ = ""<CR>
+vnoremap iBc :s/^#//g<CR>:let @/ = ""<CR>
+
+" place/remove // at the beginning of the current/visual selected line
+vnoremap ijc :s/^/\/\//g<CR>:let @/ = ""<CR>
+vnoremap iJc :s/^\/\///g<CR>:let @/ = ""<CR>
+
+" place/remove " at the beginning of the current/visual selected line
+vnoremap ivc :s/^/"/g<CR>:let @/ = ""<CR>
+vnoremap iVc :s/^"//g<CR>:let @/ = ""<CR>
+
+" in insert mode, press ( to achieve (  )
+" notice the two whitespaces between the parentheses
+inoremap ( ()<Left><Space><Space><Left>
+
+" Shortcut to switch between splits
+" Press <CTRL> [lhjk] to switch to left,right,lower,upper split
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
