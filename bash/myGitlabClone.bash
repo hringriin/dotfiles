@@ -6,7 +6,10 @@ version="v0.1"
 confDir="${HOME}/.config/myGitlabClone"
 confFile="conf"
 
+# e.g. github.com
 defServer=""
+
+# e.g. ~/Repositories
 useRepPath=""
 defRepPath=""
 
@@ -88,14 +91,14 @@ cloneRepoSSH()
     # repo
     if [[ ! -d $1/$2/repo ]] ; then
         mkdir -p $1/$2/repo
-        git clone git@$3:$1/$2.git ${defRepPath}/$1/$2/repo
+        git clone git@$3:$1/$2.git ${defRepPath}/$3/$1/$2/repo
     else
         echo "Directory exists. Delete and clone new? [y/n]"
         read -p ">>: " cloneie
 
         if [[ "${cloneie}" == "y" || "${cloneie}" == "Y" ]] ; then
             echo "Deleting and cloning new ..."
-            git clone git@$3:$1/$2.git ${defRepPath}/$1/$2/repo
+            git clone git@$3:$1/$2.git ${defRepPath}/$3/$1/$2/repo
         elif [[ "${cloneie}" == "n" || "${cloneie}" == "N" ]] ; then
             echo "Nothing will happen ..."
         else
@@ -111,14 +114,14 @@ cloneWikiSSH()
     # wiki
     if [[ ! -d ${defRepPath}/$1/$2/wiki ]] ; then
         mkdir -p ${defRepPath}/$1/$2/wiki
-        git clone git@$3:$1/$2.wiki.git ${defRepPath}/$1/$2/wiki
+        git clone git@$3:$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
     else
         echo "Directory '${defRepPath}/$1/$2/wiki' exists. Delete and clone new? [y/n]"
         read -p ">>: " cloneie
 
         if [[ "${cloneie}" == "y" || "${cloneie}" == "Y" ]] ; then
             echo "Deleting and cloning new ..."
-            git clone git@$3:$1/$2.wiki.git ${defRepPath}/$1/$2/wiki
+            git clone git@$3:$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
         elif [[ "${cloneie}" == "n" || "${cloneie}" == "N" ]] ; then
             echo "Nothing will happen ..."
         else
@@ -134,14 +137,14 @@ cloneRepoHTTPS()
     # repo
     if [[ ! -d $1/$2/repo ]] ; then
         mkdir -p $1/$2/repo
-        git clone https://$3/$1/$2.git ${defRepPath}/$1/$2/repo
+        git clone https://$3/$1/$2.git ${defRepPath}/$3/$1/$2/repo
     else
         echo "Directory exists. Delete and clone new? [y/n]"
         read -p ">>: " cloneie
 
         if [[ "${cloneie}" == "y" || "${cloneie}" == "Y" ]] ; then
             echo "Deleting and cloning new ..."
-            git clone https://$3/$1/$2.git ${defRepPath}/$1/$2/repo
+            git clone https://$3/$1/$2.git ${defRepPath}/$3/$1/$2/repo
         elif [[ "${cloneie}" == "n" || "${cloneie}" == "N" ]] ; then
             echo "Nothing will happen ..."
         else
@@ -157,14 +160,14 @@ cloneWikiHTTPS()
     # wiki
     if [[ ! -d $1/$2/wiki ]] ; then
         mkdir -p $1/$2/wiki
-        git clone https://$3/$1/$2.wiki.git ${defRepPath}/$1/$2/wiki
+        git clone https://$3/$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
     else
         echo "Directory exists. Delete and clone new? [y/n]"
         read -p ">>: " cloneie
 
         if [[ "${cloneie}" == "y" || "${cloneie}" == "Y" ]] ; then
             echo "Deleting and cloning new ..."
-            git clone https://$3/$1/$2.wiki.git ${defRepPath}/$1/$2/wiki
+            git clone https://$3/$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
         elif [[ "${cloneie}" == "n" || "${cloneie}" == "N" ]] ; then
             echo "Nothing will happen ..."
         else
