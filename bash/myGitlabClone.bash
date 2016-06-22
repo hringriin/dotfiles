@@ -89,8 +89,8 @@ checkConfig()
 cloneRepoSSH()
 {
     # repo
-    if [[ ! -d $1/$2/repo ]] ; then
-        mkdir -p $1/$2/repo
+    if [[ ! -d ${defRepPath}/$3/$1/$2/repo ]] ; then
+        mkdir -p ${defRepPath}/$3/$1/$2/repo
         git clone git@$3:$1/$2.git ${defRepPath}/$3/$1/$2/repo
     else
         echo "Directory exists. Delete and clone new? [y/n]"
@@ -135,8 +135,8 @@ cloneWikiSSH()
 cloneRepoHTTPS()
 {
     # repo
-    if [[ ! -d $1/$2/repo ]] ; then
-        mkdir -p $1/$2/repo
+    if [[ ! -d ${defRepPath}/$3/$1/$2/repo ]] ; then
+        mkdir -p ${defRepPath}/$3/$1/$2/repo
         git clone https://$3/$1/$2.git ${defRepPath}/$3/$1/$2/repo
     else
         echo "Directory exists. Delete and clone new? [y/n]"
@@ -158,8 +158,8 @@ cloneRepoHTTPS()
 cloneWikiHTTPS()
 {
     # wiki
-    if [[ ! -d $1/$2/wiki ]] ; then
-        mkdir -p $1/$2/wiki
+    if [[ ! -d ${defRepPath}/$3/$1/$2/wiki ]] ; then
+        mkdir -p ${defRepPath}/$3/$1/$2/wiki
         git clone https://$3/$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
     else
         echo "Directory exists. Delete and clone new? [y/n]"
