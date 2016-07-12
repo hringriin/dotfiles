@@ -112,8 +112,8 @@ cloneRepoSSH()
 cloneWikiSSH()
 {
     # wiki
-    if [[ ! -d ${defRepPath}/$1/$2/wiki ]] ; then
-        mkdir -p ${defRepPath}/$1/$2/wiki
+    if [[ ! -d ${defRepPath}/$3/$1/$2/wiki ]] ; then
+        mkdir -p ${defRepPath}/$3/$1/$2/wiki
         git clone git@$3:$1/$2.wiki.git ${defRepPath}/$3/$1/$2/wiki
     else
         echo "Directory '${defRepPath}/$1/$2/wiki' exists. Delete and clone new? [y/n]"
