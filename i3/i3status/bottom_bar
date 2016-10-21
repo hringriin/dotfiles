@@ -1,0 +1,49 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 2
+}
+
+order += "disk /"
+order += "ipv6"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "ethernet wwp0s20u4i6"
+order += "path_exists VPN_Home"
+order += "path_exists VPN_Uni"
+
+disk '/' {
+        format = "Root   : %avail"
+}
+
+wireless wlp3s0 {
+        format_up = " %essid: %ip (%quality)"
+        format_down = " down"
+}
+
+path_exists VPN_Home {
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+path_exists VPN_Uni {
+    path = "/proc/sys/net/ipv4/conf/vpn0"
+}
+
+ethernet enp0s25 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "  %ip %speed"
+        format_down = "  down"
+}
+
+ethernet wwp0s20u4i6 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "  %ip"
+        format_down = "  down"
+}
