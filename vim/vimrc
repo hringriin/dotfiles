@@ -1,6 +1,16 @@
 set clipboard=unnamedplus
 set guioptions+=a
 
+" Command line history
+set history=500
+
+" Show the cursor position all the time
+set ruler
+
+" Don't wake up system with blinking cursor:
+" http://www.linuxpowertop.org/known.php
+let &guicursor = &guicursor . ",a:blinkon0"
+
 " Press F12 to trigger Makefile
 nnoremap <buffer> <F12> :w<CR>:!make<CR>
 
