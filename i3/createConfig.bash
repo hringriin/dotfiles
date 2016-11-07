@@ -5,7 +5,7 @@
 REPOPATH="/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
 I3GLOBAL="config"
 I3HOST=`echo ${HOSTNAME}`
-HOSTCONF="/home/hringriin/.config/i3/conf-test"
+HOSTCONF="/home/hringriin/.config/i3/conf"
 
 echo "Repository path                       : ${REPOPATH}"
 echo "I3 global config                      : ${I3GLOBAL}"
