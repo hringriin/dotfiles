@@ -1,0 +1,37 @@
+# Packer (AUR)
+alias 'packer'='packer --noedit --auronly'
+
+# sorth
+alias 'mpcsorth'='mpc -h 192.168.2.35'
+
+# Stuga
+alias 'mpcstuga'='mpc -h 134.102.209.202'
+alias 'STUGA-INFORMATIK'='cd ~/Dropbox/UNI/StugA/'
+
+# GIT
+alias 'gitlog'='git log --graph --abbrev-commit --decorate --date=relative --all'
+
+# Markdown
+alias 'MarkDownCreate'=markDownCreate
+alias 'MarkDownCompile'=markDownCompile
+
+# Networking
+alias 'SCAN-NETWORK'=scanNetWork
+
+# Misc.
+alias lsa='ls -l -a -h'
+
+# Serverprint two sided
+alias 'serverprint'='serverprint --two-sided'
+
+# Screen Message - Display the time
+# Joachim Breiter
+# http://www.joachim-breitner.de/projects
+alias 'screentime'="(while sleep 1; do date +%T; echo -e '\f'; done) | sm --foreground=#00FF00 --background=#000000 -"
+alias 'trm'='~/TIMESCRIPT/TIMESCREEN.bash'
+alias 'trm-edit'='vim ~/TIMESCRIPT/TIMESCRIPT.bash'
+
+# Take me to the Repositories
+alias 'REPOSITORIES'='cd ~/Repositories/'
+alias 'GITHUB'='cd ~/Repositories/github.com/'
+alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'

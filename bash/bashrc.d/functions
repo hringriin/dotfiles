@@ -1,0 +1,29 @@
+# Markdown
+markDownCreate() {
+    tmpos=`uname -a`
+    if [[ ${tmpos} == *"Linux"* ]] ; then
+        /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
+    else
+        /Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
+    fi
+    unset tmpos
+}
+
+markDownCompile() {
+    if [[ -e /usr/bin/pandoc ]] ; then
+        filename=${1:0:-3}
+        pandoc $filename.md -o $filename.pdf
+    else
+        echo "Pandoc is not installed"
+    fi
+}
+
+# Networking
+scanNetWork() {
+    if [ $UID -eq 0 ]; then
+        arp-scan --interface=$1 --localnet
+    else
+        echo "You aren't root! Sudo won't work, because it doesn't know the command 'SCAN-NETWORK'!"
+    fi
+}
+
