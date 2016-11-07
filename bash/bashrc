@@ -1,18 +1,18 @@
 # System-wide .bashrc file for interactive bash(1) shells.
 
 # bash-completion for git
-#source /usr/share/git/completion/git-completion.bash
+source /usr/share/git/completion/git-completion.bash
 
 # general bash completion through `bash-completion` package
-#source /usr/share/bash-completion/bash_completion
+source /usr/share/bash-completion/bash_completion
 
 # source homebrew github access token
-source /Users/hringriin/.github-homebrew-token
+#source /Users/hringriin/.github-homebrew-token
 
 # completion for iterm2
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#. $(brew --prefix)/etc/bash_completion
+#fi
 
 # To enable the settings / commands in this file for login shells as well,
 # this file has to be sourced in /etc/profile.
@@ -48,7 +48,7 @@ match_lhs=""
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
 if ${use_color} ; then
-        source /Users/hringriin/own-scripts/git-prompt.bash
+        source /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
         # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
         if type -P dircolors >/dev/null ; then
                 if [[ -f ~/.dir_colors ]] ; then
@@ -62,35 +62,35 @@ if ${use_color} ; then
 
         if [[ ${EUID} == 0 ]] ; then
             if [[ ${HOSTNAME} == "acheron" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "skynd" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "botis" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "chamus" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "sorth" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "medusa" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
             fi
         else
             if [[ ${HOSTNAME} == "acheron" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "skynd" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "botis" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/Users/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "chamus" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "sorth" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             elif [[ ${HOSTNAME} == "medusa" ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/own-scripts/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
             fi
         fi
 
-        alias ls='ls -G'
+        alias ls='ls --color=auto'
         alias grep='grep --colour=auto'
 else
         if [[ ${EUID} == 0 ]] ; then
@@ -188,7 +188,7 @@ alias 'gitlog'='git log --graph --abbrev-commit --decorate --date=relative --all
 
 # Markdown
 markDownCreate() {
-    /home/hringriin/own-scripts/markdown.bash
+    /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
 }
 
 markDownCompile() {
@@ -236,3 +236,15 @@ alias 'MineCraftServer'='java -Xmx1024M -Xms1024M -jar ~/MineCraft/Server/minecr
 
 # Serverprint two sided
 alias 'serverprint'='serverprint --two-sided'
+
+# Screen Message - Display the time
+# Joachim Breiter
+# http://www.joachim-breitner.de/projects
+alias 'screentime'="(while sleep 1; do date +%T; echo -e '\f'; done) | sm --foreground=#00FF00 --background=#000000 -"
+alias 'trm'='/home/hringriin/TIMESCRIPT/TIMESCREEN.bash'
+alias 'trm-edit'='vim /home/hringriin/TIMESCRIPT/TIMESCRIPT.bash'
+
+# Take me to the Repositories
+alias 'REPOSITORIES'='cd ~/Repositories/'
+alias 'GITHUB'='cd ~/Repositories/github.com/'
+alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'

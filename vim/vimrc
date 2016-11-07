@@ -11,6 +11,7 @@ set ruler
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
+runtime! archlinux.vim
 " Press F12 to trigger Makefile
 nnoremap <buffer> <F12> :w<CR>:!make<CR>
 
@@ -28,14 +29,23 @@ vnoremap iVc :s/^"//g<CR>:let @/ = ""<CR>
 
 " in insert mode, press ( to achieve (  )
 " notice the two whitespaces between the parentheses
-inoremap ( ()<Left><Space><Space><Left>
+"inoremap ( ()<Left><Space><Space><Left>
 
 " Shortcut to switch between splits
-" Press <CTRL> [lhjk] to switch to left,right,lower,upper split
+" Press <CTRL> + [lhjk] to switch to left,right,lower,upper split
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
+
+" Shortcut to resize splits
+" Press <CTRL> + <SHIFT> + [lhjk] to expand or shring in each direction
+" Press <CTRL> + <SHIFT> + <SPACE> to equalize
+vnoremap <A-h> <C-<>
+vnoremap <A-j> <C->>
+vnoremap <A-k> <C-+>
+vnoremap <A-l> <C-->
+vnoremap <A-space> <C-w>=
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -52,9 +62,16 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-set showcmd        " Show (partial) command in status line.
+set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
-set mouse=a     " Enable mouse usage (all modes)
+set mouse="i"       " Enable mouse usage
+                    " n     Normal mode
+                    " v     Visual mode
+                    " i     Insert mode
+                    " c     Command-line mode
+                    " h     all previous modes when editing a help file
+                    " a     all previous modes
+                    " r     for |hit-enter| and |more-prompt| prompt
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -211,3 +228,17 @@ nnoremap 0 :call ToggleHomeZero()<CR>
 " reselect visual block after indent/outdent indent visual
 vnoremap < <gv
 vnoremap > >gv
+
+" Plugin List for 'plug' addon
+" Check if 'plug' is installed
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source /etc/vimrc
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
