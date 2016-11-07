@@ -1,0 +1,44 @@
+# SKYND SPECIFIC CONFIG
+
+# Set default Display Setup and Resolution
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-I-1 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-I-1
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +2%   # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -2%   # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle         # mute sound
+
+# Set Default Workspaces for DP-0 and DVI-I-1
+workspace $workspace1 output DP-0
+workspace $workspace2 output DVI-I-1
+workspace $workspace3 output DVI-I-1
+workspace $workspace4 output DVI-I-1
+workspace $workspace5 output DP-0
+workspace $workspace6 output DP-0
+workspace $workspace7 output DP-0
+workspace $workspace8 output DP-0
+workspace $workspace9 output DP-0
+workspace $workspace10 output DP-0
+workspace $workspace11 output DVI-I-1
+workspace $workspace12 output DVI-I-1
+workspace $workspace13 output DVI-I-1
+workspace $workspace14 output DVI-I-1
+workspace $workspace15 output DVI-I-1
+workspace $workspace16 output DVI-I-1
+workspace $workspace17 output DVI-I-1
+workspace $workspace18 output DVI-I-1
+workspace $workspace19 output DVI-I-1
+workspace $workspace20 output DVI-I-1
+
+# Startup Applications
+#exec owncloud
+exec --no-startup-id i3-msg 'workspace $workspace1; exec /usr/bin/thunderbird'
+exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
+exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
+exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
+exec --no-startup-id i3-msg 'workspace $workspace5; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'
+
+# xRandR GUI
+# needs a proper key binding
+#bindsym XF86Display exec arandr
