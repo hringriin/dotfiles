@@ -11,7 +11,14 @@ set ruler
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
-runtime! archlinux.vim
+" Checks, if the operating system is linux
+let operatingSystem=system('uname -a')
+:if operatingSystem =~? "\Linux"
+:    if operatingSystem =~? "\ARCH"
+:        runtime! archlinux.vim
+:    endif
+:endif
+
 " Press F12 to trigger Makefile
 nnoremap <buffer> <F12> :w<CR>:!make<CR>
 
