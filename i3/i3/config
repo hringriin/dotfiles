@@ -144,7 +144,7 @@ set $workspace14 "14"
 set $workspace15 "15"
 set $workspace16 "16"
 set $workspace17 "17"
-set $workspace18 "18: "
+set $workspace18 "18"
 set $workspace19 "19: "
 set $workspace20 "20: "
 
@@ -303,7 +303,6 @@ bindsym XF86AudioPrev exec playerctrl previous
 bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
 
 # Startup Applications
-exec owncloud
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
 exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
@@ -318,7 +317,6 @@ assign [class="Hexchat"] $workspace3
 assign [class="Whatsie"] $workspace4
 assign [class="Firefox"] $workspace5
 assign [class="chromium"] $workspace5
-assign [class="Skype"] $workspace18
 assign [class="ownCloud"] $workspace20
 
 # Keyboard Layout
