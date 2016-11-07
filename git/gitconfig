@@ -1,0 +1,31 @@
+[user]
+    name = Joschka Koester
+    email = jkoester@tzi.de
+[core]
+    editor = vim
+    pager = less
+    excludesfile = ~/.gitignore
+[push]
+    default = matching
+
+[alias]
+    bunch = log --graph --decorate --all
+    buncho = log --oneline --graph --decorate --all
+    ls-assume-unchanged = !git ls-files -v | grep ^h | awk '{print $2}'
+    ignore-changes = update-index --assume-unchanged
+    resume-changes = update-index --no-assume-unchanged
+
+[color]
+    branch = auto
+    ui = auto
+    status = auto
+    interactive = auto
+
+[log]
+    decorate = full
+
+[diff]
+    context = 5
+    algorithm = histogram
+[pull]
+    ff = only
