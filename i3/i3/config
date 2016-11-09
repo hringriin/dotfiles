@@ -271,7 +271,7 @@ bar {
     }
 
     # Tray
-    tray_output primary
+    tray_output none
 
     position bottom
 }
@@ -296,7 +296,8 @@ assign [class="Hexchat"] $workspace3
 assign [class="Whatsie"] $workspace4
 assign [class="Firefox"] $workspace5
 assign [class="chromium"] $workspace5
-assign [class="Dropbox"] $workspace20
+assign [class="TeamSpeak 3"] $workspace18
+assign [class="Dropbox"] $workspace19
 assign [class="ownCloud"] $workspace20
 
 # Keyboard Layout
