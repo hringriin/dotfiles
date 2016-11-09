@@ -31,7 +31,8 @@ workspace $workspace19 output DVI-I-1
 workspace $workspace20 output DVI-I-1
 
 # Startup Applications
-#exec owncloud
+exec owncloud
+exec dropbox
 exec --no-startup-id i3-msg 'workspace $workspace1; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
