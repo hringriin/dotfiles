@@ -248,4 +248,5 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 Plug 'Valloric/YouCompleteMe'
+Plug 'rhysd/committia.vim'
 call plug#end()
