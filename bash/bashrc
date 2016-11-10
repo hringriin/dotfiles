@@ -53,10 +53,6 @@ if [ -x /usr/lib/command-not-found ]; then
     }
 fi
 
-# Arch specific for crontab
-export EDITOR=vim
-export VISUAL=vim
-
 # Bash History
 HISTCONTROL=ignoredups:erasedups    # no duplicate entries
 HISTSIZE=99999                      # big big history

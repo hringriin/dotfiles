@@ -1,3 +1,7 @@
+# Arch specific for crontab
+export EDITOR=vim
+export VISUAL=vim
+
 # Set colorful PS1
 if ${use_color} ; then
     source /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
