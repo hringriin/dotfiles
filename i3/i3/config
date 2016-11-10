@@ -276,15 +276,6 @@ bar {
     position bottom
 }
 
-# Media Player Controls
-bindsym XF86AudioPlay exec playerctrl play
-bindsym XF86AudioPause exec playerctrl pause
-bindsym XF86AudioNext exec playerctrl next
-bindsym XF86AudioPrev exec playerctrl previous
-
-# Lock Screen
-bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
-
 # Startup Applications
 # transparency for window manager
 exec compton -f

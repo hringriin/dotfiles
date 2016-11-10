@@ -1,5 +1,14 @@
 # SKYND SPECIFIC CONFIG
 
+# Lock Screen
+bindsym $mod+Control+L exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
+
+# Media Player Controls
+bindsym XF86AudioPlay exec playerctrl play
+bindsym XF86AudioPause exec playerctrl pause
+bindsym XF86AudioNext exec playerctrl next
+bindsym XF86AudioPrev exec playerctrl previous
+
 # Set default Display Setup and Resolution
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-I-1 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-I-1
 
@@ -43,3 +52,6 @@ exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'
 # xRandR GUI
 # needs a proper key binding
 #bindsym XF86Display exec arandr
+
+# Spotify specific shit
+for_window [class="^Spotify$"] floating enable
