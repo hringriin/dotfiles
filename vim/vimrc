@@ -4,6 +4,9 @@ set guioptions+=a
 " Command line history
 set history=500
 
+" No line wrapping
+:set nowrap
+
 " Show the cursor position all the time
 set ruler
 
