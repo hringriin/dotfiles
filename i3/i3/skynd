@@ -1,7 +1,7 @@
 # SKYND SPECIFIC CONFIG
 
 # Lock Screen
-bindsym $mod+Control+L exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
+bindsym $mod+Control+l exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/i3lock.png -c 000000"
 
 # Media Player Controls
 bindsym XF86AudioPlay exec playerctrl play
