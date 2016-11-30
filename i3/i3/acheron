@@ -26,7 +26,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase scree
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
 
 # Startup Applications
-#exec owncloud
+exec owncloud
+exec dropbox
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
 exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
