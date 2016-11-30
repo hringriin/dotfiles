@@ -36,9 +36,15 @@ alias 'REPOSITORIES'='cd ~/Repositories/'
 alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 
-# WINE GAMES
+##############
+# WINE GAMES #
+##############
+
 # World of Warcraft Vanilla (vanillagaming.org)
 alias 'wowclassic'='wine "C:\Program Files (x86)\World of Warcraft - Classic\WoW.exe"'
 
 # World of Warcraft Lich King (dalaran-wow.com)
 alias 'wowlichking'='wine "C:\Program Files (x86)\World of Warcraft Client 3.3.5a - Ready to Play\WoW.exe"'
+
+# Steam
+alias 'wineSteam'='wine "C:\Program Files (x86)\Steam\Steam.exe"'
