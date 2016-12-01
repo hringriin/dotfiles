@@ -77,7 +77,7 @@ endif
 " differently from regular Vi. They are highly recommended though.
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
-set mouse="i"       " Enable mouse usage
+set mouse=""        " Enable mouse usage
                     " n     Normal mode
                     " v     Visual mode
                     " i     Insert mode
@@ -85,6 +85,7 @@ set mouse="i"       " Enable mouse usage
                     " h     all previous modes when editing a help file
                     " a     all previous modes
                     " r     for |hit-enter| and |more-prompt| prompt
+                    " `empty-string` for no mouse support at all
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
