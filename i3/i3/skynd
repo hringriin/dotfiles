@@ -9,6 +9,9 @@ bindsym XF86AudioPause exec playerctrl pause
 bindsym XF86AudioNext exec playerctrl next
 bindsym XF86AudioPrev exec playerctrl previous
 
+# Calculator
+bindsym XF86Calculator exec galculator
+
 # Set default Display Setup and Resolution
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-I-1 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-I-1
 
