@@ -280,6 +280,9 @@ bar {
 # transparency for window manager
 exec compton -f
 
+# Network Manager Applet
+exec nm-applet
+
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
 assign [class="Gajim"] $workspace2
