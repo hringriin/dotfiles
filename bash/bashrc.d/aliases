@@ -24,6 +24,9 @@ alias lsa='ls -l -a -h'
 # Serverprint two sided
 alias 'serverprint'='serverprint --two-sided'
 
+# Calculator
+alias 'calc'='galculator'
+
 # Screen Message - Display the time
 # Joachim Breiter
 # http://www.joachim-breitner.de/projects
