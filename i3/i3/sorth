@@ -13,10 +13,9 @@ bindsym XF86AudioPrev exec playerctrl previous
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%   # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle    # mute mic
+bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
+bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -2%   # decrease sound volume
+bindsym $mod+Right exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
 
 # Screen Brightness Controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
