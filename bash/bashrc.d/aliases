@@ -39,6 +39,17 @@ alias 'REPOSITORIES'='cd ~/Repositories/'
 alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 
+#########
+# GAMES #
+#########
+
+# Factorio 0.14.21
+function ffactorio-0-14-21 {
+    cd /home/hringriin/Games/factorio_0.14.21/factorio/bin/x64/
+    ./factorio
+}
+alias 'factorio-0-14-21'='ffactorio-0-14-21'
+
 ##############
 # WINE GAMES #
 ##############
