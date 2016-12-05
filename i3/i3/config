@@ -288,6 +288,7 @@ assign [class="Pale moon"] $workspace5
 assign [class="chromium"] $workspace5
 assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
+assign [class="factorio"] $workspace10
 assign [class="TeamSpeak 3"] $workspace18
 assign [class="Dropbox"] $workspace19
 assign [class="ownCloud"] $workspace20
