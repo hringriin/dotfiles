@@ -4,6 +4,10 @@ alias 'packer'='packer --noedit --auronly'
 # xterm black background
 alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
 
+# mcabber
+alias 'mcabber-uni'='mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
+alias 'mcabber-ccchb'='mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
+
 # sorth
 alias 'mpcsorth'='mpc -h 192.168.2.35'
 
