@@ -1,6 +1,9 @@
 # Packer (AUR)
 alias 'packer'='packer --noedit --auronly'
 
+# xterm black background
+alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
+
 # sorth
 alias 'mpcsorth'='mpc -h 192.168.2.35'
 
