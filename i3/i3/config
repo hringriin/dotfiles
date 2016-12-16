@@ -222,53 +222,6 @@ client.unfocused            $window-unfocus-border          $window-unfocus-back
 client.focused_inactive     $window-focus_inactive-border   $window-focus_inactive-background   $window-focus_inactive-text     $window-focus_inactive-indicator
 client.urgent               $window-urgent-border           $window-urgent-background           $window-urgent-text             $window-urgent-indicator
 
-# top status bar (battery, load, time, volume)
-bar {
-    separator_symbol $sep-symbol
-    strip_workspace_numbers yes
-    status_command i3status --config ~/.config/i3status/top_bar
-    colors {
-        # Whole color setting
-        background          $bar-background
-        statusline          $bar-statusline
-        separator           $bar-separator
-
-        # Type              Border                      Background                      Font
-        focused_workspace   $workspace-focus-border     $workspace-focus-background     $workspace-focus-text
-        active_workspace    $workspace-active-border    $workspace-active-background    $workspace-active-text
-        inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
-        urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
-    }
-
-    # Tray
-    tray_output primary
-
-    position top
-}
-
-# bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
-bar {
-    separator_symbol $sep-symbol
-    workspace_buttons no
-    status_command i3status --config ~/.config/i3status/bottom_bar
-    colors {
-        # Whole color setting
-        background          $bar-background
-        statusline          $bar-statusline
-        separator           $bar-separator
-
-        # Type              Border                      Background                      Font
-        focused_workspace   $workspace-focus-border     $workspace-focus-background     $workspace-focus-text
-        active_workspace    $workspace-active-border    $workspace-active-background    $workspace-active-text
-        inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
-        urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
-    }
-
-    # Tray
-    tray_output none
-
-    position bottom
-}
 
 # Startup Applications
 # transparency for window manager
