@@ -8,6 +8,9 @@ alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
 alias 'mcabber-uni'='mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
 alias 'mcabber-ccchb'='mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
 
+# urxvt
+alias 'urxvt'='urxvt -bg black -fg white -fi "xfg:DejaVu Sans Mono Book"'
+
 # sorth
 alias 'mpcsorth'='mpc -h 192.168.2.35'
 
