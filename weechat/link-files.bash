@@ -35,7 +35,9 @@ ln -s ${srcpath}/logger.conf ${wcpath}/logger.conf
 ln -s ${srcpath}/plugins.conf ${wcpath}/plugins.conf
 ln -s ${srcpath}/relay.conf ${wcpath}/relay.conf
 ln -s ${srcpath}/script.conf ${wcpath}/script.conf
-ln -s ${srcpath}/sec.conf ${wcpath}/sec.conf
 ln -s ${srcpath}/trigger.conf ${wcpath}/trigger.conf
 ln -s ${srcpath}/weechat.conf ${wcpath}/weechat.conf
 ln -s ${srcpath}/xfer.conf ${wcpath}/xfer.conf
+
+# the sec.conf has to be copied and decrypted
+cp ${srcpath}/sec.conf ${wcpath}/sec.conf
