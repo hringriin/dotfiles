@@ -2,9 +2,9 @@
 markDownCreate() {
     tmpos=`uname -a`
     if [[ ${tmpos} == *"Linux"* ]] ; then
-        /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
+        /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
     else
-        /Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
+        /Users/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/markdown.bash
     fi
     unset tmpos
 }

@@ -17,9 +17,9 @@ use_color=true
 ostmp=`uname -a`
 
 if [[ ${ostmp} == *"Linux"* ]] ; then
-    source /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/linux/general
+    source /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/linux/general
 else
-    source /Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/macos/general
+    source /Users/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/macos/general
 fi
 
 # Try to keep environment pollution down, EPA loves us.
