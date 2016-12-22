@@ -1,5 +1,12 @@
 # SORTH SPECIFIC CONFIG
 
+# Network Manager Applet
+exec nm-applet
+
+# start program (default: dmenu, want to change to rofi)
+#bindsym $mod+d exec dmenu_run -l 10
+bindsym $mod+d exec rofi -show run -config /home/hringriin/.local/rofi/config
+
 # top status bar (battery, load, time, volume)
 bar {
     separator_symbol $sep-symbol

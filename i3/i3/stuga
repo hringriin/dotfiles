@@ -1,16 +1,14 @@
-# ACHERON SPECIFIC CONFIG
-
-# Network Manager Applet
-exec nm-applet
+# STUGA SPECIFIC CONFIG
 
 # start program (default: dmenu, want to change to rofi)
-#bindsym $mod+d exec dmenu_run -l 10
-bindsym $mod+d exec rofi -show run -config /home/hringriin/.local/rofi/config
+bindsym $mod+d exec dmenu_run -l 10
+#bindsym $mod+d exec rofi -show run -config /home/hringriin/.local/rofi/config
 
 # top status bar (battery, load, time, volume)
 bar {
-    separator_symbol $sep-symbol
-    strip_workspace_numbers yes
+    # die folgenen beiden commandos kennt ubuntu nicht ... (-.-(-.-(-_-)-.-)-.-)
+    #separator_symbol "-"
+    #strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
     colors {
         # Whole color setting
@@ -26,14 +24,15 @@ bar {
     }
 
     # Tray
-    tray_output LVDS1
+    tray_output HDMI2
 
     position top
 }
 
 # bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
 bar {
-    separator_symbol $sep-symbol
+    # das folgende commando kennt ubuntu nicht ... (-.-(-.-(-_-)-.-)-.-)
+    #separator_symbol "-"
     workspace_buttons no
     status_command i3status --config ~/.config/i3status/bottom_bar
     colors {
@@ -56,7 +55,7 @@ bar {
 }
 
 # Lock Screen
-bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
+bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock -i /home/${user}/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
 
 # Media Player Controls
 bindsym XF86AudioPlay exec playerctrl play
@@ -65,10 +64,7 @@ bindsym XF86AudioNext exec playerctrl next
 bindsym XF86AudioPrev exec playerctrl previous
 
 # Set default Display Setup and Resolution
-exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
-
-# start a terminal
-bindsym XF86Launch1 exec terminator
+exec --no-startup-id xrandr --output HDMI2 --mode auto --primary
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
@@ -76,28 +72,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%   
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle    # mute mic
 
-# Screen Brightness Controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
-
 # Startup Applications
-exec owncloud
-exec dropbox
-#exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
+#exec owncloud
+#exec dropbox
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
-exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/urxvt -bg black -fg white -fi "xft:DejaVu Sans Mono Book" -e weechat'
-#exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
-exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
 exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'
-
-# xRandR GUI
-bindsym XF86Display exec arandr
-
-# Set Screen Brightness to 5
-exec xbacklight -set 6 -time 0
-
-# Set Keyboard Backlight to 2 (Full
-# Does not work properly, because the file owner is changed back
-# to root, at least after rebooting.
-#exec echo 2 > /sys/class/leds/tpacpi::kbd_backlight/brightness
