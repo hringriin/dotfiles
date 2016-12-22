@@ -2,8 +2,10 @@
 # createConfig - creates the host specifig i3 config
 # this will only work for my personal computers
 
+username=`echo ${USER}`
+
 # Setting Variables
-I3MAINPATH="/home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
+I3MAINPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
 I3STATUSPATH="${I3MAINPATH}/../i3status"
 
 I3MAINGLOBAL="config"                               # main config file
@@ -14,7 +16,7 @@ I3MAINHOST=`echo ${HOSTNAME}`                       # host specific i3 config
 I3STATUSHOSTTOP="${I3MAINHOST}_top"                 # host specific top status bar
 I3STATUSHOSTBOTTOM="${I3MAINHOST}_bottom"           # host specific bottom status bar
 
-HOSTMAINPATH="/home/hringriin/.config/i3"           # host specific main config path
+HOSTMAINPATH="/home/${username}/.config/i3"           # host specific main config path
 HOSTSTATUSPATH="${HOSTMAINPATH}/../i3status"        # host specific status config path
 
 HOSTMAINCONF="config"                          # host specific main config
