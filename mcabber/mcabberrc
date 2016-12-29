@@ -396,7 +396,7 @@ color muc * on
 # use the new values.
 #
 # Log window height (minimum 1, default 5)
-set log_win_height = 15
+set log_win_height = 7
 # Buddylist window width (minimum 2, default 24)
 set roster_width=35
 #
