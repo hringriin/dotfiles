@@ -219,7 +219,8 @@ endfunction
 
 " Colorscheme - basis ist 'koehler', mit kleinen
 " Aenderungen zu PreProc
-:colorscheme koehler
+":colorscheme koehler
+:colorscheme ron
 
 " tabbing and splitting customization
 " switch to left split
