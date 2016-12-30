@@ -16,8 +16,17 @@ use_color=true
 # sources the host specific bashrc
 ostmp=`uname -a`
 
+if [[ ${UID} -eq 0 ]] ; then
+    userPath="/home/hringriin"
+elif [[ ${USER} == "jkoester" ]] ; then
+    userPath="/home/jkoester"
+else
+    userPath="/home/${USER}"
+fi
+
+
 if [[ ${ostmp} == *"Linux"* ]] ; then
-    source /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/linux/general
+    source ${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/linux/general
 else
     source /Users/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/macos/general
 fi

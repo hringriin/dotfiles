@@ -1,15 +1,15 @@
-# Arch specific for crontab
+#aArch specific for crontab
 export EDITOR=vim
 export VISUAL=vim
 
 # Set colorful PS1
 if ${use_color} ; then
-    source /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
+    source ${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
 
     if [[ ${EUID} == 0 ]] ; then
-        PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
+        PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;32m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;31m\]>\$\[\e[0m\] '
     else
-        PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
+        PS1='${debian_chroot:+($debian_chroot)}\n\n\[\e[1;36m\]\@\[\e[0m\] \[\e[1;32m\]\u\[\e[0m\] \[\e[1;33m\]@\[\e[0m\] \[\e[1;34m\]\h\[\e[0m\] \[\e[1;35m\][ BAT_0: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ BAT_1: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p`\[\e[1;37m\]\[\e[0m\] \[\e[1;35m\]]\[\e[0m\] \[\e[1;35m\][ Running on: `${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` \[\e[1;35m\]]\[\e[0m\] \[\e[1;31m\]\n$(__git_ps1)\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\] \n\[\e[1;32m\]>\$\[\e[0m\] '
     fi
 
     alias 'ls'='ls --color=auto'
@@ -26,10 +26,10 @@ fi
 unset tmp
 
 # source functions file
-source /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/functions
+source ${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/functions
 
 # source alias file
-source /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases
+source ${userPath}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases
 
 # bash-completion for git
 source /usr/share/git/completion/git-completion.bash
