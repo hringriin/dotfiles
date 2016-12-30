@@ -217,11 +217,6 @@ endfunction
 " oder unten gemessen vom Cursor, ausser Top / Bottom
 :set scrolloff=7
 
-" Colorscheme - basis ist 'koehler', mit kleinen
-" Aenderungen zu PreProc
-":colorscheme koehler
-:colorscheme ron
-
 " tabbing and splitting customization
 " switch to left split
 ":nnoremap <c-h> <Ctrl>v <c-w> h
@@ -254,8 +249,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'lervag/vimtex'
 Plug 'rhysd/committia.vim'
 Plug 'mattn/vim-maketable'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
+
+" Colorscheme - basis ist 'koehler', mit kleinen
+" Aenderungen zu PreProc
+":colorscheme koehler
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
