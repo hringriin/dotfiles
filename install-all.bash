@@ -214,8 +214,11 @@ function checkNeededProgrammes()
         read instMissPrg
 
         if [[ ${instMissPrg} == "y" || ${instMissPrg} == "Y" ]] ; then
-            # install all missing programmes at once
-            packer -S - < ${tmpDir}/${missingPackerList}
+            # install all missing programmes one by one
+            while read -r line
+            do
+                pacman -S $line
+            done < ${tmpDir}/${missingPackerList}
         elif [[ ${instMissPrg} == "n" || ${instMissPrg} == "N" || ${instMissPrg} == "" ]] ; then
             echo -e "\n\e[93m!!! There are missing programmes !!!"
             echo -e "Please install them by yourself and run this script again.\e[0m"
