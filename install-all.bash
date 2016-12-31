@@ -4,9 +4,7 @@
 # are provided in this repository.
 
 
-
 # Please note, that this script assumes, that you're running Arch Linux.
-
 
 
 # exit status
@@ -15,33 +13,17 @@
 # 2: incorrect values entered
 
 # temporary files
-tmpDir="/tmp"                               # temp dir
-tmp1="neededProgrammes$$"                   # temp file for evaluation of needed programmes by pacman
-tmp2="neededProgrammes2$$"                  # temp file for evaluation of needed programmes by packer
-missingPacmanPrg=0                          # boolean; 0: all installed; 1: one or more programmes missing
-missingPackerPrg=0                          # boolean; 0: all installed; 1: one or more programmes missing
-missingPacmanList="missingPacmanList$$"     # list of missing programmes (pacman)
-missingPackerList="missingPackerList$$"     # list of missing programmes (packer)
+tmpDir="/tmp"                                                   # temp dir
+tmp1="neededProgrammes$$"                                       # temp file for evaluation of needed programmes by pacman
+tmp2="neededProgrammes2$$"                                      # temp file for evaluation of needed programmes by packer
+missingPacmanPrg=0                                              # boolean; 0: all installed; 1: one or more programmes missing
+missingPackerPrg=0                                              # boolean; 0: all installed; 1: one or more programmes missing
+missingPacmanList="missingPacmanList$$"                         # list of missing programmes (pacman)
+missingPackerList="missingPackerList$$"                         # list of missing programmes (packer)
+repoPath="~/Repositories/github.com/hringriin/dotfiles/repo"    # path of the repository
+ulbin="/usr/local/bin"
 
-# information regarding arch linux
-function archLinuxCheck()
-{
-    echo -e "########################################################"
-    echo -e "# This script assumes, that you're running Arch Linux. #"
-    echo -e "#                                                      #"
-    echo -e "#                   Continue ? [y/N]                   #"
-    echo -e "#                                                      #"
-    echo -e "########################################################"
-    read alcheck
-
-    if [[ ${alcheck} == "n" || ${alcheck} == "N" || ${alcheck} == "" ]] ; then
-        exit 1
-    elif [[ ${alcheck} == "y" || ${alcheck} == "Y" ]] ; then
-        unset alcheck
-        main
-    fi
-}
-# list of programmes needed for the whole action
+# list of programmes maintained by packer needed for the whole action
 neededPackerPrgorammes=(
     'adduser'
     'dropbox'
@@ -50,6 +32,8 @@ neededPackerPrgorammes=(
     'ttf-font-awesome'
     'whatsie'
 )
+
+# list of programmes maintained by pacman needed for the whole action
 neededProgrammes=(
     'archlinux-keyring'
     'autoconf'
@@ -82,6 +66,7 @@ neededProgrammes=(
     'jshon'
     'keepassx2'
     'libtool'
+    'lm_sensors'
     'lxappearance'
     'lynx'
     'm4'
@@ -144,6 +129,25 @@ neededProgrammes=(
     'xorg-xinit'
     'xterm'
 )
+
+# information regarding arch linux
+function archLinuxCheck()
+{
+    echo -e "########################################################"
+    echo -e "# This script assumes, that you're running Arch Linux. #"
+    echo -e "#                                                      #"
+    echo -e "#                   Continue ? [y/N]                   #"
+    echo -e "#                                                      #"
+    echo -e "########################################################"
+    read alcheck
+
+    if [[ ${alcheck} == "n" || ${alcheck} == "N" || ${alcheck} == "" ]] ; then
+        exit 1
+    elif [[ ${alcheck} == "y" || ${alcheck} == "Y" ]] ; then
+        unset alcheck
+        main
+    fi
+}
 
 # checks whether programmes are missing and writes those
 # names to a file
@@ -247,6 +251,7 @@ function main()
 {
     installPacker
     checkNeededProgrammes
+    linkConfigs
 }
 
 function installPacker()
@@ -259,9 +264,55 @@ function installPacker()
         wget -O ${tmpDir}/packer/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
         cd ${tmpDir}/packer
         makepkg -si
+        cd -
     fi
 }
 
+function linkConfigs()
+{
+    chmod go-rwx ~
+    sudo ln -s ${repoPath}/bash/bashrc /etc/bash.bashrc
+    sudo ln -s ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
+    sudo ln -s ${repoPath}/bash/youtubedl.bash ${ulbin}/youtubedl
+    ln -s ${repoPath}/git/gitconfig ~/.gitconfig
+    ln -s ${repoPath}/git/gitignore ~/.gitignore
+
+    ${repoPath}/i3/createConfig.bash
+
+    mkdir --mode=700 ~/.mcabber_uni
+    ln -s ${repoPath}/mcabber/mcabberrc ~/.mcabber_uni/mcabberrc
+    echo -e "Please configure your jabber uni account config."
+    read -n 1 -s -p "Press any key to continue" 
+    vim ~/.mcabber_uni/mcabberrc
+
+    mkdir --mode=700 ~/.mcabber_ccchb
+    ln -s ${repoPath}/mcabber/mcabberrc ~/.mcabber_ccchb/mcabberrc
+    echo -e "Please configure your jabber ccchb account config."
+    read -n 1 -s -p "Press any key to continue" 
+    vim ~/.mcabber_ccchb/mcabberrc
+
+    mkdir --mode=700 ~/.local/rofi
+    ln -s ${repoPath}/rofi/config ~/.local/rofi/config
+
+    mkdir --mode=700 ~/.ssh
+    ln -s ${repoPath}/ssh/config
+
+    echo -e "Please unencrypt the ssh config."
+    read -n 1 -s -p "Press any key to continue" 
+    vim ~/.ssh/config
+
+    mkdir --mode=700 ~/.config/terminator
+    ln -s ${repoPath}/terminator/config ~/.config/terminator/config
+
+    ln -s ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
+
+    ln -s ${repoPath}/vim/vimrc /etc/vimrc
+
+    ${repoPath}/weechat/link-files.bash
+
+    ln -s ${repoPath}/X/Xdefaults ~/.Xdefaults
+    ln -s ${repoPath}/X/xinitrc ~/.xinitrc
+}
+
 # first action in this script. do not touch.
-echo -e "\n\n\t\e[91mfrom last time: install list of applications with packer!\e[0m"
-#archLinuxCheck
+archLinuxCheck
