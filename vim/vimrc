@@ -254,12 +254,55 @@ Plug 'mattn/vim-maketable'
 Plug 'altercation/vim-colors-solarized'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
+"
+" Colorschemes to be tested
+"Plug 'liuchengxu/space-vim-dark'
+"Plug 'encody/vim-colors'
+"Plug 'dracula/vim'
+Plug 'YorickPeterse/happy_hacking.vim'
+"Plug 'vim-scripts/oceandeep'
+"Plug 'marcopaganini/termschool-vim-theme'
+"Plug 'mkarmona/colorsbox'
+"Plug 'theWildSushii/SweetCandy.vim'
 call plug#end()
 
 
 " Colorscheme - basis ist 'koehler', mit kleinen
 " Aenderungen zu PreProc
 ":colorscheme koehler
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
+"let g:solarized_termcolors=256
+set t_Co=256
+"set background=dark
+"colorscheme SweetCandy
+"colorscheme blue
+"colorscheme colorsbox-faff
+"colorscheme colorsbox-greenish
+"colorscheme colorsbox-material
+"colorscheme colorsbox-stblue
+"colorscheme colorsbox-stbright
+"colorscheme colorsbox-steighties
+"colorscheme colorsbox-stnight
+"colorscheme darkblue
+"colorscheme default
+"colorscheme delek
+"colorscheme dessert
+"colorscheme dracula
+"colorscheme elflord
+"colorscheme evening
+colorscheme happy_hacking
+"colorscheme industry
+"colorscheme koehler
+"colorscheme lyla
+"colorscheme morning
+"colorscheme murphy
+"colorscheme oceandeep
+"colorscheme pablo
+"colorscheme peachpuff
+"colorscheme ron
+"colorscheme shine
+"colorscheme slate
+"colorscheme solarized
+"colorscheme space-vim-dark
+"colorscheme termschool
+"colorscheme torte
+"colorscheme zellner
