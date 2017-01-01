@@ -33,7 +33,7 @@ ln -fsv ${srcpath}/weechat.conf ${wcpath}/weechat.conf
 ln -fsv ${srcpath}/xfer.conf ${wcpath}/xfer.conf
 
 # the sec.conf has to be copied and decrypted
-cp ${srcpath}/sec.conf ${wcpath}/sec.conf
+cp -ifv ${srcpath}/sec.conf ${wcpath}/sec.conf
 
 echo -e "Please decrypt the sec.conf file with vim"
 read -p "Do it now? [Y/n]: " decrypt
