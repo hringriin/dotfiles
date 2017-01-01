@@ -1,7 +1,7 @@
 rofi.width: 100
 rofi.fullscreen: true
-rofi.padding: 280
-rofi.opacity: 85
+rofi.padding: 180
+rofi.opacity: 70
 rofi.color-enabled: true
 rofi.color-window: #000022, #000022, #000022
 rofi.color-normal: #000022, #999999, #000022, #000055, #FFFFFF
