@@ -345,16 +345,38 @@ function linkConfigs()
 
     if [[ ! -d ~/.mcabber_uni ]] ; then
         mkdir --mode=700 ~/.mcabber_uni
+        mkdir --mode-700 ~/.mcabber_uni/logs
+        mkdir --mode-700 ~/.mcabber_uni/otr
+    else
+        if [[ ! -d ~/.mcabber_uni/logs ]] ; then
+            mkdir --mode-700 ~/.mcabber_uni/logs
+        fi
+
+        if [[ ! -d ~/.mcabber_uni/logs ]] ; then
+            mkdir --mode-700 ~/.mcabber_uni/otr
+        fi
     fi
+
     cp -ifv ${repoPath}/mcabber/mcabberrc ~/.mcabber_uni/mcabberrc
+
     echo -e "Please configure your jabber uni account config."
     read -n 1 -s -p "Press any key to continue"
     vim ~/.mcabber_uni/mcabberrc
 
     if [[ ! -d ~/.mcabber_ccchb ]] ; then
         mkdir --mode=700 ~/.mcabber_ccchb
+    else
+        if [[ ! -d ~/.mcabber_ccchb/logs ]] ; then
+            mkdir --mode-700 ~/.mcabber_ccchb/logs
+        fi
+
+        if [[ ! -d ~/.mcabber_ccchb/logs ]] ; then
+            mkdir --mode-700 ~/.mcabber_ccchb/otr
+        fi
     fi
+
     cp -ifv ${repoPath}/mcabber/mcabberrc ~/.mcabber_ccchb/mcabberrc
+
     echo -e "Please configure your jabber ccchb account config."
     read -n 1 -s -p "Press any key to continue"
     vim ~/.mcabber_ccchb/mcabberrc
@@ -362,6 +384,7 @@ function linkConfigs()
     if [[ ! -d ~/.local/rofi ]] ; then
         mkdir --mode=700 ~/.local/rofi
     fi
+
     ln -fsv ${repoPath}/rofi/config ~/.local/rofi/config
 
     if [[ ! -d ~/.ssh ]] ; then
