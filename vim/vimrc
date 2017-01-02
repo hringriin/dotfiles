@@ -254,16 +254,7 @@ Plug 'mattn/vim-maketable'
 Plug 'altercation/vim-colors-solarized'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
-"
-" Colorschemes to be tested
-"Plug 'liuchengxu/space-vim-dark'
-"Plug 'encody/vim-colors'
-"Plug 'dracula/vim'
 Plug 'YorickPeterse/happy_hacking.vim'
-"Plug 'vim-scripts/oceandeep'
-"Plug 'marcopaganini/termschool-vim-theme'
-"Plug 'mkarmona/colorsbox'
-"Plug 'theWildSushii/SweetCandy.vim'
 call plug#end()
 
 
@@ -274,10 +265,6 @@ call plug#end()
 " but 'termguicolors' cause everything to turn red
 " and bitchy. I havent' figured out, what t_ut really does.
 " In xterm or in terminal it makes no difference.
-"
-" t_Co is meant to enable 256 colors support by vim itself.
-" It doesn't affect anything if you turn it on or not in this case.
 "set termguicolors
 "set t_ut=
-"set t_Co=256
 colorscheme happy_hacking
