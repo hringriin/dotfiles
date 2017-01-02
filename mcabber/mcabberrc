@@ -360,19 +360,20 @@ set escdelay = 50
 # rosterselmsg:text color of the selected roster item, if there is a new msg
 # rosternewmsg: text color of items with unread messages
 
-set color_background   = 234
-set color_general      = 244
-set color_info         = 240
-set color_msgin        = 166
-set color_msgout       = 64
-set color_msghl        = 136
-set color_bgstatus     = 235
-set color_status       = 166
-set color_roster       = 240
-set color_bgrostersel  = 235
-set color_rostersel    = 166
-set color_rosterselmsg = 136
-set color_rosternewmsg = 136
+# related to vim's "happy_hacking" theme
+set color_background   = 235    # gray1
+set color_general      = 230    # white
+set color_info         = 145    # gray5         # status messages inside chat
+set color_msgin        = 166    # red1          # incoming message
+set color_msgout       = 230    # white
+set color_msghl        = 186
+set color_bgstatus     = 236    # gray1
+set color_status       = 157    # greenish      # statuslines
+set color_roster       = 107    # green         # buddylist
+set color_bgrostersel  = 237    # gray6
+set color_rostersel    = 103    # blue
+set color_rosterselmsg = 203    # red1
+set color_rosternewmsg = 166    # red2
 
 # You can color roster items by their status and JID. For example, to have
 # all roster items white, just all contacts from jabber.org that are away,
@@ -398,7 +399,7 @@ color muc * on
 # Log window height (minimum 1, default 5)
 set log_win_height = 7
 # Buddylist window width (minimum 2, default 24)
-set roster_width=35
+set roster_width=32
 #
 # The options 'log_win_on_top' and 'roster_win_on_right' can change the
 # position of the log window (top/bottom) and the position of the roster
