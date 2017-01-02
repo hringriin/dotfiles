@@ -303,6 +303,25 @@ function addToSudoers()
 
 function main()
 {
+    echo -e "To you want to install from new or just relink all config files?"
+    read -p "[R]elink | [I]nstall " relink
+
+    if [[ ${relink} == "r" || ${relink} == "R" ]] ; then
+        cleanup
+        linkConfigs
+        cleanup
+        exit 0
+    elif [[ ${relink} == "i" || ${relink} == "I" ]] ; then
+        main2
+    else
+        echo -e "Unrecognized entry."
+        main
+    fi
+
+}
+
+function main2()
+{
     cleanup
     addToSudoers
     checkNeededPacman
