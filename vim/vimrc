@@ -255,16 +255,14 @@ Plug 'altercation/vim-colors-solarized'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 
-" Colorscheme set to 'happy_hacking"
-" https://github.com/YorickPeterse/happy_hacking.vim
-"
-" the following two options are meant to be set by the author
-" but 'termguicolors' cause everything to turn red
-" and bitchy. I havent' figured out, what t_ut really does.
-" In xterm or in terminal it makes no difference.
-"set termguicolors
-"set t_ut=
-colorscheme happy_hacking
+" Colorscheme set to 'gruvbox'
+" https://github.com/morhetz/gruvbox
+" See the wiki in on github regarding
+" the two following lines
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
