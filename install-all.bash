@@ -317,7 +317,6 @@ function main()
         echo -e "Unrecognized entry."
         main
     fi
-
 }
 
 function main2()
@@ -364,15 +363,15 @@ function linkConfigs()
 
     if [[ ! -d ~/.mcabber_uni ]] ; then
         mkdir --mode=700 ~/.mcabber_uni
-        mkdir --mode-700 ~/.mcabber_uni/logs
-        mkdir --mode-700 ~/.mcabber_uni/otr
+        mkdir --mode=700 ~/.mcabber_uni/logs
+        mkdir --mode=700 ~/.mcabber_uni/otr
     else
         if [[ ! -d ~/.mcabber_uni/logs ]] ; then
-            mkdir --mode-700 ~/.mcabber_uni/logs
+            mkdir --mode=700 ~/.mcabber_uni/logs
         fi
 
         if [[ ! -d ~/.mcabber_uni/logs ]] ; then
-            mkdir --mode-700 ~/.mcabber_uni/otr
+            mkdir --mode=700 ~/.mcabber_uni/otr
         fi
     fi
 
@@ -386,11 +385,11 @@ function linkConfigs()
         mkdir --mode=700 ~/.mcabber_ccchb
     else
         if [[ ! -d ~/.mcabber_ccchb/logs ]] ; then
-            mkdir --mode-700 ~/.mcabber_ccchb/logs
+            mkdir --mode=700 ~/.mcabber_ccchb/logs
         fi
 
         if [[ ! -d ~/.mcabber_ccchb/logs ]] ; then
-            mkdir --mode-700 ~/.mcabber_ccchb/otr
+            mkdir --mode=700 ~/.mcabber_ccchb/otr
         fi
     fi
 
