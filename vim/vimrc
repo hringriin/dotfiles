@@ -267,42 +267,17 @@ Plug 'YorickPeterse/happy_hacking.vim'
 call plug#end()
 
 
-" Colorscheme - basis ist 'koehler', mit kleinen
-" Aenderungen zu PreProc
-":colorscheme koehler
-"let g:solarized_termcolors=256
-set t_Co=256
-"set background=dark
-"colorscheme SweetCandy
-"colorscheme blue
-"colorscheme colorsbox-faff
-"colorscheme colorsbox-greenish
-"colorscheme colorsbox-material
-"colorscheme colorsbox-stblue
-"colorscheme colorsbox-stbright
-"colorscheme colorsbox-steighties
-"colorscheme colorsbox-stnight
-"colorscheme darkblue
-"colorscheme default
-"colorscheme delek
-"colorscheme dessert
-"colorscheme dracula
-"colorscheme elflord
-"colorscheme evening
+" Colorscheme set to 'happy_hacking"
+" https://github.com/YorickPeterse/happy_hacking.vim
+"
+" the following two options are meant to be set by the author
+" but 'termguicolors' cause everything to turn red
+" and bitchy. I havent' figured out, what t_ut really does.
+" In xterm or in terminal it makes no difference.
+"
+" t_Co is meant to enable 256 colors support by vim itself.
+" It doesn't affect anything if you turn it on or not in this case.
+"set termguicolors
+"set t_ut=
+"set t_Co=256
 colorscheme happy_hacking
-"colorscheme industry
-"colorscheme koehler
-"colorscheme lyla
-"colorscheme morning
-"colorscheme murphy
-"colorscheme oceandeep
-"colorscheme pablo
-"colorscheme peachpuff
-"colorscheme ron
-"colorscheme shine
-"colorscheme slate
-"colorscheme solarized
-"colorscheme space-vim-dark
-"colorscheme termschool
-"colorscheme torte
-"colorscheme zellner
