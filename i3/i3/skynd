@@ -101,14 +101,10 @@ workspace $workspace20 output DVI-I-1
 # Startup Applications
 exec owncloud
 exec dropbox
-exec --no-startup-id i3-msg 'workspace $workspace1; exec /usr/bin/thunderbird'
-#exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/gajim'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/urxvt -bg black -fg white -fi "xft:DejaVu Sans Mono Book" -e weechat'
-#exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/hexchat'
 exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
-exec --no-startup-id i3-msg 'workspace $workspace5; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'
 
 # xRandR GUI
