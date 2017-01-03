@@ -39,7 +39,7 @@ set server = <CHAT-SERVERNAME>
 # If you don't know what a resource is, do not set it.
 # Set disable_random_resource to 1 if you don't want mcabber to add a random
 # suffix to the resource name.
-set resource = mcabber
+set resource = mcabber_<HOSTNAME>_<OPERATINGSYSTEM>
 set disable_random_resource = 1
 
 set priority = 50
@@ -228,7 +228,7 @@ set events_command = ~/.mcabber/eventcmd
 #set events_ignore_active_window = 0
 #
 #set event_log_files = 0
-set event_log_dir = ~/.mcabber/event_files
+set event_log_dir = ~/.mcabber/event_files/
 
 # If you set 'eventcmd_use_nickname' to 1, mcabber will pass the nickname
 # (if it is defined) to the event script instead of the JID (default: 0).
@@ -278,7 +278,7 @@ set tracelog_file = ~/.mcabber/mcabber.log
 # (command, message, move in the buddylist...).  Note: auto-away only changes
 # the status when it is "available" (online) or "free_for_chat".
 # See 'message_autoaway' below.
-set autoaway = 1800
+set autoaway = 0
 
 # Message blocking
 # Set 'block_unsubscribed' to 1 if you want to block (drop) incoming
@@ -297,7 +297,7 @@ set autoaway = 1800
 # Set 'muc_flag_joins' to 1 if you want the MUC rooms to be flagged in
 # the roster when somebody joins a room.  Set it to 2 if you want a flag
 # for leaves too.
-set muc_flag_joins = 1
+set muc_flag_joins = 0
 # Set 'muc_print_status' to see status changes in MUC rooms:
 # 1: (none)       do not display joining/leaving members
 # 2: (in_and_out) display joining/leaving members
@@ -384,9 +384,9 @@ set color_rosternewmsg = 166    # red2
 
 # You can let mcabber color nicks in MUC.
 # These colors will by used automatically:
-set nick_colors = red green blue
+set nick_colors = red green blue yellow blue magenta cyan white
 # This turns coloring of all mucs on:
-color muc * on
+color muc = on
 #
 # If you want someone's nick to be the same all the time:
 #color mucnick my_friend yellow
