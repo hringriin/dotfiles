@@ -373,6 +373,10 @@ function linkConfigs()
         if [[ ! -d ~/.mcabber_uni/logs ]] ; then
             mkdir --mode=700 ~/.mcabber_uni/otr
         fi
+
+        if [[ ! -d ~/.mcabber_uni/event_files ]] ; then
+            mkdir --mode=700 ~/.mcabber_uni/event_files
+        fi
     fi
 
     cp -ifv ${repoPath}/mcabber/mcabberrc ~/.mcabber_uni/mcabberrc
@@ -390,6 +394,10 @@ function linkConfigs()
 
         if [[ ! -d ~/.mcabber_ccchb/logs ]] ; then
             mkdir --mode=700 ~/.mcabber_ccchb/otr
+        fi
+
+        if [[ ! -d ~/.mcabber_ccchb/event_files ]] ; then
+            mkdir --mode=700 ~/.mcabber_ccchb/event_files
         fi
     fi
 
