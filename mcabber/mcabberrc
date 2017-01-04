@@ -225,7 +225,7 @@ set message_autoaway = "I'm away because I'm idle"
 # If you want mcabber to react faster after hitting Escape, you can lower
 # this value by setting the ESCDELAY environment variable or setting the
 # 'escdelay' option.
-set escdelay = 1000
+set escdelay = 50
 
 # Colors
 # Colors are: black, red, green, yellow, blue, magenta, cyan, white
