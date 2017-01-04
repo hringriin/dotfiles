@@ -23,6 +23,9 @@ set pgp_private_key = "1172 D302 479E C8A2 1A74 2238 4721 D218 D02B E422"
 # the username variable can be used.
 set nickname = JoSh
 
+# Set 'info' to anything you'd like to see in your lower status line.
+set info = "J.Koester@Uni-Bremen.de"
+
 # History logging
 # You can save the messages history: set logging = 1
 # Set 'logging_ignore_status' to 1 if you do not want to save status changes
