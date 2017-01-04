@@ -14,14 +14,8 @@
 # Warning to GTalk users! please see the FAQ:
 # <http://wiki.mcabber.com/index.php/Frequently_Asked_Questions>
 
-
-# Priority
-set priority = 50
-set priority_away = 5
-
 # Set disable_random_resource to 1 if you don't want mcabber to add a random
 # suffix to the resource name.
-#set resource = mcabber_<HOSTNAME>_<OPERATINGSYSTEM>
 set disable_random_resource = 1
 
 # Set 'ignore_self_presence' to 1 if you do not want to see your own

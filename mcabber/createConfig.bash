@@ -117,7 +117,7 @@ function mergeConf()
                 mkdir --mode=700 ~/.mcabber_uni/logs
             fi
 
-            if [[ ! ( -d ~${MAPATH}${var}/logs ) ]] ; then
+            if [[ ! ( -d ${MAPATH}${var}/otr ) ]] ; then
                 mkdir --mode=700 ${MAPATH}${var}/otr
             fi
 
@@ -128,9 +128,12 @@ function mergeConf()
 
         cp -ifv ${MAREPOPATH}/mcabberrc ${MAPATH}${var}/mcabberrc
 
-        echo "# Priority"
+        echo -e "\n# Priority" >> ${MAPATH}${var}/mcabberrc
         echo "set priority = $(evalPrioOnline ${var})" >> ${MAPATH}${var}/mcabberrc
         echo "set priority_away = $(evalPrioAway ${var})" >> ${MAPATH}${var}/mcabberrc
+
+        echo -e "\n# Resource" >> ${MAPATH}${var}/mcabberrc
+        echo -e "set resource = mcabber_${HOSTNAME}_`uname -r`\n" >> ${MAPATH}${var}/mcabberrc
 
         cat ${MAREPOPATH}/mcabberrc_${var} >> ${MAPATH}${var}/mcabberrc
 
