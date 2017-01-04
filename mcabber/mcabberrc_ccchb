@@ -1,0 +1,95 @@
+# Jabber (XMPP) ID (jid)
+set jid = josh@jabber.ccchb.de
+
+# Username
+set username = josh
+
+# Server
+set server = jabber.ccchb.de
+#set port = 5222
+
+# PGP support
+# Set pgp to 1 to enable OpenPGP.
+# To sign outgoing messages, select your private key id with
+# the pgp_private_key option.  You cannot change these options once
+# mcabber is running.
+# Note: you can get the Key Id with gpg: "gpg --list-keys --keyid-format long"
+#set pgp = 1
+#set pgp_private_key = "1234"
+
+# Conference nickname
+# This nickname is used when joining a room, when no nick is explicitly
+# specified by the user.  Note that when the nickname option is not set,
+# the username variable can be used.
+set nickname = JoSh
+
+# History logging
+# You can save the messages history: set logging = 1
+# Set 'logging_ignore_status' to 1 if you do not want to save status changes
+# (and status messages) to the log files (default: 0).
+# You can load (read) the messages history: set load_logs = 1
+# If you enable load_logs, you can use the 'max_history_age' setting below.
+# Default logging directory (logging_dir) is $HOME/.mcabber/histo/
+# Defaults for logging, load_logs are 0 (disabled)
+# Note: the logging directory must exist if you enable logging, mcabber
+#       will not create it.
+# Note: these options, except 'max_history_age' and 'max_history_blocks',
+# are used at startup time.
+set logging = 1
+set logging_ignore_status = 1
+set load_logs = 1
+set logging_dir = ~/.mcabber_ccchb/logs/
+
+# mcabber can store the list of unread messages in a state file,
+# so that the message flags are set back at next startup.
+# Note that 'logging' must be enabled for this feature to work.
+set statefile = ~/.mcabber_ccchb/mcabber.state
+
+# External command for events
+# You can specify a script or process to be launched when an event occurs.
+# Set 'events_ignore_active_window' to 1 if you don't want the script to
+# be run for a message to the current active window (default: 0).
+#
+# If 'event_log_files' is set, a file is created and contains the body of
+# the message (incoming messages only); the file name is the last parameter.
+# If you enable this, you can specify the directory mcabber will use to
+# create these messages with the 'event_log_dir' variable (default is the
+# system temp dir, or MCABBERTMPDIR environment variable).  Please note
+# that mcabber won't delete these files, it's your script's job.
+#
+# The command is called the following way:
+#   $events_command MSG IN jabber@id [file] (when receiving a message)
+#   $events_command MSG OUT jabber@id       (when sending a message)
+#   $events_command MSG MUC room_id [file]  (when receiving a MUC message)
+#   $events_command STATUS X jabber@id      (new buddy status is X)
+#   $events_command UNREAD N                (number of unread buddy buffers)
+# See sample script in contrib/ directory.
+set events_command = ~/.mcabber_ccchb/eventcmd
+#set events_ignore_active_window = 0
+#set event_log_files = 0
+set event_log_dir = ~/.mcabber_ccchb/event_files/
+
+# FIFO
+# mcabber can create a FIFO named pipe and listen to this pipe for commands.
+# Default: disabled.
+# Set 'fifo_hide_commands' to 1 if you don't want to see the FIFO commands
+# in the log window (they will still be written to the tracelog file).
+# When FIFO  is configured, you can turn it off and on in real time with
+# the 'fifo_ignore' option (default: 0).  When set to 1, the FIFO input is
+# still read but it is discarded.
+set fifo_name = ~/.mcabber_ccchb/mcabber.fifo
+set fifo_hide_commands = 0
+set fifo_ignore = 0
+
+# Traces logging
+# If you want advanced traces, please specify a file and a level here.
+# There are currently 2 traceloglog levels:
+#  lvl 1: most events of the log window are written to the file
+#  lvl 2: debug logging (XML, etc.)
+# Default is level 0, no trace logging
+set tracelog_level = 0
+set tracelog_file = ~/.mcabber_ccchb/mcabber.tracelog
+
+# OTR directory
+# You can specify the OTR directory with the otr_dir option
+set otr_dir = "~/.mcabber_ccchb/otr/"
