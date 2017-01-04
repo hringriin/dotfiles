@@ -338,7 +338,7 @@ function installPacker()
         echo -e "packer ... \e[92minstalled\e[0m" >> ${tmpDir}/${tmp1}
     else
         echo -e "packer ... \e[91mnot minstalled\e[0m" >> ${tmpDir}/${tmp1}
-        if [[ ! -d ${tmpDir}/packer ]] ; then
+        if [[ ! ( -d ${tmpDir}/packer ) ]] ; then
             mkdir ${tmpDir}/packer
         fi
         su -c "pacman -S wget" root
@@ -363,13 +363,13 @@ function linkConfigs()
 
     ${repoPath}/mcabber/createConfig.bash
 
-    if [[ ! -d ~/.local/rofi ]] ; then
+    if [[ ! ( -d ~/.local/rofi ) ]] ; then
         mkdir --mode=700 ~/.local/rofi
     fi
 
     ln -fsv ${repoPath}/rofi/config ~/.local/rofi/config
 
-    if [[ ! -d ~/.ssh ]] ; then
+    if [[ ! ( -d ~/.ssh ) ]] ; then
         mkdir --mode=700 ~/.ssh
     fi
     cp -ifv ${repoPath}/ssh/config ~/.ssh/config
@@ -378,7 +378,7 @@ function linkConfigs()
     read -n 1 -s -p "Press any key to continue"
     vim ~/.ssh/config
 
-    if [[ ! -d ~/.config/terminator ]] ; then
+    if [[ ! ( -d ~/.config/terminator ) ]] ; then
         mkdir --mode=700 ~/.config/terminator
     fi
     ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config

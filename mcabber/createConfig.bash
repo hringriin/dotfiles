@@ -108,20 +108,20 @@ function mergeConf()
 {
     for var in ${accounts[@]}
     do
-        if [[ ! -d ${MAPATH}${var} ]] ; then
+        if [[ ! ( -d ${MAPATH}${var} ) ]] ; then
             mkdir --mode=700 ${MAPATH}${var}
             mkdir --mode=700 ${MAPATH}${var}/logs
             mkdir --mode=700 ${MAPATH}${var}/otr
         else
-            if [[ ! -d ${MAPATH}${var}/logs ]] ; then
+            if [[ ! ( -d ${MAPATH}${var}/logs ) ]] ; then
                 mkdir --mode=700 ~/.mcabber_uni/logs
             fi
 
-            if [[ ! -d ~${MAPATH}${var}/logs ]] ; then
+            if [[ ! ( -d ~${MAPATH}${var}/logs ) ]] ; then
                 mkdir --mode=700 ${MAPATH}${var}/otr
             fi
 
-            if [[ ! -d ${MAPATH}${var}/event_files ]] ; then
+            if [[ ! ( -d ${MAPATH}${var}/event_files ) ]] ; then
                 mkdir --mode=700 ${MAPATH}${var}/event_files
             fi
         fi
