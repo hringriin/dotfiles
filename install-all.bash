@@ -132,6 +132,7 @@ neededProgrammes=(
     'wpa_supplicant'
     'xorg-server'
     'xorg-server-utils'
+    'xorg-xev'
     'xorg-xinit'
     'xterm'
     'zsh'
