@@ -388,7 +388,7 @@ function linkConfigs()
     fi
     ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
 
-    ln -fsv ${repoPath}/TIMESCRIPT /home/${USER}/TIMESCRIPT
+    ln -fsv ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
 
     sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
 
