@@ -69,7 +69,7 @@ bindsym XF86AudioPrev exec playerctrl previous
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # start a terminal
-bindsym XF86Launch1 exec xterm
+bindsym XF86Launch1 exec xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume

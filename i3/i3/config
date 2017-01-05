@@ -60,7 +60,7 @@ exec --no-startup-id nitrogen --restore
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10
 
 # kill focused window
 bindsym $mod+Shift+q kill
