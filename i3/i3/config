@@ -56,6 +56,9 @@ font pango:DejaVu Sans Mono 8
 # Wallpaper, needs the package `nitrogen` to work properly
 exec --no-startup-id nitrogen --restore
 
+# Lockscreen with i3lock-fancy-dualmonitors-git package from AUR
+bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock-fancy -gp -- scrot -z"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
