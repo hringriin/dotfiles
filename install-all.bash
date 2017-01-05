@@ -327,7 +327,7 @@ function installTexlive()
 function main()
 {
     echo -e "To you want to install from new or just relink all config files?"
-    read -p "[r]elink | [i]nstall " relink
+    read -p "[r]elink | [i]nstall | [s]kip: " relink
 
     if [[ ${relink} == "r" || ${relink} == "R" ]] ; then
         cleanup
@@ -336,11 +336,16 @@ function main()
         exit 0
     elif [[ ${relink} == "i" || ${relink} == "I" ]] ; then
         main2
+    elif [[ ${relink} == "s" || ${relink} == "S" ]] ; then
+        systemdQuestion
     else
         echo -e "Unrecognized entry."
         main
     fi
+}
 
+function systemdQuestion()
+{
     echo -e "Do you want to link systemd services?"
     read -p "[y]es | [N]o " systemdLinks
 
@@ -482,36 +487,36 @@ function linkConfigs()
 
 function systemdServicesLink()
 {
-    echo "\n\nLinking Systemd Services ...\n\n"
+    echo -e "\n\nLinking Systemd Services ...\n\n"
     sleep 2
 
     # list of services
-    sudo ln -fsv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
+    sudo cp -ifv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
 
-    echo "\n\n ... done linking Systemd Services!\n\n"
+    echo -e "\n\n ... done linking Systemd Services!\n\n"
     sleep 2
 }
 
 function systemdServicesEnable()
 {
-    echo "\n\nEnabling Systemd Services ...\n\n"
+    echo -e "\n\nEnabling Systemd Services ...\n\n"
     sleep 2
 
     # list of services
-    su -c "systemctl enable suspend@${USERNAME}" root           # must not be started!
+    su -c "systemctl enable suspend@${USER}" root           # must not be started!
 
-    echo "\n\n ... done enabling Systemd Services!\n\n"
+    echo -e "\n\n ... done enabling Systemd Services!\n\n"
     sleep 2
 }
 
 function systemdServicesStart()
 {
-    echo "\n\nStarting Systemd Services ...\n\n"
+    echo -e "\n\nStarting Systemd Services ...\n\n"
     sleep 2
 
     # list of services
 
-    echo "\n\n ... done starting Systemd Services!\n\n"
+    echo -e "\n\n ... done starting Systemd Services!\n\n"
     sleep 2
 }
 
