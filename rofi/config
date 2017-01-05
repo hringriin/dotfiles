@@ -1,9 +1,11 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
 rofi.width: 100
 rofi.fullscreen: true
 rofi.padding: 180
-rofi.opacity: 70
 rofi.color-enabled: true
-rofi.color-window: #000022, #000022, #000022
-rofi.color-normal: #000022, #999999, #000022, #000055, #FFFFFF
-rofi.color-active: #000022, #999999, #000022, #000055, #FFFFFF
-rofi.color-urgent: #000022, #999999, #000022, #000055, #FFFFFF
+rofi.color-window: argb:b9000022, argb:9d000022, argb:9d000022
+rofi.color-normal: argb:b9000022, #999999, argb:9d000022, argb:9d000055, #ffffff
+rofi.color-active: argb:b9000022, #999999, argb:9d000022, argb:9d000055, #ffffff
+rofi.color-urgent: argb:b9000022, #999999, argb:9d000022, argb:9d000055, #ffffff
