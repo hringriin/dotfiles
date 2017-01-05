@@ -315,10 +315,19 @@ function addToSudoers()
     sleep 2
 }
 
+function installTexlive()
+{
+    echo -e "\n\nInstalling texlive now ...\n\n"
+    sleep 2
+    pacman -S $(pacman -Ssq texlive) sage
+    echo -e "\n\n... done installing texlive!\n\n"
+    sleep 2
+}
+
 function main()
 {
     echo -e "To you want to install from new or just relink all config files?"
-    read -p "[R]elink | [I]nstall " relink
+    read -p "[r]elink | [i]nstall " relink
 
     if [[ ${relink} == "r" || ${relink} == "R" ]] ; then
         cleanup
@@ -331,15 +340,43 @@ function main()
         echo -e "Unrecognized entry."
         main
     fi
-}
 
-function installTexlive()
-{
-    echo -e "\n\nInstalling texlive now ...\n\n"
-    sleep 2
-    pacman -S $(pacman -Ssq texlive) sage
-    echo -e "\n\n... done installing texlive!\n\n"
-    sleep 2
+    echo -e "Do you want to link systemd services?"
+    read -p "[y]es | [N]o " systemdLinks
+
+    if [[ ${systemdLinks} == "Y" || ${systemdLinks} == "y" ]] ; then
+        systemdServicesLink
+
+        echo -e "Do you want to enable systemd services?"
+        read -p "[y]es | [N]o " systemdEnable
+
+        if [[ ${systemdEnable} == "Y" || ${systemdEnable} == "y" ]] ; then
+            systemdServicesEnable
+
+            echo -e "Do you want to start systemd services?"
+            read -p "[y]es | [N]o " systemdStart
+
+            if [[ ${systemdStart} == "Y" || ${systemdStart} == "y" ]] ; then
+                systemdServicesStart
+            elif [[ ${systemdStart} == "N" || ${systemdStart} == "n" ]] ; then
+                echo "No systemd services will be started."
+            else
+                echo "Unrecognized entry!"
+                main
+            fi
+        elif [[ ${systemdEnable} == "N" || ${systemdEnable} == "n" ]] ; then
+            echo "No systemd services will be enabled."
+        else
+            echo "Unrecognized entry!"
+            main
+        fi
+    elif [[ ${systemdLinks} == "N" || ${systemdLinks} == "n" ]] ; then
+        echo "No systemd links will be made."
+        sleep 2
+    else
+        echo "Unrecognized entry!"
+        main
+    fi
 }
 
 function main2()
@@ -353,6 +390,9 @@ function main2()
     linkConfigs
     cleanup
     unsetVars
+    systemdServicesLink
+    systemdServicesEnable
+    systemdServicesStart
     exit 0
 }
 
@@ -438,6 +478,41 @@ function linkConfigs()
     sleep 2
 
     echo -e "\n\n ... done linking files!\n\n"
+}
+
+function systemdServicesLink()
+{
+    echo "\n\nLinking Systemd Services ...\n\n"
+    sleep 2
+
+    # list of services
+    sudo ln -fsv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
+
+    echo "\n\n ... done linking Systemd Services!\n\n"
+    sleep 2
+}
+
+function systemdServicesEnable()
+{
+    echo "\n\nEnabling Systemd Services ...\n\n"
+    sleep 2
+
+    # list of services
+    su -c "systemctl enable suspend@${USERNAME}" root           # must not be started!
+
+    echo "\n\n ... done enabling Systemd Services!\n\n"
+    sleep 2
+}
+
+function systemdServicesStart()
+{
+    echo "\n\nStarting Systemd Services ...\n\n"
+    sleep 2
+
+    # list of services
+
+    echo "\n\n ... done starting Systemd Services!\n\n"
+    sleep 2
 }
 
 # first action in this script. do not touch.
