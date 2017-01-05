@@ -78,6 +78,7 @@ neededProgrammes=(
     'mcabber'
     'meld'
     'mumble'
+    'network-manager-applet'
     'networkmanager'
     'networkmanager-openconnect'
     'networkmanager-openvpn'
@@ -125,14 +126,13 @@ neededProgrammes=(
     'vpnc'
     'weechat'
     'which'
-    'wine'
-    'winetricks'
     'wireless_tools'
     'wpa_supplicant'
     'xorg-server'
     'xorg-server-utils'
     'xorg-xinit'
     'xterm'
+    'zsh'
 )
 
 # information regarding arch linux
@@ -339,7 +339,7 @@ function installPacker()
     else
         echo -e "packer ... \e[91mnot minstalled\e[0m" >> ${tmpDir}/${tmp1}
         if [[ ! ( -d ${tmpDir}/packer ) ]] ; then
-            mkdir ${tmpDir}/packer
+            mkdir -p ${tmpDir}/packer
         fi
         su -c "pacman -S wget" root
         wget -O ${tmpDir}/packer/packer.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/packer.tar.gz
@@ -364,7 +364,7 @@ function linkConfigs()
     ${repoPath}/mcabber/createConfig.bash
 
     if [[ ! ( -d ~/.local/rofi ) ]] ; then
-        mkdir --mode=700 ~/.local/rofi
+        mkdir --mode=700 -p ~/.local/rofi
     fi
 
     ln -fsv ${repoPath}/rofi/config ~/.local/rofi/config
@@ -379,7 +379,7 @@ function linkConfigs()
     vim ~/.ssh/config
 
     if [[ ! ( -d ~/.config/terminator ) ]] ; then
-        mkdir --mode=700 ~/.config/terminator
+        mkdir --mode=700 -p ~/.config/terminator
     fi
     ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config
 
