@@ -60,7 +60,7 @@ exec --no-startup-id nitrogen --restore
 floating_modifier $mod
 
 # start a terminal, needs the package `terminator` to work properly
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -226,10 +226,6 @@ exec compton -f
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
 assign [class="Gajim"] $workspace2
-assign [class="XTerm"] $workspace2
-assign [class="xterm"] $workspace2
-assign [class="urxvt"] $workspace3
-assign [class="URxvt"] $workspace3
 assign [class="Hexchat"] $workspace3
 assign [class="Whatsie"] $workspace4
 assign [class="Firefox"] $workspace5
