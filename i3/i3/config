@@ -59,7 +59,7 @@ exec --no-startup-id nitrogen --restore
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal, needs the package `terminator` to work properly
+# start a terminal
 bindsym $mod+Return exec xterm
 
 # kill focused window

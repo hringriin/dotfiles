@@ -69,7 +69,7 @@ bindsym XF86AudioPrev exec playerctrl previous
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # start a terminal
-bindsym XF86Launch1 exec terminator
+bindsym XF86Launch1 exec xterm
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
@@ -88,7 +88,7 @@ exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg blac
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/urxvt -bg black -fg white -fi "xft:DejaVu Sans Mono Book" -e weechat'
 exec --no-startup-id i3-msg 'workspace $workspace4; exec /usr/bin/whatsie'
-exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'
+exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/xterm'
 
 # xRandR GUI
 bindsym XF86Display exec arandr
