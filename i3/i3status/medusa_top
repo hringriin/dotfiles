@@ -7,7 +7,7 @@ order += "tztime local"
 order += "volume master"
 
 battery 0 {
-        path = "/sys/class/power_supply/BAT0/uevent"
+        path = "/sys/class/power_supply/BAT1/uevent"
         format = "BAT0: %status %percentage %remaining"
         format_down = "BAT0: No battery"
         status_chr = "  "
