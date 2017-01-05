@@ -383,6 +383,11 @@ function linkConfigs()
     fi
     ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config
 
+    if [[ ! ( -d ~/.config/htop ) ]] ; then
+        mkdir --mode=700 -p ~/.config/htop
+    fi
+    ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
+
     ln -fsv ${repoPath}/TIMESCRIPT /home/${USER}/TIMESCRIPT
 
     sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
