@@ -146,7 +146,7 @@ function archLinuxCheck()
     echo -e "#                   Continue ? [y/N]                   #"
     echo -e "#                                                      #"
     echo -e "########################################################"
-    read alcheck
+    read -p "   : " alcheck
 
     if [[ ${alcheck} == "n" || ${alcheck} == "N" || ${alcheck} == "" ]] ; then
         exit 1
@@ -161,6 +161,7 @@ function archLinuxCheck()
 function checkNeededPacman()
 {
     echo -e "\n\nChecking for not installed programmes (pacman) ...\n\n"
+    sleep 2
 
     # checks every programm in the array whether it is installed
     for var in "${neededProgrammes[@]}"
@@ -177,11 +178,12 @@ function checkNeededPacman()
     # nice output with column. green=installed;red=notinstalled
     echo -e "\n\n\nList of Programmes provided by \e[93mpacman\e[0m\n"
     column -t -s "..." ${tmpDir}/${tmp1}
-    sleep 1     # just to slow things a bit down
+    sleep 2     # just to slow things a bit down
 
     # if there are programmes missing (pacman)
     if [[ ${missingPacmanPrg} -eq 1 ]] ; then
         echo -e "\nThere are missing programmes (\e[93mpacman\e[0m)!\n"
+        sleep 1
         echo -e "Shall they be installed now? \e[91m(root privileges needed!)\e[0m [\e[92my\e[0m/\e[91mN\e[0m]"
         read instMissPrg
 
@@ -190,6 +192,7 @@ function checkNeededPacman()
             su -c "pacman -S - < ${tmpDir}/${missingPacmanList}" root
         elif [[ ${instMissPrg} == "n" || ${instMissPrg} == "N" || ${instMissPrg} == "" ]] ; then
             echo -e "\n\e[93m!!! There are missing programmes !!!"
+            sleep 1
             echo -e "Please install them by yourself and run this script again.\e[0m"
         else
             echo -e "Incorrect value. Aborting."
@@ -197,6 +200,7 @@ function checkNeededPacman()
         fi
     else
         echo -e "\n\nEvery package maintainable by \e[93mpacman\e[0m \e[92mis installed\e[0m."
+        sleep 2
     fi
 
     unset instMissPrg
@@ -205,6 +209,7 @@ function checkNeededPacman()
 function checkNeededPacker()
 {
     echo -e "\n\nChecking for not installed programmes (packer) ...\n\n"
+    sleep 2
 
     # checks every programm in the array whether it is installed
     for var in "${neededPackerPrgorammes[@]}"
@@ -221,11 +226,12 @@ function checkNeededPacker()
     # nice output with column. green=installed;red=notinstalled
     echo -e "\n\n\nList of Programmes provided by \e[93mpacker\e[0m\n"
     column -t -s "..." ${tmpDir}/${tmp2}
-    sleep 1     # just to slow things a bit down
+    sleep 2     # just to slow things a bit down
 
     # if there are programmes missing (packer)
     if [[ ${missingPackerPrg} -eq 1 ]] ; then
         echo -e "\nThere are missing programmes (\e[93mpacker\e[0m)!\n"
+        sleep 1
         echo -e "Shall they be installed now? [\e[92my\e[0m/\e[91mN\e[0m]"
         read instMissPrg
 
@@ -240,10 +246,11 @@ function checkNeededPacker()
 
             for var in "${packerList[@]}"
             do
-                packer --noedit --auronly -S ${var}
+                packer --noedit --auronly --noconfirm -S ${var}
             done
         elif [[ ${instMissPrg} == "n" || ${instMissPrg} == "N" || ${instMissPrg} == "" ]] ; then
             echo -e "\n\e[93m!!! There are missing programmes !!!"
+            sleep 1
             echo -e "Please install them by yourself and run this script again.\e[0m"
         else
             echo -e "Incorrect value. Aborting."
@@ -251,6 +258,7 @@ function checkNeededPacker()
         fi
     else
         echo -e "\n\nEvery package maintainable by \e[93mpacker\e[0m \e[92mis installed\e[0m."
+        sleep 2
     fi
 
     unset instMissPrg
@@ -258,13 +266,15 @@ function checkNeededPacker()
 
 function cleanup()
 {
-    echo -e "Cleaning up ..."
+    echo -e "\n\nCleaning up ..."
+    sleep 1
     rm -rf ${tmpDir}/${tmp1}
     rm -rf ${tmpDir}/${tmp2}
     rm -rf ${tmpDir}/${tmp3}
     rm -rf ${tmpDir}/${missingPacmanList}
     rm -rf ${tmpDir}/${missingPackerList}
-    echo -e "... done!"
+    echo -e "... done!\n\n"
+    sleep 1
 }
 
 function unsetVars()
@@ -301,6 +311,7 @@ function addToSudoers()
             exit 3
         fi
     fi
+    sleep 2
 }
 
 function main()
@@ -321,11 +332,21 @@ function main()
     fi
 }
 
+function installTexlive()
+{
+    echo -e "\n\nInstalling texlive now ...\n\n"
+    sleep 2
+    pacman -S $(pacman -Ssq texlive) sage
+    echo -e "\n\n... done installing texlive!\n\n"
+    sleep 2
+}
+
 function main2()
 {
     cleanup
     addToSudoers
     checkNeededPacman
+    installTexlive
     installPacker
     checkNeededPacker
     linkConfigs
@@ -336,6 +357,8 @@ function main2()
 
 function installPacker()
 {
+    echo -e "\n\nInstalling packer ...\n\n"
+    sleep 2
     if pacman -Qi packer &> /dev/null ; then
         echo -e "packer ... \e[92minstalled\e[0m" >> ${tmpDir}/${tmp1}
     else
@@ -350,10 +373,13 @@ function installPacker()
         makepkg -si
         cd -
     fi
+    echo -e "\n\n ... done installing packer!\n\n"
 }
 
 function linkConfigs()
 {
+    echo -e "\n\nLinking configuration files now."
+    sleep 2
     chmod go-rwx ~
     sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
     sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
@@ -376,9 +402,18 @@ function linkConfigs()
     fi
     cp -ifv ${repoPath}/ssh/config ~/.ssh/config
 
-    echo -e "Please unencrypt the ssh config."
-    read -n 1 -s -p "Press any key to continue"
-    vim ~/.ssh/config
+    echo -e "Please unencrypt the ssh config with vim."
+    read -p "Do it now? [Y/n]: " decrypt
+
+    if [[ ${decrypt} == "y" || ${decrypt} == "Y" || ${decrypt} == "" ]] ; then
+        vim ~/.ssh/config
+    elif
+        [[ ${decrypt} == "n" || ${decrypt} == "N" ]] ; then
+        echo -e "Will not touch ssh config."
+        echo -e "Please decrypt it by yourself before using ssh!"
+    else
+        echo -e "Unrecognized entry."
+    fi
 
     if [[ ! ( -d ~/.config/terminator ) ]] ; then
         mkdir --mode=700 -p ~/.config/terminator
@@ -401,7 +436,7 @@ function linkConfigs()
 
     sleep 2
 
-    echo -e "This script exited normally."
+    echo -e "\n\n ... done linking files!\n\n"
 }
 
 # first action in this script. do not touch.
