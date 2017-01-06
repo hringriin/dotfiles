@@ -490,6 +490,9 @@ function linkConfigs()
     fi
     ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
 
+    # setBrightness
+    sudo ln -fsv ${repoPath}/xrandr/setBrightness.bash ${ulbin}/setBrightness
+
     # timescript
     ln -fsv ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
 
