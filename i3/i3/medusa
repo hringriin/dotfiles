@@ -73,8 +73,8 @@ bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -
 bindsym $mod+XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
 
 # Screen Brightness Controls
-bindsym XF86MonBrightnessUp exec setBrightness Inc      # increase screen brightness with xrandr
-bindsym XF86MonBrightnessDown exec setBrightness Dec    # decrease screen brightness with xrandr
+bindsym $mod+Up exec setBrightness Inc      # increase screen brightness with xrandr
+bindsym $mod+Down exec setBrightness Dec    # decrease screen brightness with xrandr
 
 # Startup Applications
 exec owncloud
