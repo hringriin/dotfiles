@@ -494,7 +494,7 @@ function linkConfigs()
     ln -fsv ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
 
     # tmux
-    ln -fsv ${repoPath}/tmux/tmux.conf /etc/tmux.conf
+    sudo ln -fsv ${repoPath}/tmux/tmux.conf /etc/tmux.conf
 
     # vim
     sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
