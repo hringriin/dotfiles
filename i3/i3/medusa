@@ -79,9 +79,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease scree
 # Startup Applications
 exec owncloud
 exec dropbox
-exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
-exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
-exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/urxvt -bg black -fg white -fi "xft:DejaVu Sans Mono Book" -e weechat'
+exec --no-startup-id i3-msg '$workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
+exec --no-startup-id i3-msg '$workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
+exec --no-startup-id i3-msg '$workspace3; exec /usr/bin/urxvt -bg black -fg white -fi "xft:DejaVu Sans Mono Book" -e weechat'
+exec --no-startup-id i3-msg '$workspace6; exec xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
+exec --no-startup
 
 # xRandR GUI
 bindsym XF86Display exec arandr
