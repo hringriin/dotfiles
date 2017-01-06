@@ -63,7 +63,7 @@ bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock-fancy -gp -- scrot
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
