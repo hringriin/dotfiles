@@ -233,7 +233,7 @@ function! ToggleHomeZero()
         execute "normal! 0"
     endif
 endfunction
-nnoremap 0 :call ToggleHomeZero()<CR>
+nnoremap <silent> 0 :call ToggleHomeZero()<CR>
 
 " reselect visual block after indent/outdent indent visual
 vnoremap < <gv
@@ -252,11 +252,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'rhysd/committia.vim'
 Plug 'mattn/vim-maketable'
 Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/ZoomWin'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
+
+" ZoomWin
+noremap <Leader>f :ZoomWin<CR>
 
 
 " Colorscheme set to 'gruvbox'
