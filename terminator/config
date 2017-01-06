@@ -26,11 +26,10 @@
 [profiles]
   [[default]]
     background_darkness = 0.8
-    background_image = None
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#ffffff"
-    custom_command = TERM=xterm-256color bash
+    custom_command = TERM=xterm-256color tmux
     font = DejaVu Sans Mono 10
     foreground_color = "#ffffff"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"

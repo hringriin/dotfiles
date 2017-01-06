@@ -73,8 +73,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle    # mute mic
 
 # Startup Applications
-#exec owncloud
-#exec dropbox
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
-exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/xterm xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
+exec --no-startup-id i3-msg 'workspace $workspace6; exec /usr/bin/terminator'

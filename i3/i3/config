@@ -229,6 +229,8 @@ exec compton -f
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
 assign [class="Gajim"] $workspace2
+assign [class="xterm"] $workspace2
+assign [class="XTerm"] $workspace2
 assign [class="Hexchat"] $workspace3
 assign [class="Whatsie"] $workspace4
 assign [class="Firefox"] $workspace5
