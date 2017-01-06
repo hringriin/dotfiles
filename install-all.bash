@@ -121,6 +121,7 @@ neededProgrammes=(
     'texinfo'
     'thunar'
     'thunderbird'
+    'tmux'
     'ttf-dejavu'
     'util-linux'
     'vim'
@@ -152,6 +153,9 @@ function archLinuxCheck()
     if [[ ${alcheck} == "n" || ${alcheck} == "N" || ${alcheck} == "" ]] ; then
         exit 1
     elif [[ ${alcheck} == "y" || ${alcheck} == "Y" ]] ; then
+        if [[ ${HOSTNAME} == "*stuga*" ]] ; then
+            echo -e "This host is not allow for this script!"
+        fi
         unset alcheck
         main
     fi
@@ -426,23 +430,36 @@ function linkConfigs()
 {
     echo -e "\n\nLinking configuration files now."
     sleep 2
+
+    # Home directory only accessable for this user
     chmod go-rwx ~
+
+    # bashrc
     sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
+
+    # gitlab clone script
     sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
+
+    # youtube downloader :-)
     sudo ln -fsv ${repoPath}/bash/youtubedl.bash ${ulbin}/youtubedl
+
+    # git configs
     ln -fsv ${repoPath}/git/gitconfig ~/.gitconfig
     ln -fsv ${repoPath}/git/gitignore ~/.gitignore
 
+    # i3 - create the i3 configs
     ${repoPath}/i3/createConfig.bash
 
+    # mcabber - create the mcabber configs
     ${repoPath}/mcabber/createConfig.bash
 
+    # rofi
     if [[ ! ( -d ~/.local/rofi ) ]] ; then
         mkdir --mode=700 -p ~/.local/rofi
     fi
-
     ln -fsv ${repoPath}/rofi/config ~/.local/rofi/config
 
+    # ssh
     if [[ ! ( -d ~/.ssh ) ]] ; then
         mkdir --mode=700 ~/.ssh
     fi
@@ -461,22 +478,31 @@ function linkConfigs()
         echo -e "Unrecognized entry."
     fi
 
+    # terminator
     if [[ ! ( -d ~/.config/terminator ) ]] ; then
         mkdir --mode=700 -p ~/.config/terminator
     fi
     ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config
 
+    # htop
     if [[ ! ( -d ~/.config/htop ) ]] ; then
         mkdir --mode=700 -p ~/.config/htop
     fi
     ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
 
+    # timescript
     ln -fsv ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
 
+    # tmux
+    ln -fsv ${repoPath}/tmux/tmux.conf /etc/tmux.conf
+
+    # vim
     sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
 
+    # weechat
     /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/weechat/link-files.bash
 
+    # xorg
     ln -fsv ${repoPath}/X/Xdefaults ~/.Xdefaults
     ln -fsv ${repoPath}/X/xinitrc ~/.xinitrc
 
