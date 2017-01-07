@@ -5,8 +5,13 @@ alias 'packer'='packer --noedit --auronly'
 alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
 
 # mcabber
-alias 'mcabber-uni'='mcabber -f /home/${USER}/.mcabber_uni/mcabberrc'
-alias 'mcabber-ccchb'='mcabber -f /home/${USER}/.mcabber_ccchb/mcabberrc'
+if [[ ${HOSTNAME} == "botis" ]] ; then
+    alias 'mcabber-uni'='mcabber -f /Users/${USER}/.mcabber_uni/mcabberrc'
+    alias 'mcabber-ccchb'='mcabber -f /Users/${USER}/.mcabber_ccchb/mcabberrc'
+else
+    alias 'mcabber-uni'='mcabber -f /home/${USER}/.mcabber_uni/mcabberrc'
+    alias 'mcabber-ccchb'='mcabber -f /home/${USER}/.mcabber_ccchb/mcabberrc'
+fi
 
 # urxvt
 alias 'urxvt'='urxvt -bg black -fg white -fi "xfg:DejaVu Sans Mono Book"'

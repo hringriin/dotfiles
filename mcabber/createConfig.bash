@@ -4,9 +4,15 @@
 username=`echo ${USER}`
 
 # Setting Variables
-MAREPOPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/mcabber"
+if [[ ${HOSTNAME} == "botis" ]] ; then
+    MAREPOPATH="/Users/${username}/Repositories/github.com/hringriin/dotfiles/repo/mcabber"
+    MAPATH="/Users/${username}/.mcabber_"
+else
+    MAREPOPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/mcabber"
+    MAPATH="/home/${username}/.mcabber_"
+fi
+
 MAINCFG="mcabberrc"
-MAPATH="/home/${username}/.mcabber_"
 
 
 # Accounts
@@ -109,20 +115,20 @@ function mergeConf()
     for var in ${accounts[@]}
     do
         if [[ ! ( -d ${MAPATH}${var} ) ]] ; then
-            mkdir --mode=700 ${MAPATH}${var}
-            mkdir --mode=700 ${MAPATH}${var}/logs
-            mkdir --mode=700 ${MAPATH}${var}/otr
+            mkdir -m 700 ${MAPATH}${var}
+            mkdir -m 700 ${MAPATH}${var}/logs
+            mkdir -m 700 ${MAPATH}${var}/otr
         else
             if [[ ! ( -d ${MAPATH}${var}/logs ) ]] ; then
-                mkdir --mode=700 ~/.mcabber_uni/logs
+                mkdir -m 700 ~/.mcabber_uni/logs
             fi
 
             if [[ ! ( -d ${MAPATH}${var}/otr ) ]] ; then
-                mkdir --mode=700 ${MAPATH}${var}/otr
+                mkdir -m 700 ${MAPATH}${var}/otr
             fi
 
             if [[ ! ( -d ${MAPATH}${var}/event_files ) ]] ; then
-                mkdir --mode=700 ${MAPATH}${var}/event_files
+                mkdir -m 700 ${MAPATH}${var}/event_files
             fi
         fi
 
@@ -133,7 +139,7 @@ function mergeConf()
         echo "set priority_away = $(evalPrioAway ${var})" >> ${MAPATH}${var}/mcabberrc
 
         echo -e "\n# Resource" >> ${MAPATH}${var}/mcabberrc
-        echo -e "set resource = mcabber_${HOSTNAME}_`uname -r`\n" >> ${MAPATH}${var}/mcabberrc
+        echo -e "set resource = mcabber_${HOSTNAME}_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
 
         cat ${MAREPOPATH}/mcabberrc_${var} >> ${MAPATH}${var}/mcabberrc
 
