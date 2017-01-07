@@ -2,6 +2,8 @@
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export VISUAL=/Applications/MacVim.app/Contents/MacOS/Vim
 
+alias 'vim'='/Applications/MacVim.app/Contents/MacOS/Vim'
+
 # Set colorful PS1
 if ${use_color} ; then
     source /Users/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
