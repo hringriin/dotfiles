@@ -110,6 +110,7 @@ neededProgrammes=(
     'pulseaudio-xen'
     'pulseaudio-zeroconf'
     'ranger'
+    'redshift'
     'rofi'
     'rxvt-unicode'
     'seahorse'
@@ -487,6 +488,9 @@ function linkConfigs()
         mkdir --mode=700 -p ~/.config/htop
     fi
     ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
+
+    # redshift
+    ln -fsv ${repoPath}/redshift/redshift.conf ~/.config/redshift.conf
 
     # setBrightness
     sudo ln -fsv ${repoPath}/xrandr/setBrightness.bash ${ulbin}/setBrightness
