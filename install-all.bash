@@ -399,9 +399,7 @@ function main2()
     linkConfigs
     cleanup
     unsetVars
-    systemdServicesLink
-    systemdServicesEnable
-    systemdServicesStart
+    systemdQuestion
     exit 0
 }
 
@@ -520,7 +518,11 @@ function systemdServicesLink()
     sleep 2
 
     # list of services
+    sleep 2
+    echo "\n\nSystemD"
     sudo cp -ifv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
+    echo "SystemD </>\n\n"
+    sleep 3
 
     echo -e "\n\n ... done linking Systemd Services!\n\n"
     sleep 2
