@@ -225,6 +225,7 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 # Startup Applications
 # transparency for window manager
 exec compton -f
+exec systemctl --user restart redshift-gtk.service
 
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
