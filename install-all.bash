@@ -497,7 +497,10 @@ function linkConfigs()
     sudo ln -fsv ${repoPath}/xrandr/setBrightness.bash ${ulbin}/setBrightness
 
     # timescript
-    ln -fsv ${repoPath}/TIMESCRIPT ~/TIMESCRIPT
+    if [[ ! ( -d ~/TIMESCRIPT ) ]] ; then
+        mkdir -m 700 ~/TIMESCRIPT
+    fi
+    ln -fsv ${repoPath}/TIMESCRIPT/* ~/TIMESCRIPT
 
     # tmux
     sudo ln -fsv ${repoPath}/tmux/tmux.conf /etc/tmux.conf
