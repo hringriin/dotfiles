@@ -31,6 +31,7 @@ neededPackerPrgorammes=(
     'adduser'
     'dropbox'
     'dropbox-cli'
+    'i3lock-fancy-dualmonitors-git'
     'spotify-legacy'
     'ttf-font-awesome'
     'whatsie'
@@ -65,7 +66,6 @@ neededProgrammes=(
     'gzip'
     'htop'
     'i3-wm'
-    'i3lock'
     'i3status'
     'jshon'
     'keepassx2'
@@ -113,6 +113,7 @@ neededProgrammes=(
     'redshift'
     'rofi'
     'rxvt-unicode'
+    'scrot'
     'seahorse'
     'sed'
     'sudo'
@@ -539,6 +540,7 @@ function systemdServicesEnable()
 
     # list of services
     su -c "systemctl enable suspend@${USER}" root           # must not be started!
+    systemctl --user enable redshift-gtk.service
 
     echo -e "\n\n ... done enabling Systemd Services!\n\n"
     sleep 2
@@ -549,7 +551,7 @@ function systemdServicesStart()
     echo -e "\n\nStarting Systemd Services ...\n\n"
     sleep 2
 
-    # list of services
+    systemctl --user restart redshift-gtk.service
 
     echo -e "\n\n ... done starting Systemd Services!\n\n"
     sleep 2
