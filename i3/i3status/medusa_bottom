@@ -1,7 +1,7 @@
 order += "disk /"
 order += "ipv6"
 order += "wireless wlp2s0"
-order += "ethernet enp1s0"
+order += "ethernet enp3s0"
 order += "path_exists VPN_Home"
 order += "path_exists VPN_Uni"
 
@@ -22,7 +22,7 @@ path_exists VPN_Uni {
     path = "/proc/sys/net/ipv4/conf/vpn0"
 }
 
-ethernet enp1s0 {
+ethernet enp3s0 {
         # if you use %speed, i3status requires root privileges
         format_up = "  %ip %speed"
         format_down = "  down"
