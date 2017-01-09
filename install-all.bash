@@ -399,9 +399,9 @@ function main2()
     installPacker
     checkNeededPacker
     linkConfigs
+    systemdQuestion
     cleanup
     unsetVars
-    systemdQuestion
     exit 0
 }
 
