@@ -325,7 +325,7 @@ function installTexlive()
 {
     echo -e "\n\nInstalling texlive now ...\n\n"
     sleep 2
-    pacman -S $(pacman -Ssq texlive) sage
+    su -c "pacman -S $(pacman -Ssq texlive) sage" root
     echo -e "\n\n... done installing texlive!\n\n"
     sleep 2
 }
