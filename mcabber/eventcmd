@@ -5,8 +5,8 @@ EVENT_SUBTYPE=$2
 JID=$3
 FILE=$4
 TITLE="Jabber"
-SOUND_FILE_MUC="$HOME/hringriin/Repositories/github.com/hringriin/dotfiles/repo/mcabber/sounds/alert.wav"
-SOUND_FILE_IN="$HOME/hringriin/Repositories/github.com/hringriin/dotfiles/repo/mcabber/sounds/receive.wav"
+SOUND_FILE_MUC="$HOME/Repositories/github.com/hringriin/dotfiles/repo/mcabber/sounds/alert.wav"
+SOUND_FILE_IN="$HOME/Repositories/github.com/hringriin/dotfiles/repo/mcabber/sounds/receive.wav"
 ICON="$HOME/Repositories/github.com/hringriin/dotfiles/repo/mcabber/mcabber.png"
 TIMEOUT=10000
 
