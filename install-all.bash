@@ -543,7 +543,7 @@ function systemdServicesEnable()
 
     # list of services
     su -c "systemctl enable suspend@${USER}" root           # must not be started!
-    systemctl --user enable redshift-gtk.service
+    systemctl --user enable redshift.service
 
     echo -e "\n\n ... done enabling Systemd Services!\n\n"
     sleep 2
@@ -554,7 +554,7 @@ function systemdServicesStart()
     echo -e "\n\nStarting Systemd Services ...\n\n"
     sleep 2
 
-    systemctl --user restart redshift-gtk.service
+    systemctl --user restart redshift.service
 
     echo -e "\n\n ... done starting Systemd Services!\n\n"
     sleep 2
