@@ -116,6 +116,7 @@ neededProgrammes=(
     'scrot'
     'seahorse'
     'sed'
+    'sox'
     'sudo'
     'sxiv'
     'teamspeak3'
