@@ -1,0 +1,29 @@
+#!/bin/sh
+echo "$1 $2 $3 $4" >> ~/test.mcabber.log
+EVENT_TYPE=$1
+EVENT_SUBTYPE=$2
+JID=$3
+FILE=$4
+TITLE="Jabber"
+SOUND_FILE_IN="/usr/share/sounds/gnome/default/alerts/bark.ogg"
+SOUND_FILE_MUC="/usr/share/sounds/gnome/default/alerts/bark.ogg"
+ICON="$HOME/Repositories/github.com/hringriin/dotfiles/repo/mcabber/mcabber.png"
+TIMEOUT=10000
+
+function new_message_in() {
+    notify-send -i $ICON -t $TIMEOUT "$TITLE" "New message from ${JID}."
+    play $SOUND_FILE_IN
+}
+
+function new_message_muc() {
+    notify-send -i $ICON -t $TIMEOUT "$TITLE" "New message from ${JID}."
+    play $SOUND_FILE_MUC
+}
+
+if [[ $EVENT_TYPE == "MSG" ]] && [[ $EVENT_SUBTYPE == "IN" ]] ; then
+    new_message_in
+fi
+
+if [[ $EVENT_TYPE == "MSG" ]] && [[ $EVENT_SUBTYPE == "MUC" ]] ; then
+    new_message_muc
+fi
