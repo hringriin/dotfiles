@@ -227,6 +227,9 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 exec compton -f
 exec systemctl --user restart redshift.service
 
+# screenshot
+bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png"
+
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
 assign [class="Gajim"] $workspace2
