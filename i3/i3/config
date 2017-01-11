@@ -225,7 +225,8 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 # Startup Applications
 # transparency for window manager
 exec compton -f
-exec systemctl --user restart redshift.service
+#exec systemctl --user restart redshift.service
+exec --no-startup-id redshift-gtk
 
 # screenshot
 bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png"
