@@ -252,3 +252,7 @@ assign [class="ownCloud"] $workspace20
 # Keyboard Layout
 bindsym $mod+Control+d exec setxkbmap de            # switch to german layout
 bindsym $mod+Control+e exec setxkbmap en_US         # switch to us layout
+
+# diplay blank
+xset -dpms
+xset s 1800 1800
