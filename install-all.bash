@@ -87,6 +87,8 @@ neededProgrammes=(
     'networkmanager-vpnc'
     'nitrogen'
     'nm-connection-editor'
+    'notify-osd'
+    'ntp'
     'numlockx'
     'openconnect'
     'openssh'
@@ -326,7 +328,11 @@ function installTexlive()
 {
     echo -e "\n\nInstalling texlive now ...\n\n"
     sleep 2
-    su -c "pacman -S $(pacman -Ssq texlive) sage" root
+    if pacman -Qi texlive-core &> /dev/null ; then
+        su -c "pacman -S $(pacman -Ssq texlive) sage" root
+    else
+        echo -e "Texlive is installed"
+    fi
     echo -e "\n\n... done installing texlive!\n\n"
     sleep 2
 }
@@ -528,9 +534,9 @@ function systemdServicesLink()
 
     # list of services
     sleep 2
-    echo "\n\nSystemD"
+    echo -e "\n\nSystemD"
     sudo cp -ifv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
-    echo "SystemD </>\n\n"
+    echo -e "SystemD </>\n\n"
     sleep 3
 
     echo -e "\n\n ... done linking Systemd Services!\n\n"
@@ -542,9 +548,28 @@ function systemdServicesEnable()
     echo -e "\n\nEnabling Systemd Services ...\n\n"
     sleep 2
 
-    # list of services
-    su -c "systemctl enable suspend@${USER}" root           # must not be started!
-    #systemctl --user enable redshift-gtk.service
+    servicesToEnable=(
+        "suspend${USER}"
+        "ntpd.service"
+    )
+
+    UserServicesToEnable=(
+        #"redshift-gtk.service"
+    )
+
+    for var in "${servicesToEnable[@]}"
+    do
+        su -c "systemctl enable ${var}" root
+    done
+
+    unset var
+
+    for var in "${userServicesToEnable[@]}"
+    do
+        systemctl --user enable ${var}
+    done
+
+    unset var
 
     echo -e "\n\n ... done enabling Systemd Services!\n\n"
     sleep 2
@@ -555,7 +580,27 @@ function systemdServicesStart()
     echo -e "\n\nStarting Systemd Services ...\n\n"
     sleep 2
 
-    #systemctl --user restart redshift-gtk.service
+    servicesToStart=(
+        "ntpd.service"
+    )
+
+    userServicesToStart=(
+        #"redshift-gtk.service"
+    )
+
+    for var in "${servicesToStart[@]}"
+    do
+        su -c "systemctl start ${var}" root
+    done
+
+    unset var
+
+    for var in "${userServicesToStart[@]}"
+    do
+        systemctl --user start ${var}
+    done
+
+    unset var
 
     echo -e "\n\n ... done starting Systemd Services!\n\n"
     sleep 2
