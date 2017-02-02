@@ -254,5 +254,5 @@ bindsym $mod+Control+d exec setxkbmap de            # switch to german layout
 bindsym $mod+Control+e exec setxkbmap en_US         # switch to us layout
 
 # diplay blank
-xset -dpms
-xset s 1800 1800
+exec xset -dpms
+exec xset s 1800 1800
