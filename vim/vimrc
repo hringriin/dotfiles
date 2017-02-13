@@ -4,6 +4,9 @@ set guioptions+=a
 " Command line history
 set history=500
 
+" Symbol for wrapped lines
+set showbreak=
+
 " No line wrapping
 :set nowrap
 
