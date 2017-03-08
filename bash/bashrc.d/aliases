@@ -61,9 +61,16 @@ alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 # Factorio 0.14.21
 function ffactorio-0-14-21 {
     cd /home/${USER}/Games/factorio_0.14.21/factorio/bin/x64/
-    ./factorio
+    padsp ./factorio
 }
 alias 'factorio-0-14-21'='ffactorio-0-14-21'
+
+# Factorio 0.14.22
+function ffactorio-0-14-22 {
+    cd /home/${USER}/Games/factorio_0.14.22/factorio/bin/x64/
+    padsp ./factorio
+}
+alias 'factorio-0-14-22'='ffactorio-0-14-22'
 
 ##############
 # WINE GAMES #
