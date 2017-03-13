@@ -3,21 +3,28 @@
 
 # config - tmp files
 tmpDir="/tmp"
-tmp1="tmp1$$"
-tmp2="tmp2$$"
-tmp3="tmp3$$"
-tmp4="tmp4$$"
-tmp5="tmp5$$"
-tmp6="tmp6$$"
-tmp7="tmp7$$"
-tmp8="tmp8$$"
-tmp9="tmp9$$"
+tmp1="tmp01_$$"
+tmp2="tmp02_$$"
+tmp3="tmp03_$$"
+tmp4="tmp04_$$"
+tmp5="tmp05_$$"
+tmp6="tmp06_$$"
+tmp7="tmp07_$$"
+tmp8="tmp08_$$"
+tmp9="tmp09_$$"
+tmp10="tmp10_$$"
+tmp11="tmp11_$$"
 onlinetimes="oltimes$$"
 clientDataDir="cldata$$"
+serverDataDir="srdata$$"
 clientnames="clnames$$"
 clplatform="clplatform$$"
 clcountry="clcountry$$"
 clversion="clversion$$"
+srvVersion="srvVersion$$"
+srvPlatform="srvPlatform$$"
+srvUptime="srvUptime$$"
+srvPing="srvPing$$"
 
 # config - ts3 query user data
 username=""
@@ -45,6 +52,14 @@ function preceedings ()
     if [[ ! ( -d ${tmpDir}/${clientDataDir} ) ]] ; then
         exit 11
     fi
+
+    # create dir where to save all server's information
+    mkdir -p ${tmpDir}/${serverDataDir}
+
+    # double check server's information exist, if not ... PANIC AGAIN :-)
+    if [[ ! ( -d ${tmpDir}/${serverDataDir} ) ]] ; then
+        exit 12
+    fi
 }
 
 # telnet foo
@@ -52,6 +67,8 @@ function preceedings ()
 function telnetGetData ()
 {
     ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "clientlist"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp1}
+    ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "servergrouplist"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp10}
+    ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "serverinfo"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp11}
 }
 
 # määääägick :-)
@@ -119,7 +136,6 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            #sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_version" | cut -d "=" -f 2  >> ${tmpDir}/${clientDataDir}/${clversion}
             sed -e 's/\\s/ /g' ${tmpDir}/${clientDataDir}/client_${counter} | sed -e 's/\s\+/\n/g' | grep -iv "client_version_" | grep -e "client_version" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
             counter=$((counter+1))
         else
@@ -165,12 +181,28 @@ function readClientsData ()
 # copy the list of usernames to a file accessable by the webserver
 function deliverData ()
 {
+    #client data
     rm -rf ${tmpDir}/${clientDataDir}/client_*
     cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
     cp ${tmpDir}/${clientDataDir}/${onlinetimes} ${serverDir}/onlinetimes
     cp ${tmpDir}/${clientDataDir}/${clplatform} ${serverDir}/platform
     cp ${tmpDir}/${clientDataDir}/${clcountry} ${serverDir}/country
     cp ${tmpDir}/${clientDataDir}/${clversion} ${serverDir}/version
+
+    #server data
+    cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
+    cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
+    cp ${tmpDir}/${serverDataDir}/${srvUptime} ${serverDir}/srvUptime
+    cp ${tmpDir}/${serverDataDir}/${srvPing} ${serverDir}/srvPing
+}
+
+# information like uptime, server_platform, server_version, ...
+function parseServerInfo ()
+{
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -iv "virtualserver_version_" | grep -e "virtualserver_version" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvVersion}
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_platform" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPlatform}
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_uptime" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvUptime}
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_total_ping" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPing}
 }
 
 # obvious, isn't it ?
@@ -183,6 +215,7 @@ function main ()
     readClientsData
     parseClientIDs
     parseClientData
+    parseServerInfo
     deliverData
     cleanup
     exit 0
@@ -201,6 +234,8 @@ function cleanup ()
     rm -rf ${tmp7}
     rm -rf ${tmp8}
     rm -rf ${tmp9}
+    rm -rf ${tmp10}
+    rm -rf ${tmp11}
     rm -rf ${clientnames}
     rm -rf ${clientDataDir}
 
@@ -214,6 +249,8 @@ function cleanup ()
     unset tmp7
     unset tmp8
     unset tmp9
+    unset tmp10
+    unset tmp11
     unset username
     unset passphrase
     unset server
@@ -221,9 +258,14 @@ function cleanup ()
     unset serverDir
     unset clientnames
     unset clientDataDir
+    unset serverDataDir
     unset onlinetimes
     unset clplatform
     unset clversion
+    unset srvVersion
+    unset srvPlatform
+    unset srvUptime
+    unset srvPing
     unset clcountry
     unset counter
 }
