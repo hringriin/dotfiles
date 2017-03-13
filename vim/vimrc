@@ -25,6 +25,8 @@ let operatingSystem=system('uname -a')
 :if operatingSystem =~? "\Linux"
 :    if operatingSystem =~? "\ARCH"
 :        runtime! archlinux.vim
+:    else
+:        runtime! debian.vim
 :    endif
 :endif
 
@@ -246,9 +248,11 @@ vnoremap > >gv
 " Check if 'plug' is installed
 
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  :echo "Plug is not installed. It will be curled! now"
+  !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source /etc/vimrc
+  :echo "\n\n Please restart vim after Plug has finished updating!\n\n"
 endif
 
 call plug#begin('~/.vim/plugged')
