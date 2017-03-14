@@ -144,7 +144,7 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_platform" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${clplatform}
+            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_platform" | cut -d "=" -f 2 | sed -e 's/\\s/ /g'>> ${tmpDir}/${clientDataDir}/${clplatform}
             counter=$((counter+1))
         else
             break
