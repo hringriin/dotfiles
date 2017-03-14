@@ -25,6 +25,9 @@ srvVersion="srvVersion$$"
 srvPlatform="srvPlatform$$"
 srvUptime="srvUptime$$"
 srvPing="srvPing$$"
+srvGrpList="srvGrpList$$"
+grpIDs="grpIDs$$"
+awaystatus="awaystatus$$"
 
 # config - ts3 query user data
 username=""
@@ -108,6 +111,23 @@ function parseClientData ()
 
     unset counter
 
+    #away status
+    counter=0
+    while ( true ) ; do
+        if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
+            if [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_away" | cut -d "=" -f 2` == "1" ]] ||
+               [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_output_mute" | cut -d "=" -f 2` == "1" ]] ; then
+                echo "1" >> ${tmpDir}/${clientDataDir}/${awaystatus}
+            else
+                echo "0" >> ${tmpDir}/${clientDataDir}/${awaystatus}
+            fi
+            counter=$((counter+1))
+        else
+            break
+        fi
+    done
+    unset counter
+
     # online times
     counter=0
     while ( true ) ; do
@@ -188,12 +208,15 @@ function deliverData ()
     cp ${tmpDir}/${clientDataDir}/${clplatform} ${serverDir}/platform
     cp ${tmpDir}/${clientDataDir}/${clcountry} ${serverDir}/country
     cp ${tmpDir}/${clientDataDir}/${clversion} ${serverDir}/version
+    cp ${tmpDir}/${clientDataDir}/${grpIDs} ${serverDir}/grpIDs
+    cp ${tmpDir}/${clientDataDir}/${awaystatus} ${serverDir}/away
 
     #server data
     cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
     cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
     cp ${tmpDir}/${serverDataDir}/${srvUptime} ${serverDir}/srvUptime
     cp ${tmpDir}/${serverDataDir}/${srvPing} ${serverDir}/srvPing
+    cp ${tmpDir}/${serverDataDir}/${srvGrpList} ${serverDir}/srvGrpList
 }
 
 # information like uptime, server_platform, server_version, ...
@@ -203,6 +226,17 @@ function parseServerInfo ()
     sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_platform" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPlatform}
     sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_uptime" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvUptime}
     sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_total_ping" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPing}
+}
+
+function parseServerGroupList ()
+{
+    sed 's/\s\+/\n/g' ${tmpDir}/${tmp10} | sed -e 's/\\s/ /g' | sed 's/|sgid/|\nsgid/g' | grep -e "sgid" -e "name=" > ${tmpDir}/${serverDataDir}/${srvGrpList}
+
+    counter=0
+    while [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; do
+        sed 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_servergroups" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${grpIDs}
+        counter=$((counter+1))
+    done
 }
 
 # obvious, isn't it ?
@@ -216,6 +250,7 @@ function main ()
     parseClientIDs
     parseClientData
     parseServerInfo
+    parseServerGroupList
     deliverData
     cleanup
     exit 0
