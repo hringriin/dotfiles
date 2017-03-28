@@ -261,6 +261,10 @@ function readClientsData ()
 
 function deliverServer ()
 {
+    # this file is crucial for the php script, so it should be copied any time
+    # the server information is delivered on every run, so it is placed here
+    cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
+
     cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
     cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
     cp ${tmpDir}/${serverDataDir}/${srvUptime} ${serverDir}/srvUptime
@@ -271,7 +275,6 @@ function deliverServer ()
 function deliverClient ()
 {
     rm -rf ${tmpDir}/${clientDataDir}/client_*
-    cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
     cp ${tmpDir}/${clientDataDir}/${onlinetimes} ${serverDir}/onlinetimes
     cp ${tmpDir}/${clientDataDir}/${clplatform} ${serverDir}/platform
     cp ${tmpDir}/${clientDataDir}/${clcountry} ${serverDir}/country
