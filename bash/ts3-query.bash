@@ -233,9 +233,13 @@ function parseClientData ()
 
 }
 
+# if the server is empty, only server information will be provided
 function checkIfServerEmpty ()
 {
     if [[ ! -s ${tmpDir}/${clientDataDir}/${clientnames} ]] ; then
+        parseServerInfo
+        deliverServer
+        cleanup
         exit 13
     fi
 }
@@ -255,11 +259,18 @@ function readClientsData ()
     done < "${tmpDir}/${clientDataDir}/${clientnames}"
 }
 
-# copy the list of usernames to a file accessable by the webserver
-function deliverData ()
+function deliverServer ()
 {
-    #client data
-    #rm -rf ${tmpDir}/${clientDataDir}/client_*
+    cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
+    cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
+    cp ${tmpDir}/${serverDataDir}/${srvUptime} ${serverDir}/srvUptime
+    cp ${tmpDir}/${serverDataDir}/${srvPing} ${serverDir}/srvPing
+}
+
+# copy the list of usernames to a file accessable by the webserver
+function deliverClient ()
+{
+    rm -rf ${tmpDir}/${clientDataDir}/client_*
     cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
     cp ${tmpDir}/${clientDataDir}/${onlinetimes} ${serverDir}/onlinetimes
     cp ${tmpDir}/${clientDataDir}/${clplatform} ${serverDir}/platform
@@ -268,11 +279,7 @@ function deliverData ()
     cp ${tmpDir}/${clientDataDir}/${grpIDs} ${serverDir}/grpIDs
     cp ${tmpDir}/${clientDataDir}/${awaystatus} ${serverDir}/away
 
-    #server data
-    cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
-    cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
-    cp ${tmpDir}/${serverDataDir}/${srvUptime} ${serverDir}/srvUptime
-    cp ${tmpDir}/${serverDataDir}/${srvPing} ${serverDir}/srvPing
+    # useless without any user, therefore in the client block
     cp ${tmpDir}/${serverDataDir}/${srvGrpList} ${serverDir}/srvGrpList
 }
 
@@ -330,7 +337,8 @@ function main ()
     parseClientData
     parseServerInfo
     parseServerGroupList
-    deliverData
+    deliverServer
+    deliverClient
     cleanup
     exit 0
 }
@@ -345,7 +353,7 @@ function cleanup ()
     rm -rf ${tmp10}
     rm -rf ${tmp11}
     rm -rf ${clientnames}
-    #rm -rf ${clientDataDir}
+    rm -rf ${clientDataDir}
     rm -rf ${serverDataDir}
 
     unset tmpDir
