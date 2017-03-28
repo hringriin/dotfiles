@@ -4,13 +4,7 @@
 # config - tmp files
 tmpDir="/tmp"
 tmp1="tmp01_$$"
-tmp2="tmp02_$$"
-tmp3="tmp03_$$"
-tmp4="tmp04_$$"
-tmp5="tmp05_$$"
-tmp6="tmp06_$$"
 tmp7="tmp07_$$"
-tmp8="tmp08_$$"
 tmp9="tmp09_$$"
 tmp10="tmp10_$$"
 tmp11="tmp11_$$"
@@ -29,13 +23,14 @@ srvGrpList="srvGrpList$$"
 grpIDs="grpIDs$$"
 awaystatus="awaystatus$$"
 
-# config - ts3 query user data
-username=""
-passphrase=""
+# config - ts3 query user and server data
+source /root/.config/.ts3-query/.credentials
 
-# config - ts3 query server data
-server="niederhoelle.de"
-port="10011"
+# global sleep time for all telnet queries
+# any value ABOVE 1 should work
+# any value BELOW 1 is critically low, depending on the server's response time and might not work
+# any value BELOW 0.5 WILL NOT work and trigger an inevitable 10 min. ban
+sleeptime="0.5"
 
 # config - webserver
 serverDir="/var/www/ts3-query/data"
@@ -69,9 +64,32 @@ function preceedings ()
 # connect to server with teamspeak3 server installed to query current userlist
 function telnetGetData ()
 {
-    ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "clientlist"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp1}
-    ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "servergrouplist"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp10}
-    ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "serverinfo"; sleep 2; echo "quit" ) | telnet  ${server} ${port} > ${tmpDir}/${tmp11}
+    ( echo "login ${username} ${passphrase}"; \
+        sleep ${sleeptime}; \
+        echo "use 1"; \
+        sleep ${sleeptime}; \
+        echo "clientlist"; \
+        sleep ${sleeptime}; \
+        echo "quit" ) | \
+        telnet  ${server} ${port} > ${tmpDir}/${tmp1}
+
+    ( echo "login ${username} ${passphrase}"; \
+        sleep ${sleeptime}; \
+        echo "use 1"; \
+        sleep ${sleeptime}; \
+        echo "servergrouplist"; \
+        sleep ${sleeptime}; \
+        echo "quit" ) | \
+        telnet  ${server} ${port} > ${tmpDir}/${tmp10}
+
+    ( echo "login ${username} ${passphrase}"; \
+        sleep ${sleeptime}; \
+        echo "use 1"; \
+        sleep ${sleeptime}; \
+        echo "serverinfo"; \
+        sleep ${sleeptime}; \
+        echo "quit" ) | \
+        telnet  ${server} ${port} > ${tmpDir}/${tmp11}
 }
 
 # määääägick :-)
@@ -84,19 +102,19 @@ function telnetGetData ()
 # 6th: copy the clientnames to a new file to work further with
 function parseClientList ()
 {
-    sed -e 's/\s\+/\n/g' ${tmpDir}/${tmp1} > ${tmpDir}/${tmp2}
-    grep -e "client_nickname" ${tmpDir}/${tmp2} > ${tmpDir}/${tmp3}
-    grep -iv "serveradmin" ${tmpDir}/${tmp3} > ${tmpDir}/${tmp4}
-    sed -e 's/\\s/ /g' ${tmpDir}/${tmp4} > ${tmpDir}/${tmp5}
-    cat ${tmpDir}/${tmp5} | cut -d "=" -f 2 > ${tmpDir}/${tmp6}
-    cp ${tmpDir}/${tmp6} ${tmpDir}/${clientDataDir}/${clientnames}
+    sed -e 's/\s\+/\n/g' ${tmpDir}/${tmp1} | \
+        grep 'client_nickname' | \
+        grep -v 'serveradmin' | \
+        sed -e 's/\\s/ /g' | \
+        cut -d '=' -f 2 > ${tmpDir}/${clientDataDir}/${clientnames}
 }
 
 # parses the clientids (clid)
 function parseClientIDs ()
 {
-    grep -e "client_nickname" ${tmpDir}/${tmp7} > ${tmpDir}/${tmp8}
-    cat ${tmpDir}/${tmp8} | cut -d " " -f 1 | cut -d "=" -f 2 > ${tmpDir}/${tmp9}
+    grep -e 'client_nickname' ${tmpDir}/${tmp7} | \
+        cut -d ' ' -f 1 | \
+        cut -d '=' -f 2 > ${tmpDir}/${tmp9}
 }
 
 # uses the clid's to parse every user's data and write them to file, one file per user
@@ -105,7 +123,14 @@ function parseClientData ()
 {
     counter=0
     while IFS='' read -r line || [[ -n "$line" ]]; do
-        ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "clientinfo clid=$line"; sleep 2; echo "quit" ) | telnet  ${server} ${port} >> ${tmpDir}/${clientDataDir}/client_${counter}
+        ( echo "login ${username} ${passphrase}"; \
+            sleep ${sleeptime}; \
+            echo "use 1"; \
+            sleep ${sleeptime}; \
+            echo "clientinfo clid=$line"; \
+            sleep ${sleeptime}; \
+            echo "quit" ) | \
+            telnet  ${server} ${port} >> ${tmpDir}/${clientDataDir}/client_${counter}
         counter=$((counter+1))
     done < "${tmpDir}/${tmp9}"
 
@@ -115,8 +140,13 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            if [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_away" | cut -d "=" -f 2` == "1" ]] ||
-               [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_output_mute" | cut -d "=" -f 2` == "1" ]] ; then
+            if [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                grep -e 'client_away' | \
+                cut -d '=' -f 2 | \
+                head -n 1` == "1" ]] ||
+               [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                    grep -e 'client_output_muted' | \
+                    cut -d '=' -f 2` == "1" ]] ; then
                 echo "1" >> ${tmpDir}/${clientDataDir}/${awaystatus}
             else
                 echo "0" >> ${tmpDir}/${clientDataDir}/${awaystatus}
@@ -132,7 +162,9 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "connection_connected_time" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${onlinetimes}
+            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                grep -e 'connection_connected_time' | \
+                cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${onlinetimes}
             counter=$((counter+1))
         else
             break
@@ -144,7 +176,10 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_platform" | cut -d "=" -f 2 | sed -e 's/\\s/ /g'>> ${tmpDir}/${clientDataDir}/${clplatform}
+            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                grep -e 'client_platform' | \
+                cut -d '=' -f 2 | \
+                sed -e 's/\\s/ /g' >> ${tmpDir}/${clientDataDir}/${clplatform}
             counter=$((counter+1))
         else
             break
@@ -156,7 +191,11 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\\s/ /g' ${tmpDir}/${clientDataDir}/client_${counter} | sed -e 's/\s\+/\n/g' | grep -iv "client_version_" | grep -e "client_version" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
+            sed -e 's/\\s/ /g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                sed -e 's/\s\+/\n/g' | \
+                grep -iv 'client_version_' | \
+                grep -e 'client_version' | \
+                cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
             counter=$((counter+1))
         else
             break
@@ -168,7 +207,9 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_country" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${clcountry}
+            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                grep -e 'client_country' | \
+                cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${clcountry}
             counter=$((counter+1))
         else
             break
@@ -180,7 +221,9 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_away" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
+            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                grep -e 'client_away' | \
+                cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
             counter=$((counter+1))
         else
             break
@@ -194,7 +237,14 @@ function parseClientData ()
 function readClientsData ()
 {
     while IFS='' read -r line || [[ -n "$line" ]]; do
-        ( echo "login ${username} ${passphrase}"; sleep 2; echo "use 1"; sleep 2; echo "clientfind pattern=$line"; sleep 2; echo "quit" ) | telnet  ${server} ${port} >> ${tmpDir}/${tmp7}
+        ( echo "login ${username} ${passphrase}"; \
+            sleep ${sleeptime}; \
+            echo "use 1"; \
+            sleep ${sleeptime}; \
+            echo "clientfind pattern=$line"; \
+            sleep ${sleeptime}; \
+            echo "quit" ) | \
+            telnet  ${server} ${port} >> ${tmpDir}/${tmp7}
     done < "${tmpDir}/${clientDataDir}/${clientnames}"
 }
 
@@ -202,7 +252,7 @@ function readClientsData ()
 function deliverData ()
 {
     #client data
-    rm -rf ${tmpDir}/${clientDataDir}/client_*
+    #rm -rf ${tmpDir}/${clientDataDir}/client_*
     cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
     cp ${tmpDir}/${clientDataDir}/${onlinetimes} ${serverDir}/onlinetimes
     cp ${tmpDir}/${clientDataDir}/${clplatform} ${serverDir}/platform
@@ -222,19 +272,40 @@ function deliverData ()
 # information like uptime, server_platform, server_version, ...
 function parseServerInfo ()
 {
-    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -iv "virtualserver_version_" | grep -e "virtualserver_version" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvVersion}
-    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_platform" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPlatform}
-    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_uptime" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvUptime}
-    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | sed -e 's/\s\+/\n/g' | grep -e "virtualserver_total_ping" | cut -d "=" -f 2 >> ${tmpDir}/${serverDataDir}/${srvPing}
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | \
+        sed -e 's/\s\+/\n/g' | \
+        grep -iv 'virtualserver_version_' | \
+        grep -e 'virtualserver_version' | \
+        cut -d '=' -f 2 >> ${tmpDir}/${serverDataDir}/${srvVersion}
+
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | \
+        sed -e 's/\s\+/\n/g' | \
+        grep -e 'virtualserver_platform' | \
+        cut -d '=' -f 2 >> ${tmpDir}/${serverDataDir}/${srvPlatform}
+
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | \
+        sed -e 's/\s\+/\n/g' | \
+        grep -e 'virtualserver_uptime' | \
+        cut -d '=' -f 2 >> ${tmpDir}/${serverDataDir}/${srvUptime}
+
+    sed -e 's/\\s/ /g' ${tmpDir}/${tmp11} | \
+        sed -e 's/\s\+/\n/g' | \
+        grep -e 'virtualserver_total_ping' | \
+        cut -d '=' -f 2 >> ${tmpDir}/${serverDataDir}/${srvPing}
 }
 
 function parseServerGroupList ()
 {
-    sed 's/\s\+/\n/g' ${tmpDir}/${tmp10} | sed -e 's/\\s/ /g' | sed 's/|sgid/|\nsgid/g' | grep -e "sgid" -e "name=" > ${tmpDir}/${serverDataDir}/${srvGrpList}
+    sed 's/\s\+/\n/g' ${tmpDir}/${tmp10} | \
+        sed -e 's/\\s/ /g' | \
+        sed 's/|sgid/|\nsgid/g' | \
+        grep -e 'sgid' -e 'name=' > ${tmpDir}/${serverDataDir}/${srvGrpList}
 
     counter=0
     while [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; do
-        sed 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | grep -e "client_servergroups" | cut -d "=" -f 2 >> ${tmpDir}/${clientDataDir}/${grpIDs}
+        sed 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+            grep -e 'client_servergroups' | \
+            cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${grpIDs}
         counter=$((counter+1))
     done
 }
@@ -261,28 +332,17 @@ function cleanup ()
 {
     cd ${tmpDir}
     rm -rf ${tmp1}
-    rm -rf ${tmp2}
-    rm -rf ${tmp3}
-    rm -rf ${tmp4}
-    rm -rf ${tmp5}
-    rm -rf ${tmp6}
     rm -rf ${tmp7}
-    rm -rf ${tmp8}
     rm -rf ${tmp9}
     rm -rf ${tmp10}
     rm -rf ${tmp11}
     rm -rf ${clientnames}
-    rm -rf ${clientDataDir}
+    #rm -rf ${clientDataDir}
+    rm -rf ${serverDataDir}
 
     unset tmpDir
     unset tmp1
-    unset tmp2
-    unset tmp3
-    unset tmp4
-    unset tmp5
-    unset tmp6
     unset tmp7
-    unset tmp8
     unset tmp9
     unset tmp10
     unset tmp11
@@ -303,6 +363,9 @@ function cleanup ()
     unset srvPing
     unset clcountry
     unset counter
+    unset srvGrpList
+    unset grpIDs
+    unset awaystatus
 }
 
 main
