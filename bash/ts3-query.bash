@@ -235,12 +235,9 @@ function parseClientData ()
 
 function checkIfServerEmpty ()
 {
-    echo "server empty?"
-    if [[ -s ${tmpDir}/${clientDataDir}/${clientnames} ]] ; then
-        echo "server empty"
+    if [[ ! -s ${tmpDir}/${clientDataDir}/${clientnames} ]] ; then
         exit 13
     fi
-    echo "NOOOO"
 }
 
 # Reads all clientnames from $clientnames to collect extra data via query and writes it to file
