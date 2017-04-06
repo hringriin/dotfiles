@@ -1,6 +1,11 @@
 #!/bin/bash
 # ts3-query
 
+# General notice for this file
+# You will often notice "sed" commands. These are necessary to format the output of a
+# file to my needs. It usually does nothing else then linebreaking, format whitespaces to newlines,
+# and format the telnet's output "\s" to regular whitespaces.
+
 # config - tmp files
 tmpDir="/tmp"
 tmp1="tmp01_$$"
@@ -64,30 +69,21 @@ function preceedings ()
 # connect to server with teamspeak3 server installed to query current userlist
 function telnetGetData ()
 {
-    ( echo "login ${username} ${passphrase}"; \
-        sleep ${sleeptime}; \
-        echo "use 1"; \
-        sleep ${sleeptime}; \
-        echo "clientlist"; \
-        sleep ${sleeptime}; \
+    ( echo "login ${username} ${passphrase}"; sleep ${sleeptime}; \
+        echo "use 1"; sleep ${sleeptime}; \
+        echo "clientlist"; sleep ${sleeptime}; \
         echo "quit" ) | \
         telnet  ${server} ${port} > ${tmpDir}/${tmp1}
 
-    ( echo "login ${username} ${passphrase}"; \
-        sleep ${sleeptime}; \
-        echo "use 1"; \
-        sleep ${sleeptime}; \
-        echo "servergrouplist"; \
-        sleep ${sleeptime}; \
+    ( echo "login ${username} ${passphrase}"; sleep ${sleeptime}; \
+        echo "use 1"; sleep ${sleeptime}; \
+        echo "servergrouplist"; sleep ${sleeptime}; \
         echo "quit" ) | \
         telnet  ${server} ${port} > ${tmpDir}/${tmp10}
 
-    ( echo "login ${username} ${passphrase}"; \
-        sleep ${sleeptime}; \
-        echo "use 1"; \
-        sleep ${sleeptime}; \
-        echo "serverinfo"; \
-        sleep ${sleeptime}; \
+    ( echo "login ${username} ${passphrase}"; sleep ${sleeptime}; \
+        echo "use 1"; sleep ${sleeptime}; \
+        echo "serverinfo"; sleep ${sleeptime}; \
         echo "quit" ) | \
         telnet  ${server} ${port} > ${tmpDir}/${tmp11}
 }
@@ -123,12 +119,9 @@ function parseClientData ()
 {
     counter=0
     while IFS='' read -r line || [[ -n "$line" ]]; do
-        ( echo "login ${username} ${passphrase}"; \
-            sleep ${sleeptime}; \
-            echo "use 1"; \
-            sleep ${sleeptime}; \
-            echo "clientinfo clid=$line"; \
-            sleep ${sleeptime}; \
+        ( echo "login ${username} ${passphrase}"; sleep ${sleeptime}; \
+            echo "use 1"; sleep ${sleeptime}; \
+            echo "clientinfo clid=$line"; sleep ${sleeptime}; \
             echo "quit" ) | \
             telnet  ${server} ${port} >> ${tmpDir}/${clientDataDir}/client_${counter}
         counter=$((counter+1))
@@ -140,6 +133,18 @@ function parseClientData ()
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
+
+            # the following if is a bit creepy due to the regex and piping and formating stuff
+            # what it actually does is to grep and cut the file client_${counter}
+            # until the output of the single line containing "client_away" and eventually
+            # checks, whether it is == 1.
+            #
+            # the next if does the same for the line containing "client_output_muted".
+            #
+            # if one of these are == 1 the whole statement is true and the user is recognized
+            # as "away" and the result is 1, so it echos "1" to ${awaystatus}.
+            #
+            # if this logical "OR" is 'false' "0" will be ecohed to ${awaystatus}
             if [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
                 grep -e 'client_away' | \
                 cut -d '=' -f 2 | \
