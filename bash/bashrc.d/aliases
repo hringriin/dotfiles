@@ -55,7 +55,7 @@ alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 
 # make me faster :-)
-alias 'make'='make -j8'
+#alias 'make'='make -j8'
 
 #########
 # GAMES #
