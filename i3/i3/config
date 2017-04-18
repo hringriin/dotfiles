@@ -117,7 +117,7 @@ set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
-set $workspace5 "5: "
+set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7"
 set $workspace8 "8"
@@ -129,9 +129,9 @@ set $workspace13 "13"
 set $workspace14 "14"
 set $workspace15 "15"
 set $workspace16 "16"
-set $workspace17 "17"
-set $workspace18 "18"
-set $workspace19 "19: "
+set $workspace17 "17: "
+set $workspace16 "18: "
+set $workspace18 "19: "
 set $workspace20 "20: "
 
 # switch to workspace
@@ -233,20 +233,34 @@ bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png"
 
 # Bind Application Classes to workspaces
 assign [class="Thunderbird"] $workspace1
+
 assign [class="Gajim"] $workspace2
 assign [class="xterm"] $workspace2
 assign [class="XTerm"] $workspace2
+
 assign [class="Hexchat"] $workspace3
+
 assign [class="Whatsie"] $workspace4
+
 assign [class="Firefox"] $workspace5
 assign [class="Navigator"] $workspace5
 assign [class="Pale moon"] $workspace5
 assign [class="chromium"] $workspace5
+
 assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
 assign [class="factorio"] $workspace10
-assign [class="TeamSpeak 3"] $workspace18
-assign [class="Dropbox"] $workspace19
+
+assign [class="gitkraken"] $workspace17
+assign [class="GitKraken"] $workspace17
+
+assign [class="spotify"] $workspace18
+assign [class="Spotify"] $workspace18
+
+assign [class="TeamSpeak 3"] $workspace19
+
+assign [class="Dropbox"] $workspace20
+
 assign [class="ownCloud"] $workspace20
 
 # Keyboard Layout
