@@ -129,7 +129,7 @@ function parseClientData ()
 
     unset counter
 
-    #away status
+    # away status
     counter=0
     while ( true ) ; do
         if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
@@ -222,19 +222,19 @@ function parseClientData ()
     done
     unset counter
 
-    # client away
-    counter=0
-    while ( true ) ; do
-        if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
-            sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
-                grep -e 'client_away' | \
-                cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
-            counter=$((counter+1))
-        else
-            break
-        fi
-    done
-    unset counter
+    ## client away
+    #counter=0
+    #while ( true ) ; do
+    #    if [[ -f ${tmpDir}/${clientDataDir}/client_${counter} ]] ; then
+    #        sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+    #            grep -e 'client_away' | \
+    #            cut -d '=' -f 2 >> ${tmpDir}/${clientDataDir}/${clversion}
+    #        counter=$((counter+1))
+    #    else
+    #        break
+    #    fi
+    #done
+    #unset counter
 
 }
 
