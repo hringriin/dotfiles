@@ -31,6 +31,7 @@ neededPackerPrgorammes=(
     'adduser'
     'dropbox'
     'dropbox-cli'
+    'gitkraken'
     'i3lock-fancy-dualmonitors-git'
     'spotify-legacy'
     'ttf-font-awesome'
