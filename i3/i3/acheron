@@ -80,6 +80,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle    
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
 
+# Screen Rotation
+bindsym XF86RotateWindows exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
+
 # Startup Applications
 exec owncloud
 exec dropbox
