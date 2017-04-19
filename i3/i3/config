@@ -130,8 +130,8 @@ set $workspace14 "14"
 set $workspace15 "15"
 set $workspace16 "16"
 set $workspace17 "17: "
-set $workspace16 "18: "
-set $workspace18 "19: "
+set $workspace18 "18: "
+set $workspace19 "19: "
 set $workspace20 "20: "
 
 # switch to workspace
@@ -226,7 +226,7 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 # transparency for window manager
 exec compton -f
 #exec systemctl --user restart redshift.service
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
 
 # screenshot
 bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png"
