@@ -256,14 +256,25 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'rhysd/committia.vim'
 Plug 'mattn/vim-maketable'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/ZoomWin'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
+
+" <debugging>
+"Plug 'jodosha/vim-godebug'
+"Plug 'fatih/vim-go'
+"Plug 'derekparker/delve'
+" </debugging>
+
+" <themes>
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'morhetz/gruvbox'
+" </themes>
+
 call plug#end()
 
 " ZoomWin
