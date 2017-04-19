@@ -284,7 +284,7 @@ function cleanup()
     rm -rf ${tmpDir}/${missingPacmanList}
     rm -rf ${tmpDir}/${missingPackerList}
     echo -e "... done!\n\n"
-    sleep 1
+    sleep 2
 }
 
 function unsetVars()
@@ -327,7 +327,7 @@ function addToSudoers()
 function installTexlive()
 {
     echo -e "\n\nInstalling texlive now ...\n\n"
-    sleep 2
+    sleep 1
     if pacman -Qi texlive-core &> /dev/null ; then
         su -c "pacman -S $(pacman -Ssq texlive) sage" root
     else
@@ -415,7 +415,7 @@ function main2()
 function installPacker()
 {
     echo -e "\n\nInstalling packer ...\n\n"
-    sleep 2
+    sleep 1
     if pacman -Qi packer &> /dev/null ; then
         echo -e "packer ... \e[92minstalled\e[0m" >> ${tmpDir}/${tmp1}
     else
@@ -436,7 +436,7 @@ function installPacker()
 function linkConfigs()
 {
     echo -e "\n\nLinking configuration files now."
-    sleep 2
+    sleep 1
 
     # Home directory only accessable for this user
     chmod go-rwx ~
@@ -522,9 +522,10 @@ function linkConfigs()
     ln -fsv ${repoPath}/X/Xdefaults ~/.Xdefaults
     ln -fsv ${repoPath}/X/xinitrc ~/.xinitrc
 
-    sleep 2
+    sleep 1
 
     echo -e "\n\n ... done linking files!\n\n"
+    sleep 2
 }
 
 function systemdServicesLink()
@@ -533,11 +534,9 @@ function systemdServicesLink()
     sleep 2
 
     # list of services
-    sleep 2
-    echo -e "\n\nSystemD"
+    sleep 1
     sudo cp -ifv ${repoPath}/systemd/suspend@.service /etc/systemd/system/suspend@.service
-    echo -e "SystemD </>\n\n"
-    sleep 3
+    sleep 1
 
     echo -e "\n\n ... done linking Systemd Services!\n\n"
     sleep 2
@@ -546,10 +545,10 @@ function systemdServicesLink()
 function systemdServicesEnable()
 {
     echo -e "\n\nEnabling Systemd Services ...\n\n"
-    sleep 2
+    sleep 1
 
     servicesToEnable=(
-        "suspend${USER}"
+        "suspend@${USER}"
         "ntpd.service"
     )
 
