@@ -65,6 +65,9 @@ bindsym XF86AudioPause exec playerctrl pause
 bindsym XF86AudioNext exec playerctrl next
 bindsym XF86AudioPrev exec playerctrl previous
 
+# Display blank disabled
+xset s off
+
 # Set default Display Setup and Resolution
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
