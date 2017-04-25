@@ -258,6 +258,8 @@ assign [class="spotify"] $workspace18
 assign [class="Spotify"] $workspace18
 
 assign [class="TeamSpeak 3"] $workspace19
+assign [class="Mumble"] $workspace19
+assign [class="mumble"] $workspace19
 
 assign [class="Dropbox"] $workspace20
 
