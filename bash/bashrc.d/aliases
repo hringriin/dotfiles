@@ -54,6 +54,8 @@ alias 'REPOSITORIES'='cd ~/Repositories/'
 alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 
+alias 'MIPS'='java -jar ~/Downloads/Mars4_5.jar'
+
 # make me faster :-)
 #alias 'make'='make -j8'
 
