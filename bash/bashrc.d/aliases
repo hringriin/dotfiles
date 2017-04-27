@@ -75,6 +75,13 @@ function ffactorio-0-14-22 {
 }
 alias 'factorio-0-14-22'='ffactorio-0-14-22'
 
+# Factorio experimental
+function ffactorio-exp {
+    cd /home/${USER}/Games/factorio_experimental/factorio/bin/x64/
+    padsp ./factorio
+}
+alias 'factorio-exp'='ffactorio-exp'
+
 ##############
 # WINE GAMES #
 ##############
