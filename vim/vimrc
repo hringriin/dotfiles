@@ -261,6 +261,7 @@ Plug 'rhysd/committia.vim'
 Plug 'mattn/vim-maketable'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/ZoomWin'
+Plug 'AndrewRadev/multichange.vim'
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 
