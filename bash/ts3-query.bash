@@ -101,7 +101,7 @@ function parseClientList ()
     sed -e 's/\s\+/\n/g' ${tmpDir}/${tmp1} | \
         grep 'client_nickname' | \
         grep -v 'serveradmin' | \
-        sed -e 's/\\s/ /g' | \
+        #sed -e 's/\\s/ /g' | \
         cut -d '=' -f 2 > ${tmpDir}/${clientDataDir}/${clientnames}
 }
 
@@ -268,7 +268,7 @@ function deliverServer ()
 {
     # this file is crucial for the php script, so it should be copied any time
     # the server information is delivered on every run, so it is placed here
-    cp ${tmpDir}/${clientDataDir}/${clientnames} ${serverDir}/names
+    cat ${tmpDir}/${clientDataDir}/${clientnames} | sed -e 's/\\s/ /g' > ${serverDir}/names
 
     cp ${tmpDir}/${serverDataDir}/${srvVersion} ${serverDir}/srvVersion
     cp ${tmpDir}/${serverDataDir}/${srvPlatform} ${serverDir}/srvPlatform
