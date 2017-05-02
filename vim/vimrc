@@ -97,6 +97,18 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+" reads the file when changes where made out of vim (e.g. git)
+set autoread
+
+" Show all changes (e.g. how many lines yanked)
+set report=0
+
+" Set which parantheses to match
+set matchpairs=(:),{:},[:],<:>
+
+" fast terminal?
+set ttyfast
+
 " German umlauts #
 " ################
 
@@ -221,6 +233,7 @@ endfunction
 " Offset fuer Sichtbarkeit der Zeilen, immer mindestens 10 Zeilen nach oben
 " oder unten gemessen vom Cursor, ausser Top / Bottom
 :set scrolloff=7
+:set sidescroll=30
 
 " tabbing and splitting customization
 " switch to left split
@@ -289,3 +302,17 @@ noremap <Leader>f :ZoomWin<CR>
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+" Typo
+iab dsa         das
+iab alos        also
+iab laso        also
+iab acuh        auch
+iab bracuht     braucht
+iab nciht       nicht
+iab ICh         Ich
+iab shc         sch
+iab amchen      machen
+iab amche       mache
+iab Latex       LaTeX
+iab latex       LaTeX
