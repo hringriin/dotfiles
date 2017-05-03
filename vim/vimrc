@@ -5,7 +5,7 @@ set guioptions+=a
 set history=500
 
 " Symbol for wrapped lines
-set showbreak=
+set showbreak=
 
 " No line wrapping
 :set nowrap
