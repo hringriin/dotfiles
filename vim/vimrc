@@ -235,8 +235,7 @@ endfunction
 :set scrolloff=7
 :set sidescroll=30
 
-" key '0' toggle between first non whitespace character and first column in
-" line
+" key '0' toggle between first non whitespace character and first column in line
 function! ToggleHomeZero()
     let pos = getpos('.')
     execute "normal! ^"
