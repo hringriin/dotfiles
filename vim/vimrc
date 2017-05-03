@@ -235,13 +235,6 @@ endfunction
 :set scrolloff=7
 :set sidescroll=30
 
-" tabbing and splitting customization
-" switch to left split
-":nnoremap <c-h> <Ctrl>v <c-w> h
-
-" switch to right split
-":nnoremap <c-l> <Ctrl>v <c-w> l
-
 " key '0' toggle between first non whitespace character and first column in
 " line
 function! ToggleHomeZero()
