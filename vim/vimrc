@@ -295,8 +295,6 @@ noremap <Leader>f :ZoomWin<CR>
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-hi NonText      guifg=red      guibg=darkblue         gui=none
-hi NonText      ctermfg=red    ctermbg=darkblue       cterm=none
 
 
 " Typo
