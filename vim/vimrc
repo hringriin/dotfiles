@@ -1,11 +1,67 @@
-set clipboard=unnamedplus
-set guioptions+=a
+" Checks, if the operating system is linux
+let operatingSystem=system('uname -a')
+if operatingSystem =~? "\Linux"
+    if operatingSystem =~? "\ARCH"
+        runtime! archlinux.vim
+    else
+        runtime! debian.vim
+    endif
+endif
+
+"########################################################################################
+
+" Plugin List for 'plug' addon
+" Check if 'plug' is installed
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  :echo "Plug is not installed. It will be curled! now"
+  !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source /etc/vimrc
+  :echo "\n\n Please restart vim after Plug has finished updating!\n\n"
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'rhysd/committia.vim'
+Plug 'mattn/vim-maketable'
+Plug 'vim-scripts/ZoomWin'
+Plug 'AndrewRadev/multichange.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree
+Plug 'vim-airline/vim-airline/'         " new status bar
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'lervag/vimtex'
+"Plug 'Valloric/YouCompleteMe'
+
+" debugging (not debugging vim but debugging features for vim)
+"Plug 'jodosha/vim-godebug'
+"Plug 'fatih/vim-go'
+"Plug 'derekparker/delve'
+
+" themes
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+"########################################################################################
+
+" encoding
+scriptencoding utf-8
+set encoding=utf-8
+
+" edit vimrc with typing \ev while \ is the current leader character
+nmap <Leader>ev :tabnew /etc/vimrc<CR>
+
+"set clipboard=unnamedplus
+"set guioptions+=a
 
 " do not erase background
 set t_ut=
 
 " Command line history
-set history=500
+set history=9999
+
 " automatically source the .vimrc
 augroup autosourcing
     autocmd!
@@ -16,27 +72,20 @@ augroup END
 set showbreak=
 
 " No line wrapping
-:set nowrap
+set nowrap
 
 " encryption
-:set cm=blowfish
-
-" Show the cursor position all the time
-set ruler
+set cm=blowfish
 
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
-" Checks, if the operating system is linux
-let operatingSystem=system('uname -a')
-:if operatingSystem =~? "\Linux"
-:    if operatingSystem =~? "\ARCH"
-:        runtime! archlinux.vim
-:    else
-:        runtime! debian.vim
-:    endif
-:endif
+" vim-airline will do this from now on
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
 
 " Press F12 to trigger Makefile
 nnoremap <buffer> <F12> :w<CR>:!make<CR>
@@ -67,14 +116,11 @@ noremap <C-k> <C-w>k
 " Shortcut to resize splits
 " Press <CTRL> + <SHIFT> + [lhjk] to expand or shring in each direction
 " Press <CTRL> + <SHIFT> + <SPACE> to equalize
-vnoremap <A-h> <C-<>
-vnoremap <A-j> <C->>
-vnoremap <A-k> <C-+>
-vnoremap <A-l> <C-->
-vnoremap <A-space> <C-w>=
-
-scriptencoding utf-8
-set encoding=utf-8
+"vnoremap <A-h> <C-<>
+"vnoremap <A-j> <C->>
+"vnoremap <A-k> <C-+>
+"vnoremap <A-l> <C-->
+"vnoremap <A-space> <C-w>=
 
 if has("syntax")
   syntax on
@@ -88,9 +134,8 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
-set mouse=""        " Enable mouse usage
+"set mouse=""        " Enable mouse usage
                     " n     Normal mode
                     " v     Visual mode
                     " i     Insert mode
@@ -100,10 +145,9 @@ set mouse=""        " Enable mouse usage
                     " r     for |hit-enter| and |more-prompt| prompt
                     " `empty-string` for no mouse support at all
 
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+" not a beautiful solution to disable mouse support, but with only 'set mouse=' or
+" 'set mouse=""' it will only work , if i reload the vimrc with 'source %'.
+autocmd BufEnter * set mouse=
 
 " reads the file when changes where made out of vim (e.g. git)
 set autoread
@@ -115,8 +159,14 @@ set report=0
 set matchpairs=(:),{:},[:],<:>
 
 " fast terminal?
+" as far as I understand, the screen updates (redrawings) will be set to
+" character-wise instead of linewise. should be faster, i suppose and much mor
+" fluent
 set ttyfast
 
+"#################################################################################################################################################
+
+" ################
 " German umlauts #
 " ################
 
@@ -165,37 +215,37 @@ let g:file_types = ['mkd', 'tex', 'text', 'mail', 'gitcommit', 'markdown', 'md']
 call ImplementUmlauts()
 
 " END UMLAUTS
-
+"#################################################################################################################################################
 
 " highlight search matches
-:set hlsearch
+set hlsearch
 
-" whitespaces statt tabs
-:set expandtab
+" whitespaces instead of tabulators
+set expandtab
 
-" tabgroesse
-:set tabstop=4
-:set shiftwidth=4
+" default tab size (4 whitespaces)
+set tabstop=4
+set shiftwidth=4
 
 " tabs werden als ¶¤¤¤ und Whitespaces als · angezeigt
-:set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
-:set list
+set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
+set list
 
 " Toggle listchars
 function! ToggleListChars()
-    :set list!
+    set list!
 endfunction
 
 " KeyBinding for ToggleListChars
-:map <F5> :call ToggleListChars()<CR>
+" will toggle showing invisible character, such as whitespaces
+map <F5> :call ToggleListChars()<CR>
 
 " Keybinding for sorting under visual block
-:map <F6> :'<,'>sort /\ze\%V/<CR>
+map <F6> :'<,'>sort /\ze\%V/<CR>
 
-:set numberwidth=4
-:set relativenumber
-:set number
-:hi CursorLineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+set numberwidth=4
+set relativenumber
+set number
 
 " Remove trailing whitespaces
 function! TrailingWhitespaces()
@@ -203,24 +253,17 @@ function! TrailingWhitespaces()
 endfunction
 
 " KeyBinding for TrailingWhitespaces
-:map <F2> :call TrailingWhitespaces()<CR>
+map <F2> :call TrailingWhitespaces()<CR>
 
 " KeyBinding for Retabbing
-:map <F1> :retab<CR>
+map <F1> :retab<CR>
 
 " Filetype Options
 autocmd FileType lua setlocal shiftwidth=2
 autocmd FileType lua setlocal tabstop=2
 
-:let myGray="2"
-
-" Cursor Highlighting
-":hi CursorLine term=bold cterm=bold ctermbg=6 guibg=6
-":hi CursorColumn term=NONE cterm=NONE ctermbg=6 guibg=6
-":hi ColorColumn term=NONE cterm=NONE ctermbg=5 guibg=5
-
 " Keymapping for Toggle Cursorline and -column
-:map <F3> :set cursorcolumn!<Bar>set cursorline!<Bar>:call MyColorColumn()<CR>
+map <F3> :set cursorcolumn!<Bar>set cursorline!<CR>
 
 " Function for toggelling colorcolumn 90
 function! MyColorColumn()
@@ -232,18 +275,18 @@ function! MyColorColumn()
 endfunction
 
 " Keymapping for Toggle Linemarker for max line 90
-:map <F4> :call MyColorColumn()<CR>
+map <F4> :call MyColorColumn()<CR>
 
 " Ignore case when searching
 " use \C for case-sensitive search, like '/\CJava' to search for 'Java'
-:set ignorecase
+set ignorecase
 
-" Offset fuer Sichtbarkeit der Zeilen, immer mindestens 10 Zeilen nach oben
-" oder unten gemessen vom Cursor, ausser Top / Bottom
-:set scrolloff=7
-:set sidescroll=30
+" show at least 7 lines below or above the current line, except, if reaching
+" the bottom or the top of the file
+set scrolloff=7
+set sidescroll=30
 
-" key '0' toggle between first non whitespace character and first column in line
+" key '0' toggles between first non whitespace character and first column in line
 function! ToggleHomeZero()
     let pos = getpos('.')
     execute "normal! ^"
@@ -254,51 +297,13 @@ endfunction
 nnoremap <silent> 0 :call ToggleHomeZero()<CR>
 
 " reselect visual block after indent/outdent indent visual
+" select a couple of lines with VISUAL LINE and then press > one or two times
+" to see what this does. it's pretty awesome :-)
 vnoremap < <gv
 vnoremap > >gv
 
-" Plugin List for 'plug' addon
-" Check if 'plug' is installed
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  :echo "Plug is not installed. It will be curled! now"
-  !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source /etc/vimrc
-  :echo "\n\n Please restart vim after Plug has finished updating!\n\n"
-endif
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'rhysd/committia.vim'
-Plug 'mattn/vim-maketable'
-Plug 'vim-scripts/ZoomWin'
-Plug 'AndrewRadev/multichange.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree
-Plug 'vim-airline/vim-airline/'         " new status bar
-"Plug 'lervag/vimtex'
-"Plug 'Valloric/YouCompleteMe'
-
-" <debugging>
-"Plug 'jodosha/vim-godebug'
-"Plug 'fatih/vim-go'
-"Plug 'derekparker/delve'
-" </debugging>
-
-" <themes>
-Plug 'YorickPeterse/happy_hacking.vim'
-Plug 'morhetz/gruvbox'
-" </themes>
-
-call plug#end()
-
-" needed for vim-airline
-set laststatus=2
-
 " ZoomWin
 noremap <Leader>f :ZoomWin<CR>
-
 
 " Colorscheme set to 'gruvbox'
 " https://github.com/morhetz/gruvbox
@@ -308,8 +313,12 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
+" needed for vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
 
-" Typo
+" Typo correction
 iab dsa         das
 iab alos        also
 iab laso        also
