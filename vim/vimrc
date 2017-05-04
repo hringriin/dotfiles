@@ -3,6 +3,11 @@ set guioptions+=a
 
 " Command line history
 set history=500
+" automatically source the .vimrc
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost /etc/vimrc source %
+augroup END
 
 " Symbol for wrapped lines
 set showbreak=
