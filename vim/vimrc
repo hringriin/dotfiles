@@ -290,6 +290,9 @@ Plug 'morhetz/gruvbox'
 
 call plug#end()
 
+" needed for vim-airline
+set laststatus=2
+
 " ZoomWin
 noremap <Leader>f :ZoomWin<CR>
 
