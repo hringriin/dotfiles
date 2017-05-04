@@ -1,6 +1,9 @@
 set clipboard=unnamedplus
 set guioptions+=a
 
+" do not erase background
+set t_ut=
+
 " Command line history
 set history=500
 " automatically source the .vimrc
