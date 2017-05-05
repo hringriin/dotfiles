@@ -236,6 +236,10 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" Filetype Options
+autocmd FileType lua setlocal shiftwidth=2
+autocmd FileType lua setlocal tabstop=2
+
 " tabs werden als ¶¤¤¤ und Whitespaces als · angezeigt
 set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
 set list
@@ -266,10 +270,6 @@ map <F2> :call TrailingWhitespaces()<CR>
 
 " KeyBinding for Retabbing
 map <F1> :retab<CR>
-
-" Filetype Options
-autocmd FileType lua setlocal shiftwidth=2
-autocmd FileType lua setlocal tabstop=2
 
 " Keymapping for Toggle Cursorline and -column
 map <F3> :set cursorcolumn!<Bar>set cursorline!<CR>
