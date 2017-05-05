@@ -27,8 +27,8 @@ Plug 'rhysd/committia.vim'
 Plug 'mattn/vim-maketable'
 Plug 'vim-scripts/ZoomWin'
 Plug 'AndrewRadev/multichange.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree
+Plug 'scrooloose/nerdtree'              " Nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
 Plug 'vim-airline/vim-airline/'         " new status bar
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'lervag/vimtex'
@@ -45,6 +45,15 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 "########################################################################################
+
+" Nerdtree
+" If vim opens a directory like 'vim /etc/tmp' nerdtree will start
+" automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Toggle Nerdtree on/off
+nmap <Leader>n :NERDTreeToggle<CR>
 
 " encoding
 scriptencoding utf-8
