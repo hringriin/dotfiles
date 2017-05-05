@@ -31,6 +31,7 @@ Plug 'scrooloose/nerdtree'              " Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
 Plug 'vim-airline/vim-airline/'         " new status bar
 Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 
@@ -45,6 +46,18 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 "########################################################################################
+
+" syntastic settings
+" does not show anything until yet, needs to be checked! maybe because of
+" vim-airline
+set statusline+=%#warningsmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Nerdtree
 " If vim opens a directory like 'vim /etc/tmp' nerdtree will start
