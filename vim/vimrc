@@ -325,10 +325,11 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-" needed for vim-airline
+" vim-airline
 set laststatus=2
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
+let g:airline_detect_iminsert=1
 
 " Typo correction
 iab dsa         das
