@@ -32,6 +32,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
 Plug 'vim-airline/vim-airline/'         " new status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'         " comments
+Plug 'airblade/vim-gitgutter'           " git commit status side line
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
