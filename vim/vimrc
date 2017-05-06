@@ -32,6 +32,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
 Plug 'vim-airline/vim-airline/'         " new status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
+Plug 'scrooloose/nerdcommenter'         " comments
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
 
@@ -111,18 +112,6 @@ set noshowcmd
 
 " Press F12 to trigger Makefile
 nnoremap <buffer> <F12> :w<CR>:!make<CR>
-
-" place/remove # at the beginning of the current/visual selected line
-vnoremap ibc :s/^/#/g<CR>:let @/ = ""<CR>
-vnoremap iBc :s/^#//g<CR>:let @/ = ""<CR>
-
-" place/remove // at the beginning of the current/visual selected line
-vnoremap ijc :s/^/\/\//g<CR>:let @/ = ""<CR>
-vnoremap iJc :s/^\/\///g<CR>:let @/ = ""<CR>
-
-" place/remove " at the beginning of the current/visual selected line
-vnoremap ivc :s/^/"/g<CR>:let @/ = ""<CR>
-vnoremap iVc :s/^"//g<CR>:let @/ = ""<CR>
 
 " in insert mode, press ( to achieve (  )
 " notice the two whitespaces between the parentheses
