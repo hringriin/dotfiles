@@ -51,6 +51,9 @@ call plug#end()
 
 "########################################################################################
 
+" globally disable foldings
+set nofoldenable
+
 " syntastic settings
 " does not show anything until yet, needs to be checked! maybe because of
 " vim-airline
