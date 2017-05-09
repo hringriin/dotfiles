@@ -35,6 +35,7 @@ Plug 'scrooloose/nerdcommenter'         " comments
 Plug 'airblade/vim-gitgutter'           " git commit status side line
 Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
