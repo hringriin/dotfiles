@@ -343,6 +343,9 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 let g:airline_detect_iminsert=1
 
+"hi NonText        term=bold  cterm=bold  ctermfg=darkblue  gui=bold      guifg=#cc0000
+"hi LineNr         term=underline  cterm=bold  ctermfg=darkcyan  guifg=Yellow
+
 " Typo correction
 iab dsa         das
 iab alos        also
