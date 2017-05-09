@@ -54,6 +54,13 @@ call plug#end()
 " globally disable foldings
 set nofoldenable
 
+" MARKDOWN SYNTAX PLUGIN 'VIM-MARKDOWN'
+" disable folding
+let g:vim_markdown_folding_disabled = 1
+" Allow for the TOC window to auto-fit when it's possible for it to shrink. It never
+" increases its default size (half screen), it only shrinks.
+let g:vim_markdown_toc_autofit = 1
+
 " syntastic settings
 " does not show anything until yet, needs to be checked! maybe because of
 " vim-airline
