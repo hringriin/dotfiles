@@ -124,8 +124,8 @@ set noruler
 set laststatus=0
 set noshowcmd
 
-" Press F12 to trigger Makefile
-nnoremap <buffer> <F12> :w<CR>:!make<CR>
+" Press F12 to trigger LaTeX Makefile and open pdf
+nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
 
 " in insert mode, press ( to achieve (  )
 " notice the two whitespaces between the parentheses
