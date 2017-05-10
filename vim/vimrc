@@ -137,10 +137,10 @@ nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
 
 " Shortcut to switch between splits
 " Press <CTRL> + [lhjk] to switch to left,right,lower,upper split
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
+"noremap <C-l> <C-w>l
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
 
 " Shortcut to resize splits
 " Press <CTRL> + <SHIFT> + [lhjk] to expand or shring in each direction
