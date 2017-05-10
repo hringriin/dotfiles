@@ -36,6 +36,7 @@ Plug 'airblade/vim-gitgutter'           " git commit status side line
 Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
+Plug 'matze/vim-move'                   " move blobs of code up/down with <C-j>/<C-k>
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
@@ -51,6 +52,9 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 "########################################################################################
+
+" vim-move modifier key
+let g:move_key_modifier = 'C'
 
 " globally disable foldings
 set nofoldenable
