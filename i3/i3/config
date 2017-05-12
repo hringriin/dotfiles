@@ -247,6 +247,7 @@ assign [class="Navigator"] $workspace5
 assign [class="Pale moon"] $workspace5
 assign [class="chromium"] $workspace5
 
+assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
 assign [class="factorio"] $workspace10
