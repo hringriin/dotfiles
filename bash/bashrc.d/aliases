@@ -96,3 +96,6 @@ alias 'wowlichking'='wine "C:\Program Files (x86)\World of Warcraft - Wrath of t
 
 # Steam
 alias 'wineSteam'='wine "C:\Program Files (x86)\Steam\Steam.exe"'
+
+# Dungeon Keeper Gold
+alias 'wineDEEPER'='wine "C:\GOG Games\Dungeon Keeper Gold\DOSBOX\DOSBox.exe" "C:\GOG Games\Dungeon Keeper Gold\DOS4GW.EXE"'
