@@ -1,10 +1,12 @@
 [user]
     name = Joschka Koester
     email = jkoester@tzi.de
+
 [core]
     editor = vim
     pager = less
     excludesfile = ~/.gitignore
+
 [push]
     default = matching
 
@@ -15,6 +17,7 @@
     ls-assume-unchanged = !git ls-files -v | grep ^h | awk '{print $2}'
     ignore-changes = update-index --assume-unchanged
     resume-changes = update-index --no-assume-unchanged
+    dt = difftool
 
 [color]
     branch = auto
@@ -26,7 +29,15 @@
     decorate = full
 
 [diff]
-    context = 5
+    context = 4
     algorithm = histogram
+    tool = vimdiff
+
 [pull]
     ff = only
+
+[merge]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
