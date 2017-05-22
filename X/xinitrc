@@ -11,3 +11,4 @@ exec bluetooth off &
 
 export SSH_ASKPASS=/usr/lib/ssh/ssh-askpass
 exec i3
+#exec gnome-session
