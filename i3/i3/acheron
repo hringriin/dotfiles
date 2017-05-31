@@ -83,6 +83,18 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease scree
 # Screen Rotation
 bindsym XF86RotateWindows exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
 
+# Set Default Workspaces for LVDS1
+workspace $workspace1 output LVDS1
+workspace $workspace2 output LVDS1
+workspace $workspace3 output LVDS1
+workspace $workspace4 output LVDS1
+workspace $workspace5 output LVDS1
+workspace $workspace6 output LVDS1
+workspace $workspace7 output LVDS1
+workspace $workspace8 output LVDS1
+workspace $workspace9 output LVDS1
+workspace $workspace10 output LVDS1
+
 # Startup Applications
 exec owncloud
 exec dropbox
