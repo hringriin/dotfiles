@@ -19,25 +19,65 @@ if [[ ! -d ${wcpath} ]] ; then
     mkdir ${wcpath}
 fi
 
-ln -fsv ${srcpath}/alias.conf ${wcpath}/alias.conf
-ln -fsv ${srcpath}/aspell.conf ${wcpath}/aspell.conf
-ln -fsv ${srcpath}/charset.conf ${wcpath}/charset.conf
-ln -fsv ${srcpath}/exec.conf ${wcpath}/exec.conf
-ln -fsv ${srcpath}/guile ${wcpath}/guile
-ln -fsv ${srcpath}/irc.conf ${wcpath}/irc.conf
-ln -fsv ${srcpath}/logger.conf ${wcpath}/logger.conf
-ln -fsv ${srcpath}/lua ${wcpath}/lua
-ln -fsv ${srcpath}/perl ${wcpath}/perl
-ln -fsv ${srcpath}/plugins.conf ${wcpath}/plugins.conf
-ln -fsv ${srcpath}/python ${wcpath}/python
-ln -fsv ${srcpath}/relay.conf ${wcpath}/relay.conf
-ln -fsv ${srcpath}/ruby ${wcpath}/ruby
-ln -fsv ${srcpath}/script ${wcpath}/script
-ln -fsv ${srcpath}/script.conf ${wcpath}/script.conf
-ln -fsv ${srcpath}/tcl ${wcpath}/tcl
-ln -fsv ${srcpath}/trigger.conf ${wcpath}/trigger.conf
-ln -fsv ${srcpath}/weechat.conf ${wcpath}/weechat.conf
-ln -fsv ${srcpath}/xfer.conf ${wcpath}/xfer.conf
+files=(
+    'alias.conf'
+    'aspell.conf'
+    'buflist.conf'
+    'charset.conf'
+    'exec.conf'
+    'fifo.conf'
+    'irc.conf'
+    'logger.conf'
+    'plugins.conf'
+    'relay.conf'
+    'script.conf'
+    'trigger.conf'
+    'weechat.conf'
+    'xfer.conf'
+)
+
+dirs=(
+    'guile'
+    'lua'
+    'perl'
+    'python'
+    'ruby'
+    'script'
+    'tcl'
+)
+
+for var in "${dirs[@]}"
+do
+    ln -fsv ${srcpath}/${var} ${wcpath}/${var}
+done
+
+unset var
+
+for var in "${files[@]}"
+do
+    ln -fsv ${srcpath}/${var} ${wcpath}/${var}
+done
+
+#ln -fsv ${srcpath}/alias.conf ${wcpath}/alias.conf
+#ln -fsv ${srcpath}/aspell.conf ${wcpath}/aspell.conf
+#ln -fsv ${srcpath}/buflist.conf ${wcpath}/buflist.conf
+#ln -fsv ${srcpath}/charset.conf ${wcpath}/charset.conf
+#ln -fsv ${srcpath}/exec.conf ${wcpath}/exec.conf
+#ln -fsv ${srcpath}/guile ${wcpath}/guile
+#ln -fsv ${srcpath}/irc.conf ${wcpath}/irc.conf
+#ln -fsv ${srcpath}/logger.conf ${wcpath}/logger.conf
+#ln -fsv ${srcpath}/lua ${wcpath}/lua
+#ln -fsv ${srcpath}/perl ${wcpath}/perl
+#ln -fsv ${srcpath}/plugins.conf ${wcpath}/plugins.conf
+#ln -fsv ${srcpath}/python ${wcpath}/python
+#ln -fsv ${srcpath}/relay.conf ${wcpath}/relay.conf
+#ln -fsv ${srcpath}/ruby ${wcpath}/ruby
+#ln -fsv ${srcpath}/script ${wcpath}/script
+#ln -fsv ${srcpath}/script.conf ${wcpath}/script.conf
+#ln -fsv ${srcpath}/tcl ${wcpath}/tcl
+#ln -fsv ${srcpath}/trigger.conf ${wcpath}/trigger.conf
+#ln -fsv ${srcpath}/weechat.conf ${wcpath}/weechat.conf
+#ln -fsv ${srcpath}/xfer.conf ${wcpath}/xfer.conf
 
 # the sec.conf has to be copied and decrypted
 cp -ifv ${srcpath}/sec.conf ${wcpath}/sec.conf
