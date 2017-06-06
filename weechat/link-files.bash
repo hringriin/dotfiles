@@ -13,6 +13,14 @@ else
     srcpath="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/weechat"
 fi
 
+if [[ ${wcpath} == "" ]] ; then
+    exit 1;
+fi
+
+if [[ ${srcpath} == "" ]] ; then
+    exit 1;
+fi
+
 # link the config files from the repository
 
 if [[ ! -d ${wcpath} ]] ; then
@@ -48,7 +56,7 @@ dirs=(
 
 for var in "${dirs[@]}"
 do
-    ln -fsv ${srcpath}/${var} ${wcpath}/${var}
+    ln -fsv ${srcpath}/${var} ${wcpath}
 done
 
 unset var
