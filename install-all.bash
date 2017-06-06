@@ -492,6 +492,12 @@ function linkConfigs()
     fi
     ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config
 
+    # termite
+    if [[ ! ( -d ~/.config/termite ) ]] ; then
+        mkdir --mode=700 -p ~/.config/termite
+    fi
+    ln -fsv ${repoPath}/termite/config ~/.config/termite/config
+
     # htop
     if [[ ! ( -d ~/.config/htop ) ]] ; then
         mkdir --mode=700 -p ~/.config/htop
