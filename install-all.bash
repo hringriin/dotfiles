@@ -124,6 +124,7 @@ neededProgrammes=(
     'sxiv'
     'teamspeak3'
     'terminator'
+    'termite'
     'texinfo'
     'thunar'
     'thunderbird'
