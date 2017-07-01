@@ -110,7 +110,6 @@ neededProgrammes=(
     'pulseaudio-equalizer'
     'pulseaudio-gconf'
     'pulseaudio-lirc'
-    'pulseaudio-xen'
     'pulseaudio-zeroconf'
     'ranger'
     'redshift'
