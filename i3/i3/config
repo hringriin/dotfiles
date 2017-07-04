@@ -253,6 +253,7 @@ assign [class="Firefox"] $workspace5
 assign [class="Navigator"] $workspace5
 assign [class="Pale moon"] $workspace5
 assign [class="chromium"] $workspace5
+assign [class="Vivaldi-stable"] $workspace5
 
 assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
