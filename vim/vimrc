@@ -37,6 +37,7 @@ Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
 Plug 'matze/vim-move'                   " move blobs of code up/down with <C-j>/<C-k>
+Plug 'johngrib/vim-game-code-break'     " a 'fun' game :-)
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
