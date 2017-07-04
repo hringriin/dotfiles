@@ -55,6 +55,12 @@ call plug#end()
 
 "########################################################################################
 
+" auto set screen title
+let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+if &term == "screen" || &term == "rxvt"
+  set title
+endif
+
 " vim-move modifier key
 let g:move_key_modifier = 'C'
 
