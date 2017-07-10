@@ -48,6 +48,10 @@ alias 'calc'='galculator'
 alias 'screentime'="(while sleep 1; do date +%T; echo -e '\f'; done) | sm --foreground=#00FF00 --background=#000000 -"
 alias 'trm'='~/TIMESCRIPT/TIMESCREEN.bash'
 alias 'trm-edit'='vim ~/TIMESCRIPT/TIMESCRIPT.bash'
+# cookie clicker afk message
+alias 'sm-red'='sm --foreground=#FF0000 --background=#111111'
+# green
+alias 'sm-green'='sm --foreground=#00FF00 --background=#000000'
 
 # Take me to the Repositories
 alias 'REPOSITORIES'='cd ~/Repositories/'
