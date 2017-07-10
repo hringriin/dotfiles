@@ -64,6 +64,10 @@ bindsym XF86AudioPause exec playerctrl pause
 bindsym XF86AudioNext exec playerctrl next
 bindsym XF86AudioPrev exec playerctrl previous
 
+# stupid stuff
+bindcode $mod+Shift+50 exec ~/Repositories/github.com/hringriin/cookie-clicker-auto-click/repo/mouse-spam.sh skynd
+bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
+
 # Calculator
 bindsym XF86Calculator exec galculator
 
