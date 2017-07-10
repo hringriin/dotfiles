@@ -281,3 +281,7 @@ bindsym $mod+Control+e exec setxkbmap en_US         # switch to us layout
 # diplay blank
 exec xset -dpms
 exec xset s 1800 1800
+
+# stupid stuff
+bindcode $mod+Shift+50 exec ~/ownCloud/Documents/cookie-clicker/hmk\ script/mouse-spam.sh skynd &> /home/hringriin/MSPAM.LOG
+bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
