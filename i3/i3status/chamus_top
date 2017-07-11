@@ -1,0 +1,26 @@
+# ACHERON specific config
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime local"
+order += "volume master"
+
+cpu_temperature 0 {
+    format = "CPU: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
+}
+
+load {
+    format = "  %1min %5min %15min"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+volume master {
+    format = "  %volume"
+    format_muted = "  (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
