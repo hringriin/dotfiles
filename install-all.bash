@@ -35,6 +35,9 @@ neededPackerPrgorammes=(
     'i3lock-fancy-dualmonitors-git'
     'spotify-legacy'
     'ttf-font-awesome'
+    'vivaldi'
+    'vivaldi-ffmpeg-codecs'
+    'vivaldi-widevine'
     'whatsie'
 )
 
@@ -56,6 +59,7 @@ neededProgrammes=(
     'file'
     'findutils'
     'firefox'
+    'flashplugin'
     'flex'
     'galculator'
     'gawk'
@@ -101,6 +105,7 @@ neededProgrammes=(
     'pass'
     'patch'
     'pavucontrol'
+    'pepper-flash'
     'pinentry'
     'pkg-config'
     'powerline-fonts'
