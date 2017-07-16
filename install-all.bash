@@ -101,6 +101,7 @@ neededProgrammes=(
     'openvpn'
     'owncloud-client'
     'pacman'
+    'pacmatic'
     'pandoc'
     'pass'
     'patch'
