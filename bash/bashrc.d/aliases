@@ -2,7 +2,7 @@
 alias 'packer'='packer --noedit --auronly'
 
 # Pacmatic
-if [[ ${HOSTNAME} -ne "sorth" ]] ; then
+if [[ "${HOSTNAME}" != "sorth" ]] ; then
     alias 'pacman'='pacmatic'
 fi
 
