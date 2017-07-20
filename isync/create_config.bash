@@ -23,7 +23,9 @@ main()
 
     for f in ~/.mutt/passwords/*
     do
-        fname=`echo ${f} | sed -e 's/.*\/\w*\.\w*\.\w*[\-]*\w*\.//'`     # why does this not map "test.test." and "test.test-test." ?
+        fname=`echo ${f} | sed -e 's/.*\/\w*\.\w*\.\w*[\-]*\w*\.//'`
+        fdname=`echo ${f} | sed -e 's/.*\/\w*\.//'`
+        mkdir -m 0700 -p ~/.mailfolder/${fdname}
         #insertPasswd `echo ${fname} | sed -e 's/account\.\w*\.\w*\.//' -f 2` ${f}
         insertPasswd ${fname} ${f}
     done
