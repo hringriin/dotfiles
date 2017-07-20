@@ -1,0 +1,15 @@
+# vim: ft=muttrc
+source ~/.mutt/passwords/password.com.gmail.blutige.kodoleber.esser
+
+set smtp_url            =   "smtp://blutige.kodoleber.esser@smtp.gmail.com:587/"
+set from                =   "blutige.kodoleber.esser@gmail.com"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/com.gmail.blutige.kodoleber.esser/"
+set spoolfile           =   "+Inbox"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+unset signature
+#set signature           =   "/path/to/file"
+set ssl_force_tls       =   yes
+unset ssl_starttls
+unset pgp_sign_as       =   

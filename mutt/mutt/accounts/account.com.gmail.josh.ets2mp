@@ -1,0 +1,15 @@
+# vim: ft=muttrc
+source ~/.mutt/passwords/password.com.gmail.josh.ets2mp
+
+set smtp_url            =   "smtp://josh.ets2mp@smtp.gmail.com:587/"
+set from                =   "josh.ets2mp@gmail.com"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/com.gmail.josh.ets2mp/"
+set spoolfile           =   "+Inbox"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+unset signature
+#set signature           =   "/path/to/file"
+set ssl_force_tls       =   yes
+unset ssl_starttls
+unset pgp_sign_as       =   

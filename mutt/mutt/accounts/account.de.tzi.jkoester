@@ -1,0 +1,13 @@
+# vim: ft=muttrc
+source ~/.mutt/passwords/password.de.tzi.jkoester
+
+set smtp_url            =   "smtp://jkoester@smtp-fb3.informatik.uni-bremen.de:587/"
+set from                =   "jkoester@tzi.de"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/de.tzi.jkoester/"
+set spoolfile           =   "+Inbox"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Uni Bremen ZfN und TZi/thunderbird.signatures.uni-bremen.txt"
+set ssl_force_tls       =   yes
+unset ssl_starttls

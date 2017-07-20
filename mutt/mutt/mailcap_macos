@@ -1,0 +1,29 @@
+text/plain; /usr/bin/less
+
+# MS Word documents
+application/msword; ~/.mutt/mailcap_macos.sh %s "-" '/Applications/TextEdit.app'
+
+# MS Excel documents
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; ~/.mutt/mailcap_macos.sh %s "-" '/opt/homebrew-cask/Caskroom/libreoffice/4.2.5/LibreOffice.app'
+
+# Images
+image/jpg; ~/.mutt/mailcap_macos.sh %s jpg
+image/jpeg; ~/.mutt/mailcap_macos.sh %s jpg
+image/pjpeg; ~/.mutt/mailcap_macos.sh %s jpg
+image/png; ~/.mutt/mailcap_macos.sh %s png
+image/gif; ~/.mutt/mailcap_macos.sh %s gif
+
+# PDFs
+application/pdf; ~/.mutt/mailcap_macos.sh %s pdf
+application/x-octet-stream; ~/.mutt/mailcap_macos.sh %s pdf
+application/force-download; ~/.mutt/mailcap_macos.sh %s pdf
+
+# HTML
+# text/html; ~/.mutt/mailcap_macos.sh %s html
+# text/html; ~/.mutt/shellmailcap_macos.sh %s html
+text/html; /usr/local/bin/lynx --dump %s; copiousoutput; nametemplate=%s.html
+
+# Unidentified files
+application/octet-stream; ~/.mutt/mailcap_macos.sh %s "-"
+application/pgp; gpg -d | /usr/local/bin/vim '-'
+text/x-markdown; /usr/local/bin/vim '-'

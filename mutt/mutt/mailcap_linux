@@ -1,0 +1,26 @@
+text/plain; /usr/bin/less
+
+# MS Word documents
+application/msword; libreoffice --writer %s
+
+# MS Excel documents
+application/msword; libreoffice --calc %s
+
+# Images
+image/jpg; sxiv %s
+image/jpeg; sxiv %s
+image/pjpeg; sxiv %s
+image/png; sxiv %s
+image/gif; sxiv %s
+
+# PDFs
+application/pdf; evince %s
+application/x-octet-stream; evince %s
+application/force-download; evince %s
+
+# HTML
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Unidentified files
+application/pgp; gpg -d | /usr/local/bin/vim %s
+text/x-markdown; /usr/local/bin/vim %s

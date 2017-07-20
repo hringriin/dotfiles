@@ -1,0 +1,13 @@
+# vim: ft=muttrc
+source ~/.mutt/passwords/password.com.gmail.koester.joschka
+
+set smtp_url            =   "smtp://koester.joschka@smtp.gmail.com:587/"
+set from                =   "koester.joschka@gmail.com"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/com.gmail.koester.joschka/"
+set spoolfile           =   "+Inbox"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Privat/thunderbird.signatures.privat.txt"
+set ssl_force_tls       =   yes
+unset ssl_starttls
