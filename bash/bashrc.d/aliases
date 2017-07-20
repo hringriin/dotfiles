@@ -2,7 +2,9 @@
 alias 'packer'='packer --noedit --auronly'
 
 # Pacmatic
-alias 'pacman'='pacmatic'
+if [[ ${HOSTNAME} -ne "sorth" ]] ; then
+    alias 'pacman'='pacmatic'
+fi
 
 # xterm black background
 alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
