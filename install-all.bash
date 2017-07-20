@@ -513,9 +513,6 @@ function linkConfigs()
     # mutt
     /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/mutt/create_config.bash
 
-    # isync
-    /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/isync/create_config.bash
-
     # redshift
     ln -fsv ${repoPath}/redshift/redshift.conf ~/.config/redshift.conf
 
