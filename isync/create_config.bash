@@ -18,8 +18,6 @@ insertPasswd()
 main()
 {
     cp -f ${MBSYNCREPOPATH}/mbsyncrc ~/.mbsyncrc
-    read -p "Decrypt mbsyncrc!"
-    vim ~/.mbsyncrc
 
     for f in ~/.mutt/passwords/*
     do
