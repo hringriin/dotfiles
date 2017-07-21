@@ -56,7 +56,7 @@ copyFiles()
 
 copyService()
 {
-    cp -fv ${MUTTREPOPATH}/../systemd/isync/* /etc/systemd/system/
+    sudo cp -fv ${MUTTREPOPATH}/../systemd/isync/* /etc/systemd/system/
 }
 
 startService()
