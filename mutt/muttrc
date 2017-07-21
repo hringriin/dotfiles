@@ -120,7 +120,7 @@ set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # Index Key Bindings ------------------------------------------------------------------------------
 bind index      gg          first-entry
 bind index      G           last-entry
-bind index      g           group-reply 
+bind index      \CR         group-reply
 bind index      <space>     collapse-thread
 bind attach     <return>    view-mailcap
 # Ctrl-R to mark all as read
