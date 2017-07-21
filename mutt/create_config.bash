@@ -23,8 +23,6 @@ checkIfExists()
 copyFiles()
 {
     cp -fv ${MUTTREPOPATH}/muttrc ~/.muttrc
-    read -p "Please decrypt the muttrc!"
-    vim ~/.muttrc
 
     mkdir -m 0700 -p ${MUTTPATH}
 
