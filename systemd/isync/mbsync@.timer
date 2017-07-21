@@ -1,0 +1,11 @@
+[Unit]
+Description=Mailbox synchronization timer
+
+[Timer]
+OnBootSec=30sec
+OnCalendar=*-*-* *:0/10:00
+Persistent=true
+Unit=mbsync@%i.service
+
+[Install]
+WantedBy=timers.target
