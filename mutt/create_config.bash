@@ -82,6 +82,48 @@ startService()
     fi
 }
 
+
+checkFirstTime()
+{
+    if [[ ! ( -d ~/.mailfolder ) ]] ; then
+        echo -e "#########################################"
+        echo -e "#########################################"
+        echo -e "### ATTENTION PLEASE | READ CAREFULLY ###"
+        echo -e "### ATTENTION PLEASE | READ CAREFULLY ###"
+        echo -e "#########################################"
+        echo -e "#########################################\n\n"
+        echo "Your ~/.mailfolder does not exist. Don't worry, it will be created."
+        echo "This script will perform a first time sync."
+        echo "PLEASE DO NOT ABORT THIS SCRIPT FROM THIS POINT OR DISCONNECT YOUR INTERNET CONNECTION!"
+        echo "Otherwise, you have to perform the sync by yourself BEFORE STARTING THE SYSTEMD-SERVICES or you could risk data loss!"
+        echo -e "\nYou have been warned!\n"
+        echo -e "#########################################"
+
+        realyContinue
+
+        mbsync -aV
+
+        echo -e "\n\nSync done!"
+        echo -e "Note, this information does not state, whether the sync was successful or not!"
+    fi
+}
+
+realyContinue()
+{
+    read -p "Really continue? [y/n]: " $realyContinue
+    if [[ ${realyContinue} == "y" || ${realyContinue} == "Y" ]] ; then
+        echo "Ok! Continuing."
+        echo "DO NOT STOP/ABORT THIS SCRIPT OR YOUR INTERNET CONNECTION!"
+    elif [[ ${realyContinue} == "n" || ${realyContinue} == "N" ]] ; then
+        echo "Ok, stopping here."
+        echo "Please manually set your ~/.mailfolder according to your needs and rerun this script!"
+        exit 5
+    else
+        echo -e "Unreadable input!\n\n"
+        realyContinue
+    fi
+}
+
 main()
 {
     if [[ ${UID} -eq 0 ]] ; then
@@ -95,6 +137,8 @@ main()
     copyFiles
 
     ${MUTTREPOPATH}/../isync/create_config.bash
+
+    checkFirstTime
 
     copyService
     startService
