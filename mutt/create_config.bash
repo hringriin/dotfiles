@@ -5,6 +5,7 @@ MUTTREPOPATH="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/mutt
 MUTTPATH="/home/${USER}/.mutt"
 PASSWDPATH="/home/hringriin/ownCloud/Documents/mutt"
 PASSWDFILE="passwords.tar.gz.gpg"
+FIRSTTIME=
 
 # Checks if a programm is installed
 checkIfExists()
@@ -51,7 +52,6 @@ copyFiles()
 
     cp -fv ${MUTTREPOPATH}/mutt/sidebar.muttrc ${MUTTPATH}/
 
-    chmod -v -R og-rwx ${MUTTPATH} ~/.muttrc ~/.mbsyncrc
 }
 
 copyService()
@@ -100,17 +100,14 @@ checkFirstTime()
         echo -e "#########################################"
 
         realyContinue
+        FIRSTTIME=true
 
-        mbsync -aV
-
-        echo -e "\n\nSync done!"
-        echo -e "Note, this information does not state, whether the sync was successful or not!"
     fi
 }
 
 realyContinue()
 {
-    read -p "Really continue? [y/n]: " $realyContinue
+    read -p "Really continue? [y/n]: " realyContinue
     if [[ ${realyContinue} == "y" || ${realyContinue} == "Y" ]] ; then
         echo "Ok! Continuing."
         echo "DO NOT STOP/ABORT THIS SCRIPT OR YOUR INTERNET CONNECTION!"
@@ -136,9 +133,16 @@ main()
     checkIfExists isync
     copyFiles
 
-    ${MUTTREPOPATH}/../isync/create_config.bash
-
     checkFirstTime
+
+    ${MUTTREPOPATH}/../isync/create_config.bash
+    chmod -v -R og-rwx ${MUTTPATH} ~/.muttrc ~/.mbsyncrc
+
+    if [[ ${FIRSTTIME} ]] ; then
+        mbsync -aV
+        echo -e "\n\nSync done!"
+        echo -e "Note, this information does not state, whether the sync was successful or not!"
+    fi
 
     copyService
     startService
