@@ -86,6 +86,7 @@ startService()
 checkFirstTime()
 {
     if [[ ! ( -d ~/.mailfolder ) ]] ; then
+        FIRSTTIME=true
         echo -e "#########################################"
         echo -e "#########################################"
         echo -e "### ATTENTION PLEASE | READ CAREFULLY ###"
@@ -100,7 +101,6 @@ checkFirstTime()
         echo -e "#########################################"
 
         realyContinue
-        FIRSTTIME=true
 
     fi
 }
