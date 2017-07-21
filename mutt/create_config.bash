@@ -136,7 +136,7 @@ main()
     checkFirstTime
 
     ${MUTTREPOPATH}/../isync/create_config.bash
-    chmod -v -R og-rwx ${MUTTPATH} ~/.muttrc ~/.mbsyncrc
+    chmod -v -R og-rwx ${MUTTPATH} ~/.muttrc ~/.mbsyncrc ~/.mailfolder
 
     if [[ ${FIRSTTIME} ]] ; then
         mbsync -aV
