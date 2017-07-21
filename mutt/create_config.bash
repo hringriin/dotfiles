@@ -36,8 +36,6 @@ copyFiles()
     rm -rf ${MUTTPATH}/${PASSWDFILE} ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz
 
     cp -fv ${MUTTREPOPATH}/mutt/crypt-hooks.muttrc ${MUTTPATH}/
-    read -p "Please decrypt the crypt hooks"
-    vim ${MUTTPATH}/crypt-hooks.muttrc
 
     cp -fv ${MUTTREPOPATH}/mutt/gpg.rc ${MUTTPATH}/
 
