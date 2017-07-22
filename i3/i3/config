@@ -271,9 +271,13 @@ bindsym $mod+Control+e exec setxkbmap en_US         # switch to us layout
 exec xset -dpms
 exec xset s 1800 1800
 
-# TEST
+# Move Workspace to xrandr output
 bindsym $mod+Right move workspace to output right
 bindsym $mod+Left move workspace to output left
 bindsym $mod+Up move workspace to output up
 bindsym $mod+Down move workspace to output down
 
+# Enable / Disable Xrandr Outputs
+bindsym $mod+Control+F1 exec xrandr --output VGA1 --auto --left-of LVDS1
+bindsym $mod+Control+F2 exec xrandr --output VGA1 --off
+bindsym $mod+Control+F3 exec xrandr --output VGA1 --auto --right-of LVDS1
