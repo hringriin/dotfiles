@@ -20,7 +20,8 @@ function master()
 
 function slave()
 {
-    cp -vf ~/ownCloud/Documents/abook/ ~/.abook/addressbook
+    rm -vrf ~/.abook/*
+    cp -vf ~/ownCloud/Documents/abook/addressbook ~/.abook/
 }
 
 if [[ $1 == "slave" ]] ; then
