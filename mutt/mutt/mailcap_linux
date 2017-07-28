@@ -24,3 +24,6 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput;
 # Unidentified files
 application/pgp; gpg -d | /usr/local/bin/vim %s
 text/x-markdown; /usr/local/bin/vim %s
+
+# LaTeX
+text/x-tex; vim %s
