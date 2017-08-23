@@ -350,21 +350,21 @@ Expunge Both
 SyncState *
 
 Channel com.gmail.koester.joschka-sent
-Master :com.gmail.koester.joschka-remote:"Sent"
+Master :com.gmail.koester.joschka-remote:"[Google Mail]/Sent Mail"
 slave  :com.gmail.koester.joschka-local:Sent
 Create Both
 Expunge Both
 SyncState *
 
 Channel com.gmail.koester.joschka-drafts
-Master :com.gmail.koester.joschka-remote:"Drafts"
+Master :com.gmail.koester.joschka-remote:"[Google Mail]/Drafts"
 slave  :com.gmail.koester.joschka-local:Drafts
 Create Both
 Expunge Both
 SyncState *
 
 Channel com.gmail.koester.joschka-trash
-Master :com.gmail.koester.joschka-remote:"Trash"
+Master :com.gmail.koester.joschka-remote:"[Google Mail]/Trash"
 slave  :com.gmail.koester.joschka-local:Trash
 Create Both
 Expunge Both
