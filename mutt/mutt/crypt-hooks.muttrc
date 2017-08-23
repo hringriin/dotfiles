@@ -230,6 +230,14 @@ crypt-hook  'stuga-adm@informatik\.uni-bremen\.de'          '0x5EA04DEF'    # ri
 crypt-hook  'stuga-adm@informatik\.uni-bremen\.de'          '0x9AFEB915'    # tgehrke
 
 
+send-hook   'stuga-adm@stugen\.de'                          'set crypt_autoencrypt  ;   set crypt_autosign'
+
+crypt-hook  'stuga-adm@stugen\.de'                          '0xDB82F401'    # admin-key
+crypt-hook  'stuga-adm@stugen\.de'                          '0xF4567356'    # deschuer
+crypt-hook  'stuga-adm@stugen\.de'                          '0x5EA04DEF'    # rieckers
+crypt-hook  'stuga-adm@stugen\.de'                          '0x9AFEB915'    # tgehrke
+
+
 # Ulbrich, Fabian ------------------------------------------------------------------------------------------------------
 send-hook   'fulbrich@informatik\.uni-bremen\.de'           'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'f\.ulbrich1@gmx\.de'                           'set crypt_autoencrypt  ;   set crypt_autosign'
