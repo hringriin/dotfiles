@@ -17,6 +17,12 @@ send-hook   'edv@asta\.uni-bremen\.de'                      'set crypt_autoencry
 crypt-hook  'edv@asta\.uni-bremen\.de'                      '0xAE1AC4C2'
 
 
+# Böttjer, Markus-------------------------------------------------------------------------------------------------------
+send-hook   'markus.boettjer@imail\.de'                     'set crypt_autoencrypt  ;   set crypt_autosign'
+
+crypt-hook  'markus.boettjer@imail\.de'                     '0xD0D105B1'
+
+
 # Bruns, Tristan -------------------------------------------------------------------------------------------------------
 send-hook   'tbruns@tzi\.de'                                'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'tbruns@informatik\.uni-bremen\.de'             'set crypt_autoencrypt  ;   set crypt_autosign'

@@ -21,6 +21,13 @@ checkIfExists()
     fi
 }
 
+copyGPG()
+{
+    gpg --output ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz --decrypt ${MUTTPATH}/${PASSWDFILE}
+    tar -zxvf ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz -C ${MUTTPATH}/
+    rm -rf ${MUTTPATH}/${PASSWDFILE} ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz
+}
+
 copyFiles()
 {
     cp -fv ${MUTTREPOPATH}/muttrc ~/.muttrc
@@ -32,9 +39,14 @@ copyFiles()
 
     cp -fv ${PASSWDPATH}/${PASSWDFILE} ${MUTTPATH}/
 
-    gpg --output ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz --decrypt ${MUTTPATH}/${PASSWDFILE}
-    tar -zxvf ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz -C ${MUTTPATH}/
-    rm -rf ${MUTTPATH}/${PASSWDFILE} ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz
+    read -p "Do you want to copy all the pgp keys? [y/N]: " copyGPG
+
+    if [[ ${copyGPG} == 'y' || ${copyGPG} == 'Y' ]] ; then
+        echo "GPG Keys will be copied!"
+        copyGPG
+    else
+        echo "GPG Keys will NOT be copied!"
+    fi
 
     cp -fv ${MUTTREPOPATH}/mutt/crypt-hooks.muttrc ${MUTTPATH}/
 
@@ -56,7 +68,14 @@ copyFiles()
 
 copyService()
 {
-    sudo cp -fv ${MUTTREPOPATH}/../systemd/isync/* /etc/systemd/system/
+    read -p "Do you want to copy the service files? [y/N]: " cpservice
+
+    if [[ ${cpservice} == 'y' || ${cpservice} == 'Y' ]] ; then
+        echo "Services will be copied!"
+        sudo cp -fv ${MUTTREPOPATH}/../systemd/isync/* /etc/systemd/system/
+    else
+        echo "No service will be touched!"
+    fi
 }
 
 startService()
@@ -147,6 +166,8 @@ main()
     copyService
     startService
 }
+
+
 
 main
 exit 0
