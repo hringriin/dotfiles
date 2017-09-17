@@ -279,10 +279,10 @@ endfunction
 
 " KeyBinding for ToggleListChars
 " will toggle showing invisible character, such as whitespaces
-map <F5> :call ToggleListChars()<CR>
+map <F7> :call ToggleListChars()<CR>
 
 " Keybinding for sorting under visual block
-map <F6> :'<,'>sort /\ze\%V/<CR>
+map <F8> :'<,'>sort /\ze\%V/<CR>
 
 set numberwidth=4
 set relativenumber
@@ -349,6 +349,13 @@ noremap <Leader>f :ZoomWin<CR>
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+" lilypond
+" in '/usr/share/vim/vimfiles/ftplugin/lilypond.vim' is written the following
+" line:
+"map <buffer> <F6> :!gv --watch "%<.ps" &<Return>
+" I change the programm used to my own needs
+"map <buffer> <F6> :!evince "%<.pdf" &<Return>
 
 " vim-airline
 set laststatus=2
