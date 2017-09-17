@@ -10,6 +10,7 @@ set query_command   =   "abook --mutt-query '%s'"
 
 # Folder Hooks ------------------------------------------------------------------------------------
 folder-hook     'accounts/account.de.tzi.jkoester'               'source ~/.mailfolder/de.tzi.jkoester'
+folder-hook     'accounts/account.de.uni-bremen.jkoester'        'source ~/.mailfolder/de.uni-bremen.jkoester'
 folder-hook     'accounts/account.de.uni-bremen.koesterj'        'source ~/.mailfolder/de.uni-bremen.koesterj'
 folder-hook     'accounts/account.com.gmail.koester.joschka'     'source ~/.mailfolder/com.gmail.koester.joschka'
 folder-hook     'accounts/account.com.gmail.hringriin'           'source ~/.mailfolder/com.gmail.hringriin'
@@ -19,7 +20,7 @@ folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mail
 folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
 
 # Default account config file
-source ~/.mutt/accounts/account.de.tzi.jkoester
+source ~/.mutt/accounts/account.de.uni-bremen.jkoester
 
 # Crypt Hooks (Per Recipients Rules) --------------------------------------------------------------
 set crypt_confirmhook       =   no      # do not prompt for confirmation for pre-selected keys (unsafe)
@@ -27,7 +28,7 @@ source ~/.mutt/crypt-hooks.muttrc
 
 # Macros for switching accounts -------------------------------------------------------------------
 # CTRL + F12    TZi
-macro index     <F36>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
+macro index     <F36>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.jkoester<enter><change-folder>!<enter>'
 
 # CTRL + F11    ZfN
 macro index     <F35>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.koesterj<enter><change-folder>!<enter>'
@@ -52,6 +53,9 @@ macro index     <F29>       '<sync-mailbox><refresh><enter-command>source ~/.mut
 
 # CTRL + F4     ahliazhia
 macro index     <F28>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
+
+# CTRL + F3     [university]
+macro index     <F27>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut

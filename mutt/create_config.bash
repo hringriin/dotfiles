@@ -163,8 +163,15 @@ main()
         echo -e "Note, this information does not state, whether the sync was successful or not!"
     fi
 
-    copyService
-    startService
+    read -p "Install Systemd-Service? [y|N] " instSysSer
+    if [[ ${instSysSer} == "Y" || ${instSysSer} == "y" ]] ; then
+        copyService
+    fi
+
+    read -p "Start Systemd-Service? [y|N] " startSysSer
+    if [[ ${startSysSer} == "Y" || ${startSysSer} == "y" ]] ; then
+        startService
+    fi
 }
 
 

@@ -1,330 +1,584 @@
-##### < JKOESTER@TZI.DE >
-
-IMAPAccount de.tzi.jkoester
-Host imap.informatik.uni-bremen.de
-User jkoester
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore de.tzi.jkoester-remote
-Account de.tzi.jkoester
-
-MaildirStore de.tzi.jkoester-local
-Path ~/.mailfolder/de.tzi.jkoester/
-Inbox ~/.mailfolder/de.tzi.jkoester/inbox
-
-Channel de.tzi.jkoester-default
-Master :de.tzi.jkoester-remote:
-Slave :de.tzi.jkoester-local:Inbox
-# Automatically create missing mailboxes, both locally and on the server
-Create Both
-# Automatically delete messages on either side if they are found deleted on the other.
-Expunge Both
-# Save the synchronization state files in the relevant directory
-SyncState *
-
-Channel de.tzi.jkoester-sent
-Master :de.tzi.jkoester-remote:"Sent"
-slave  :de.tzi.jkoester-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-trash
-Master :de.tzi.jkoester-remote:"Trash"
-slave  :de.tzi.jkoester-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-spam
-Master :de.tzi.jkoester-remote:"SPAM"
-slave  :de.tzi.jkoester-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-1und1
-Master :de.tzi.jkoester-remote:INBOX/"1 UND 1"
-slave  :de.tzi.jkoester-local:1und1
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-2012
-Master :de.tzi.jkoester-remote:INBOX/"2012"
-slave  :de.tzi.jkoester-local:2012
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-2013
-Master :de.tzi.jkoester-remote:INBOX/"2013"
-slave  :de.tzi.jkoester-local:2013
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-2014
-Master :de.tzi.jkoester-remote:INBOX/"2014"
-slave  :de.tzi.jkoester-local:2014
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-2015
-Master :de.tzi.jkoester-remote:INBOX/"2015"
-slave  :de.tzi.jkoester-local:2015
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-2016
-Master :de.tzi.jkoester-remote:INBOX/"2016"
-slave  :de.tzi.jkoester-local:2016
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-AStAEDV
-Master :de.tzi.jkoester-remote:INBOX/"AStA EDV"
-slave  :de.tzi.jkoester-local:AStA_EDV
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-Dropbox
-Master :de.tzi.jkoester-remote:INBOX/"Dropbox"
-slave  :de.tzi.jkoester-local:Dropbox
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-FB3Tickets
-Master :de.tzi.jkoester-remote:INBOX/"FB3 Tickets"
-slave  :de.tzi.jkoester-local:FB3Tickets
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-FBMI
-Master :de.tzi.jkoester-remote:INBOX/"FBMI"
-slave  :de.tzi.jkoester-local:FBMI
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-GitlabCommitMessages
-Master :de.tzi.jkoester-remote:INBOX/"Gitlab Commit Messages"
-slave  :de.tzi.jkoester-local:Gitlab_Commit_Messages
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-GitlabIssues
-Master :de.tzi.jkoester-remote:INBOX/"Gitlab Issues"
-slave  :de.tzi.jkoester-local:GitlabIssues
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-MEMS
-Master :de.tzi.jkoester-remote:INBOX/"MEMS"
-slave  :de.tzi.jkoester-local:MEMS
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-Mentoren
-Master :de.tzi.jkoester-remote:INBOX/"Mentoren"
-slave  :de.tzi.jkoester-local:Mentoren
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-MentorenTeam
-Master :de.tzi.jkoester-remote:INBOX/"Mentoren Team"
-slave  :de.tzi.jkoester-local:Mentoren_Team
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-PI3
-Master :de.tzi.jkoester-remote:INBOX/"PI3"
-slave  :de.tzi.jkoester-local:PI3
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugA
-Master :de.tzi.jkoester-remote:INBOX/"StugA"
-slave  :de.tzi.jkoester-local:StugA
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAFacebook
-Master :de.tzi.jkoester-remote:INBOX/"StugA/Facebook"
-slave  :de.tzi.jkoester-local:StugA_Facebook
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugATwitter
-Master :de.tzi.jkoester-remote:INBOX/"StugA/Twitter"
-slave  :de.tzi.jkoester-local:StugA_Twitter
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdmin
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin"
-slave  :de.tzi.jkoester-local:StugA-Admin
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminBackup
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Backup"
-slave  :de.tzi.jkoester-local:StugA-Admin_Backup
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminCertificates
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Certificates"
-slave  :de.tzi.jkoester-local:StugA-Admin_Certificates
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminCron
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Cron"
-slave  :de.tzi.jkoester-local:StugA-Admin_Cron
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminHostEurope
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/HostEurope"
-slave  :de.tzi.jkoester-local:StugA-Admin_HostEurope
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminMailmanFoo
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Mailman"
-slave  :de.tzi.jkoester-local:StugA-Admin_MailmanFoo
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminNagios
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Nagios"
-slave  :de.tzi.jkoester-local:StugA-Admin_Nagios
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminRaumzugang
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Raumzugang"
-slave  :de.tzi.jkoester-local:StugA-Admin_Raumzugang
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminRootKitHunter
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/RootkitHunter"
-slave  :de.tzi.jkoester-local:StugA-Admin_RootkitHunter
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminSecurityIssues
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/SecurityIssues"
-slave  :de.tzi.jkoester-local:StugA-Admin_SecurityIssues
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminSMART
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/SMART"
-slave  :de.tzi.jkoester-local:StugA-Admin_SMART
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-StugAAdminWordpress
-Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Wordpress"
-slave  :de.tzi.jkoester-local:StugA-Admin_Wordpress
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.tzi.jkoester-SWP2
-Master :de.tzi.jkoester-remote:INBOX/"SWP2"
-slave  :de.tzi.jkoester-local:SWP2
-Create Both
-Expunge Both
-SyncState *
-
-##### </ JKOESTER@TZI.DE >
-
-##### < JKOESTER@UNI-BREMEN.DE >
-
-#IMAPAccount de.uni-bremen.jkoester
-#Host imap.uni-bremen.de
+###### < JKOESTER@TZI.DE >
+## DEPRECATED !!!!
+#
+#IMAPAccount de.tzi.jkoester
+#Host imap.informatik.uni-bremen.de
 #User jkoester
 ##PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 #SSLType IMAPS
 #CertificateFile /etc/ssl/certs/ca-certificates.crt
 #
-#IMAPStore de.uni-bremen.jkoester-remote
-#Account de.uni-bremen.jkoester
+#IMAPStore de.tzi.jkoester-remote
+#Account de.tzi.jkoester
 #
-#MaildirStore de.uni-bremen.jkoester-local
-#Path ~/.mailfolder/de.uni-bremen.jkoester/
-#Inbox ~/.mailfolder/de.uni-bremen.jkoester/inbox
+#MaildirStore de.tzi.jkoester-local
+#Path ~/.mailfolder/de.tzi.jkoester/
+#Inbox ~/.mailfolder/de.tzi.jkoester/inbox
 #
-#Channel de.uni-bremen.jkoester-default
-#Master :de.uni-bremen.jkoester-remote:
-#Slave :de.uni-bremen.jkoester-local:Inbox
+#Channel de.tzi.jkoester-default
+#Master :de.tzi.jkoester-remote:
+#Slave :de.tzi.jkoester-local:Inbox
+## Automatically create missing mailboxes, both locally and on the server
+#Create Both
+## Automatically delete messages on either side if they are found deleted on the other.
+#Expunge Both
+## Save the synchronization state files in the relevant directory
+#SyncState *
+#
+#Channel de.tzi.jkoester-sent
+#Master :de.tzi.jkoester-remote:"Sent"
+#slave  :de.tzi.jkoester-local:Sent
 #Create Both
 #Expunge Both
 #SyncState *
 #
-#Channel de.uni-bremen.jkoester-sent
-#Master :de.uni-bremen.jkoester-remote:INBOX/"Sent"
-#slave  :de.uni-bremen.jkoester-local:Sent
+#Channel de.tzi.jkoester-trash
+#Master :de.tzi.jkoester-remote:"Trash"
+#slave  :de.tzi.jkoester-local:Trash
 #Create Both
 #Expunge Both
 #SyncState *
 #
-#Channel de.uni-bremen.jkoester-drafts
-#Master :de.uni-bremen.jkoester-remote:INBOX/"Drafts"
-#slave  :de.uni-bremen.jkoester-local:Drafts
+#Channel de.tzi.jkoester-spam
+#Master :de.tzi.jkoester-remote:"SPAM"
+#slave  :de.tzi.jkoester-local:Spam
 #Create Both
 #Expunge Both
 #SyncState *
 #
-#Channel de.uni-bremen.jkoester-trash
-#Master :de.uni-bremen.jkoester-remote:INBOX/"Trash"
-#slave  :de.uni-bremen.jkoester-local:Trash
+#Channel de.tzi.jkoester-1und1
+#Master :de.tzi.jkoester-remote:INBOX/"1 UND 1"
+#slave  :de.tzi.jkoester-local:1und1
 #Create Both
 #Expunge Both
 #SyncState *
 #
-#Channel de.uni-bremen.jkoester-spam
-#Master :de.uni-bremen.jkoester-remote:INBOX/"Junk"
-#slave  :de.uni-bremen.jkoester-local:Junk
+#Channel de.tzi.jkoester-2012
+#Master :de.tzi.jkoester-remote:INBOX/"2012"
+#slave  :de.tzi.jkoester-local:2012
 #Create Both
 #Expunge Both
 #SyncState *
+#
+#Channel de.tzi.jkoester-2013
+#Master :de.tzi.jkoester-remote:INBOX/"2013"
+#slave  :de.tzi.jkoester-local:2013
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-2014
+#Master :de.tzi.jkoester-remote:INBOX/"2014"
+#slave  :de.tzi.jkoester-local:2014
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-2015
+#Master :de.tzi.jkoester-remote:INBOX/"2015"
+#slave  :de.tzi.jkoester-local:2015
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-2016
+#Master :de.tzi.jkoester-remote:INBOX/"2016"
+#slave  :de.tzi.jkoester-local:2016
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-AStAEDV
+#Master :de.tzi.jkoester-remote:INBOX/"AStA EDV"
+#slave  :de.tzi.jkoester-local:AStA_EDV
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-Dropbox
+#Master :de.tzi.jkoester-remote:INBOX/"Dropbox"
+#slave  :de.tzi.jkoester-local:Dropbox
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-FB3Tickets
+#Master :de.tzi.jkoester-remote:INBOX/"FB3 Tickets"
+#slave  :de.tzi.jkoester-local:FB3Tickets
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-FBMI
+#Master :de.tzi.jkoester-remote:INBOX/"FBMI"
+#slave  :de.tzi.jkoester-local:FBMI
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-GitlabCommitMessages
+#Master :de.tzi.jkoester-remote:INBOX/"Gitlab Commit Messages"
+#slave  :de.tzi.jkoester-local:Gitlab_Commit_Messages
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-GitlabIssues
+#Master :de.tzi.jkoester-remote:INBOX/"Gitlab Issues"
+#slave  :de.tzi.jkoester-local:GitlabIssues
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-MEMS
+#Master :de.tzi.jkoester-remote:INBOX/"MEMS"
+#slave  :de.tzi.jkoester-local:MEMS
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-Mentoren
+#Master :de.tzi.jkoester-remote:INBOX/"Mentoren"
+#slave  :de.tzi.jkoester-local:Mentoren
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-MentorenTeam
+#Master :de.tzi.jkoester-remote:INBOX/"Mentoren Team"
+#slave  :de.tzi.jkoester-local:Mentoren_Team
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-PI3
+#Master :de.tzi.jkoester-remote:INBOX/"PI3"
+#slave  :de.tzi.jkoester-local:PI3
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugA
+#Master :de.tzi.jkoester-remote:INBOX/"StugA"
+#slave  :de.tzi.jkoester-local:StugA
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAFacebook
+#Master :de.tzi.jkoester-remote:INBOX/"StugA/Facebook"
+#slave  :de.tzi.jkoester-local:StugA_Facebook
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugATwitter
+#Master :de.tzi.jkoester-remote:INBOX/"StugA/Twitter"
+#slave  :de.tzi.jkoester-local:StugA_Twitter
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdmin
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin"
+#slave  :de.tzi.jkoester-local:StugA-Admin
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminBackup
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Backup"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Backup
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminCertificates
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Certificates"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Certificates
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminCron
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Cron"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Cron
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminHostEurope
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/HostEurope"
+#slave  :de.tzi.jkoester-local:StugA-Admin_HostEurope
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminMailmanFoo
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Mailman"
+#slave  :de.tzi.jkoester-local:StugA-Admin_MailmanFoo
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminNagios
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Nagios"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Nagios
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminRaumzugang
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Raumzugang"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Raumzugang
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminRootKitHunter
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/RootkitHunter"
+#slave  :de.tzi.jkoester-local:StugA-Admin_RootkitHunter
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminSecurityIssues
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/SecurityIssues"
+#slave  :de.tzi.jkoester-local:StugA-Admin_SecurityIssues
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminSMART
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/SMART"
+#slave  :de.tzi.jkoester-local:StugA-Admin_SMART
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-StugAAdminWordpress
+#Master :de.tzi.jkoester-remote:INBOX/"StugA-Admin/Wordpress"
+#slave  :de.tzi.jkoester-local:StugA-Admin_Wordpress
+#Create Both
+#Expunge Both
+#SyncState *
+#
+#Channel de.tzi.jkoester-SWP2
+#Master :de.tzi.jkoester-remote:INBOX/"SWP2"
+#slave  :de.tzi.jkoester-local:SWP2
+#Create Both
+#Expunge Both
+#SyncState *
+#
+###### </ JKOESTER@TZI.DE >
+
+##### < JKOESTER@UNI-BREMEN.DE >
+
+IMAPAccount de.uni-bremen.jkoester
+Host imap.uni-bremen.de
+User jkoester
+#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore de.uni-bremen.jkoester-remote
+Account de.uni-bremen.jkoester
+
+MaildirStore de.uni-bremen.jkoester-local
+Path ~/.mailfolder/de.uni-bremen.jkoester/
+Inbox ~/.mailfolder/de.uni-bremen.jkoester/inbox
+
+Channel de.uni-bremen.jkoester-default
+Master :de.uni-bremen.jkoester-remote:
+Slave :de.uni-bremen.jkoester-local:Inbox
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-sent
+Master :de.uni-bremen.jkoester-remote:INBOX/"Sent"
+slave  :de.uni-bremen.jkoester-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-drafts
+Master :de.uni-bremen.jkoester-remote:INBOX/"Drafts"
+slave  :de.uni-bremen.jkoester-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-trash
+Master :de.uni-bremen.jkoester-remote:INBOX/"Trash"
+slave  :de.uni-bremen.jkoester-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-spam
+Master :de.uni-bremen.jkoester-remote:INBOX/"Junk"
+slave  :de.uni-bremen.jkoester-local:Junk
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-1und1
+Master :de.uni-bremen.jkoester-remote:INBOX/"1 UND 1"
+slave  :de.uni-bremen.jkoester-local:1und1
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-2012
+Master :de.uni-bremen.jkoester-remote:INBOX/"2012"
+slave  :de.uni-bremen.jkoester-local:2012
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-2013
+Master :de.uni-bremen.jkoester-remote:INBOX/"2013"
+slave  :de.uni-bremen.jkoester-local:2013
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-2014
+Master :de.uni-bremen.jkoester-remote:INBOX/"2014"
+slave  :de.uni-bremen.jkoester-local:2014
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-2015
+Master :de.uni-bremen.jkoester-remote:INBOX/"2015"
+slave  :de.uni-bremen.jkoester-local:2015
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-2016
+Master :de.uni-bremen.jkoester-remote:INBOX/"2016"
+slave  :de.uni-bremen.jkoester-local:2016
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-Allgemein
+Master :de.uni-bremen.jkoester-remote:INBOX/"Allgemein"
+slave  :de.uni-bremen.jkoester-local:Allgemein
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-AStAEDV
+Master :de.uni-bremen.jkoester-remote:INBOX/"AStA EDV"
+slave  :de.uni-bremen.jkoester-local:AStA_EDV
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-Dropbox
+Master :de.uni-bremen.jkoester-remote:INBOX/"Dropbox"
+slave  :de.uni-bremen.jkoester-local:Dropbox
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-DreamSpark
+Master :de.uni-bremen.jkoester-remote:INBOX/"DreamSpark"
+slave  :de.uni-bremen.jkoester-local:DreamSpark
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-FB3Tickets
+Master :de.uni-bremen.jkoester-remote:INBOX/"FB3 Tickets"
+slave  :de.uni-bremen.jkoester-local:FB3Tickets
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-FBMI
+Master :de.uni-bremen.jkoester-remote:INBOX/"FBMI"
+slave  :de.uni-bremen.jkoester-local:FBMI
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-GitlabCommitMessages
+Master :de.uni-bremen.jkoester-remote:INBOX/"Gitlab Commit Messages"
+slave  :de.uni-bremen.jkoester-local:Gitlab_Commit_Messages
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-GitlabIssues
+Master :de.uni-bremen.jkoester-remote:INBOX/"Gitlab Issues"
+slave  :de.uni-bremen.jkoester-local:GitlabIssues
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-MEMS
+Master :de.uni-bremen.jkoester-remote:INBOX/"MEMS"
+slave  :de.uni-bremen.jkoester-local:MEMS
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-Mentoren
+Master :de.uni-bremen.jkoester-remote:INBOX/"Mentoren"
+slave  :de.uni-bremen.jkoester-local:Mentoren
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-MentorenTeam
+Master :de.uni-bremen.jkoester-remote:INBOX/"Mentoren Team"
+slave  :de.uni-bremen.jkoester-local:Mentoren_Team
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-PABO
+Master :de.uni-bremen.jkoester-remote:INBOX/"PABO"
+slave  :de.uni-bremen.jkoester-local:PABO
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-PI3
+Master :de.uni-bremen.jkoester-remote:INBOX/"PI3"
+slave  :de.uni-bremen.jkoester-local:PI3
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StudIP
+Master :de.uni-bremen.jkoester-remote:INBOX/"StudIP"
+slave  :de.uni-bremen.jkoester-local:StudIP
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugA
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA"
+slave  :de.uni-bremen.jkoester-local:StugA
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAFacebook
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA/Facebook"
+slave  :de.uni-bremen.jkoester-local:StugA_Facebook
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugATwitter
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA/Twitter"
+slave  :de.uni-bremen.jkoester-local:StugA_Twitter
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdmin
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminBackup
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Backup"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Backup
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminCertificates
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Certificates"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Certificates
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminCron
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Cron"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Cron
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminHostEurope
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/HostEurope"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_HostEurope
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminMailmanFoo
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Mailman"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_MailmanFoo
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminNagios
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Nagios"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Nagios
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminRaumzugang
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Raumzugang"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Raumzugang
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminRootKitHunter
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/RootkitHunter"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_RootkitHunter
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminSecurityIssues
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/SecurityIssues"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_SecurityIssues
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminSMART
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/SMART"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_SMART
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-StugAAdminWordpress
+Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Wordpress"
+slave  :de.uni-bremen.jkoester-local:StugA-Admin_Wordpress
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.uni-bremen.jkoester-SWP2
+Master :de.uni-bremen.jkoester-remote:INBOX/"SWP2"
+slave  :de.uni-bremen.jkoester-local:SWP2
+Create Both
+Expunge Both
+SyncState *
 
 ##### </ JKOESTER@UNI-BREMEN.DE >
 
 ##### < KOESTERJ@UNI-BREMEN.DE >
+# DEPRECATED !!!!
 
 IMAPAccount de.uni-bremen.koesterj
 Host imap.uni-bremen.de
