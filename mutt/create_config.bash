@@ -1,9 +1,17 @@
 #!/bin/bash
 # create configs
 
-MUTTREPOPATH="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/mutt"
-MUTTPATH="/home/${USER}/.mutt"
-PASSWDPATH="/home/hringriin/ownCloud/Documents/mutt"
+PREFIX=
+
+if [[ `uname -s` == *"arwin"* ]] ; then
+    PREFIX="/Users/${USER}"
+elif [[ `uname -s` == *"inux"* ]] ; then
+    PREFIX="/home/${USER}"
+fi
+
+MUTTREPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/mutt"
+MUTTPATH="${PREFIX}/.mutt"
+PASSWDPATH="${PREFIX}/ownCloud/Documents/mutt"
 PASSWDFILE="passwords.tar.gz.gpg"
 FIRSTTIME=
 
@@ -30,7 +38,7 @@ copyGPG()
 
 copyFiles()
 {
-    cp -fv ${MUTTREPOPATH}/muttrc ~/.muttrc
+    cp -fv ${MUTTREPOPATH}/muttrc ${PREFIX}/.muttrc
 
     mkdir -m 0700 -p ${MUTTPATH}
 
@@ -85,17 +93,14 @@ startService()
         thisUser=`echo ${USER}`
 
         echo "Enabling service ..."
-        #su -c "systemctl enable mbsync@${USER}.timer" root
         sudo systemctl enable mbsync@${thisUser}.timer
         echo "... service enabled!"
 
         echo "Starting service ..."
-        #su -c "systemctl start mbsync@${USER}.timer" root
         sudo systemctl start mbsync@${thisUser}.timer
         echo "... service started!"
 
         echo "Reloading systemctl daemon ..."
-        #su -c "systemctl daemon-reload" root
         sudo systemctl daemon-reload
         echo "... systemctl daemon reloaded!"
     fi
@@ -104,7 +109,7 @@ startService()
 
 checkFirstTime()
 {
-    if [[ ! ( -d ~/.mailfolder ) ]] ; then
+    if [[ ! ( -d ${PREFIX}/.mailfolder ) ]] ; then
         FIRSTTIME=true
         echo -e "#########################################"
         echo -e "#########################################"
@@ -147,15 +152,20 @@ main()
         exit 4
     fi
 
-    checkIfExists owncloud
-    checkIfExists mutt
-    checkIfExists isync
+    if [[ `uname -s` == *"arwin"* ]] ; then
+        sleep 1
+    elif [[ `uname -s` == *"inux"* ]] ; then
+        checkIfExists owncloud
+        checkIfExists mutt
+        checkIfExists isync
+    fi
+
     copyFiles
 
     checkFirstTime
 
     ${MUTTREPOPATH}/../isync/create_config.bash
-    chmod -v -R og-rwx ${MUTTPATH} ~/.muttrc ~/.mbsyncrc ~/.mailfolder
+    chmod -v -R og-rwx ${MUTTPATH} ${PREFIX}/.muttrc ${PREFIX}/.mbsyncrc ${PREFIX}/.mailfolder
 
     if [[ ${FIRSTTIME} ]] ; then
         mbsync -aV
