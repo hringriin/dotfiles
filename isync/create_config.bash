@@ -1,11 +1,19 @@
 #!/bin/bash
 # create config
 
-MBSYNCREPOPATH="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/isync"
-#PASSWDPATH="/home/${USER}/Repositories/github.com/hringriin/dotfiles/mutt/passwords"
-PASSWDPATH="/home/${USER}/.mutt/passwords"
-MBSYNCFILE="/home/${USER}/.mbsyncrc"
-TMPFILE="/home/${USER}/mbsyncrc-tmp"
+PREFIX=
+
+if [[ `uname -s` == *"arwin"* ]] ; then
+    PREFIX="/Users/${USER}"
+elif [[ `uname -s` == *"inux"* ]] ; then
+    PREFIX="/home/${USER}"
+fi
+
+MBSYNCREPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/isync"
+#PASSWDPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/mutt/passwords"
+PASSWDPATH="${PREFIX}/.mutt/passwords"
+MBSYNCFILE="${PREFIX}/.mbsyncrc"
+TMPFILE="${PREFIX}/mbsyncrc-tmp"
 
 insertPasswd()
 {
@@ -17,16 +25,16 @@ insertPasswd()
 
 main()
 {
-    cp -f ${MBSYNCREPOPATH}/mbsyncrc ~/.mbsyncrc
+    cp -f ${MBSYNCREPOPATH}/mbsyncrc ${PREFIX}/.mbsyncrc
 
-    for f in ~/.mutt/passwords/*
+    for f in ${PREFIX}/.mutt/passwords/*
     do
         fname=`echo ${f} | sed -e 's/.*\/\w*\.\w*\.\w*[\-]*\w*\.//'`
         fdname=`echo ${f} | sed -e 's/.*\/\w*\.//'`
-        mkdir -m 0700 -p ~/.mailfolder/${fdname}
-        #insertPasswd `echo ${fname} | sed -e 's/account\.\w*\.\w*\.//' -f 2` ${f}
+        mkdir -m 0700 -p ${PREFIX}/.mailfolder/${fdname}
         insertPasswd ${fname} ${f}
     done
 }
 
 main
+exit 0
