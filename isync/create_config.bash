@@ -17,14 +17,24 @@ TMPFILE="${PREFIX}/mbsyncrc-tmp"
 
 insertPasswd()
 {
+    PREFIX="/Users/${USER}"
     PWD=`cat $2 | cut -d '=' -f 2 | sed -e 's/\s*//'`
+    echo ${PWD}
     sed -e '/User '"$1"'/ a '"Pass ${PWD}"'' ${MBSYNCFILE} &> ${TMPFILE}
     cp -rf ${TMPFILE} ${MBSYNCFILE}
+
     rm -rf ${TMPFILE}
 }
 
 main()
 {
+    if [[ `uname -s` == *"arwin"* ]] ; then
+        echo -e "You're running MacOs ..."
+        echo -e "Sorry, you're screwed, the following part does not work on MacOs."
+        echo -e "This is not by design, I actually have no clue why."
+        exit 0
+    fi
+
     cp -f ${MBSYNCREPOPATH}/mbsyncrc ${PREFIX}/.mbsyncrc
 
     for f in ${PREFIX}/.mutt/passwords/*
