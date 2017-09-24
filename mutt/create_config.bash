@@ -148,7 +148,7 @@ realyContinue()
 main()
 {
     if [[ ${UID} -eq 0 ]] ; then
-        echo "You're root! Don't start this script as root!"
+        echo "You're root! **Don't** start this script as root!"
         exit 4
     fi
 
