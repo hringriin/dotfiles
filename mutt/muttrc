@@ -19,6 +19,9 @@ folder-hook     'accounts/account.com.gmail.jk.iptaid'           'source ~/.mail
 folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mailfolder/com.gmail.josh.ets2mp'
 folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
 
+# Attachments Save Dir
+macro attach s "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
+
 # Default account config file
 source ~/.mutt/accounts/account.de.uni-bremen.jkoester
 
