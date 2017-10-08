@@ -18,6 +18,7 @@ folder-hook     'accounts/account.com.gmail.jk.sgs4i9505'        'source ~/.mail
 folder-hook     'accounts/account.com.gmail.jk.iptaid'           'source ~/.mailfolder/com.gmail.jk.iptaid'
 folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mailfolder/com.gmail.josh.ets2mp'
 folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
+folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'      'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
 
 # Attachments Save Dir
 macro attach s "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
@@ -30,10 +31,10 @@ set crypt_confirmhook       =   no      # do not prompt for confirmation for pre
 source ~/.mutt/crypt-hooks.muttrc
 
 # Macros for switching accounts -------------------------------------------------------------------
-# CTRL + F12    TZi
+# CTRL + F12    ZfN-new
 macro index     <F36>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.jkoester<enter><change-folder>!<enter>'
 
-# CTRL + F11    ZfN
+# CTRL + F11    ZfN-old
 macro index     <F35>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.koesterj<enter><change-folder>!<enter>'
 
 # CTRL + F10    koester.joschka
@@ -57,8 +58,11 @@ macro index     <F29>       '<sync-mailbox><refresh><enter-command>source ~/.mut
 # CTRL + F4     ahliazhia
 macro index     <F28>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
 
-# CTRL + F3     [university]
-macro index     <F27>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
+# CTRL + F3     [smarttv wohnzimmer]
+macro index     <F27>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
+
+# CTRL + F2     [tzi]
+macro index     <F26>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut
