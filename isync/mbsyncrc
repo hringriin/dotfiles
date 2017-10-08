@@ -1303,3 +1303,56 @@ Expunge Both
 SyncState *
 
 ##### </ ahliazhia@GMAIL.COM >
+
+##### </ mk.hhk.smarttv@GMAIL.COM >
+
+IMAPAccount com.gmail.mk.hhk.smarttv
+Host imap.gmail.com
+User mk.hhk.smarttv@gmail.com
+#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore com.gmail.mk.hhk.smarttv-remote
+Account com.gmail.mk.hhk.smarttv
+
+MaildirStore com.gmail.mk.hhk.smarttv-local
+Path ~/.mailfolder/com.gmail.mk.hhk.smarttv/
+Inbox ~/.mailfolder/com.gmail.mk.hhk.smarttv/inbox
+
+Channel com.gmail.mk.hhk.smarttv-default
+Master :com.gmail.mk.hhk.smarttv-remote:
+Slave :com.gmail.mk.hhk.smarttv-local:Inbox
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.mk.hhk.smarttv-sent
+Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Sent Mail"
+slave  :com.gmail.mk.hhk.smarttv-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.mk.hhk.smarttv-drafts
+Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Drafts"
+slave  :com.gmail.mk.hhk.smarttv-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.mk.hhk.smarttv-trash
+Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Trash"
+slave  :com.gmail.mk.hhk.smarttv-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.mk.hhk.smarttv-spam
+Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Spam"
+slave  :com.gmail.mk.hhk.smarttv-local:Spam
+Create Both
+Expunge Both
+SyncState *
+
+##### < mk.hhk.smarttv@GMAIL.COM >
