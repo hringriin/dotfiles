@@ -17,9 +17,7 @@ TMPFILE="${PREFIX}/mbsyncrc-tmp"
 
 insertPasswd()
 {
-    PREFIX="/Users/${USER}"
     PWD=`cat $2 | cut -d '=' -f 2 | sed -e 's/\s*//'`
-    echo ${PWD}
     sed -e '/User '"$1"'/ a '"Pass ${PWD}"'' ${MBSYNCFILE} &> ${TMPFILE}
     cp -rf ${TMPFILE} ${MBSYNCFILE}
 
