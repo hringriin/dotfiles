@@ -246,7 +246,7 @@ function! ImplementUmlauts()
 endfunction
 
 " german umlauts, technically not abbreviations
-let g:umlaut_mappings = [ ['"a', '<c-k>a:'], ['"o', '<c-k>o:'], ['"u', '<c-k>u:'], ['"A', '<c-k>A:'], ['"O', '<c-k>O:'], ['"U', '<c-k>U:'] ]
+let g:umlaut_mappings = [ ['"s', 'ß'], ['"a', '<c-k>a:'], ['"o', '<c-k>o:'], ['"u', '<c-k>u:'], ['"A', '<c-k>A:'], ['"O', '<c-k>O:'], ['"U', '<c-k>U:'] ]
 let g:file_types = ['mkd', 'tex', 'text', 'mail', 'gitcommit', 'markdown', 'md']
 
 call ImplementUmlauts()
