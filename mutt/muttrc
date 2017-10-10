@@ -173,7 +173,7 @@ message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tra
 
 
 # Open Links --------------------------------------------------------------------------------------
-macro pager     \Cu         "|urlview<enter>" "call urlview to open links"
+#macro pager     \Cu         "|urlview<enter>" "call urlview to open links"     # CTRL + B is default, I guess
 
 
 # Mail Content Overrides --------------------------------------------------------------------------
