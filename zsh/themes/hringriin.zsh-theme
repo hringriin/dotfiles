@@ -60,7 +60,7 @@ local hist_no="${openbracket} %F{cyan}%h%f ${closebracket}"
 
 zstyle ':vcs_info:*' enable git
 PROMPT='
-%F{magenta}┌─%f %B%F{cyan}%D{%H:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} %F{magenta}──%f ${ret_status} %F{magenta}──%f ${hist_no} %F{${ucolor}}$(git_prompt_info)%f
+%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} %F{magenta}──%f ${ret_status} %F{magenta}──%f ${hist_no} %F{${ucolor}}$(git_prompt_info)%f
 %F{magenta}├─%f ${path_p}
 %F{magenta}└─%f %B%F{${ucolor}}▶%f%b '
 
