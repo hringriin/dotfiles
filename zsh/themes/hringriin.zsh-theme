@@ -53,16 +53,17 @@ else
 fi
 
 # return status
-local ret_status="${openbracket} %F{cyan}%?%f ${closebracket}"
+local ret_status="${openbracket}%F{cyan}%?%f${closebracket}"
 
 # history number
-local hist_no="${openbracket} %F{cyan}%h%f ${closebracket}"
+local hist_no="${openbracket}%F{cyan}%h%f${closebracket}"
+
 
 zstyle ':vcs_info:*' enable git
 PROMPT='
-%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} %F{magenta}──%f ${ret_status} %F{magenta}──%f ${hist_no}
+%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn}
 %F{magenta}├─%f ${path_p}
-%F{magenta}└─%f %B%F{${ucolor}}▶%f%b '
+%F{magenta}└─%f %F{magenta}─%f ${ret_status} %F{magenta}─%f ${hist_no} %B%F{${ucolor}}▶%f%b '
 
 #local cur_cmd="${openbracket}%_${closebracket}"
 ##PROMPT2="${cur_cmd}> "
