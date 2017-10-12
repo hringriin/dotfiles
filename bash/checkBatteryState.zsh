@@ -31,29 +31,34 @@ fi
 
 if [ -f $BAT0 ] ; then
     if [ $BAT0VAL -ge 100 ] ; then
-        echo -e "$fg_bold[green]FULL$reset_color"
+        #echo -e "$fg_bold[green]FULL$reset_color"
+        echo -e "$%B%F{green}FULL%f%b"
     fi
 
     if [ $BAT0VAL -lt 100 ] ; then
         if [ $BAT0VAL -gt 50 ] ; then
-            echo -e "$fg_bold[green]$BAT0VAL %$reset_color"
+            #echo -e "$fg_bold[green]$BAT0VAL %$reset_color"
+            echo -e "%B%F{green}$BAT0VAL%f%b"
         fi
     fi
 
     if [ $BAT0VAL -le 50 ] ; then
         if [ $BAT0VAL -gt 20 ] ; then
-            echo -e "$fg_bold[yellow]$BAT0VAL %$reset_color"
+            #echo -e "$fg_bold[yellow]$BAT0VAL %$reset_color"
+            echo -e "%B%F{yellow}$BAT0VAL%f%b"
         fi
     fi
 
     if [ $BAT0VAL -le 20 ] ; then
         if [ $BAT0VAL -gt 0 ] ; then
-            echo -e "$fg_bold[red]$BAT0VAL %$reset_color"
+            #echo -e "$fg_bold[red]$BAT0VAL %$reset_color"
+            echo -e "%B%F{red}$BAT0VAL%f%b"
         fi
     fi
 
     if [ $BAT0VAL -le 0 ] ; then
-        echo -e "$fg_bold[red]!! EMPTY !!$reset_color"
+        #echo -e "$fg_bold[red]!! EMPTY !!$reset_color"
+        echo -e "%B%F{red}!! EMPTY !!%f%b"
     fi
 else
     echo "$fg_bold[yellow]N/A $reset_color"
@@ -63,30 +68,36 @@ fi
 
 if [ -f $BAT1 ] ; then
     if [ $BAT1VAL -ge 100 ] ; then
-        echo -e "$fg_bold[green]FULL$reset_color"
+        #echo -e "$fg_bold[green]FULL$reset_color"
+        echo -e "$%B%F{green}FULL%f%b"
     fi
 
     if [ $BAT1VAL -lt 100 ] ; then
         if [ $BAT1VAL -gt 50 ] ; then
-            echo -e "$fg_bold[green]$BAT1VAL %$reset_color"
+            #echo -e "$fg_bold[green]$BAT1VAL %$reset_color"
+            echo -e "%B%F{green}$BAT1VAL%f%b"
         fi
     fi
 
     if [ $BAT1VAL -le 50 ] ; then
         if [ $BAT1VAL -gt 20 ] ; then
-            echo -e "$fg_bold[yellow]$BAT1VAL %$reset_color"
+            #echo -e "$fg_bold[yellow]$BAT1VAL %$reset_color"
+            echo -e "%B%F{yellow}$BAT1VAL%f%b"
         fi
     fi
 
     if [ $BAT1VAL -le 20 ] ; then
         if [ $BAT1VAL -gt 0 ] ; then
-            echo -e "$fg_bold[red]$BAT1VAL %$reset_color"
+            #echo -e "$fg_bold[red]$BAT1VAL %$reset_color"
+            echo -e "%B%F{red}$BAT1VAL%f%b"
         fi
     fi
 
     if [ $BAT1VAL -le 0 ] ; then
-        echo -e "$fg_bold[red]!! EMPTY !!$reset_color"
+        #echo -e "$fg_bold[red]!! EMPTY !!$reset_color"
+        echo -e "%B%F{red}!! EMPTY !!%f%b"
     fi
 else
-    echo "$fg_bold[yellow]N/A$reset_color"
+    #echo "$fg_bold[yellow]N/A$reset_color"
+    echo "%B%F{yellow}N/A%f%b"
 fi
