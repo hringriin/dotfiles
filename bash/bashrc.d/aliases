@@ -38,9 +38,6 @@ alias 'MarkDownCompile'=markDownCompile
 # Networking
 alias 'SCAN-NETWORK'=scanNetWork
 
-# Misc.
-alias lsa='ls -l -a -h'
-
 # Serverprint two sided
 alias 'serverprint'='serverprint --two-sided'
 
