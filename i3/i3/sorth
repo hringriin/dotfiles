@@ -76,9 +76,9 @@ exec xset s 14400 14400
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # Pulse Audio controls
-bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
-bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -2%   # decrease sound volume
-bindsym $mod+Right exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
+#bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
+#bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -2%   # decrease sound volume
+#bindsym $mod+Right exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
 
 # Screen Brightness Controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
