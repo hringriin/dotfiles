@@ -421,6 +421,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel de.uni-bremen.jkoester-INWX
+Master :de.uni-bremen.jkoester-remote:INBOX/"INWX"
+slave  :de.uni-bremen.jkoester-local:INWX
+Create Both
+Expunge Both
+SyncState *
+
 Channel de.uni-bremen.jkoester-MEMS
 Master :de.uni-bremen.jkoester-remote:INBOX/"MEMS"
 slave  :de.uni-bremen.jkoester-local:MEMS
