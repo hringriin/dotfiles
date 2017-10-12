@@ -264,8 +264,8 @@ assign [class="Dropbox"] $workspace20
 assign [class="ownCloud"] $workspace20
 
 # Keyboard Layout
-bindsym $mod+Control+d exec setxkbmap de            # switch to german layout
-bindsym $mod+Control+e exec setxkbmap en_US         # switch to us layout
+bindsym $mod+Control+d exec setxkbmap -layout "us" -variant "intl"      # switch to "us international" layout
+bindsym $mod+Control+e exec setxkbmap -layout "us"                      # switch to "us" layout
 
 # Mouse Warping when switching to workspaces on different outputs (displays)
 mouse_warping none
