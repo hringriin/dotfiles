@@ -32,17 +32,17 @@ fi
 
 
 # brackets
-local openbracket="%{$fg[magenta]%}%B<%b%{$reset_color%}"
-local closebracket="%{$fg[magenta]%}%B>%b%{$reset_color%}"
+local openbracket="%{$fg[magenta]%}%B[%b%{$reset_color%}"
+local closebracket="%{$fg[magenta]%}%B]%b%{$reset_color%}"
 
 # current path
-local path_p="${openbracket} %B%F{blue}%~%f%b ${closebracket}"
+local path_p="%B%F{blue}%~%f%b"
 
 # user
-local usern="${openbracket} %B%F{${ucolor}}%n%f%b ${closebracket}"
+local usern="%B%F{${ucolor}}%n%f%b"
 
 # host
-local hostn="${openbracket} %B%F{blue}%m%f%b ${closebracket}"
+local hostn="%B%F{blue}%m%f%b"
 
 # git prompt
 local gitp=""
@@ -53,17 +53,29 @@ else
 fi
 
 # return status
-local ret_status="${openbracket}%F{cyan}%?%f${closebracket}"
+local ret_status="%F{cyan}%?%f"
+local ret_stat="${openbracket} ${ret_status} ${closebracket}"
 
 # history number
-local hist_no="${openbracket}%F{cyan}%h%f${closebracket}"
+local hist_no="%F{cyan}%h%f"
 
+# status and history
+local stat_hist="${openbracket} ${ret_status} : ${hist_no} ${closebracket}"
+
+local userp=""
+if [[ `uname -a` == *"inux"* ]] ; then
+    userp="/home/${USERNAME}"
+elif [[ `uname -a` == *"arwin"* ]] ; then
+    userp="/Users/${USERNAME}"
+else
+    print $fg_bold[yellow]"UNKNOWN USERPATH IN ZSH-COLORTHEME HRINGRIIN"
+fi
 
 zstyle ':vcs_info:*' enable git
 PROMPT='
-%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn}
+%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} ${openbracket} %F{cyan}BAT0: %f`${userp}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 2p` ${closebracket} ${openbracket} %F{cyan}BAT1: %f`${userp}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 3p` ${closebracket} ${openbracket} %F{cyan}Power: %f`${userp}/Repositories/github.com/hringriin/dotfiles/repo/bash/checkBatteryState.zsh | sed -n 1p` ${closebracket}
 %F{magenta}├─%f ${path_p}
-%F{magenta}└─%f %F{magenta}─%f ${ret_status} %F{magenta}─%f ${hist_no} %B%F{${ucolor}}▶%f%b '
+%F{magenta}└─%f ${ret_stat} %B%F{${ucolor}}▶%f%b '
 
 #local cur_cmd="${openbracket}%_${closebracket}"
 ##PROMPT2="${cur_cmd}> "
