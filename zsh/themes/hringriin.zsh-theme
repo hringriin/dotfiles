@@ -75,7 +75,7 @@ zstyle ':vcs_info:*' enable git
 
 if [[ ${HOST} == "niederhoelle.de" ]] ; then
 PROMPT='
-%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} ${openbracket}
+%F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn}
 %F{magenta}├─%f ${path_p}
 %F{magenta}└─%f ${ret_stat} %B%F{${ucolor}}▶%f%b '
 else
