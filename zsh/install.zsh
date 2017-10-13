@@ -2,35 +2,38 @@
 # install
 
 tmpf="/tmp/$$_tmpdat"
-zsh="~/.zshrc"
+zsh="${HOME}/.zshrc"
 
 cd ~
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ln -s ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/plugins/hringriin/ ./
 cd ~/.oh-my-zsh/custom/
 ln -s ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/themes/ ./
 
-sed 's/ZSH=\/home\/hringriin/'${HOME}'/g' ${zsh} > ${tmpf}
+echo "FIRST"
+cat ${zsh} | sed -e 's/ZSH_THEME=".*"/ZSH_THEME="hringriin"/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-sed 's/# ZSH_THEME/ZSH_THEME/g' ${zsh} > ${tmpf}
+echo "SECOND"
+cat ${zsh} | sed -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-sed 's/# CASE_SENSITIVE/CASE_SENSITIVE/g' ${zsh} > ${tmpf}
+echo "THIRD"
+cat ${zsh} | sed -e 's/# ENABLE_CORRECTION/ENABLE_CORRECTION/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-sed 's/# ENABLE_CORRECTION/ENABLE_CORRECTION/g' ${zsh} > ${tmpf}
+echo "FOURTH"
+cat ${zsh} | sed -e 's/# COMPLETION_WAITING_DOTS/COMPLETION_WAITING_DOTS/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-sed 's/# COMPLETION_WAITING_DOTS/COMPLETION_WAITING_DOTS/g' ${zsh} > ${tmpf}
+echo "FIFTH"
+cat ${zsh} | sed -e 's/# HIST_STAMPS.*/HIST_STAMPS="yyyy-mm-dd"/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-sed 's/# HIST_STAMPS.*/HIST_STAMPS="yyyy-mm-dd"/g' ${zsh} > ${tmpf}
-cp ${tmpf} ${zsh}
-
-sed 's/plugins=(.*)/plugins=(hringriin mosh screen zsh-syntax-highlighting)/g' ${zsh} > ${tmpf}
+echo "SIXTH"
+cat ${zsh} | sed -e 's/plugins=(.*)/plugins=(hringriin mosh screen zsh-syntax-highlighting)/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
 
