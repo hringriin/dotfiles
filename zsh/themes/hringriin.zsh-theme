@@ -69,7 +69,7 @@ fi
 
 zstyle ':vcs_info:*' enable git
 
-if [[ ${HOST} == "niederhoelle.de" || ${HOSTNAME} == "akuteunlust.de" ]] ; then
+if [[ ${HOST} == "niederhoelle.de" || ${HOST} == "akuteunlust" ]] ; then
 PROMPT='
 %F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} ${openbracket} %F{cyan}`uptime -p`%f ${closebracket}
 %F{magenta}├─%f ${path_p}
