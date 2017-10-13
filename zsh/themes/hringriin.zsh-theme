@@ -18,10 +18,6 @@
 # to somewhere globally accessible.
 source /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
 
-echo "CONFIGURE ZSH NOW!"
-echo "Import configs, functions and other shit from bash"
-echo "Improvise on how to do some sort of installation script for all computers"
-
 # user color
 local ucolor=""
 if [[ ${UID} == 0 ]] ; then
