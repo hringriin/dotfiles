@@ -35,7 +35,7 @@ fi
 if [ -f $BAT0 ] ; then
     if [ $BAT0VAL -ge 100 ] ; then
         #echo -e "$fg_bold[green]FULL$reset_color"
-        echo -e "$%B%F{green}FULL%f%b"
+        echo -e "%B%F{green}FULL%f%b"
     fi
 
     if [ $BAT0VAL -lt 100 ] ; then
@@ -72,7 +72,7 @@ fi
 if [ -f $BAT1 ] ; then
     if [ $BAT1VAL -ge 100 ] ; then
         #echo -e "$fg_bold[green]FULL$reset_color"
-        echo -e "$%B%F{green}FULL%f%b"
+        echo -e "%B%F{green}FULL%f%b"
     fi
 
     if [ $BAT1VAL -lt 100 ] ; then
