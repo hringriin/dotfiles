@@ -60,7 +60,7 @@ local stat_hist="${openbracket} ${ret_status} : ${hist_no} ${closebracket}"
 
 local userp=""
 if [[ `uname -a` == *"inux"* ]] ; then
-    userp="/home/${USERNAME}"
+    userp="`echo ${HOME}`"
 elif [[ `uname -a` == *"arwin"* ]] ; then
     userp="/Users/${USERNAME}"
 else
