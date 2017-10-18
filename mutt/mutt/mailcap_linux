@@ -1,9 +1,12 @@
 text/plain; /usr/bin/less
 
-# MS Word documents
+# Word-like
 application/msword; libreoffice --writer %s
+application/vnd.oasis.opendocument.text; libreoffice --writer %s
+application/odt; libreoffice %s
+application/ods; libreoffice %s
 
-# MS Excel documents
+# Spreadsheets
 application/msword; libreoffice --calc %s
 
 # Images
@@ -12,6 +15,8 @@ image/jpeg; sxiv %s
 image/pjpeg; sxiv %s
 image/png; sxiv %s
 image/gif; sxiv %s
+image/tiff; evince %s
+image/ttiff; evince %s
 
 # PDFs
 application/pdf; evince %s
