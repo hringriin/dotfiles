@@ -65,6 +65,9 @@ alias 'MIPS'='java -jar ~/Downloads/Mars4_5.jar'
 # make me faster :-)
 #alias 'make'='make -j8'
 
+# LaTeX Makefile Download
+alias 'dl_latex_makefile'='wget https://raw.githubusercontent.com/hringriin/dotfiles/master/latex/Makefile'
+
 #########
 # GAMES #
 #########
