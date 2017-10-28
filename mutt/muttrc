@@ -80,6 +80,7 @@ set imap_check_subscribed   =   yes
 set timeout                 =   3                           # idle time before scanning
 set mail_check              =   0                           # minimum time between scans
 set move                    =   no
+unset mark_old                                          # no difference between "new" and "unread old" messages.
 set pipe_decode                                         # strip headers and eval mimes when piping
 set thorough_search                                     # strip headers and eval mimes before searching
 set include
