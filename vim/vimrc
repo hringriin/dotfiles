@@ -61,7 +61,7 @@ call plug#end()
 call quickmenu#reset()
 
 " bind to CTRL + F12
-noremap <silent><C-F12> :call quickmenu#toggle(0)<cr>
+noremap <silent><leader>mt :call quickmenu#toggle(0)<cr>
 
 " enable cursorline (L) and cmdline help (H)
 let g:quickmenu_options = "HL"
@@ -91,6 +91,10 @@ call quickmenu#append("# Misc", '')
 call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 "call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
+
+" maintenance
+call quickmenu#append("# Maintenance", '')
+call quickmenu#append("Open vimrc", ':tabnew /etc/vimrc', "Opens the vimrc in a new tab")
 
 
 " auto set screen title
