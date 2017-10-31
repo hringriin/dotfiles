@@ -39,6 +39,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
 Plug 'matze/vim-move'                   " move blobs of code up/down with <C-j>/<C-k>
 Plug 'johngrib/vim-game-code-break'     " a 'fun' game :-)
+Plug 'skywind3000/quickmenu.vim'        " quickmenu
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
@@ -54,6 +55,43 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 "########################################################################################
+
+" quick menu settings
+" clear all the items
+call quickmenu#reset()
+
+" bind to CTRL + F12
+noremap <silent><C-F12> :call quickmenu#toggle(0)<cr>
+
+" enable cursorline (L) and cmdline help (H)
+let g:quickmenu_options = "HL"
+
+" new section
+"call quickmenu#append("# Git", '')
+
+" use fugitive to show diff
+"call quickmenu#append("git diff", 'Gvdiff', "use fugitive's Gvdiff on current document")
+"call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
+
+" layout / visual
+call quickmenu#append("# Layout / Visual", '')
+call quickmenu#append("Zoom Window", ':ZoomWin', "zoom current buffer")
+call quickmenu#append("Cursorline", ':set cursorline!', "Enable/Disable Cursorline")
+call quickmenu#append("Last Column: %{&colorcolumn}", ':call MySecondColorColumn()', "Displays a defined column and break line at that column if enabled")
+call quickmenu#append("Turn List Chars %{&list? 'off':'on'}",':call ToggleListChars()',"will toggle showing invisible characeters, such as whitespaces")
+
+" code/text format
+call quickmenu#append("# Text Format", '')
+call quickmenu#append("Retab", ':retab', "Transform Tabulators to Whitespaces if possible")
+call quickmenu#append("Rem. tr. Whitespaces", ':call TrailingWhitespaces()', "Remove trailing Whitespaces")
+call quickmenu#append("Linebreak at %{&tw}",':call MyTextWidth()', "Set the current textwidth")
+
+" new section
+call quickmenu#append("# Misc", '')
+call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
+call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
+"call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
+
 
 " auto set screen title
 let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
@@ -300,7 +338,7 @@ map <F2> :call TrailingWhitespaces()<CR>
 map <F1> :retab<CR>
 
 " Keymapping for Toggle Cursorline and -column
-map <F3> :set cursorcolumn!<Bar>set cursorline!<CR>
+map <F3> :set cursorline!<CR>
 
 " Function for toggelling colorcolumn 90
 function! MyColorColumn()
@@ -308,6 +346,22 @@ function! MyColorColumn()
         setlocal colorcolumn&
     else
         setlocal colorcolumn=90
+    endif
+endfunction
+
+" function for textwidth
+function! MyTextWidth()
+    execute "setlocal tw =".str2nr(input('Enter column number: '))
+endfunction
+
+" function for toggelling colorcolumn with individual value
+function! MySecondColorColumn()
+    let mycolval = str2nr(input('Enter column number: '))
+
+    if mycolval == 0
+        setlocal colorcolumn&
+    else
+        execute "setlocal colorcolumn=".mycolval
     endif
 endfunction
 
