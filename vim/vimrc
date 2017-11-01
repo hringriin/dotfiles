@@ -249,49 +249,49 @@ set ttyfast
 " German umlauts #
 " ################
 
-function! RemoveIMappingIfExists(mapping)
-  try
-    execute 'iunmap' a:mapping
-  catch /E31/
-  endtry
-endfunction
-
-function! RemoveUmlautsOtherwise(mappings)
-  for pair in a:mappings
-    execute 'autocmd' 'FileType,BufEnter,BufLeave' '*' 'call' "RemoveIMappingIfExists('". pair[0] ."')"
-  endfor
-endfunction
-
-function! SetUmlautMappings(filetype)
-  for [map_from, map_to]  in g:umlaut_mappings
-    call SetUmlautMapping(a:filetype, map_from, map_to)
-  endfor
-endfunction
-
-function! SetUmlautMapping(filetype, map, mapped)
-  let current_filetype = &filetype
-  if current_filetype == a:filetype
-    execute 'inoremap' a:map a:mapped
-  endif
-endfunction
-
-command! -nargs=1 SetUmlautMappings call SetUmlautMappings(<f-args>)
-
-function! ImplementUmlauts()
-  augroup umlauts
-    call RemoveUmlautsOtherwise(g:umlaut_mappings)
-    for file_type in g:file_types
-      execute 'autocmd' 'FileType' file_type 'SetUmlautMappings' file_type
-      execute 'autocmd' 'BufEnter,BufLeave' '*' 'SetUmlautMappings' file_type
-    endfor
-  augroup end
-endfunction
-
-" german umlauts, technically not abbreviations
-let g:umlaut_mappings = [ ['"s', 'ß'], ['"a', '<c-k>a:'], ['"o', '<c-k>o:'], ['"u', '<c-k>u:'], ['"A', '<c-k>A:'], ['"O', '<c-k>O:'], ['"U', '<c-k>U:'] ]
-let g:file_types = ['mkd', 'tex', 'text', 'mail', 'gitcommit', 'markdown', 'md']
-
-call ImplementUmlauts()
+" function! RemoveIMappingIfExists(mapping)
+"   try
+"     execute 'iunmap' a:mapping
+"   catch /E31/
+"   endtry
+" endfunction
+" 
+" function! RemoveUmlautsOtherwise(mappings)
+"   for pair in a:mappings
+"     execute 'autocmd' 'FileType,BufEnter,BufLeave' '*' 'call' "RemoveIMappingIfExists('". pair[0] ."')"
+"   endfor
+" endfunction
+" 
+" function! SetUmlautMappings(filetype)
+"   for [map_from, map_to]  in g:umlaut_mappings
+"     call SetUmlautMapping(a:filetype, map_from, map_to)
+"   endfor
+" endfunction
+" 
+" function! SetUmlautMapping(filetype, map, mapped)
+"   let current_filetype = &filetype
+"   if current_filetype == a:filetype
+"     execute 'inoremap' a:map a:mapped
+"   endif
+" endfunction
+" 
+" command! -nargs=1 SetUmlautMappings call SetUmlautMappings(<f-args>)
+" 
+" function! ImplementUmlauts()
+"   augroup umlauts
+"     call RemoveUmlautsOtherwise(g:umlaut_mappings)
+"     for file_type in g:file_types
+"       execute 'autocmd' 'FileType' file_type 'SetUmlautMappings' file_type
+"       execute 'autocmd' 'BufEnter,BufLeave' '*' 'SetUmlautMappings' file_type
+"     endfor
+"   augroup end
+" endfunction
+" 
+" " german umlauts, technically not abbreviations
+" let g:umlaut_mappings = [ ['"s', 'ß'], ['"a', '<c-k>a:'], ['"o', '<c-k>o:'], ['"u', '<c-k>u:'], ['"A', '<c-k>A:'], ['"O', '<c-k>O:'], ['"U', '<c-k>U:'] ]
+" let g:file_types = ['mkd', 'tex', 'text', 'mail', 'gitcommit', 'markdown', 'md']
+" 
+" call ImplementUmlauts()
 
 " END UMLAUTS
 "#################################################################################################################################################
