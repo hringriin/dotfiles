@@ -77,6 +77,7 @@ let g:quickmenu_options = "HL"
 call quickmenu#append("# Layout / Visual", '')
 call quickmenu#append("zoom Window", ':ZoomWin', "zoom current buffer")
 call quickmenu#append("cursor column: %{&colorcolumn}", ':call MySecondColorColumn()', "Displays a defined column and break line at that column if enabled")
+call quickmenu#append("File Explorer", ':NERDTreeToggle', "Open Nerdtree, a file explorer")
 call quickmenu#append("turn Cursorline %{&cursorline? 'off':'on'}", ':set cursorline!', "Enable/Disable Cursorline")
 call quickmenu#append("turn List Chars %{&list? 'off':'on'}",':call ToggleListChars()',"will toggle showing invisible characeters, such as whitespaces")
 
