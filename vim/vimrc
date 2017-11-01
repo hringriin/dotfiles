@@ -173,11 +173,13 @@ set cm=blowfish
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
-" vim-airline will do this from now on
-set noshowmode
-set noruler
+" preparation for vim-airline
+" the following will be done by vim-airline from now on
+set noshowmode          " information about current vim mode (insert, replace, ...)
+set noruler             " disable vim's default status line
 set laststatus=0
 set noshowcmd
+set report=0            " Show all changes (e.g. how many lines yanked)
 
 " Press F12 to trigger LaTeX Makefile and open pdf
 nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
@@ -231,9 +233,6 @@ autocmd BufEnter * set mouse=
 
 " reads the file when changes where made out of vim (e.g. git)
 set autoread
-
-" Show all changes (e.g. how many lines yanked)
-set report=0
 
 " Set which parantheses to match
 set matchpairs=(:),{:},[:],<:>
