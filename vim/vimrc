@@ -319,10 +319,6 @@ function! ToggleListChars()
     set list!
 endfunction
 
-" KeyBinding for ToggleListChars
-" will toggle showing invisible character, such as whitespaces
-map <F7> :call ToggleListChars()<CR>
-
 " Keybinding for sorting under visual block
 map <F8> :'<,'>sort /\ze\%V/<CR>
 
@@ -333,24 +329,6 @@ set number
 " Remove trailing whitespaces
 function! TrailingWhitespaces()
     :%s/\s\+$//e
-endfunction
-
-" KeyBinding for TrailingWhitespaces
-map <F2> :call TrailingWhitespaces()<CR>
-
-" KeyBinding for Retabbing
-map <F1> :retab<CR>
-
-" Keymapping for Toggle Cursorline and -column
-map <F3> :set cursorline!<CR>
-
-" Function for toggelling colorcolumn 90
-function! MyColorColumn()
-    if &colorcolumn != ''
-        setlocal colorcolumn&
-    else
-        setlocal colorcolumn=90
-    endif
 endfunction
 
 " function for textwidth
@@ -368,9 +346,6 @@ function! MySecondColorColumn()
         execute "setlocal colorcolumn=".mycolval
     endif
 endfunction
-
-" Keymapping for Toggle Linemarker for max line 90
-map <F4> :call MyColorColumn()<CR>
 
 " Ignore case when searching
 " use \C for case-sensitive search, like '/\CJava' to search for 'Java'
