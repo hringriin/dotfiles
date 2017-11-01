@@ -353,7 +353,7 @@ set ignorecase
 
 " show at least 7 lines below or above the current line, except, if reaching
 " the bottom or the top of the file
-set scrolloff=7
+set scrolloff=5
 set sidescroll=30
 
 " key '0' toggles between first non whitespace character and first column in line
