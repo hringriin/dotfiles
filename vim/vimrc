@@ -60,7 +60,7 @@ call plug#end()
 " clear all the items
 call quickmenu#reset()
 
-" bind to CTRL + F12
+" bind to <leader>mt (in case of this vimrc: '\mt')
 noremap <silent><leader>mt :call quickmenu#toggle(0)<cr>
 
 " enable cursorline (L) and cmdline help (H)
