@@ -98,13 +98,13 @@ call quickmenu#append("# Maintenance", '')
 call quickmenu#append("Open vimrc", ':tabnew /etc/vimrc', "Opens the vimrc in a new tab")
 
 
-" auto set screen title
+" auto set screen title -- i'm not sure, if this works
 let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen" || &term == "rxvt"
   set title
 endif
 
-" vim-move modifier key
+" vim-move modifier key (control key, in this case)
 let g:move_key_modifier = 'C'
 
 " globally disable foldings
