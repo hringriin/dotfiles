@@ -348,7 +348,7 @@ function! MySecondColorColumn()
 endfunction
 
 " Ignore case when searching
-" use \C for case-sensitive search, like '/\CJava' to search for 'Java'
+" use \C for case-sensitive search, like '/\CJava' to search for 'Java', 'java' will not be found.
 set ignorecase
 
 " show at least 7 lines below or above the current line, except, if reaching
