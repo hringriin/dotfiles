@@ -307,8 +307,14 @@ set tabstop=4
 set shiftwidth=4
 
 " Filetype Options
+
+" lua
 autocmd FileType lua setlocal shiftwidth=2
 autocmd FileType lua setlocal tabstop=2
+
+" lilypond
+autocmd FileType lilypond setlocal shiftwidth=2
+autocmd FileType lilypond setlocal tabstop=2
 
 " tabs werden als ¶¤¤¤ und Whitespaces als · angezeigt
 set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
