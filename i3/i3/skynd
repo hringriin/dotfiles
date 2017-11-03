@@ -26,7 +26,7 @@ bar {
     }
 
     # Tray
-    tray_output primary
+    tray_output DP-0
 
     position top
 }
