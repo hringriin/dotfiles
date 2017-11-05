@@ -1,7 +1,12 @@
 #vim ft=muttrc
 
+
+
 # Example
-#crypt-hook '^coworker@company\.com$' '0xDEADBEEF'
+#send-hook  'coworker@company\.com'                         'set crypt_autoencrypt  ;   set crypt_autosign'
+#crypt-hook 'coworker@company\.com'                         '0xDEADBEEF'
+
+
 
 # Arndt, Jan-Peter -----------------------------------------------------------------------------------------------------
 send-hook   'jpa@ummon\.de'                                 'set crypt_autoencrypt  ;   set crypt_autosign'
