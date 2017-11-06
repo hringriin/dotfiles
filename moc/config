@@ -281,7 +281,7 @@ Theme = hringriin_theme
 #
 # Example:    Keymap = my_keymap
 #
-#Keymap =
+Keymap =   hringriin_keymap
 
 # Use ASCII rather than graphic characters for drawing lines.  This
 # helps on some terminals.
@@ -483,13 +483,13 @@ Theme = hringriin_theme
 
 # When the song changes, should the menu be scrolled so that the currently
 # played file is visible?
-#FollowPlayedFile = yes
+FollowPlayedFile = yes
 
 # What to do if the interface was started and the server is already playing
 # something from the playlist?  If CanStartInPlaylist is set to 'yes', the
 # interface will switch to the playlist.  When set to 'no' it will start
 # from the last directory.
-#CanStartInPlaylist = yes
+CanStartInPlaylist = yes
 
 # Executing external commands (1 - 10) invoked with key commands (F1 - F10
 # by default).
