@@ -62,7 +62,7 @@ macro index     <F28>       '<sync-mailbox><refresh><enter-command>source ~/.mut
 macro index     <F27>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
 
 # CTRL + F2     [tzi]
-macro index     <F26>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
+#macro index     <F26>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut
