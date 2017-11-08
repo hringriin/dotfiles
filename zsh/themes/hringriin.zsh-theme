@@ -13,11 +13,6 @@
 #
 # ▽ ▼  △ ▲  ❱ ▷ ▶  ❰ ◀ ◁  ▵ ▴  ▾ ▿  ▸ ▹  ◂ ◃  ➜ ➡ ↪  ↳  ⇉  ⇨  ≫  ≻  ≫  ⊳  ⋙ 
 
-# Git Prompt
-# TODO: needs to be changed to generic stuff. maybe linking the bash scripts
-# to somewhere globally accessible.
-source /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/git-prompt.bash
-
 # user color
 local ucolor=""
 if [[ ${UID} == 0 ]] ; then
@@ -40,14 +35,6 @@ local usern="%B%F{${ucolor}}%n%f%b"
 # host
 local hostn="%B%F{blue}%m%f%b"
 
-# git prompt
-local gitp=""
-if [[ -n $(__git_ps1) ]] ; then
-    gitp="${openbracket}$(__git_ps1) ${closebracket} %F{magenta}━━%f "
-else
-    gitp=""
-fi
-
 # return status
 local ret_status="%F{cyan}%?%f"
 local ret_stat="${openbracket} ${ret_status} ${closebracket}"
@@ -67,8 +54,10 @@ else
     print $fg_bold[yellow]"UNKNOWN USERPATH IN ZSH-COLORTHEME HRINGRIIN"
 fi
 
+# TODO: does this still needs to be here?
 zstyle ':vcs_info:*' enable git
 
+# care for the indention! it is crucial to the layout of of prompt
 if [[ ${HOST} == "niederhoelle.de" || ${HOST} == "akuteunlust" ]] ; then
 PROMPT='
 %F{magenta}┌─%f %B%F{cyan}%D{%I:%M %p}%f%b ${usern} %B%F{yellow}@%b%f ${hostn} ${openbracket} %F{cyan}`uptime -p`%f ${closebracket}
@@ -81,7 +70,5 @@ PROMPT='
 %F{magenta}└─%f ${ret_stat} %B%F{${ucolor}}▶%f%b '
 fi
 
-#local cur_cmd="${openbracket}%_${closebracket}"
-##PROMPT2="${cur_cmd}> "
-#PROMPT2="${gitp}"
+# right prompt, only for git status
 RPROMPT='%F{${ucolor}}$(git_prompt_info)%f'
