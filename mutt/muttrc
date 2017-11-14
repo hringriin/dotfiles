@@ -103,6 +103,8 @@ set beep_new            =   yes                         # bell on new mails
 set send_charset        =   "utf-8"                     # UTF-8 is the future, and the presence ;)
 set charset             =   "utf-8"
 set edit_headers        =   yes                         # Full Header control
+set header_cache        =   "~/.mutt/cache/headers"     # See all mail headers in editor, cache headers and bodies
+set message_cachedir    =   "~/.mutt/cache/bodies"
 
 # Status Bar --------------------------------------------------------------------------------------
 #set status_chars        =   " *%A"
