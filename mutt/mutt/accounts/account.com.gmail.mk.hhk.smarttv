@@ -1,6 +1,9 @@
 # vim: ft=muttrc
 source ~/.mutt/passwords/password.com.gmail.mk.hhk.smarttv
 
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
 set smtp_url            =   "smtp://mk.hhk.smarttv@smtp.gmail.com:587/"
 set from                =   "mk.hhk.smarttv@gmail.com"
 set realname            =   "Monika Köster"
@@ -12,3 +15,10 @@ unset signature
 set ssl_force_tls       =   yes
 unset ssl_starttls
 unset pgp_sign_as       =   
+
+# Add mailboxes to sidebar. Have a look at mbsyncrc.
+mailboxes +Inbox \
+    +Sent \
+    +Drafts \
+    +Trash \
+    +Spam

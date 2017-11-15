@@ -1,11 +1,13 @@
 # vim: ft=muttrc
 source ~/.mutt/passwords/password.com.gmail.hringriin
 
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
 set smtp_url            =   "smtp://hringriin@smtp.gmail.com:587/"
 set from                =   "hringriin@gmail.com"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/com.gmail.hringriin/"
-#set myFolder            =   "~/.mailfolder/com.gmail.hringriin/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+Drafts"
 set record              =   "+Sent"
@@ -14,3 +16,28 @@ unset signature
 set ssl_force_tls       =   yes
 unset ssl_starttls
 unset pgp_sign_as       =   
+
+# Add mailboxes to sidebar. Have a look at mbsyncrc.
+mailboxes +Inbox \
+    +Sent \
+    +Drafts \
+    +Trash \
+    +Spam \
+    +Alternate \
+    +Amazon \
+    +Doodle \
+    +Dropbox \
+    +Ebay \
+    +Facebook \
+    +Google \
+    +MechWarriorOnline \
+    +Motor-Talk \
+    +NeuerRechner \
+    +PayPal \
+    +Rift \
+    +Spotify \
+    +Steam \
+    +SWToR \
+    +Trashy \
+    +Twitter \
+    +Wuala

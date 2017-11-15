@@ -1,6 +1,9 @@
 # vim: ft=muttrc
 source ~/.mutt/passwords/password.de.uni-bremen.jkoester
 
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
 set smtp_url            =   "smtp://jkoester@smtp.uni-bremen.de:587/"
 set from                =   "jkoester@tzi.de"
 set realname            =   "Joschka Köster"
@@ -11,3 +14,48 @@ set record              =   "+Sent"
 set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Uni Bremen ZfN und TZi/thunderbird.signatures.uni-bremen.txt"
 set ssl_force_tls       =   yes
 unset ssl_starttls
+
+# Add mailboxes to sidebar. Have a look at mbsyncrc.
+mailboxes +Inbox \
+    +Sent \
+    +Drafts \
+    +Trash \
+    +Junk \
+    +SPAM_JANA \
+    +1und1 \
+    +2012 \
+    +2013 \
+    +2014 \
+    +2015 \
+    +2016 \
+    +Allgemein \
+    +AStA_EDV \
+    +Dropbox \
+    +DreamSpark \
+    +FB3Tickets \
+    +FBMI \
+    +Gitlab_Commit_Messages \
+    +GitlabIssues \
+    +INWX \
+    +MEMS \
+    +Mentoren \
+    +Mentoren_Team \
+    +PABO \
+    +PI3 \
+    +StudIP \
+    +StugA \
+    +StugA_Facebook \
+    +StugA_Twitter \
+    +StugA-Admin \
+    +StugA-Admin_Backup \
+    +StugA-Admin_Certificates \
+    +StugA-Admin_Cron \
+    +StugA-Admin_HostEurope \
+    +StugA-Admin_MailmanFoo \
+    +StugA-Admin_Nagios \
+    +StugA-Admin_Raumzugang \
+    +StugA-Admin_RootkitHunter \
+    +StugA-Admin_SecurityIssues \
+    +StugA-Admin_SMART \
+    +StugA-Admin_Wordpress \
+    +SWP2

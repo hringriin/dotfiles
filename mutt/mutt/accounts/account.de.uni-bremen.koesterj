@@ -1,6 +1,9 @@
 # vim: ft=muttrc
 source ~/.mutt/passwords/password.de.uni-bremen.koesterj
 
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
 set smtp_url            =   "smtp://koesterj@smtp.uni-bremen.de:587/"
 set from                =   "j.koester@uni-bremen.de"
 set realname            =   "Joschka Köster"
@@ -11,3 +14,10 @@ set record              =   "+Sent"
 set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Uni Bremen ZfN und TZi/thunderbird.signatures.uni-bremen.txt"
 set ssl_force_tls       =   yes
 unset ssl_starttls
+
+# Add mailboxes to sidebar. Have a look at mbsyncrc.
+mailboxes +Inbox \
+    +Sent \
+    +Drafts \
+    +Trash \
+    +Junk

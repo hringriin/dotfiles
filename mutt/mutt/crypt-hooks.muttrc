@@ -137,9 +137,11 @@ crypt-hook  'info@cskreie\.de'                              '0x7FD2892E'
 # Kümmel, Matthias -----------------------------------------------------------------------------------------------------
 send-hook   'mkuemmel@tzi\.de'                              'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'mkuemmel@informatik\.uni-bremen\.de'           'set crypt_autoencrypt  ;   set crypt_autosign'
+send-hook   'mkuemmel@posteo\.de'                           'set crypt_autoencrypt  ;   set crypt_autosign'
 
 crypt-hook  'mkuemmel@tzi\.de'                              '0x5F385720'
 crypt-hook  'mkuemmel@informatik\.uni-bremen\.de'           '0x5F385720'
+crypt-hook  'mkuemmel@posteo\.de'                           '0x42A30853'
 
 
 # Reddehase, Tim -------------------------------------------------------------------------------------------------------
