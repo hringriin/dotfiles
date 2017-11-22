@@ -1,37 +1,50 @@
-# ACHERON specific config
+# MEDUSA specific config
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_temperature 1"
+order += "cpu_usage"
 order += "load"
-order += "tztime local"
+order += "tztime berlin"
 order += "volume master"
 
 battery 0 {
-        path = "/sys/class/power_supply/BAT1/uevent"
-        format = "BAT0: %status %percentage %remaining"
-        format_down = "BAT0: No battery"
-        status_chr = "  "
-        status_bat = " "
-        status_full = "  "
-        low_threshold = 10
+    path = "/sys/class/power_supply/BAT1/uevent"
+    format = "BAT0: %status %percentage %remaining"
+    format_down = "BAT0: No battery"
+    status_chr = "  "
+    status_bat = " "
+    status_full = "  "
+    status_unk = " "
+    low_threshold = 15
+    threshold_type = "percentage"
 }
 
 cpu_temperature 0 {
-    format = "CPU 0: %degrees °C"
+    format = " 0: %degrees °C"
     path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
 }
 
 cpu_temperature 1 {
-    format = "CPU 1: %degrees °C"
+    format = " 1: %degrees °C"
     path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp3_input"
+}
+
+cpu_usage {
+    format = "  %usage"
+    format_above_degraded_threshold = "%usage !"
+    format_above_threshold = "%usage !"
+    max_threshold = 90
+    degraded_threshold = 50
 }
 
 load {
     format = "  %1min %5min %15min"
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+tztime berlin {
+    timezone = "Europe/Berlin"
+    format = "%Y-%m-%d %H:%M:%S"
+    locale = "de_DE.UTF-8"
 }
 
 volume master {

@@ -1,17 +1,30 @@
+order += "disk /boot"
 order += "disk /"
 order += "ipv6"
 order += "ethernet enp3s0"
 order += "path_exists VPN_Home"
 order += "path_exists VPN_Uni"
 
-disk '/' {
-        format = "Root   : %avail"
+disk "/boot" {
+    format = "Boot   : %avail"
+    prefix_type = "binary"
+    low_threshold = 20
+    format_below_threshold = "Boot   : %avail"
+    threshold_type = percentage_free
+}
+
+disk "/" {
+    format = "Root   : %avail"
+    prefix_type = "binary"
+    low_threshold = 20
+    format_below_threshold = "Root   : %avail"
+    threshold_type = percentage_free
 }
 
 ethernet enp3s0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "  %ip %speed"
-        format_down = "  down"
+    # if you use %speed, i3status requires root privileges
+    format_up = "  %ip %speed"
+    format_down = "  down"
 }
 
 path_exists VPN_Home {
