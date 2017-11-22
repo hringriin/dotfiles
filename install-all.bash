@@ -32,6 +32,7 @@ neededPackerPrgorammes=(
     'dropbox'
     'dropbox-cli'
     'gitkraken'
+    'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
     'spotify-legacy'
     'ttf-font-awesome'
