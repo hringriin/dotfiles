@@ -1,3 +1,4 @@
+# vim: ft=i3
 # GENERAL CONFIGURATION FOR i3wm
 # This is expected to work on Arch Linux,
 # there is no guarantee, that it will work on other
