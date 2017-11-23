@@ -224,11 +224,9 @@ exec compton -f
 #exec --no-startup-id redshift-gtk
 
 # screenshot
-bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png"
+bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot_%Y-%m-%d%H:%M:%S.png"
 
 # Bind Application Classes to workspaces
-assign [class="Thunderbird"] $workspace1
-
 assign [class="Gajim"] $workspace2
 assign [class="xterm"] $workspace2
 assign [class="XTerm"] $workspace2
