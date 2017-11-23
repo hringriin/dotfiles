@@ -29,6 +29,7 @@ ulbin="/usr/local/bin"
 # list of programmes maintained by packer needed for the whole action
 neededPackerPrgorammes=(
     'adduser'
+    'clipster'
     'dropbox'
     'dropbox-cli'
     'gitkraken'

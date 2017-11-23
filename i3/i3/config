@@ -288,3 +288,7 @@ bindsym $mod+Right move workspace to output right
 bindsym $mod+Left move workspace to output left
 bindsym $mod+Up move workspace to output up
 bindsym $mod+Down move workspace to output down
+
+# clipster config (clipboard manager)
+exec --no-startup-id clipster -d
+bindsym $mod+c exec clipster -sc
