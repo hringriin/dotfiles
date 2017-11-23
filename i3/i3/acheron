@@ -56,9 +56,6 @@ bar {
     position bottom
 }
 
-# Lock Screen
-#bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock -i /home/hringriin/Pictures/Wallpaper/syslinux-bootloader/splash.png -c 000000"
-
 # Media Player Controls
 bindsym XF86AudioPlay exec playerctrl play
 bindsym XF86AudioPause exec playerctrl pause
