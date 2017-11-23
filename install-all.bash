@@ -453,6 +453,12 @@ function linkConfigs()
     # bashrc
     sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
 
+    # clipster
+    if [[ ! ( -d ~/.config/clipster/ ) ]] ; then
+        mkdir -p ~/.config/clipster/
+    fi
+    ln -fsv ${repoPath}/clipster/clipster.ini ~/.config/clipster/
+
     # gitlab clone script
     sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
 
