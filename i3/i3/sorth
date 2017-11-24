@@ -77,9 +77,15 @@ exec xset s 14400 14400
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # Pulse Audio controls
-#bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +2%   # increase sound volume
-#bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -2%   # decrease sound volume
-#bindsym $mod+Right exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
+for_window [class="URxvt" instance="PULSEAUDIO"] floating enable border pixel 3
+bindsym $mod+Up exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh oup                    # increase Speaker volume
+bindsym $mod+Down exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh odn                    # decrease Speaker volume
+bindsym $mod+Right exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh iup               # increase Microphone volume
+bindsym $mod+Left exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh idn               # decrease Microphone volume
+bindcode $mod+108 exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh sp                            # mute sound
+bindcode $mod+105 exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh mic                        # mute mic
+bindcode $mod+Control+108 exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setOutDev      # set OutputDevice
+bindcode $mod+Control+105 exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setInDev    # set InputDevice
 
 # Screen Brightness Controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
