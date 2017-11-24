@@ -284,10 +284,10 @@ exec xset -dpms
 exec xset s 1800 1800
 
 # Move Workspace to xrandr output
-bindsym $mod+Right move workspace to output right
-bindsym $mod+Left move workspace to output left
-bindsym $mod+Up move workspace to output up
-bindsym $mod+Down move workspace to output down
+bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
 
 # clipster config (clipboard manager)
 exec --no-startup-id clipster -d
