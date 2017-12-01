@@ -38,8 +38,8 @@ cpu_temperature 0 {
 
 cpu_usage {
     format = "  %usage"
-    format_above_degraded_threshold = "%usage !"
-    format_above_threshold = "%usage !"
+    format_above_degraded_threshold = "  %usage"
+    format_above_threshold = "  %usage"
     max_threshold = 90
     degraded_threshold = 50
 }
