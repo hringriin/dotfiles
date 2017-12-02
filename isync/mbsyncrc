@@ -1068,28 +1068,28 @@ Expunge Both
 SyncState *
 
 Channel com.gmail.mk.hhk.smarttv-sent
-Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Sent Mail"
+Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Sent Mail"
 slave  :com.gmail.mk.hhk.smarttv-local:Sent
 Create Both
 Expunge Both
 SyncState *
 
 Channel com.gmail.mk.hhk.smarttv-drafts
-Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Drafts"
+Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Drafts"
 slave  :com.gmail.mk.hhk.smarttv-local:Drafts
 Create Both
 Expunge Both
 SyncState *
 
 Channel com.gmail.mk.hhk.smarttv-trash
-Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Trash"
+Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Trash"
 slave  :com.gmail.mk.hhk.smarttv-local:Trash
 Create Both
 Expunge Both
 SyncState *
 
 Channel com.gmail.mk.hhk.smarttv-spam
-Master :com.gmail.mk.hhk.smarttv-remote:"[Google Mail]/Spam"
+Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Spam"
 slave  :com.gmail.mk.hhk.smarttv-local:Spam
 Create Both
 Expunge Both
