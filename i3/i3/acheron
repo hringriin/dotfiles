@@ -70,7 +70,7 @@ bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
 # start a terminal
-bindsym XF86Launch1 exec terminator
+bindsym XF86Launch1 exec pavucontrol
 
 # Pulse Audio controls
 # I have a custom script, which stumbles around with my audio devices ...
