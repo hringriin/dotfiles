@@ -169,21 +169,19 @@ crypt-hook  'rieckers@informatik\.uni-bremen\.de'           '0x5EA04DEF'
 
 
 # Rohde, Florian -------------------------------------------------------------------------------------------------------
-send-hook   'frohde@tzi\.de'                                'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'frohde@tzi\.de'                                '0x6C96E945'
-
-
-# Rohde, Florian -------------------------------------------------------------------------------------------------------
 send-hook   's_78f5kj@uni-bremen\.de'                       'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'info@adminportal\.eu'                          'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'rohde\.florian@adminportal\.eu'                'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'frohde@informatik\.uni-bremen\.de'             'set crypt_autoencrypt  ;   set crypt_autosign'
+send-hook   'frohde@tzi\.de'                                'set crypt_autoencrypt  ;   set crypt_autosign'
+send-hook   'frohde@tzi\.org'                               'set crypt_autoencrypt  ;   set crypt_autosign'
 
 crypt-hook  's_78f5kj@uni-bremen\.de'                       '0xBFAC8DB7'
 crypt-hook  'info@adminportal\.eu'                          '0xBFAC8DB7'
 crypt-hook  'rohde\.florian@adminportal\.eu'                '0xBFAC8DB7'
 crypt-hook  'frohde@informatik\.uni-bremen\.de'             '0xBFAC8DB7'
+crypt-hook  'frohde@tzi\.de'                                '0xBFAC8DB7'
+crypt-hook  'frohde@tzi\.org'                               '0xBFAC8DB7'
 
 
 # Roosch, Anika --------------------------------------------------------------------------------------------------------
