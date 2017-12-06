@@ -1,6 +1,9 @@
 #!/bin/bash
 # create configs
 
+echo -e "\e[1;36mINSTALLTING MUTT CONFIGURATION FILES ...\e[0m"
+sleep 1
+
 PREFIX=
 
 if [[ `uname -s` == *"arwin"* ]] ; then
@@ -106,6 +109,15 @@ startService()
     fi
 }
 
+cleanupFirst()
+{
+    echo "Checking previously installed mutt configurations ..."
+
+    if [[ -d ${MUTTPATH} ]] ; then
+        rm -vrf ${MUTTPATH}
+    fi
+}
+
 
 checkFirstTime()
 {
@@ -159,6 +171,8 @@ main()
         checkIfExists mutt
         checkIfExists isync
     fi
+
+    cleanupFirst
 
     copyFiles
 
