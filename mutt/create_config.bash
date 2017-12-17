@@ -57,6 +57,8 @@ copyFiles()
         copyGPG
     else
         echo "GPG Keys will NOT be copied!"
+        echo "isync Script will not work this way, aborting ..."
+        exit 6
     fi
 
     cp -fv ${MUTTREPOPATH}/mutt/crypt-hooks.muttrc ${MUTTPATH}/
