@@ -646,6 +646,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Ello
+Master :com.gmail.hringriin-remote:INBOX/"Ello"
+slave  :com.gmail.hringriin-local:Ello
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Facebook
 Master :com.gmail.hringriin-remote:INBOX/"Facebook"
 slave  :com.gmail.hringriin-local:Facebook
@@ -653,9 +660,51 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-GetDigital
+Master :com.gmail.hringriin-remote:INBOX/"GetDigital"
+slave  :com.gmail.hringriin-local:GetDigital
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-GOG
+Master :com.gmail.hringriin-remote:INBOX/"GOG"
+slave  :com.gmail.hringriin-local:GOG
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Google
 Master :com.gmail.hringriin-remote:INBOX/"Google"
 slave  :com.gmail.hringriin-local:Google
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-HumbleBundle
+Master :com.gmail.hringriin-remote:INBOX/"HumbleBundle"
+slave  :com.gmail.hringriin-local:HumbleBundle
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-iFixit
+Master :com.gmail.hringriin-remote:INBOX/"iFixit"
+slave  :com.gmail.hringriin-local:iFixit
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-MasteringVim
+Master :com.gmail.hringriin-remote:INBOX/"MasteringVim"
+slave  :com.gmail.hringriin-local:MasteringVim
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Maxdome
+Master :com.gmail.hringriin-remote:INBOX/"Maxdome"
+slave  :com.gmail.hringriin-local:Maxdome
 Create Both
 Expunge Both
 SyncState *
@@ -670,6 +719,13 @@ SyncState *
 Channel com.gmail.hringriin-Motor-Talk
 Master :com.gmail.hringriin-remote:INBOX/"Motor-Talk"
 slave  :com.gmail.hringriin-local:Motor-Talk
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Netflix
+Master :com.gmail.hringriin-remote:INBOX/"Netflix"
+slave  :com.gmail.hringriin-local:Netflix
 Create Both
 Expunge Both
 SyncState *
@@ -733,6 +789,13 @@ SyncState *
 Channel com.gmail.hringriin-Wuala
 Master :com.gmail.hringriin-remote:INBOX/"Wuala"
 slave  :com.gmail.hringriin-local:Wuala
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-YouTube
+Master :com.gmail.hringriin-remote:INBOX/"YouTube"
+slave  :com.gmail.hringriin-local:YouTube
 Create Both
 Expunge Both
 SyncState *
