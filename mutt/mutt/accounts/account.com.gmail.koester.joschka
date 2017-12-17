@@ -23,10 +23,12 @@ mailboxes +Inbox \
     +Spam \
     +BrePark \
     +DHL \
+    +Elgato \
     +EMP \
     +Eventim \
     +FAX \
     +FlightSimulatorX \
+    +FritzBox \
     +Google \
     +GuitarPro \
     +IndieGala \
@@ -36,7 +38,10 @@ mailboxes +Inbox \
     +MERKEN \
     +MyDays \
     +MySongbook \
+    +Navigon \
     +O2 \
     +Payback \
     +Niederhoelle-Org \
-    +Server4You
+    +Server4You \
+    +Thrustmaster \
+    +WDCloud
