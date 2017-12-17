@@ -437,6 +437,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.koester.joschka-Elgato
+Master :com.gmail.koester.joschka-remote:INBOX/"Elgato"
+slave  :com.gmail.koester.joschka-local:Elgato
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.koester.joschka-EMP
 Master :com.gmail.koester.joschka-remote:INBOX/"EMP"
 slave  :com.gmail.koester.joschka-local:EMP
@@ -461,6 +468,13 @@ SyncState *
 Channel com.gmail.koester.joschka-FlightSimulatorX
 Master :com.gmail.koester.joschka-remote:INBOX/"FlightSimulatorX"
 slave  :com.gmail.koester.joschka-local:FlightSimulatorX
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.koester.joschka-FritzBox
+Master :com.gmail.koester.joschka-remote:INBOX/"FritzBox"
+slave  :com.gmail.koester.joschka-local:FritzBox
 Create Both
 Expunge Both
 SyncState *
@@ -528,6 +542,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.koester.joschka-Navigon
+Master :com.gmail.koester.joschka-remote:INBOX/"Navigon"
+slave  :com.gmail.koester.joschka-local:Navigon
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.koester.joschka-O2
 Master :com.gmail.koester.joschka-remote:INBOX/"O2-Handy"
 slave  :com.gmail.koester.joschka-local:O2
@@ -552,6 +573,20 @@ SyncState *
 Channel com.gmail.koester.joschka-Server4You
 Master :com.gmail.koester.joschka-remote:INBOX/"Server4You"
 slave  :com.gmail.koester.joschka-local:Server4You
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.koester.joschka-Thrustmaster
+Master :com.gmail.koester.joschka-remote:INBOX/"Thrustmaster"
+slave  :com.gmail.koester.joschka-local:Thrustmaster
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.koester.joschka-WDCloud
+Master :com.gmail.koester.joschka-remote:INBOX/"WDCloud"
+slave  :com.gmail.koester.joschka-local:WDCloud
 Create Both
 Expunge Both
 SyncState *
