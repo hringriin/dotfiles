@@ -996,6 +996,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Ubisoft
+Master :com.gmail.hringriin-remote:INBOX/"Ubisoft"
+slave  :com.gmail.hringriin-local:Ubisoft
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Wuala
 Master :com.gmail.hringriin-remote:INBOX/"Wuala"
 slave  :com.gmail.hringriin-local:Wuala
