@@ -842,6 +842,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-McDonalds
+Master :com.gmail.hringriin-remote:INBOX/"McDonalds"
+slave  :com.gmail.hringriin-local:McDonalds
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-MechWarriorOnline
 Master :com.gmail.hringriin-remote:INBOX/"MechWarriorOnline"
 slave  :com.gmail.hringriin-local:MechWarriorOnline
