@@ -667,6 +667,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Archlinux
+Master :com.gmail.hringriin-remote:INBOX/"Archlinux"
+slave  :com.gmail.hringriin-local:Archlinux
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Doodle
 Master :com.gmail.hringriin-remote:INBOX/"Doodle"
 slave  :com.gmail.hringriin-local:Doodle
