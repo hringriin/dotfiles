@@ -730,6 +730,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-EliteDangerous
+Master :com.gmail.hringriin-remote:INBOX/"EliteDangerous"
+slave  :com.gmail.hringriin-local:EliteDangerous
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Ello
 Master :com.gmail.hringriin-remote:INBOX/"Ello"
 slave  :com.gmail.hringriin-local:Ello
