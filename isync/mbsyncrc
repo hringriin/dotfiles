@@ -723,6 +723,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-ElderScrollsOnline
+Master :com.gmail.hringriin-remote:INBOX/"ElderScrollsOnline"
+slave  :com.gmail.hringriin-local:ElderScrollsOnline
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Ello
 Master :com.gmail.hringriin-remote:INBOX/"Ello"
 slave  :com.gmail.hringriin-local:Ello
