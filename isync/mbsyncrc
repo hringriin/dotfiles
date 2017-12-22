@@ -751,6 +751,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-EMP
+Master :com.gmail.hringriin-remote:INBOX/"EMP"
+slave  :com.gmail.hringriin-local:EMP
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Facebook
 Master :com.gmail.hringriin-remote:INBOX/"Facebook"
 slave  :com.gmail.hringriin-local:Facebook
