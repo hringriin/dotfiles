@@ -74,19 +74,19 @@ let g:quickmenu_options = "HL"
 "call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
 
 " layout / visual
-call quickmenu#append("# Layout / Visual", '')
-call quickmenu#append("zoom Window", ':ZoomWin', "zoom current buffer")
-call quickmenu#append("cursor column: %{&colorcolumn}", ':call MySecondColorColumn()', "Displays a defined column and break line at that column if enabled")
-call quickmenu#append("File Explorer", ':NERDTreeToggle', "Open Nerdtree, a file explorer")
-call quickmenu#append("turn Cursorline %{&cursorline? 'off':'on'}", ':set cursorline!', "Enable/Disable Cursorline")
-call quickmenu#append("turn Cursorcolumn %{&cursorcolumn? 'off':'on'}", ':set cursorcolumn!', "Enable/Disable Cursorcolumn")
-call quickmenu#append("turn List Chars %{&list? 'off':'on'}",':call ToggleListChars()',"will toggle showing invisible characeters, such as whitespaces")
+call quickmenu#append("# Layout / Visual"                              , '')
+call quickmenu#append("zoom Window"                                    , ':ZoomWin'                    , "zoom current buffer")
+call quickmenu#append("cursor column: %{&colorcolumn}"                 , ':call MySecondColorColumn()' , "Displays a defined column and break line at that column if enabled")
+call quickmenu#append("File Explorer"                                  , ':NERDTreeToggle'             , "Open Nerdtree, a file explorer")
+call quickmenu#append("turn Cursorline %{&cursorline? 'off':'on'}"     , ':set cursorline!'            , "Enable/Disable Cursorline")
+call quickmenu#append("turn Cursorcolumn %{&cursorcolumn? 'off':'on'}" , ':set cursorcolumn!'          , "Enable/Disable Cursorcolumn")
+call quickmenu#append("turn List Chars %{&list? 'off':'on'}"           , ':call ToggleListChars()'     , "will toggle showing invisible characeters, such as whitespaces")
 
 " code/text format
-call quickmenu#append("# Text Format", '')
-call quickmenu#append("retab", ':retab', "Transform Tabulators to Whitespaces if possible")
-call quickmenu#append("rem. tr. Whitespaces", ':call TrailingWhitespaces()', "Remove trailing Whitespaces")
-call quickmenu#append("set linebreak: %{&tw}",':call MyTextWidth()', "Set the current textwidth")
+call quickmenu#append("# Text Format"         , '')
+call quickmenu#append("retab"                 , ':retab'                      , "Transform Tabulators to Whitespaces if possible")
+call quickmenu#append("rem. tr. Whitespaces"  , ':call TrailingWhitespaces()' , "Remove trailing Whitespaces")
+call quickmenu#append("set linebreak: %{&tw}" , ':call MyTextWidth()'         , "Set the current textwidth")
 
 " new section
 call quickmenu#append("# Misc", '')
