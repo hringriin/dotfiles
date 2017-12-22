@@ -940,6 +940,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Robocraft
+Master :com.gmail.hringriin-remote:INBOX/"Robocraft"
+slave  :com.gmail.hringriin-local:Robocraft
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Spotify
 Master :com.gmail.hringriin-remote:INBOX/"Spotify"
 slave  :com.gmail.hringriin-local:Spotify
