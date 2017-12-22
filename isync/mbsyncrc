@@ -891,6 +891,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-NoIp
+Master :com.gmail.hringriin-remote:INBOX/"NoIp"
+slave  :com.gmail.hringriin-local:NoIp
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-PayPal
 Master :com.gmail.hringriin-remote:INBOX/"PayPal"
 slave  :com.gmail.hringriin-local:PayPal
