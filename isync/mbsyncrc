@@ -968,6 +968,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-TeamViewer
+Master :com.gmail.hringriin-remote:INBOX/"TeamViewer"
+slave  :com.gmail.hringriin-local:TeamViewer
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Trashy
 Master :com.gmail.hringriin-remote:INBOX/"Trashy"
 slave  :com.gmail.hringriin-local:Trashy
