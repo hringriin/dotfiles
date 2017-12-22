@@ -688,6 +688,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-DHL
+Master :com.gmail.hringriin-remote:INBOX/"DHL"
+slave  :com.gmail.hringriin-local:DHL
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Doodle
 Master :com.gmail.hringriin-remote:INBOX/"Doodle"
 slave  :com.gmail.hringriin-local:Doodle
