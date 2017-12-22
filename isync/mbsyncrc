@@ -681,6 +681,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Codecademy
+Master :com.gmail.hringriin-remote:INBOX/"Codecademy"
+slave  :com.gmail.hringriin-local:Codecademy
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Doodle
 Master :com.gmail.hringriin-remote:INBOX/"Doodle"
 slave  :com.gmail.hringriin-local:Doodle
