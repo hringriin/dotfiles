@@ -821,6 +821,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-IsNichWahr
+Master :com.gmail.hringriin-remote:INBOX/"IsNichWahr"
+slave  :com.gmail.hringriin-local:IsNichWahr
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-MasteringVim
 Master :com.gmail.hringriin-remote:INBOX/"MasteringVim"
 slave  :com.gmail.hringriin-local:MasteringVim
