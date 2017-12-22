@@ -702,6 +702,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-EA
+Master :com.gmail.hringriin-remote:INBOX/"EA"
+slave  :com.gmail.hringriin-local:EA
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Dropbox
 Master :com.gmail.hringriin-remote:INBOX/"Dropbox"
 slave  :com.gmail.hringriin-local:Dropbox
