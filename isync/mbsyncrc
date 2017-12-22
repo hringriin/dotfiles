@@ -982,6 +982,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Twitch
+Master :com.gmail.hringriin-remote:INBOX/"Twitch"
+slave  :com.gmail.hringriin-local:Twitch
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Twitter
 Master :com.gmail.hringriin-remote:INBOX/"Twitter"
 slave  :com.gmail.hringriin-local:Twitter
