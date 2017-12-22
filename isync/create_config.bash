@@ -1,5 +1,5 @@
 #!/bin/bash
-# create config
+# create isync config
 
 PREFIX=
 
@@ -17,6 +17,8 @@ TMPFILE="${PREFIX}/mbsyncrc-tmp"
 
 insertPasswd()
 {
+    echo -e "Writing password ..."
+
     PWD=`cat $2 | cut -d '=' -f 2 | sed -e 's/\s*//'`
     sed -e '/User '"$1"'/ a '"Pass ${PWD}"'' ${MBSYNCFILE} &> ${TMPFILE}
     cp -rf ${TMPFILE} ${MBSYNCFILE}
@@ -42,6 +44,8 @@ main()
         mkdir -m 0700 -p ${PREFIX}/.mailfolder/${fdname}
         insertPasswd ${fname} ${f}
     done
+
+    sudo ln -fsv ${MBSYNCREPOPATH}/scripts/createFolderInMailbox.bash /usr/local/bin/createFolderInMailbox
 }
 
 main

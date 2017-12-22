@@ -32,20 +32,25 @@ getName ()
     # echo ${exarray[41]}     last element, if @=42
 }
 
-writeDir ()
-{
-}
-
-getMailbox ()
-{
-}
+#writeDir ()
+#{
+#    #TODO
+#    #something
+#}
+#
+#getMailbox ()
+#{
+#    #TODO
+#    #something
+#}
 
 main ()
 {
     #getName
     #getMailbox
     #writeDir
+    mkdir -p ./$1/{cur,new,tmp}
 }
 
-#main
+main $1
 exit 0
