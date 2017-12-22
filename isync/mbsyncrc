@@ -898,6 +898,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Nvidia
+Master :com.gmail.hringriin-remote:INBOX/"Nvidia"
+slave  :com.gmail.hringriin-local:Nvidia
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-PayPal
 Master :com.gmail.hringriin-remote:INBOX/"PayPal"
 slave  :com.gmail.hringriin-local:PayPal
