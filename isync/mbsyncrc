@@ -744,6 +744,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Elyra
+Master :com.gmail.hringriin-remote:INBOX/"Elyra"
+slave  :com.gmail.hringriin-local:Elyra
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Facebook
 Master :com.gmail.hringriin-remote:INBOX/"Facebook"
 slave  :com.gmail.hringriin-local:Facebook
