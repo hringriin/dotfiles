@@ -905,6 +905,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-OwnCloud
+Master :com.gmail.hringriin-remote:INBOX/"OwnCloud"
+slave  :com.gmail.hringriin-local:OwnCloud
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-PayPal
 Master :com.gmail.hringriin-remote:INBOX/"PayPal"
 slave  :com.gmail.hringriin-local:PayPal
