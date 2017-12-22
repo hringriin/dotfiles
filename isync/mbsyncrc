@@ -863,6 +863,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Mojang
+Master :com.gmail.hringriin-remote:INBOX/"Mojang"
+slave  :com.gmail.hringriin-local:Mojang
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Motor-Talk
 Master :com.gmail.hringriin-remote:INBOX/"Motor-Talk"
 slave  :com.gmail.hringriin-local:Motor-Talk
