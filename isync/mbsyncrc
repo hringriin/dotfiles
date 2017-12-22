@@ -786,6 +786,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-GitKraken
+Master :com.gmail.hringriin-remote:INBOX/"GitKraken"
+slave  :com.gmail.hringriin-local:GitKraken
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-GOG
 Master :com.gmail.hringriin-remote:INBOX/"GOG"
 slave  :com.gmail.hringriin-local:GOG
