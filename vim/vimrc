@@ -123,6 +123,12 @@ match ErrorMsg '\%>120v.\+'
 " highlight trailing whitespaces
 match ErrorMsg '\s\+$'
 
+" open vertical split
+nmap <Leader>vs :vsp<cr>
+
+" open horizontal split
+nmap <Leader>hs :sp<cr>
+
 " MARKDOWN SYNTAX PLUGIN 'VIM-MARKDOWN'
 " disable folding
 let g:vim_markdown_folding_disabled = 1
