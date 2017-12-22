@@ -765,6 +765,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Fastfood
+Master :com.gmail.hringriin-remote:INBOX/"Fastfood"
+slave  :com.gmail.hringriin-local:Fastfood
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-GetDigital
 Master :com.gmail.hringriin-remote:INBOX/"GetDigital"
 slave  :com.gmail.hringriin-local:GetDigital
