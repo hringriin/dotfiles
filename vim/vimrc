@@ -112,6 +112,11 @@ let g:move_key_modifier = 'C'
 " globally disable foldings
 set nofoldenable
 
+" saner line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
 " MARKDOWN SYNTAX PLUGIN 'VIM-MARKDOWN'
 " disable folding
 let g:vim_markdown_folding_disabled = 1
