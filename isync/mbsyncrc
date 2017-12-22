@@ -646,6 +646,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-AliExpress
+Master :com.gmail.hringriin-remote:INBOX/"AliExpress"
+slave  :com.gmail.hringriin-local:AliExpress
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Alternate
 Master :com.gmail.hringriin-remote:INBOX/"Alternate"
 slave  :com.gmail.hringriin-local:Alternate
