@@ -1003,6 +1003,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-WDCloud
+Master :com.gmail.hringriin-remote:INBOX/"WDCloud"
+slave  :com.gmail.hringriin-local:WDCloud
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Wuala
 Master :com.gmail.hringriin-remote:INBOX/"Wuala"
 slave  :com.gmail.hringriin-local:Wuala
