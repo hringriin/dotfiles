@@ -772,6 +772,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-FunCom
+Master :com.gmail.hringriin-remote:INBOX/"FunCom"
+slave  :com.gmail.hringriin-local:FunCom
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-GetDigital
 Master :com.gmail.hringriin-remote:INBOX/"GetDigital"
 slave  :com.gmail.hringriin-local:GetDigital
