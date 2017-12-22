@@ -926,6 +926,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-ProMods
+Master :com.gmail.hringriin-remote:INBOX/"ProMods"
+slave  :com.gmail.hringriin-local:ProMods
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Rift
 Master :com.gmail.hringriin-remote:INBOX/"Rift"
 slave  :com.gmail.hringriin-local:Rift
