@@ -129,6 +129,10 @@ nmap <Leader>vs :vsp<cr>
 " open horizontal split
 nmap <Leader>hs :sp<cr>
 
+" switch tabs with tab key
+nmap <Tab> gt
+nmap <S-Tab> gT
+
 " tabular shorcut
 " the syntax would be `:Tabularize /,` to split a visual selected paragraph by
 " 'comma'. Use `:Tabularize /;` to split by 'semicolon'.
