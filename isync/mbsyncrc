@@ -98,6 +98,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel de.uni-bremen.jkoester-2017
+Master :de.uni-bremen.jkoester-remote:INBOX/"2017"
+slave  :de.uni-bremen.jkoester-local:2017
+Create Both
+Expunge Both
+SyncState *
+
 Channel de.uni-bremen.jkoester-Allgemein
 Master :de.uni-bremen.jkoester-remote:INBOX/"Allgemein"
 slave  :de.uni-bremen.jkoester-local:Allgemein
