@@ -29,6 +29,7 @@ Plug 'vim-scripts/ZoomWin'              " hit <Leader>f to fullscreen a vim tab.
                                         " be careful with closing buffers!
 Plug 'AndrewRadev/multichange.vim'
 Plug 'scrooloose/nerdtree'              " Nerdtree
+Plug 'tmux-plugins/vim-tmux'            " vim plugin for .tmux.conf
 Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
 Plug 'vim-airline/vim-airline/'         " new status bar
 Plug 'vim-airline/vim-airline-themes'

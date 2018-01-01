@@ -519,7 +519,7 @@ function linkConfigs()
     ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
 
     # mutt
-    /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/mutt/create_config.bash
+    ${repoPath}/mutt/create_config.bash
 
     # redshift
     ln -fsv ${repoPath}/redshift/redshift.conf ~/.config/redshift.conf
@@ -534,13 +534,13 @@ function linkConfigs()
     ln -fsv ${repoPath}/TIMESCRIPT/* ~/TIMESCRIPT
 
     # tmux
-    sudo ln -fsv ${repoPath}/tmux/tmux.conf /etc/tmux.conf
+    ${repoPath}/tmux/create_config.bash
 
     # vim
     sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
 
     # weechat
-    /home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/weechat/link-files.bash
+    ${repoPath}/weechat/link-files.bash
 
     # xorg
     ln -fsv ${repoPath}/X/Xdefaults ~/.Xdefaults
