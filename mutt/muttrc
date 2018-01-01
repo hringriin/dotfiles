@@ -11,7 +11,6 @@ set query_command   =   "abook --mutt-query '%s'"
 # Folder Hooks ------------------------------------------------------------------------------------
 folder-hook     'accounts/account.de.tzi.jkoester'               'source ~/.mailfolder/de.tzi.jkoester'
 folder-hook     'accounts/account.de.uni-bremen.jkoester'        'source ~/.mailfolder/de.uni-bremen.jkoester'
-folder-hook     'accounts/account.de.uni-bremen.koesterj'        'source ~/.mailfolder/de.uni-bremen.koesterj'
 folder-hook     'accounts/account.com.gmail.koester.joschka'     'source ~/.mailfolder/com.gmail.koester.joschka'
 folder-hook     'accounts/account.com.gmail.hringriin'           'source ~/.mailfolder/com.gmail.hringriin'
 folder-hook     'accounts/account.com.gmail.jk.sgs4i9505'        'source ~/.mailfolder/com.gmail.jk.sgs4i9505'
@@ -31,38 +30,32 @@ set crypt_confirmhook       =   no      # do not prompt for confirmation for pre
 source ~/.mutt/crypt-hooks.muttrc
 
 # Macros for switching accounts -------------------------------------------------------------------
-# CTRL + F12    ZfN-new
+# CTRL + F12    Uni
 macro index     <F36>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.jkoester<enter><change-folder>!<enter>'
 
-# CTRL + F11    ZfN-old
-macro index     <F35>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.koesterj<enter><change-folder>!<enter>'
+# CTRL + F11    koester.joschka
+macro index     <F35>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.koester.joschka<enter><change-folder>!<enter>'
 
-# CTRL + F10    koester.joschka
-macro index     <F34>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.koester.joschka<enter><change-folder>!<enter>'
+# CTRL + F10    hringriin
+macro index     <F34>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.hringriin<enter><change-folder>!<enter>'
 
-# CTRL + F9     hringriin
-macro index     <F33>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.hringriin<enter><change-folder>!<enter>'
+# CTRL + F9     josh.ets2mp
+macro index     <F33>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.josh.ets2mp<enter><change-folder>!<enter>'
 
-# CTRL + F8     josh.ets2mp
-macro index     <F32>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.josh.ets2mp<enter><change-folder>!<enter>'
+# CTRL + F8     blutige.kodoleber.esser
+macro index     <F32>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.blutige.kodoleber.esser<enter><change-folder>!<enter>'
 
-# CTRL + F7     blutige.kodoleber.esser
-macro index     <F31>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.blutige.kodoleber.esser<enter><change-folder>!<enter>'
+# CTRL + F7     jk.sgs4i9505
+macro index     <F31>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.sgs4i9505<enter><change-folder>!<enter>'
 
-# CTRL + F6     jk.sgs4i9505
-macro index     <F30>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.sgs4i9505<enter><change-folder>!<enter>'
+# CTRL + F6     jk.iptaid
+macro index     <F30>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.iptaid<enter><change-folder>!<enter>'
 
-# CTRL + F5     jk.iptaid
-macro index     <F29>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.iptaid<enter><change-folder>!<enter>'
+# CTRL + F5     ahliazhia
+macro index     <F29>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
 
-# CTRL + F4     ahliazhia
-macro index     <F28>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
-
-# CTRL + F3     [smarttv wohnzimmer]
-macro index     <F27>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
-
-# CTRL + F2     [tzi]
-#macro index     <F26>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.tzi.jkoester<enter><change-folder>!<enter>'
+# CTRL + F4     [smarttv wohnzimmer]
+macro index     <F28>       '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut

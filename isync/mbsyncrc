@@ -324,60 +324,6 @@ SyncState *
 
 ##### </ JKOESTER@UNI-BREMEN.DE >
 
-##### < KOESTERJ@UNI-BREMEN.DE >
-# DEPRECATED !!!!
-
-IMAPAccount de.uni-bremen.koesterj
-Host imap.uni-bremen.de
-User koesterj
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore de.uni-bremen.koesterj-remote
-Account de.uni-bremen.koesterj
-
-MaildirStore de.uni-bremen.koesterj-local
-Path ~/.mailfolder/de.uni-bremen.koesterj/
-Inbox ~/.mailfolder/de.uni-bremen.koesterj/inbox
-
-Channel de.uni-bremen.koesterj-default
-Master :de.uni-bremen.koesterj-remote:
-Slave :de.uni-bremen.koesterj-local:Inbox
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.koesterj-sent
-Master :de.uni-bremen.koesterj-remote:INBOX/"Sent"
-slave  :de.uni-bremen.koesterj-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.koesterj-drafts
-Master :de.uni-bremen.koesterj-remote:INBOX/"Drafts"
-slave  :de.uni-bremen.koesterj-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.koesterj-trash
-Master :de.uni-bremen.koesterj-remote:INBOX/"Trash"
-slave  :de.uni-bremen.koesterj-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.koesterj-spam
-Master :de.uni-bremen.koesterj-remote:INBOX/"Junk"
-slave  :de.uni-bremen.koesterj-local:Junk
-Create Both
-Expunge Both
-SyncState *
-
-##### </ KOESTERJ@UNI-BREMEN.DE >
-
 
 ##### < KOESTER.JOSCHKA@GMAIL.COM >
 
