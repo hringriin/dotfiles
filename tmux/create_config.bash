@@ -5,8 +5,16 @@ echo -e "\e[1;36mINSTALLTING TMUX CONFIGURATION FILES ...\e[0m"
 sleep 1
 
 # CONFIG
-REPOPATH="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo/tmux"
-TMUXPATH="/home/${USER}/.tmux"
+
+PREFIX=
+if [[ `uname -s` == *"arwin"* ]] ; then
+    PREFIX="/Users/${USER}"
+elif [[ `uname -s` == *"inux"* ]] ; then
+    PREFIX="/home/${USER}"
+fi
+
+REPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/tmux"
+TMUXPATH="${PREFIX}/.tmux"
 
 # links config files
 linkFiles ()
