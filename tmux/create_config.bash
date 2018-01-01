@@ -8,9 +8,17 @@ sleep 1
 
 PREFIX=
 if [[ `uname -s` == *"arwin"* ]] ; then
-    PREFIX="/Users/${USER}"
+    if [[ ${UID} -eq 0 ]] ; then
+        PREFIX="/var/root"
+    else
+        PREFIX="/Users/${USER}"
+    fi
 elif [[ `uname -s` == *"inux"* ]] ; then
-    PREFIX="/home/${USER}"
+    if [[ ${UID} -eq 0 ]] ; then
+        PREFIX="/root"
+    else
+        PREFIX="/home/${USER}"
+    fi
 fi
 
 REPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/tmux"
