@@ -3,8 +3,9 @@ text/plain; /usr/bin/less
 # Word-like
 application/msword; libreoffice --writer %s
 application/vnd.oasis.opendocument.text; libreoffice --writer %s
-application/odt; libreoffice %s
-application/ods; libreoffice %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice --writer %s
+application/odt; libreoffice --writer %s
+application/ods; libreoffice --writer %s
 
 # Spreadsheets
 application/msword; libreoffice --calc %s
