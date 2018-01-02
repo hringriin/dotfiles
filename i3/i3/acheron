@@ -103,13 +103,14 @@ workspace $workspace8 output LVDS1
 workspace $workspace9 output LVDS1
 workspace $workspace10 output LVDS1
 
-# Startup Applications
+# Startup Applications (Autostart)
 exec owncloud
 exec dropbox
 exec --no-startup-id nagstamon
 #exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/termite -e weechat'
+exec --no-startup-id i3-msg 'workspace $workspace16; exec /usr/bin/blink'
 
 # xRandR GUI
 bindsym XF86Display exec arandr

@@ -129,7 +129,7 @@ set $workspace12 "12"
 set $workspace13 "13"
 set $workspace14 "14"
 set $workspace15 "15"
-set $workspace16 "16"
+set $workspace16 "16: "
 set $workspace17 "17: "
 set $workspace18 "18: "
 set $workspace19 "19: "
@@ -247,6 +247,9 @@ assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
 assign [class="factorio"] $workspace10
+
+assign [class="blink"] $workspace16
+assign [class="Blink"] $workspace16
 
 assign [class="gitkraken"] $workspace17
 assign [class="GitKraken"] $workspace17
