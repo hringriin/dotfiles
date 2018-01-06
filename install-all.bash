@@ -53,6 +53,7 @@ neededProgrammes=(
     'bc'
     'binutils'
     'bison'
+    'blueman'
     'compton'
     'curl'
     'evince'
