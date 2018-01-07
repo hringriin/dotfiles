@@ -5,6 +5,9 @@
   title_receive_bg_color = "#00ff2e"
   title_transmit_bg_color = "#005e73"
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
   help = <Primary>F1
 [layouts]
   [[default]]
