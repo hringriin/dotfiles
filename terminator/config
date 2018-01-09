@@ -1,4 +1,5 @@
 [global_config]
+  broadcast_default = off
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_font = Sans 17
   title_inactive_bg_color = "#ffffff"
