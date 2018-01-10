@@ -7,44 +7,44 @@
 # colors and symbols
 set $sep-symbol "┇"
 
-set $window-focus-border                #0000AA
-set $window-focus-background            #000066
-set $window-focus-text                  #FFFFFF
-set $window-focus-indicator             #FF0000
+set $window-focus-border                #000000
+set $window-focus-background            #286E0A
+set $window-focus-text                  #E8E8E8
+set $window-focus-indicator             #448844
 
-set $window-unfocus-border              #333333
-set $window-unfocus-backgroundg         #666666
-set $window-unfocus-text                #AAAAAA
-set $window-unfocus-indicator           #0000FF
+set $window-unfocus-border              #000000
+set $window-unfocus-background          #164C05
+set $window-unfocus-text                #CCCCCC
+set $window-unfocus-indicator           #000000
 
-set $window-focus_inactive-border       #333333
-set $window-focus_inactive-background   #666666
-set $window-focus_inactive-text         #AAAAAA
-set $window-focus_inactive-indicator    #0000FF
+set $window-focus_inactive-border       #000000
+set $window-focus_inactive-background   #555555
+set $window-focus_inactive-text         #CCCCCC
+set $window-focus_inactive-indicator    #000000
 
-set $window-urgent-border               #FF0000
-set $window-urgent-background           #660000
+set $window-urgent-border               #AAAAAA
+set $window-urgent-background           #FF3333
 set $window-urgent-text                 #FFFFFF
-set $window-urgent-indicator            #FF0000
+set $window-urgent-indicator            #55DD55
 
-set $bar-background                     #000044
-set $bar-statusline                     #FFFFFF
-set $bar-separator                      #5555FF
+set $bar-background                     #2F2F2F
+set $bar-statusline                     #E8E8E8
+set $bar-separator                      #FF00FF
 
-set $workspace-focus-border             #0000AA
-set $workspace-focus-background         #000077
-set $workspace-focus-text               #FFFFFF
+set $workspace-focus-border             #000000
+set $workspace-focus-background         #99CA15
+set $workspace-focus-text               #000000
 
-set $workspace-active-border            #0000AA
-set $workspace-active-background        #000077
-set $workspace-active-text              #FFFFFF
+set $workspace-active-border            #FF00FF
+set $workspace-active-background        #A9FF25
+set $workspace-active-text              #F222F2
 
-set $workspace-inactive-border          #333333
-set $workspace-inactive-background      #111133
+set $workspace-inactive-border          #000000
+set $workspace-inactive-background      #202020
 set $workspace-inactive-text            #AAAAAA
 
-set $workspace-urgent-border            #FF0000
-set $workspace-urgent-background        #660000
+set $workspace-urgent-border            #AAAAAA
+set $workspace-urgent-background        #FF3333
 set $workspace-urgent-text              #FFFFFF
 
 # Set modifier key, in this case the 'windows'-key
