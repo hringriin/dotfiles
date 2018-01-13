@@ -191,7 +191,7 @@ set sig_on_top                  =   yes         # Quote text after my text
 
 
 # Colors ------------------------------------------------------------------------------------------
-source ~/.mutt/colors/vombatidae
+source ~/.mutt/colors/hringriin
 
 # This line gets rid of iso 8859 issues with attachments
 set rfc2047_parameters
