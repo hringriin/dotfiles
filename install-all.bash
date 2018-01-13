@@ -13,146 +13,11 @@
 # 2: incorrect values entered
 # 3: user will not be added to sudoers file
 
-# temporary files
-tmpDir="/tmp"                                                               # temp dir
-tmp1="neededProgrammes$$"                                                   # temp file for evaluation of needed programmes by pacman
-tmp2="neededProgrammes2$$"                                                  # temp file for evaluation of needed programmes by packer
-tmp3="sudoers"                                                              # temp file for evaluation of member of sudoers
-missingPacmanPrg=0                                                          # boolean; 0: all installed; 1: one or more programmes missing
-missingPackerPrg=0                                                          # boolean; 0: all installed; 1: one or more programmes missing
-missingPacmanList="missingPacmanList$$"                                     # list of missing programmes (pacman)
-missingPackerList="missingPackerList$$"                                     # list of missing programmes (packer)
-packerList=()                                                               # empty array to write in
-repoPath="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo"    # path of the repository
-ulbin="/usr/local/bin"
+# source config files
+source INSTALL_ALL/config.bash
+source INSTALL_ALL/packer.bash
+source INSTALL_ALL/pacman.bash
 
-# list of programmes maintained by packer needed for the whole action
-neededPackerPrgorammes=(
-    'adduser'
-    'clipster'
-    'dropbox'
-    'dropbox-cli'
-    'gitkraken'
-    'i3-vim-syntax-git'
-    'i3lock-fancy-dualmonitors-git'
-    'spotify-legacy'
-    'ttf-font-awesome-4'
-    'vivaldi'
-    'vivaldi-ffmpeg-codecs'
-    'vivaldi-widevine'
-    'whatsie'
-)
-
-# list of programmes maintained by pacman needed for the whole action
-neededProgrammes=(
-    'archlinux-keyring'
-    'autoconf'
-    'automake'
-    'bash'
-    'bash-completion'
-    'bc'
-    'binutils'
-    'bison'
-    'blueman'
-    'compton'
-    'curl'
-    'evince'
-    'expac'
-    'fakeroot'
-    'file'
-    'findutils'
-    'firefox'
-    'flashplugin'
-    'flex'
-    'galculator'
-    'gawk'
-    'gcc'
-    'gettext'
-    'git'
-    'grep'
-    'groff'
-    'gzip'
-    'htop'
-    'i3-wm'
-    'i3status'
-    'jshon'
-    'keepassx2'
-    'libtool'
-    'lm_sensors'
-    'lxappearance'
-    'lynx'
-    'm4'
-    'make'
-    'mcabber'
-    'meld'
-    'mlocate'
-    'mumble'
-    'network-manager-applet'
-    'networkmanager'
-    'networkmanager-openconnect'
-    'networkmanager-openvpn'
-    'networkmanager-pptp'
-    'networkmanager-vpnc'
-    'nitrogen'
-    'nm-connection-editor'
-    'notify-osd'
-    'ntp'
-    'numlockx'
-    'openconnect'
-    'openssh'
-    'openssl'
-    'openvpn'
-    'owncloud-client'
-    'pacman'
-    'pacmatic'
-    'pandoc'
-    'pass'
-    'patch'
-    'pavucontrol'
-    'pepper-flash'
-    'pinentry'
-    'pkg-config'
-    'powerline-fonts'
-    'pulseaudio'
-    'pulseaudio-alsa'
-    'pulseaudio-bluetooth'
-    'pulseaudio-equalizer'
-    'pulseaudio-gconf'
-    'pulseaudio-lirc'
-    'pulseaudio-zeroconf'
-    'ranger'
-    'redshift'
-    'rofi'
-    'rxvt-unicode'
-    'scrot'
-    'seahorse'
-    'sed'
-    'sox'
-    'sudo'
-    'sxiv'
-    'teamspeak3'
-    'terminator'
-    'termite'
-    'texinfo'
-    'thunar'
-    'thunderbird'
-    'tmux'
-    'ttf-dejavu'
-    'util-linux'
-    'vim'
-    'vlc'
-    'vpnc'
-    'weechat'
-    'which'
-    'wireless_tools'
-    'wpa_supplicant'
-    'xorg-server'
-    'xorg-server-utils'
-    'xorg-xev'
-    'xorg-xinit'
-    'xterm'
-    'zsh'
-)
 
 # information regarding arch linux
 function archLinuxCheck()
@@ -336,15 +201,20 @@ function addToSudoers()
 
 function installTexlive()
 {
-    echo -e "\n\nInstalling texlive now ...\n\n"
-    sleep 1
-    if pacman -Qi texlive-core &> /dev/null ; then
-        su -c "pacman -S $(pacman -Ssq texlive) sage" root
+    read -p "Install TexLive? [y|N]: " instTXLive
+    if [[ ${instTXLive} == "y" || ${instTXLive} == "Y" ]] ; then
+        echo -e "\n\nInstalling texlive now ...\n\n"
+        sleep 1
+        if pacman -Qi texlive-core &> /dev/null ; then
+            su -c "pacman -S $(pacman -Ssq texlive) sage" root
+        else
+            echo -e "Texlive is installed"
+        fi
+        echo -e "\n\n... done installing texlive!\n\n"
+        sleep 2
     else
-        echo -e "Texlive is installed"
+        echo -e "Not installing TexLive"
     fi
-    echo -e "\n\n... done installing texlive!\n\n"
-    sleep 2
 }
 
 function main()
@@ -445,20 +315,17 @@ function installPacker()
 
 function linkConfigs()
 {
-    echo -e "\n\nLinking configuration files now."
+    echo -e "\e[1;36mInstalling configuration files now ...\e[0m"
     sleep 1
 
     # Home directory only accessable for this user
     chmod go-rwx ~
 
     # bashrc
-    sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
+    #sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
 
     # clipster
-    if [[ ! ( -d ~/.config/clipster/ ) ]] ; then
-        mkdir -p ~/.config/clipster/
-    fi
-    ln -fsv ${repoPath}/clipster/clipster.ini ~/.config/clipster/
+    ${repoPath}/clipster/create_config.bash
 
     # gitlab clone script
     sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
@@ -467,8 +334,7 @@ function linkConfigs()
     sudo ln -fsv ${repoPath}/bash/youtubedl.bash ${ulbin}/youtubedl
 
     # git configs
-    ln -fsv ${repoPath}/git/gitconfig ~/.gitconfig
-    ln -fsv ${repoPath}/git/gitignore ~/.gitignore
+    ${repoPath}/git/create_config.bash
 
     # i3 - create the i3 configs
     ${repoPath}/i3/createConfig.bash
@@ -477,75 +343,43 @@ function linkConfigs()
     ${repoPath}/mcabber/createConfig.bash
 
     # rofi
-    if [[ ! ( -d ~/.local/rofi ) ]] ; then
-        mkdir --mode=700 -p ~/.local/rofi
-    fi
-    ln -fsv ${repoPath}/rofi/config ~/.local/rofi/config
+    ${repoPath}/rofi/create_config.bash
 
     # ssh
-    if [[ ! ( -d ~/.ssh ) ]] ; then
-        mkdir --mode=700 ~/.ssh
-    fi
-    cp -ifv ${repoPath}/ssh/config ~/.ssh/config
-
-    echo -e "Please unencrypt the ssh config with vim."
-    read -p "Do it now? [Y/n]: " decrypt
-
-    if [[ ${decrypt} == "y" || ${decrypt} == "Y" || ${decrypt} == "" ]] ; then
-        vim ~/.ssh/config
-    elif
-        [[ ${decrypt} == "n" || ${decrypt} == "N" ]] ; then
-        echo -e "Will not touch ssh config."
-        echo -e "Please decrypt it by yourself before using ssh!"
-    else
-        echo -e "Unrecognized entry."
-    fi
+    ${repoPath}/ssh/create_config.bash
 
     # terminator
-    if [[ ! ( -d ~/.config/terminator ) ]] ; then
-        mkdir --mode=700 -p ~/.config/terminator
-    fi
-    ln -fsv ${repoPath}/terminator/config ~/.config/terminator/config
+    ${repoPath}/terminator/create_config.bash
 
     # termite
-    if [[ ! ( -d ~/.config/termite ) ]] ; then
-        mkdir --mode=700 -p ~/.config/termite
-    fi
-    ln -fsv ${repoPath}/termite/config ~/.config/termite/config
+    ${repoPath}/termite/create_config.bash
 
     # htop
-    if [[ ! ( -d ~/.config/htop ) ]] ; then
-        mkdir --mode=700 -p ~/.config/htop
-    fi
-    ln -fsv ${repoPath}/htop/htoprc ~/.config/htop/htoprc
+    ${repoPath}/htop/create_config.bash
 
     # mutt
     ${repoPath}/mutt/create_config.bash
 
     # redshift
-    ln -fsv ${repoPath}/redshift/redshift.conf ~/.config/redshift.conf
+    ${repoPath}/redshift/create_config.bash
 
     # setBrightness
-    sudo ln -fsv ${repoPath}/xrandr/setBrightness.bash ${ulbin}/setBrightness
+    ${repoPath}/xrandr/create_config.bash
 
     # timescript
-    if [[ ! ( -d ~/TIMESCRIPT ) ]] ; then
-        mkdir -m 700 ~/TIMESCRIPT
-    fi
-    ln -fsv ${repoPath}/TIMESCRIPT/* ~/TIMESCRIPT
+    ${repoPath}/TIMESCRIPT/create_config.bash
 
     # tmux
     ${repoPath}/tmux/create_config.bash
 
     # vim
-    sudo ln -fsv ${repoPath}/vim/vimrc /etc/vimrc
+    ${repoPath}/vim/create_config.bash
 
     # weechat
-    ${repoPath}/weechat/link-files.bash
+    ${repoPath}/weechat/create_config.bash
 
     # xorg
-    ln -fsv ${repoPath}/X/Xdefaults ~/.Xdefaults
-    ln -fsv ${repoPath}/X/xinitrc ~/.xinitrc
+    ${repoPath}/X/create_config.bash
 
     sleep 1
 
