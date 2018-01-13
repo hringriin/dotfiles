@@ -7,43 +7,43 @@
 # colors and symbols
 set $sep-symbol "┇"
 
-set $window-focus-border                #000000
-set $window-focus-background            #286E0A
-set $window-focus-text                  #E8E8E8
-set $window-focus-indicator             #448844
+set $window-focus-border                #222222
+set $window-focus-background            #444444
+set $window-focus-text                  #EEEEEE
+set $window-focus-indicator             #FF5555
 
-set $window-unfocus-border              #000000
-set $window-unfocus-background          #164C05
-set $window-unfocus-text                #CCCCCC
-set $window-unfocus-indicator           #000000
+set $window-unfocus-border              #222222
+set $window-unfocus-background          #666666
+set $window-unfocus-text                #EEEEEE
+set $window-unfocus-indicator           #AA3333
 
-set $window-focus_inactive-border       #000000
-set $window-focus_inactive-background   #555555
-set $window-focus_inactive-text         #CCCCCC
-set $window-focus_inactive-indicator    #000000
+set $window-focus_inactive-border       #222222
+set $window-focus_inactive-background   #666666
+set $window-focus_inactive-text         #EEEEEE
+set $window-focus_inactive-indicator    #AA3333
 
 set $window-urgent-border               #AAAAAA
-set $window-urgent-background           #FF3333
+set $window-urgent-background           #DD3333
 set $window-urgent-text                 #FFFFFF
-set $window-urgent-indicator            #55DD55
+set $window-urgent-indicator            #FFFFFF
 
-set $bar-background                     #2F2F2F
-set $bar-statusline                     #E8E8E8
-set $bar-separator                      #FF00FF
+set $bar-background                     #333333
+set $bar-statusline                     #DDDDDD
+set $bar-separator                      #5555DD
 
 set $workspace-focus-border             #000000
-set $workspace-focus-background         #99CA15
+set $workspace-focus-background         #88BF10
 set $workspace-focus-text               #000000
 
-set $workspace-active-border            #FF00FF
-set $workspace-active-background        #A9FF25
-set $workspace-active-text              #F222F2
+set $workspace-active-border            #000000
+set $workspace-active-background        #222222
+set $workspace-active-text              #777777
 
 set $workspace-inactive-border          #000000
-set $workspace-inactive-background      #202020
+set $workspace-inactive-background      #222222
 set $workspace-inactive-text            #AAAAAA
 
-set $workspace-urgent-border            #AAAAAA
+set $workspace-urgent-border            #000000
 set $workspace-urgent-background        #FF3333
 set $workspace-urgent-text              #FFFFFF
 
