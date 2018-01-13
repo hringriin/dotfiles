@@ -1,7 +1,7 @@
 #!/bin/bash
 # create_config for -- <<PROGNAME>>
 
-prgname="TERMITE"
+prgname="TIMESCRIPT"
 
 echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
 sleep 1
@@ -10,10 +10,10 @@ source INSTALL_ALL/config.bash
 
 main()
 {
-    if [[ ! ( -d ~/.config/termite ) ]] ; then
-        mkdir --mode=700 -p ~/.config/termite
+    if [[ ! ( -d ~/TIMESCRIPT ) ]] ; then
+        mkdir -m 700 ~/TIMESCRIPT
     fi
-    ln -fsv ${repoPath}/termite/config ~/.config/termite/config
+    ln -fsv ${repoPath}/TIMESCRIPT/* ~/TIMESCRIPT
 }
 
 main

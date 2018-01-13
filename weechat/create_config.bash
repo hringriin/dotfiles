@@ -1,6 +1,14 @@
 #!/bin/bash
 # link-files
 
+prgname="WEECHAT"
+
+echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
+sleep 1
+
+source INSTALL_ALL/config.bash
+
+
 wcpath=""
 srcpath=""
 

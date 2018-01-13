@@ -2,6 +2,13 @@
 # createConfig - creates the host specifig i3 config
 # this will only work for my personal computers
 
+prgname="I3"
+
+echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
+sleep 1
+
+source INSTALL_ALL/config.bash
+
 username=`echo ${USER}`
 
 # Setting Variables

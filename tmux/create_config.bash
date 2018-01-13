@@ -1,8 +1,12 @@
 #!/bin/bash
 # create TMUX config
 
-echo -e "\e[1;36mINSTALLTING TMUX CONFIGURATION FILES ...\e[0m"
+prgname="TMUX"
+
+echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
 sleep 1
+
+source INSTALL_ALL/config.bash
 
 # CONFIG
 

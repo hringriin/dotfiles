@@ -1,6 +1,13 @@
 #!/bin/bash
 # createConfig - sets the config files
 
+prgname="MCABBER"
+
+echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
+sleep 1
+
+source INSTALL_ALL/config.bash
+
 username=`echo ${USER}`
 
 # Setting Variables

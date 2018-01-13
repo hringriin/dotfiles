@@ -1,6 +1,13 @@
 #!/bin/bash
 # create isync config
 
+prgname="ISYNC/MBSYNC"
+
+echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
+sleep 1
+
+source INSTALL_ALL/config.bash
+
 PREFIX=
 
 if [[ `uname -s` == *"arwin"* ]] ; then
