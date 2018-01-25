@@ -12,5 +12,21 @@ missingPackerPrg=0                                                          # bo
 missingPacmanList="missingPacmanList$$"                                     # list of missing programmes (pacman)
 missingPackerList="missingPackerList$$"                                     # list of missing programmes (packer)
 packerList=()                                                               # empty array to write in
-repoPath="/home/${USER}/Repositories/github.com/hringriin/dotfiles/repo"    # path of the repository
+repoPath="${HOME}/Repositories/github.com/hringriin/dotfiles/repo"          # path of the repository
 ulbin="/usr/local/bin"
+DISTRIBUTION=
+
+# is it arch or ubuntu or mac os?
+if [[ `uname -s` == *"arwin"* ]] ; then
+    DISTRIBUTION="MAC"
+elif [[ `uname -s` == *"inux"* ]] ; then
+    if [[ -x /usr/bin/lsb_release ]] ; then
+        DISTRIBUTION=`/usr/bin/lsb_release -si`
+    else
+        echo " ERROR ; UNSUPPORTED LINUX DISTRIBUTION ! "
+        exit 127
+    fi
+else
+    echo " ERROR ; UNSUPPORTED OPERATING SYSTEM ! "
+    exit 127
+fi
