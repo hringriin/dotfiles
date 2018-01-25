@@ -390,7 +390,11 @@ set ignorecase
 " show at least 7 lines below or above the current line, except, if reaching
 " the bottom or the top of the file
 set scrolloff=5
-set sidescroll=30
+" show at least 20  characters to each side of the cursor, except, if reaching
+" beginning or end of line. if reaching beginning / end of line, scroll one
+" character to each direction
+set sidescrolloff=20
+set sidescroll=1
 
 " key '0' toggles between first non whitespace character and first column in line
 function! ToggleHomeZero()
