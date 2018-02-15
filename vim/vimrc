@@ -430,6 +430,10 @@ colorscheme gruvbox
 " I change the programm used to my own needs
 "map <buffer> <F6> :!evince "%<.pdf" &<Return>
 
+" move to next file (e.g. if you opend files like `vim *`)
+map <F1> :N<cr>
+map <F2> :n<cr>
+
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts=1
