@@ -41,6 +41,7 @@ Plug 'google/vim-searchindex'           " how many times a searched pattern occu
 Plug 'matze/vim-move'                   " move blobs of code up/down with <C-j>/<C-k>
 Plug 'johngrib/vim-game-code-break'     " a 'fun' game :-)
 Plug 'skywind3000/quickmenu.vim'        " quickmenu
+Plug 'wikitopian/hardmode'              " vim hard mode
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
@@ -84,16 +85,21 @@ call quickmenu#append("turn Cursorcolumn %{&cursorcolumn? 'off':'on'}" , ':set c
 call quickmenu#append("turn List Chars %{&list? 'off':'on'}"           , ':call ToggleListChars()'     , "will toggle showing invisible characeters, such as whitespaces")
 
 " code/text format
-call quickmenu#append("# Text Format"         , '')
-call quickmenu#append("retab"                 , ':retab'                      , "Transform Tabulators to Whitespaces if possible")
-call quickmenu#append("rem. tr. Whitespaces"  , ':call TrailingWhitespaces()' , "Remove trailing Whitespaces")
-call quickmenu#append("set linebreak: %{&tw}" , ':call MyTextWidth()'         , "Set the current textwidth")
+call quickmenu#append("# Text Format"           , '')
+call quickmenu#append("retab"                   , ':retab'                      , "Transform Tabulators to Whitespaces if possible")
+call quickmenu#append("rem. tr. Whitespaces"    , ':call TrailingWhitespaces()' , "Remove trailing Whitespaces")
+call quickmenu#append("set linebreak: %{&tw}"   , ':call MyTextWidth()'         , "Set the current textwidth")
+
+" advanced vim usage
+call quickmenu#append("# Advanced Stuff" , '')
+call quickmenu#append("Enable HardMode"  , ':call HardMode()' , "Enables vim hard mode")
+call quickmenu#append("Disable HardMode" , ':call EasyMode()' , "Enables vim hard mode")
 
 " new section
-call quickmenu#append("# Misc", '')
-call quickmenu#append("turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
-call quickmenu#append("turn spell check %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
-"call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
+call quickmenu#append("# Misc"                                 , '')
+call quickmenu#append("turn paste %{&paste? 'off':'on'}"       , "set paste!"   , "enable/disable paste mode (:set paste!)")
+call quickmenu#append("turn spell check %{&spell? 'off':'on'}" , "set spell!"   , "enable/disable spell check (:set spell!)")
+"call quickmenu#append("Function List"                         , "TagbarToggle" , "Switch Tagbar on/off")
 
 " maintenance
 call quickmenu#append("# Maintenance", '')
@@ -106,6 +112,10 @@ let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen" || &term == "rxvt"
   set title
 endif
+
+" vim hard mode
+" automatically enable hard mode when entering vim
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " vim-move modifier key (control key, in this case)
 let g:move_key_modifier = 'C'
