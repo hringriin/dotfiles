@@ -1,3 +1,4 @@
+" Operating system check {{{1
 " Checks, if the operating system is linux
 let operatingSystem=system('uname -a')
 if operatingSystem =~? "\Linux"
@@ -7,7 +8,9 @@ if operatingSystem =~? "\Linux"
         runtime! debian.vim
     endif
 endif
+" 1}}}
 
+" {{{1 Plug-Addon
 "########################################################################################
 
 " Plugin List for 'plug' addon
@@ -23,6 +26,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" {{{2 Plugs (Addons for Plug)
+" {{{3 General Plugs
 Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
 Plug 'mattn/vim-maketable'              " make markdown tables with `:Maketable`
 Plug 'vim-scripts/ZoomWin'              " hit <Leader>f to fullscreen a vim tab. hit again to return.
@@ -45,17 +50,25 @@ Plug 'wikitopian/hardmode'              " vim hard mode
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
+" 3}}}
 
+" {{{3 Debugging
 " debugging (not debugging vim but debugging features for vim)
 "Plug 'jodosha/vim-godebug'
 "Plug 'fatih/vim-go'
 "Plug 'derekparker/delve'
+" 3}}}
 
+" {{{3 Themes
 " themes
 Plug 'morhetz/gruvbox'
+" 3}}}
+" 2}}}
 
 call plug#end()
+" 1}}}
 
+" QuickMenu Settings {{{1
 "########################################################################################
 
 " quick menu settings
@@ -68,14 +81,18 @@ noremap <silent><leader>mt :call quickmenu#toggle(0)<cr>
 " enable cursorline (L) and cmdline help (H)
 let g:quickmenu_options = "HL"
 
+" New Section {{{2
 " new section
 "call quickmenu#append("# Git", '')
+" 2}}}
 
+" Fugitive {{{2
 " use fugitive to show diff
 "call quickmenu#append("git diff", 'Gvdiff', "use fugitive's Gvdiff on current document")
 "call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
+" 2}}}
 
-" layout / visual
+" Layout / Visual {{{2
 call quickmenu#append("# Layout / Visual"                              , '')
 call quickmenu#append("zoom Window"                                    , ':ZoomWin'                    , "zoom current buffer")
 call quickmenu#append("cursor column: %{&colorcolumn}"                 , ':call MySecondColorColumn()' , "Displays a defined column and break line at that column if enabled")
@@ -83,81 +100,119 @@ call quickmenu#append("File Explorer"                                  , ':NERDT
 call quickmenu#append("turn Cursorline %{&cursorline? 'off':'on'}"     , ':set cursorline!'            , "Enable/Disable Cursorline")
 call quickmenu#append("turn Cursorcolumn %{&cursorcolumn? 'off':'on'}" , ':set cursorcolumn!'          , "Enable/Disable Cursorcolumn")
 call quickmenu#append("turn List Chars %{&list? 'off':'on'}"           , ':call ToggleListChars()'     , "will toggle showing invisible characeters, such as whitespaces")
+" 2}}}
 
-" code/text format
+" Code/Text Format {{{2
 call quickmenu#append("# Text Format"           , '')
 call quickmenu#append("retab"                   , ':retab'                      , "Transform Tabulators to Whitespaces if possible")
 call quickmenu#append("rem. tr. Whitespaces"    , ':call TrailingWhitespaces()' , "Remove trailing Whitespaces")
 call quickmenu#append("set linebreak: %{&tw}"   , ':call MyTextWidth()'         , "Set the current textwidth")
+" 2}}}
 
-" advanced vim usage
+" Advanced Vim Usage {{{2
 call quickmenu#append("# Advanced Stuff" , '')
 call quickmenu#append("Enable HardMode"  , ':call HardMode()' , "Enables vim hard mode")
 call quickmenu#append("Disable HardMode" , ':call EasyMode()' , "Enables vim hard mode")
+" 2}}}
 
-" new section
+" Misc {{{2
 call quickmenu#append("# Misc"                                 , '')
 call quickmenu#append("turn paste %{&paste? 'off':'on'}"       , "set paste!"   , "enable/disable paste mode (:set paste!)")
 call quickmenu#append("turn spell check %{&spell? 'off':'on'}" , "set spell!"   , "enable/disable spell check (:set spell!)")
 "call quickmenu#append("Function List"                         , "TagbarToggle" , "Switch Tagbar on/off")
+" 2}}}
 
-" maintenance
+" Maintenance {{{2
 call quickmenu#append("# Maintenance", '')
 call quickmenu#append("Open vimrc", ':tabnew /etc/vimrc', "Opens the vimrc in a new tab")
+" 2}}}
 
 "########################################################################################
+" 1}}}
 
+" Auto set screen title {{{
 " auto set screen title -- i'm not sure, if this works
 let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen" || &term == "rxvt"
   set title
 endif
+" }}}
 
-" vim hard mode
+" vim hard mode {{{
 " automatically enable hard mode when entering vim
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" }}}
 
-" vim-move modifier key (control key, in this case)
+" vim-move modifier key {{{
+" (control key, in this case)
 let g:move_key_modifier = 'C'
+" }}}
 
-" globally disable foldings
-set nofoldenable
+" folding {{{
+set fdm=marker
+" }}}
 
-" saner line joins
+" saner line joins {{{
 if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
+" }}}
 
-" highlight lines longer than 120 characters
+" highlight lines longer than 120 characters {{{
 match ErrorMsg '\%>120v.\+'
+" }}}
 
-" highlight trailing whitespaces
+" highlight trailing whitespaces {{{
 match ErrorMsg '\s\+$'
+" }}}
 
+" splits {{{1
 " open vertical split
 nmap <Leader>vs :vsp<cr>
 
 " open horizontal split
 nmap <Leader>hs :sp<cr>
 
-" switch tabs with tab key
+" Shortcut to switch between splits {{{2
+" Press <CTRL> + [lhjk] to switch to left,right,lower,upper split
+"noremap <C-l> <C-w>l
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
+" 2}}}
+
+" Shortcut to resize splits {{{2
+" Press <CTRL> + <SHIFT> + [lhjk] to expand or shring in each direction
+" Press <CTRL> + <SHIFT> + <SPACE> to equalize
+"vnoremap <A-h> <C-<>
+"vnoremap <A-j> <C->>
+"vnoremap <A-k> <C-+>
+"vnoremap <A-l> <C-->
+"vnoremap <A-space> <C-w>=
+" 2}}}
+" 1}}}
+
+" switch tabs with tab key {{{
 nmap <Tab> gt
 nmap <S-Tab> gT
+" }}}
 
-" tabular shorcut
+" tabular shorcut {{{
 " the syntax would be `:Tabularize /,` to split a visual selected paragraph by
 " 'comma'. Use `:Tabularize /;` to split by 'semicolon'.
 " You need to press enter afterwards.
 vmap <Leader>tab :Tabularize /
+" }}}
 
-" MARKDOWN SYNTAX PLUGIN 'VIM-MARKDOWN'
+" MARKDOWN SYNTAX PLUGIN 'VIM-MARKDOWN' {{{1
 " disable folding
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 " Allow for the TOC window to auto-fit when it's possible for it to shrink. It never
 " increases its default size (half screen), it only shrinks.
 let g:vim_markdown_toc_autofit = 1
+" 1}}}
 
-" syntastic settings
+" syntastic settings {{{1
 " does not show anything until yet, needs to be checked! maybe because of
 " vim-airline
 "set statusline+=%#warningsmsg#
@@ -168,8 +223,9 @@ let g:vim_markdown_toc_autofit = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
+" 1}}}
 
-" Nerdtree
+" Nerdtree {{{
 " If vim opens a directory like 'vim /etc/tmp' nerdtree will start
 " automatically
 autocmd StdinReadPre * let s:std_in=1
@@ -177,83 +233,90 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " Toggle Nerdtree on/off
 nmap <Leader>n :NERDTreeToggle<CR>
+" }}}
 
-" encoding
+" encoding {{{
 scriptencoding utf-8
 set encoding=utf-8
+" }}}
 
+" Open vimrc via shortcut {{{
 " edit vimrc with typing \ev while \ is the current leader character
 nmap <Leader>ev :tabnew /etc/vimrc<CR>
+" }}}
 
-"set clipboard=unnamedplus
-"set guioptions+=a
-
-" do not erase background
-set t_ut=
-
-" Command line history
-set history=9999
-
-" automatically source the .vimrc
+" automatically source the .vimrc {{{
 augroup autosourcing
     autocmd!
     autocmd BufWritePost /etc/vimrc source %
 augroup END
+" }}}
 
-" Symbol for wrapped lines
+" Clipboard {{{
+"set clipboard=unnamedplus
+"set guioptions+=a
+" }}}
+
+" do not erase background {{{
+set t_ut=
+" }}}
+
+" Command line history {{{
+set history=9999
+" }}}
+
+" Symbol for wrapped lines {{{
 set showbreak=
+" }}}
 
-" No line wrapping
+" No line wrapping {{{
 set nowrap
+" }}}
 
-" encryption
+" encryption {{{
 set cm=blowfish
+" }}}
 
-" Don't wake up system with blinking cursor:
+" Don't wake up system with blinking cursor: {{{
+" ... whatever that means ... :)
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
+" }}}
 
-" preparation for vim-airline
+" preparation for vim-airline {{{
 " the following will be done by vim-airline from now on
 set noshowmode          " information about current vim mode (insert, replace, ...)
 set noruler             " disable vim's default status line
 set laststatus=0
 set noshowcmd
 set report=0            " Show all changes (e.g. how many lines yanked)
+" }}}
 
-" Press F12 to trigger LaTeX Makefile and open pdf
+" Press F12 to trigger LaTeX Makefile and open pdf {{{
 nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
+" }}}
 
+" Automatically write pair of parentheses {{{
 " in insert mode, press ( to achieve (  )
 " notice the two whitespaces between the parentheses
 "inoremap ( ()<Left><Space><Space><Left>
+" }}}
 
-" Shortcut to switch between splits
-" Press <CTRL> + [lhjk] to switch to left,right,lower,upper split
-"noremap <C-l> <C-w>l
-"noremap <C-h> <C-w>h
-"noremap <C-j> <C-w>j
-"noremap <C-k> <C-w>k
-
-" Shortcut to resize splits
-" Press <CTRL> + <SHIFT> + [lhjk] to expand or shring in each direction
-" Press <CTRL> + <SHIFT> + <SPACE> to equalize
-"vnoremap <A-h> <C-<>
-"vnoremap <A-j> <C->>
-"vnoremap <A-k> <C-+>
-"vnoremap <A-l> <C-->
-"vnoremap <A-space> <C-w>=
-
+" Syntax check {{{
 if has("syntax")
   syntax on
 endif
+" }}}
 
+" Indention rules {{{
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 if has("autocmd")
   filetype plugin indent on
 endif
+" }}}
 
+" vim settings {{{
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 set showmatch       " Show matching brackets.
@@ -266,23 +329,30 @@ set showmatch       " Show matching brackets.
                     " a     all previous modes
                     " r     for |hit-enter| and |more-prompt| prompt
                     " `empty-string` for no mouse support at all
+" }}}
 
+" disable mouse {{{
 " not a beautiful solution to disable mouse support, but with only 'set mouse=' or
 " 'set mouse=""' it will only work , if i reload the vimrc with 'source %'.
 autocmd BufEnter * set mouse=
+" }}}
 
-" reads the file when changes where made out of vim (e.g. git)
+" reads the file when changes where made out of vim (e.g. git) {{{
 set autoread
+" }}}
 
-" Set which parantheses to match
+" Set which parantheses to match {{{
 set matchpairs=(:),{:},[:],<:>
+" }}}
 
-" fast terminal?
+" fast terminal? {{{
 " as far as I understand, the screen updates (redrawings) will be set to
 " character-wise instead of linewise. should be faster, i suppose and much mor
 " fluent
 set ttyfast
+" }}}
 
+" German Umlauts (Depricated) {{{
 "#################################################################################################################################################
 
 " ################
@@ -295,28 +365,28 @@ set ttyfast
 "   catch /E31/
 "   endtry
 " endfunction
-" 
+"
 " function! RemoveUmlautsOtherwise(mappings)
 "   for pair in a:mappings
 "     execute 'autocmd' 'FileType,BufEnter,BufLeave' '*' 'call' "RemoveIMappingIfExists('". pair[0] ."')"
 "   endfor
 " endfunction
-" 
+"
 " function! SetUmlautMappings(filetype)
 "   for [map_from, map_to]  in g:umlaut_mappings
 "     call SetUmlautMapping(a:filetype, map_from, map_to)
 "   endfor
 " endfunction
-" 
+"
 " function! SetUmlautMapping(filetype, map, mapped)
 "   let current_filetype = &filetype
 "   if current_filetype == a:filetype
 "     execute 'inoremap' a:map a:mapped
 "   endif
 " endfunction
-" 
+"
 " command! -nargs=1 SetUmlautMappings call SetUmlautMappings(<f-args>)
-" 
+"
 " function! ImplementUmlauts()
 "   augroup umlauts
 "     call RemoveUmlautsOtherwise(g:umlaut_mappings)
@@ -326,62 +396,80 @@ set ttyfast
 "     endfor
 "   augroup end
 " endfunction
-" 
+"
 " " german umlauts, technically not abbreviations
 " let g:umlaut_mappings = [ ['"s', 'ß'], ['"a', '<c-k>a:'], ['"o', '<c-k>o:'], ['"u', '<c-k>u:'], ['"A', '<c-k>A:'], ['"O', '<c-k>O:'], ['"U', '<c-k>U:'] ]
 " let g:file_types = ['mkd', 'tex', 'text', 'mail', 'gitcommit', 'markdown', 'md']
-" 
+"
 " call ImplementUmlauts()
 
 " END UMLAUTS
 "#################################################################################################################################################
+" }}}
 
-" highlight search matches
+" highlight search matches {{{
 set hlsearch
+" }}}
 
-" whitespaces instead of tabulators
+" whitespaces instead of tabulators {{{
 set expandtab
+" }}}
 
-" default tab size (4 whitespaces)
+" default tab size (4 whitespaces) {{{
 set tabstop=4
 set shiftwidth=4
+" }}}
 
-" Filetype Options
+" Filetype Options {{{
 
-" lua
+" lua {{{
 autocmd FileType lua setlocal shiftwidth=2
 autocmd FileType lua setlocal tabstop=2
+" }}}
 
-" lilypond
+" lilypond {{{
 autocmd FileType lilypond setlocal shiftwidth=2
 autocmd FileType lilypond setlocal tabstop=2
+" }}}
+" }}}
 
+" Listchars {{{
 " tabs werden als ¶¤¤¤ und Whitespaces als · angezeigt
 set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
 set list
 
-" Toggle listchars
+" Toggle listchars {{{
 function! ToggleListChars()
     set list!
 endfunction
+" }}}
+" }}}
 
+" Sorting {{{
 " Keybinding for sorting under visual block
 map <F8> :'<,'>sort /\ze\%V/<CR>
+" }}}
 
+" Line Numbers {{{
 set numberwidth=4
 set relativenumber
 set number
+" }}}
 
-" Remove trailing whitespaces
+" Remove trailing whitespaces {{{
 function! TrailingWhitespaces()
     :%s/\s\+$//e
 endfunction
+" }}}
 
+" Textwidth {{{
 " function for textwidth
 function! MyTextWidth()
     execute "setlocal tw =".str2nr(input('Enter column number: '))
 endfunction
+" }}}
 
+" Colorcolumn {{{
 " function for toggelling colorcolumn with individual value
 function! MySecondColorColumn()
     let mycolval = str2nr(input('Enter column number: '))
@@ -392,20 +480,26 @@ function! MySecondColorColumn()
         execute "setlocal colorcolumn=".mycolval
     endif
 endfunction
+" }}}
 
-" Ignore case when searching
+" Ignore case when searching {{{
 " use \C for case-sensitive search, like '/\CJava' to search for 'Java', 'java' will not be found.
 set ignorecase
+" }}}
 
+" Scrolloff {{{
 " show at least 7 lines below or above the current line, except, if reaching
 " the bottom or the top of the file
 set scrolloff=5
+
 " show at least 20  characters to each side of the cursor, except, if reaching
 " beginning or end of line. if reaching beginning / end of line, scroll one
 " character to each direction
 set sidescrolloff=20
 set sidescroll=1
+" }}}
 
+" key '0' - home-zero {{{
 " key '0' toggles between first non whitespace character and first column in line
 function! ToggleHomeZero()
     let pos = getpos('.')
@@ -415,16 +509,21 @@ function! ToggleHomeZero()
     endif
 endfunction
 nnoremap <silent> 0 :call ToggleHomeZero()<CR>
+" }}}
 
+" Reselect visual (lines|block) {{{
 " reselect visual block after indent/outdent indent visual
 " select a couple of lines with VISUAL LINE and then press > one or two times
 " to see what this does. it's pretty awesome :-)
 vnoremap < <gv
 vnoremap > >gv
+" }}}
 
-" ZoomWin
+" ZoomWin {{{
 noremap <Leader>f :ZoomWin<CR>
+" }}}
 
+" Colorscheme {{{
 " Colorscheme set to 'gruvbox'
 " https://github.com/morhetz/gruvbox
 " See the wiki in on github regarding
@@ -433,27 +532,36 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-" lilypond
+"hi NonText        term=bold  cterm=bold  ctermfg=darkblue  gui=bold      guifg=#cc0000
+"hi LineNr         term=underline  cterm=bold  ctermfg=darkcyan  guifg=Yellow
+
+" vim-airline {{{
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme='gruvbox'
+let g:airline_detect_iminsert=1
+" }}}
+" }}}
+
+" custom fold color {{{
+highlight FoldColumn ctermfg=Black ctermbg=Black
+highlight Folded ctermfg=Black ctermbg=Black
+" }}}
+
+" lilypond {{{
 " in '/usr/share/vim/vimfiles/ftplugin/lilypond.vim' is written the following
 " line:
 "map <buffer> <F6> :!gv --watch "%<.ps" &<Return>
 " I change the programm used to my own needs
 "map <buffer> <F6> :!evince "%<.pdf" &<Return>
+" }}}
 
-" move to next file (e.g. if you opend files like `vim *`)
+" move to next file (e.g. if you opend files like `vim *`) {{{
 map <F1> :N<cr>
 map <F2> :n<cr>
+" }}}
 
-" vim-airline
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline_theme='gruvbox'
-let g:airline_detect_iminsert=1
-
-"hi NonText        term=bold  cterm=bold  ctermfg=darkblue  gui=bold      guifg=#cc0000
-"hi LineNr         term=underline  cterm=bold  ctermfg=darkcyan  guifg=Yellow
-
-" Typo correction
+" Typo correction {{{
 iab dsa         das
 iab alos        also
 iab laso        also
@@ -468,3 +576,4 @@ iab Latex       LaTeX
 iab latex       LaTeX
 iab etwsa       etwas
 iab wsa         was
+" }}}
