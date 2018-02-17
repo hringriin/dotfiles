@@ -431,7 +431,8 @@ set scrolloff=5
 set sidescrolloff=20
 set sidescroll=1
 " }}}
-" key '0' - home-zero {{{
+" jump to first / last character of line or beginning / end of line {{{
+" home-zero {{{
 " key '0' toggles between first non whitespace character and first column in line
 function! ToggleHomeZero()
     let pos = getpos('.')
@@ -441,6 +442,17 @@ function! ToggleHomeZero()
     endif
 endfunction
 nnoremap <silent> 0 :call ToggleHomeZero()<CR>
+" }}}
+" end-infinity {{{
+function! ToggleEndInfinity()
+    let pos = getpos('.')
+    execute "normal! $"
+    if pos == getpos('.')
+        execute "normal! g_"
+    endif
+endfunction
+nnoremap <silent> $ :call ToggleEndInfinity()<CR>
+" }}}
 " }}}
 " Reselect visual (lines|block) {{{
 " reselect visual block after indent/outdent indent visual
