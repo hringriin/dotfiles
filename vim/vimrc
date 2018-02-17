@@ -23,8 +23,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" {{{2 Plugs (Addons for Plug)
-" {{{3 General Plugs
+" {{{ Plugs (Addons for Plug)
+" {{{ General Plugs
 Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
 Plug 'mattn/vim-maketable'              " make markdown tables with `:Maketable`
 Plug 'vim-scripts/ZoomWin'              " hit <Leader>f to fullscreen a vim tab. hit again to return.
@@ -47,18 +47,21 @@ Plug 'wikitopian/hardmode'              " vim hard mode
 "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
 "Plug 'lervag/vimtex'
 "Plug 'Valloric/YouCompleteMe'
-" 3}}}
-" {{{3 Debugging
+" }}}
+" {{{ Documentation
+Plug 'hringriin/documentation'          " my personal documentation of EVERYTHING :-)
+" }}}
+" {{{ Debugging
 " debugging (not debugging vim but debugging features for vim)
 "Plug 'jodosha/vim-godebug'
 "Plug 'fatih/vim-go'
 "Plug 'derekparker/delve'
-" 3}}}
-" {{{3 Themes
+" }}}
+" {{{ Themes
 " themes
 Plug 'morhetz/gruvbox'
-" 3}}}
-" 2}}}
+" }}}
+" }}}
 
 call plug#end()
 " 1}}}
@@ -121,6 +124,9 @@ let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen" || &term == "rxvt"
   set title
 endif
+" }}}
+" myhelp (hringriin) {{{
+nmap <Leader>h :tab :h hringriin<CR>
 " }}}
 " vim hard mode {{{
 " automatically enable hard mode when entering vim
