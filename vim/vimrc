@@ -353,6 +353,7 @@ set ttyfast
 " }}}
 " highlight search matches {{{
 set hlsearch
+nmap <Leader>s :noh<CR>
 " }}}
 " whitespaces instead of tabulators {{{
 set expandtab
