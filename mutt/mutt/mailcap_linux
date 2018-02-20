@@ -28,7 +28,8 @@ application/force-download; evince %s
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 
 # Unidentified files
-application/pgp; gpg -d | /usr/local/bin/vim %s
+application/pgp; gpg -d | /usr/bin/vim %s
+application/pgp-keys; /usr/bin/vim %s
 text/x-markdown; /usr/local/bin/vim %s
 
 # LaTeX
