@@ -190,7 +190,7 @@ crypt-hook  'info@adminportal\.eu'                          '0xBFAC8DB7'
 crypt-hook  'rohde\.florian@adminportal\.eu'                '0xBFAC8DB7'
 crypt-hook  'frohde@informatik\.uni-bremen\.de'             '0xBFAC8DB7'
 # }}}
-# Rudert,                               Moriz Kaspar {{{
+# Rudert,                   Moriz Kaspar {{{
 send-hook   'helios@tzi\.de'                                'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'helios@tzi\.org'                               'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'mr@planetcyborg\.de'                           'set crypt_autoencrypt  ;   set crypt_autosign'
