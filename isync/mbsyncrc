@@ -1,5 +1,5 @@
-##### < JKOESTER@UNI-BREMEN.DE >
-
+# ACCOUNTS {{{
+# JKOESTER@UNI-BREMEN.DE {{{
 IMAPAccount de.uni-bremen.jkoester
 Host imap.uni-bremen.de
 User jkoester
@@ -321,11 +321,8 @@ slave  :de.uni-bremen.jkoester-local:SWP2
 Create Both
 Expunge Both
 SyncState *
-
-##### </ JKOESTER@UNI-BREMEN.DE >
-
-
-##### < KOESTER.JOSCHKA@GMAIL.COM >
+# }}}
+# KOESTER.JOSCHKA@GMAIL.COM {{{
 
 IMAPAccount com.gmail.koester.joschka
 Host imap.gmail.com
@@ -543,13 +540,8 @@ slave  :com.gmail.koester.joschka-local:WDCloud
 Create Both
 Expunge Both
 SyncState *
-
-
-##### </ KOESTER.JOSCHKA@GMAIL.COM >
-
-
-##### < HRINGRIIN@GMAIL.COM >
-
+# }}}
+# HRINGRIIN@GMAIL.COM {{{
 IMAPAccount com.gmail.hringriin
 Host imap.gmail.com
 User hringriin@gmail.com
@@ -976,12 +968,8 @@ slave  :com.gmail.hringriin-local:YouTube
 Create Both
 Expunge Both
 SyncState *
-
-##### </ HRINGRIIN@GMAIL.COM >
-
-
-##### < JOSH.ETS2MP@GMAIL.COM >
-
+# }}}
+# JOSH.ETS2MP@GMAIL.COM {{{
 IMAPAccount com.gmail.josh.ets2mp
 Host imap.gmail.com
 User josh.ets2mp@gmail.com
@@ -1037,12 +1025,8 @@ slave  :com.gmail.josh.ets2mp-local:Google
 Create Both
 Expunge Both
 SyncState *
-
-##### </ JOSH.ETS2MP@GMAIL.COM >
-
-
-##### < blutige.kodoleber.esser@GMAIL.COM >
-
+# }}}
+# BLUTIGE.KODOLEBER.ESSER@GMAIL.COM {{{
 IMAPAccount com.gmail.blutige.kodoleber.esser
 Host imap.gmail.com
 User blutige.kodoleber.esser@gmail.com
@@ -1098,12 +1082,8 @@ slave  :com.gmail.blutige.kodoleber.esser-local:Google
 Create Both
 Expunge Both
 SyncState *
-
-##### </ blutige.kodoleber.esser@GMAIL.COM >
-
-
-##### < jk.sgs4i9505@GMAIL.COM >
-
+# }}}
+# JK.SGS4I9505@GMAIL.COM {{{
 IMAPAccount com.gmail.jk.sgs4i9505
 Host imap.gmail.com
 User jk.sgs4i9505@gmail.com
@@ -1159,12 +1139,8 @@ slave  :com.gmail.jk.sgs4i9505-local:Google
 Create Both
 Expunge Both
 SyncState *
-
-##### </ jk.sgs4i9505@GMAIL.COM >
-
-
-##### < jk.iptaid@GMAIL.COM >
-
+# }}}
+# JK.IPTAID@GMAIL.COM {{{
 IMAPAccount com.gmail.jk.iptaid
 Host imap.gmail.com
 User jk.iptaid@gmail.com
@@ -1220,12 +1196,8 @@ slave  :com.gmail.jk.iptaid-local:Google
 Create Both
 Expunge Both
 SyncState *
-
-##### </ jk.iptaid@GMAIL.COM >
-
-
-##### < ahliazhia@GMAIL.COM >
-
+# }}}
+# AHLIAZHIA@GMAIL.COM {{{
 IMAPAccount com.gmail.ahliazhia
 Host imap.gmail.com
 User ahliazhia@gmail.com
@@ -1281,11 +1253,8 @@ slave  :com.gmail.ahliazhia-local:Google
 Create Both
 Expunge Both
 SyncState *
-
-##### </ ahliazhia@GMAIL.COM >
-
-##### </ mk.hhk.smarttv@GMAIL.COM >
-
+# }}}
+# MK.HHK.SMARTTV@GMAIL.COM {{{
 IMAPAccount com.gmail.mk.hhk.smarttv
 Host imap.gmail.com
 User mk.hhk.smarttv@gmail.com
@@ -1334,5 +1303,7 @@ slave  :com.gmail.mk.hhk.smarttv-local:Spam
 Create Both
 Expunge Both
 SyncState *
-
-##### < mk.hhk.smarttv@GMAIL.COM >
+# }}}
+# }}}
+# GROUPS {{{
+# }}}
