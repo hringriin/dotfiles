@@ -240,7 +240,10 @@ set t_ut=
 set history=9999
 " }}}
 " Symbol for wrapped lines {{{
-set showbreak=
+"let &showbreak=' '
+let &showbreak=' '
+
+"set showbreak=
 " }}}
 " No line wrapping {{{
 set nowrap
@@ -514,7 +517,7 @@ hi FoldColumn   term=standout   cterm=italic    ctermfg=63      ctermbg=237
 " }}}
 
 " non-text color {{{
-hi NonText              term=bold   cterm=bold      ctermfg=Yellow
+hi NonText              term=bold   cterm=bold      ctermfg=10
 " }}}
 
 " custom line colors {{{
