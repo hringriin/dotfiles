@@ -50,6 +50,9 @@ set $workspace-urgent-text              #FFFFFF
 # Set modifier key, in this case the 'windows'-key
 set $mod Mod4
 
+# window border
+hide_edge_borders smart
+
 # battery warnings
 exec --no-startup-id i3-battery-popup-git
 for_window [title="Battery Warning"] sticky enable
