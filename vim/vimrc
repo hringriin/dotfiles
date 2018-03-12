@@ -107,6 +107,10 @@ call quickmenu#append("# Advanced Stuff" , '')
 call quickmenu#append("Enable HardMode"  , ':call HardMode()' , "Enables vim hard mode")
 call quickmenu#append("Disable HardMode" , ':call EasyMode()' , "Enables vim hard mode")
 " 2}}}
+" Compiler {{{2
+call quickmenu#append("# Compiler"                                 , '')
+call quickmenu#append("Markdown" , "!exec pandoc -o %.pdf %"   , "enable/disable spell check (:set spell!)")
+" 2}}}
 " Misc {{{2
 call quickmenu#append("# Misc"                                 , '')
 call quickmenu#append("turn paste %{&paste? 'off':'on'}"       , "set paste!"   , "enable/disable paste mode (:set paste!)")
