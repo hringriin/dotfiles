@@ -3,13 +3,9 @@
 #   y             =   change to different mailboxes
 #   $             =   sync-mailbox
 # }}}
-
-
 # Addressbook (abook) {{{
 set query_command   =   "abook --mutt-query '%s'"
 # }}}
-
-
 # Folder Hooks {{{
 folder-hook     'accounts/account.de.tzi.jkoester'               'source ~/.mailfolder/de.tzi.jkoester'
 folder-hook     'accounts/account.de.uni-bremen.jkoester'        'source ~/.mailfolder/de.uni-bremen.jkoester'
@@ -22,20 +18,16 @@ folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mail
 folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'      'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
 folder-hook     'accounts/account.de.live.hringriin'             'source ~/.mailfolder/de.live.hringriin'
 # }}}
-
 # Attachments Save Dir {{{
 macro attach s "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
 # }}}
-
 # Default account config file {{{
 source ~/.mutt/accounts/account.de.uni-bremen.jkoester
 # }}}
-
 # Crypt Hooks (Per Recipients Rules) {{{
 set crypt_confirmhook       =   no      # do not prompt for confirmation for pre-selected keys (unsafe)
 source ~/.mutt/crypt-hooks.muttrc
 # }}}
-
 # Macros for switching accounts {{{
 # Uni
 macro index     ,1<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.jkoester<enter><change-folder>!<enter>'
@@ -67,16 +59,12 @@ macro index     ,9<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 # ahliazhia
 macro index     ,10<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
 # }}}
-
-
 # Fetch mail shortcut {{{
 #bind index      G           imap-fetch-mail    # using isync (mbsync), thus no need to fetch by mutt
 # }}}
-
 # Set default text editor {{{
 set editor                  =   "$EDITOR"
 # }}}
-
 # Basic config {{{
 set mbox_type               =   Maildir
 #unset imap_passive
@@ -110,9 +98,7 @@ set charset             =   "utf-8"
 set edit_headers        =   yes                         # Full Header control
 set header_cache        =   "~/.mutt/cache/headers"     # See all mail headers in editor, cache headers and bodies
 set message_cachedir    =   "~/.mutt/cache/bodies"
-
 # }}}
-
 # Status Bar {{{
 #set status_chars        =   " *%A"
 set status_chars        =   "-!%A"
@@ -120,8 +106,6 @@ set status_chars        =   "-!%A"
 #set status_format       =   "══[%h]══[%r]═[%M/%m messages%?p?(%p postponed)?%?n?(%n new)?%?F?(%F flagged)?]═══[ Folder: %f ]══%?d?(%d to delete)?%?t?(%t tagged)?══[%s/%S]═%>══%V══"
 set status_format       =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s ]═%>══%V═[ %P ]══[ %v ]══"
 # }}}
-
-
 # Header Options {{{
 ignore *                                                # ignore all headers
 unignore from: to: cc: date: subject:                   # show only these
@@ -131,8 +115,6 @@ auto_view text/html                                     # view html automaticall
 alternative_order text/plain text/enriched text/html    # save html for last
 set mailcap_path        =   "~/.mutt/mailcap"
 # }}}
-
-
 # Index View Options {{{
 set date_format         =   "| %F | %H:%M:%S ||"
 set index_format        =   "[%Z] [%-2.2X] %D %-25.25F | %s"
@@ -140,8 +122,6 @@ set uncollapse_jump                                     # don't collapse on an u
 unset collapse_unread
 set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # }}}
-
-
 # Index Key Bindings {{{
 bind index      gg          first-entry
 bind index      G           last-entry
@@ -153,14 +133,10 @@ macro index     \Cr         "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.
 bind pager      k           previous-line
 bind pager      j           next-line
 # }}}
-
-
 # Saner copy/move dialogs {{{
 #macro index     C           "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 #macro index     M           "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 # }}}
-
-
 # Pager View Options {{{
 set pager_index_lines   = 4                             # number of index lines to show
 set pager_context       = 4                             # number of context lines to show
@@ -170,8 +146,6 @@ set tilde                                               # show tildes like in vi
 unset markers                                           # no ugly plus signs
 set quote_regexp        =   "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 # }}}
-
-
 # GPG {{{
  source ~/.mutt/gpg.rc
 set pgp_sign_as                 =   D02BE422
@@ -190,35 +164,24 @@ set pgp_verify_sig              =   yes
 # enigmail does not tag messages correct per default
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 # }}}
-
-
 # Open Links {{{
 #macro pager     \Cu         "|urlview<enter>" "call urlview to open links"     # CTRL + B is default, I guess
 # }}}
-
-
 # Mail Content Overrides {{{
 set forward_format              =   "Fwd: %s"
 set attribution                 =   "\n%n wrote on %d something like this:"
 # }}}
-
-
 # Startup Commands {{{
 # toggle sidebar_visible
 source ~/.mutt/sidebar.muttrc
 # }}}
-
-
 # Signatures {{{
 set sig_dashes                  =   yes         # ```-- \n`` expected by many handlers to identify sig
 set sig_on_top                  =   yes         # Quote text after my text
 # }}}
-
-
 # Colors {{{
 source ~/.mutt/colors/hringriin
 # }}}
-
 # This line gets rid of iso 8859 issues with attachments {{{
 set rfc2047_parameters
 # }}}
