@@ -8,20 +8,9 @@ sleep 1
 
 source INSTALL_ALL/config.bash
 
-echo -e "\e[1;36mINSTALLTING MUTT CONFIGURATION FILES ...\e[0m"
-sleep 1
-
-PREFIX=
-
-if [[ `uname -s` == *"arwin"* ]] ; then
-    PREFIX="/Users/${USER}"
-elif [[ `uname -s` == *"inux"* ]] ; then
-    PREFIX="/home/${USER}"
-fi
-
-MUTTREPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/mutt"
-MUTTPATH="${PREFIX}/.mutt"
-PASSWDPATH="${PREFIX}/ownCloud/Documents/mutt"
+MUTTREPOPATH="${HOME}/Repositories/github.com/hringriin/dotfiles/repo/mutt"
+MUTTPATH="${HOME}/.mutt"
+PASSWDPATH="${HOME}/ownCloud/Documents/mutt"
 PASSWDFILE="passwords.tar.gz.gpg"
 FIRSTTIME=
 
@@ -48,7 +37,6 @@ copyGPG()
 
 copyFiles()
 {
-    cp -fv ${MUTTREPOPATH}/muttrc ${PREFIX}/.muttrc
 
     mkdir -m 0700 -p ${MUTTPATH}
 
@@ -130,7 +118,7 @@ cleanupFirst()
 
 checkFirstTime()
 {
-    if [[ ! ( -d ${PREFIX}/.mailfolder ) ]] ; then
+    if [[ ! ( -d ${HOME}/.mailfolder ) ]] ; then
         FIRSTTIME=true
         echo -e "#########################################"
         echo -e "#########################################"
@@ -188,7 +176,7 @@ main()
     checkFirstTime
 
     ${MUTTREPOPATH}/../isync/create_config.bash
-    chmod -R og-rwx ${MUTTPATH} ${PREFIX}/.muttrc ${PREFIX}/.mbsyncrc ${PREFIX}/.mailfolder
+    chmod -R og-rwx ${MUTTPATH} ${HOME}/.muttrc ${HOME}/.mbsyncrc ${HOME}/.mailfolder
 
     if [[ ${FIRSTTIME} ]] ; then
         mbsync -aV
