@@ -37,6 +37,22 @@ copyGPG()
 
 copyFiles()
 {
+    onlycfg=
+
+    read -p "Install mutt config only? [Y|n] " muttcfgonly
+    if [[ ${muttcfgonly} == "N" || ${muttcfgonly} == "n" ]] ; then
+        onlycfg=0
+        cleanupFirst
+    elif [[ ${muttcfgonly} == "Y" || ${muttcfgonly} == "y" || ${muttcfgonly} == "" ]] ; then
+        onlycfg=1
+    elif [[ ${muttcfgonly} == "q" ]] ; then
+        exit 0
+    else
+        echo "Unrecognized, trying again (abort with 'q')."
+        copyFiles
+    fi
+
+    cp -fv ${MUTTREPOPATH}/muttrc ${HOME}/.muttrc
 
     mkdir -m 0700 -p ${MUTTPATH}
 
@@ -44,17 +60,6 @@ copyFiles()
     cp -frv ${MUTTREPOPATH}/mutt/colors ${MUTTPATH}/
 
     cp -fv ${PASSWDPATH}/${PASSWDFILE} ${MUTTPATH}/
-
-    read -p "Do you want to copy all the pgp keys? [y/N]: " copyGPG
-
-    if [[ ${copyGPG} == 'y' || ${copyGPG} == 'Y' ]] ; then
-        echo "GPG Keys will be copied!"
-        copyGPG
-    else
-        echo "GPG Keys will NOT be copied!"
-        echo "isync Script will not work this way, aborting ..."
-        exit 6
-    fi
 
     cp -fv ${MUTTREPOPATH}/mutt/crypt-hooks.muttrc ${MUTTPATH}/
 
@@ -71,6 +76,27 @@ copyFiles()
     fi
 
     cp -fv ${MUTTREPOPATH}/mutt/sidebar.muttrc ${MUTTPATH}/
+
+    if [[ ${onlycfg} -eq 1 ]] ; then
+        echo "Finished!"
+        exit 0
+    elif [[ ${onlycfg} -eq 0 ]] ; then
+        echo "Ok, full install"
+    else
+        echo "What?!"
+        exit 7
+    fi
+
+
+    read -p "Do you want to copy all the pgp keys? [y/N]: " copyGPG
+    if [[ ${copyGPG} == 'y' || ${copyGPG} == 'Y' ]] ; then
+        echo "GPG Keys will be copied!"
+        copyGPG
+    else
+        echo "GPG Keys will NOT be copied!"
+        echo "isync Script will not work this way, aborting ..."
+        exit 6
+    fi
 
 }
 
@@ -168,8 +194,6 @@ main()
         checkIfExists mutt
         checkIfExists isync
     fi
-
-    cleanupFirst
 
     copyFiles
 
