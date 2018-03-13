@@ -38,28 +38,28 @@ macro index     ,1<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 macro index     ,2<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.koester.joschka<enter><change-folder>!<enter>'
 
 # hringriin
-macro index     ,2<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.hringriin<enter><change-folder>!<enter>'
+macro index     ,3<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.hringriin<enter><change-folder>!<enter>'
 
 # josh.ets2mp
-macro index     ,3<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.josh.ets2mp<enter><change-folder>!<enter>'
+macro index     ,4<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.josh.ets2mp<enter><change-folder>!<enter>'
 
 # blutige.kodoleber.esser
-macro index     ,4<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.blutige.kodoleber.esser<enter><change-folder>!<enter>'
+macro index     ,5<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.blutige.kodoleber.esser<enter><change-folder>!<enter>'
 
 # jk.sgs4i9505
-macro index     ,5<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.sgs4i9505<enter><change-folder>!<enter>'
+macro index     ,6<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.sgs4i9505<enter><change-folder>!<enter>'
 
 # jk.iptaid
-macro index     ,6<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.iptaid<enter><change-folder>!<enter>'
+macro index     ,7<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.jk.iptaid<enter><change-folder>!<enter>'
 
 # ahliazhia
-macro index     ,6<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
+macro index     ,8<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.ahliazhia<enter><change-folder>!<enter>'
 
 # smarttv wohnzimmer
-macro index     ,7<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
+macro index     ,9<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
 
 # ahliazhia
-macro index     ,8<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
+macro index     ,10<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut
