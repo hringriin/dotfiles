@@ -1,0 +1,25 @@
+# vim: ft=muttrc
+source ~/.mutt/passwords/password.de.live.hringriin
+
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
+set smtp_url            =   "smtp://hringriin@smtp-mail.outlook.com:587/"
+set from                =   "hringriin@live.de"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/de.live.hringriin/"
+set spoolfile           =   "+Inbox"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+unset signature
+#set signature           =   "/path/to/file"
+set ssl_force_tls       =   yes
+unset ssl_starttls
+unset pgp_sign_as       =
+
+# Add mailboxes to sidebar. Have a look at mbsyncrc.
+mailboxes +Inbox \
+    +Sent \
+    +Drafts \
+    +Trash \
+    +Spam

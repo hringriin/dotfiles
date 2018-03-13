@@ -1338,6 +1338,59 @@ Expunge Both
 SyncState *
 
 # }}}
+# HRINGRIIN@LIVE.DE {{{
+
+IMAPAccount de.live.hringriin
+Host imap-mail.outlook.com
+User hringriin@live.de
+Pass "password.de.live.hringriin"
+#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore de.live.hringriin-remote
+Account de.live.hringriin
+
+MaildirStore de.live.hringriin-local
+Path ~/.mailfolder/de.live.hringriin/
+Inbox ~/.mailfolder/de.live.hringriin/inbox
+
+Channel de.live.hringriin-default
+Master :de.live.hringriin-remote:
+Slave :de.live.hringriin-local:Inbox
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.live.hringriin-sent
+Master :de.live.hringriin-remote:"Sent"
+slave  :de.live.hringriin-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.live.hringriin-drafts
+Master :de.live.hringriin-remote:"Drafts"
+slave  :de.live.hringriin-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.live.hringriin-trash
+Master :de.live.hringriin-remote:"Deleted"
+slave  :de.live.hringriin-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel de.live.hringriin-spam
+Master :de.live.hringriin-remote:"Junk"
+slave  :de.live.hringriin-local:Spam
+Create Both
+Expunge Both
+SyncState *
+
+# }}}
 
 # }}}
 # GROUPS {{{

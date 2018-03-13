@@ -18,6 +18,7 @@ folder-hook     'accounts/account.com.gmail.jk.iptaid'           'source ~/.mail
 folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mailfolder/com.gmail.josh.ets2mp'
 folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
 folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'      'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
+folder-hook     'accounts/account.de.live.hringriin'             'source ~/.mailfolder/de.live.hringriin'
 
 # Attachments Save Dir
 macro attach s "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
@@ -56,6 +57,9 @@ macro index     ,6<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 
 # smarttv wohnzimmer
 macro index     ,7<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
+
+# ahliazhia
+macro index     ,8<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
 
 
 # Fetch mail shortcut
