@@ -5,6 +5,7 @@
 IMAPAccount de.uni-bremen.jkoester
 Host imap.uni-bremen.de
 User jkoester
+Pass "password.de.uni-bremen.jkoester"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -337,6 +338,7 @@ SyncState *
 IMAPAccount com.gmail.koester.joschka
 Host imap.gmail.com
 User koester.joschka@gmail.com
+Pass "password.com.gmail.koester.joschka"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -557,6 +559,7 @@ SyncState *
 IMAPAccount com.gmail.hringriin
 Host imap.gmail.com
 User hringriin@gmail.com
+Pass "password.com.gmail.hringriin"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -987,6 +990,7 @@ SyncState *
 IMAPAccount com.gmail.josh.ets2mp
 Host imap.gmail.com
 User josh.ets2mp@gmail.com
+Pass "password.com.gmail.josh.ets2mp"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -1046,6 +1050,7 @@ SyncState *
 IMAPAccount com.gmail.blutige.kodoleber.esser
 Host imap.gmail.com
 User blutige.kodoleber.esser@gmail.com
+Pass "password.com.gmail.blutige.kodoleber.esser"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -1105,6 +1110,7 @@ SyncState *
 IMAPAccount com.gmail.jk.sgs4i9505
 Host imap.gmail.com
 User jk.sgs4i9505@gmail.com
+Pass "password.com.gmail.jk.sgs4i9505"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -1164,6 +1170,7 @@ SyncState *
 IMAPAccount com.gmail.jk.iptaid
 Host imap.gmail.com
 User jk.iptaid@gmail.com
+Pass "password.com.gmail.jk.iptaid"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -1223,6 +1230,7 @@ SyncState *
 IMAPAccount com.gmail.ahliazhia
 Host imap.gmail.com
 User ahliazhia@gmail.com
+Pass "password.com.gmail.ahliazhia"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -1282,6 +1290,7 @@ SyncState *
 IMAPAccount com.gmail.mk.hhk.smarttv
 Host imap.gmail.com
 User mk.hhk.smarttv@gmail.com
+Pass "password.com.gmail.mk.hhk.smarttv"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
