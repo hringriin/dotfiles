@@ -117,8 +117,8 @@ set message_cachedir    =   "~/.mutt/cache/bodies"
 #set status_chars        =   " *%A"
 set status_chars        =   "-!%A"
 #set status_format       =   "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
-#set status_format       =   "──[%h]──[%r]─[%M/%m messages%?p?(%p postponed)?%?n?(%n new)?%?F?(%F flagged)?]───[ Folder: %f ]──%?d?(%d to delete)?%?t?(%t tagged)?──[%s/%S]─%>──%V──"
-set status_format       =   "──[ %f ]──[ Status: %r ]──[ Messages: %m%?n? | New: %n? ]%?p?──[ Postponed: %p ]?%?d?──[ Deleted: %d ]?%?t?──[ Tagged: %t ]?──[ Sorting: %s ]─%>──%V─[ %P ]──[ %v ]──"
+#set status_format       =   "══[%h]══[%r]═[%M/%m messages%?p?(%p postponed)?%?n?(%n new)?%?F?(%F flagged)?]═══[ Folder: %f ]══%?d?(%d to delete)?%?t?(%t tagged)?══[%s/%S]═%>══%V══"
+set status_format       =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s ]═%>══%V═[ %P ]══[ %v ]══"
 # }}}
 
 
