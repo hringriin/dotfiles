@@ -1,0 +1,1 @@
+player=mpv --cache 2048 --cache-secs=0 --demuxer-readahead-secs=0

@@ -366,6 +366,9 @@ function linkConfigs()
     # setBrightness
     ${repoPath}/xrandr/create_config.bash
 
+    # streamlink
+    ${repoPath}/streamlink/create_config.bash
+
     # timescript
     ${repoPath}/TIMESCRIPT/create_config.bash
 
