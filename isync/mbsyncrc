@@ -52,7 +52,7 @@ Create Both
 Expunge Both
 SyncState *
 
-Channel de.uni-bremen.jkoester-spam
+Channel de.uni-bremen.jkoester-spam-jana
 Master :de.uni-bremen.jkoester-remote:INBOX/"Spam-Jana"
 slave  :de.uni-bremen.jkoester-local:SPAM_JANA
 Create Both
