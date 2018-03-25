@@ -1,3 +1,6 @@
+# mbsyncrc
+# configuration file
+
 # ACCOUNTS {{{
 
 # JKOESTER@UNI-BREMEN.DE {{{
@@ -455,7 +458,7 @@ Create Both
 Expunge Both
 SyncState *
 
-Channel com.gmail.koester.joschka-IndiGala
+Channel com.gmail.koester.joschka-IndieGala
 Master :com.gmail.koester.joschka-remote:INBOX/"IndieGala"
 slave  :com.gmail.koester.joschka-local:IndieGala
 Create Both
@@ -1395,6 +1398,245 @@ SyncState *
 # }}}
 # GROUPS {{{
 
-#
+# inboxes {{{
+
+Group inboxes
+Channel de.uni-bremen.jkoester-default
+Channel com.gmail.koester.joschka-default
+Channel com.gmail.hringriin-default
+Channel com.gmail.josh.ets2mp-default
+Channel com.gmail.blutige.kodoleber.esser-default
+Channel com.gmail.jk.sgs4i9505-default
+Channel com.gmail.jk.iptaid-default
+Channel com.gmail.ahliazhia-default
+Channel com.gmail.mk.hhk.smarttv-default
+Channel de.live.hringriin-default
+
+# }}}
+
+# account wise {{{
+
+# jkoester-uni {{{
+
+Group jkoester-uni
+Channel de.uni-bremen.jkoester-default
+Channel de.uni-bremen.jkoester-sent
+Channel de.uni-bremen.jkoester-drafts
+Channel de.uni-bremen.jkoester-trash
+Channel de.uni-bremen.jkoester-spam
+Channel de.uni-bremen.jkoester-spam-jana
+Channel de.uni-bremen.jkoester-1und1
+Channel de.uni-bremen.jkoester-2012
+Channel de.uni-bremen.jkoester-2013
+Channel de.uni-bremen.jkoester-2014
+Channel de.uni-bremen.jkoester-2015
+Channel de.uni-bremen.jkoester-2016
+Channel de.uni-bremen.jkoester-2017
+Channel de.uni-bremen.jkoester-Allgemein
+Channel de.uni-bremen.jkoester-AStAEDV
+Channel de.uni-bremen.jkoester-Dropbox
+Channel de.uni-bremen.jkoester-DreamSpark
+Channel de.uni-bremen.jkoester-FB3Tickets
+Channel de.uni-bremen.jkoester-FBMI
+Channel de.uni-bremen.jkoester-GitlabCommitMessages
+Channel de.uni-bremen.jkoester-GitlabIssues
+Channel de.uni-bremen.jkoester-INWX
+Channel de.uni-bremen.jkoester-MEMS
+Channel de.uni-bremen.jkoester-Mentoren
+Channel de.uni-bremen.jkoester-MentorenTeam
+Channel de.uni-bremen.jkoester-PABO
+Channel de.uni-bremen.jkoester-PI3
+Channel de.uni-bremen.jkoester-StudIP
+Channel de.uni-bremen.jkoester-StugA
+Channel de.uni-bremen.jkoester-StugAFacebook
+Channel de.uni-bremen.jkoester-StugATwitter
+Channel de.uni-bremen.jkoester-StugAAdmin
+Channel de.uni-bremen.jkoester-StugAAdminBackup
+Channel de.uni-bremen.jkoester-StugAAdminCertificates
+Channel de.uni-bremen.jkoester-StugAAdminCron
+Channel de.uni-bremen.jkoester-StugAAdminHostEurope
+Channel de.uni-bremen.jkoester-StugAAdminMailmanFoo
+Channel de.uni-bremen.jkoester-StugAAdminNagios
+Channel de.uni-bremen.jkoester-StugAAdminRaumzugang
+Channel de.uni-bremen.jkoester-StugAAdminRootKitHunter
+Channel de.uni-bremen.jkoester-StugAAdminSecurityIssues
+Channel de.uni-bremen.jkoester-StugAAdminTrashy
+Channel de.uni-bremen.jkoester-StugAAdminSMART
+Channel de.uni-bremen.jkoester-StugAAdminWordpress
+Channel de.uni-bremen.jkoester-SWP2
+
+# }}}
+# koester.joschka-gmail {{{
+Group koester.joschka-gmail
+Channel com.gmail.koester.joschka-default
+Channel com.gmail.koester.joschka-sent
+Channel com.gmail.koester.joschka-drafts
+Channel com.gmail.koester.joschka-trash
+Channel com.gmail.koester.joschka-spam
+Channel com.gmail.koester.joschka-BrePark
+Channel com.gmail.koester.joschka-DHL
+Channel com.gmail.koester.joschka-Elgato
+Channel com.gmail.koester.joschka-EMP
+Channel com.gmail.koester.joschka-Eventim
+Channel com.gmail.koester.joschka-FAX
+Channel com.gmail.koester.joschka-FlightSimulatorX
+Channel com.gmail.koester.joschka-FritzBox
+Channel com.gmail.koester.joschka-Google
+Channel com.gmail.koester.joschka-GuitarPro
+Channel com.gmail.koester.joschka-IndieGala
+Channel com.gmail.koester.joschka-kultbahnhof
+Channel com.gmail.koester.joschka-LetsEncrypt
+Channel com.gmail.koester.joschka-Magix
+Channel com.gmail.koester.joschka-MERKEN
+Channel com.gmail.koester.joschka-MyDays
+Channel com.gmail.koester.joschka-MySongbook
+Channel com.gmail.koester.joschka-Navigon
+Channel com.gmail.koester.joschka-O2
+Channel com.gmail.koester.joschka-Payback
+Channel com.gmail.koester.joschka-NIEDERHOELLE-ORG
+Channel com.gmail.koester.joschka-Server4You
+Channel com.gmail.koester.joschka-Thrustmaster
+Channel com.gmail.koester.joschka-WDCloud
+
+# }}}
+# hringriin-gmail {{{
+
+Group hringriin-gmail
+Channel com.gmail.hringriin-default
+Channel com.gmail.hringriin-sent
+Channel com.gmail.hringriin-drafts
+Channel com.gmail.hringriin-trash
+Channel com.gmail.hringriin-spam
+Channel com.gmail.hringriin-AliExpress
+Channel com.gmail.hringriin-Alternate
+Channel com.gmail.hringriin-Amazon
+Channel com.gmail.hringriin-Archlinux
+Channel com.gmail.hringriin-BladeAndSoul
+Channel com.gmail.hringriin-Codecademy
+Channel com.gmail.hringriin-DHL
+Channel com.gmail.hringriin-Doodle
+Channel com.gmail.hringriin-EA
+Channel com.gmail.hringriin-Dropbox
+Channel com.gmail.hringriin-Ebay
+Channel com.gmail.hringriin-ElderScrollsOnline
+Channel com.gmail.hringriin-EliteDangerous
+Channel com.gmail.hringriin-Ello
+Channel com.gmail.hringriin-Elyra
+Channel com.gmail.hringriin-EMP
+Channel com.gmail.hringriin-Facebook
+Channel com.gmail.hringriin-Fastfood
+Channel com.gmail.hringriin-FunCom
+Channel com.gmail.hringriin-GetDigital
+Channel com.gmail.hringriin-GitKraken
+Channel com.gmail.hringriin-GOG
+Channel com.gmail.hringriin-Google
+Channel com.gmail.hringriin-HumbleBundle
+Channel com.gmail.hringriin-iFixit
+Channel com.gmail.hringriin-IsNichWahr
+Channel com.gmail.hringriin-MasteringVim
+Channel com.gmail.hringriin-Maxdome
+Channel com.gmail.hringriin-McDonalds
+Channel com.gmail.hringriin-MechWarriorOnline
+Channel com.gmail.hringriin-MMOGA
+Channel com.gmail.hringriin-Mojang
+Channel com.gmail.hringriin-Motor-Talk
+Channel com.gmail.hringriin-Netflix
+Channel com.gmail.hringriin-NEUERRECHNER
+Channel com.gmail.hringriin-NoIp
+Channel com.gmail.hringriin-Nvidia
+Channel com.gmail.hringriin-OwnCloud
+Channel com.gmail.hringriin-Pastebin
+Channel com.gmail.hringriin-PayPal
+Channel com.gmail.hringriin-ProMods
+Channel com.gmail.hringriin-Rift
+Channel com.gmail.hringriin-Robocraft
+Channel com.gmail.hringriin-Spotify
+Channel com.gmail.hringriin-Steam
+Channel com.gmail.hringriin-SWTOR
+Channel com.gmail.hringriin-TeamViewer
+Channel com.gmail.hringriin-Trashy
+Channel com.gmail.hringriin-Twitch
+Channel com.gmail.hringriin-Twitter
+Channel com.gmail.hringriin-Ubisoft
+Channel com.gmail.hringriin-WDCloud
+Channel com.gmail.hringriin-Wuala
+Channel com.gmail.hringriin-YouTube
+
+# }}}
+# josh.ets2mp-gmail {{{
+
+Group josh.ets2mp-gmail
+Channel com.gmail.josh.ets2mp-default
+Channel com.gmail.josh.ets2mp-sent
+Channel com.gmail.josh.ets2mp-drafts
+Channel com.gmail.josh.ets2mp-trash
+Channel com.gmail.josh.ets2mp-spam
+Channel com.gmail.josh.ets2mp-Google
+
+# }}}
+# blutige.kodoleber.esser-gmail {{{
+ Group blutige.kodoleber.esser-gmail
+Channel com.gmail.blutige.kodoleber.esser-default
+Channel com.gmail.blutige.kodoleber.esser-sent
+Channel com.gmail.blutige.kodoleber.esser-drafts
+Channel com.gmail.blutige.kodoleber.esser-trash
+Channel com.gmail.blutige.kodoleber.esser-spam
+Channel com.gmail.blutige.kodoleber.esser-Google
+# }}}
+# jk.sgs4i9505-gmail {{{
+
+Group jk.sgs4i9505-gmail
+Channel com.gmail.jk.sgs4i9505-default
+Channel com.gmail.jk.sgs4i9505-sent
+Channel com.gmail.jk.sgs4i9505-drafts
+Channel com.gmail.jk.sgs4i9505-trash
+Channel com.gmail.jk.sgs4i9505-spam
+Channel com.gmail.jk.sgs4i9505-Google
+
+# }}}
+# jk.iptaid-gmail {{{
+
+Group jk.iptaid-gmail
+Channel com.gmail.jk.iptaid-default
+Channel com.gmail.jk.iptaid-sent
+Channel com.gmail.jk.iptaid-drafts
+Channel com.gmail.jk.iptaid-trash
+Channel com.gmail.jk.iptaid-spam
+Channel com.gmail.jk.iptaid-Google
+
+# }}}
+# ahliazhia-gmail {{{
+
+Group ahliazhia-gmail
+Channel com.gmail.ahliazhia-default
+Channel com.gmail.ahliazhia-sent
+Channel com.gmail.ahliazhia-drafts
+Channel com.gmail.ahliazhia-trash
+Channel com.gmail.ahliazhia-spam
+Channel com.gmail.ahliazhia-Google
+
+# }}}
+# mk.hhk.smarttv-gmail {{{
+
+Group mk.hhk.smarttv-gmail
+Channel com.gmail.mk.hhk.smarttv-default
+Channel com.gmail.mk.hhk.smarttv-sent
+Channel com.gmail.mk.hhk.smarttv-drafts
+Channel com.gmail.mk.hhk.smarttv-trash
+Channel com.gmail.mk.hhk.smarttv-spam
+
+# }}}
+# hringriin-gmail {{{
+
+Group hringriin-gmail
+Channel de.live.hringriin-default
+Channel de.live.hringriin-sent
+Channel de.live.hringriin-drafts
+Channel de.live.hringriin-trash
+Channel de.live.hringriin-spam
+
+# }}}
+
+# }}}
 
 # }}}
