@@ -343,6 +343,7 @@ Host imap.gmail.com
 User koester.joschka@gmail.com
 Pass "password.com.gmail.koester.joschka"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -564,6 +565,7 @@ Host imap.gmail.com
 User hringriin@gmail.com
 Pass "password.com.gmail.hringriin"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -995,6 +997,7 @@ Host imap.gmail.com
 User josh.ets2mp@gmail.com
 Pass "password.com.gmail.josh.ets2mp"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1055,6 +1058,7 @@ Host imap.gmail.com
 User blutige.kodoleber.esser@gmail.com
 Pass "password.com.gmail.blutige.kodoleber.esser"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1115,6 +1119,7 @@ Host imap.gmail.com
 User jk.sgs4i9505@gmail.com
 Pass "password.com.gmail.jk.sgs4i9505"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1175,6 +1180,7 @@ Host imap.gmail.com
 User jk.iptaid@gmail.com
 Pass "password.com.gmail.jk.iptaid"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1235,6 +1241,7 @@ Host imap.gmail.com
 User ahliazhia@gmail.com
 Pass "password.com.gmail.ahliazhia"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1295,6 +1302,7 @@ Host imap.gmail.com
 User mk.hhk.smarttv@gmail.com
 Pass "password.com.gmail.mk.hhk.smarttv"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -1348,6 +1356,7 @@ Host imap-mail.outlook.com
 User hringriin@live.de
 Pass "password.de.live.hringriin"
 #PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
