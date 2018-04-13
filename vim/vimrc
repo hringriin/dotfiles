@@ -98,9 +98,10 @@ call quickmenu#append("turn List Chars %{&list? 'off':'on'}"           , ':call 
 " 2}}}
 " Code/Text Format {{{2
 call quickmenu#append("# Text Format"           , '')
-call quickmenu#append("retab"                   , ':retab'                      , "Transform Tabulators to Whitespaces if possible")
-call quickmenu#append("rem. tr. Whitespaces"    , ':call TrailingWhitespaces()' , "Remove trailing Whitespaces")
-call quickmenu#append("set linebreak: %{&tw}"   , ':call MyTextWidth()'         , "Set the current textwidth")
+call quickmenu#append("retab"                   , ':retab'                          , "Transform Tabulators to Whitespaces if possible")
+call quickmenu#append("rem. tr. Whitespaces"    , ':call TrailingWhitespaces()'     , "Remove trailing Whitespaces")
+call quickmenu#append("set linebreak: %{&tw}"   , ':call MyTextWidth()'             , "Set the current textwidth")
+call quickmenu#append("Show color under Cursor" , ':call ShowHexColorUnderCursor()' , "show hex color under cursor")
 " 2}}}
 " Advanced Vim Usage {{{2
 call quickmenu#append("# Advanced Stuff" , '')
@@ -537,6 +538,9 @@ hi CursorLineNr         term=bold   cterm=bold      ctermfg=115  ctermbg=234
 "map <buffer> <F6> :!gv --watch "%<.ps" &<Return>
 " I change the programm used to my own needs
 "map <buffer> <F6> :!evince "%<.pdf" &<Return>
+" }}}
+" map ShowHexColorUnderCursor {{{
+map <F3> :call ShowHexColorUnderCursor()<CR>
 " }}}
 " move to next file (e.g. if you opend files like `vim *`) {{{
 map <F1> :N<cr>
