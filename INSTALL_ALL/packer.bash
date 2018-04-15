@@ -11,6 +11,7 @@ neededPackerPrgorammes=(
     'gitkraken'
     'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
+    'rofi-twitch'
     'spotify'
     'ttf-font-awesome-4'
     'vivaldi'
