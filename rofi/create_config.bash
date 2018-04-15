@@ -19,11 +19,11 @@ main()
 
     if [[ ! ( -d ${HOME}/.config/rofi-twitch ) ]] ; then
         mkdir --mode=700 -p ${HOME}/.config/rofi-twitch
-        git clone git@github.com/hringriin/rofi-twitch ${HOME}/Repositories/github.com/hringriin/rofi-twitch/repo
+        git clone git@github.com:hringriin/rofi-twitch ${HOME}/Repositories/github.com/hringriin/rofi-twitch/repo
     fi
 
     cp -v ${repoPath}/../../rofi-twitch/repo/settings ${HOME}/.config/rofi-twitch/settings
-    ln -s ${repoPath}/../../rofi-twitch/repo/hringriin-fav /usr/local/bin/hringriin-fav
+    sudo ln -s ${repoPath}/../../rofi-twitch/repo/hringriin-fav /usr/local/bin/hringriin-fav
 }
 
 main
