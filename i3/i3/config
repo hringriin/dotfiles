@@ -237,6 +237,7 @@ assign [class="Termite"] $workspace3
 assign [class="Whatsie"] $workspace4
 
 assign [class="Vivaldi-stable"] $workspace5
+assign [class="Vivaldi-snapshot"] $workspace5
 
 assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
