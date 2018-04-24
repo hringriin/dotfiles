@@ -4,8 +4,6 @@
 " stopping sourcing defaults.vim for users without local .vimrc and restore sanity
 let skip_defaults_vim=1
 
-runtime! archlinux.vim
-
 " Operating system check {{{
 " Checks, if the operating system is linux
 let operatingSystem=system('uname -a')
