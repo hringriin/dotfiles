@@ -14,6 +14,7 @@
     bunch = log --graph --decorate --all
     buncho = log --oneline --graph --decorate --all
     bunchoo = log --pretty=format:"%C(yellow)%h%Creset %Cblue%aN%Creset %Cgreen%ar%Creset%Cred%d%Creset %s" --all --graph
+    logg = !git log | vim -R -
     ls-assume-unchanged = !git ls-files -v | grep ^h | awk '{print $2}'
     ignore-changes = update-index --assume-unchanged
     resume-changes = update-index --no-assume-unchanged
