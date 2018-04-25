@@ -1,11 +1,11 @@
 " vimrc
-" vim: ft=vim tw=120
+" vim: ft=vim tw=140
 
 " stopping sourcing defaults.vim for users without local .vimrc and restore sanity
 let skip_defaults_vim=1
 
 " Operating system check {{{
-" Checks, if the operating system is linux
+" Checks, if the operating system is Linux
 let operatingSystem=system('uname -a')
 if operatingSystem =~? "\Linux"
     if operatingSystem =~? "\ARCH"
@@ -21,7 +21,7 @@ endif
 " Check if 'plug' is installed
 
 if empty(glob('~/.vim/autoload/plug.vim'))
-  :echo "Plug is not installed. It will be curled! now"
+  :echo "Plug is not installed. It will be curled now!"
   !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source /etc/vimrc
@@ -81,6 +81,13 @@ call plug#end()
 
 " PLUG Addon-Manager }}}
 
+" spell checking {{{
+" automatically activate spell checking for the following file types
+au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   README*   setlocal spell    spelllang=en_us
+" spell checking }}}
+
 " QuickMenu {{{
 
 " clear all the items (init)
@@ -120,6 +127,13 @@ let g:quickmenu_options = "HL"
     call quickmenu#append("set linebreak: %{&tw}"   , ':call MyTextWidth()'             , "Set the current textwidth")
     call quickmenu#append("Show color under Cursor" , ':call ShowHexColorUnderCursor()' , "show hex color under cursor")
     " Code/Text Format }}}
+
+    " Spell Checking {{{
+    call quickmenu#append("# Spell Checker", '')
+    call quickmenu#append("Spell Checker on/off" , ':setlocal spell!'          , "Toggles spell checking on and off")
+    call quickmenu#append("Language: English"    , ':setlocal spelllang=en_us' , "Switch spell checker language to English")
+    call quickmenu#append("Language: German"     , ':setlocal spelllang=de_de' , "Switch spell checker language to German")
+    " Spell Checking }}}
 
     " Advanced Vim Usage {{{
     call quickmenu#append("# Advanced Stuff" , '')
@@ -397,11 +411,14 @@ set ttyfast
 
 " Keybindings {{{
 
-    " tabular shorcut 
+    " tabular shorcut
     " the syntax would be `:Tabularize /,` to split a visual selected paragraph by 'comma'. Use `:Tabularize /;` to
     " split by 'semicolon'.
     " You need to press enter afterwards.
     vmap <Leader>tab :Tabularize /
+
+    " multichange, type \m after selectig text in visual mode
+    vmap <Leader>m :Multichange<CR>
 
     " map ShowHexColorUnderCursor
     map <F3> :call ShowHexColorUnderCursor()<CR>
@@ -511,6 +528,13 @@ endif
     " custom colors {{{
     " i have no clue, why those colors are not set even if they are put AFTER
     " setting the colorscheme
+
+        " spell check {{{
+        hi SpellBad     term=standout   cterm=bold      ctermfg=223     ctermbg=88
+        hi SpellCap     term=standout   cterm=bold      ctermfg=223     ctermbg=66
+        hi SpellRare    term=standout   cterm=bold      ctermfg=223     ctermbg=108
+        hi SpellLocal   term=standout   cterm=bold      ctermfg=237     ctermbg=214
+        " spell check }}}
 
         " custom fold color {{{
         hi Folded       term=standout   cterm=italic    ctermfg=63      ctermbg=237
