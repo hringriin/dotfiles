@@ -9,6 +9,7 @@ application/ods; libreoffice --writer %s
 
 # Spreadsheets
 application/msword; libreoffice --calc %s
+text/csv; libreoffice --calc %s
 
 # Images
 image/jpg; sxiv %s
