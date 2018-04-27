@@ -9,8 +9,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ln -s ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/plugins/hringriin/ ./
-cd ~/.oh-my-zsh/custom/
-ln -s ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/themes/ ./
+cd ~/.oh-my-zsh/themes/
+ln -s ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/themes/hringriin.zsh-theme ./
 
 echo "FIRST"
 cat ${zsh} | sed -e 's/ZSH_THEME=".*"/ZSH_THEME="hringriin"/g' > ${tmpf}
