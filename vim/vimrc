@@ -277,6 +277,9 @@ set ttyfast
     " Dark Background
     set background=dark
 
+    " Paper Format
+    set printoptions=paper:A4
+
     " highlight search matches
     set hlsearch
 
