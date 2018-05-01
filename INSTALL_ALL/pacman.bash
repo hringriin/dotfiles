@@ -71,6 +71,7 @@ neededProgrammes=(
     'pepper-flash'
     'pinentry'
     'pkg-config'
+    'playerctl'
     'powerline-fonts'
     'pulseaudio'
     'pulseaudio-alsa'

@@ -59,10 +59,9 @@ bar {
 }
 
 # Media Player Controls
-bindsym XF86AudioPlay exec playerctrl play
-bindsym XF86AudioPause exec playerctrl pause
-bindsym XF86AudioNext exec playerctrl next
-bindsym XF86AudioPrev exec playerctrl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # stupid stuff
 bindcode $mod+Shift+50 exec ~/Repositories/github.com/hringriin/cookie-clicker-auto-click/repo/mouse-spam.sh acheron
