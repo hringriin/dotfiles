@@ -32,6 +32,7 @@ neededProgrammes=(
     'groff'
     'gzip'
     'htop'
+    'hwinfo'
     'i3-wm'
     'i3status'
     'jshon'
