@@ -38,6 +38,7 @@ neededProgrammes=(
     'keepassx2'
     'libtool'
     'lm_sensors'
+    'lshw'
     'lxappearance'
     'lynx'
     'm4'
