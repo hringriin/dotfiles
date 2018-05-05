@@ -223,7 +223,8 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 exec compton -f
 
 # screenshot
-bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot_%Y-%m-%d%H:%M:%S.png"
+#bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot_%Y-%m-%d%H:%M:%S.png"
+bindsym Print exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/bash/makeScreenshot.bash
 
 # Bind Application Classes to workspaces
 assign [class="Gajim"] $workspace2
