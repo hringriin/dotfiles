@@ -62,7 +62,8 @@ for_window [title="Battery Warning"] sticky enable
 font pango:DejaVu Sans Mono 8
 
 # Wallpaper, needs the package `nitrogen` to work properly
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id variety
 
 # Lockscreen with i3lock-fancy-dualmonitors-git package from AUR
 bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock-fancy -- scrot -z"
