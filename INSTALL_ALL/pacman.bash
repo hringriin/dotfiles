@@ -101,6 +101,7 @@ neededProgrammes=(
     'tmux'
     'ttf-dejavu'
     'util-linux'
+    'variety'
     'vim'
     'vlc'
     'vpnc'
