@@ -30,6 +30,15 @@ HOSTMAINCONF="config"                          # host specific main config
 HOSTSTATUSCONFTOP="top_bar"                    # host specific top status bar
 HOSTSTATUSCONFBOTTOM="bottom_bar"              # host specific bottom status bar
 
+# I3Blocks
+I3BLOCKCFG="${I3MAINPATH}/../i3blocks/config"
+
+# sets up i3blocks cfg
+function blockscfg
+{
+    cp -vf ${I3BLOCKCFG} ${HOME}/.config/i3blocks/
+}
+
 # Creates the host specific i3 and i3status config files
 function createConfig
 {
@@ -122,6 +131,7 @@ function writeConfigToConfig
     if [[ ${writeToConf} = "y" || ${writeToConf} = "Y" || ${writeToConf} = "" ]] ; then
         echo -e "\nWriting to i3 config ..."
         createConfig
+        blockscfg
         echo -e " ... finished!"
     elif [[ ${writeToConf} = "n" || ${writeToConf} = "N" ]] ; then
         echo -e "\nWill not touch anything!"
