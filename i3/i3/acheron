@@ -34,11 +34,40 @@ bar {
     position top
 }
 
-# bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
+###################################
+### DEL ...
 bar {
     separator_symbol $sep-symbol
     workspace_buttons no
     status_command i3status --config ~/.config/i3status/bottom_bar
+    #status_command i3blocks -c ~/.config/i3blocks/config
+    colors {
+        # Whole color setting
+        background          $bar-background
+        statusline          $bar-statusline
+        separator           $bar-separator
+
+        # Type              Border                      Background                      Font
+        focused_workspace   $workspace-focus-border     $workspace-focus-background     $workspace-focus-text
+        active_workspace    $workspace-active-border    $workspace-active-background    $workspace-active-text
+        inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
+        urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
+    }
+
+    # Tray
+    tray_output none
+
+    position bottom
+}
+# ... DEL
+###################################
+
+# bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
+bar {
+    separator_symbol $sep-symbol
+    workspace_buttons no
+    #status_command i3status --config ~/.config/i3status/bottom_bar
+    status_command i3blocks -c ~/.config/i3blocks/acheron_bottom
     colors {
         # Whole color setting
         background          $bar-background
