@@ -1,0 +1,3 @@
+[submodule "i3blocks-gate"]
+	path = i3blocks-gate
+	url = git@github.com:hringriin/i3blocks-gate
