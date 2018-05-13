@@ -31,12 +31,17 @@ HOSTSTATUSCONFTOP="top_bar"                    # host specific top status bar
 HOSTSTATUSCONFBOTTOM="bottom_bar"              # host specific bottom status bar
 
 # I3Blocks
-I3BLOCKCFG="${I3MAINPATH}/../i3blocks/config"
+I3BLOCK="${I3MAINPATH}/../i3blocks"
 
 # sets up i3blocks cfg
 function blockscfg
 {
-    cp -vf ${I3BLOCKCFG} ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/acheron_bottom ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/acheron_top ${HOME}/.config/i3blocks/
+    if [[ ! -d ${HOME}/.config/i3blocks/i3blocks-gate ]] ; then
+        mkdir -p ${HOME}/.config/i3blocks/i3blocks-gate
+    fi
+    cp -rvf ${I3BLOCK}/i3blocks-gate/Arch-i3blocks/* ${HOME}/.config/i3blocks/i3blocks-gate
 }
 
 # Creates the host specific i3 and i3status config files
