@@ -1,3 +1,6 @@
 [submodule "i3blocks-gate"]
 	path = i3/i3blocks/i3blocks-gate
 	url = git@github.com:hringriin/i3blocks-gate
+[submodule "tmux/tmuxinator"]
+	path = tmux/tmuxinator
+	url = https://github.com/tmuxinator/tmuxinator
