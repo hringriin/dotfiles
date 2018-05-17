@@ -29,6 +29,7 @@ printHelp ()
     echo -e "\tcontrolVolume [ option [<vol>] ]"
     echo -e "\n\tOptions:"
     echo -e "\n\t\t- oup              increase volume"
+    echo -e "\t\t- getmic           print mic volume"
     echo -e "\t\t- oupN             increase volume by <vol>"
     echo -e "\t\t- odn              decrease volume"
     echo -e "\t\t- odnN             increase volume by <vol>"
@@ -164,6 +165,11 @@ muteMic ()
     pactl set-source-mute ${inDevice} toggle
 }
 
+getMicVol ()
+{
+    echo $(pactl list | grep "alsa_input" -A 7 | tail -n 1 | sed -e 's/  */|/g' | cut -d "|" -f 5 | tr -d "%")
+}
+
 # main function, choosing what to do, evaluating the input parameter
 main ()
 {
@@ -198,6 +204,8 @@ main ()
         muteSpeaker
     elif [[ $1 == "mic" ]] ; then
         muteMic
+    elif [[ $1 == "getmic" ]] ; then
+        getMicVol
     else
         echo -e "\nUnknown parameters. Please refer to the help message with 'controlVolume help'\n"
         printHelp
