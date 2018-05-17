@@ -30,72 +30,59 @@ separator_block_width=15
 interval=10
 markup=pango        # for colors
 
-[disk]
-label=Boot  :
-command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /boot
-interval=30
+[bat]
+label=BAT0:
 markup=pango
-
-[disk]
-label=Root  :
-command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
-interval=30
-markup=pango
-
-[swap]
-command=~/.config/i3blocks/i3blocks-gate/mem.sh -s
-label=SWAP:
-separator=true
-interval=30
-markup=pango
-
-[memory]
-markup=pango
-command=~/.config/i3blocks/i3blocks-gate/mem.sh -m
-label=MEM:
-separator=true
-interval=30
-
-[iface]
-label=  
-instance=wlp3s0
-color=#00FF00
-interval=10
-separator=false
-
-[wifi]
-instance=wlp3s0
-interval=10
-separator=false
-
-[bandwidth]
-instance=wlp3s0
-interval=2
-separator=true
-
-[iface]
-label=  
-instance=enp0s25
-color=#00FF00
 interval=5
-separator=false
+command=~/.config/i3blocks/i3blocks-gate/bat.sh 0
 
-[bandwidth]
-instance=enp0s25
-interval=2
-separator=true
+#[bat]
+#label=BAT1:
+#markup=pango
+#interval=5
+#command=~/.config/i3blocks/i3blocks-gate/bat.sh 1
 
-[iface]
-label=  
-instance=wwp0s20u4i6
-color=#00FF00
+[temp]
+markup=pango
 interval=10
-separator=false
+command=~/.config/i3blocks/i3blocks-gate/temp.sh
 
-[bandwidth]
-instance=wwp0s20u4i6
-interval=2
-separator=true
-
-[openvpn]
+[cpu_usage]
+label=CPU
 interval=1
+min_width=CPU: 100.00%
+separator=true
+align=center
+
+[load_average]
+interval=1
+
+#[memory]
+#markup=pango
+#command=~/.config/i3blocks/i3blocks-gate/mem.sh -m
+#label=MEM:
+#separator=true
+#interval=60
+
+[date]
+markup=pango
+interval=2
+command=~/.config/i3blocks/i3blocks-gate/date.sh
+
+[vol]
+markup=pango
+separator=true
+#label=VOL
+label=♪
+command=~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh getvol
+interval=once
+signal=12
+
+[mic]
+markup=pango
+separator=true
+#label=VOL
+label=♪
+command=~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh getmic
+interval=once
+signal=12
