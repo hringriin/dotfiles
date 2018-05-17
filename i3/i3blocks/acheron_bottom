@@ -68,8 +68,9 @@ separator=false
 
 [bandwidth]
 instance=wlp3s0
-interval=2
+interval=1
 separator=true
+min_width=IN 10M OUT 10M
 
 [iface]
 label=  
@@ -80,8 +81,9 @@ separator=false
 
 [bandwidth]
 instance=enp0s25
-interval=2
+interval=1
 separator=true
+min_width=IN 10M OUT 10M
 
 [iface]
 label=  
@@ -92,8 +94,9 @@ separator=false
 
 [bandwidth]
 instance=wwp0s20u4i6
-interval=2
+interval=1
 separator=true
+min_width=IN 10M OUT 10M
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
