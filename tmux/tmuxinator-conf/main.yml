@@ -61,6 +61,9 @@ windows:
     - chordbook:
         panes:
             - cd ~/Repositories/github.com/hringriin/chordbook/repo ; clear
+    - music:
+        panes:
+            - clear ; mocp
     - SHELL:
         panes:
             - clear
