@@ -33,7 +33,7 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#ffffff"
-    custom_command = ${HOME}/.gem/ruby/2.5.0/bin/tmuxinator start main
+    custom_command = ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash
     font = DejaVu Sans Mono 10
     foreground_color = "#ffffff"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
