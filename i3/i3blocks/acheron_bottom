@@ -47,24 +47,12 @@ command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
 interval=60
 markup=pango
 
-[memory]
+[net]
 markup=pango
-command=~/.config/i3blocks/i3blocks-gate/mem.sh -m
-label=MEM:
-separator=true
-interval=30
-
-[iface]
 label=  
-instance=wlp3s0
-color=#00FF00
-interval=10
+command=~/.config/i3blocks/i3blocks-gate/net.sh -w
 separator=false
-
-[wifi]
-instance=wlp3s0
 interval=10
-separator=false
 
 [bandwidth]
 instance=wlp3s0
@@ -72,12 +60,12 @@ interval=1
 separator=true
 min_width=IN 10M OUT 10M
 
-[iface]
+[net]
+markup=pango
 label=  
-instance=enp0s25
-color=#00FF00
-interval=5
+command=~/.config/i3blocks/i3blocks-gate/net.sh -e
 separator=false
+interval=10
 
 [bandwidth]
 instance=enp0s25
@@ -85,12 +73,12 @@ interval=1
 separator=true
 min_width=IN 10M OUT 10M
 
-[iface]
+[net]
+markup=pango
 label=  
-instance=wwp0s20u4i6
-color=#00FF00
-interval=10
+command=~/.config/i3blocks/i3blocks-gate/net.sh -l
 separator=false
+interval=10
 
 [bandwidth]
 instance=wwp0s20u4i6
