@@ -206,4 +206,6 @@ main ()
 }
 
 main $1 $2
+YOUR_SIGNAL=12
+pkill -RTMIN+${YOUR_SIGNAL} i3blocks
 exit 0
