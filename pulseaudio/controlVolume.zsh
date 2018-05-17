@@ -139,6 +139,10 @@ volUp ()
 volDn ()
 {
     #if [[ $1 -gt 0 && $($1+`pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g'`) -ge 0 ]] ; then
+    if [[ $(getVol) -eq 0 ]] ; then
+        exit 0
+    fi
+
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
         pactl set-sink-volume ${outDevice} -$1%
     else
