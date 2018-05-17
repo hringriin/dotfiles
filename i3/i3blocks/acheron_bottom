@@ -31,7 +31,7 @@ interval=10
 markup=pango        # for colors
 
 [mediaplayer]
-command=~/.config/i3blocks/i3blocks-gate/mocp.sh
+command=~/.config/i3blocks/i3blocks-gate/mocp.sh $BLOCK_BUTTON
 interval=5
 signal=10
 
