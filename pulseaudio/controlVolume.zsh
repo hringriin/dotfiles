@@ -1,4 +1,5 @@
 #!/bin/zsh
+# vim: ft=sh
 # control volume for i3wm
 
 # configuration
@@ -180,6 +181,14 @@ muteSpeaker ()
 muteMic ()
 {
     pactl set-source-mute ${inDevice} toggle
+}
+
+getSpeakerMute ()
+{
+}
+
+getMicMute ()
+{
 }
 
 getMicVol ()
