@@ -38,13 +38,13 @@ signal=10
 [disk]
 label=Boot  :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /boot
-interval=30
+interval=60
 markup=pango
 
 [disk]
 label=Root  :
-command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
-interval=30
+command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
+interval=60
 markup=pango
 
 [memory]
