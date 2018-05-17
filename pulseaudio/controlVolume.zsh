@@ -116,10 +116,22 @@ chooseInDevice ()
 volUp ()
 {
     #if [[ $1 -gt 0 && $($1+`pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g'`) -le 120 ]] ; then
+    if [[ $(getVol) -eq 100 ]] ; then
+        exit 0
+    fi
+
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
-        pactl set-sink-volume ${outDevice} +$1%
+        if [[ $(echo $1 + $(getVol) | bc) -lt 100 ]] ; then
+            pactl set-sink-volume ${outDevice} +$1%
+        else
+            pactl set-sink-volume ${outDevice} 100%
+        fi
     else
-        pactl set-sink-volume ${outDevice} +5%
+        if [[ $(echo 5 + $(getVol) | bc) -lt 100 ]] ; then
+            pactl set-sink-volume ${outDevice} +5%
+        else
+            pactl set-sink-volume ${outDevice} 100%
+        fi
     fi
 }
 
