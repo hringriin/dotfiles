@@ -58,9 +58,6 @@ windows:
     - dotfiles:
         panes:
             - cd ~/Repositories/github.com/hringriin/dotfiles/repo ; clear
-    - chordbook:
-        panes:
-            - cd ~/Repositories/github.com/hringriin/chordbook/repo ; clear
     - music:
         panes:
             - clear ; mocp
