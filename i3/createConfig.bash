@@ -36,8 +36,8 @@ I3BLOCK="${I3MAINPATH}/../i3blocks"
 # sets up i3blocks cfg
 function blockscfg
 {
-    cp -vf ${I3BLOCK}/acheron_bottom ${HOME}/.config/i3blocks/
-    cp -vf ${I3BLOCK}/acheron_top ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/${HOSTNAME}_bottom ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/${HOSTNAME}_top ${HOME}/.config/i3blocks/
     if [[ ! -d ${HOME}/.config/i3blocks/i3blocks-gate ]] ; then
         mkdir -p ${HOME}/.config/i3blocks/i3blocks-gate
     fi
