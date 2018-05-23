@@ -8,6 +8,7 @@ neededPackerPrgorammes=(
     'clipster'
     'dropbox'
     'dropbox-cli'
+    'frescobaldi'
     'gitkraken'
     'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
