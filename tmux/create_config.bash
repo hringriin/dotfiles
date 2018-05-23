@@ -10,28 +10,29 @@ source INSTALL_ALL/config.bash
 
 # CONFIG
 
-PREFIX=
-if [[ `uname -s` == *"arwin"* ]] ; then
-    if [[ ${UID} -eq 0 ]] ; then
-        PREFIX="/var/root"
-    else
-        PREFIX="/Users/${USER}"
-    fi
-elif [[ `uname -s` == *"inux"* ]] ; then
-    if [[ ${UID} -eq 0 ]] ; then
-        PREFIX="/root"
-    else
-        PREFIX="/home/${USER}"
-    fi
-fi
-
-REPOPATH="${PREFIX}/Repositories/github.com/hringriin/dotfiles/repo/tmux"
-TMUXPATH="${PREFIX}/.tmux"
+TMUXPATH="${HOME}/.tmux"
 
 # links config files
 linkFiles ()
 {
-    ln -vsf ${REPOPATH}/tmux.conf ${TMUXPATH}.conf
+    ln -vsf ${repoPath}/tmux.conf ${TMUXPATH}.conf
+}
+
+tmuxinator ()
+{
+    if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
+        # adding ruby bin to path variable
+        export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+    else
+        echo "Installing tmuxinator ..."
+        gem install tmuxinator
+        export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+        tmuxinator doctor
+        read -p
+    fi
+
+    rm -rf ${HOME}/.config/tmuxinator
+    ln -sfv ${repoPath}/tmux/tmuxinator-conf ${HOME}/.config/tmuxinator
 }
 
 # creates directories, if not exist
@@ -71,6 +72,7 @@ main ()
     checkDir
     linkFiles
     tpm
+    tmuxinator
 }
 
 main
