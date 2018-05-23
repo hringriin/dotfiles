@@ -10,6 +10,13 @@ source INSTALL_ALL/config.bash
 
 main()
 {
+    if [[ ! -d ${HOME}/.moc ]] ; then
+        mkdir -p ${HOME}/.moc
+    fi
+
+    cp -v ${repoPath}/moc/config ${HOME}/.moc/
+    cp -v ${repoPath}/moc/hringriin_keymap ${HOME}/.moc
+    cp -vr ${repoPath}/moc/themes ${HOME}/.moc
 }
 
 main
