@@ -1,0 +1,79 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+interval=10
+markup=pango        # for colors
+
+[mediaplayer]
+command=~/.config/i3blocks/i3blocks-gate/mocp.sh $BLOCK_BUTTON
+interval=5
+signal=10
+
+[disk]
+label=Boot  :
+command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /boot
+interval=60
+markup=pango
+
+# {{{ root needs to be defined twice. no clue why
+[disk]
+label=Root  :
+command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
+interval=60
+markup=pango
+
+[disk]
+label=Root  :
+command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
+interval=60
+markup=pango
+# }}}
+
+markup=pango
+label=  
+command=~/.config/i3blocks/i3blocks-gate/net.sh -e
+separator=false
+interval=10
+
+[bandwidth]
+instance=enp0s25
+interval=1
+separator=true
+min_width=IN 10M OUT 10M
+
+[layout]
+command=~/.config/i3blocks/i3blocks-gate/lang.sh
+interval=5
+markup=pango
+separator=true
+
+[keyindicator]
+instance=CAPS
+interval=1
+signal=11

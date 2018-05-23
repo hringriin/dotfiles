@@ -29,7 +29,7 @@ bar {
     }
 
     # Tray
-    tray_output DP-0
+    tray_output none
 
     position top
 }
@@ -38,7 +38,7 @@ bar {
 bar {
     separator_symbol $sep-symbol
     workspace_buttons no
-    status_command i3status --config ~/.config/i3status/bottom_bar
+    status_command i3blocks -c ~/.config/i3blocks/skynd_bottom
     colors {
         # Whole color setting
         background          $bar-background
@@ -53,7 +53,7 @@ bar {
     }
 
     # Tray
-    tray_output none
+    tray_output DP-0
 
     position bottom
 }
