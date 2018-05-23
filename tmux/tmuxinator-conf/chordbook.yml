@@ -53,7 +53,7 @@ windows:
             - cd TeX/Chordbook_Extended ; vim -p Chordbook_Extended.tex chordbook_extended.tex
     - compile:
         panes:
-            - cd Unix ; clear ; make ; make extended
+            - cd Unix ; clear
     - pdf:
         layout: even-horizontal
         panes:
