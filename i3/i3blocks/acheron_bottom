@@ -58,7 +58,7 @@ interval=10
 instance=wlp3s0
 interval=1
 separator=true
-min_width=IN 10M OUT 10M
+min_width=IN 100M OUT 100M
 
 [net]
 markup=pango
@@ -71,7 +71,7 @@ interval=10
 instance=enp0s25
 interval=1
 separator=true
-min_width=IN 10M OUT 10M
+min_width=IN 100M OUT 100M
 
 [net]
 markup=pango
@@ -84,7 +84,7 @@ interval=10
 instance=wwp0s20u4i6
 interval=1
 separator=true
-min_width=IN 10M OUT 10M
+min_width=IN 100M OUT 100M
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
