@@ -29,7 +29,7 @@ bar {
     }
 
     # Tray
-    tray_output LVDS1
+    tray_output none
 
     position top
 }
