@@ -646,6 +646,27 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Box
+Master :com.gmail.hringriin-remote:INBOX/"Box"
+slave  :com.gmail.hringriin-local:Box
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Bremer-Bonbon-Manufaktur
+Master :com.gmail.hringriin-remote:INBOX/"Bremer-Bonbon-Manufaktur"
+slave  :com.gmail.hringriin-local:Bremer-Bonbon-Manufaktur
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Chefkoch
+Master :com.gmail.hringriin-remote:INBOX/"Chefkoch"
+slave  :com.gmail.hringriin-local:Chefkoch
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Codecademy
 Master :com.gmail.hringriin-remote:INBOX/"Codecademy"
 slave  :com.gmail.hringriin-local:Codecademy
@@ -730,9 +751,23 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Fanatical
+Master :com.gmail.hringriin-remote:INBOX/"Fanatical"
+slave  :com.gmail.hringriin-local:Fanatical
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Fastfood
 Master :com.gmail.hringriin-remote:INBOX/"Fastfood"
 slave  :com.gmail.hringriin-local:Fastfood
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-FuelRats
+Master :com.gmail.hringriin-remote:INBOX/"FuelRats"
+slave  :com.gmail.hringriin-local:FuelRats
 Create Both
 Expunge Both
 SyncState *
@@ -744,9 +779,30 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-G2A
+Master :com.gmail.hringriin-remote:INBOX/"G2A"
+slave  :com.gmail.hringriin-local:G2A
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-GetDigital
 Master :com.gmail.hringriin-remote:INBOX/"GetDigital"
 slave  :com.gmail.hringriin-local:GetDigital
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Github
+Master :com.gmail.hringriin-remote:INBOX/"Github"
+slave  :com.gmail.hringriin-local:Github
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Github_Issues
+Master :com.gmail.hringriin-remote:INBOX/"Github_Issues"
+slave  :com.gmail.hringriin-local:Github_Issues
 Create Both
 Expunge Both
 SyncState *
@@ -772,6 +828,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Hertie
+Master :com.gmail.hringriin-remote:INBOX/"Hertie"
+slave  :com.gmail.hringriin-local:Hertie
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-HumbleBundle
 Master :com.gmail.hringriin-remote:INBOX/"HumbleBundle"
 slave  :com.gmail.hringriin-local:HumbleBundle
@@ -786,9 +849,30 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Imgur
+Master :com.gmail.hringriin-remote:INBOX/"Imgur"
+slave  :com.gmail.hringriin-local:Imgur
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-IsNichWahr
 Master :com.gmail.hringriin-remote:INBOX/"IsNichWahr"
 slave  :com.gmail.hringriin-local:IsNichWahr
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-InstantGaming
+Master :com.gmail.hringriin-remote:INBOX/"InstantGaming"
+slave  :com.gmail.hringriin-local:InstantGaming
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-JMS-Hardware
+Master :com.gmail.hringriin-remote:INBOX/"JMS-Hardware"
+slave  :com.gmail.hringriin-local:JMS-Hardware
 Create Both
 Expunge Both
 SyncState *
@@ -877,6 +961,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Paradox-Interactive
+Master :com.gmail.hringriin-remote:INBOX/"Paradox-Interactive"
+slave  :com.gmail.hringriin-local:Paradox-Interactive
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Pastebin
 Master :com.gmail.hringriin-remote:INBOX/"Pastebin"
 slave  :com.gmail.hringriin-local:Pastebin
@@ -898,6 +989,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Raspberry-Pi-Store
+Master :com.gmail.hringriin-remote:INBOX/"Raspberry-Pi-Store"
+slave  :com.gmail.hringriin-local:Raspberry-Pi-Store
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Rift
 Master :com.gmail.hringriin-remote:INBOX/"Rift"
 slave  :com.gmail.hringriin-local:Rift
@@ -912,9 +1010,23 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-Sony
+Master :com.gmail.hringriin-remote:INBOX/"Sony"
+slave  :com.gmail.hringriin-local:Sony
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Spotify
 Master :com.gmail.hringriin-remote:INBOX/"Spotify"
 slave  :com.gmail.hringriin-local:Spotify
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Stack-Overflow
+Master :com.gmail.hringriin-remote:INBOX/"Stack-Overflow"
+slave  :com.gmail.hringriin-local:Stack-Overflow
 Create Both
 Expunge Both
 SyncState *
@@ -929,6 +1041,13 @@ SyncState *
 Channel com.gmail.hringriin-SWTOR
 Master :com.gmail.hringriin-remote:INBOX/"SWToR"
 slave  :com.gmail.hringriin-local:SWToR
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-TAP
+Master :com.gmail.hringriin-remote:INBOX/"TAP"
+slave  :com.gmail.hringriin-local:TAP
 Create Both
 Expunge Both
 SyncState *
@@ -964,6 +1083,20 @@ SyncState *
 Channel com.gmail.hringriin-Ubisoft
 Master :com.gmail.hringriin-remote:INBOX/"Ubisoft"
 slave  :com.gmail.hringriin-local:Ubisoft
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Ultimate-Guitar
+Master :com.gmail.hringriin-remote:INBOX/"Ultimate-Guitar"
+slave  :com.gmail.hringriin-local:Ultimate-Guitar
+Create Both
+Expunge Both
+SyncState *
+
+Channel com.gmail.hringriin-Volkswagen-Classic
+Master :com.gmail.hringriin-remote:INBOX/"Volkswagen-Classic"
+slave  :com.gmail.hringriin-local:Volkswagen-Classic
 Create Both
 Expunge Both
 SyncState *
@@ -1521,11 +1654,14 @@ Channel com.gmail.hringriin-Alternate
 Channel com.gmail.hringriin-Amazon
 Channel com.gmail.hringriin-Archlinux
 Channel com.gmail.hringriin-BladeAndSoul
+Channel com.gmail.hringriin-Box
+Channel com.gmail.hringriin-Bremer-Bonbon-Manufaktur
+Channel com.gmail.hringriin-Chefkoch
 Channel com.gmail.hringriin-Codecademy
 Channel com.gmail.hringriin-DHL
 Channel com.gmail.hringriin-Doodle
-Channel com.gmail.hringriin-EA
 Channel com.gmail.hringriin-Dropbox
+Channel com.gmail.hringriin-EA
 Channel com.gmail.hringriin-Ebay
 Channel com.gmail.hringriin-ElderScrollsOnline
 Channel com.gmail.hringriin-EliteDangerous
@@ -1533,15 +1669,24 @@ Channel com.gmail.hringriin-Ello
 Channel com.gmail.hringriin-Elyra
 Channel com.gmail.hringriin-EMP
 Channel com.gmail.hringriin-Facebook
+Channel com.gmail.hringriin-Fanatical
 Channel com.gmail.hringriin-Fastfood
+Channel com.gmail.hringriin-FuelRats
 Channel com.gmail.hringriin-FunCom
+Channel com.gmail.hringriin-G2A
 Channel com.gmail.hringriin-GetDigital
+Channel com.gmail.hringriin-Github
+Channel com.gmail.hringriin-Github_Issues
 Channel com.gmail.hringriin-GitKraken
 Channel com.gmail.hringriin-GOG
 Channel com.gmail.hringriin-Google
+Channel com.gmail.hringriin-Hertie
 Channel com.gmail.hringriin-HumbleBundle
 Channel com.gmail.hringriin-iFixit
+Channel com.gmail.hringriin-Imgur
 Channel com.gmail.hringriin-IsNichWahr
+Channel com.gmail.hringriin-InstantGaming
+Channel com.gmail.hringriin-JMS-Hardware
 Channel com.gmail.hringriin-MasteringVim
 Channel com.gmail.hringriin-Maxdome
 Channel com.gmail.hringriin-McDonalds
@@ -1554,19 +1699,26 @@ Channel com.gmail.hringriin-NEUERRECHNER
 Channel com.gmail.hringriin-NoIp
 Channel com.gmail.hringriin-Nvidia
 Channel com.gmail.hringriin-OwnCloud
+Channel com.gmail.hringriin-Paradox-Interactive
 Channel com.gmail.hringriin-Pastebin
 Channel com.gmail.hringriin-PayPal
 Channel com.gmail.hringriin-ProMods
+Channel com.gmail.hringriin-Raspberry-Pi-Store
 Channel com.gmail.hringriin-Rift
 Channel com.gmail.hringriin-Robocraft
+Channel com.gmail.hringriin-Sony
 Channel com.gmail.hringriin-Spotify
+Channel com.gmail.hringriin-Stack-Overflow
 Channel com.gmail.hringriin-Steam
 Channel com.gmail.hringriin-SWTOR
+Channel com.gmail.hringriin-TAP
 Channel com.gmail.hringriin-TeamViewer
 Channel com.gmail.hringriin-Trashy
 Channel com.gmail.hringriin-Twitch
 Channel com.gmail.hringriin-Twitter
 Channel com.gmail.hringriin-Ubisoft
+Channel com.gmail.hringriin-Ultimate-Guitar
+Channel com.gmail.hringriin-Volkswagen-Classic
 Channel com.gmail.hringriin-WDCloud
 Channel com.gmail.hringriin-Wuala
 Channel com.gmail.hringriin-YouTube
