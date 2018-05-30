@@ -15,13 +15,13 @@
 
 function master()
 {
-    cp -vf ~/.abook/addressbook ~/ownCloud/Documents/abook/
+    cp -vf ${HOME}/.abook/addressbook ${HOME}/ownCloud/Documents/abook/
 }
 
 function slave()
 {
-    rm -vrf ~/.abook/*
-    cp -vf ~/ownCloud/Documents/abook/addressbook ~/.abook/
+    rm -vrf ${HOME}/.abook/*
+    cp -vf ${HOME}/ownCloud/Documents/abook/addressbook ${HOME}/.abook/
 }
 
 if [[ $1 == "slave" ]] ; then
