@@ -502,8 +502,8 @@ set ttyfast
     " Press F12 to trigger LaTeX Makefile and open pdf
     nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
 
-    " myhelp (hringriin)
-    nmap <Leader>h :tab :h hringriin<CR>
+    " my documentation, inside my dotfiles repository on github
+    nmap <Leader>h :tabnew ~/Repositories/github.com/hringriin/dotfiles/wiki/Home.md<CR>
 
     " edit vimrc with typing \ev while \ is the current leader character
     nmap <Leader>ev :tabnew /etc/vimrc<CR>
