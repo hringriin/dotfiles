@@ -131,9 +131,10 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 
 " spell checking {{{
 " automatically activate spell checking for the following file types
-au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   README*   setlocal spell    spelllang=en_us
+" this is getting very annoying
+"au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
+"au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
+"au BufNewFile,BufRead,BufEnter   README*   setlocal spell    spelllang=en_us
 " spell checking }}}
 
 " QuickMenu {{{
