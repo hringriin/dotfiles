@@ -40,8 +40,6 @@ call plug#begin('~/.vim/plugged')
         Plug 'AndrewRadev/multichange.vim'
         Plug 'scrooloose/nerdtree'              " Nerdtree
         Plug 'tmux-plugins/vim-tmux'            " vim plugin for .tmux.conf
-        Plug 'vim-airline/vim-airline/'         " new status bar
-        Plug 'vim-airline/vim-airline-themes'
         Plug 'scrooloose/nerdcommenter'         " comments
         Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
         Plug 'plasticboy/vim-markdown'
@@ -76,6 +74,8 @@ call plug#begin('~/.vim/plugged')
         " Themes {{{
         " themes
         Plug 'morhetz/gruvbox'
+        Plug 'vim-airline/vim-airline/'         " new status bar
+        Plug 'vim-airline/vim-airline-themes'
         " Themes }}}
 
     " Plugs (Addons for PLUG) }}}
