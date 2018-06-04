@@ -58,6 +58,9 @@ function evalPrioAway()
         "sorth")
             retval="25"
             ;;
+        *"strato"*)
+            retval="65"
+            ;;
         *)
             retval="0"
             ;;
@@ -98,6 +101,9 @@ function evalPrioOnline()
             ;;
         "sorth")
             retval="30"
+            ;;
+        *"strato"*)
+            retval="70"
             ;;
         *)
             retval="0"
@@ -146,7 +152,12 @@ function mergeConf()
         echo "set priority_away = $(evalPrioAway ${var})" >> ${MAPATH}${var}/mcabberrc
 
         echo -e "\n# Resource" >> ${MAPATH}${var}/mcabberrc
-        echo -e "set resource = mcabber_${HOSTNAME}_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
+
+        if [[ ${HOSTNAME} == *"strato"* ]] ; then
+            echo -e "set resource = mcabber_MAIN_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
+        else
+            echo -e "set resource = mcabber_${HOSTNAME}_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
+        fi
 
         cat ${MAREPOPATH}/mcabberrc_${var} >> ${MAPATH}${var}/mcabberrc
 
