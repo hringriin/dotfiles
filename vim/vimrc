@@ -64,7 +64,8 @@ call plug#begin('~/.vim/plugged')
         " GIT }}}
 
         " Documentation {{{
-        Plug 'hringriin/documentation'          " my personal documentation of EVERYTHING :-)
+        Plug 'vimwiki/vimwiki'                  " VimWiki
+        Plug 'suan/vim-instant-markdown'        " instant preview for markdown
         " Documentation }}}
 
         " Debugging {{{
