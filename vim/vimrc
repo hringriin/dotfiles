@@ -48,11 +48,14 @@ call plug#begin('~/.vim/plugged')
         Plug 'johngrib/vim-game-code-break'     " a 'fun' game :-)
         Plug 'skywind3000/quickmenu.vim'        " quickmenu
         Plug 'wikitopian/hardmode'              " vim hard mode
-        Plug 'ap/vim-css-color'                 " highlight css colors inside vim
         "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
         "Plug 'lervag/vimtex'
         "Plug 'Valloric/YouCompleteMe'
         " General }}}
+
+        " Colors {{{
+        Plug 'ap/vim-css-color'                 " highlight css colors inside vim
+        " Colors }}}
 
         " GIT {{{
         Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
