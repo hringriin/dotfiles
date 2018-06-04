@@ -34,18 +34,15 @@ call plug#begin('~/.vim/plugged')
     " Plugs (Addons for PLUG) {{{
 
         " General {{{
-        Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
         Plug 'mattn/vim-maketable'              " make markdown tables with `:Maketable`
         Plug 'vim-scripts/ZoomWin'              " hit <Leader>f to fullscreen a vim tab. hit again to return.
                                                 " be careful with closing buffers!
         Plug 'AndrewRadev/multichange.vim'
         Plug 'scrooloose/nerdtree'              " Nerdtree
         Plug 'tmux-plugins/vim-tmux'            " vim plugin for .tmux.conf
-        Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
         Plug 'vim-airline/vim-airline/'         " new status bar
         Plug 'vim-airline/vim-airline-themes'
         Plug 'scrooloose/nerdcommenter'         " comments
-        Plug 'airblade/vim-gitgutter'           " git commit status side line
         Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
         Plug 'plasticboy/vim-markdown'
         Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
@@ -58,6 +55,12 @@ call plug#begin('~/.vim/plugged')
         "Plug 'lervag/vimtex'
         "Plug 'Valloric/YouCompleteMe'
         " General }}}
+
+        " GIT {{{
+        Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
+        Plug 'airblade/vim-gitgutter'           " git commit status side line
+        Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
+        " GIT }}}
 
         " Documentation {{{
         Plug 'hringriin/documentation'          " my personal documentation of EVERYTHING :-)
