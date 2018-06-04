@@ -51,6 +51,9 @@ alias tq='tmux kill-session -t'
 # moc(p)
 alias 'mocp'='padsp mocp'
 
+# vim doc (my github dotfiles wiki)
+alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'
+
 # Calculator
 alias 'calc'='galculator'
 
