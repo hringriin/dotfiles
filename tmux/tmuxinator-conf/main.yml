@@ -56,8 +56,13 @@ startup_window: SHELL
 
 windows:
     - dotfiles:
+        layout: even-horizontal
         panes:
             - cd ~/Repositories/github.com/hringriin/dotfiles/repo ; clear
+            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear
+    - wiki:
+        panes:
+            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear ; vim Home.md
     - music:
         panes:
             - clear ; mocp
