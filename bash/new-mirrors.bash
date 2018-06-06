@@ -14,7 +14,7 @@ fi
 
 sed -i 's/^#Server/Server/' ${PMD}/${PMT}
 
-rankmirrors -n 10 ${PMD}/${PMT} > ${PMD}/${PML}
+rankmirrors -n 50 ${PMD}/${PMT} > ${PMD}/${PML}
 
 pacman -Syyu
 
