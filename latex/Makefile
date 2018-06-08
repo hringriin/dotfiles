@@ -32,9 +32,11 @@ clean:
 	rm -f *.gls;
 	rm -f *.ist;
 	rm -f *.log;
+	rm -f *.nav;
+	rm -f *.out;
+	rm -f *.snm;
 	rm -f *.tdo;
 	rm -f *.toc;
-	rm -f *.out;
 
 # deletes the pdf binary (NOT IN THE 'build' DIRECTORY!)
 rmpdf:
