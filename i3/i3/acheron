@@ -12,6 +12,7 @@ bindsym $mod+Shift+Control+d exec --no-startup-id /usr/bin/rofi-twitch
 
 # top status bar i3status
 bar {
+    mode hide
     separator_symbol $sep-symbol
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
@@ -36,6 +37,7 @@ bar {
 
 # bottom status bar i3status
 #bar {
+#    mode hide
 #    separator_symbol $sep-symbol
 #    workspace_buttons no
 #    status_command i3status --config ~/.config/i3status/bottom_bar
@@ -61,6 +63,7 @@ bar {
 
 ## top status bar i3blocks
 #bar {
+#    mode hide
 #    separator_symbol $sep-symbol
 #    strip_workspace_numbers yes
 #    status_command i3blocks -c ~/.config/i3blocks/acheron_top
@@ -85,6 +88,7 @@ bar {
 
 # bottom status bar i3blocks
 bar {
+    mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
     #status_command i3status --config ~/.config/i3status/bottom_bar
