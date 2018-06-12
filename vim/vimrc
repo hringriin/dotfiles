@@ -102,7 +102,7 @@ call plug#end()
 " control this behavior, you can specify *no autostart* in your .vimrc. You can then manually trigger preview via the command
 " :InstantMarkdownPreview. This command is only available inside markdown buffers and when the autostart option is turned off.
 let g:instant_markdown_autostart = 0
-map <leader>md :InstantMarkdownPreview<CR>
+nnoremap <silent> <leader>md :InstantMarkdownPreview<CR>
 
 " By default, the server only listens on localhost. To make the server available to others in your network, edit your .vimrc and add *this*
 " !!! Only use this setting on trusted networks !!!
@@ -143,7 +143,7 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 call quickmenu#reset()
 
 " bind to <leader>mt (in case of this vimrc: '\mt')
-noremap <silent><leader>mt :call quickmenu#toggle(0)<cr>
+nnoremap <silent> <leader>mt :call quickmenu#toggle(0)<cr>
 
 " enable cursorline (L) and cmdline help (H)
 let g:quickmenu_options = "HL"
@@ -250,7 +250,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Toggle Nerdtree on/off
-nmap <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Nerdtree }}}
 
 " disable mouse {{{
@@ -467,17 +467,17 @@ set ttyfast
     " the syntax would be `:Tabularize /,` to split a visual selected paragraph by 'comma'. Use `:Tabularize /;` to
     " split by 'semicolon'.
     " You need to press enter afterwards.
-    vmap <Leader>tab :Tabularize /
+    vnoremap <Leader>tab :Tabularize /
 
     " multichange, type \m after selectig text in visual mode
-    vmap <Leader>m :Multichange<CR>
+    vnoremap <Leader>m :Multichange<CR>
 
     " map ShowHexColorUnderCursor
-    map <F3> :call ShowHexColorUnderCursor()<CR>
+    nnoremap <F3> :call ShowHexColorUnderCursor()<CR>
 
     " move to next file (e.g. if you opend files like `vim *`)
-    map <F1> :N<cr>
-    map <F2> :n<cr>
+    nnoremap <F1> :N<cr>
+    nnoremap <F2> :n<cr>
 
     " jump to first character/number in line or beginning of line
     nnoremap <silent> 0 :call ToggleHomeZero()<CR>
@@ -486,33 +486,33 @@ set ttyfast
     nnoremap <silent> $ :call ToggleEndInfinity()<CR>
 
     " reselect visual block after indent visual with > or <
-    vnoremap < <gv
-    vnoremap > >gv
+    vnoremap <silent> < <gv
+    vnoremap <silent> > >gv
 
     " ZoomWin
-    noremap <Leader>f :ZoomWin<CR>
+    nnoremap <Leader>f :ZoomWin<CR>
 
     " vim-move modifier key (control key, in this case)
     let g:move_key_modifier = 'C'
 
     " Switch tabs with tab key
-    nmap <Tab> gt
-    nmap <S-Tab> gT
+    nnoremap <Tab> gt
+    nnoremap <S-Tab> gT
 
     " Press F12 to trigger LaTeX Makefile and open pdf
     nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
 
     " my documentation, inside my dotfiles repository on github
-    nmap <Leader>h :tabnew ~/Repositories/github.com/hringriin/dotfiles/wiki/Home.md<CR>
+    nnoremap <silent> <Leader>h :tabnew ~/Repositories/github.com/hringriin/dotfiles/wiki/Home.md<CR>
 
     " edit vimrc with typing \ev while \ is the current leader character
-    nmap <Leader>ev :tabnew /etc/vimrc<CR>
+    nnoremap <silent> <Leader>ev :tabnew /etc/vimrc<CR>
 
     " temporarily disable hlsearch
-    nmap <Leader>s :noh<CR>
+    nnoremap <silent> <Leader>s :noh<CR>
 
     " Keybinding for sorting under visual block
-    map <F8> :'<,'>sort /\ze\%V/<CR>
+    vnoremap <F8> :'<,'>sort /\ze\%V/<CR>
 
 " Keybindings }}}
 
