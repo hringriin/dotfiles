@@ -58,14 +58,14 @@ windows:
     - dotfiles:
         layout: even-horizontal
         panes:
-            - cd ~/Repositories/github.com/hringriin/dotfiles/repo ; clear
-            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear
+            - cd ~/Repositories/github.com/hringriin/dotfiles/repo
+            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki
     - wiki:
         panes:
             - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear ; vim Home.md
     - music:
         panes:
-            - clear ; mocp
+            - cd ~/Music/ ; clear ; mocp
     - SHELL:
         panes:
             - clear
