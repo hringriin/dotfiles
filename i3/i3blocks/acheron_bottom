@@ -38,7 +38,7 @@ markup=pango        # for colors
 [work]
 label=Tracker:
 command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
-interval=30
+interval=3
 markup=pango
 
 [disk]
