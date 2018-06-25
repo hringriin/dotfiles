@@ -6,7 +6,7 @@ break_period = 600  # in seconds
 work_period = 6600  # in seconds
 overwork_period = 300  # in seconds
 hide_tray = False
-hide_win = False
+hide_win = True
 sqlite_manager = 'sqlite3'
 
 
