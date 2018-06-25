@@ -14,6 +14,7 @@ neededPackerPrgorammes=(
     'i3lock-fancy-dualmonitors-git'
     'rofi-twitch'
     'spotify'
+    'tider-git'
     'ttf-font-awesome-4'
     'vivaldi'
     'vivaldi-ffmpeg-codecs'
