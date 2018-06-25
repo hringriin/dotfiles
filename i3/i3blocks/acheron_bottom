@@ -30,10 +30,16 @@ separator_block_width=15
 interval=10
 markup=pango        # for colors
 
-[mediaplayer]
-command=~/.config/i3blocks/i3blocks-gate/mocp.sh $BLOCK_BUTTON
-interval=5
-signal=10
+#[mediaplayer]
+#command=~/.config/i3blocks/i3blocks-gate/mocp.sh $BLOCK_BUTTON
+#interval=5
+#signal=10
+
+[work]
+label=Tracker:
+command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
+interval=30
+markup=pango
 
 [disk]
 label=Boot  :
