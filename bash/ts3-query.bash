@@ -145,13 +145,13 @@ function parseClientData ()
             # as "away" and the result is 1, so it echos "1" to ${awaystatus}.
             #
             # if this logical "OR" is 'false' "0" will be ecohed to ${awaystatus}
-            if [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+            if [[ $(sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
                 grep -e 'client_away' | \
                 cut -d '=' -f 2 | \
-                head -n 1` == "1" ]] ||
-               [[ `sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
+                head -n 1) == "1" ]] ||
+               [[ $(sed -e 's/\s\+/\n/g' ${tmpDir}/${clientDataDir}/client_${counter} | \
                     grep -e 'client_output_muted' | \
-                    cut -d '=' -f 2` == "1" ]] ; then
+                    cut -d '=' -f 2) == "1" ]] ; then
                 echo "1" >> ${tmpDir}/${clientDataDir}/${awaystatus}
             else
                 echo "0" >> ${tmpDir}/${clientDataDir}/${awaystatus}

@@ -17,11 +17,11 @@ ulbin="/usr/local/bin"
 DISTRIBUTION=
 
 # is it arch or ubuntu or mac os?
-if [[ `uname -s` == *"arwin"* ]] ; then
+if [[ $(uname -s) == *"arwin"* ]] ; then
     DISTRIBUTION="MAC"
-elif [[ `uname -s` == *"inux"* ]] ; then
+elif [[ $(uname -s) == *"inux"* ]] ; then
     if [[ -x /usr/bin/lsb_release ]] ; then
-        DISTRIBUTION=`/usr/bin/lsb_release -si`
+        DISTRIBUTION=$(/usr/bin/lsb_release -si)
     else
         echo " ERROR ; UNSUPPORTED LINUX DISTRIBUTION ! "
         exit 127

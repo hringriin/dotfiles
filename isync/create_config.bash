@@ -8,7 +8,7 @@ sleep 1
 
 source INSTALL_ALL/config.bash
 
-if [[ `uname -s` == *"arwin"* ]] ; then
+if [[ $(uname -s) == *"arwin"* ]] ; then
     echo -e "You're running MacOs ..."
     echo -e "Sorry, you're screwed, the following part does not work on MacOs."
     echo -e "This is not by design, I actually have no clue why."
@@ -26,7 +26,7 @@ insertPasswd()
     echo -e "Writing password for \e[1;35m$1\e[0m ..."
 
     # using filename (f) to cat the passwords from the password file
-    PWD=`cat $2 | cut -d '=' -f 2 | sed -e 's/\s*//'`
+    PWD=$(cat $2 | cut -d '=' -f 2 | sed -e 's/\s*//')
 
     # using the filename (fdname) to insert the password into the mbsyncrc (via tmp files)
     sed -e 's/"password.'$1'"/'${PWD}'/g' ${MBSYNCFILE} &> ${TMPFILE}
@@ -45,7 +45,7 @@ main()
     for f in ${HOME}/.mutt/passwords/*
     do
         # stripping everything before and including the string "password." from the filename ${f}
-        fdname=`echo ${f} | sed -e 's/.*\/\w*\.//'`
+        fdname=$(echo ${f} | sed -e 's/.*\/\w*\.//')
 
         # making a directory with the new fdname in the mailfolder
         # this won't touch anything, if the directory is present

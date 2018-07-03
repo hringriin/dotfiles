@@ -7,9 +7,9 @@ rotation="$(xrandr -q --verbose | grep 'connected' | egrep -o  '\) (normal|left|
 # Using current screen orientation proceed to rotate screen and input tools.
 
 #if [[ $1 == "button" ]] ; then
-#    echo "`date -u +"%H:%M:%S"`:    button:     ${rotation}" >> /home/hringriin/test-rotate.log
+#    echo "$(date -u +"%H:%M:%S"):    button:     ${rotation}" >> /home/hringriin/test-rotate.log
 #elif [[ $1 == "term" ]] ; then
-#    echo "`date -u +"%H:%M:%S"`:    term:       ${rotation}" >> /home/hringriin/test-rotate.log
+#    echo "$(date -u +"%H:%M:%S"):    term:       ${rotation}" >> /home/hringriin/test-rotate.log
 #fi
 
 case "$rotation" in

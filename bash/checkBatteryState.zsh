@@ -10,15 +10,15 @@ AC="/sys/class/power_supply/AC/online"
 
 # Values
 if [ -f $BAT0 ] ; then
-        BAT0VAL=`cat $BAT0`
+        BAT0VAL=$(cat $BAT0)
 fi
 
 if [ -f $BAT1 ] ; then
-        BAT1VAL=`cat $BAT1`
+        BAT1VAL=$(cat $BAT1)
 fi
 
 if [ -f $AC ] ; then
-    if [ `cat $AC` -eq 1 ] ; then
+    if [ $(cat $AC) -eq 1 ] ; then
         #echo "$fg_bold[green]AC$reset_color"
         echo "%B%F{green}AC%f%b"
     else

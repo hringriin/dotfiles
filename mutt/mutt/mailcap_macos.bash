@@ -78,10 +78,10 @@ rm -f $tmpdir/*
 
 # Mutt puts everything in /tmp by default.
 # This gets the basic filename from the full pathname.
-filename=`basename $1`
+filename=$(basename $1)
 
 # get rid of the extenson and save the name for later.
-file=`echo $filename | cut -d"." -f1`
+file=$(echo $filename | cut -d"." -f1)
 
 if [ $debug = "yes" ]; then
     echo "1:" $1 " 2:" $2 " 3:" $3 > $debug_file
@@ -93,7 +93,7 @@ fi
 # if the type is empty then try to figure it out.
 if [ -z $type ]; then
     file  $1
-    type=`file -bi $1 | cut -d"/" -f2`
+    type=$(file -bi $1 | cut -d"/" -f2)
 fi
 
 # if the type is '-' then we don't want to mess with type.

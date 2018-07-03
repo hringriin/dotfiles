@@ -10,20 +10,20 @@ if [[ !(-e $tmpFile) ]] ; then
     exit 1
 fi
 
-echo `env | grep DBUS`
+echo $(env | grep DBUS)
 
-batt0=`cat $tmpFile | grep 'Battery 0'`
-batt1=`cat $tmpFile | grep 'Battery 1'`
+batt0=$(cat $tmpFile | grep 'Battery 0')
+batt1=$(cat $tmpFile | grep 'Battery 1')
 
-if [[ `echo $batt0 | grep 'Discharging' | cut -f 5 -d " "` < 00:10:00 ]] ; then
+if [[ $(echo $batt0 | grep 'Discharging' | cut -f 5 -d " ") < 00:10:00 ]] ; then
     DISPLAY=:0.0 /usr/bin/notify-send "Battery 0 LOW!" "$batt0" --icon=battery-low
-elif [[ `echo $batt0 | grep 'Discharging' | cut -f 5 -d " "` < 00:30:00 ]] ; then
+elif [[ $(echo $batt0 | grep 'Discharging' | cut -f 5 -d " ") < 00:30:00 ]] ; then
     DISPLAY=:0.0 /usr/bin/notify-send "Battery 0 CRITICAL!" "batt0" --icon=battery-caution
 fi
 
-if [[ `echo $batt1 | grep 'Discharging' | cut -f 5 -d " "` < 00:10:00 ]] ; then
+if [[ $(echo $batt1 | grep 'Discharging' | cut -f 5 -d " ") < 00:10:00 ]] ; then
     DISPLAY=:0.0 /usr/bin/notify-send "Battery 1 LOW!" "$batt1" --icon=battery-low
-elif [[ `echo $batt1 | grep 'Discharging' | cut -f 5 -d " "` < 00:30:00 ]] ; then
+elif [[ $(echo $batt1 | grep 'Discharging' | cut -f 5 -d " ") < 00:30:00 ]] ; then
     DISPLAY=:0.0 /usr/bin/notify-send "Battery 1 CRITICAL!" "$batt1" --icon=battery-caution
 fi
 

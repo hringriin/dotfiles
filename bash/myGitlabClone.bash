@@ -22,7 +22,7 @@ checkLink()
 
         if [[ "${linkmglc}" == "" || "${linkmglc}" == "y" || "${linkmglc}" == "Y" ]] ; then
             if [[ -e myGitlabClone.bash ]] ; then
-                tmpDir=`pwd`
+                tmpDir=$(pwd)
                 cd /usr/local/bin
                 ln -s ${tmpDir}/myGitlabClone.bash myGitlabClone
                 echo "You can now type 'myGitlabClone' from everywhere."
@@ -80,9 +80,9 @@ checkConfig()
 
         setConfig
     else
-        defServer="`cat ${confDir}/${confFile} | sed -n 1p`"
-        useRepPath="`cat ${confDir}/${confFile} | sed -n 2p`"
-        defRepPath="`cat ${confDir}/${confFile} | sed -n 3p`"
+        defServer="$(cat ${confDir}/${confFile} | sed -n 1p)"
+        useRepPath="$(cat ${confDir}/${confFile} | sed -n 2p)"
+        defRepPath="$(cat ${confDir}/${confFile} | sed -n 3p)"
     fi
 }
 
@@ -272,7 +272,7 @@ while getopts "cdhpsv" opt; do
 
             if [[ "${delcfg}" == "y" || "${delcfg}" == "Y" ]] ; then
                 echo "Deleting config file"
-                `rm -rf ${confDir}`
+                $(rm -rf ${confDir})
             else
                 echo "Config files will not be removed."
             fi
@@ -322,9 +322,9 @@ while getopts "cdhpsv" opt; do
                 echo "No config file present, aborting!"
                 exit 127
             else
-                tmp1=`cat ${confDir}/${confFile} | sed -n 1p`
-                tmp2=`cat ${confDir}/${confFile} | sed -n 2p`
-                tmp3=`cat ${confDir}/${confFile} | sed -n 3p`
+                tmp1=$(cat ${confDir}/${confFile} | sed -n 1p)
+                tmp2=$(cat ${confDir}/${confFile} | sed -n 2p)
+                tmp3=$(cat ${confDir}/${confFile} | sed -n 3p)
 
                 echo -e "Default Server: \n\t ${tmp1}"
                 echo -e "Use default repository path: \n\t ${tmp2}"

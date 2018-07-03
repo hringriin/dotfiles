@@ -9,26 +9,26 @@ sleep 1
 
 source INSTALL_ALL/config.bash
 
-username=`echo ${USER}`
+username=$(echo ${USER})
 
 # Setting Variables
 I3MAINPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
 I3STATUSPATH="${I3MAINPATH}/../i3status"
 
-I3MAINGLOBAL="config"                               # main config file
-I3STATUSGLOBALTOP="top_bar"                         # top status bar
-I3STATUSGLOBALBOTTOM="bottom_bar"                   # bottom status bar
+I3MAINGLOBAL="config"                           # main config file
+I3STATUSGLOBALTOP="top_bar"                     # top status bar
+I3STATUSGLOBALBOTTOM="bottom_bar"               # bottom status bar
 
-I3MAINHOST=`echo ${HOSTNAME}`                       # host specific i3 config
-I3STATUSHOSTTOP="${I3MAINHOST}_top"                 # host specific top status bar
-I3STATUSHOSTBOTTOM="${I3MAINHOST}_bottom"           # host specific bottom status bar
+I3MAINHOST=$(echo ${HOSTNAME})                  # host specific i3 config
+I3STATUSHOSTTOP="${I3MAINHOST}_top"             # host specific top status bar
+I3STATUSHOSTBOTTOM="${I3MAINHOST}_bottom"       # host specific bottom status bar
 
-HOSTMAINPATH="/home/${username}/.config/i3"           # host specific main config path
-HOSTSTATUSPATH="${HOSTMAINPATH}/../i3status"        # host specific status config path
+HOSTMAINPATH="/home/${username}/.config/i3"     # host specific main config path
+HOSTSTATUSPATH="${HOSTMAINPATH}/../i3status"    # host specific status config path
 
-HOSTMAINCONF="config"                          # host specific main config
-HOSTSTATUSCONFTOP="top_bar"                    # host specific top status bar
-HOSTSTATUSCONFBOTTOM="bottom_bar"              # host specific bottom status bar
+HOSTMAINCONF="config"                           # host specific main config
+HOSTSTATUSCONFTOP="top_bar"                     # host specific top status bar
+HOSTSTATUSCONFBOTTOM="bottom_bar"               # host specific bottom status bar
 
 # I3Blocks
 I3BLOCK="${I3MAINPATH}/../i3blocks"

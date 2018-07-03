@@ -1,5 +1,5 @@
-#!/bin/bash 
-# Script for grabbing the audio of youtube videos as mp3. 
+#!/bin/bash
+# Script for grabbing the audio of youtube videos as mp3.
 address=$1
 bitrate=$2
 default_bitrate=256

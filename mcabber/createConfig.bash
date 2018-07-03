@@ -8,7 +8,7 @@ sleep 1
 
 source INSTALL_ALL/config.bash
 
-username=`echo ${USER}`
+username=$(echo ${USER})
 
 # Setting Variables
 if [[ ${HOSTNAME} == "botis" ]] ; then
@@ -154,9 +154,9 @@ function mergeConf()
         echo -e "\n# Resource" >> ${MAPATH}${var}/mcabberrc
 
         if [[ ${HOSTNAME} == *"strato"* ]] ; then
-            echo -e "set resource = mcabber_MAIN_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
+            echo -e "set resource = mcabber_MAIN_$(uname -s)\n" >> ${MAPATH}${var}/mcabberrc
         else
-            echo -e "set resource = mcabber_${HOSTNAME}_`uname -s`\n" >> ${MAPATH}${var}/mcabberrc
+            echo -e "set resource = mcabber_${HOSTNAME}_$(uname -s)\n" >> ${MAPATH}${var}/mcabberrc
         fi
 
         cat ${MAREPOPATH}/mcabberrc_${var} >> ${MAPATH}${var}/mcabberrc

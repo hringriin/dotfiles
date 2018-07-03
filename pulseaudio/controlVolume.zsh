@@ -13,8 +13,8 @@ inDevFile=indev                                                 # config file fo
 
 # if the configuration files and directories do not exist, create them
 if [[ -d ${devPath} ]] ; then
-    outDevice=`cat ${devPath}/${outDevFile}`
-    inDevice=`cat ${devPath}/${inDevFile}`
+    outDevice=$(cat ${devPath}/${outDevFile})
+    inDevice=$(cat ${devPath}/${inDevFile})
 else
     mkdir -p ${devPath}
     touch ${devPath}/${outDevFile}
@@ -59,10 +59,10 @@ chooseOutDevice ()
     int=1
 
     echo "Choose OUTPUT device number:"
-    while [ ! -z `pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p` ]
+    while [ ! -z $(pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p) ]
     do
-        outDevices+=`pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p`
-        echo "Device Number: \t[${int}]\tdevice: `pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p`"
+        outDevices+=$(pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p)
+        echo "Device Number: \t[${int}]\tdevice: $(pactl list sinks | grep Name | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p)"
         int=$((int+1))
     done
     echo "Abort with 'q'"
@@ -93,10 +93,10 @@ chooseInDevice ()
     int=1
 
     echo "Choose INPUT device number:"
-    while [ ! -z `pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p` ]
+    while [ ! -z $(pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p) ]
     do
-        inDevices+=`pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p`
-        echo "Device Number: \t[${int}]\tdevice: `pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p`"
+        inDevices+=$(pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p)
+        echo "Device Number: \t[${int}]\tdevice: $(pactl list sources | grep Name | grep -vi 'monitor' | cut -d ':' -f 2 | cut -d ' ' -f 2 | sed -n ${int}p)"
         int=$((int+1))
     done
     echo "Abort with 'q'"
@@ -116,7 +116,7 @@ chooseInDevice ()
 # turn volume up for output device
 volUp ()
 {
-    #if [[ $1 -gt 0 && $($1+`pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g'`) -le 120 ]] ; then
+    #if [[ $1 -gt 0 && $($1+$(pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g')) -le 120 ]] ; then
     if [[ $(getVol) -eq 100 ]] ; then
         exit 0
     fi
@@ -139,7 +139,7 @@ volUp ()
 # turn volume down for output device
 volDn ()
 {
-    #if [[ $1 -gt 0 && $($1+`pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g'`) -ge 0 ]] ; then
+    #if [[ $1 -gt 0 && $($1+$(pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g')) -ge 0 ]] ; then
     if [[ $(getVol) -eq 0 ]] ; then
         exit 0
     fi

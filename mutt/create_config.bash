@@ -17,7 +17,7 @@ FIRSTTIME=
 # Checks if a programm is installed
 checkIfExists()
 {
-    if [[ ! ( `whereis $1` > /dev/null ) ]] ; then
+    if [[ ! ( $(whereis $1) > /dev/null ) ]] ; then
         echo "Programm $1 is not installed! Aborting!"
         exit 1
     fi
@@ -30,9 +30,9 @@ checkIfExists()
 
 copyGPG()
 {
-    gpg --output ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz --decrypt ${MUTTPATH}/${PASSWDFILE}
-    tar -zxvf ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz -C ${MUTTPATH}/
-    rm -rf ${MUTTPATH}/${PASSWDFILE} ${MUTTPATH}/`echo ${PASSWDFILE} | cut -d '.' -f 1`.tar.gz
+    gpg --output ${MUTTPATH}/$(echo ${PASSWDFILE} | cut -d '.' -f 1).tar.gz --decrypt ${MUTTPATH}/${PASSWDFILE}
+    tar -zxvf ${MUTTPATH}/$(echo ${PASSWDFILE} | cut -d '.' -f 1).tar.gz -C ${MUTTPATH}/
+    rm -rf ${MUTTPATH}/${PASSWDFILE} ${MUTTPATH}/$(echo ${PASSWDFILE} | cut -d '.' -f 1).tar.gz
 }
 
 copyFiles()
@@ -65,9 +65,9 @@ copyFiles()
 
     cp -fv ${MUTTREPOPATH}/mutt/gpg.rc ${MUTTPATH}/
 
-    if [[ `uname -s` == *"inux"* ]] ; then
+    if [[ $(uname -s) == *"inux"* ]] ; then
         cp -fv ${MUTTREPOPATH}/mutt/mailcap_linux ${MUTTPATH}/mailcap
-    elif [[ `uname -s` == *"arwin"* ]] ; then
+    elif [[ $(uname -s) == *"arwin"* ]] ; then
         cp -fv ${MUTTREPOPATH}/mutt/mailcap_macos ${MUTTPATH}/mailcap
         cp -fv ${MUTTREPOPATH}/mutt/mailcap_macos.bash ${MUTTPATH}/
     else
@@ -116,7 +116,7 @@ startService()
 {
     read -p "Enable service? [y/N]: " enableService
     if [[ ${enableService} == "y" || ${enableServce} == "Y" ]] ; then
-        thisUser=`echo ${USER}`
+        thisUser=$(echo ${USER})
 
         echo "Enabling service ..."
         sudo systemctl enable mbsync@${thisUser}.timer
@@ -187,9 +187,9 @@ main()
         exit 4
     fi
 
-    if [[ `uname -s` == *"arwin"* ]] ; then
+    if [[ $(uname -s) == *"arwin"* ]] ; then
         sleep 1
-    elif [[ `uname -s` == *"inux"* ]] ; then
+    elif [[ $(uname -s) == *"inux"* ]] ; then
         checkIfExists owncloud
         checkIfExists mutt
         checkIfExists isync
