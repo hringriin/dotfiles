@@ -19,6 +19,11 @@ if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
     export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
 fi
 
+# ccache
+if [[ -d /usr/lib/ccache/bin ]] ; then
+    export PATH=/usr/lib/ccache/bin/:${PATH}
+fi
+
 if [[ -e ${tmuxi}/completion/tmuxinator.zsh ]] ; then
     # sourcing tmuxinator completion
     source ${tmuxi}/completion/tmuxinator.zsh
@@ -29,6 +34,6 @@ alias 'cd ...'='nocorrect cd ../..'
 alias 'tmux'='nocorrect tmux'
 
 # MACOS shit ...
-if [[ `uname -a` == *"arwin"* ]] ; then
+if [[ $(uname -a) == *"arwin"* ]] ; then
     alias 'vim'='/usr/local/Cellar/vim/8.0.1553_2/bin/vim'
 fi
