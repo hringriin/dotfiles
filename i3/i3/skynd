@@ -90,9 +90,9 @@ bindsym Shift+Control+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositorie
 
 # Set Default Workspaces for DP-0 and DVI-I-1
 workspace $workspace1 output DP-0
-workspace $workspace2 output DVI-I-1
-workspace $workspace3 output DVI-I-1
-workspace $workspace4 output DVI-I-1
+workspace $workspace2 output DP-0
+workspace $workspace3 output DP-0
+workspace $workspace4 output DP-0
 workspace $workspace5 output DP-0
 workspace $workspace6 output DP-0
 workspace $workspace7 output DP-0
@@ -113,9 +113,6 @@ workspace $workspace20 output DVI-I-1
 # Startup Applications
 exec owncloud
 exec dropbox
-#exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_uni/mcabberrc'
-#exec --no-startup-id i3-msg 'workspace $workspace2; exec /usr/bin/xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10 -e mcabber -f /home/hringriin/.mcabber_ccchb/mcabberrc'
-#exec --no-startup-id i3-msg 'workspace $workspace3; exec /usr/bin/termite -e weechat'
 
 # xRandR GUI
 # needs a proper key binding
