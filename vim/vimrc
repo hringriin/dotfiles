@@ -192,7 +192,7 @@ let g:quickmenu_options = "HL"
 
     " Compiler {{{
     call quickmenu#append("# Compiler"                                 , '')
-    call quickmenu#append("Markdown" , "!exec pandoc -o %.pdf %"   , "enable/disable spell check (:set spell!)")
+    call quickmenu#append("Markdown" , "!exec pandoc --pdf-engine=xelatex -o %.pdf %"   , "enable/disable spell check (:set spell!)")
     " Compiler }}}
 
     " Misc {{{
