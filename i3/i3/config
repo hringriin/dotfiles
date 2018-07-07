@@ -116,21 +116,21 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # workspace names
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10"
+set $workspace10 "10: "
 set $workspace11 "11"
 set $workspace12 "12"
 set $workspace13 "13"
 set $workspace14 "14"
-set $workspace15 "15"
+set $workspace15 "15: "
 set $workspace16 "16: "
 set $workspace17 "17: "
 set $workspace18 "18: "
@@ -227,24 +227,14 @@ exec compton -f
 #bindsym Print exec "scrot ~/Pictures/Screenshots/Screenshot_%Y-%m-%d%H:%M:%S.png"
 bindsym Print exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/bash/makeScreenshot.bash
 
-# Bind Application Classes to workspaces
-assign [class="Gajim"] $workspace2
-assign [class="xterm"] $workspace2
-assign [class="XTerm"] $workspace2
-
-assign [class="Hexchat"] $workspace3
-assign [class="termite"] $workspace3
-assign [class="Termite"] $workspace3
-
-assign [class="Whatsie"] $workspace4
-
-assign [class="Vivaldi-stable"] $workspace5
-assign [class="Vivaldi-snapshot"] $workspace5
+assign [class="Vivaldi-snapshot"] $workspace2
 
 assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
 assign [class="factorio"] $workspace10
+
+assign [class="Whatsie"] $workspace15
 
 assign [class="blink"] $workspace16
 assign [class="Blink"] $workspace16
@@ -260,7 +250,6 @@ assign [class="Mumble"] $workspace19
 assign [class="mumble"] $workspace19
 
 assign [class="Dropbox"] $workspace20
-
 assign [class="ownCloud"] $workspace20
 
 # Keyboard Layout
