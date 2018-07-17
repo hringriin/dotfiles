@@ -58,12 +58,9 @@ windows:
     - Mail:
         panes:
             - mutt
-    - IRC:
+    - Chat:
         panes:
-            - mosh barzh.eu -- tmux a -t IRC
-    - JABBER:
-        panes:
-            - mosh barzh.eu -- tmux a -t JABBER
+            - mosh barzh.eu -- tmux a -t CHAT
     - dotfiles:
         layout: even-horizontal
         panes:
