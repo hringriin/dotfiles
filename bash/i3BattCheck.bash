@@ -30,29 +30,34 @@ function checkBatt()
 
         # Check, if the battery is discharching.
         if [[ $(echo $1 | cut -d ',' -f 1) == *"Discharging" ]] ; then
+        #if [[ $(echo $1 | cut -d ',' -f 1) == *"Charging" ]] ; then
 
             # Check, if the battery level is below 10 percent.
             # if true, issue notify-send and i3-nagbar to make the user aware
             # of the critical battery level
-            if [[ $(getBatLevel "$1") < 10 ]] ;then
+            if [[ $(getBatLevel "$1") -lt 10 ]] ;then
 
                 # only issue warning, if the warning file is not present
-                if [[ ! -e ${warning0} ]] ; then
+                if [[ ! -e ${critical0} ]] ; then
+                    echo "crit file not present"
+                    DISPLAY=:0.0 i3-msg fullscreen disable
                     DISPLAY=:0.0 notify-send --icon=battery-caution "Battery 0 is CRITICAL!" "$1"
-                    i3-msg fullscreen disable
-                    i3-nagbar -t error -m "Battery 0 is CRITICAL! $1" -f "pango:DejaVu Sans Mono 16"
-                    touch ${warning0}
+                    DISPLAY=:0.0 i3-nagbar -t error -m "Battery 0 is CRITICAL! $1" -f "pango:DejaVu Sans Mono 16"
+                    touch ${critical0}
                 fi
 
             # Check, if the battery level is below 25 percent.
             # if true, issue notify-send to make the user aware of the low
             # battery level
-            elif [[ $(getBatLevel "$1") < 25 ]] ;then
+            elif [[ $(getBatLevel "$1") -lt 25 ]] ;then
 
                 # only issue warning, if the critical file is not present
-                if [[ ! -e ${critical0} ]] ; then
+                if [[ ! -e ${warning0} ]] ; then
+                    echo "warn file not present"
+                    DISPLAY=:0.0 i3-msg fullscreen disable
                     DISPLAY=:0.0 notify-send --icon=battery-low "Battery 0 is low!" "$1"
-                    i3-nagbar -t warning -m "Battery 0 is low! $1" -f "pango:DejaVu Sans Mono 10"
+                    DISPLAY=:0.0 i3-nagbar -t warning -m "Battery 0 is low! $1" -f "pango:DejaVu Sans Mono 10"
+                    touch ${warning0}
                 fi
             fi
         # if the script is issued while the batteries were charging, remove the
