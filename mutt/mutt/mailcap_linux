@@ -16,7 +16,7 @@ image/jpg; sxiv %s
 image/jpeg; sxiv %s
 image/pjpeg; sxiv %s
 image/png; sxiv %s
-image/gif; sxiv %s
+image/gif; sxiv -a %s
 image/tiff; evince %s
 image/ttiff; evince %s
 
