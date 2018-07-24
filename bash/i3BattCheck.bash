@@ -39,11 +39,10 @@ function checkBatt()
 
                 # only issue warning, if the warning file is not present
                 if [[ ! -e ${critical0} ]] ; then
-                    echo "crit file not present"
+                    touch ${critical0}
                     DISPLAY=:0.0 i3-msg fullscreen disable
                     DISPLAY=:0.0 notify-send --icon=battery-caution "Battery 0 is CRITICAL!" "$1"
                     DISPLAY=:0.0 i3-nagbar -t error -m "Battery 0 is CRITICAL! $1" -f "pango:DejaVu Sans Mono 16"
-                    touch ${critical0}
                 fi
 
             # Check, if the battery level is below 25 percent.
@@ -53,11 +52,10 @@ function checkBatt()
 
                 # only issue warning, if the critical file is not present
                 if [[ ! -e ${warning0} ]] ; then
-                    echo "warn file not present"
+                    touch ${warning0}
                     DISPLAY=:0.0 i3-msg fullscreen disable
                     DISPLAY=:0.0 notify-send --icon=battery-low "Battery 0 is low!" "$1"
                     DISPLAY=:0.0 i3-nagbar -t warning -m "Battery 0 is low! $1" -f "pango:DejaVu Sans Mono 10"
-                    touch ${warning0}
                 fi
             fi
         # if the script is issued while the batteries were charging, remove the
