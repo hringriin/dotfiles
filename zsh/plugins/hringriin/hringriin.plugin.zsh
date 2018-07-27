@@ -37,3 +37,66 @@ alias 'tmux'='nocorrect tmux'
 if [[ $(uname -a) == *"arwin"* ]] ; then
     alias 'vim'='/usr/local/Cellar/vim/8.0.1553_2/bin/vim'
 fi
+# Fuzzy Finder (fzf) {{{
+fzf_history()
+{
+    zle -I
+    eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+zle -N fzf_history
+bindkey '^H' fzf_history
+
+fzf_killps()
+{
+    zle -I
+    ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
+}
+zle -N fzf_killps
+bindkey '^Q' fzf_killps
+
+fzf_cd()
+{
+    zle -I
+    DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR"
+}
+zle -N fzf_cd
+bindkey '^S' fzf_cd
+
+fzf_gitdiff()
+{
+    diffing=$(git status | grep 'modified' | cut -d ':' -f 2 | sed -e 's/  *//g' | fzf -m --tac +s)
+
+    if [[ ${diffing} != "" ]] ; then
+        while read -r var; do
+            git difftool ${var}
+        done <<< ${diffing}
+    fi
+}
+alias 'gdiff'='fzf_gitdiff'
+
+fzf_gitvimopen()
+{
+    vopen=$(git status | grep 'modified' | cut -d ':' -f 2 | sed -e 's/  *//g' | fzf -m --tac +s)
+
+    if [[ ${vopen} != "" ]] ; then
+        while read -r var; do
+            vim ${var}
+        done <<< ${vopen}
+    fi
+}
+alias 'gvim'='fzf_gitvimopen'
+
+fzf_gitadd()
+{
+    modified=$(git status | grep 'modified' | cut -d ':' -f 2 | sed -e 's/\t/ /g' | sed -e 's/  *//g')
+    untracked=$(git status | grep -Pzo '.*Untracked files(.*\n)*' | tail -n +4 | head -n -3 | sed -e 's/\t/ /g' | sed -e 's/  *//g')
+    adds=$(echo "${modified}" "${untracked}" | fzf -m --tac +s)
+
+    if [[ ${adds} != "" ]] ; then
+        while read -r var; do
+            git add ${var}
+        done <<< ${adds}
+    fi
+}
+alias 'gadd'='fzf_gitadd'
+# Fuzzy Finder (fzf) }}}
