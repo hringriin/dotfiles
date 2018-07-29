@@ -1,4 +1,4 @@
-text/plain; /usr/bin/less
+# vim: ft=mailcap
 
 # MS Word documents
 application/msword; ~/.mutt/mailcap_macos.sh %s "-" '/Applications/TextEdit.app'
@@ -22,6 +22,7 @@ application/force-download; ~/.mutt/mailcap_macos.sh %s pdf
 # text/html; ~/.mutt/mailcap_macos.sh %s html
 # text/html; ~/.mutt/shellmailcap_macos.sh %s html
 text/html; /usr/local/bin/lynx --dump %s; copiousoutput; nametemplate=%s.html
+text/plain; /usr/bin/less
 
 # Unidentified files
 application/octet-stream; ~/.mutt/mailcap_macos.sh %s "-"

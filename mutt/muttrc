@@ -67,6 +67,9 @@ set editor                  =   "$EDITOR"
 # }}}
 # Basic config {{{
 set mbox_type               =   Maildir
+set mailcap_path            =   "~/.mutt/mailcap"
+auto_view text/html                                     # view html automatically
+alternative_order text/plain text/enriched text/html    # save html for last
 #unset imap_passive
 set ssl_starttls            =   yes
 set ssl_force_tls           =   yes
@@ -77,13 +80,12 @@ set move                    =   no
 unset mark_old                                          # no difference between "new" and "unread old" messages.
 set pipe_decode                                         # strip headers and eval mimes when piping
 set thorough_search                                     # strip headers and eval mimes before searching
-set include
-set sort                    =   'reverse-date'
+set include                                             # whether or not a copy of the message(s) you are replying to is included in your reply.
+set sort                    =   'reverse-date'          # this and the following line for NON-THREADED mail view
 #set sort_aux                =   'reverse-date'
+#set sort                    =   'reverse-threads'       # this and the following line for THREADED mail view
+#set sort_aux                =   'last-date-received'
 set auto_tag                =   yes
-ignore "Authentication-Results:"
-ignore "DomainKey-Signature:"
-ignore "DKIM-Signature:"
 bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop
@@ -100,20 +102,18 @@ set header_cache        =   "~/.mutt/cache/headers"     # See all mail headers i
 set message_cachedir    =   "~/.mutt/cache/bodies"
 # }}}
 # Status Bar {{{
-#set status_chars        =   " *%A"
 set status_chars        =   "-!%A"
-#set status_format       =   "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
-#set status_format       =   "══[%h]══[%r]═[%M/%m messages%?p?(%p postponed)?%?n?(%n new)?%?F?(%F flagged)?]═══[ Folder: %f ]══%?d?(%d to delete)?%?t?(%t tagged)?══[%s/%S]═%>══%V══"
-set status_format       =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s ]═%>══%V═[ %P ]══[ %v ]══"
+set status_format       =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s | %S ]═%>══%V═[ %P ]══[ %v ]══"
 # }}}
 # Header Options {{{
+# Ignoring headers
+#ignore "Authentication-Results:"
+#ignore "DomainKey-Signature:"
+#ignore "DKIM-Signature:"
 ignore *                                                # ignore all headers
 unignore from: to: cc: date: subject:                   # show only these
 unhdr_order *                                           # some distros order things by default
 hdr_order from: to: cc: date: subject:                  # and in this order
-auto_view text/html                                     # view html automatically
-alternative_order text/plain text/enriched text/html    # save html for last
-set mailcap_path        =   "~/.mutt/mailcap"
 # }}}
 # Index View Options {{{
 set date_format         =   "| %F | %H:%M:%S ||"
@@ -148,7 +148,7 @@ set quote_regexp        =   "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 # }}}
 # GPG {{{
  source ~/.mutt/gpg.rc
-set pgp_sign_as                 =   D02BE422
+set pgp_sign_as                 =   D02BE422            # default key to sign messages with
 set pgp_encrypt_only_command    =   "pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
 set pgp_encrypt_sign_command    =   "pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
 set pgp_use_gpg_agent           =   yes
