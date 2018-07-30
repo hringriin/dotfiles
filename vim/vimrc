@@ -209,6 +209,10 @@ let g:quickmenu_options = "HL"
 
 " QuickMenu }}}
 
+" autoread {{{
+au FocusGained,BufEnter * :checktime
+" autoread }}}
+
 " Vim Hard Mode {{{
 " automatically enable hard mode when entering vim
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
