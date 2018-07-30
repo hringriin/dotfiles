@@ -68,6 +68,6 @@ function checkBatt()
 }
 
 checkBatt "${batt0}"
-checkBatt "${batt1}"
+#checkBatt "${batt1}"
 rm -rf $tmpFile
 exit 0
