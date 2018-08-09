@@ -65,7 +65,7 @@ font pango:DejaVu Sans Mono 8
 exec --no-startup-id variety
 
 # Lockscreen with i3lock-fancy-dualmonitors-git package from AUR
-bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock-fancy -- scrot -z"
+bindsym XF86ScreenSaver exec --no-startup-id "/usr/bin/i3lock-fancy-dualmonitor -p"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
