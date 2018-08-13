@@ -55,6 +55,7 @@ copyFiles()
     cp -fv ${MUTTREPOPATH}/muttrc ${HOME}/.muttrc
 
     mkdir -m 0700 -p ${MUTTPATH}
+    mkdir -m 0700 -p ${MUTTPATH}/cache
 
     cp -frv ${MUTTREPOPATH}/mutt/accounts ${MUTTPATH}/
     cp -frv ${MUTTREPOPATH}/mutt/colors ${MUTTPATH}/
