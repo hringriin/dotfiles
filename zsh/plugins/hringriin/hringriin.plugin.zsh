@@ -24,6 +24,13 @@ if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
 fi
 # tmuxinator }}}
 
+# /usr/local/lib to path {{{
+if [[ -d /usr/local/lib ]] ; then
+    # adding ruby bin to path variable
+    export PATH=/usr/local/lib:${PATH}
+fi
+# /usr/local/lib to path }}}
+
 # ccache {{{
 if [[ -d /usr/lib/ccache/bin ]] ; then
     export PATH=/usr/lib/ccache/bin/:${PATH}
