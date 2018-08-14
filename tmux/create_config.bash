@@ -15,20 +15,22 @@ TMUXPATH="${HOME}/.tmux"
 # links config files
 linkFiles ()
 {
-    ln -vsf ${repoPath}/tmux.conf ${TMUXPATH}.conf
+    ln -vsf ${repoPath}/tmux/tmux.conf ${TMUXPATH}.conf
 }
 
 tmuxinator ()
 {
-    if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
-        # adding ruby bin to path variable
-        export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
-    else
-        echo "Installing tmuxinator ..."
-        gem install tmuxinator
-        export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
-        tmuxinator doctor
-        read -p
+    if [[ ! $(uname -r)  == *"icrosoft"* ]] ; then
+        if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
+            # adding ruby bin to path variable
+            export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+        else
+            echo "Installing tmuxinator ..."
+            gem install tmuxinator
+            export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+            tmuxinator doctor
+            read -p
+        fi
     fi
 
     rm -rf ${HOME}/.config/tmuxinator
