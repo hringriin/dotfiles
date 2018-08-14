@@ -42,6 +42,10 @@ if [[ -e ${tmuxi}/completion/tmuxinator.zsh ]] ; then
 fi
 # ccache }}}
 
+# mosh locale {{{
+unset LC_CTYPE
+# mosh locale }}}
+
 # prevent tmux autocorrection for certain commands {{{
 alias 'cd ...'='nocorrect cd ../..'
 alias 'tmux'='nocorrect tmux'
