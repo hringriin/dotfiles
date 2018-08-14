@@ -48,9 +48,14 @@ alias 'tmux'='nocorrect tmux'
 # prevent tmux autocorrection for certain commands }}}
 
 # MACOS shit ... {{{
-if [[ $(uname -a) == *"arwin"* ]] ; then
-    alias 'vim'='/usr/local/Cellar/vim/8.0.1553_2/bin/vim'
+if [[ -d /usr/local/Cellar/vim/8.1.0250/bin/ ]] ; then
+    export PATH=/usr/local/Cellar/vim/8.1.0250/bin:${PATH}
 fi
+
+if [[ -d /usr/local/opt/openssl/bin ]] ; then
+    export PATH=/usr/local/opt/openssl/bin:${PATH}
+fi
+
 # MACOS shit ... }}}
 
 # Fuzzy Finder (fzf) {{{
