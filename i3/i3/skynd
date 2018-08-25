@@ -58,9 +58,6 @@ bar {
     position bottom
 }
 
-# Lock Screen
-bindsym $mod+Control+l exec --no-startup-id "/usr/bin/i3lock-fancy -gp -- scrot -z"
-
 # Media Player Controls
 bindsym XF86AudioPlay exec playerctrl play
 bindsym XF86AudioPause exec playerctrl pause
