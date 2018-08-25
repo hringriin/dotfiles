@@ -34,7 +34,7 @@ neededProgrammes=(
     'gzip'
     'htop'
     'hwinfo'
-    'i3-wm'
+    'i3-gaps'
     'i3blocks'
     'i3status'
     'jshon'
