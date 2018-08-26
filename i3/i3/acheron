@@ -165,7 +165,7 @@ exec owncloud
 exec dropbox
 exec --no-startup-id nagstamon
 #exec --no-startup-id blueman-applet
-exec --no-startup-id i3-msg 'workspace $workspace16; exec /usr/bin/blink'
+#exec --no-startup-id i3-msg 'workspace $workspace16; exec /usr/bin/blink'
 exec --no-startup-id tider
 
 # xRandR GUI
