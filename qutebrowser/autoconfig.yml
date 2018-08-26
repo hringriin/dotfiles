@@ -231,12 +231,16 @@ settings:
     global: -1
   tabs.mousewheel_switching:
     global: false
+  tabs.pinned.shrink:
+    global: false
   tabs.position:
     global: left
   tabs.select_on_remove:
     global: last-used
+  tabs.title.format_pinned:
+    global: '(P){audio}{index}: {title}'
   tabs.width:
-    global: 15%
+    global: 220
   tabs.wrap:
     global: false
   url.auto_search:
