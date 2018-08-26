@@ -33,7 +33,7 @@ cat ${zsh} | sed -e 's/# HIST_STAMPS.*/HIST_STAMPS="yyyy-mm-dd"/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
 echo "SIXTH"
-cat ${zsh} | sed -e 's/plugins=(.*)/plugins=(hringriin mosh screen zsh-syntax-highlighting)/g' > ${tmpf}
+cat ${zsh} | sed -e 's/plugins=(.*)/plugins=(colored-man-pages hringriin mosh screen zsh-syntax-highlighting)/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
 
