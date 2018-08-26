@@ -989,6 +989,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.hringriin-qutebrowser
+Master :com.gmail.hringriin-remote:INBOX/"qutebrowser"
+slave  :com.gmail.hringriin-local:qutebrowser
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.hringriin-Raspberry-Pi-Store
 Master :com.gmail.hringriin-remote:INBOX/"Raspberry-Pi-Store"
 slave  :com.gmail.hringriin-local:Raspberry-Pi-Store
@@ -1703,6 +1710,7 @@ Channel com.gmail.hringriin-Paradox-Interactive
 Channel com.gmail.hringriin-Pastebin
 Channel com.gmail.hringriin-PayPal
 Channel com.gmail.hringriin-ProMods
+Channel com.gmail.hringriin-qutebrowser
 Channel com.gmail.hringriin-Raspberry-Pi-Store
 Channel com.gmail.hringriin-Rift
 Channel com.gmail.hringriin-Robocraft
