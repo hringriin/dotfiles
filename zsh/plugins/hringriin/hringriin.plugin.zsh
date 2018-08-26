@@ -11,6 +11,10 @@ export EDITOR=vim
 export VISUAL=vim
 # Editor }}}
 
+# Ranger (file browser) {{{
+RANGER_LOAD_DEFAULT_RC=FALSE
+# Ranger (file browser) }}}
+
 # Homebrew token {{{
 if [[ -e ${HOME}/.github-homebrew-token ]] ; then
     source ${HOME}/.github-homebrew-token
