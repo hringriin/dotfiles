@@ -529,7 +529,7 @@ set ttyfast
     " Don't wake up system with blinking cursor: }}}
 
     " Clipboard {{{
-    "set clipboard=unnamedplus
+    set clipboard=unnamedplus
     "set guioptions+=a
     " Clipboard }}}
 
