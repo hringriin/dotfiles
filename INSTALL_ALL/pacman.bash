@@ -75,6 +75,7 @@ neededProgrammes=(
     'pass'
     'patch'
     'pavucontrol'
+    'pdfpc'
     'pepper-flash'
     'pinentry'
     'pkg-config'
