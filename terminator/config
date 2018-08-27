@@ -30,7 +30,6 @@
 [profiles]
   [[default]]
     background_darkness = 0.8
-    background_type = transparent
     copy_on_selection = True
     cursor_color = "#ffffff"
     custom_command = ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash
@@ -42,4 +41,5 @@
     show_titlebar = False
     use_custom_command = True
     use_system_font = False
+    use_theme_colors = True
     visible_bell = True
