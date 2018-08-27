@@ -10,6 +10,11 @@ fi
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 export SSH_AUTH_SOCK
 
+# touch screen only LVDS1
+xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 stylus") LVDS1
+xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 eraser") LVDS1
+xinput --map-to-output $(xinput list --id-only "Wacom ISDv4 E6 Finger touch") LVDS1
+
 eval $(ssh-agent)
 exec bluetooth off &
 
