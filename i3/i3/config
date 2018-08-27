@@ -237,6 +237,8 @@ assign [class="Wine"] $workspace10
 assign [class="WoW.exe"] $workspace10
 assign [class="factorio"] $workspace10
 
+assign [title="^pdfpc.*" window_role="presentation"] $workspace11
+
 assign [class="Whatsie"] $workspace15
 
 assign [class="blink"] $workspace16
@@ -260,7 +262,7 @@ bindsym $mod+Control+d exec setxkbmap -layout "us" -variant "intl"      # switch
 bindsym $mod+Control+e exec setxkbmap -layout "us"                      # switch to "us" layout
 
 # Mouse Warping when switching to workspaces on different outputs (displays)
-mouse_warping none
+mouse_warping output
 
 # This configuration directive enables automatic workspace back_and_forth (see [back_and_forth])
 # when switching to the workspace that is currently focused.
