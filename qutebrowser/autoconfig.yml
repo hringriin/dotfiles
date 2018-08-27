@@ -255,5 +255,6 @@ settings:
       git: https://github.com/search?q={}
       wikide: https://de.wikipedia.org/wiki/Special:Search?search={}
       wikien: https://en.wikipedia.org/wiki/Special:Search?search={}
+      yt: https://www.youtube.com/results?search_query={}
   url.start_pages:
     global: https://google.com
