@@ -66,6 +66,10 @@ function checkDirs
 {
     echo -e "\n"
 
+    if [[ ! -d ${HOME}/.themes ]] ; then
+        mkdir -p ${HOME}/.themes
+    fi
+
     if [[ ! ( -d ${I3MAINPATH} ) ]] ; then
         echo "Directory '${HOSTMAINPATH}' does not exist, double check the correct 'myGitlabClone' Repository-path!"
         exit 127
@@ -143,6 +147,15 @@ function writeConfigToConfig
     fi
 }
 
+function installGTK
+{
+    git clone https://github.com/tim241/dots.git ${HOME}/Repositories/github.com/tim241/dots/repo
+    ln -sfv ${HOME}/Repositories/github.com/tim241/dots/repo/.themes/gruvbox-soft ${HOME}/.themes
+    ln -sfv ${HOME}/Repositories/github.com/tim241/dots/repo/.icons/gruvbox-soft ${HOME}/.icons
+}
+
 checkDirs
 displayConfig
 writeConfigToConfig
+installGTK
+
