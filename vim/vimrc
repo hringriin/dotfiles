@@ -361,7 +361,8 @@ set ttyfast
     "   ·     : whitespaces
     "   <     : preceds
     "   >     : extends
-    set list listchars=tab:¶¤,trail:·,extends:>,precedes:<
+    "   •     : non-breakable space
+    set list listchars=tab:¶¤,trail:·,extends:>,precedes:<,nbsp:•
     set list
 
     " do not erase background
