@@ -8,6 +8,8 @@ neededPackerPrgorammes=(
     'clipster'
     'dropbox'
     'dropbox-cli'
+    'ttf-fantasque-sans-mono'
+    'otf-fantasque-sans-mono'
     'frescobaldi'
     'gitkraken'
     'i3-vim-syntax-git'
@@ -16,8 +18,6 @@ neededPackerPrgorammes=(
     'spotify'
     'tider-git'
     'ttf-font-awesome-4'
-    'vivaldi'
-    'vivaldi-ffmpeg-codecs'
     'vivaldi-widevine'
     'whatsie'
 )
