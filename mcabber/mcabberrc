@@ -247,7 +247,7 @@ set escdelay = 50
 # rosternewmsg: text color of items with unread messages
 
 # related to vim's "gruvbox" theme
-set color_background   = 234
+set color_background   = 235
 set color_general      = 223
 set color_info         = 244
 set color_msgin        = 167
