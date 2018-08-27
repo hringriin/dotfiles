@@ -18,9 +18,9 @@ main()
         mkdir -p ${quteconf}
     fi
 
-    ln -sfv ${repoPath}/qutebrowser/autoconfig.yml ${quteconf}/autoconfig.yml
-    ln -sfv ${repoPath}/qutebrowser/bookmarks ${quteconf}/bookmarks
-    ln -sfv ${repoPath}/qutebrowser/quickmarks ${quteconf}/quickmarks
+    ln -sfv ${repoPath}/qutebrowser/autoconfig.yml ${quteconf}
+    ln -sfv ${repoPath}/qutebrowser/bookmarks ${quteconf}
+    ln -sfv ${repoPath}/qutebrowser/quickmarks ${quteconf}
 }
 
 main
