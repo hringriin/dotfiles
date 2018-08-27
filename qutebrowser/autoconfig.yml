@@ -254,6 +254,7 @@ settings:
       arch: https://wiki.archlinux.org/?search={}
       dict: http://www.dict.cc/?s={}
       git: https://github.com/search?q={}
+      imdb: https://www.imdb.com/find?q={}
       wikide: https://de.wikipedia.org/wiki/Special:Search?search={}
       wikien: https://en.wikipedia.org/wiki/Special:Search?search={}
       yt: https://www.youtube.com/results?search_query={}
