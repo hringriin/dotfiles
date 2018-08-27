@@ -80,3 +80,7 @@ http://vimwiki.github.io/ vimwiki
 https://shapeshed.com/vim-statuslines/ vim build your own status line
 https://www.netzwelt.de/download/15587-whocrashed.html Whocrashed Fehleranalyse bei Systemabstürzen
 http://www.kreie.eu:9001/ etherpad
+https://github.com/sector-f/admiral sector-f/admiral: Executes multiple programs concurrently to generate output for bars
+https://github.com/krypt-n/bar krypt-n/bar: bar ain't recursive - A lightweight xcb based bar. This is a fork that supports fontconfig
+https://github.com/mohabaks/dotfiles mohabaks/dotfiles: Managed by GNU stow
+https://github.com/hamsterslayer/dotfiles hamsterslayer/dotfiles: Here be dragons
