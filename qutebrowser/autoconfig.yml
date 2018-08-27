@@ -15,7 +15,8 @@ settings:
     global: true
   bindings.commands:
     global:
-      normal: {}
+      normal:
+        SS: open -t qute://settings
   colors.completion.category.bg:
     global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #282828, stop:1 #1d2021)'
   colors.completion.category.border.bottom:
