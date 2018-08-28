@@ -354,6 +354,9 @@ function linkConfigs()
     # termite
     ${repoPath}/termite/create_config.bash
 
+    ${repoPath}/tider/create_config.bash
+    # tider
+
     # htop
     ${repoPath}/htop/create_config.bash
 
@@ -362,6 +365,15 @@ function linkConfigs()
 
     # mutt
     ${repoPath}/mutt/create_config.bash
+
+    # neofetch
+    ${repoPath}/neofetch/create_config.bash
+
+    # qutebrowser
+    ${repoPath}/qutebrowser/create_config.bash
+
+    # ranger
+    ${repoPath}/ranger/create_config.bash
 
     # redshift
     ${repoPath}/redshift/create_config.bash
@@ -377,6 +389,9 @@ function linkConfigs()
 
     # tmux
     ${repoPath}/tmux/create_config.bash
+
+    # variety
+    ${repoPath}/variety/create_config.bash
 
     # vim
     ${repoPath}/vim/create_config.bash

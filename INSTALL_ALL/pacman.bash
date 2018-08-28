@@ -53,6 +53,7 @@ neededProgrammes=(
     'moc'
     'mumble'
     'mupdf'
+    'neofetch'
     'network-manager-applet'
     'networkmanager'
     'networkmanager-openconnect'
