@@ -7,11 +7,12 @@ exec nm-applet
 # start program (default: dmenu, want to change to rofi)
 #bindsym $mod+d exec dmenu_run -l 10
 bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec --no-startup-id zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
-bindsym $mod+Shift+Control+d exec --no-startup-id /usr/bin/rofi-twitch
+bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
+bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
 # top status bar (battery, load, time, volume)
 bar {
+    mode hide
     separator_symbol $sep-symbol
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
@@ -36,6 +37,7 @@ bar {
 
 # bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
 bar {
+    mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
     status_command i3blocks -c ~/.config/i3blocks/skynd_bottom
@@ -59,10 +61,9 @@ bar {
 }
 
 # Media Player Controls
-bindsym XF86AudioPlay exec playerctrl play
-bindsym XF86AudioPause exec playerctrl pause
-bindsym XF86AudioNext exec playerctrl next
-bindsym XF86AudioPrev exec playerctrl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # stupid stuff
 bindcode $mod+Shift+50 exec ~/Repositories/github.com/hringriin/cookie-clicker-auto-click/repo/mouse-spam.sh skynd
@@ -110,10 +111,10 @@ workspace $workspace20 output DVI-I-1
 # Startup Applications
 exec owncloud
 exec dropbox
+exec --no-startup-id nagstamon
+exec --no-startup-id tider
 
 # xRandR GUI
 # needs a proper key binding
 #bindsym XF86Display exec arandr
 
-# Spotify specific shit
-for_window [class="^Spotify$"] floating enable

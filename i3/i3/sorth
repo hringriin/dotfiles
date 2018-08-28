@@ -7,11 +7,12 @@ exec nm-applet
 # start program (default: dmenu, want to change to rofi)
 #bindsym $mod+d exec dmenu_run -l 10
 bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec --no-startup-id zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
-bindsym $mod+Shift+Control+d exec --no-startup-id /usr/bin/rofi-twitch
+bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
+bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
 # top status bar (battery, load, time, volume)
 bar {
+    mode hide
     separator_symbol $sep-symbol
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
@@ -36,6 +37,7 @@ bar {
 
 # bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
 bar {
+    mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
     status_command i3status --config ~/.config/i3status/bottom_bar
@@ -59,17 +61,16 @@ bar {
 }
 
 # Media Player Controls
-bindsym XF86AudioPlay exec playerctrl play
-bindsym XF86AudioPause exec playerctrl pause
-bindsym XF86AudioNext exec playerctrl next
-bindsym XF86AudioPrev exec playerctrl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # stupid stuff
 bindcode $mod+Shift+50 exec ~/Repositories/github.com/hringriin/cookie-clicker-auto-click/repo/mouse-spam.sh sorth
 bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
 
 # Display blank disabled
-exec xset s 14400 14400
+#exec xset s 14400 14400
 
 # Set default Display Setup and Resolution
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
@@ -89,12 +90,36 @@ bindcode $mod+Control+105 exec urxvt -name PULSEAUDIO -e ~/Repositories/github.c
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
 
-# Startup Applications
+# Screen Rotation
+#bindsym XF86RotateWindows exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
+#bindsym XF86TaskPane exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
+bindsym XF86Launch1 exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
+
+# Set Default Workspaces for LVDS1
+workspace $workspace1 output LVDS1
+workspace $workspace2 output LVDS1
+workspace $workspace3 output LVDS1
+workspace $workspace4 output LVDS1
+workspace $workspace5 output LVDS1
+workspace $workspace6 output LVDS1
+workspace $workspace7 output LVDS1
+workspace $workspace8 output LVDS1
+workspace $workspace9 output LVDS1
+workspace $workspace10 output LVDS1
+
+# Startup Applications (Autostart)
 exec owncloud
 exec dropbox
+#exec --no-startup-id nagstamon
+exec --no-startup-id tider
 
 # xRandR GUI
 bindsym XF86Display exec arandr
+
+# Enable / Disable Xrandr Outputs
+bindsym $mod+Control+F1 exec xrandr --output VGA1 --auto --left-of LVDS1
+bindsym $mod+Control+F2 exec xrandr --output VGA1 --off
+bindsym $mod+Control+F3 exec xrandr --output VGA1 --auto --right-of LVDS1
 
 # Set Screen Brightness to 5
 exec xbacklight -set 20 -time 0
