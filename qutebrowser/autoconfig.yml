@@ -155,7 +155,7 @@ settings:
   colors.tabs.selected.odd.fg:
     global: '#458588'
   colors.webpage.bg:
-    global: '#ada0a1'
+    global: '#f3f1f2'
   completion.cmd_history_max_items:
     global: -1
   completion.height:
@@ -172,13 +172,18 @@ settings:
     global: utf-8
   content.javascript.enabled:
     '*://barzh.eu/*': true
+    global: false
     https://barzh.eu/: true
+    https://wdcloud.fritz.box/UI/: true
+    https://www.facebook.com/?ref=logo&_fb_noscript=1: true
   content.media_capture:
     global: false
   content.plugins:
-    global: true
+    global: false
   content.xss_auditing:
-    global: true
+    global: false
+  downloads.location.directory:
+    global: ~/Downloads
   downloads.position:
     global: bottom
   fonts.completion.category:
@@ -203,12 +208,18 @@ settings:
     global: Hack, "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco,
       "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation
       Mono", monospace, Fixed, Consolas, Terminal
+  fonts.prompts:
+    global: 10pt Hack
   fonts.statusbar:
     global: 10pt Hack
   fonts.tabs:
-    global: 10pt Hack
+    global: 8pt Hack
+  hints.chars:
+    global: asdfghjk
   input.rocker_gestures:
     global: true
+  messages.timeout:
+    global: 2000
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
@@ -226,20 +237,40 @@ settings:
     global: false
   tabs.background:
     global: true
+  tabs.close_mouse_button_on_bar:
+    global: ignore
   tabs.favicons.show:
     global: always
+  tabs.indicator.padding:
+    global:
+      bottom: 2
+      left: 0
+      right: 3
+      top: 2
+  tabs.indicator.width:
+    global: 2
   tabs.min_width:
-    global: -1
+    global: 25
   tabs.mousewheel_switching:
     global: false
+  tabs.padding:
+    global:
+      bottom: 0
+      left: 0
+      right: 0
+      top: 0
   tabs.pinned.shrink:
     global: false
   tabs.position:
     global: left
   tabs.select_on_remove:
     global: last-used
+  tabs.show:
+    global: multiple
+  tabs.title.format:
+    global: '{private}{perc}{audio}{index}: {title}'
   tabs.title.format_pinned:
-    global: '(P){audio}{index}: {title}'
+    global: '(P){private}{perc}{audio}{index}: {title}'
   tabs.width:
     global: 220
   tabs.wrap:
@@ -247,7 +278,9 @@ settings:
   url.auto_search:
     global: naive
   url.default_page:
-    global: https://google.com
+    global: about:blank
+  url.open_base_url:
+    global: true
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
@@ -260,3 +293,5 @@ settings:
       yt: https://www.youtube.com/results?search_query={}
   url.start_pages:
     global: https://google.com
+  window.hide_decoration:
+    global: false
