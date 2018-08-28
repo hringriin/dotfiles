@@ -85,7 +85,6 @@ neededProgrammes=(
     'pulseaudio-alsa'
     'pulseaudio-bluetooth'
     'pulseaudio-equalizer'
-    'pulseaudio-gconf'
     'pulseaudio-lirc'
     'pulseaudio-zeroconf'
     'ranger'
