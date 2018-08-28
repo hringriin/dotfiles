@@ -173,12 +173,12 @@ settings:
   content.javascript.enabled:
     '*://barzh.eu/*': true
     global: false
-    https://barzh.eu/: true
     https://wdcloud.fritz.box/UI/: true
     https://www.facebook.com/?ref=logo&_fb_noscript=1: true
   content.media_capture:
     global: false
   content.plugins:
+    '*://barzh.eu/*': true
     global: false
   content.xss_auditing:
     global: false
@@ -219,7 +219,7 @@ settings:
   input.rocker_gestures:
     global: true
   messages.timeout:
-    global: 2000
+    global: 5000
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
@@ -283,7 +283,7 @@ settings:
     global: true
   url.searchengines:
     global:
-      DEFAULT: https://www.google.com/search?hl=en&q={}
+      DEFAULT: https://www.google.de/search?q={}
       arch: https://wiki.archlinux.org/?search={}
       dict: http://www.dict.cc/?s={}
       git: https://github.com/search?q={}
@@ -292,6 +292,6 @@ settings:
       wikien: https://en.wikipedia.org/wiki/Special:Search?search={}
       yt: https://www.youtube.com/results?search_query={}
   url.start_pages:
-    global: https://google.com
+    global: about:blank
   window.hide_decoration:
     global: false
