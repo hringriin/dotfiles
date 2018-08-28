@@ -124,5 +124,6 @@ neededProgrammes=(
     'xorg-xev'
     'xorg-xinit'
     'xterm'
+    'zathura'
     'zsh'
 )
