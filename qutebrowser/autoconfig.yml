@@ -16,6 +16,8 @@ settings:
   bindings.commands:
     global:
       normal:
+        <F1>: config-cycle -t tabs.position left top
+        <F2>: config-cycle tabs.show never multiple
         SS: open -t qute://settings
   colors.completion.category.bg:
     global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #282828, stop:1 #1d2021)'
@@ -172,9 +174,13 @@ settings:
     global: utf-8
   content.javascript.enabled:
     '*://barzh.eu/*': true
+    '*://twitter.com/*': true
+    '*://www.facebook.com/*': true
     global: false
     https://wdcloud.fritz.box/UI/: true
+    https://web.threema.ch/#!/welcome: true
     https://www.facebook.com/?ref=logo&_fb_noscript=1: true
+    https://www.tri-optimum.eu/mumble-django/mumble/1: true
   content.media_capture:
     global: false
   content.plugins:
@@ -219,7 +225,7 @@ settings:
   input.rocker_gestures:
     global: true
   messages.timeout:
-    global: 5000
+    global: 2500
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
