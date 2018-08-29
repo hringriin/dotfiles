@@ -100,7 +100,7 @@ settings:
   colors.statusbar.caret.bg:
     global: '#a89984'
   colors.statusbar.caret.fg:
-    global: '#a89984'
+    global: '#458588'
   colors.statusbar.caret.selection.bg:
     global: '#458588'
   colors.statusbar.caret.selection.fg:
@@ -174,10 +174,12 @@ settings:
   content.default_encoding:
     global: utf-8
   content.javascript.enabled:
+    '*://*.tri-optimum.eu/*': true
     '*://barzh.eu/*': true
     '*://twitter.com/*': true
     '*://www.facebook.com/*': true
     global: false
+    https://inf.stugen.de/: true
     https://wdcloud.fritz.box/UI/: true
     https://web.threema.ch/#!/welcome: true
     https://www.facebook.com/?ref=logo&_fb_noscript=1: true
@@ -185,7 +187,6 @@ settings:
   content.media_capture:
     global: false
   content.plugins:
-    '*://barzh.eu/*': true
     global: false
   content.xss_auditing:
     global: false
