@@ -19,6 +19,7 @@ settings:
         <F1>: config-cycle -t tabs.position left top
         <F2>: config-cycle tabs.show never multiple
         SS: open -t qute://settings
+        co: null
   colors.completion.category.bg:
     global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #282828, stop:1 #1d2021)'
   colors.completion.category.border.bottom:
