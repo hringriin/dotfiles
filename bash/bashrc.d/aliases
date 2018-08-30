@@ -75,6 +75,7 @@ alias 'sm-green'='sm --foreground=#00FF00 --background=#000000'
 alias 'REPOSITORIES'='cd ~/Repositories/'
 alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
+alias 'DOTFILES'='cd ~/Repositories/github.com/hringriin/dotfiles/repo'
 
 alias 'MIPS'='java -jar ~/Downloads/Mars4_5.jar'
 
