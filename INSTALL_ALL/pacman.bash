@@ -32,7 +32,6 @@ neededProgrammes=(
     'groff'
     'gvim'
     'gzip'
-    'htop'
     'hwinfo'
     'i3-gaps'
     'i3blocks'
