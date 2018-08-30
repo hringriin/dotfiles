@@ -1,6 +1,3 @@
-# Packer (AUR)
-alias 'packer'='packer --noedit --auronly'
-
 # Yay (AUR)
 alias 'yay'='yay -a --answeredit None'
 
