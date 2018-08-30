@@ -4,13 +4,13 @@
 
 # temporary files
 tmpDir="/tmp"                                                               # temp dir
-tmp1="neededProgrammes$$"                                                   # temp file for evaluation of needed programmes by pacman
-tmp2="neededProgrammes2$$"                                                  # temp file for evaluation of needed programmes by packer
+tmp1="neededProgrammesPACMAN$$"                                             # temp file for evaluation of needed programmes by pacman
+tmp2="neededProgrammesYAY$$"                                                # temp file for evaluation of needed programmes by yay
 tmp3="sudoers"                                                              # temp file for evaluation of member of sudoers
 missingPacmanPrg=0                                                          # boolean; 0: all installed; 1: one or more programmes missing
-missingPackerPrg=0                                                          # boolean; 0: all installed; 1: one or more programmes missing
+missingYayPrg=0                                                             # boolean; 0: all installed; 1: one or more programmes missing
 missingPacmanList="missingPacmanList$$"                                     # list of missing programmes (pacman)
-missingPackerList="missingPackerList$$"                                     # list of missing programmes (packer)
+missingYayList="missingYayList$$"                                           # list of missing programmes (yay)
 packerList=()                                                               # empty array to write in
 repoPath="${HOME}/Repositories/github.com/hringriin/dotfiles/repo"          # path of the repository
 ulbin="/usr/local/bin"

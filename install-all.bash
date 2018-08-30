@@ -12,10 +12,11 @@
 # 1: user chose not to continue at Arch Linux Question
 # 2: incorrect values entered
 # 3: user will not be added to sudoers file
+# 4: user tried to install packer
 
 # source config files
 source INSTALL_ALL/config.bash
-source INSTALL_ALL/packer.bash
+source INSTALL_ALL/yay.bash
 source INSTALL_ALL/pacman.bash
 
 
@@ -91,48 +92,49 @@ function checkNeededPacman()
     unset instMissPrg
 }
 
-function checkNeededPacker()
+function checkNeededYay()
 {
-    echo -e "\n\nChecking for not installed programmes (packer) ...\n\n"
+    echo -e "\n\nChecking for not installed programmes (yay) ...\n\n"
     sleep 2
 
     # checks every programm in the array whether it is installed
-    for var in "${neededPackerPrgorammes[@]}"
+    for var in "${neededYayProgrammes[@]}"
     do
         if pacman -Qi ${var} &> /dev/null ; then
             echo -e "${var} ... \e[92minstalled\e[0m" >> ${tmpDir}/${tmp2}
         else
             echo -e "${var} ... \e[91mnot installed\e[0m" >> ${tmpDir}/${tmp2}
-            echo ${var} >> ${tmpDir}/${missingPackerList}
-            missingPackerPrg=1
+            echo ${var} >> ${tmpDir}/${missingYayList}
+            missingYayPrg=1
         fi
     done
 
     # nice output with column. green=installed;red=notinstalled
-    echo -e "\n\n\nList of Programmes provided by \e[93mpacker\e[0m\n"
+    echo -e "\n\n\nList of Programmes provided by \e[93myay\e[0m\n"
     column -t -s "..." ${tmpDir}/${tmp2}
     sleep 2     # just to slow things a bit down
 
-    # if there are programmes missing (packer)
-    if [[ ${missingPackerPrg} -eq 1 ]] ; then
-        echo -e "\nThere are missing programmes (\e[93mpacker\e[0m)!\n"
+    # if there are programmes missing (yay)
+    if [[ ${missingYayPrg} -eq 1 ]] ; then
+        echo -e "\nThere are missing programmes (\e[93myay\e[0m)!\n"
         sleep 1
         echo -e "Shall they be installed now? [\e[92my\e[0m/\e[91mN\e[0m]"
         read instMissPrg
 
         if [[ ${instMissPrg} == "y" || ${instMissPrg} == "Y" ]] ; then
             # install all missing programmes one by one
-            index=0
-            while read line
-            do
-                packerList[$index]="$line"
-                index=$(($index+1))
-            done < ${tmpDir}/${missingPackerList}
+            #index=0
+            #while read line
+            #do
+                #packerList[$index]="$line"
+                #index=$(($index+1))
+            #done < ${tmpDir}/${missingPackerList}
 
-            for var in "${packerList[@]}"
-            do
-                packer --noedit --auronly --noconfirm -S ${var}
-            done
+            #for var in "${packerList[@]}"
+            #do
+                #packer --noedit --auronly --noconfirm -S ${var}
+            #done
+            yay -a --answerclean All --answerdiff None --answeredit None -S - < ${tmpDir}/${missingPackerList}
         elif [[ ${instMissPrg} == "n" || ${instMissPrg} == "N" || ${instMissPrg} == "" ]] ; then
             echo -e "\n\e[93m!!! There are missing programmes !!!"
             sleep 1
@@ -142,7 +144,7 @@ function checkNeededPacker()
             exit 2
         fi
     else
-        echo -e "\n\nEvery package maintainable by \e[93mpacker\e[0m \e[92mis installed\e[0m."
+        echo -e "\n\nEvery package maintainable by \e[93myay\e[0m \e[92mis installed\e[0m."
         sleep 2
     fi
 
@@ -157,7 +159,7 @@ function cleanup()
     rm -rf ${tmpDir}/${tmp2}
     rm -rf ${tmpDir}/${tmp3}
     rm -rf ${tmpDir}/${missingPacmanList}
-    rm -rf ${tmpDir}/${missingPackerList}
+    rm -rf ${tmpDir}/${missingYayList}
     echo -e "... done!\n\n"
     sleep 2
 }
@@ -167,10 +169,10 @@ function unsetVars()
     unset tmpDir
     unset tmp1 tmp2 tmp3
     unset missingPacmanPrg
-    unset missingPackerPrg
+    unset missingYayPrg
     unset missingPacmanList
-    unset missingPackerList
-    unset packerList
+    unset missingYayList
+    unset YayList
     unset repoPath
     unset ulbin
 }
@@ -283,8 +285,8 @@ function main2()
     addToSudoers
     checkNeededPacman
     installTexlive
-    installPacker
-    checkNeededPacker
+    installYay
+    checkNeededYay
     linkConfigs
     systemdQuestion
     cleanup
@@ -292,8 +294,37 @@ function main2()
     exit 0
 }
 
+function installYay()
+{
+    echo -e "\n\nInstalling yay ...\n\n"
+    sleep 1
+    if pacman -Qi yay &> /dev/null ; then
+        echo -e "yay ... \e[92minstalled\e[0m" >> ${tmpDir}/${tmp1}
+    else
+        echo -e "yay ... \e[91mnot minstalled\e[0m" >> ${tmpDir}/${tmp1}
+        if [[ ! ( -d ${tmpDir}/yay ) ]] ; then
+            mkdir -p ${tmpDir}/yay
+        fi
+
+        if ! pacman -Qi wget &> /dev/null ; then
+            sudo pacman -S wget
+        fi
+
+        wget -O ${tmpDir}/yay/yay.tar.gz hhttps://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+        wget -O ${tmpDir}/yay/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay
+        cd ${tmpDir}/yay
+        makepkg -si
+        cd -
+    fi
+    echo -e "\n\n ... done installing yay!\n\n"
+}
+
 function installPacker()
 {
+    echo -e "Depricated! Packer is dead! Use 'yay' instead."
+    exit 4
+
+
     echo -e "\n\nInstalling packer ...\n\n"
     sleep 1
     if pacman -Qi packer &> /dev/null ; then

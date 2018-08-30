@@ -1,9 +1,9 @@
 #!/bin/bash
-# packer.bash
+# yay.bash
 
 
-# list of programmes maintained by packer needed for the whole action
-neededPackerPrgorammes=(
+# list of programmes maintained by yay needed for the whole action
+neededYayProgrammes=(
     'adduser'
     'clipster'
     'dropbox'

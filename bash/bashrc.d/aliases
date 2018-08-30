@@ -1,6 +1,9 @@
 # Packer (AUR)
 alias 'packer'='packer --noedit --auronly'
 
+# Yay (AUR)
+alias 'yay'='yay -a --answeredit None'
+
 # Pacmatic
 if [[ "${HOSTNAME}" != "sorth" ]] ; then
     alias 'pacman'='pacmatic'
