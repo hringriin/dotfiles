@@ -176,6 +176,7 @@ settings:
   content.javascript.enabled:
     '*://*.tri-optimum.eu/*': true
     '*://barzh.eu/*': true
+    '*://github.com/*': true
     '*://twitter.com/*': true
     '*://www.facebook.com/*': true
     global: false
