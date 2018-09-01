@@ -75,7 +75,7 @@ bindsym $mod+Control+l exec --no-startup-id "/usr/bin/i3lock-fancy-dualmonitor -
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-shell.bash
 
 # kill focused window
 bindsym $mod+Shift+q kill
