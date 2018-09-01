@@ -10,20 +10,24 @@ source INSTALL_ALL/config.bash
 
 main()
 {
-    if [[ $1 == "inst" ]] ; then
-        if [[ ! -d ${HOME}/.config/tider ]] ; then
-            mkdir -p ${HOME}/.config/tider
-        fi
-        cp -v ${repoPath}/tider/config.py ${HOME}/.config/tider
-    fi
+    case $1 in
+        "inst")
+            if [[ ! -d ${HOME}/.config/tider ]] ; then
+                mkdir -p ${HOME}/.config/tider
+            fi
+            cp -v ${repoPath}/tider/config.py ${HOME}/.config/tider/
+            ;;
+        "db-backup")
+            cp -v ${HOME}/.config/tider/log.db ${HOME}/ownCloud/Documents/tider/log.db/
+            ;;
 
-    if [[ $1 == "db-backup" ]] ; then
-        cp -v ${HOME}/.config/tider/log.db ${HOME}/ownCloud/Documents/tider/log.db
-    fi
-
-    if [[ $1 == "db-restore" ]] ; then
-        cp -iv ${HOME}/ownCloud/Documents/tider/log.db ${HOME}/.config/tider/log.db
-    fi
+        "db-restore")
+            cp -iv ${HOME}/ownCloud/Documents/tider/log.db ${HOME}/.config/tider/log.db/
+            ;;
+        *)
+            echo "Unrecognized command, doing nothing."
+            ;;
+    esac
 }
 
 main $1
