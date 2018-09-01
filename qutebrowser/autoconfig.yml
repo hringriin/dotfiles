@@ -17,7 +17,7 @@ settings:
     global:
       normal:
         <F1>: config-cycle -t tabs.position left top
-        <F2>: config-cycle tabs.show never multiple
+        <F2>: config-cycle -t tabs.show never multiple
         SS: open -t qute://settings
         co: null
   colors.completion.category.bg:
