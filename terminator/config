@@ -1,6 +1,7 @@
 [global_config]
   broadcast_default = off
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 1.0
   title_font = Sans 17
   title_inactive_bg_color = "#ffffff"
   title_receive_bg_color = "#00ff2e"
@@ -29,11 +30,12 @@
       position = 0
 [profiles]
   [[default]]
-    background_darkness = 0.8
+    background_darkness = 0.85
+    background_type = transparent
     copy_on_selection = True
     cursor_color = "#ffffff"
     custom_command = ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash
-    font = DejaVu Sans Mono 10
+    font = Hack 9
     foreground_color = "#ffffff"
     login_shell = True
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
@@ -42,5 +44,4 @@
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
-    use_theme_colors = True
     visible_bell = True
