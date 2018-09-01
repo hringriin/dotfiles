@@ -21,8 +21,8 @@ case $(echo -e "${i3exit}\n${shutdownc}\n${rebootc}" | rofi -dmenu -markup-rows 
             reboot -h now
         fi
         ;;
-    "")
+    "")     # in case the escape key is pressed
         ;;
     *)
-        notify-send --icon=warning test "Unrecognized Command"
+        notify-send --icon=warning "Unrecognized Command" "Doing nothing"
 esac
