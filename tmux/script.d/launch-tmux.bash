@@ -7,5 +7,7 @@
 
 if [[ $(tmux ls | grep main | grep attached) == "" ]] ; then
     ${HOME}/.gem/ruby/2.5.0/bin/tmuxinator start main
+else
+    tmux new-session
 fi
 
