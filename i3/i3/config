@@ -191,7 +191,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/shutdown.bash
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -231,6 +232,7 @@ exec compton -f
 bindsym Print exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/bash/makeScreenshot.bash
 
 assign [class="Vivaldi-snapshot"] $workspace2
+assign [class="qutebrowser"] $workspace2
 
 assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
