@@ -385,8 +385,8 @@ function linkConfigs()
     # termite
     ${repoPath}/termite/create_config.bash
 
-    ${repoPath}/tider/create_config.bash
     # tider
+    ${repoPath}/tider/create_config.bash inst
 
     # htop
     ${repoPath}/htop/create_config.bash
