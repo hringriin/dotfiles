@@ -1,51 +1,51 @@
-color   normal              color223        color234                                                                    # normal, not quoted text
+color   normal              color223        default                                                                    # normal, not quoted text
 color   indicator           color234        color223                                                                    # currently selected mail
-color   status              color214        color234                                                                    # status bar top and bottom
-color   tree                color208        color234                                                                    # thread tree drawn in attachment view
-color   signature           color242        color234                                                                    # signature line and below
-color   message             color113        color234                                                                    # status message, like "mailbox is unchanged"
-color   attachment          color130        color234                                                                    # attachment lines and lines like BEGIN PGP ENCRYPTED MESSAGE
+color   status              color214        default                                                                    # status bar top and bottom
+color   tree                color208        default                                                                    # thread tree drawn in attachment view
+color   signature           color242        default                                                                    # signature line and below
+color   message             color113        default                                                                    # status message, like "mailbox is unchanged"
+color   attachment          color130        default                                                                    # attachment lines and lines like BEGIN PGP ENCRYPTED MESSAGE
 color   error               color223        color124                                                                    # error messages printed by mutt
-color   tilde               color234        color234                                                                    # blank lines after last line in message window (pager)
+color   tilde               color234        default                                                                    # blank lines after last line in message window (pager)
 color   search              color232        color214                                                                    # highlighted search result
 color   markers             color12         color13                                                                     # < I have no clue >
-color   quoted              color166        color234                                                                    # quoted message 1
-color   quoted1             color167        color234                                                                    # quoted message 2
-color   quoted2             color168        color234                                                                    # quoted message 3
-color   quoted3             color169        color234                                                                    # quoted message 4
-color   quoted4             color170        color234                                                                    # quoted message 5
-color   quoted5             color171        color234                                                                    # quoted message 6
-color   quoted6             color165        color234                                                                    # quoted message 7
-color   index               color202        color234        ~F                                                          # Flagged
-color   index               color118        color234        ~N                                                          # New
-color   index               color39         color234        ~O                                                          # < Old ? >
-color   index               color63         color234        ~T                                                          # Tagged
-color   index               color245        color234        ~D                                                          # Deleted
-color   hdrdefault          color34         color234                                                                    # default color for header
-color   header              color141        color234        '^date:'                                                    # header date
-color   header              color154        color234        '^to:'                                                      # header to
-color   header              color157        color234        '^cc:'                                                      # header cc
-color   header              color190        color234        '^bcc:'                                                     # header bcc
-color   header              color148        color234        '^from:'                                                    # header from
-color   header              color197        color234        '^subject:'                                                 # header subject
-color   header              color31         color234        '^user-agent:'                                              # header user-agent
-color   header              color33         color234        '^reply-to:'                                                # header reply-to
+color   quoted              color166        default                                                                    # quoted message 1
+color   quoted1             color167        default                                                                    # quoted message 2
+color   quoted2             color168        default                                                                    # quoted message 3
+color   quoted3             color169        default                                                                    # quoted message 4
+color   quoted4             color170        default                                                                    # quoted message 5
+color   quoted5             color171        default                                                                    # quoted message 6
+color   quoted6             color165        default                                                                    # quoted message 7
+color   index               color202        default        ~F                                                          # Flagged
+color   index               color118        default        ~N                                                          # New
+color   index               color39         default        ~O                                                          # < Old ? >
+color   index               color63         default        ~T                                                          # Tagged
+color   index               color245        default        ~D                                                          # Deleted
+color   hdrdefault          color34         default                                                                    # default color for header
+color   header              color141        default        '^date:'                                                    # header date
+color   header              color154        default        '^to:'                                                      # header to
+color   header              color157        default        '^cc:'                                                      # header cc
+color   header              color190        default        '^bcc:'                                                     # header bcc
+color   header              color148        default        '^from:'                                                    # header from
+color   header              color197        default        '^subject:'                                                 # header subject
+color   header              color31         default        '^user-agent:'                                              # header user-agent
+color   header              color33         default        '^reply-to:'                                                # header reply-to
 
-color   sidebar_new         color118        color234                                                                    # mailbox containing new messages
-color   sidebar_divider     color214        color234                                                                    # divider bar if sidebar is on
-color   sidebar_flagged     color202        color234                                                                    # mailbox containing flagged mails
+color   sidebar_new         color118        default                                                                    # mailbox containing new messages
+color   sidebar_divider     color214        default                                                                    # divider bar if sidebar is on
+color   sidebar_flagged     color202        default                                                                    # mailbox containing flagged mails
 color   sidebar_indicator   color234        color223                                                                    # currently open mailbox
 color   sidebar_highlight   color166        color223                                                                    # selected folder with \Cn or \Cp
 
 
-color   header              magenta         color234        '^(status|lines|date|received|sender|references):'          # header fo
-color   header              magenta         color234        '^(pr|mime|x-|user|return|content-)[^:]*:'                  # header fo
-color   header              brightyellow    color234        '^content-type:'                                            # header fo
-color   header              magenta         color234        '^content-type: *text/plain'                                # header fo
-color   header              brightgreen     color234        '^list-[^:]*:'                                              # header fo
-color   header              brightcyan      color234        '^(disposition)'                                            # header fo
-color   header              green           color234        '^(mail-)?followup'                                         # header fo
-color   header              brightwhite     color234        '^(resent)'                                                 # header fo
+color   header              magenta         default        '^(status|lines|date|received|sender|references):'          # header fo
+color   header              magenta         default        '^(pr|mime|x-|user|return|content-)[^:]*:'                  # header fo
+color   header              brightyellow    default        '^content-type:'                                            # header fo
+color   header              magenta         default        '^content-type: *text/plain'                                # header fo
+color   header              brightgreen     default        '^list-[^:]*:'                                              # header fo
+color   header              brightcyan      default        '^(disposition)'                                            # header fo
+color   header              green           default        '^(mail-)?followup'                                         # header fo
+color   header              brightwhite     default        '^(resent)'                                                 # header fo
 
-color  body                 color111        color234        "((ftp|http|https)://|news:)[^ >)\"\t]+"                    # header fo
-color  body                 color123        color234        "[-a-z_0-9.+]+@[-a-z_0-9.]+"                                # header fo
+color  body                 color111        default        "((ftp|http|https)://|news:)[^ >)\"\t]+"                    # header fo
+color  body                 color123        default        "[-a-z_0-9.+]+@[-a-z_0-9.]+"                                # header fo
