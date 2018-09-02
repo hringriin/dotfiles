@@ -179,6 +179,7 @@ settings:
     '*://github.com/*': true
     '*://twitter.com/*': true
     '*://www.facebook.com/*': true
+    '*://www.youtube.com/*': true
     global: false
     https://inf.stugen.de/: true
     https://wdcloud.fritz.box/UI/: true
