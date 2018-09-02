@@ -1,5 +1,6 @@
 # Yay (AUR)
 alias 'yay'='yay -a --answeredit None'
+alias 'packer'='yay -a --answeredit None'
 
 # Pacmatic
 if [[ "${HOSTNAME}" != "sorth" ]] ; then
