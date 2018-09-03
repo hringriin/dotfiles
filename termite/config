@@ -2,9 +2,11 @@
 allow_bold = true
 audible_bell = false
 clickable_url = true
+hyperlinks = true
 dynamic_title = true
 font = Hack 9
 fullscreen = false
+schrollbar = off
 scroll_on_output = false
 scroll_on_keystroke = true
 scollback_lines = 10000
@@ -42,34 +44,34 @@ color0=#000000
 color8=#7f7f7f
 
 #red
-color1=#cd0000
-color9=#ff0000
+color1=#ee4d29
+color9=#fb4934
 
 #Green
-color2=#00cd00
+color2=#33cd00
 color10=#00ff00
 
 #yellow
-color3=#cdcd00
-color11=#ffff00
+color3=#d79921
+color11=#fafd2f
 
 #blue
-color4=#0000ee
-color12=#5c5cff
+color4=#3355ff
+color12=#0094ff
 
 #magenta
-color5=#cd00cd
-color13=#ff00ff
+color5=#c162c6
+color13=#e356eb
 
 #cyan
-color6=#00cdcd
-color14=#00ffff
+color14=#00cdcd
+colorr=#23e0fc
 
-#white 
+#white
 color7=#e5e5e5
 color15=#ffffff
 
-#foreground = #dcdccc
+foreground = #dcdccc
 #foreground_bold = #ffffff
 
 # 20% background transparency (requires a compositor)
@@ -78,21 +80,16 @@ background = rgba(00, 00, 00, 0.85)
 # If unset, will reverse foreground and background
 highlight = #2f2f2f
 
-# Colors from color0 to color254 can be set
-#color0 = #3f3f3f
-#color1 = #705050
-#color2 = #60b48a
-#color3 = #dfaf8f
 
 [hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+font = Hack 8
+background = #8ec70c
+foreground = #282828
+active_background = #8ec70c
+active_foreground = #282828
+padding = 3
+border = #000000
+border_width = 1
+roundness = 5
 
 # vim: ft=dosini cms=#%s
