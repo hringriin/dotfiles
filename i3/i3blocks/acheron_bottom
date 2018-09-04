@@ -38,7 +38,7 @@ markup=pango        # for colors
 [work]
 label=Tracker:
 command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
-interval=3
+interval=10
 markup=pango
 
 [disk]
@@ -53,44 +53,59 @@ command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
 interval=60
 markup=pango
 
-[net]
-markup=pango
-label=  
-command=~/.config/i3blocks/i3blocks-gate/net.sh -w
-separator=false
-interval=10
-
-[bandwidth]
+[wifi]
 instance=wlp3s0
-interval=1
-separator=true
-min_width=IN 100M OUT 100M
 
-[net]
-markup=pango
-label=  
-command=~/.config/i3blocks/i3blocks-gate/net.sh -e
-separator=false
-interval=10
+[iface]
+label=WiFi:
+instance=wlp3s0
 
-[bandwidth]
+[iface]
+label=eth0:
 instance=enp0s25
-interval=1
-separator=true
-min_width=IN 100M OUT 100M
 
-[net]
-markup=pango
-label=  
-command=~/.config/i3blocks/i3blocks-gate/net.sh -l
-separator=false
-interval=10
-
-[bandwidth]
+[iface]
+label=WWAN:
 instance=wwp0s20u4i6
-interval=1
-separator=true
-min_width=IN 100M OUT 100M
+
+#[net]
+#markup=pango
+#label=  
+#command=~/.config/i3blocks/i3blocks-gate/net.sh -w
+#separator=false
+#interval=10
+
+#[bandwidth]
+#instance=wlp3s0
+#interval=1
+#separator=true
+#min_width=IN 100M OUT 100M
+
+#[net]
+#markup=pango
+#label=  
+#command=~/.config/i3blocks/i3blocks-gate/net.sh -e
+#separator=false
+#interval=10
+
+#[bandwidth]
+#instance=enp0s25
+#interval=1
+#separator=true
+#min_width=IN 100M OUT 100M
+
+#[net]
+#markup=pango
+#label=  
+#command=~/.config/i3blocks/i3blocks-gate/net.sh -l
+#separator=false
+#interval=10
+
+#[bandwidth]
+#instance=wwp0s20u4i6
+#interval=1
+#separator=true
+#min_width=IN 100M OUT 100M
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
