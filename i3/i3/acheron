@@ -10,12 +10,16 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
 bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
-# top status bar i3status
+# top bar
 bar {
+    tray_output none
+    position top
     mode hide
     separator_symbol $sep-symbol
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
+    #status_command i3blocks -c ~/.config/i3blocks/acheron_top
+
     colors {
         # Whole color setting
         background          $bar-background
@@ -28,71 +32,18 @@ bar {
         inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
         urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
     }
-
-    # Tray
-    tray_output none
-
-    position top
 }
 
-# bottom status bar i3status
-#bar {
-#    mode hide
-#    separator_symbol $sep-symbol
-#    workspace_buttons no
-#    status_command i3status --config ~/.config/i3status/bottom_bar
-#    #status_command i3blocks -c ~/.config/i3blocks/config
-#    colors {
-#        # Whole color setting
-#        background          $bar-background
-#        statusline          $bar-statusline
-#        separator           $bar-separator
-#
-#        # Type              Border                      Background                      Font
-#        focused_workspace   $workspace-focus-border     $workspace-focus-background     $workspace-focus-text
-#        active_workspace    $workspace-active-border    $workspace-active-background    $workspace-active-text
-#        inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
-#        urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
-#    }
-#
-#    # Tray
-#    tray_output none
-#
-#    position bottom
-#}
-
-## top status bar i3blocks
-#bar {
-#    mode hide
-#    separator_symbol $sep-symbol
-#    strip_workspace_numbers yes
-#    status_command i3blocks -c ~/.config/i3blocks/acheron_top
-#    colors {
-#        # Whole color setting
-#        background          $bar-background
-#        statusline          $bar-statusline
-#        separator           $bar-separator
-#
-#        # Type              Border                      Background                      Font
-#        focused_workspace   $workspace-focus-border     $workspace-focus-background     $workspace-focus-text
-#        active_workspace    $workspace-active-border    $workspace-active-background    $workspace-active-text
-#        inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
-#        urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
-#    }
-#
-#    # Tray
-#    tray_output none
-#
-#    position top
-#}
-
-# bottom status bar i3blocks
+# bottom bar
 bar {
+    tray_output LVDS1
+    position bottom
     mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
     #status_command i3status --config ~/.config/i3status/bottom_bar
     status_command i3blocks -c ~/.config/i3blocks/acheron_bottom
+
     colors {
         # Whole color setting
         background          $bar-background
@@ -105,11 +56,6 @@ bar {
         inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
         urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
     }
-
-    # Tray
-    tray_output LVDS1
-
-    position bottom
 }
 
 # Media Player Controls
