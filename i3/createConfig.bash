@@ -149,7 +149,10 @@ function writeConfigToConfig
 
 function installGTK
 {
-    git clone https://github.com/tim241/dots.git ${HOME}/Repositories/github.com/tim241/dots/repo
+    if [[ ! -d ${HOME}/Repositories/github.com/tim241/dots/repo ]] ; then
+        git clone https://github.com/tim241/dots.git ${HOME}/Repositories/github.com/tim241/dots/repo
+    fi
+
     ln -sfv ${HOME}/Repositories/github.com/tim241/dots/repo/.themes/gruvbox-soft ${HOME}/.themes
     ln -sfv ${HOME}/Repositories/github.com/tim241/dots/repo/.icons/gruvbox-soft ${HOME}/.icons
 }
