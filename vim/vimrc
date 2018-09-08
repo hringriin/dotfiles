@@ -36,7 +36,7 @@ call plug#begin('~/.vim/plugged')
         " General {{{
         Plug 'mattn/vim-maketable'                                  " make markdown tables with `:Maketable`
         Plug 'vim-scripts/ZoomWin'                                  " hit <Leader>f to fullscreen a vim tab. hit again to return.
-                                                " be careful with closing buffers!
+                                                                    " be careful with closing buffers!
         Plug 'AndrewRadev/multichange.vim'
         Plug 'scrooloose/nerdtree'                                  " Nerdtree
         Plug 'tmux-plugins/vim-tmux'                                " vim plugin for .tmux.conf
@@ -641,5 +641,13 @@ iab latex       LaTeX
 iab etwsa       etwas
 iab wsa         was
 " Typo correction }}}
+
+
+inoremap ,e <div><Enter><h3><Enter><++><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
+
+inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+map <leader><Space> <Esc>/<++><Enter>"_c4l
+
 
 " vim is geil
