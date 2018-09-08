@@ -326,6 +326,15 @@ set ttyfast
     autocmd FileType lilypond setlocal tabstop=2
     " }}}
 
+    " LaTeX {{{
+    " Press F12 to trigger LaTeX Makefile and open pdf
+    autocmd Filetype tex nnoremap <buffer> <F12> :w<CR>:!make<CR>
+    " }}}
+
+    " rmarkdown {{{
+    autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+    " }}}
+
 " Filetype Options }}}
 
 " General Settings {{{
@@ -511,8 +520,6 @@ set ttyfast
     nnoremap <Tab> gt
     nnoremap <S-Tab> gT
 
-    " Press F12 to trigger LaTeX Makefile and open pdf
-    nnoremap <buffer> <F12> :w<CR>:!make<CR>:!evince %:t:r.pdf<CR>
 
     " my documentation, inside my dotfiles repository on github
     nnoremap <silent> <Leader>h :tabnew ~/Repositories/github.com/hringriin/dotfiles/wiki/Home.md<CR>
