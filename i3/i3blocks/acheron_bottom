@@ -53,12 +53,11 @@ command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
 interval=60
 markup=pango
 
-[wifi]
+[iface]
 label=  
 instance=wlp3s0
-separator=false
 
-[iface]
+[wifi]
 instance=wlp3s0
 
 [iface]
