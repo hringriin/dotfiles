@@ -34,38 +34,40 @@ call plug#begin('~/.vim/plugged')
     " Plugs (Addons for PLUG) {{{
 
         " General {{{
-        Plug 'mattn/vim-maketable'              " make markdown tables with `:Maketable`
-        Plug 'vim-scripts/ZoomWin'              " hit <Leader>f to fullscreen a vim tab. hit again to return.
+        Plug 'mattn/vim-maketable'                                  " make markdown tables with `:Maketable`
+        Plug 'vim-scripts/ZoomWin'                                  " hit <Leader>f to fullscreen a vim tab. hit again to return.
                                                 " be careful with closing buffers!
         Plug 'AndrewRadev/multichange.vim'
-        Plug 'scrooloose/nerdtree'              " Nerdtree
-        Plug 'tmux-plugins/vim-tmux'            " vim plugin for .tmux.conf
-        Plug 'scrooloose/nerdcommenter'         " comments
-        Plug 'godlygeek/tabular'                " needed by plasticboy/vim-markdown
+        Plug 'scrooloose/nerdtree'                                  " Nerdtree
+        Plug 'tmux-plugins/vim-tmux'                                " vim plugin for .tmux.conf
+        Plug 'scrooloose/nerdcommenter'                             " comments
+        Plug 'godlygeek/tabular'                                    " needed by plasticboy/vim-markdown
         Plug 'plasticboy/vim-markdown'
-        Plug 'google/vim-searchindex'           " how many times a searched pattern occures in current buffer
-        Plug 'matze/vim-move'                   " move blobs of code up/down with <C-j>/<C-k>
-        Plug 'johngrib/vim-game-code-break'     " a 'fun' game :-)
-        Plug 'skywind3000/quickmenu.vim'        " quickmenu
-        Plug 'wikitopian/hardmode'              " vim hard mode
-        "Plug 'scrooloose/syntastic'             " vim syntax check for maaaany filetypes
+        Plug 'google/vim-searchindex'                               " how many times a searched pattern occures in current buffer
+        Plug 'matze/vim-move'                                       " move blobs of code up/down with <C-j>/<C-k>
+        Plug 'johngrib/vim-game-code-break'                         " a 'fun' game :-)
+        Plug 'skywind3000/quickmenu.vim'                            " quickmenu
+        Plug 'wikitopian/hardmode'                                  " vim hard mode
+        Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }      " live previewing LaTeX files
+        Plug 'ctrlpvim/ctrlp.vim'                                   " full path fuzzy file, buffer, mru, tag, ... finder
+        "Plug 'scrooloose/syntastic'                                " vim syntax check for maaaany filetypes
         "Plug 'lervag/vimtex'
         "Plug 'Valloric/YouCompleteMe'
         " General }}}
 
         " Colors {{{
-        Plug 'ap/vim-css-color'                 " highlight css colors inside vim
+        Plug 'ap/vim-css-color'                                     " highlight css colors inside vim
         " Colors }}}
 
         " GIT {{{
-        Plug 'rhysd/committia.vim'              " git commits in vim with diff and log
-        Plug 'airblade/vim-gitgutter'           " git commit status side line
-        Plug 'Xuyuanp/nerdtree-git-plugin'      " Nerdtree Gitplugin
+        Plug 'rhysd/committia.vim'                                  " git commits in vim with diff and log
+        Plug 'airblade/vim-gitgutter'                               " git commit status side line
+        Plug 'Xuyuanp/nerdtree-git-plugin'                          " Nerdtree Gitplugin
         " GIT }}}
 
         " Documentation {{{
-        Plug 'vimwiki/vimwiki'                  " VimWiki
-        Plug 'suan/vim-instant-markdown'        " instant preview for markdown
+        Plug 'vimwiki/vimwiki'                                      " VimWiki
+        Plug 'suan/vim-instant-markdown'                            " instant preview for markdown
         " Documentation }}}
 
         " Debugging {{{
@@ -78,7 +80,7 @@ call plug#begin('~/.vim/plugged')
         " Themes {{{
         " themes
         Plug 'morhetz/gruvbox'
-        Plug 'vim-airline/vim-airline/'         " new status bar
+        Plug 'vim-airline/vim-airline/'                             " new status bar
         Plug 'vim-airline/vim-airline-themes'
         " Themes }}}
 
@@ -112,6 +114,11 @@ let g:instant_markdown_open_to_the_world = 0
 let g:instant_markdown_allow_unsafe_content = 0
 
 " Vim-Instant-Markdown }}}
+
+" LaTeX live preview {{{
+let g:livepreview_previewer = 'zathura'
+autocmd Filetype tex nnoremap <buffer> <F11> :LLPStartPreview<CR>
+" LaTeX live preview }}}
 
 " VimWiki {{{
 
