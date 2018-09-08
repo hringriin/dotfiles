@@ -179,7 +179,9 @@ settings:
     '*://fritz.box/*': true
     '*://github.com/*': true
     '*://twitter.com/*': true
+    '*://www.amazon.de/*': true
     '*://www.facebook.com/*': true
+    '*://www.gog.com/*': true
     '*://www.youtube.com/*': true
     global: false
     https://inf.stugen.de/: true
