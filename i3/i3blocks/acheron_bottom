@@ -54,18 +54,19 @@ interval=60
 markup=pango
 
 [wifi]
+label=  
+instance=wlp3s0
+separator=false
+
+[iface]
 instance=wlp3s0
 
 [iface]
-label=WiFi:
-instance=wlp3s0
-
-[iface]
-label=eth0:
+label=  
 instance=enp0s25
 
 [iface]
-label=WWAN:
+label=  
 instance=wwp0s20u4i6
 
 #[net]
