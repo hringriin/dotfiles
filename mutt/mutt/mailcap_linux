@@ -17,16 +17,16 @@ image/jpeg; sxiv %s
 image/pjpeg; sxiv %s
 image/png; sxiv %s
 image/gif; sxiv -a %s
-image/tiff; evince %s
-image/ttiff; evince %s
+image/tiff; mupdf %s
+image/ttiff; mupdf %s
 
 # PDFs
-application/pdf; evince %s
-application/x-octet-stream; evince %s
-application/force-download; evince %s
+application/pdf; zathura %s
+application/x-octet-stream; zathura %s
+application/force-download; zathura %s
 
 # HTML
-text/html; "vivaldi-snapshot" %s & sleep 2; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal
+text/html; "qutebrowser" %s & sleep 2; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal
 text/html; "w3m" -I %{charset} -T text/html; copiousoutput;
 text/plain; cat %s; copiousoutput
 
