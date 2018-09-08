@@ -18,7 +18,7 @@ case $(echo -e "${i3exit}\n${shutdownc}\n${rebootc}" | rofi -dmenu -markup-rows 
         ;;
     ${rebootc})
         if [[ $(echo -e "No\nYes" | rofi -dmenu -markup-rows -i -p "Really ${rebootc}?") == "Yes" ]] ; then
-            reboot -h now
+            reboot
         fi
         ;;
     "")     # in case the escape key is pressed
