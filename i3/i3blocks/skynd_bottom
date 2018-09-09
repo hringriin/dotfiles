@@ -55,6 +55,7 @@ interval=60
 markup=pango
 # }}}
 
+[net]
 markup=pango
 label=  
 command=~/.config/i3blocks/i3blocks-gate/net.sh -e
@@ -62,10 +63,10 @@ separator=false
 interval=10
 
 [bandwidth]
-instance=enp0s25
+instance=enp3s0
 interval=1
 separator=true
-min_width=IN 10M OUT 10M
+min_width=IN 100M OUT 100M
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
