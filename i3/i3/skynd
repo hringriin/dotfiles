@@ -55,7 +55,7 @@ bar {
     }
 
     # Tray
-    tray_output DP-1
+    tray_output DP-0
 
     position bottom
 }
@@ -73,7 +73,7 @@ bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
 bindsym XF86Calculator exec galculator
 
 # Set default Display Setup and Resolution
-exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 60 --primary --output DVI-D-1 --mode 1920x1080 --rate 60 --right-of DP-1 --output HDMI-1 --mode 1920x1080 --rate 60 --same-as DVI-D-1
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-D-0 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-D-0
 
 # Pulse Audio controls
 for_window [class="URxvt" instance="PULSEAUDIO"] floating enable border pixel 3
@@ -86,27 +86,27 @@ bindsym Control+XF86AudioMute exec --no-startup-id ~/Repositories/github.com/hri
 bindsym Shift+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setOutDev             # set OutputDevice
 bindsym Shift+Control+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setInDev      # set InputDevice
 
-# Set Default Workspaces for DP-1 and DVI-I-1
-workspace $workspace1 output DP-1
-workspace $workspace2 output DP-1
-workspace $workspace3 output DP-1
-workspace $workspace4 output DP-1
-workspace $workspace5 output DP-1
-workspace $workspace6 output DP-1
-workspace $workspace7 output DP-1
-workspace $workspace8 output DP-1
-workspace $workspace9 output DP-1
-workspace $workspace10 output DP-1
-workspace $workspace11 output DVI-D-1
-workspace $workspace12 output DVI-D-1
-workspace $workspace13 output DVI-D-1
-workspace $workspace14 output DVI-D-1
-workspace $workspace15 output DVI-D-1
-workspace $workspace16 output DVI-D-1
-workspace $workspace17 output DVI-D-1
-workspace $workspace18 output DVI-D-1
-workspace $workspace19 output DVI-D-1
-workspace $workspace20 output DVI-D-1
+workspace $workspace1 output DP-0
+# Set Default Workspaces for DP-0 and DVI-I-1
+workspace $workspace2 output DP-0
+workspace $workspace3 output DP-0
+workspace $workspace4 output DP-0
+workspace $workspace5 output DP-0
+workspace $workspace6 output DP-0
+workspace $workspace7 output DP-0
+workspace $workspace8 output DP-0
+workspace $workspace9 output DP-0
+workspace $workspace10 output DP-0
+workspace $workspace11 output DVI-D-0
+workspace $workspace12 output DVI-D-0
+workspace $workspace13 output DVI-D-0
+workspace $workspace14 output DVI-D-0
+workspace $workspace15 output DVI-D-0
+workspace $workspace16 output DVI-D-0
+workspace $workspace17 output DVI-D-0
+workspace $workspace18 output DVI-D-0
+workspace $workspace19 output DVI-D-0
+workspace $workspace20 output DVI-D-0
 
 # Startup Applications
 exec owncloud
