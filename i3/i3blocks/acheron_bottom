@@ -53,59 +53,23 @@ command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
 interval=60
 markup=pango
 
-[iface]
+[net]
+markup=pango
 label=  
-instance=wlp3s0
+command=~/.config/i3blocks/i3blocks-gate/net.sh -w
+interval=10
 
-[wifi]
-instance=wlp3s0
-
-[iface]
+[net]
+markup=pango
 label=  
-instance=enp0s25
+command=~/.config/i3blocks/i3blocks-gate/net.sh -e
+interval=10
 
-[iface]
+[net]
+markup=pango
 label=  
-instance=wwp0s20u4i6
-
-#[net]
-#markup=pango
-#label=  
-#command=~/.config/i3blocks/i3blocks-gate/net.sh -w
-#separator=false
-#interval=10
-
-#[bandwidth]
-#instance=wlp3s0
-#interval=1
-#separator=true
-#min_width=IN 100M OUT 100M
-
-#[net]
-#markup=pango
-#label=  
-#command=~/.config/i3blocks/i3blocks-gate/net.sh -e
-#separator=false
-#interval=10
-
-#[bandwidth]
-#instance=enp0s25
-#interval=1
-#separator=true
-#min_width=IN 100M OUT 100M
-
-#[net]
-#markup=pango
-#label=  
-#command=~/.config/i3blocks/i3blocks-gate/net.sh -l
-#separator=false
-#interval=10
-
-#[bandwidth]
-#instance=wwp0s20u4i6
-#interval=1
-#separator=true
-#min_width=IN 100M OUT 100M
+command=~/.config/i3blocks/i3blocks-gate/net.sh -l
+interval=10
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
