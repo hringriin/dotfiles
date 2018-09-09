@@ -433,6 +433,9 @@ function linkConfigs()
     # xorg
     ${repoPath}/X/create_config.bash
 
+    # zsh
+    ${repoPath}/zsh/install.zsh
+
     sleep 1
 
     echo -e "\n\n ... done linking files!\n\n"
@@ -460,6 +463,7 @@ function systemdServicesEnable()
 
     servicesToEnable=(
         "suspend@${USER}"
+        "NetworkManager.service"
         "ntpd.service"
     )
 
@@ -469,7 +473,7 @@ function systemdServicesEnable()
 
     for var in "${servicesToEnable[@]}"
     do
-        su -c "systemctl enable ${var}" root
+        sudo systemctl enable ${var}
     done
 
     unset var
@@ -500,7 +504,7 @@ function systemdServicesStart()
 
     for var in "${servicesToStart[@]}"
     do
-        su -c "systemctl start ${var}" root
+        sudo systemctl start ${var}
     done
 
     unset var
