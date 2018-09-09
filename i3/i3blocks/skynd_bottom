@@ -41,19 +41,11 @@ command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /boot
 interval=60
 markup=pango
 
-# {{{ root needs to be defined twice. no clue why
 [disk]
 label=Root  :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
 interval=60
 markup=pango
-
-[disk]
-label=Root  :
-command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
-interval=60
-markup=pango
-# }}}
 
 [net]
 markup=pango
