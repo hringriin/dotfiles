@@ -130,6 +130,7 @@ neededProgrammes=(
     'wpa_supplicant'
     'xdotool'
     'xorg-server'
+    'xorg-xdpyinfo'
     'xorg-xev'
     'xorg-xinit'
     'xorg-xrandr'
