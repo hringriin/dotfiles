@@ -4,6 +4,7 @@
 
 # list of programmes maintained by pacman needed for the whole action
 neededProgrammes=(
+    'abook'
     'acpi'
     'archlinux-keyring'
     'autoconf'
@@ -32,6 +33,7 @@ neededProgrammes=(
     'git'
     'grep'
     'groff'
+    'gucharmap'
     'gvim'
     'gzip'
     'hwinfo'
