@@ -40,6 +40,7 @@ neededProgrammes=(
     'i3-gaps'
     'i3blocks'
     'i3status'
+    'lolcat'
     'isync'
     'jshon'
     'keepassx2'
