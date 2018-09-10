@@ -391,6 +391,9 @@ function linkConfigs()
     # htop
     ${repoPath}/htop/create_config.bash
 
+    # lolban
+    ln -sfv ${repoPath}/bash/lolban.bash /usr/local/bin/lolban
+
     # mimeapps
     ${repoPath}/mimeapps/create_config.bash
 
