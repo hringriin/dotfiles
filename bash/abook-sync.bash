@@ -20,6 +20,10 @@ function master()
 
 function slave()
 {
+    if [[ ! -d ${HOME}/.abook ]] ; then
+        mkdir -p ${HOME}/.abook
+    fi
+
     rm -vrf ${HOME}/.abook/*
     cp -vf ${HOME}/ownCloud/Documents/abook/addressbook ${HOME}/.abook/
 }
