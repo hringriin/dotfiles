@@ -246,14 +246,6 @@ let g:vim_markdown_toc_autofit = 1
 "let g:syntastic_check_on_wq = 0
 " syntastic settings }}}
 
-" Indention rules {{{
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-if has("autocmd")
-  filetype plugin indent on
-endif
-" Indention rules }}}
-
 " Nerdtree {{{
 " If vim opens a directory like 'vim /etc/tmp' nerdtree will start
 " automatically
@@ -284,7 +276,15 @@ autocmd BufEnter * set mouse=
 if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
+" Use one space, not two, after punctuation.
+set nojoinspaces
 " Saner line joins }}}
+
+" completion {{{
+
+set complete+=kspell
+
+" completion }}}
 
 " Syntax check {{{
 if has("syntax")
@@ -301,10 +301,10 @@ augroup END
 
 " Auto set screen title {{{
 " i'm not sure, if this works
-let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
-if &term =~ "xterm" || &term == "screen" || &term == "rxvt"
-  set title
-endif
+"let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+"if &term =~ "xterm" || &term == "screen" || &term == "rxvt"
+  "set title
+"endif
 " Auto set screen title }}}
 
 " fast terminal? {{{
@@ -335,9 +335,24 @@ set ttyfast
     autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
     " }}}
 
+    " html {{{
+    autocmd Filetype html inoremap ,e <div><Enter><h3><Enter><++><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
+
+    inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+    vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+    map <leader><Space> <Esc>/<++><Enter>"_c4l
+    " html }}}
+
 " Filetype Options }}}
 
 " General Settings {{{
+
+    " Always use vertical diffs
+    set diffopt+=vertical
+
+    " Open new split panes to right and bottom, which feels more natural
+    set splitbelow
+    set splitright
 
     " Encoding
     scriptencoding utf-8
@@ -388,19 +403,14 @@ set ttyfast
     set fdm=marker      " fold method
     set fdc=4           " fold column width
 
-    " reads the file when changes where made out of vim (e.g. git)
-    set autoread
-
     " Set which parantheses to match
     set matchpairs=(:),{:},[:],<:>
-
 
     " Show matching brackets
     set showmatch
 
-
     " Highlight lines longer than 120 characters
-    match ErrorMsg '\%>120v.\+'
+    :2mat WarningMsg '\%>120v.'
 
     " Highlight trailing whitespaces
     match ErrorMsg '\s\+$'
@@ -424,6 +434,12 @@ set ttyfast
     set numberwidth=4
     set relativenumber
     set number
+
+    " Get off my lawn
+    nnoremap <Left> :echoe "Use h"<CR>
+    nnoremap <Right> :echoe "Use l"<CR>
+    nnoremap <Up> :echoe "Use k"<CR>
+    nnoremap <Down> :echoe "Use j"<CR>
 
 " General Settings }}}
 
@@ -535,6 +551,14 @@ set ttyfast
 
 " Keybindings }}}
 
+" Indention rules {{{
+" Uncomment the following to have Vim load indentation rules and plugins
+" according to the detected filetype.
+if has("autocmd")
+  filetype plugin indent on
+endif
+" Indention rules }}}
+
 " Settings / Options that need to be testet {{{
 
     " Don't wake up system with blinking cursor: {{{
@@ -641,13 +665,3 @@ iab latex       LaTeX
 iab etwsa       etwas
 iab wsa         was
 " Typo correction }}}
-
-
-inoremap ,e <div><Enter><h3><Enter><++><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
-
-inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-map <leader><Space> <Esc>/<++><Enter>"_c4l
-
-
-" vim is geil
