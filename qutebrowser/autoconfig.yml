@@ -175,20 +175,19 @@ settings:
     global: utf-8
   content.javascript.enabled:
     '*://*.tri-optimum.eu/*': true
-    '*://barzh.eu/*': true
+    '*://*.barzh.eu/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
     '*://twitter.com/*': true
     '*://www.amazon.de/*': true
     '*://www.facebook.com/*': true
     '*://www.gog.com/*': true
+    '*://www.imdb.com/*': true
     '*://www.youtube.com/*': true
     global: false
     https://inf.stugen.de/: true
     https://wdcloud.fritz.box/UI/: true
     https://web.threema.ch/#!/welcome: true
-    https://www.facebook.com/?ref=logo&_fb_noscript=1: true
-    https://www.tri-optimum.eu/mumble-django/mumble/1: true
   content.media_capture:
     global: false
   content.plugins:
