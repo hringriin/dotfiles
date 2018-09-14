@@ -174,8 +174,9 @@ settings:
   content.default_encoding:
     global: utf-8
   content.javascript.enabled:
-    '*://*.tri-optimum.eu/*': true
     '*://*.barzh.eu/*': true
+    '*://*.tri-optimum.eu/*': true
+    '*://9gag.com/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
     '*://twitter.com/*': true
@@ -183,6 +184,7 @@ settings:
     '*://www.facebook.com/*': true
     '*://www.gog.com/*': true
     '*://www.imdb.com/*': true
+    '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
     global: false
     https://inf.stugen.de/: true
