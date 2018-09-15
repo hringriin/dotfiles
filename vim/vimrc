@@ -347,12 +347,19 @@ set ttyfast
 
 " General Settings {{{
 
+    " matchit, additional matchings like if/elseif/end for `%` key
+    packadd! matchit
+
     " Always use vertical diffs
     set diffopt+=vertical
 
     " Open new split panes to right and bottom, which feels more natural
     set splitbelow
     set splitright
+
+    " also for help
+    ":cabbrev h vert h
+    ":cabbrev help vert h
 
     " Encoding
     scriptencoding utf-8
@@ -436,10 +443,10 @@ set ttyfast
     set number
 
     " Get off my lawn
-    nnoremap <Left> :echoe "Use h"<CR>
-    nnoremap <Right> :echoe "Use l"<CR>
-    nnoremap <Up> :echoe "Use k"<CR>
-    nnoremap <Down> :echoe "Use j"<CR>
+    noremap <Left> :echoe "Use h"<CR>
+    noremap <Right> :echoe "Use l"<CR>
+    noremap <Up> :echoe "Use k"<CR>
+    noremap <Down> :echoe "Use j"<CR>
 
 " General Settings }}}
 
@@ -535,7 +542,6 @@ set ttyfast
     " Switch tabs with tab key
     nnoremap <Tab> gt
     nnoremap <S-Tab> gT
-
 
     " my documentation, inside my dotfiles repository on github
     nnoremap <silent> <Leader>h :tabnew ~/Repositories/github.com/hringriin/dotfiles/wiki/Home.md<CR>
