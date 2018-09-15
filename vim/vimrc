@@ -350,6 +350,9 @@ set ttyfast
     " matchit, additional matchings like if/elseif/end for `%` key
     packadd! matchit
 
+    " wildmenu
+    set wildmenu
+
     " Always use vertical diffs
     set diffopt+=vertical
 
@@ -609,7 +612,7 @@ if &term=~'xterm'
     set noshowmode          " information about current vim mode (insert, replace, ...)
     set noruler             " disable vim's default status line
     set laststatus=0
-    set noshowcmd
+    set showcmd
     set report=0            " Show all changes (e.g. how many lines yanked)
 
         " airline config {{{
