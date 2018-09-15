@@ -187,6 +187,7 @@ settings:
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
     global: false
+    http://localhost:8090/: true
     https://inf.stugen.de/: true
     https://wdcloud.fritz.box/UI/: true
     https://web.threema.ch/#!/welcome: true
