@@ -136,6 +136,7 @@ neededProgrammes=(
     'xorg-xdpyinfo'
     'xorg-xev'
     'xorg-xinit'
+    'xorg-xinput'
     'xorg-xrandr'
     'xterm'
     'zathura'
