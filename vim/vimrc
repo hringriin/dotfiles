@@ -464,7 +464,10 @@ set ttyfast
     " Textwidth {{{
     " function for textwidth
     function! MyTextWidth()
-        execute "setlocal tw =".str2nr(input('Enter column number: '))
+        execute "let tlength=".str2nr(input('Enter textwidth: '))
+        execute "setlocal tw=".tlength
+        execute "setlocal colorcolumn=".tlength
+        "execute "setlocal tw =".str2nr(input('Enter column number: '))
     endfunction
     " Textwidth }}}
 
@@ -654,6 +657,9 @@ endif
         hi CursorLineNr         term=bold   cterm=bold      ctermfg=115  ctermbg=234
         " custom line colors }}}
 
+        " custom colorcolumn {{{
+        hi   ColorColumn    term=bold      ctermbg=52
+        " custom colorcolumn }}}
     " custom colors }}}
 
 " Colorscheme }}}
