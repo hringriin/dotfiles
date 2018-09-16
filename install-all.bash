@@ -397,6 +397,9 @@ function linkConfigs()
     # mimeapps
     ${repoPath}/mimeapps/create_config.bash
 
+    # mpv
+    ${repoPath}/mpv/create_config.bash
+
     # mutt
     ${repoPath}/mutt/create_config.bash
 
