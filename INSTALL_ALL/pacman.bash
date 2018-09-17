@@ -18,7 +18,6 @@ neededProgrammes=(
     'compton'
     'cronie'
     'curl'
-    'evince'
     'expac'
     'fakeroot'
     'file'
