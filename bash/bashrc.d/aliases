@@ -1,64 +1,101 @@
-# Yay (AUR)
-alias 'yay'='yay -a --answeredit None'
-alias 'packer'='yay -a --answeredit None'
+# vim: ft=sh
+# ----- Alias (Substitution) {{{
+# -----------------------------------------------
 
-# Pacmatic
+alias 'cal'='cal -3'                                                                            # show last and next month also
+alias 'calc'='galculator'                                                                       # open galculator
+alias 'df'='df -hT'                                                                             # human readable + filetype
+alias 'emacs'='emacs -nw'                                                                       # cli mode
+alias 'free'='free -h'                                                                          # human readable
+#alias 'lsblk'='lsblk -o "KNAME,HOTPLUG,SIZE,FSTYPE,TYPE,LABEL,MOUNTPOINT,UUID,MODEL,SERIAL"     # other output for lsblk
+alias 'mcabber-uni'='mcabber -f ${HOME}/.mcabber_uni/mcabberrc'                                 # mcabber - uni account
+alias 'mcabber-ccchb'='mcabber -f ${HOME}/.mcabber_ccchb/mcabberrc'                             # mcabber - private account
+alias 'mocp'='padsp mocp'                                                                       # mocp with pulse audio
+alias 'mount'='mount | column -t'                                                               # align in column
+alias 'serverprint'='serverprint --two-sided'                                                   # serverprint but two-sided
+alias 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                        # black background
+alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'           # open my dotfiles-wiki
+alias 'wttr'='curl wttr.in'                                                                     # weather
+alias 'wttr-help'='curl wttr.in/:help'                                                          # help for weather
+alias 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                     # black background
+alias 'yay'='yay -a --answeredit None'                                                          # only from AUR, no questions
+alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
+
+# -----------------------------------------------
+# ----- Alias (Substitution) }}}
+# ----- Alias (Custom) {{{
+# -----------------------------------------------
+
+alias 'lsx'='ls -lahX'
+
+# -----------------------------------------------
+# ----- Alias (Custom) }}}
+# ----- dir shortcuts {{{
+# -----------------------------------------------
+
+alias 'REPOSITORIES'='cd ~/Repositories/'
+alias 'GITHUB'='cd ~/Repositories/github.com/'
+alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
+alias 'DOTFILES'='cd ~/Repositories/github.com/hringriin/dotfiles/repo'
+
+# -----------------------------------------------
+# ----- dir shortcuts }}}
+# ----- Easy-Server-Upload {{{
+# -----------------------------------------------
+
+function easy-server-upload ()
+{
+    if [[ $# -lt 1 ]] ; then
+        echo -e "\"Easy-Server-Upload\" uploads files to my servers download vhost and returns the links of the files."
+        echo -e "Usage:     easy-server-upload [file1 | directory1] [ [file2 | directory2] , ...]"
+        echo -e "Example:   easy-server-upload test.txt shareme.md wallpaper-folder"
+    else
+        outputstr=""
+
+        scp -r "${@}" barzh.eu:/var/www/download/easy-upload/
+        echo -e "\n\nThere you are, here are the download links:\n"
+        for var in "${@[@]}" ; do
+            outputstr+=("${var}|:|https://download.barzh.eu/easy-upload/$(echo ${var} | sed -e 's/\s/\%20/g')\n")
+        done
+        echo -e ${outputstr} | sed 's/^ //g' | column -t -s'|'
+    fi
+}
+
+# -----------------------------------------------
+# ----- Easy-Server-Upload }}}
+# ----- LaTeX Makefile Download {{{
+# -----------------------------------------------
+
+alias 'dl-latex-makefile'='wget https://raw.githubusercontent.com/hringriin/dotfiles/master/latex/Makefile'
+
+# -----------------------------------------------
+# ----- LaTeX Makefile Download }}}
+# ----- Markdown {{{
+# -----------------------------------------------
+
+alias 'MarkDownCreate'=markDownCreate
+alias 'MarkDownCompile'=markDownCompile
+
+# -----------------------------------------------
+# ----- Markdown }}}
+# ----- Networking {{{
+# -----------------------------------------------
+
+alias 'SCAN-NETWORK'=scanNetWork
+
+# -----------------------------------------------
+# ----- Networking }}}
+# ----- Pacmatic {{{
+# -----------------------------------------------
+
 if [[ "${HOSTNAME}" != "sorth" ]] ; then
     alias 'pacman'='pacmatic'
 fi
 
-# xterm black background
-alias 'xterm'='xterm -bg black -fg white -fa "DejaVu Sans Mono Book" -fs 10'
-
-# mcabber
-if [[ ${HOSTNAME} == "botis" ]] ; then
-    alias 'mcabber-uni'='mcabber -f /Users/${USER}/.mcabber_uni/mcabberrc'
-    alias 'mcabber-ccchb'='mcabber -f /Users/${USER}/.mcabber_ccchb/mcabberrc'
-else
-    alias 'mcabber-uni'='mcabber -f /home/${USER}/.mcabber_uni/mcabberrc'
-    alias 'mcabber-ccchb'='mcabber -f /home/${USER}/.mcabber_ccchb/mcabberrc'
-fi
-
-# urxvt
-alias 'urxvt'='urxvt -bg black -fg white -fi "xfg:DejaVu Sans Mono Book"'
-
-# sorth
-alias 'mpcsorth'='mpc -h 192.168.2.35'
-
-# Stuga
-alias 'mpcstuga'='mpc -h 134.102.209.202'
-alias 'STUGA-INFORMATIK'='cd ~/Dropbox/UNI/StugA/'
-
-# GIT
-alias 'gitlog'='git log --graph --abbrev-commit --decorate --date=relative --all'
-
-# Markdown
-alias 'MarkDownCreate'=markDownCreate
-alias 'MarkDownCompile'=markDownCompile
-
-# Networking
-alias 'SCAN-NETWORK'=scanNetWork
-
-# Serverprint two sided
-alias 'serverprint'='serverprint --two-sided'
-
-# tmux
-alias ta='tmux a -t'
-alias tad='tmux a -d -t'
-alias ts='tmux new-session -s'
-alias tl='tmux ls'
-alias tq='tmux kill-session -t'
-
-# moc(p)
-alias 'mocp'='padsp mocp'
-
-# vim doc (my github dotfiles wiki)
-alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'
-
-# Calculator
-alias 'calc'='galculator'
-
-# Screen Message - Display the time
+# -----------------------------------------------
+# ----- Pacmatic }}}
+# ----- Screen Message - Display the time {{{
+# -----------------------------------------------
 # Joachim Breiter
 # http://www.joachim-breitner.de/projects
 alias 'screentime'="(while sleep 1; do date +%T; echo -e '\f'; done) | sm --foreground=#00FF00 --background=#000000 -"
@@ -68,58 +105,54 @@ alias 'trm-edit'='vim ~/TIMESCRIPT/TIMESCRIPT.bash'
 alias 'sm-red'='sm --foreground=#FF0000 --background=#111111'
 # green
 alias 'sm-green'='sm --foreground=#00FF00 --background=#000000'
+# -----------------------------------------------
+# ----- Screen Message - Display the time }}}
+# ----- Syslinux {{{
+# -----------------------------------------------
 
-# Take me to the Repositories
-alias 'REPOSITORIES'='cd ~/Repositories/'
-alias 'GITHUB'='cd ~/Repositories/github.com/'
-alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
-alias 'DOTFILES'='cd ~/Repositories/github.com/hringriin/dotfiles/repo'
+    rld-syslinux () { syslinux-install_update -iam ; }          # rebuild syslinux on current drive
 
-alias 'MIPS'='java -jar ~/Downloads/Mars4_5.jar'
+# -----------------------------------------------
+# ----- Syslinux }}}
+# ----- show video resolution {{{
+# -----------------------------------------------
 
-# make me faster :-)
-#alias 'make'='make -j8'
+alias 'video-resolution'='ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0'
 
-# LaTeX Makefile Download
-alias 'dl_latex_makefile'='wget https://raw.githubusercontent.com/hringriin/dotfiles/master/latex/Makefile'
+# -----------------------------------------------
+# ----- show video resolution }}}
+# ----- task spooler {{{
+# -----------------------------------------------
 
-#########
-# GAMES #
-#########
+alias 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
+#alias 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
 
-# Factorio 0.14.21
-function ffactorio-0-14-21 {
-    cd /home/${USER}/Games/factorio_0.14.21/factorio/bin/x64/
-    padsp ./factorio
-}
-alias 'factorio-0-14-21'='ffactorio-0-14-21'
+# -----------------------------------------------
+# ----- task spooler }}}
+# ----- tmux {{{
+# -----------------------------------------------
 
-# Factorio 0.14.22
-function ffactorio-0-14-22 {
-    cd /home/${USER}/Games/factorio_0.14.22/factorio/bin/x64/
-    padsp ./factorio
-}
-alias 'factorio-0-14-22'='ffactorio-0-14-22'
+alias ta='tmux a -t'
+alias tad='tmux a -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux ls'
+alias tq='tmux kill-session -t'
 
-# Factorio experimental
-function ffactorio-exp {
-    cd /home/${USER}/Games/factorio_experimental/factorio/bin/x64/
-    padsp ./factorio
-}
-alias 'factorio-exp'='ffactorio-exp'
+# -----------------------------------------------
+# ----- tmux }}}
+# ----- youtube-dl-stream {{{
+# -----------------------------------------------
 
-##############
-# WINE GAMES #
-##############
+youtube-dl-stream() { youtube-dl -o - "$1" | $PLAYER - ;}
 
-# World of Warcraft Vanilla (vanillagaming.org)
-alias 'wowclassic'='wine "C:\Program Files (x86)\World of Warcraft - Classic\WoW.exe"'
+# convert youtube to audio (youtube.com only)
+# -f 171 = webm audio (vorbis)
+# -f 140 = m4a (aac)
+yt2ogg() { youtube-dl -c --restrict-filenames -x --audio-format vorbis -o "%(title)s.%(ext)s" -f 171 "$@" ;}
+yt2wav() { youtube-dl -c --restrict-filenames -x --audio-format wav -o "%(title)s.%(ext)s" -f 171 "$@" ;}
+yt2mp3() { youtube-dl -c --restrict-filenames -x --audio-format mp3 -o "%(title)s.%(ext)s" -f 171 "$@" ;}
+yt2webmaudio() { youtube-dl -c --restrict-filenames -o "%(title)s.%(ext)s" -f 171 "$@" ;}
+yt2m4a() { youtube-dl -c --restrict-filenames -o "%(title)s.%(ext)s" -f 140 "$@" ;}
 
-# World of Warcraft Lich King (dalaran-wow.com)
-alias 'wowlichking'='wine "C:\Program Files (x86)\World of Warcraft - Wrath of the Lich King - v3.3.5a\WoW.exe"'
-
-# Steam
-alias 'wineSteam'='wine "C:\Program Files (x86)\Steam\Steam.exe"'
-
-# Dungeon Keeper Gold
-alias 'wineDEEPER'='wine "C:\GOG Games\Dungeon Keeper Gold\DOSBOX\DOSBox.exe" "C:\GOG Games\Dungeon Keeper Gold\DOS4GW.EXE"'
+# -----------------------------------------------
+# ----- youtube-dl-stream }}}
