@@ -6,7 +6,7 @@ reload-time 30
 #refresh-on-startup no
 #article-sort-order date-desc
 confirm-exit yes
-browser qutebrowser
+browser "qutebrowser %u"
 download-retries 4
 download-timeout 60
 #save-path ~/Downloads
@@ -79,3 +79,14 @@ bind-key ESC hard-quit
 # macro y set browser "$PLAYER $(youtube-dl -g %u)"; open-in-browser ; set browser "$BROWSER %u"
 
 #----- Hotkey }}}
+# ----- macros {{{
+# -----------------------------------------------
+
+# audio/video player
+macro p set browser "tsp mpv --force-window=yes %u" ; open-in-browser ; set browser "qutebrowser %u"
+
+# images
+macro i set browser "feh %u" ; open-in-browser ; set browser "qutebrowser %u"
+
+# -----------------------------------------------
+# ----- macros }}}
