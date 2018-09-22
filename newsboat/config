@@ -1,28 +1,59 @@
 # vim: ft=conf
-auto-reload yes
-reload-time 30
-#reload-only-visible-feeds yes
-#suppress-first-reload yes
-#refresh-on-startup no
-#article-sort-order date-desc
-confirm-exit yes
-browser "qutebrowser %u"
-download-retries 4
-download-timeout 60
-#save-path ~/Downloads
-#feedlist-format " %n %4i %11u %t -- %T"
-#articlelist-format  "%4i %f %D   %?T?|%-17T|  ?%t"
-#notify-format       "%d new articles (%n unread articles, %f unread feeds)"
-#show-read-feeds no
-#show-read-articles no
-notify-program      "/usr/bin/notify-send"
-#goto-next-feed no
-#max-items 500
-#refresh-on-startup no
-#text-width 72
-#prepopulate-query-feeds yes
 
-#----- podbeuter {{{
+# ----- general {{{
+# -----------------------------------------------
+
+#article-sort-order date-desc
+articlelist-format  "%4i | %f | %D | %-30a | %t%?T? (%T)%?"
+articlelist-title-format "%N %V -- Feed: (%u/%t) %T -- %U"
+auto-reload yes
+browser "qutebrowser %u"
+cleanup-on-quit yes
+confirm-exit yes
+cookie-cache "~/.newsboat/cookies.txt"
+datetime-format "%F | %H:%M:%S"
+dialogs-title-format "%N %V -- Dialogs"
+download-timeout 60
+download-retries 4
+display-article-progress yes
+external-url-viewer "urlview"
+feedlist-format "%3i | %n | %S | %11u | %t"
+feedlist-title-format "N %V -- Your feeds (%u unread, %t total)%?T? -- tag `%T'&?"
+filebrowser-title-format "%N %V -- %?O?Open File&Save File? -- %f"
+goto-next-feed no
+help-title-format "%N %V -- Need Hualp?!"
+highlight all "vim" color88
+history-limit 0
+html-renderer "w3m -dump -T text/html"
+itemview-title-format "%N %V -- Article '%T' (%u unread, %t total)"
+keep-articles-days 0
+mark-as-read-on-hover no
+max-browser-tabs 25
+max-items 0
+notify-format       "%d new articles (%n unread articles, %f unread feeds)"
+notify-program      "/usr/bin/notify-send"
+notify-xterm yes
+#pager "less %f"
+#prepopulate-query-feeds yes
+refresh-on-startup yes
+reload-only-visible-feeds no
+reload-threads 5
+reload-time 30
+save-path ~/.newsboat/SavedArticles
+searchresult-title-format "%N %V -- Search result (%u unread, %t total)"
+selectfilter-title-format "%N %V -- Select Filter"
+selecttag-title-format "%N %V -- Select Tag"
+show-keymap-hint yes
+show-read-articles yes
+show-read-feeds yes
+#suppress-first-reload yes
+swap-title-and-hints yes
+#text-width 72
+urlview-title-format "%N %V -- URLs"
+
+# -----------------------------------------------
+# ----- general }}}
+# ----- podbeuter {{{
 # -----------------------------------------------
 
 #download-path       "~/Downloads/%n"
@@ -33,8 +64,8 @@ notify-program      "/usr/bin/notify-send"
 # http://www.newsbeuter.org/doc/newsbeuter.html#_macro_support
 #macro E set browser "echo %u >> ~/.newsbeuter/queue" ; open ; set browser "w3m %u"
 
-#----- podbeuter }}}
-#----- color {{{
+# ----- podbeuter }}}
+# ----- color {{{
 # -----------------------------------------------
 
 # gruvbox like colors
@@ -46,8 +77,8 @@ color   listnormal_unread   color223    default     bold
 color   listfocus_unread    color239    color223    reverse bold
 color   info                color235    color223    reverse
 color   article             color223    default
-#----- color }}}
-#----- Hotkey {{{
+# ----- color }}}
+# ----- Hotkey {{{
 # -----------------------------------------------
 
 # vim like navigation
@@ -65,28 +96,22 @@ bind-key I rev-sort
 bind-key g home all
 bind-key G end all
 
-unbind-key l
-bind-key l open
-bind-key h quit
-bind-key ESC hard-quit
+#unbind-key l
+unbind-key ^K
 
-# use macro prefix key ( default: , )
-#macro i set browser "$IMAGEVIEWER %u"; open-in-browser ; set browser "$BROWSER %u"
-#macro o set browser "$BROWSERCLI %u"; open-in-browser ; set browser "$BROWSER %u"
-#macro m set browser "$PLAYER %u"; open-in-browser ; set browser "$BROWSER %u"
-#macro r set browser "rtv -l %u"; open-in-browser ; set browser "$BROWSER %u"
-
-# macro y set browser "$PLAYER $(youtube-dl -g %u)"; open-in-browser ; set browser "$BROWSER %u"
-
-#----- Hotkey }}}
+# ----- Hotkey }}}
 # ----- macros {{{
 # -----------------------------------------------
 
+# use macro prefix key ( default: , )
 # audio/video player
 macro p set browser "tsp mpv --force-window=yes %u" ; open-in-browser ; set browser "qutebrowser %u"
 
 # images
 macro i set browser "feh %u" ; open-in-browser ; set browser "qutebrowser %u"
+
+# clibrowser
+macro o set browser "w3m %u"; open-in-browser ; set browser "$BROWSER %u"
 
 # -----------------------------------------------
 # ----- macros }}}
