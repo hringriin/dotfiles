@@ -13,11 +13,11 @@ alias 'mcabber-ccchb'='mcabber -f ${HOME}/.mcabber_ccchb/mcabberrc'             
 alias 'mocp'='padsp mocp'                                                                       # mocp with pulse audio
 alias 'mount'='mount | column -t'                                                               # align in column
 alias 'serverprint'='serverprint --two-sided'                                                   # serverprint but two-sided
-alias 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                        # black background
+alias -g 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                        # black background
 alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'           # open my dotfiles-wiki
 alias 'wttr'='curl wttr.in'                                                                     # weather
 alias 'wttr-help'='curl wttr.in/:help'                                                          # help for weather
-alias 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                     # black background
+alias -g 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                     # black background
 alias 'yay'='yay -a --answeredit None'                                                          # only from AUR, no questions
 alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
 
@@ -124,8 +124,8 @@ alias 'video-resolution'='ffprobe -v error -select_streams v:0 -show_entries str
 # ----- task spooler {{{
 # -----------------------------------------------
 
-alias 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
-#alias 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
+alias -g 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
+alias -g 'tsp-rss'='TS_SOCKET=/tmp/tsp-rss tsp'
 
 # -----------------------------------------------
 # ----- task spooler }}}
