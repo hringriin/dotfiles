@@ -184,6 +184,7 @@ settings:
     '*://www.facebook.com/*': true
     '*://www.gog.com/*': true
     '*://www.imdb.com/*': true
+    '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
     global: false
