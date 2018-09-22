@@ -61,12 +61,10 @@ windows:
     - Chat:
         panes:
             - mosh barzh.eu -- tmux a -t CHAT
-    - dotfiles:
-        layout: even-horizontal
+    - RSS:
         panes:
-            - cd ~/Repositories/github.com/hringriin/dotfiles/repo
-            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki
-    - wiki:
+            - newsboat
+    - VimWiki:
         panes:
             - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear ; vim Home.md
     #- music:
