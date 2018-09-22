@@ -1,0 +1,81 @@
+# vim: ft=conf
+auto-reload yes
+reload-time 30
+#reload-only-visible-feeds yes
+#suppress-first-reload yes
+#refresh-on-startup no
+#article-sort-order date-desc
+confirm-exit yes
+browser qutebrowser
+download-retries 4
+download-timeout 60
+#save-path ~/Downloads
+#feedlist-format " %n %4i %11u %t -- %T"
+#articlelist-format  "%4i %f %D   %?T?|%-17T|  ?%t"
+#notify-format       "%d new articles (%n unread articles, %f unread feeds)"
+#show-read-feeds no
+#show-read-articles no
+notify-program      "/usr/bin/notify-send"
+#goto-next-feed no
+#max-items 500
+#refresh-on-startup no
+#text-width 72
+#prepopulate-query-feeds yes
+
+#----- podbeuter {{{
+# -----------------------------------------------
+
+#download-path       "~/Downloads/%n"
+#max-downloads       2
+#player              "$PLAYER"
+
+# send any links to queue in URL view
+# http://www.newsbeuter.org/doc/newsbeuter.html#_macro_support
+#macro E set browser "echo %u >> ~/.newsbeuter/queue" ; open ; set browser "w3m %u"
+
+#----- podbeuter }}}
+#----- color {{{
+# -----------------------------------------------
+
+# gruvbox like colors
+
+color   background          color208    default
+color   listnormal          color223    default
+color   listfocus           color239    color223    reverse
+color   listnormal_unread   color223    default     bold
+color   listfocus_unread    color239    color223    reverse bold
+color   info                color235    color223    reverse
+color   article             color223    default
+#----- color }}}
+#----- Hotkey {{{
+# -----------------------------------------------
+
+# vim like navigation
+bind-key j down
+bind-key k up
+bind-key m toggle-show-read-feeds
+bind-key ^D pagedown
+bind-key ^U pageup
+bind-key / open-search tagselection
+
+
+bind-key i sort
+bind-key I rev-sort
+
+bind-key g home all
+bind-key G end all
+
+unbind-key l
+bind-key l open
+bind-key h quit
+bind-key ESC hard-quit
+
+# use macro prefix key ( default: , )
+#macro i set browser "$IMAGEVIEWER %u"; open-in-browser ; set browser "$BROWSER %u"
+#macro o set browser "$BROWSERCLI %u"; open-in-browser ; set browser "$BROWSER %u"
+#macro m set browser "$PLAYER %u"; open-in-browser ; set browser "$BROWSER %u"
+#macro r set browser "rtv -l %u"; open-in-browser ; set browser "$BROWSER %u"
+
+# macro y set browser "$PLAYER $(youtube-dl -g %u)"; open-in-browser ; set browser "$BROWSER %u"
+
+#----- Hotkey }}}

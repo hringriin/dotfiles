@@ -406,6 +406,9 @@ function linkConfigs()
     # neofetch
     ${repoPath}/neofetch/create_config.bash
 
+    # newsboat
+    ${repoPath}/newsboat/create_config.bash
+
     # qutebrowser
     ${repoPath}/qutebrowser/create_config.bash
 
