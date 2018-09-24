@@ -13,6 +13,8 @@ settings:
     global: 10000
   auto_save.session:
     global: true
+  backend:
+    global: webengine
   bindings.commands:
     global:
       normal:
@@ -184,6 +186,7 @@ settings:
     '*://www.facebook.com/*': true
     '*://www.gog.com/*': true
     '*://www.imdb.com/*': true
+    '*://www.ted.com/*': true
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
@@ -193,6 +196,8 @@ settings:
     https://wdcloud.fritz.box/UI/: true
     https://web.threema.ch/#!/welcome: true
   content.media_capture:
+    global: false
+  content.pdfjs:
     global: false
   content.plugins:
     global: false
@@ -280,7 +285,7 @@ settings:
   tabs.position:
     global: left
   tabs.select_on_remove:
-    global: last-used
+    global: prev
   tabs.show:
     global: multiple
   tabs.title.format:
