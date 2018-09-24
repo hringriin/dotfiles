@@ -420,7 +420,7 @@ set ttyfast
     set showmatch
 
     " Highlight lines longer than 120 characters
-    :2mat WarningMsg '\%>120v.'
+    "autocmd Filetype md :2mat WarningMsg '\%>120v.'
 
     " Highlight trailing whitespaces
     match ErrorMsg '\s\+$'
