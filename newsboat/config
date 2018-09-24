@@ -30,7 +30,7 @@ keep-articles-days 0
 mark-as-read-on-hover no
 max-browser-tabs 25
 max-items 0
-notify-always yes
+#notify-always yes
 notify-beep yes
 notify-screen yes
 notify-format       "%d new articles (%n unread articles, %f unread feeds)"
