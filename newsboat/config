@@ -22,7 +22,7 @@ feedlist-title-format "N %V -- Your feeds (%u unread, %t total)%?T? -- tag `%T'&
 filebrowser-title-format "%N %V -- %?O?Open File&Save File? -- %f"
 goto-next-feed no
 help-title-format "%N %V -- Need Hualp?!"
-highlight all "vim" color88
+highlight all "vim" color167
 history-limit 0
 html-renderer "w3m -dump -T text/html"
 itemview-title-format "%N %V -- Article '%T' (%u unread, %t total)"
@@ -30,6 +30,9 @@ keep-articles-days 0
 mark-as-read-on-hover no
 max-browser-tabs 25
 max-items 0
+notify-always yes
+notify-beep yes
+notify-screen yes
 notify-format       "%d new articles (%n unread articles, %f unread feeds)"
 notify-program      "/usr/bin/notify-send"
 notify-xterm yes
@@ -72,9 +75,9 @@ urlview-title-format "%N %V -- URLs"
 
 color   background          color208    default
 color   listnormal          color223    default
-color   listfocus           color239    color223    reverse
-color   listnormal_unread   color223    default     bold
-color   listfocus_unread    color239    color223    reverse bold
+color   listfocus           color239    color142    reverse
+color   listnormal_unread   color72     default     bold
+color   listfocus_unread    color239    color142    reverse bold
 color   info                color235    color223    reverse
 color   article             color223    default
 # ----- color }}}
