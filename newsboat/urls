@@ -1,26 +1,29 @@
-https://www.archlinux.org/feeds/packages/
+http://alternativlos.org/ogg.rss
+#https://www.archlinux.org/feeds/packages/
 https://www.archlinux.org/feeds/news/
 #https://wiki.archlinux.org/api.php?hidebots=1&days=7&limit=50&hidecategorization=1&action=feedrecentchanges&feedformat=rss*/
 http://www.awkwardzombie.com/awkward.php
-http://feeds2.feedburner.com/Command-line-fu "~Command-Line-Fu"
-http://feeds.feedburner.com/labnol
+https://feeds2.feedburner.com/Command-line-fu "~Command-Line-Fu"
+https://feeds.feedburner.com/labnol
 https://www.comicsrss.com/rss/dilbert-classics.rss
 #http://www.engadget.com/rss.xml
-http://feeds.feedburner.com/Explosm "~Cyanide and Happiness"
-http://blog.fefe.de/rss.xml?html interesting conspiracy news "cool stuff"
-http://feeds.howtogeek.com/HowToGeek
+https://feeds.feedburner.com/Explosm "~Cyanide and Happiness"
+https://blog.fefe.de/rss.xml?html
+https://feeds.howtogeek.com/HowToGeek
 http://blog.humblebundle.com/rss
-http://feeds.feedburner.com/LookingForGroup
+https://feeds.feedburner.com/LookingForGroup
 #https://www.lifehack.org/feed
 #http://lifehacker.com/rss
-http://thepunchlineismachismo.com/feed
+https://thepunchlineismachismo.com/feed
 #http://feeds.mashable.com/Mashable
-http://oglaf.com/feeds/rss/
+https://oglaf.com/feeds/rss/
 http://www.giantitp.com/comics/oots.rss
 https://podcastohnenamen.podigee.io/feed/aac
-http://www.smbc-comics.com/rss.php
+#https://www.smbc-comics.com/rss.php
 #http://rss.slashdot.org/Slashdot/slashdot
-http://feeds.feedburner.com/TEDTalks_video
+#https://schmacks.de/feeds/ruthe.php?mode=feed
+https://feeds.feedburner.com/TEDTalks_video
 https://twitrss.me/twitter_user_to_rss/?user=climagic "~Twitter: Climagic"
 https://twitrss.me/twitter_user_to_rss/?user=omgfacts "~Twitter: OMG Facts"
+http://feeds.vimgolf.com/latest-challenges
 https://xkcd.com/rss.xml "~xkcd"
