@@ -118,3 +118,7 @@ exec --no-startup-id tider
 # needs a proper key binding
 #bindsym XF86Display exec arandr
 
+# Enable / Disable Xrandr Outputs
+bindsym $mod+Control+F1 exec xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DP-0
+bindsym $mod+Control+F2 exec xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-D-0 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-D-0
+bindsym $mod+Control+F3 exec xrandr --output DP-0 --off --output DVI-D-0 --mode 1920x1080 --rate 60 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-D-0
