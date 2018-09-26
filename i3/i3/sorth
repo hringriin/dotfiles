@@ -12,10 +12,13 @@ bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
 # top status bar (battery, load, time, volume)
 bar {
+    tray_output LVDS1
+    position top
     mode hide
     separator_symbol $sep-symbol
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
+
     colors {
         # Whole color setting
         background          $bar-background
@@ -28,19 +31,17 @@ bar {
         inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
         urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
     }
-
-    # Tray
-    tray_output LVDS1
-
-    position top
 }
 
 # bottom status bar (cpu temp, ipv6 address, ethernet, wifi, vpn)
 bar {
+    tray_output none
+    position bottom
     mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
     status_command i3status --config ~/.config/i3status/bottom_bar
+
     colors {
         # Whole color setting
         background          $bar-background
@@ -53,11 +54,6 @@ bar {
         inactive_workspace  $workspace-inactive-border  $workspace-inactive-background  $workspace-inactive-text
         urgent_workspace    $workspace-urgent-border    $workspace-urgent-background    $workspace-urgent-text
     }
-
-    # Tray
-    tray_output none
-
-    position bottom
 }
 
 # Media Player Controls
