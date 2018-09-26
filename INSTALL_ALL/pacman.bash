@@ -123,7 +123,6 @@ neededProgrammes=(
     'variety'
     'vivaldi-snapshot'
     'vivaldi-snapshot-ffmpeg-codecs'
-    'vlc'
     'vpnc'
     'w3m'
     'weechat'
