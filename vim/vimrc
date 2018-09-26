@@ -336,7 +336,7 @@ set ttyfast
     " }}}
 
     " html {{{
-    autocmd Filetype html inoremap ,e <div><Enter><h3><Enter><++><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
+    autocmd Filetype xhtml,html inoremap ,e <div><Enter><h3><Enter><a name="<++>" href="#"><++></a><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
 
     inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
     vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
