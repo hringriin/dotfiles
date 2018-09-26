@@ -543,6 +543,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel com.gmail.koester.joschka-Strato
+Master :com.gmail.koester.joschka-remote:INBOX/"Strato"
+slave  :com.gmail.koester.joschka-local:Strato
+Create Both
+Expunge Both
+SyncState *
+
 Channel com.gmail.koester.joschka-Thrustmaster
 Master :com.gmail.koester.joschka-remote:INBOX/"Thrustmaster"
 slave  :com.gmail.koester.joschka-local:Thrustmaster
