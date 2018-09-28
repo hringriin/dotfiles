@@ -186,6 +186,7 @@ settings:
     '*://www.facebook.com/*': true
     '*://www.gog.com/*': true
     '*://www.imdb.com/*': true
+    '*://www.netflix.com/*': true
     '*://www.ted.com/*': true
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
@@ -306,6 +307,7 @@ settings:
     global:
       DEFAULT: https://www.google.de/search?q={}
       arch: https://wiki.archlinux.org/?search={}
+      aur: https://aur.archlinux.org/packages/?O=0&K={}
       dict: http://www.dict.cc/?s={}
       git: https://github.com/search?q={}
       imdb: https://www.imdb.com/find?q={}
