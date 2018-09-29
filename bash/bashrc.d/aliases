@@ -28,6 +28,15 @@ alias 'packer'='yay -a --answeredit None'                                       
 
 alias 'lsx'='ls -lahX'
 
+# ----- Funny / Stupid {{{
+# -----------------------------------------------
+
+alias 'holdmybeer'='sudo'
+
+# -----------------------------------------------
+# ----- Funny / Stupid }}}
+
+
 # -----------------------------------------------
 # ----- Alias (Custom) }}}
 # ----- dir shortcuts {{{
