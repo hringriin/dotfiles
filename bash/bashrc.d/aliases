@@ -11,14 +11,12 @@ alias 'free'='free -h'                                                          
 alias 'mcabber-uni'='mcabber -f ${HOME}/.mcabber_uni/mcabberrc'                                 # mcabber - uni account
 alias 'mcabber-ccchb'='mcabber -f ${HOME}/.mcabber_ccchb/mcabberrc'                             # mcabber - private account
 alias 'mocp'='padsp mocp'                                                                       # mocp with pulse audio
-alias 'mount'='mount | column -t'                                                               # align in column
+#alias 'mount'='mount | column -t'                                                               # align in column
 alias 'serverprint'='serverprint --two-sided'                                                   # serverprint but two-sided
-alias -g 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                        # black background
+alias -g 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                     # black background
 alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'           # open my dotfiles-wiki
-alias 'wttr'='curl wttr.in'                                                                     # weather
-alias 'wttr-help'='curl wttr.in/:help'                                                          # help for weather
-alias -g 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                     # black background
-alias 'yay'='yay -a --answeredit None'                                                          # only from AUR, no questions
+alias -g 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                  # black background
+alias 'yay'='yay -a --answerclean All --answeredit None'                                        # only from AUR, no questions, clean build
 alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
 
 # -----------------------------------------------
@@ -152,7 +150,7 @@ alias tq='tmux kill-session -t'
 # ----- youtube-dl-stream {{{
 # -----------------------------------------------
 
-youtube-dl-stream() { youtube-dl -o - "$1" | $PLAYER - ;}
+youtube-dl-stream() { youtube-dl -o - "$1" | mpv - ;}
 
 # convert youtube to audio (youtube.com only)
 # -f 171 = webm audio (vorbis)
