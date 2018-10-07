@@ -182,6 +182,7 @@ settings:
     '*://*.barzh.eu/*': true
     '*://*.tri-optimum.eu/*': true
     '*://9gag.com/*': true
+    '*://config.stratoserver.net/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
     '*://twitter.com/*': true
@@ -251,7 +252,7 @@ settings:
   qt.highdpi:
     global: true
   scrolling.bar:
-    global: false
+    global: never
   scrolling.smooth:
     global: true
   session.lazy_restore:
