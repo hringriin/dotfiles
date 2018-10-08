@@ -14,6 +14,7 @@ neededYayProgrammes=(
     'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
     'otf-fantasque-sans-mono'
+    'qt5-webengine-widevine'
     'rofi-twitch'
     'spotify'
     'tider-git'
