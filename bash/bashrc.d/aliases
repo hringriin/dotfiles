@@ -24,7 +24,8 @@ alias 'packer'='yay -a --answeredit None'                                       
 # ----- Alias (Custom) {{{
 # -----------------------------------------------
 
-alias 'lsx'='ls -lahX'
+alias 'lsx'='ls -lahX'                                                                          # sort by entry extension
+alias 'vnc-lulila'='vncviewer -passwd ~/.vnc/passwd lulila'                                     # vncviewer to my raspberry pi (kodi)
 
 # ----- Funny / Stupid {{{
 # -----------------------------------------------
