@@ -16,7 +16,7 @@ alias 'serverprint'='serverprint --two-sided'                                   
 alias -g 'urxvt'='urxvt -bg black -fg white -fi "xfg:Hack"'                                     # black background
 alias 'vimwiki'='vim ${HOME}/Repositories/github.com/hringriin/dotfiles/wiki/Home.md'           # open my dotfiles-wiki
 alias -g 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                                  # black background
-alias 'yay'='yay -a --answerclean All --answeredit None'                                        # only from AUR, no questions, clean build
+alias 'yay'='yay -a --answerclean All --answeredit None --answerdiff None'                      # only from AUR, no questions, clean build
 alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
 
 # -----------------------------------------------
