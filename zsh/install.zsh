@@ -16,8 +16,8 @@ echo "FIRST"
 cat ${zsh} | sed -e 's/ZSH_THEME=".*"/ZSH_THEME="hringriin"/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
-echo "SECOND"
-cat ${zsh} | sed -e 's/# CASE_SENSITIVE/CASE_SENSITIVE/g' > ${tmpf}
+echo "setting hyphen insensitive"
+cat ${zsh} | sed -e 's/# HYPHEN_INSENSITIVE/HYPHEN_INSENSITIVE/g' > ${tmpf}
 cp ${tmpf} ${zsh}
 
 echo "THIRD"
