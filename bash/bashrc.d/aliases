@@ -28,6 +28,25 @@ alias 'lsx'='ls -lahX'                                                          
 alias 'vnc-server-start'='x11vnc -display :0 -clip 1366x768 -multiptr -forever -passwdfile ~/.vnc/passwd'   # start vnc-server on local machine
 alias 'vnc-lulila'='vncviewer -passwd ~/.vnc/passwd lulila'                                                 # vncviewer to my raspberry pi (kodi)
 
+# ----- configs {{{
+# -----------------------------------------------
+
+# ----- functions {{{
+# -----------------------------------------------
+
+#TODO
+
+# ----- functions }}}
+# -----------------------------------------------
+
+alias 'cfg-alias'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases'
+alias 'cfg-i3'="vim -O ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/config ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/$(hostname)"
+alias 'cfg-tmux'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/tmux.conf'
+alias 'cfg-vim'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/vim/vimrc'
+alias 'cfg-zsh'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/plugins/hringriin/hringriin.plugin.zsh'
+
+# -----------------------------------------------
+# ----- configs }}}
 # ----- Funny / Stupid {{{
 # -----------------------------------------------
 
