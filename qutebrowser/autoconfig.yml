@@ -18,11 +18,14 @@ settings:
   bindings.commands:
     global:
       normal:
+        ',fb': open -t https://fritz.box
         <Ctrl+d>: run-with-count 7 scroll down
         <Ctrl+u>: run-with-count 7 scroll up
         <F1>: config-cycle -t tabs.position left top
         <F2>: config-cycle -t tabs.show never multiple
         SS: open -t qute://settings
+        YS: message-info "Opening (spooled) {url} with mpv!" ;; spawn --userscript
+          ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
         YT: message-info "Opening {url} with mpv!" ;; spawn mpv {url}
         co: null
   colors.completion.category.bg:
