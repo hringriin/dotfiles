@@ -154,6 +154,7 @@ alias 'video-resolution'='ffprobe -v error -select_streams v:0 -show_entries str
 
 alias -g 'tsp-ranger'='TS_SOCKET=/tmp/tsp-ranger tsp'
 alias -g 'tsp-rss'='TS_SOCKET=/tmp/tsp-rss tsp'
+alias -g 'tsp-youtube'='TS_SOCKET=/tmp/tsp-youtube tsp'
 
 # -----------------------------------------------
 # ----- task spooler }}}
