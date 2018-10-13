@@ -34,7 +34,7 @@ alias 'vnc-lulila'='vncviewer -passwd ~/.vnc/passwd lulila'                     
 # ----- functions {{{
 # -----------------------------------------------
 
-#TODO
+function mdx () { mkdir -p $1 && cd $_ ; }                                                                  # create and enter directory
 
 # ----- functions }}}
 # -----------------------------------------------
