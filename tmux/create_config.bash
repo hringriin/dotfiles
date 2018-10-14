@@ -18,7 +18,7 @@ linkFiles ()
     ln -vsf ${repoPath}/tmux/tmux.conf ${TMUXPATH}.conf
 }
 
-tmuxinator ()
+installtmuxinator ()
 {
     if [[ ! $(uname -r)  == *"icrosoft"* ]] ; then
         if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
@@ -33,7 +33,7 @@ tmuxinator ()
         fi
     fi
 
-    rm -rf ${HOME}/.config/tmuxinator
+    rm -rfv ${HOME}/.config/tmuxinator
     ln -sfv ${repoPath}/tmux/tmuxinator-conf ${HOME}/.config/tmuxinator
 }
 
@@ -74,7 +74,7 @@ main ()
     checkDir
     linkFiles
     tpm
-    tmuxinator
+    installtmuxinator
 }
 
 main
