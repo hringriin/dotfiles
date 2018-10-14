@@ -33,6 +33,7 @@ installtmuxinator ()
         fi
     fi
 
+    sleep 2 ; echo "removing tmuxinator config files" ; sleep 2
     rm -rfv ${HOME}/.config/tmuxinator
     ln -sfv ${repoPath}/tmux/tmuxinator-conf ${HOME}/.config/tmuxinator
 }
