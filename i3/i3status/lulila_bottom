@@ -1,0 +1,32 @@
+order += "disk /boot"
+order += "disk /"
+order += "ethernet eth0"
+order += "ethernet tun0"
+
+disk "/boot" {
+    format = "Boot   : %avail"
+    prefix_type = "binary"
+    low_threshold = 20
+    format_below_threshold = "Boot   : %avail"
+    threshold_type = percentage_free
+}
+
+disk "/" {
+    format = "Root   : %avail"
+    prefix_type = "binary"
+    low_threshold = 20
+    format_below_threshold = "Root   : %avail"
+    threshold_type = percentage_free
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires root privileges
+    format_up = "  %ip %speed"
+    format_down = "  down"
+}
+
+ethernet wlan0 {
+    # if you use %speed, i3status requires root privileges
+    format_up = "  %ip %speed"
+    format_down = "  down"
+}
