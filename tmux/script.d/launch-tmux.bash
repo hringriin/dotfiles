@@ -5,4 +5,26 @@
 # session will be started or attached via tmuxinator start. If the session
 # exists and is attached, a new nameless tmux session will be started.
 
-${HOME}/.gem/ruby/2.5.0/bin/tmuxinator start main
+muxPath=
+
+# check, if the path exists (tmuxinator is installed) and set the variable
+# muxPath respectively
+if [[ -e ${HOME}/.gem/ruby/2.5.0/bin/tmuxinator ]] ; then
+    muxPath="${HOME}/.gem/ruby/2.5.0/bin/tmuxinator"
+elif [[ -e /usr/local/bin/tmuxinator ]] ; then
+    muxPath="/usr/local/bin/tmuxinator"
+else
+    if [[ $(command -v tmuxinator) > /dev/null ]] ; then
+        muxPath=$(whereis tmuxinator | awk '{print $2}')
+    fi
+fi
+
+
+# start either the main tmux-session or just the terminal
+if [[ ${HOSTNAME} == "lulila" || ${HOST} == "lulila" ]] ; then
+    ${muxPath} start main-lulila
+else
+    ${muxPath} start main
+fi
+
+exit 0
