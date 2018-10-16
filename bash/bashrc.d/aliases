@@ -36,6 +36,18 @@ alias 'vnc-lulila'='vncviewer -passwd ~/.vnc/passwd lulila'                     
 
 function mdx () { mkdir -p $1 && cd $_ ; }                                                                  # create and enter directory
 
+# update ubuntu/debian (aptitude)
+if [[ $(uname -a) == *"arm"* ]] && [[ $(uname -a) == *"lulila"* ]] ; then
+    function ubuntu-update ()
+    {
+        apt-get update
+        apt-get upgrade
+        apt-get dist-upgrade
+        apt-get autoremove
+        apt-get autoclean
+    }
+fi
+
 # ----- functions }}}
 # -----------------------------------------------
 
