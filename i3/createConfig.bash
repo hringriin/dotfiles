@@ -11,6 +11,12 @@ source INSTALL_ALL/config.bash
 
 username=$(echo ${USER})
 
+if [[ ${HOSTNAME} >/dev/null ]] ; then
+    thisHostname=$(echo ${HOSTNAME})
+else
+    thisHostname=$(echo ${HOSTE})
+fi
+
 # Setting Variables
 I3MAINPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
 I3STATUSPATH="${I3MAINPATH}/../i3status"
@@ -19,7 +25,7 @@ I3MAINGLOBAL="config"                           # main config file
 I3STATUSGLOBALTOP="top_bar"                     # top status bar
 I3STATUSGLOBALBOTTOM="bottom_bar"               # bottom status bar
 
-I3MAINHOST=$(echo ${HOSTNAME})                  # host specific i3 config
+I3MAINHOST=$(echo ${thisHostname})                  # host specific i3 config
 I3STATUSHOSTTOP="${I3MAINHOST}_top"             # host specific top status bar
 I3STATUSHOSTBOTTOM="${I3MAINHOST}_bottom"       # host specific bottom status bar
 
@@ -36,8 +42,8 @@ I3BLOCK="${I3MAINPATH}/../i3blocks"
 # sets up i3blocks cfg
 function blockscfg
 {
-    cp -vf ${I3BLOCK}/${HOSTNAME}_bottom ${HOME}/.config/i3blocks/
-    cp -vf ${I3BLOCK}/${HOSTNAME}_top ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/${thisHostname}_bottom ${HOME}/.config/i3blocks/
+    cp -vf ${I3BLOCK}/${thisHostname}_top ${HOME}/.config/i3blocks/
     if [[ ! -d ${HOME}/.config/i3blocks/i3blocks-gate ]] ; then
         mkdir -p ${HOME}/.config/i3blocks/i3blocks-gate
     fi
