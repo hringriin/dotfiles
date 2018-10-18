@@ -19,6 +19,8 @@ settings:
     global:
       normal:
         ',fb': open -t https://fritz.box
+        ;S: hint --rapid links userscript video-spool.bash
+        ;s: hint links userscript video-spool.bash
         <Ctrl+d>: run-with-count 7 scroll down
         <Ctrl+u>: run-with-count 7 scroll up
         <F1>: config-cycle -t tabs.position left top
