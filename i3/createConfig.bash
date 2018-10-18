@@ -11,11 +11,12 @@ source INSTALL_ALL/config.bash
 
 username=$(echo ${USER})
 
-if [[ ${HOSTNAME} >/dev/null ]] ; then
-    thisHostname=$(echo ${HOSTNAME})
-else
-    thisHostname=$(echo ${HOSTE})
+if [[ ${HOST} > ${HOSTNAME} ]] ; then
+    thisHostname="$(echo ${HOST})"
+elif [[ ${HOST} < ${HOSTNAME} ]] ; then
+    thisHostname="$(echo ${HOSTNAME})"
 fi
+
 
 # Setting Variables
 I3MAINPATH="/home/${username}/Repositories/github.com/hringriin/dotfiles/repo/i3/i3"
