@@ -26,7 +26,7 @@ installtmuxinator ()
             export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
         else
             echo "Installing tmuxinator ..."
-            gem install tmuxinator
+            sudo gem install tmuxinator
             export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
             tmuxinator doctor
             read -p
