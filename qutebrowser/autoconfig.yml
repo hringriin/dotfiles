@@ -28,7 +28,7 @@ settings:
         SS: open -t qute://settings
         YS: message-info "Opening (spooled) {url} with mpv!" ;; spawn --userscript
           ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
-        YT: message-info "Opening {url} with mpv!" ;; spawn mpv {url}
+        YT: message-info "Opening {url} with mpv!" ;; spawn --userscript video-spool.bash
         co: null
   colors.completion.category.bg:
     global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #282828, stop:1 #1d2021)'
