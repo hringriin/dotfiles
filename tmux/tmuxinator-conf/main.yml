@@ -13,7 +13,7 @@ name: main
 # Runs on project start, always
 # on_project_start: command
 # Run on project start, the first time
-on_project_first_start: ssh-add ~/.ssh/barzh.eu
+on_project_first_start: ssh-add ~/.ssh/{barzh.eu,hringriin}
 # Run on project start, after the first time
 # on_project_restart: command
 # Run on project exit ( detaching from tmux session )
