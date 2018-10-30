@@ -36,19 +36,24 @@ markup=pango        # for colors
 #signal=10
 
 [work]
-label=Tracker:
+label= 
 command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
 interval=10
 markup=pango
 
+[mail]
+command=~/.config/i3blocks/i3blocks-gate/mail.sh
+interval=300
+markup=pango
+
 [disk]
-label=Boot  :
+label= /boot :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /boot
 interval=60
 markup=pango
 
 [disk]
-label=Root  :
+label= / :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -r /
 interval=60
 markup=pango

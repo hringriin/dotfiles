@@ -30,19 +30,30 @@ separator_block_width=15
 interval=10
 markup=pango        # for colors
 
+[work]
+label= 
+command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
+interval=10
+markup=pango
+
+[mail]
+command=~/.config/i3blocks/i3blocks-gate/mail.sh
+interval=300
+markup=pango
+
 [mediaplayer]
 command=~/.config/i3blocks/i3blocks-gate/mocp.sh $BLOCK_BUTTON
 interval=5
 signal=10
 
 [disk]
-label=Boot  :
+label= /boot :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /boot
 interval=60
 markup=pango
 
 [disk]
-label=Root  :
+label= / :
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
 interval=60
 markup=pango
