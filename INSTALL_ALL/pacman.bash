@@ -20,6 +20,7 @@ neededProgrammes=(
     'cups'
     'cups-pdf'
     'curl'
+    'etckeeper'
     'expac'
     'fakeroot'
     'file'
