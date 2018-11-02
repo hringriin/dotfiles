@@ -16,6 +16,7 @@ neededYayProgrammes=(
     'otf-fantasque-sans-mono'
     'qt5-webengine-widevine'
     'rofi-twitch'
+    'samsung-unified-driver'
     'spotify'
     'tider-git'
     'toilet'
