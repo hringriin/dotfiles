@@ -208,7 +208,7 @@ function installTexlive()
         echo -e "\n\nInstalling texlive now ...\n\n"
         sleep 1
         if pacman -Qi texlive-core &> /dev/null ; then
-            su -c "pacman -S $(pacman -Ssq texlive) sage" root
+            su -c "pacman -S $(\pacman -Ssq texlive) sage" root
         else
             echo -e "Texlive is installed"
         fi
