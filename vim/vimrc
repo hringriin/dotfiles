@@ -356,8 +356,6 @@ set ttyfast
         autocmd Filetype tex inoremap ...       \ldots
         " Misc }}}
 
-
-
         " text decoration {{{
         autocmd Filetype tex inoremap ,bf       \textbf{}<Space><++><ESC>T{i
         autocmd Filetype tex inoremap ,it       \textit{}<Space><++><ESC>T{i
@@ -399,6 +397,7 @@ set ttyfast
         " decoration {{{
         autocmd Filetype markdown,md,rmd,vimwiki inoremap ,bf       ****<Space><++><ESC>F*hi
         autocmd Filetype markdown,md,rmd,vimwiki inoremap ,em       **<Space><++><ESC>F*i
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,bfem     ******<Space><++><ESC>F*2hi
         autocmd Filetype markdown,md,rmd,vimwiki inoremap ,st       ~~~~<Space><++><ESC>F~hi
         " decoration }}}
 
@@ -409,7 +408,9 @@ set ttyfast
         " headlines }}}
 
         " rmarkdown {{{
+        " compile
         autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+        " open pdf
         autocmd Filetype rmd nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
             " headlines {{{
@@ -428,7 +429,6 @@ set ttyfast
         " rmarkdown }}}
 
     " markdown }}}
-
 
     " html {{{
         " umlauts, accents, ... {{{
