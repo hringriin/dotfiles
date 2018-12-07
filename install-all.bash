@@ -13,6 +13,7 @@
 # 2: incorrect values entered
 # 3: user will not be added to sudoers file
 # 4: user tried to install packer
+# 5: cd (change directory) failed
 
 # source config files
 source INSTALL_ALL/config.bash
@@ -134,7 +135,7 @@ function checkNeededYay()
             #do
                 #packer --noedit --auronly --noconfirm -S ${var}
             #done
-            yay -a --answerclean All --answerdiff None --answeredit None -S - < ${tmpDir}/${missingPackerList}
+            yay -a --answerclean All --answerdiff None --answeredit None -S - < ${tmpDir}/${missingYayList}
         elif [[ ${instMissPrg} == "n" || ${instMissPrg} == "N" || ${instMissPrg} == "" ]] ; then
             echo -e "\n\e[93m!!! There are missing programmes !!!"
             sleep 1
@@ -312,9 +313,9 @@ function installYay()
 
         wget -O ${tmpDir}/yay/yay.tar.gz hhttps://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
         wget -O ${tmpDir}/yay/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay
-        cd ${tmpDir}/yay
+        cd ${tmpDir}/yay || exit 5
         makepkg -si
-        cd -
+        cd - || exit 5
     fi
     echo -e "\n\n ... done installing yay!\n\n"
 }
@@ -337,9 +338,9 @@ function installPacker()
         su -c "pacman -S wget" root
         wget -O ${tmpDir}/packer/packer.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/packer.tar.gz
         wget -O ${tmpDir}/packer/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
-        cd ${tmpDir}/packer
+        cd ${tmpDir}/packer || exit 5
         makepkg -si
-        cd -
+        cd - || exit 5
     fi
     echo -e "\n\n ... done installing packer!\n\n"
 }
@@ -476,7 +477,7 @@ function systemdServicesEnable()
         "ntpd.service"
     )
 
-    UserServicesToEnable=(
+    userServicesToEnable=(
         #"redshift-gtk.service"
     )
 
