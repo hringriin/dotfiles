@@ -316,6 +316,16 @@ set ttyfast
 
 " Filetype Options {{{
 
+    " press <leader><Space> to select the next <++> tag in the document, delete it and place the cursor at its former beginning position of
+    " the <++> tag.
+    inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+    vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
+    map <leader><Space> <Esc>/<++><Enter>"_c4l
+
+    " delete trailing whitespaces and convert tabs to whitespaces when opening/saving a buffer
+    autocmd Filetype markdown,md,rmd,vimwiki autocmd BufWinEnter,BufWritePre <buffer> retab
+    autocmd Filetype tex,html,php,xhtml autocmd BufWinEnter,BufWritePre <buffer> retab | call TrailingWhitespaces()
+
     " lua {{{
     autocmd FileType lua setlocal shiftwidth=2
     autocmd FileType lua setlocal tabstop=2
@@ -327,20 +337,143 @@ set ttyfast
     " }}}
 
     " LaTeX {{{
-    " Press F12 to trigger LaTeX Makefile and open pdf
+    " Press F12 to trigger LaTeX Makefile and compile the pdf
     autocmd Filetype tex nnoremap <buffer> <F12> :w<CR>:!make<CR>
+    " Press Control+F12 to open pdf
+    autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
+
+        " umlauts, accents, ... {{{
+        autocmd Filetype tex inoremap ö         \"{o}
+        autocmd Filetype tex inoremap ü         \"{u}
+        autocmd Filetype tex inoremap ä         \"{a}
+        autocmd Filetype tex inoremap Ö         \"{O}
+        autocmd Filetype tex inoremap Ü         \"{U}
+        autocmd Filetype tex inoremap Ä         \"{A}
+        autocmd Filetype tex inoremap ß         \ss{}
+        " umlauts, accents, ... }}}
+
+        " Misc {{{
+        autocmd Filetype tex inoremap ...       \ldots
+        " Misc }}}
+
+
+
+        " text decoration {{{
+        autocmd Filetype tex inoremap ,bf       \textbf{}<Space><++><ESC>T{i
+        autocmd Filetype tex inoremap ,it       \textit{}<Space><++><ESC>T{i
+        autocmd Filetype tex inoremap ,tt       \texttt{}<Space><++><ESC>T{i
+        autocmd Filetype tex inoremap ,em       \emph{} <++><ESC>T{i
+        autocmd Filetype tex inoremap ,sc       \textsc{<Space><++><ESC>T{i
+        " text decoration }}}
+
+        " lists {{{
+        autocmd Filetype tex inoremap ,ol       \begin{enumerate}<Enter>\end{enumerate}<Enter><Enter><++><ESC>3ko\item<Space>
+        autocmd Filetype tex inoremap ,ul       \begin{itemize}<Enter>\end{itemize}<Enter><Enter><++><ESC>3ko\item<Space>
+        autocmd Filetype tex inoremap ,li       <Enter>\item<Space>
+        " lists }}}
+
+        " references {{{
+        autocmd Filetype tex inoremap ,ref      \ref{}<Space><++><ESC>T{i
+        " references }}}
+
+        " tables {{{
+        "autocmd Filetype tex inoremap ,tab \begin{table}<Enter>\begin{tabular}<Enter><++><Enter>\end{tabular}<Enter>\caption{<++>}<Enter>\end{table}<Enter><Enter><++><Esc>6kA{}<ESC>i
+        autocmd Filetype tex inoremap ,tabl     \begin{table}<Enter><++><Enter>\end{table}<Enter><Enter><++><Esc>4kA[]<ESC>i
+        autocmd Filetype tex inoremap ,tabu     \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><ESC>4kA{}<ESC>i
+        autocmd Filetype tex inoremap ,arr      \begin{array}<Enter><++><Enter>\end{array}<Enter><Enter><++><ESC>4kA{}<ESC>i
+        " tables }}}
+
+        " packages {{{
+        autocmd Filetype tex inoremap ,up       \usepackage{}<TAB><TAB>% <++><ESC>T{i
+        autocmd Filetype tex inoremap ,up       \RequirePackage{}<TAB><TAB>% <++><ESC>T{i
+        " packages }}}
+
+        " unknown {{{
+        "autocmd Filetype tex inoremap , <ESC>`<i\{ESC}`>2la}<ESC>?\\{<Enter>a      " what does this do?
+        " unknown }}}
+
     " }}}
 
-    " rmarkdown {{{
-    autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
-    " }}}
+    " markdown {{{
+
+        " decoration {{{
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,bf       ****<Space><++><ESC>F*hi
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,em       **<Space><++><ESC>F*i
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,st       ~~~~<Space><++><ESC>F~hi
+        " decoration }}}
+
+        " headlines {{{
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h1       #<Space><Enter><Enter><++>2kA
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h2       ##<Space><Enter><Enter><++>2kA
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h3       ###<Space><Enter><Enter><++>2kA
+        " headlines }}}
+
+        " rmarkdown {{{
+        autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+        autocmd Filetype rmd nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
+
+            " headlines {{{
+            autocmd Filetype rmd inoremap ,java     ```{java}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,tex      ```{tex}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,latex    ```{LaTeX}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,css      ```{css}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,r        ```{r}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,rscript  ```{Rscript}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,zsh      ```{zsh}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,bash     ```{bash}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,tikz     ```{tikz}<Enter>```<Enter><Enter><++><ESC>2kO
+            autocmd Filetype rmd inoremap ,sql      ```{sql}<Enter>```<Enter><Enter><++><ESC>2kO
+            " headlines }}}
+
+        " rmarkdown }}}
+
+    " markdown }}}
+
 
     " html {{{
-    autocmd Filetype xhtml,html inoremap ,e <div><Enter><h3><Enter><a name="<++>" href="#"><++></a><Enter></h3><Enter><Enter><p><Enter><Space><Space><Space><Space><++><Enter></p><Enter></div><Esc>7k/<++><Enter>"_c4l
+        " umlauts, accents, ... {{{
+        autocmd Filetype html,php,xhtml inoremap ö          &ouml;
+        autocmd Filetype html,php,xhtml inoremap ü          &uuml;
+        autocmd Filetype html,php,xhtml inoremap ä          &auml;
+        autocmd Filetype html,php,xhtml inoremap Ö          &Ouml;
+        autocmd Filetype html,php,xhtml inoremap Ü          &Uuml;
+        autocmd Filetype html,php,xhtml inoremap Ä          &Auml;
+        autocmd Filetype html,php,xhtml inoremap ß          &szlig;
+        " umlauts, accents, ... }}}
 
-    inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-    vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-    map <leader><Space> <Esc>/<++><Enter>"_c4l
+        " headlines {{{
+        autocmd Filetype html,php,xhtml inoremap ,h1        <h1><Enter></h1><Enter><Enter><++><ESC>2kO
+        autocmd Filetype html,php,xhtml inoremap ,h2        <h2><Enter></h2><Enter><Enter><++><ESC>2kO
+        autocmd Filetype html,php,xhtml inoremap ,h3        <h3><Enter></h3><Enter><Enter><++><ESC>2kO
+        autocmd Filetype html,php,xhtml inoremap ,h4        <h4><Enter></h4><Enter><Enter><++><ESC>2kO
+        autocmd Filetype html,php,xhtml inoremap ,h5        <h5><Enter></h5><Enter><Enter><++><ESC>2kO
+        autocmd Filetype html,php,xhtml inoremap ,h6        <h6><Enter></h6><Enter><Enter><++><ESC>2kO
+        " headlines }}}
+
+        " text decoration {{{
+        autocmd Filetype html,php,xhtml inoremap ,bf        <b><++></b><Space><++><ESC>/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,it        <i><++></i><Space><++><ESC>/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,em        <em><++></em><Space><++><ESC>/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,st        <strong><++></strong><Space><++><ESC>/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,tt        class="tt"
+        " text decoration }}}
+
+        " lists {{{
+        autocmd Filetype html,php,xhtml inoremap ,ol        <ol><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ol><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
+        autocmd Filetype html,php,xhtml inoremap ,ul        <ul><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ul><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
+        autocmd Filetype html,php,xhtml inoremap ,li        <li><Enter><++><Enter></li><Enter><Enter><++><ESC>4k/<++><Enter>"_4cl
+        " lists }}}
+
+        " references {{{
+        autocmd Filetype html,php,xhtml inoremap ,hrefid    <a href="<++>" id="<++>"><++></a><ESC>/<++><Enter>"_4cl
+        autocmd Filetype html,php,xhtml inoremap ,href      <a href="<++>"><++></a><ESC>/<++><Enter>"_4cl
+        " references }}}
+
+        " article {{{
+        autocmd Filetype html,php,xhtml inoremap ,pa        <p><Enter></p><Enter><Enter><++><ESC>2kO<TAB>
+        autocmd Filetype html,php,xhtml inoremap ,art       <div class="article"><Enter><h3><Enter><a href="<++>" id="<++>"><++></a><Enter></h3><Enter><Enter><p><Enter><TAB><++><Enter></p><Enter><Enter><++><Enter></div><ESC>8k/<++><Enter>"_4cl
+        " article }}}
+
     " html }}}
 
 " Filetype Options }}}
