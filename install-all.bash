@@ -359,6 +359,9 @@ function linkConfigs()
     # clipster
     ${repoPath}/clipster/create_config.bash
 
+    # dunst
+    ${repoPath}/dunst/create_config.bash
+
     # gitlab clone script
     sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
 
