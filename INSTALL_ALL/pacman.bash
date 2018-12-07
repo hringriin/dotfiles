@@ -100,6 +100,7 @@ neededProgrammes=(
     'pulseaudio-equalizer'
     'pulseaudio-lirc'
     'pulseaudio-zeroconf'
+    'pulsemixer'
     'qutebrowser'
     'ranger'
     'redshift'
