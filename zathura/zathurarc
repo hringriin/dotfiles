@@ -1,0 +1,92 @@
+# General settings
+set statusbar-h-padding 1
+set statusbar-v-padding 1
+set page-padding 1
+set selection-clipboard clipboard
+set selection-notification false
+set adjust-open width
+set font "Hack normal 9"
+set show-scrollbars false
+set recolor-keephue true
+
+# Colors
+#set completion-bg #123456
+#set completion-fg #ebdbb2
+#set completion-group-bg #123456
+#set completion-group-fg #123456
+#set completion-highlight-bg #123456
+#set completion-highlight-fg #123456
+#set default-fg #123456
+#set default-bg #123456
+#set inputbar-bg #123456
+#set inputbar-fg #123456
+#set notification-bg #123456
+#set notification-fg #123456
+#set notification-error-bg #123456
+#set notification-error-fg #123456
+#set notification-warning-bg #123456
+#set notification-warning-fg #123456
+#set tabbar-bg #123456
+#set tabbar-fg #123456
+#set tabbar-focus-bg #123456
+#set tabbar-focus-fg #123456
+#set statusbar-bg #123456
+#set statusbar-fg #123456
+#set highlight-color #123456
+#set highlight-active-color #123456
+#set render-loading-bg #123456
+#set render-loading-fg #123456
+#set index-bg #123456
+#set index-fg #123456
+#set index-active-bg #123456
+#set index-active-fg #123456
+
+# Mappings in normal mode
+map [normal] r reload
+map [normal] , rotate rotate-ccw
+map [normal] . rotate rotate-cw
+map [normal] D toggle_page_mode
+map [normal] i recolor
+
+map [normal] p toggle_presentation
+
+map [normal] + zoom in
+map [normal] - zoom out
+
+map [normal] h scroll left
+map [normal] j scroll down
+map [normal] k scroll up
+map [normal] l scroll right
+
+map [normal] J navigate next
+map [normal] K navigate previous
+
+unmap [normal] a
+unmap [normal] s
+map [normal] w adjust_window width
+map [normal] b adjust_window best-fit
+
+# Mappings in presentation mode
+map [presentation] r reload
+map [presentation] , rotate rotate-ccw
+map [presentation] . rotate rotate-cw
+map [presentation] D toggle_page_mode
+map [presentation] i recolor
+
+map [presentation] p toggle_presentation
+
+map [presentation] + zoom in
+map [presentation] - zoom out
+
+map [presentation] H scroll left
+map [presentation] J scroll down
+map [presentation] K scroll up
+map [presentation] L scroll right
+
+map [presentation] j navigate next
+map [presentation] k navigate previous
+
+unmap [presentation] a
+unmap [presentation] s
+map [presentation] w adjust_window width
+map [presentation] b adjust_window best-fit

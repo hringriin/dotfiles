@@ -443,6 +443,9 @@ function linkConfigs()
     # xorg
     ${repoPath}/X/create_config.bash
 
+    # zathura
+    ${repoPath}/zathura/create_config.bash
+
     # zsh
     ${repoPath}/zsh/install.zsh
 
