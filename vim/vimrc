@@ -292,6 +292,18 @@ if has("syntax")
 endif
 " Syntax check }}}
 
+" synctex (for zathura) {{{
+
+function! Synctex()
+        " remove 'silent' for debugging
+        execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+endfunction
+
+autocmd Filetype tex nnoremap <buffer> <C-CR> :call Synctex()<cr>
+autocmd Filetype tex nnoremap <buffer> <F10> :call Synctex()<cr>
+
+" synctex (for zathura) }}}
+
 " automatically source the .vimrc {{{
 augroup autosourcing
     autocmd!
