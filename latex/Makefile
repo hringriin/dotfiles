@@ -51,27 +51,27 @@ document:
 	@echo "+------------------------------------------------------+";
 	@echo "|  Kompiliere das Dokument. Das kann jetzt dauern ...  |";
 	@echo "+------------------------------------------------------+";
-	pdflatex $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 	fi;
 
 	@if(grep "istfilename" $(FILENAME).aux > /dev/null); \
 		then \
 			makeglossaries $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 			makeglossaries $(FILENAME); \
 	fi;
 
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 	fi;
-	pdflatex $(FILENAME).tex;
-	pdflatex $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
 
 # copies or moves (depending on settings) the pdf binary into
 # a 'build' directory.
