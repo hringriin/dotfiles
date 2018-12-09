@@ -124,14 +124,18 @@ volUp ()
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
         if [[ $(echo $1 + $(getVol) | bc) -lt 100 ]] ; then
             pactl set-sink-volume ${outDevice} +$1%
+            notifyVolume
         else
             pactl set-sink-volume ${outDevice} 100%
+            notifyVolume
         fi
     else
         if [[ $(echo 5 + $(getVol) | bc) -lt 100 ]] ; then
             pactl set-sink-volume ${outDevice} +5%
+            notifyVolume
         else
             pactl set-sink-volume ${outDevice} 100%
+            notifyVolume
         fi
     fi
 }
@@ -146,28 +150,80 @@ volDn ()
 
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
         pactl set-sink-volume ${outDevice} -$1%
+        notifyVolume
     else
         pactl set-sink-volume ${outDevice} -5%
+        notifyVolume
     fi
+}
+
+notifyMicVolume ()
+{
+    image=
+    if [[ $(isMicMute) == "yes" ]] ; then
+        image=microphone-sensitivity-muted
+    elif [[ $(isMicMute) == "no" ]] ; then
+        if [[ $(getMicVol) -le 15 ]] ; then
+            image=microphone-sensitivity-low
+        elif [[ $(getMicVol) -le 50 ]] ; then
+            image=microphone-sensitivity-medium
+        else
+            image=microphone-sensitivity-high
+        fi
+    fi
+
+    notify-send -t 500 -u low -i ${image} "Mic-Volume" "$(getMicVol)"
+    unset image
+}
+
+notifyVolume ()
+{
+    image=
+    if [[ $(isVolMute) == "yes" ]] ; then
+        image=audio-volume-muted
+    elif [[ $(isVolMute) == "no" ]] ; then
+        if [[ $(getVol) -le 15 ]] ; then
+            image=audio-volume-low
+        elif [[ $(getVol) -le 50 ]] ; then
+            image=audio-volume-medium
+        else
+            image=audio-volume-high
+        fi
+    fi
+
+    notify-send -t 500 -u low -i ${image} "Volume" "$(getVol)"
+    unset image
 }
 
 # turn volume up for input device
 inUp ()
 {
+    if [[ $(getMicVol) -eq 100 ]] ; then
+        exit 0
+    fi
+
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
         pactl set-source-volume ${inDevice} +$1%
+        notifyMicVolume
     else
         pactl set-source-volume ${inDevice} +5%
+        notifyMicVolume
     fi
 }
 
 # turn volume down for input device
 inDn ()
 {
+    if [[ $(getMicVol) -eq 0 ]] ; then
+        exit 0
+    fi
+
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
         pactl set-source-volume ${inDevice} -$1%
+        notifyMicVolume
     else
         pactl set-source-volume ${inDevice} -5%
+        notifyMicVolume
     fi
 }
 
@@ -175,16 +231,28 @@ inDn ()
 muteSpeaker ()
 {
     pactl set-sink-mute ${outDevice} toggle
+    notifyVolume
 }
 
 # mute input device
 muteMic ()
 {
     pactl set-source-mute ${inDevice} toggle
+    notifyMicVolume
 }
 
 getSpeakerMute ()
 {
+}
+
+isVolMute ()
+{
+    echo $(pactl list sinks | grep Mute | awk '{print $2}')
+}
+
+isMicMute ()
+{
+    echo $(pactl list | grep "alsa_input" -A 7 | grep Mute | awk '{print $2}')
 }
 
 getMicMute ()
