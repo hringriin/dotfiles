@@ -34,6 +34,7 @@ neededProgrammes=(
     'gcc'
     'gettext'
     'git'
+    'gnome-icon-theme'
     'grep'
     'groff'
     'gucharmap'
