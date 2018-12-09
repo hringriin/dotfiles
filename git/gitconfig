@@ -43,3 +43,6 @@
 
 [difftool]
     prompt = false
+
+[submodule]
+    recurse = true
