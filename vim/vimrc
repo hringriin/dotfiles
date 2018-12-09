@@ -328,6 +328,9 @@ set ttyfast
 
 " Filetype Options {{{
 
+    " insert the date
+    "inoremap ,date <C-R>=strftime("%Y%m%d_%H%m")<CR>
+
     " press <leader><Space> to select the next <++> tag in the document, delete it and place the cursor at its former beginning position of
     " the <++> tag.
     inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
