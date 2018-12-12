@@ -1,16 +1,16 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x5-0+24"
+    geometry = "350x5-17+17"
     indicate_hidden = yes
     shrink = yes
     transparency = 20
     notification_height = 0
-    separator_height = 2
-    padding = 0
+    separator_height = 4
+    padding = 10
     horizontal_padding = 8
     frame_width = 3
-    frame_color = "#282828"
+    frame_color = "#458588"
 
     # Define a color for the separator.
     # possible values are:
@@ -24,8 +24,8 @@
     sort = yes
 
     idle_threshold = 120
-    font = Monospace 14
-    line_height = 0
+    font = Hack 12
+    line_height = 1
     markup = full
 
     # The format of the message.  Possible variables are:
@@ -50,11 +50,12 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 40
-    #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    icon_path = /usr/share/icons/gnome/48x48/status/:/usr/share/icons/gnome/48x48/devices/:/usr/share/icons/gnome/48x48/mimetypes/:~/.icons/gruvbox-soft/status/:~/.icons/gruvbox-soft/devices/:~/.icons/gruvbox-soft/mimetypes/
+    #icon_path = /home/hringriin/.icons/gruvbox-soft/status/:/home/hringriin/.icons/gruvbox-soft/devices/:/home/hringriin/.icons/gruvbox-soft/mimetypes/
     sticky_history = yes
-    history_length = 20
+    history_length = 100
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    browser = qutebrowser
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -75,21 +76,20 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282828"
-    foreground = "#928374"
+    background = "#1d2021"
+    foreground = "#ebdbb2"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#458588"
-    foreground = "#ebdbb2"
+    background = "#689d68"
+    foreground = "#1d2021"
     timeout = 5
 
 [urgency_critical]
-    background = "#cc2421"
+    background = "#cc241d"
     foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
