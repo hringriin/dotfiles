@@ -80,7 +80,6 @@ chooseOutDevice ()
 
     unset int
     unset devnum
-
 }
 
 # Through a bunch of piping get a list of input devices
@@ -110,10 +109,9 @@ chooseInDevice ()
         echo "wrong input!"
         chooseInDevice
     fi
-
 }
 
-# turn volume up for output device
+# turn volume up for default speaker
 volUp ()
 {
     #if [[ $1 -gt 0 && $($1+$(pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g')) -le 120 ]] ; then
@@ -140,7 +138,7 @@ volUp ()
     fi
 }
 
-# turn volume down for output device
+# turn volume down for default speaker
 volDn ()
 {
     #if [[ $1 -gt 0 && $($1+$(pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g')) -ge 0 ]] ; then
@@ -157,6 +155,8 @@ volDn ()
     fi
 }
 
+# pokes the dunst notification daemon to display the current volume after
+# raising/lowering the volume of the default microphone
 notifyMicVolume ()
 {
     image=
@@ -170,12 +170,16 @@ notifyMicVolume ()
         else
             image=microphone-sensitivity-high
         fi
+    else
+        image=info
     fi
 
-    notify-send -t 500 -u low -i ${image} "Mic-Volume" "$(getMicVol)"
+    notify-send "Mic-Volume" "$(getMicVol)" -t 500 -u low -i ${image}
     unset image
 }
 
+# pokes the dunst notification daemon to display the current volume after
+# raising/lowering the volume of the default speaker
 notifyVolume ()
 {
     image=
@@ -189,9 +193,11 @@ notifyVolume ()
         else
             image=audio-volume-high
         fi
+    else
+        image=info
     fi
 
-    notify-send -t 500 -u low -i ${image} "Volume" "$(getVol)"
+    notify-send "Volume" "$(getVol)" -t 500 -u low -i ${image}
     unset image
 }
 
@@ -241,32 +247,28 @@ muteMic ()
     notifyMicVolume
 }
 
-getSpeakerMute ()
-{
-}
-
+# returns "yes" or "no", depending on whether the default speaker is muted or not
 isVolMute ()
 {
-    echo $(pactl list sinks | grep Mute | awk '{print $2}')
+    echo $(pactl list sinks | grep "Name: $(cat ${devPath}/${outDevFile})" -A 6 | tail -n 1 | awk '{print $2}')
 }
 
+# returns "yes" or "no", depending on whether the default mic is muted or not
 isMicMute ()
 {
-    echo $(pactl list | grep "alsa_input" -A 7 | grep Mute | awk '{print $2}')
+    echo $(pactl list | grep "Name: $(cat ${devPath}/${inDevFile})" -A 6 | tail -n 1 | awk '{print $2}' | tr -d '%')
 }
 
-getMicMute ()
-{
-}
-
+# returns volume of default microphone
 getMicVol ()
 {
-    echo $(pactl list | grep "alsa_input" -A 7 | tail -n 1 | sed -e 's/  */|/g' | cut -d "|" -f 5 | tr -d "%")
+    echo $(pactl list | grep "Name: $(cat ${devPath}/${inDevFile})" -A 7 | tail -n 1 | awk '{print $5}' | tr -d '%')
 }
 
+# returns volume of default speaker
 getVol ()
 {
-    echo $(pactl list sinks | grep -v Base | grep Volume | sed -e 's/  */|/g' | cut -d "|" -f 5 | tr -d "%")
+    echo $(pactl list sinks | grep "Name: $(cat ${devPath}/${outDevFile})" -A 7 | tail -n 1 | awk '{print $5}' | tr -d '%')
 }
 
 # main function, choosing what to do, evaluating the input parameter
