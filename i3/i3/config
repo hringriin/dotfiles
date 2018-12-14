@@ -84,6 +84,9 @@ bindsym $mod+Control+Return exec ~/Repositories/github.com/hringriin/dotfiles/re
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# start webbrowser
+bindsym $mod+b exec qutebrowser
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
