@@ -40,56 +40,56 @@ filter_unmatched_urls = true
 # from terminator
 
 #black
-color0=#000000
-color8=#7f7f7f
+color0=#282828
+color8=#928374
 
 #red
-color1=#ee4d29
+color1=#cc241d
 color9=#fb4934
 
 #Green
-color2=#33cd00
-color10=#00ff00
+color2=#98971a
+color10=#b9bb26
 
 #yellow
 color3=#d79921
-color11=#fafd2f
+color11=#fabd2f
 
 #blue
-color4=#3355ff
-color12=#0094ff
+color4=#458588
+color12=#83a5dd
 
 #magenta
-color5=#c162c6
-color13=#e356eb
+color5=#b16286
+color13=#d3869b
 
 #cyan
-color14=#00cdcd
-colorr=#23e0fc
+color6=#689d6a
+color14=#8ec07c
 
 #white
-color7=#e5e5e5
-color15=#ffffff
+color7=#fbf1c7
+color15=#ebdbb2
 
-foreground = #dcdccc
-#foreground_bold = #ffffff
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
 # 20% background transparency (requires a compositor)
-background = rgba(00, 00, 00, 0.85)
+background = rgba(20, 20, 20, 0.80)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f
 
 
 [hints]
-font = Hack 8
-background = #8ec70c
-foreground = #282828
-active_background = #8ec70c
-active_foreground = #282828
-padding = 3
-border = #000000
-border_width = 1
+font = Hack 9
+background = #458588
+foreground = #ebdbb2
+active_background = #488588
+active_foreground = #ebdbb2
+padding = 4
+border = #8ec07c
+border_width = 3
 roundness = 5
 
 # vim: ft=dosini cms=#%s
