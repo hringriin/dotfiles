@@ -16,6 +16,12 @@ main()
         mkdir -p ${HOME}/.config/ranger
     fi
 
+    if [[ ! -d ${repoPath}/ranger/ranger_devicons ]] ; then
+        cd ${repoPath}
+        git pull --recurse-submodules
+        cd -
+    fi
+
     ln -sfv ${repoPath}/ranger/bookmarks ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/commands.py ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/commands_full.py ${HOME}/.config/ranger/
@@ -24,6 +30,9 @@ main()
     ln -sfv ${repoPath}/ranger/rifle.conf ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/scope.sh ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/tagged ${HOME}/.config/ranger/
+
+    cd ${repoPath}/ranger/ranger_devicons
+    make && make install
 }
 
 main
