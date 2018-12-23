@@ -19,6 +19,7 @@ settings:
     global:
       normal:
         ',fb': open -t https://fritz.box
+        ',oc': open -t https://owncloud.barzh.eu
         ;S: hint --rapid links userscript video-spool.bash
         ;s: hint links userscript video-spool.bash
         <Ctrl+d>: run-with-count 7 scroll down
