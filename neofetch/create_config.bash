@@ -12,6 +12,9 @@ source INSTALL_ALL/pacman.bash
 
 main()
 {
+    if [[ ! ( -d ~/.config/neofetch ) ]] ; then
+        mkdir --mode=700 -p ~/.config/neofetch
+    fi
     ln -sfv ${repoPath}/neofetch/config.conf ${HOME}/.config/neofetch/config.conf
 }
 
