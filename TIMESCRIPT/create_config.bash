@@ -13,7 +13,8 @@ main()
     if [[ ! ( -d ~/TIMESCRIPT ) ]] ; then
         mkdir -m 700 ~/TIMESCRIPT
     fi
-    ln -fsv ${repoPath}/TIMESCRIPT/* ~/TIMESCRIPT
+    ln -fsv ${repoPath}/TIMESCRIPT/TIMESCRIPT.bash ~/TIMESCRIPT
+    ln -fsv ${repoPath}/TIMESCRIPT/TIMESCREEN.bash ~/TIMESCRIPT
 }
 
 main
