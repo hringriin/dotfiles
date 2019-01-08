@@ -18,6 +18,7 @@ neededYayProgrammes=(
     'rofi-twitch'
     'samsung-unified-driver'
     'spotify'
+    'task-spooler'
     'tider-git'
     'toilet'
     'ttf-fantasque-sans-mono'

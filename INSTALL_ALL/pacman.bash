@@ -143,6 +143,7 @@ neededProgrammes=(
     'xorg-xinput'
     'xorg-xrandr'
     'xterm'
+    'youtube-dl'
     'zathura'
     'zsh'
 )
