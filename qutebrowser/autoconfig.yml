@@ -257,7 +257,7 @@ settings:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
   qt.highdpi:
-    global: true
+    global: false
   scrolling.bar:
     global: never
   scrolling.smooth:
