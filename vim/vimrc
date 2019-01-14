@@ -466,10 +466,10 @@ set ttyfast
         " headlines }}}
 
         " text decoration {{{
-        autocmd Filetype html,php,xhtml inoremap ,bf        <b><++></b><Space><++><ESC>/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap ,it        <i><++></i><Space><++><ESC>/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap ,em        <em><++></em><Space><++><ESC>/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap ,st        <strong><++></strong><Space><++><ESC>/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,bf        <b><++></b><Space><++><ESC>_/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,it        <i><++></i><Space><++><ESC>_/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,em        <em><++></em><Space><++><ESC>_/<++><Enter>"_c4l
+        autocmd Filetype html,php,xhtml inoremap ,st        <strong><++></strong><Space><++><ESC>_/<++><Enter>"_c4l
         autocmd Filetype html,php,xhtml inoremap ,tt        class="tt"
         " text decoration }}}
 
