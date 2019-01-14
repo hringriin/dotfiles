@@ -18,7 +18,9 @@ settings:
   bindings.commands:
     global:
       normal:
+        ',ba': open -t https://barzh.eu
         ',fb': open -t https://fritz.box
+        ',nh': open -t https://niederhoelle.no-ip.biz
         ',oc': open -t https://owncloud.barzh.eu
         ;S: hint --rapid links userscript video-spool.bash
         ;s: hint links userscript video-spool.bash
