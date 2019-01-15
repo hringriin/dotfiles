@@ -22,9 +22,11 @@ fi
 # Homebrew token }}}
 
 # tmuxinator {{{
-if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
-    # adding ruby bin to path variable
-    export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+# adding ruby bin to path variable
+if [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
+    export PATH=${HOME}/.gem/ruby/2.6.0/bin:${PATH}
+elif [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
+    export PATH=${HOME}/.gem/ruby/2.5.0/bin:${PATH}
 fi
 # tmuxinator }}}
 
