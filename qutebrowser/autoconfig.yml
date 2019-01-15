@@ -187,6 +187,8 @@ settings:
     global: false
   content.default_encoding:
     global: utf-8
+  content.host_blocking.enabled:
+    global: true
   content.javascript.enabled:
     '*://*.barzh.eu/*': true
     '*://*.tri-optimum.eu/*': true
