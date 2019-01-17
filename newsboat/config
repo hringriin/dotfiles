@@ -41,7 +41,7 @@ notify-xterm yes
 refresh-on-startup yes
 reload-only-visible-feeds no
 reload-threads 5
-reload-time 60
+reload-time 180
 save-path ~/.newsboat/SavedArticles
 searchresult-title-format "%N %V -- Search result (%u unread, %t total)"
 selectfilter-title-format "%N %V -- Select Filter"
