@@ -4,9 +4,10 @@
 # Network Manager Applet
 exec nm-applet
 
-# start program (default: dmenu, want to change to rofi)
-#bindsym $mod+d exec dmenu_run -l 10
+# start program (application launcher)
 bindsym $mod+d exec rofi -show run
+
+# use rofi as well to watch twitch.tv :-)
 bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
 bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
@@ -64,17 +65,16 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # stupid stuff
+# press and hold mod+right_shift+left_shift to start autoclicker
+# press and hold mod+left_shift+right_shift to stop autoclicker
 bindcode $mod+Shift+50 exec ~/Repositories/github.com/hringriin/cookie-clicker-auto-click/repo/mouse-spam.sh acheron
 bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
 
 # Set default Display Setup and Resolution
 exec --no-startup-id xrandr --output LVDS1 --mode auto --primary
 
-# start a terminal
-#bindsym XF86Launch1 exec pavucontrol
-
 # Pulse Audio controls
-# I have a custom script, which stumbles around with my audio devices ...
+# I have a custom script, which stumbles around in darkness with my audio devices ...
 for_window [class="URxvt" instance="PULSEAUDIO"] floating enable border pixel 3
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh oup                    # increase Speaker volume
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh odn                    # decrease Speaker volume
@@ -90,11 +90,13 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase scree
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
 
 # Screen Rotation
+# TODO find out, why the buttons on the display do not work as expected
 #bindsym XF86RotateWindows exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
 #bindsym XF86TaskPane exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
 bindsym XF86Launch1 exec /home/hringriin/Repositories/github.com/hringriin/dotfiles/repo/bash/rotateScreen.zsh
 
 # Set Default Workspaces for LVDS1
+# i.e. set the default monitor for the workspaces 1 to 10
 workspace $workspace1 output LVDS1
 workspace $workspace2 output LVDS1
 workspace $workspace3 output LVDS1
