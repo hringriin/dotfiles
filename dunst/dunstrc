@@ -24,7 +24,7 @@
     sort = yes
 
     idle_threshold = 120
-    font = Hack 12
+    font = Hack 10
     line_height = 1
     markup = full
 
@@ -64,6 +64,7 @@
     class = Dunst
     startup_notification = false
     force_xinerama = false
+
 [experimental]
     per_monitor_dpi = false
 
