@@ -86,8 +86,11 @@ bindsym $mod+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.
 bindsym $mod+XF86AudioMicMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setInDev    # set InputDevice
 
 # Screen Brightness Controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2 -time 0      # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2 -time 0    # decrease screen brightness
+bindsym XF86MonBrightnessUp exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash raise                                    # increase screen brightness
+bindsym XF86MonBrightnessDown exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash lower                                  # decrease screen brightness
+# both following keybindings "reset" to "default" brightness, i.e. my default brightness
+bindsym $mod+XF86MonBrightnessUp exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash reset                               # reset screen brightness
+bindsym $mod+XF86MonBrightnessDown exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash reset                             # reset screen brightness
 
 # Screen Rotation
 # TODO find out, why the buttons on the display do not work as expected
