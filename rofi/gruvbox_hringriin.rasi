@@ -1,0 +1,267 @@
+// vim: ft=cfg
+/*********************************************************
+ *  Rofi color theme
+ *
+ *  Based on the Gruvbox color scheme for Vim by morhetz
+ *  https://github.com/morhetz/gruvbox
+ *
+ *  File:       gruvbox_hringriin.rasi
+ *  Desc:       Gruvbox dark color theme for Rofi
+ *  Author:     Joschka Köster <jkoester@tzi.de>
+ **********************************************************/
+* {
+    // bg       #282828
+    //color0:                             rgba ( 40   , 40    , 40    , 80 %);
+
+    // red      #cc241d
+    //color1:                             rgba ( 204  , 36    , 29    , 80 %);
+
+    // green    #98971a
+    //color2:                             rgba ( 152  , 151   , 26    , 80 %);
+
+    // yellow   #d79921
+    //color3:                             rgba ( 215  , 153   , 33    , 80 %);
+
+    // blue     #458588
+    //color4:                             rgba ( 59   , 133   , 136   , 80 %);
+
+    // purple   #b16286
+    //color5:                             rgba ( 177  , 98    , 134   , 80 %);
+
+    // aqua     #689d6a
+    //color6:                             rgba ( 104  , 157   , 106   , 80 %);
+
+    // gray     #a89984
+    //color7:                             rgba ( 168  , 153   , 132   , 80 %);
+
+    // gray     #928374
+    //color8:                             rgba ( 146  , 131   , 116   , 80 %);
+
+    // red      #fb4934
+    //color9:                             rgba ( 251  , 73    , 52    , 80 %);
+
+    // green    #b8bb26
+    //color10:                            rgba ( 184  , 187   , 38    , 80 %);
+
+    // yellow   #fabd2f
+    //color11:                            rgba ( 250  , 189   , 47    , 80 %);
+
+    // blue     #83a598
+    //color12:                            rgba ( 131  , 165   , 152   , 80 %);
+
+    // purple   #d3869b
+    //color13:                            rgba ( 211  , 134   , 155   , 80 %);
+
+    // aqua     #8ec07c
+    //color14:                            rgba ( 142  , 192   , 124   , 80 %);
+
+    // fg       #ebdbb2
+    //color15:                            rgba ( 235  , 219   , 178   , 80 %);
+
+    // bg0_h    #1d2021
+    //bg0h:                               rgba ( 29   , 32    , 33    , 80 %);
+
+    // bg1      #3c3836
+    //bg1:                                rgba ( 60   , 56    , 54    , 80 %);
+
+    // bg2      #504945
+    //bg2:                                rgba ( 80   , 73    , 69    , 80 %);
+
+    // bg3      #665c54
+    //bg3:                                rgba ( 102  , 92    , 84    , 80 %);
+
+    // bg4      #7c6f64
+    //bg4:                                rgba ( 124  , 111   , 100   , 80 %);
+
+    // orange   #d65d0e
+    //orange1:                            rgba ( 213  , 93    , 14    , 80 %);
+
+    // bg0_s    #32302f
+    //bg0s:                               rgba ( 50   , 48    , 47    , 80 %);
+
+    // fg3      #bdae93
+    //fg3:                                rgba ( 189  , 174   , 147   , 80 %);
+
+    // fg2      #d5c4a1
+    //fg2:                                rgba ( 213  , 196   , 161   , 80 %);
+
+    // fg0      #fbf1c7
+    //fg0:                                rgba ( 251  , 241   , 199   , 80 %);
+
+    // orange   #fe8019
+    //orange2:                            rgba ( 254  , 128   , 25    , 80 %);
+
+
+
+
+    // orange2
+    highlight:                          bold
+                                        italic
+                                        rgba ( 254  , 128   , 25    , 80 %);
+
+    // #fg
+    foreground:                         rgba ( 235  , 219   , 178   , 80 %  );
+
+    // #bg
+    active-foreground:                  rgba ( 40   , 40    , 40    , 80 %  );
+    normal-foreground:                  @foreground;
+    urgent-foreground:                  rgba ( 40   , 40    , 40    , 80 %  );
+
+    alternate-active-foreground:        @active-foreground;
+    alternate-normal-foreground:        @normal-foreground;
+    alternate-urgent-foreground:        @urgent-foreground;
+
+    selected-active-foreground:         @active-foreground;
+    selected-normal-foreground:         @normal-foreground;
+    selected-urgent-foreground:         @urgent-foreground;
+
+    // #bg0h
+    background:                         rgba ( 29   , 32    , 33    , 60 %  );
+    background-color:                   @background;
+
+    // #color3
+    active-background:                  rgba ( 215  , 153   , 33    , 60 %  );
+    // #bg
+    normal-background:                  rgba ( 40   , 40    , 40    , 60 %  );
+    // #color1
+    urgent-background:                  rgba ( 204  , 36    , 29    , 60 %  );
+
+    alternate-active-background:        @active-background;
+    alternate-normal-background:        @normal-background;
+    alternate-urgent-background:        @urgent-background;
+
+    // #color11
+    selected-active-background:         rgba ( 250  , 189   , 47    , 60 %  );
+    // #bg3
+    selected-normal-background:         rgba ( 102  , 92    , 84    , 60 %  );
+    // #color9
+    selected-urgent-background:         rgba ( 251  , 73    , 52    , 60 %  );
+
+    // #color1
+    border-color:                       rgba ( 204  , 36    , 29    , 80 %  );
+
+    // #bg3
+    separatorcolor:                     rgba ( 102  , 92    , 84    , 80 %  );
+
+    spacing:                            0;
+
+    font:                               "Hack 11";
+}
+
+#window {
+    background-color:                   @background;
+    border:                             2;
+    padding:                            10;
+}
+
+#mainbox {
+    border:                             0;
+    padding:                            0;
+}
+
+#message {
+    border:                             1px dash 0px 0px ;
+    border-color:                       @separatorcolor;
+    padding:                            1px ;
+}
+
+#textbox {
+    text-color:                         @foreground;
+}
+
+#listview {
+    fixed-height:                       0;
+    border:                             2px dash 0px 0px ;
+    border-color:                       @separatorcolor;
+    spacing:                            2px ;
+    scrollbar:                          true;
+    padding:                            10px 0px 0px ;
+}
+
+#element {
+    border:                             0;
+    padding:                            1px ;
+}
+
+#element.normal.normal {
+    background-color:                   @normal-background;
+    text-color:                         @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color:                   @urgent-background;
+    text-color:                         @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color:                   @active-background;
+    text-color:                         @active-foreground;
+}
+
+#element.selected.normal {
+    background-color:                   @selected-normal-background;
+    text-color:                         @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+    background-color:                   @selected-urgent-background;
+    text-color:                         @selected-urgent-foreground;
+}
+
+#element.selected.active {
+    background-color:                   @selected-active-background;
+    text-color:                         @selected-active-foreground;
+}
+
+#element.alternate.normal {
+    background-color:                   @alternate-normal-background;
+    text-color:                         @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+    background-color:                   @alternate-urgent-background;
+    text-color:                         @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color:                   @alternate-active-background;
+    text-color:                         @alternate-active-foreground;
+}
+
+#scrollbar {
+    border:                             0;
+    handle-width:                       0px ;
+    padding:                            0;
+    handle-color:                       @foreground;
+}
+
+#sidebar {
+    border:                             2px dash 0px 0px ;
+    border-color:                       @separatorcolor;
+}
+
+#button.selected {
+    background-color:                   @selected-normal-background;
+    text-color:                         @selected-normal-foreground;
+}
+
+#inputbar {
+    spacing:                            10;
+    text-color:                         @normal-foreground;
+    padding:                            15px ;
+}
+
+#case-indicator {
+    spacing:                            0;
+    text-color:                         @normal-foreground;
+}
+
+#entry {
+    spacing:                            0;
+    text-color:                         @normal-foreground;
+}
+
+#prompt {
+    spacing:                            0;
+    text-color:                         @normal-foreground;
+}

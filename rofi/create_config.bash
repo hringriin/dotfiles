@@ -15,6 +15,7 @@ main()
         mkdir --mode=700 -p ${HOME}/.config/rofi
     fi
     ln -fsv ${repoPath}/rofi/config ${HOME}/.config/rofi/config
+    ln -fsv ${repoPath}/rofi/gruvbox_hringriin.rasi ${HOME}/.config/rofi/gruvbox_hringriin.rasi
     ln -fsv ${repoPath}/rofi/gruvbox-dark-hringriin.rasi ${HOME}/.config/rofi/gruvbox-dark-hringriin.rasi
 
     if [[ ! ( -d ${HOME}/.config/rofi-twitch ) ]] ; then
