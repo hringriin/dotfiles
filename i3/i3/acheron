@@ -115,8 +115,6 @@ workspace $workspace10 output LVDS1
 exec owncloud
 exec dropbox
 exec --no-startup-id nagstamon
-#exec --no-startup-id blueman-applet
-#exec --no-startup-id i3-msg 'workspace $workspace16; exec /usr/bin/blink'
 exec --no-startup-id tider
 
 # xRandR GUI
@@ -129,8 +127,3 @@ bindsym $mod+Control+F3 exec xrandr --output VGA1 --auto --right-of LVDS1
 
 # Set Screen Brightness to 5
 exec xbacklight -set 10 -time 0
-
-# Set Keyboard Backlight to 2 (Full
-# Does not work properly, because the file owner is changed back
-# to root, at least after rebooting.
-#exec echo 2 > /sys/class/leds/tpacpi::kbd_backlight/brightness
