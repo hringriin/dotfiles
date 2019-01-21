@@ -22,6 +22,7 @@ neededProgrammes=(
     'curl'
     'dunst'
     'etckeeper'
+    'evince'
     'expac'
     'fakeroot'
     'file'
