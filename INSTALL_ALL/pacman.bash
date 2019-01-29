@@ -7,6 +7,7 @@ neededProgrammes=(
     'abook'
     'acpi'
     'archlinux-keyring'
+    'atool'
     'autoconf'
     'automake'
     'bash'
