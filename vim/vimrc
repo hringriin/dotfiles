@@ -687,6 +687,10 @@ set ttyfast
     vnoremap <silent> < <gv
     vnoremap <silent> > >gv
 
+    " always open file under cursor in new tab
+    nnoremap gf <c-w>gf
+    nnoremap gF <c-w>gF
+
     " ZoomWin
     nnoremap <Leader>f :ZoomWin<CR>
 
