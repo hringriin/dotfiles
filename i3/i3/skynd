@@ -77,14 +77,30 @@ exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary -
 
 # Pulse Audio controls
 for_window [class="URxvt" instance="PULSEAUDIO"] floating enable border pixel 3
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh oup                            # increase Speaker volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh odn                            # decrease Speaker volume
-bindsym Control+XF86AudioRaiseVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh iup                    # increase Microphone volume
-bindsym Control+XF86AudioLowerVolume exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh idn                    # decrease Microphone volume
-bindsym XF86AudioMute exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh sp                                    # mute sound
-bindsym Control+XF86AudioMute exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh mic                           # mute mic
-bindsym Shift+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setOutDev             # set OutputDevice
-bindsym Shift+Control+XF86AudioMute exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setInDev      # set InputDevice
+
+# increase Speaker volume
+bindsym XF86AudioRaiseVolume                exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh oup
+
+# decrease Speaker volume
+bindsym XF86AudioLowerVolume                exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh odn
+
+# increase Microphone volume
+bindsym $mod+XF86AudioRaiseVolume           exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh iup
+
+# decrease Microphone volume
+bindsym $mod+XF86AudioLowerVolume           exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh idn
+
+# mute sound
+bindsym XF86AudioMute                       exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh sp
+
+# mute mic
+bindsym $mod+Control+Shift+XF86AudioMute    exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh mic
+
+# set OutputDevice
+bindsym $mod+XF86AudioMute                  exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setOutDev
+
+# set InputDevice
+bindsym $mod+Control+XF86AudioMute          exec urxvt -name PULSEAUDIO -e ~/Repositories/github.com/hringriin/dotfiles/repo/pulseaudio/controlVolume.zsh setInDev
 
 workspace $workspace1 output DP-0
 # Set Default Workspaces for DP-0 and DVI-I-1
