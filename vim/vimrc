@@ -417,9 +417,9 @@ set ttyfast
         " decoration }}}
 
         " headlines {{{
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h1       #<Space><Enter><Enter><++>2kA
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h2       ##<Space><Enter><Enter><++>2kA
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h3       ###<Space><Enter><Enter><++>2kA
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h1       #<Space><Enter><Enter><++><ESC>2kA
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h2       ##<Space><Enter><Enter><++><ESC>2kA
+        autocmd Filetype markdown,md,rmd,vimwiki inoremap ,h3       ###<Space><Enter><Enter><++><ESC>2kA
         " headlines }}}
 
         " rmarkdown {{{
