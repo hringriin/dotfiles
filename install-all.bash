@@ -496,7 +496,7 @@ function systemdServicesEnable()
     )
 
     userServicesToEnable=(
-        #"redshift-gtk.service"
+        "redshift-gtk.service"
     )
 
     for var in "${servicesToEnable[@]}"
@@ -527,7 +527,7 @@ function systemdServicesStart()
     )
 
     userServicesToStart=(
-        #"redshift-gtk.service"
+        "redshift-gtk.service"
     )
 
     for var in "${servicesToStart[@]}"
