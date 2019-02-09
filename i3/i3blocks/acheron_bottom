@@ -35,10 +35,10 @@ markup=pango        # for colors
 #interval=5
 #signal=10
 
-[setAudioDev]
-label=
-command=~/.config/i3blocks/i3blocks-gate/audiodev.bash $BLOCK_BUTTON
-markup=pango
+#[setAudioDev]
+#label=
+#command=~/.config/i3blocks/i3blocks-gate/audiodev.bash $BLOCK_BUTTON
+#markup=pango
 
 [work]
 label= 
