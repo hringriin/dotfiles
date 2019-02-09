@@ -30,6 +30,12 @@ separator_block_width=15
 interval=10
 markup=pango        # for colors
 
+#[setAudioDev]
+#label=ø
+#command=~/.config/i3blocks/i3blocks-gate/audiodev.bash $BLOCK_BUTTON
+#interval=1
+#markup=pango
+
 [work]
 label= 
 command=~/.config/i3blocks/i3blocks-gate/tider.sh $BLOCK_BUTTON
