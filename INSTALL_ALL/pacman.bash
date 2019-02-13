@@ -77,6 +77,7 @@ neededProgrammes=(
     'networkmanager-vpnc'
     'nitrogen'
     'nm-connection-editor'
+    'npm'
     'ntp'
     'numlockx'
     'openconnect'
