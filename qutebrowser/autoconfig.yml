@@ -47,13 +47,13 @@ settings:
   colors.completion.fg:
     global: '#a89984'
   colors.completion.item.selected.bg:
-    global: '#a89984'
+    global: '#504945'
   colors.completion.item.selected.border.bottom:
     global: '#282828'
   colors.completion.item.selected.border.top:
     global: '#282828'
   colors.completion.item.selected.fg:
-    global: '#1d2021'
+    global: '#ebdbb2'
   colors.completion.match.fg:
     global: '#ff4444'
   colors.completion.odd.bg:
