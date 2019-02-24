@@ -17,23 +17,68 @@ settings:
     global: webengine
   bindings.commands:
     global:
+      caret:
+        <Return>: null
+        <Space>: null
+      command:
+        <Ctrl+Shift+n>: completion-item-focus --history next
+        <Ctrl+Shift+p>: completion-item-focus --history prev
+        <Ctrl+n>: completion-item-focus next
+        <Ctrl+p>: completion-item-focus prev
+        <Down>: null
+        <Shift+Del>: null
+        <Shift+Tab>: null
+        <Tab>: null
+        <Up>: null
       normal:
         ',ba': open -t https://barzh.eu
         ',fb': open -t https://fritz.box
         ',nh': open -t https://niederhoelle.no-ip.biz
         ',oc': open -t https://owncloud.barzh.eu
-        ;S: hint --rapid links userscript video-spool.bash
-        ;s: hint links userscript video-spool.bash
+        ',ts': open -t https://barzh.eu/teamspeak3
+        ;Y: null
+        ;YR: hint --rapid links userscript ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
+          -s
+        ;YS: hint links userscript ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
+          -s
+        ;YT: hint links userscript ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
+        <Back>: null
+        <Ctrl+Alt+p>: null
+        <Ctrl+F5>: null
+        <Ctrl+PgDown>: null
+        <Ctrl+PgUp>: null
+        <Ctrl+Shift+Tab>: null
+        <Ctrl+Shift+p>: print
+        <Ctrl+Shift+t>: null
+        <Ctrl+^>: null
         <Ctrl+d>: run-with-count 7 scroll down
+        <Ctrl+q>: null
+        <Ctrl+t>: null
         <Ctrl+u>: run-with-count 7 scroll up
+        <Ctrl+w>: null
         <F1>: config-cycle -t tabs.position left top
         <F2>: config-cycle -t tabs.show never multiple
+        <F5>: null
+        <Forward>: null
         SS: open -t qute://settings
-        YS: message-info "Opening (spooled) {url} with mpv!" ;; spawn --userscript
+        Sk: :bind
+        YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript
           ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash
-        YT: message-info "Opening {url} with mpv!" ;; spawn --userscript video-spool.bash
+          -s'
+        YT: 'message-info "Opening with mpv: {url:pretty}" ;; spawn --userscript ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/userscripts/video-spool.bash'
+        ZQ: null
+        ZZ: null
         \o: download-open
         co: null
+        g$: null
+        g0: null
+        g^: null
+        gm: null
+      prompt:
+        <Ctrl+n>: prompt-item-focus next
+        <Ctrl+p>: prompt-item-focus prev
+        <Down>: null
+        <Up>: null
   colors.completion.category.bg:
     global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #282828, stop:1 #1d2021)'
   colors.completion.category.border.bottom:
