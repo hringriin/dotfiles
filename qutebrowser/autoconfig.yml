@@ -185,6 +185,8 @@ settings:
     - downloads
   content.autoplay:
     global: false
+  content.cookies.accept:
+    global: no-unknown-3rdparty
   content.default_encoding:
     global: utf-8
   content.host_blocking.enabled:
