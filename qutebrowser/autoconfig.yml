@@ -253,6 +253,8 @@ settings:
     global: 8pt Hack
   hints.chars:
     global: asdfghjk
+  input.insert_mode.auto_leave:
+    global: false
   input.rocker_gestures:
     global: true
   messages.timeout:
