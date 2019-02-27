@@ -56,6 +56,7 @@ settings:
         <Ctrl+t>: null
         <Ctrl+u>: run-with-count 7 scroll up
         <Ctrl+w>: null
+        <Escape>: clear-keychain ;; search ;; fullscreen --leave ;; clear-messages
         <F1>: config-cycle -t tabs.position left top
         <F2>: config-cycle -t tabs.show never multiple
         <F5>: null
@@ -100,7 +101,7 @@ settings:
   colors.completion.item.selected.fg:
     global: '#ebdbb2'
   colors.completion.match.fg:
-    global: '#ff4444'
+    global: '#fb4934'
   colors.completion.odd.bg:
     global: '#1d2021'
   colors.completion.scrollbar.bg:
@@ -122,14 +123,17 @@ settings:
   colors.downloads.stop.fg:
     global: '#689d68'
   colors.hints.bg:
-    global: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8),
-      stop:1 rgba(255, 197, 66, 0.8))
+    global: '#3c3836'
   colors.hints.fg:
-    global: black
+    global: '#ebdbb2'
+  colors.hints.match.fg:
+    global: '#fb4934'
+  colors.keyhint.bg:
+    global: '#bb1d2021'
   colors.keyhint.fg:
-    global: '#d33682'
+    global: '#ebdbb2'
   colors.keyhint.suffix.fg:
-    global: '#d33682'
+    global: '#fb4934'
   colors.messages.error.bg:
     global: '#dc322f'
   colors.messages.error.border:
@@ -157,27 +161,37 @@ settings:
   colors.prompts.selected.bg:
     global: '#282828'
   colors.statusbar.caret.bg:
-    global: '#a89984'
+    global: '#b16286'
   colors.statusbar.caret.fg:
-    global: '#458588'
+    global: '#ebdbb2'
   colors.statusbar.caret.selection.bg:
     global: '#458588'
   colors.statusbar.caret.selection.fg:
-    global: '#a89984'
+    global: '#ebdbb2'
   colors.statusbar.command.bg:
-    global: '#252525'
+    global: '#282828'
   colors.statusbar.command.fg:
-    global: '#a89984'
+    global: '#ebdbb2'
+  colors.statusbar.command.private.bg:
+    global: '#282828'
+  colors.statusbar.command.private.fg:
+    global: '#ebdbb2'
   colors.statusbar.insert.bg:
-    global: '#252525'
+    global: '#3c3836'
   colors.statusbar.insert.fg:
-    global: '#a89984'
+    global: '#ebdbb2'
   colors.statusbar.normal.bg:
-    global: '#252525'
+    global: '#282828'
   colors.statusbar.normal.fg:
-    global: '#a89984'
+    global: '#ebdbb2'
+  colors.statusbar.passthrough.bg:
+    global: '#282828'
+  colors.statusbar.passthrough.fg:
+    global: '#ebdbb2'
   colors.statusbar.private.bg:
-    global: '#551133'
+    global: '#9d0006'
+  colors.statusbar.private.fg:
+    global: '#ebdbb2'
   colors.statusbar.progress.bg:
     global: '#83a589'
   colors.statusbar.url.error.fg:
@@ -185,11 +199,13 @@ settings:
   colors.statusbar.url.fg:
     global: '#a89984'
   colors.statusbar.url.hover.fg:
-    global: '#458588'
+    global: '#8ec08c'
+  colors.statusbar.url.success.http.fg:
+    global: '#ebdbb2'
   colors.statusbar.url.success.https.fg:
-    global: '#689d6a'
+    global: '#ebdbb2'
   colors.statusbar.url.warn.fg:
-    global: '#b16286'
+    global: '#fabd2f'
   colors.tabs.bar.bg:
     global: '#1d2021'
   colors.tabs.even.bg:
@@ -211,17 +227,19 @@ settings:
   colors.tabs.selected.even.bg:
     global: '#282828'
   colors.tabs.selected.even.fg:
-    global: '#458588'
+    global: '#83a598'
   colors.tabs.selected.odd.bg:
     global: '#282828'
   colors.tabs.selected.odd.fg:
-    global: '#458588'
+    global: '#83a598'
   colors.webpage.bg:
     global: '#f3f1f2'
   completion.cmd_history_max_items:
     global: -1
   completion.height:
     global: 30%
+  completion.scrollbar.width:
+    global: 8
   completion.shrink:
     global: true
   confirm_quit:
@@ -265,11 +283,11 @@ settings:
   content.plugins:
     global: false
   content.xss_auditing:
-    global: false
+    global: true
   downloads.location.directory:
     global: ~/Downloads
   downloads.position:
-    global: bottom
+    global: top
   fonts.completion.category:
     global: bold 10pt Hack
   fonts.completion.entry:
@@ -298,14 +316,22 @@ settings:
     global: 10pt Hack
   fonts.tabs:
     global: 8pt Hack
+  hints.border:
+    global: '1px solid #8ec07c'
   hints.chars:
     global: asdfghjk
   input.insert_mode.auto_leave:
     global: false
   input.rocker_gestures:
     global: true
+  keyhint.delay:
+    global: 0
+  keyhint.radius:
+    global: 25
   messages.timeout:
-    global: 2500
+    global: 5000
+  prompt.radius:
+    global: 25
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
