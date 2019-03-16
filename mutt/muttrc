@@ -122,12 +122,14 @@ set uncollapse_jump                                     # don't collapse on an u
 unset collapse_unread
 set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # }}}
-# Index Key Bindings {{{
+# Key Bindings {{{
 bind index          gg              first-entry
 bind index          G               last-entry
 bind index          q               group-reply
 bind index          <space>         collapse-thread
 bind attach         <return>        view-mailcap
+bind index,pager    \Cd             half-down
+bind index,pager    \Cu             half-up
 # Ctrl-R to mark all as read
 macro index         \Cr             "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><sync-mailbox>" "mark all messages as read"
 bind pager          k               previous-line
