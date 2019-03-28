@@ -491,6 +491,10 @@ set ttyfast
 
     " html }}}
 
+    " xml {{{
+    autocmd Filetype xml inoremap ,pa   <item><Enter><title><Enter><++><Enter></title><Enter><guid><Enter><++><Enter></guid><Enter><pubDate><Enter><++><Enter></pubdate><Enter><description><Enter><![CDATA[<Enter><++><Enter>]]><Enter></description><Enter></item><Esc>14k/<++><Enter>"_4cl
+    " xml }}}
+
 " Filetype Options }}}
 
 " General Settings {{{
