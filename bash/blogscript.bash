@@ -135,7 +135,7 @@ function writeToBlog()
     sed -i -e "s/<DATEREPLACE>/$(date -d "$(sed -e "s/_/ /" <<< ${theDate})" "+%a, %d %b %Y %H:%M:%S %Z")/" ${serverDir}/.drafts/$1.xml
 
     # replace the title
-    sed -i -e "s/<TITLEREPLACE>/$(date -d "$(sed -e "s/_/ /" <<< ${theDate})" "+%d.%m.%Y, %H:%M") Uhr -- $(sed -e "s/${theDate}_//" <<< $1 | sed -e "s/_/ /g" | cut -d '.' -f 1)/" ${serverDir}/.drafts/$1.xml
+    sed -i -e "s/<TITLEREPLACE>/$(sed -e "s/${theDate}_//" <<< $1 | sed -e "s/_/ /g" | cut -d '.' -f 1)/" ${serverDir}/.drafts/$1.xml
 
     # replace the url
     sed -i -e "s/<URLREPLACE>/${server}\/${blog}\#${id}/" ${serverDir}/.drafts/$1.xml
