@@ -35,7 +35,7 @@ settings:
         ',fb': open -t https://fritz.box
         ',nh': open -t https://niederhoelle.no-ip.biz
         ',oc': open -t https://owncloud.barzh.eu
-        ',ts': open -t https://barzh.eu/teamspeak3
+        ',ts': open -t https://barzh.eu/ts.html
         ;Y: null
         ;YR: hint --rapid links userscript video-spool.bash -s
         ;YS: hint links userscript video-spool.bash -s
