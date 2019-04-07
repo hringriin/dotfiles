@@ -273,36 +273,44 @@ function usage ()
             exit 0
 }
 
-# if no argument is passed to the script
-if [[ $# -eq 0 ]] ; then
-    usage
-fi
 
-# if arguments are passed, check for flags
-while getopts "dnp" opt ; do
-    case $opt in
-        d)
-            selectServer
-            checkDrafts
-            delBlogPost
-            ;;
-        n)
+function main()
+{
+    local actionSelect=$(dialog --no-tags \
+        --stdout \
+        --backtitle "by hringriin" \
+        --title "Blogscript" \
+        --menu "What do you want to do?" 0 0 0 \
+            10 "Write a new blogpost" \
+            20 "Publish one or more blogposts" \
+            30 "Delete one or more blogposts" \
+            40 "Edit a blogpost" \
+            50 "Upload to live server")
+
+    # if arguments are passed, check for flags
+    case ${actionSelect} in
+        "10")
             selectServer
             newEntry
             ;;
-        p)
+        "20")
             selectServer
             checkDrafts
             publishBlogPost
             ;;
-        \?)
-            echo -e "Invalid option: -$OPTARG\n\n" >&2
-            usage
+        "30")
+            selectServer
+            checkDrafts
+            delBlogPost
             ;;
-        :)
-            echo -e "Option -$OPTARG requires an argument." >&2
+        "40")
+            echo "TODO: Edit blogpost"
+            ;;
+        "50")
+            echo "TODO: Upload to live server"
             ;;
     esac
-done
+}
 
+main
 exit 0
