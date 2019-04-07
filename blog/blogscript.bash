@@ -5,6 +5,7 @@
 
 matchBlog="<!-- BLOG INPUT HERE -->"
 matchNav="<!-- NAV INPUT HERE -->"
+scpPath=
 serverDir=
 server=
 blog=
@@ -24,8 +25,7 @@ function newEntry()
     fi
 
     if [[ ! -d ${serverDir}/.templates ]] ; then
-        echo "TEMPLATES NEED TO BE PROVIDED BY YOURSELF"
-        exit 1
+        cp -r ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/blog/.templates ${serverDir}/
     fi
 
     # input the name for the new post
@@ -90,7 +90,7 @@ function newEntry()
         --stdout \
         --backtitle "by hringriin" \
         --title "Blogscript" \
-        --msgbox "Blogpost created. Publish or delete it, as you like." 0 0
+        --msgbox "Blogpost created." 0 0
 }
 
 # checks for the drafts folder to be not empty of html files. if NOT empty,
@@ -128,12 +128,14 @@ function selectServer()
             serverDir="${HOME}/barzh.eu"
             blog="blog.html"
             rss="rss.xml"
+            scpPath="barzh.eu:/var/www/barzh.eu"
             ;;
         "20")
             server="https:\/\/niederhoelle\.no-ip\.biz"
             serverDir="${HOME}/barzh.eu-wartung"
             blog="index.html"
             rss="rss.xml"
+            scpPath="chamus:/var/www/html"
             ;;
         *)
             exit 0
@@ -210,6 +212,10 @@ function writeToBlog()
     # add to xml file
     sed -i -e "/${matchBlog}/ r ${serverDir}/.drafts/$1.xml" ${serverDir}/${rss}
 
+    # change last update date
+    # the regex strings *should* be correct, but apparently they are not.
+    #sed -i -e "s/Letzte Aktualisierung: \d{1,2}\.\d{1,2}\.\d{2,4}, \d{1,2}:\d{1,2}/Letzte Aktualisierung: $(date "+%d.%m.%Y, %H:%M")/" ${serverDir}/${blog}
+    #sed -i -e "s/<lastBuildDate>\w{3}, \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{0,4}/<lastBuildDate>$(date "+%a, %d %b %Y %H:%M:%S %Z")/" ${serverDir}/${rss}
 
     # remove tmp files and the drafts published just now
     rm ${serverDir}/.drafts/$1{,.xml}
@@ -238,6 +244,29 @@ function delBlogPost ()
             --backtitle "by hringriin" \
             --title "Blogscript" \
             --msgbox "Selected posts were deleted." 0 0
+    fi
+}
+
+# edit selected blog post
+function editBlogPost ()
+{
+    local tmpFiles=$(getDir)
+
+    if [[ ${tmpFiles[@]} > 0 ]] ; then
+        local selPost=$(dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --default-button "Cancel" \
+            --radiolist "Select the posts to delete. This is IRREVERSIBLE!" 0 0 0 ${tmpFiles})
+
+        ${EDITOR} ${serverDir}/.drafts/${files[${selPost}]}
+
+        dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --msgbox "Blostpost edited." 0 0
     fi
 }
 
@@ -273,7 +302,18 @@ function usage ()
             exit 0
 }
 
+function uploadLive()
+{
+    scp ${serverDir}/${blog} ${serverDir}/${rss} ${scpPath}/
+    dialog --no-tags \
+        --stdout \
+        --backtitle "by hringriin" \
+        --title "Blogscript" \
+        --msgbox "Blog uploaded! Check ${server}" 0 0
 
+}
+
+# main menu, select what to do
 function main()
 {
     local actionSelect=$(dialog --no-tags \
@@ -304,10 +344,13 @@ function main()
             delBlogPost
             ;;
         "40")
-            echo "TODO: Edit blogpost"
+            selectServer
+            checkDrafts
+            editBlogPost
             ;;
         "50")
-            echo "TODO: Upload to live server"
+            selectServer
+            uploadLive
             ;;
     esac
 }
