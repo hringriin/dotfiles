@@ -14,6 +14,7 @@ files=()
 
 function newEntry()
 {
+    # check if the directories are present
     if [[ ! -d ${serverDir} ]] ; then
         mkdir -p ${serverDir}
     fi
@@ -23,36 +24,78 @@ function newEntry()
     fi
 
     if [[ ! -d ${serverDir}/.templates ]] ; then
-        //TODO
+        echo "TEMPLATES NEED TO BE PROVIDED BY YOURSELF"
+        exit 1
     fi
 
+    # input the name for the new post
     local fname=$(dialog --no-tags \
         --stdout \
         --backtitle "by hringriin" \
         --title "Blogscript" \
         --inputbox "Name your blogpost!" 0 0)
 
+    # checks for proper name convention
     if [[ ${fname} == "" ]] ; then
-        echo "No proper blogpost name given!"
+        dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --msgbox "No proper blogpost name given!" 0 0
         exit 1;
     fi
 
     # make sure the name does not contain whitespaces
     local fn=$(sed -e 's/\s/_/gm' <<< ${fname})
+
+    # store the current date as blogpost date in date's default output to
+    # modify it later
     local rawDate=$(date)
+
+    # the date for id and url
     local theDate=$(date -d "${rawDate}" "+%Y-%m-%d_%H:%M")
+
+    # the filename combined with the date for id and url
     fn="${theDate}_${fn}"
+
+    # redefining the theDate for the title
     theDate=$(sed -e "s/${theDate}/$(date -d "${rawDate}" "+%d.%m.%Y"), $(date -d "${rawDate}" "+%H:%M") Uhr/" <<< ${theDate})
 
+    # the file to be created
     file=${serverDir}/.drafts/${fn}.html
+
+    # if the blog template is not present (regardless of its content), exit
+    if [[ ! -e ${serverDir}/.templates/BLOG.html ]] ; then
+        dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --msgbox "Template error. Check, if the templates are present." 0 0
+
+        exit 0
+    fi
     cp ${serverDir}/.templates/BLOG.html ${file}
 
+    # replace the ID place holder with the correct id (called fn)
     sed -i -e "s/<IDREPLACE>/${fn}/" ${file}
+
+    # replace the title place holder with the correct date and modified file
+    # name as entered by the user
     sed -i -e "s/<TITLEREPLACE>/${theDate} -- ${fname}/" ${file}
 
+    # open the file with the user's default editor.
     ${EDITOR} ${file}
+
+    dialog --no-tags \
+        --stdout \
+        --backtitle "by hringriin" \
+        --title "Blogscript" \
+        --msgbox "Blogpost created. Publish or delete it, as you like." 0 0
 }
 
+# checks for the drafts folder to be not empty of html files. if NOT empty,
+# initialize the ${files} array variable with all the html files in the drafts
+# folder
 function checkDrafts()
 {
     if [[ -d ${serverDir}/.drafts ]] && [[ $(ls -1 ${serverDir}/.drafts | wc -l) -gt 0 ]] ; then
@@ -68,6 +111,7 @@ function checkDrafts()
     fi
 }
 
+# select the server to write/delete/publish a blogpost from
 function selectServer()
 {
     local selServ=$(dialog --no-tags \
@@ -97,6 +141,11 @@ function selectServer()
     esac
 }
 
+# the dialog needs a differently formated list, i.e. a string with:
+#   - a number
+#   - the flie name
+#   - it's initial checklist state
+# so, the original ${files} array is not suitable, but will be used later on
 function getDir()
 {
     local NUM=0
@@ -107,9 +156,14 @@ function getDir()
     done
 }
 
+# publishes a blog post, i.e. writes to the local blogs on your machine.
+# NO UPLOAD WILL BE DONE BY THIS FUNCTION!
 function writeToBlog()
 {
+    # date to be used later for id and title replacements
     local theDate="$(cut -d '_' -f 1 <<< $1)_$(cut -d '_' -f 2 <<< $1)"
+
+    # the id, being the filename provided to the function as parameter
     local id=$(cut -d '.' -f 1 <<< $1)
 
     # looks nasty, but it is necessary to add whitespaces in front of the
@@ -129,6 +183,16 @@ function writeToBlog()
     tmpFile="${serverDir}/.tmp/$$_tmp.html"
     cat ${serverDir}/.drafts/$1 | sed -e "/div/d" | tail -n +2 > ${tmpFile}
 
+    # if the rss.xml templates does not exist, exit
+    if [[ ! -e ${serverDir}/.templates/RSS.xml ]] ; then
+        dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --msgbox "Template error. Check, if the templates are present." 0 0
+
+        exit 0
+    fi
     cp ${serverDir}/.templates/RSS.xml ${serverDir}/.drafts/$1.xml
 
     # replace the date
@@ -146,10 +210,13 @@ function writeToBlog()
     # add to xml file
     sed -i -e "/${matchBlog}/ r ${serverDir}/.drafts/$1.xml" ${serverDir}/${rss}
 
+
+    # remove tmp files and the drafts published just now
     rm ${serverDir}/.drafts/$1{,.xml}
     rm ${tmpFile}
 }
 
+# delete selected blog posts
 function delBlogPost ()
 {
     local tmpFiles=$(getDir)
@@ -174,6 +241,7 @@ function delBlogPost ()
     fi
 }
 
+# publish selected blog posts
 function publishBlogPost ()
 {
     local tmpFiles=$(getDir)
@@ -191,6 +259,7 @@ function publishBlogPost ()
     fi
 }
 
+# print usesage information to the shell
 function usage ()
 {
             echo -e "Blogscript by hringriin.\nFunny things for my blog(s).\n"
@@ -209,6 +278,7 @@ if [[ $# -eq 0 ]] ; then
     usage
 fi
 
+# if arguments are passed, check for flags
 while getopts "dnp" opt ; do
     case $opt in
         d)
