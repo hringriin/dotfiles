@@ -1,27 +1,15 @@
 http://alternativlos.org/ogg.rss
-#https://www.archlinux.org/feeds/packages/
 https://www.archlinux.org/feeds/news/
-#https://wiki.archlinux.org/api.php?hidebots=1&days=7&limit=50&hidecategorization=1&action=feedrecentchanges&feedformat=rss*/
 http://www.awkwardzombie.com/awkward.php
 https://barzh.eu/rss.xml
 https://niederhoelle.no-ip.biz/rss.xml
 https://feeds2.feedburner.com/Command-line-fu "~Command-Line-Fu"
+https://feeds.feedburner.com/Explosm "~Cyanide and Happiness"
 https://feeds.feedburner.com/labnol
 https://www.comicsrss.com/rss/dilbert-classics.rss
-#http://www.engadget.com/rss.xml
-https://feeds.feedburner.com/Explosm "~Cyanide and Happiness"
-#https://blog.fefe.de/rss.xml?html
-#https://feeds.howtogeek.com/HowToGeek
-#http://blog.humblebundle.com/rss
-#http://feeds.openelec.tv/news
+https://blog.guitar-pro.com/feed/
 http://feeds.kodi.tv/xbmc
-#http://feeds.kodi.tv/latest_xbmc_addons
-#http://feeds.kodi.tv/updated_xbmc_addons
 https://feeds.feedburner.com/LookingForGroup
-#https://www.lifehack.org/feed
-#http://lifehacker.com/rss
-#https://thepunchlineismachismo.com/feed
-#http://feeds.mashable.com/Mashable
 https://www.netflixinvestor.com/rss/presentation.aspx
 https://www.netflixinvestor.com/rss/pressrelease.aspx
 https://www.netflixinvestor.com/rss/SECFiling.aspx?Exchange=CIK&Symbol=0001065280
@@ -30,10 +18,6 @@ http://www.giantitp.com/comics/oots.rss
 https://podcastohnenamen.podigee.io/feed/aac
 https://projecteuler.net/rss2_euler.xml
 https://rss.simplecast.com/podcasts/7603/rss
-#https://www.smbc-comics.com/rss.php
-#http://rss.slashdot.org/Slashdot/slashdot
-#https://schmacks.de/feeds/ruthe.php?mode=feed
-#https://feeds.feedburner.com/TEDTalks_video
 https://twitrss.me/twitter_user_to_rss/?user=climagic "~Twitter: Climagic"
 http://feeds.vimgolf.com/latest-challenges
 https://xkcd.com/rss.xml "~xkcd"
