@@ -368,6 +368,9 @@ function linkConfigs()
     # bashrc
     #sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
 
+    # blogscript
+    ${repoPath}/blog/create_config.bash
+
     # clipster
     ${repoPath}/clipster/create_config.bash
 
