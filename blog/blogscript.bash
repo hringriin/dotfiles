@@ -322,35 +322,44 @@ function main()
         --title "Blogscript" \
         --menu "What do you want to do?" 0 0 0 \
             10 "Write a new blogpost" \
-            20 "Publish one or more blogposts" \
-            30 "Delete one or more blogposts" \
             40 "Edit a blogpost" \
-            50 "Upload to live server")
+            30 "Delete one or more blogposts" \
+            20 "Publish one or more blogposts" \
+            50 "Upload to live server" \
+            60 "Exit")
 
     # if arguments are passed, check for flags
     case ${actionSelect} in
         "10")
             selectServer
             newEntry
+            main
             ;;
         "20")
             selectServer
             checkDrafts
             publishBlogPost
+            main
             ;;
         "30")
             selectServer
             checkDrafts
             delBlogPost
+            main
             ;;
         "40")
             selectServer
             checkDrafts
             editBlogPost
+            main
             ;;
         "50")
             selectServer
             uploadLive
+            main
+            ;;
+        "60")
+            exit 0
             ;;
     esac
 }
