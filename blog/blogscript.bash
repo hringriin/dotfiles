@@ -275,6 +275,16 @@ function publishBlogPost ()
 {
     local tmpFiles=$(getDir)
 
+    if [[ ! -e ${serverDir}/${blog} ]] ; then
+        dialog --no-tags \
+            --stdout \
+            --backtitle "by hringriin" \
+            --title "Blogscript" \
+            --msgbox "Blog fipe \"${blog}\" in\n${serverDir}\nnot present." 0 0
+
+        exit 1
+    fi
+
     if [[ ${tmpFiles[@]} > 0 ]] ; then
         local selPosts=$(dialog --no-tags \
             --stdout \
