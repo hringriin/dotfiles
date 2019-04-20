@@ -92,7 +92,7 @@ bind editor <space> noop
 
 set wait_key            =   no                          # shut up, mutt
 unset confirmappend                                     # don't ask, just do!
-unset quit                                              # don't ask, just do!!
+set quit                                              # don't ask, just do!!
 set beep                =   yes
 set beep_new            =   yes                         # bell on new mails
 set send_charset        =   "utf-8"                     # UTF-8 is the future, and the presence ;)
@@ -123,9 +123,13 @@ unset collapse_unread
 set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # }}}
 # Key Bindings {{{
+bind index,pager    g               noop
 bind index          gg              first-entry
+bind pager          gg              top
 bind index          G               last-entry
+bind pager          G               bottom
 bind index          q               group-reply
+bind index,pager    Q               quit
 bind index          <space>         collapse-thread
 bind attach         <return>        view-mailcap
 bind index,pager    \Cd             half-down
@@ -134,6 +138,7 @@ bind index,pager    \Cu             half-up
 macro index         \Cr             "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><sync-mailbox>" "mark all messages as read"
 bind pager          k               previous-line
 bind pager          j               next-line
+bind pager,index    a               noop
 macro pager,index   abook<Return>   '<pipe-message>${HOME}/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-to-abook.bash<enter>'
 # }}}
 # Saner copy/move dialogs {{{
