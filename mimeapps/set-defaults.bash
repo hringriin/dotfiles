@@ -15,7 +15,7 @@ xdg-mime default mupdf.desktop \
     image/ttiff
 
 # PDF
-xdg-mime default zathura.desktop \
+xdg-mime default mupdf.desktop \
     application/pdf \
     application/x-octet-stream \
     application/force-download
