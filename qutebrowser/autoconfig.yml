@@ -285,6 +285,11 @@ settings:
     global: ~/Downloads
   downloads.position:
     global: top
+  editor.command:
+    global:
+    - termite
+    - -e
+    - vim {}
   fonts.completion.category:
     global: bold 10pt Hack
   fonts.completion.entry:
