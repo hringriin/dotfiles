@@ -1,10 +1,10 @@
 # vim: ft=muttrc
-source ~/.mutt/passwords/password.com.gmail.jk.iptaid
 
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
 set smtp_url            =   "smtps://jk.iptaid@smtp.gmail.com:465/"
+set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.jk.iptaid | awk '{print $2}'`
 set from                =   "jk.iptaid@gmail.com"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/com.gmail.jk.iptaid/"
@@ -12,7 +12,6 @@ set spoolfile           =   "+Inbox"
 set postponed           =   "+[Gmail]/Drafts"
 set record              =   "+[Gmail]/Sent Mail"
 unset signature
-#set signature           =   "/path/to/file"
 set ssl_force_tls       =   yes
 unset ssl_starttls
 unset pgp_sign_as

@@ -1,11 +1,10 @@
 # vim: ft=muttrc
-source ~/.mutt/passwords/password.de.uni-bremen.jkoester
 
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
 set smtp_url            =   "smtps://jkoester@smtp.uni-bremen.de:465/"
-#set smtp_url            =   "smtp://jkoester@smtp.uni-bremen.de:587/"
+set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.uni-bremen.jkoester | awk '{print $2}'`
 set from                =   "jkoester@tzi.de"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/de.uni-bremen.jkoester/"
