@@ -45,7 +45,7 @@ root: ~/
 windows:
     - Mutt:
         panes:
-            - mutt
+            - neomutt
     - Mbsync:
         panes:
             - clear
