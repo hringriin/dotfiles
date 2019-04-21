@@ -4,45 +4,18 @@ source ~/.mutt/passwords/password.com.gmail.koester.joschka
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
-set smtp_url            =   "smtp://koester.joschka@smtp.gmail.com:587/"
+set smtp_url            =   "smtps://koester.joschka@smtp.gmail.com:465/"
 set from                =   "koester.joschka@gmail.com"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/com.gmail.koester.joschka/"
 set spoolfile           =   "+Inbox"
-set postponed           =   "+Drafts"
-set record              =   "+Sent"
+set postponed           =   "+[Google Mail]/Drafts"
+set record              =   "+[Google Mail]/Sent Mail"
 set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Privat/thunderbird.signatures.privat.txt"
 set ssl_force_tls       =   yes
 unset ssl_starttls
 
-# Add mailboxes to sidebar. Have a look at mbsyncrc.
-mailboxes +Inbox \
-    +Sent \
-    +Drafts \
-    +Trash \
-    +Spam \
-    +BrePark \
-    +DHL \
-    +Elgato \
-    +EMP \
-    +Eventim \
-    +FAX \
-    +FlightSimulatorX \
-    +FritzBox \
-    +Google \
-    +GuitarPro \
-    +IndieGala \
-    +KultbahnhofGifhorn \
-    +LetsEncrypt \
-    +Magix \
-    +MERKEN \
-    +MyDays \
-    +MySongbook \
-    +Navigon \
-    +O2 \
-    +Payback \
-    +Niederhoelle-Org \
-    +Server4You \
-    +Strato \
-    +Thrustmaster \
-    +WDCloud
+# Add mailboxes to sidebar.
+# The Box "+----------" is just a separator and no real mailbox
+mailboxes +Inbox +"[Google Mail]/Sent Mail" +"[Google Mail]/Drafts" +"[Google Mail]/Starred" +"[Google Mail]/Spam" +"[Google Mail]/Trash" +----------
+source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

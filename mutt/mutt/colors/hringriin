@@ -49,3 +49,4 @@ color   header              brightwhite     default        '^(resent)'          
 
 color   body                color111        default        "((ftp|http|https)://|news:)[^ >)\"\t]+"                     # header fo
 color   body                color123        default        "[-a-z_0-9.+]+@[-a-z_0-9.]+"                                 # header fo
+color   progress            color223        red

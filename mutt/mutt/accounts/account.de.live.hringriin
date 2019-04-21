@@ -4,7 +4,7 @@ source ~/.mutt/passwords/password.de.live.hringriin
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
-set smtp_url            =   "smtp://hringriin@smtp-mail.outlook.com:587/"
+set smtp_url            =   "smtps://hringriin@smtp-mail.outlook.com:465/"
 set from                =   "hringriin@live.de"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/de.live.hringriin/"
@@ -15,11 +15,9 @@ unset signature
 #set signature           =   "/path/to/file"
 set ssl_force_tls       =   yes
 unset ssl_starttls
-unset pgp_sign_as       =
+unset pgp_sign_as
 
-# Add mailboxes to sidebar. Have a look at mbsyncrc.
-mailboxes +Inbox \
-    +Sent \
-    +Drafts \
-    +Trash \
-    +Spam
+# Add mailboxes to sidebar.
+# The Box "+----------" is just a separator and no real mailbox
+mailboxes +Inbox +Sent +Drafts +Deleted +Junk +----------
+source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

@@ -4,96 +4,20 @@ source ~/.mutt/passwords/password.com.gmail.hringriin
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
-set smtp_url            =   "smtp://hringriin@smtp.gmail.com:587/"
+set smtp_url            =   "smtps://hringriin@smtp.gmail.com:465/"
 set from                =   "hringriin@gmail.com"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/com.gmail.hringriin/"
 set spoolfile           =   "+Inbox"
-set postponed           =   "+Drafts"
-set record              =   "+Sent"
+set postponed           =   "+[Google Mail]/Drafts"
+set record              =   "+[Google Mail]/Sent Mail"
 unset signature
 #set signature           =   "/path/to/file"
 set ssl_force_tls       =   yes
 unset ssl_starttls
-unset pgp_sign_as       =   
+unset pgp_sign_as
 
-# Add mailboxes to sidebar. Have a look at mbsyncrc.
-mailboxes +Inbox \
-    +Sent \
-    +Drafts \
-    +Trash \
-    +Spam \
-    +AliExpress \
-    +Alternate \
-    +Amazon \
-    +Archlinux \
-    +BladeAndSoul \
-    +Box \
-    +Bremer-Bonbon-Manufaktur \
-    +Chefkoch \
-    +Codecademy \
-    +DHL \
-    +Doodle \
-    +Dropbox \
-    +EA \
-    +Ebay \
-    +ElderScrollsOnline \
-    +EliteDangerous \
-    +Ello \
-    +Elyra \
-    +EMP \
-    +Facebook \
-    +Fanatical \
-    +Fastfood \
-    +FuelRats \
-    +FunCom \
-    +G2A \
-    +GetDigital \
-    +Github \
-    +Github_Issues \
-    +GitKraken \
-    +GOG \
-    +Google \
-    +Hertie \
-    +HumbleBundle \
-    +iFixit \
-    +Imgur \
-    +IsNichWahr \
-    +InstantGaming \
-    +JMS-Hardware \
-    +MasteringVim \
-    +Maxdome \
-    +McDonalds \
-    +MechWarriorOnline \
-    +MMOGA \
-    +Mojang \
-    +Motor-Talk \
-    +Netflix \
-    +NeuerRechner \
-    +NoIp \
-    +Nvidia \
-    +OwnCloud \
-    +Paradox-Interactive \
-    +Pastebin \
-    +PayPal \
-    +ProMods \
-    +qutebrowser \
-    +Raspberry-Pi-Store \
-    +Rift \
-    +Robocraft \
-    +Sony \
-    +Spotify \
-    +Stack-Overflow \
-    +Steam \
-    +SWToR \
-    +TAP \
-    +TeamViewer \
-    +Trashy \
-    +Twitch \
-    +Twitter \
-    +Ubisoft \
-    +Ultimate-Guitar \
-    +Volkswagen-Classic \
-    +WDCloud \
-    +Wuala \
-    +YouTube
+# Add mailboxes to sidebar.
+# The Box "+----------" is just a separator and no real mailbox
+mailboxes +Inbox +"[Google Mail]/Sent Mail" +"[Google Mail]/Drafts" +"[Google Mail]/Starred" +"[Google Mail]/Spam" +"[Google Mail]/Trash" +----------
+source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

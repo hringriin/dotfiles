@@ -4,23 +4,20 @@ source ~/.mutt/passwords/password.com.gmail.ahliazhia
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
-set smtp_url            =   "smtp://ahliazhia@smtp.gmail.com:587/"
+set smtp_url            =   "smtps://ahliazhia@smtp.gmail.com:465/"
 set from                =   "ahliazhia@gmail.com"
 set realname            =   "Jo Ba"
 set folder              =   "~/.mailfolder/com.gmail.ahliazhia/"
 set spoolfile           =   "+Inbox"
-set postponed           =   "+Drafts"
-set record              =   "+Sent"
+set postponed           =   "+[Google Mail]/Drafts"
+set record              =   "+[Google Mail]/Sent Mail"
 unset signature
 #set signature           =   "/path/to/file"
 set ssl_force_tls       =   yes
 unset ssl_starttls
-unset pgp_sign_as       =   
+unset pgp_sign_as
 
-# Add mailboxes to sidebar. Have a look at mbsyncrc.
-mailboxes +Inbox \
-    +Sent \
-    +Drafts \
-    +Trash \
-    +Spam \
-    +Google
+# Add mailboxes to sidebar.
+# The Box "+----------" is just a separator and no real mailbox
+mailboxes +Inbox +"[Google Mail]/Sent Mail" +"[Google Mail]/Drafts" +"[Google Mail]/Spam" +"[Google Mail]/Trash" +----------
+source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

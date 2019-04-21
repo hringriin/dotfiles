@@ -5,7 +5,7 @@
 
 # JKOESTER@UNI-BREMEN.DE {{{
 
-IMAPAccount de.uni-bremen.jkoester
+IMAPStore de.uni-bremen.jkoester-remote
 Host imap.uni-bremen.de
 User jkoester
 Pass "password.de.uni-bremen.jkoester"
@@ -13,332 +13,23 @@ Pass "password.de.uni-bremen.jkoester"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore de.uni-bremen.jkoester-remote
-Account de.uni-bremen.jkoester
-
 MaildirStore de.uni-bremen.jkoester-local
 Path ~/.mailfolder/de.uni-bremen.jkoester/
-Inbox ~/.mailfolder/de.uni-bremen.jkoester/inbox
+Inbox ~/.mailfolder/de.uni-bremen.jkoester/Inbox
+Subfolders Verbatim
 
-Channel de.uni-bremen.jkoester-default
+Channel de.uni-bremen.jkoester
 Master :de.uni-bremen.jkoester-remote:
-Slave :de.uni-bremen.jkoester-local:Inbox
+Slave :de.uni-bremen.jkoester-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-sent
-Master :de.uni-bremen.jkoester-remote:INBOX/"Sent"
-slave  :de.uni-bremen.jkoester-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-drafts
-Master :de.uni-bremen.jkoester-remote:INBOX/"Drafts"
-slave  :de.uni-bremen.jkoester-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-trash
-Master :de.uni-bremen.jkoester-remote:INBOX/"Trash"
-slave  :de.uni-bremen.jkoester-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-spam
-Master :de.uni-bremen.jkoester-remote:INBOX/"Junk"
-slave  :de.uni-bremen.jkoester-local:Junk
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-spam-jana
-Master :de.uni-bremen.jkoester-remote:INBOX/"Spam-Jana"
-slave  :de.uni-bremen.jkoester-local:SPAM_JANA
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-1und1
-Master :de.uni-bremen.jkoester-remote:INBOX/"1 UND 1"
-slave  :de.uni-bremen.jkoester-local:1und1
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2012
-Master :de.uni-bremen.jkoester-remote:INBOX/"2012"
-slave  :de.uni-bremen.jkoester-local:2012
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2013
-Master :de.uni-bremen.jkoester-remote:INBOX/"2013"
-slave  :de.uni-bremen.jkoester-local:2013
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2014
-Master :de.uni-bremen.jkoester-remote:INBOX/"2014"
-slave  :de.uni-bremen.jkoester-local:2014
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2015
-Master :de.uni-bremen.jkoester-remote:INBOX/"2015"
-slave  :de.uni-bremen.jkoester-local:2015
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2016
-Master :de.uni-bremen.jkoester-remote:INBOX/"2016"
-slave  :de.uni-bremen.jkoester-local:2016
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-2017
-Master :de.uni-bremen.jkoester-remote:INBOX/"2017"
-slave  :de.uni-bremen.jkoester-local:2017
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-Allgemein
-Master :de.uni-bremen.jkoester-remote:INBOX/"Allgemein"
-slave  :de.uni-bremen.jkoester-local:Allgemein
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-AStAEDV
-Master :de.uni-bremen.jkoester-remote:INBOX/"AStA EDV"
-slave  :de.uni-bremen.jkoester-local:AStA_EDV
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-Dropbox
-Master :de.uni-bremen.jkoester-remote:INBOX/"Dropbox"
-slave  :de.uni-bremen.jkoester-local:Dropbox
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-DreamSpark
-Master :de.uni-bremen.jkoester-remote:INBOX/"DreamSpark"
-slave  :de.uni-bremen.jkoester-local:DreamSpark
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-FB3Tickets
-Master :de.uni-bremen.jkoester-remote:INBOX/"FB3 Tickets"
-slave  :de.uni-bremen.jkoester-local:FB3Tickets
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-FBMI
-Master :de.uni-bremen.jkoester-remote:INBOX/"FBMI"
-slave  :de.uni-bremen.jkoester-local:FBMI
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-GitlabCommitMessages
-Master :de.uni-bremen.jkoester-remote:INBOX/"Gitlab Commit Messages"
-slave  :de.uni-bremen.jkoester-local:Gitlab_Commit_Messages
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-GitlabIssues
-Master :de.uni-bremen.jkoester-remote:INBOX/"Gitlab Issues"
-slave  :de.uni-bremen.jkoester-local:GitlabIssues
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-INWX
-Master :de.uni-bremen.jkoester-remote:INBOX/"INWX"
-slave  :de.uni-bremen.jkoester-local:INWX
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-MEMS
-Master :de.uni-bremen.jkoester-remote:INBOX/"MEMS"
-slave  :de.uni-bremen.jkoester-local:MEMS
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-Mentoren
-Master :de.uni-bremen.jkoester-remote:INBOX/"Mentoren"
-slave  :de.uni-bremen.jkoester-local:Mentoren
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-MentorenTeam
-Master :de.uni-bremen.jkoester-remote:INBOX/"Mentoren Team"
-slave  :de.uni-bremen.jkoester-local:Mentoren_Team
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-PABO
-Master :de.uni-bremen.jkoester-remote:INBOX/"PABO"
-slave  :de.uni-bremen.jkoester-local:PABO
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-PI3
-Master :de.uni-bremen.jkoester-remote:INBOX/"PI3"
-slave  :de.uni-bremen.jkoester-local:PI3
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StudIP
-Master :de.uni-bremen.jkoester-remote:INBOX/"StudIP"
-slave  :de.uni-bremen.jkoester-local:StudIP
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugA
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA"
-slave  :de.uni-bremen.jkoester-local:StugA
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAFacebook
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA/Facebook"
-slave  :de.uni-bremen.jkoester-local:StugA_Facebook
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugATwitter
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA/Twitter"
-slave  :de.uni-bremen.jkoester-local:StugA_Twitter
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdmin
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminBackup
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Backup"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Backup
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminCertificates
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Certificates"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Certificates
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminCron
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Cron"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Cron
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminHostEurope
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/HostEurope"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_HostEurope
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminMailmanFoo
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Mailman"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_MailmanFoo
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminNagios
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Nagios"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Nagios
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminRaumzugang
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Raumzugang"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Raumzugang
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminRootKitHunter
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/RootkitHunter"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_RootkitHunter
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminSecurityIssues
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/SecurityIssues"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_SecurityIssues
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminTrashy
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Trashy"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Trashy
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminSMART
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/SMART"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_SMART
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-StugAAdminWordpress
-Master :de.uni-bremen.jkoester-remote:INBOX/"StugA-Admin/Wordpress"
-slave  :de.uni-bremen.jkoester-local:StugA-Admin_Wordpress
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.uni-bremen.jkoester-SWP2
-Master :de.uni-bremen.jkoester-remote:INBOX/"SWP2"
-slave  :de.uni-bremen.jkoester-local:SWP2
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # KOESTER.JOSCHKA@GMAIL.COM {{{
 
-IMAPAccount com.gmail.koester.joschka
+IMAPStore com.gmail.koester.joschka-remote
 Host imap.gmail.com
 User koester.joschka@gmail.com
 Pass "password.com.gmail.koester.joschka"
@@ -347,227 +38,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.koester.joschka-remote
-Account com.gmail.koester.joschka
-
 MaildirStore com.gmail.koester.joschka-local
 Path ~/.mailfolder/com.gmail.koester.joschka/
-Inbox ~/.mailfolder/com.gmail.koester.joschka/inbox
+Inbox ~/.mailfolder/com.gmail.koester.joschka/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.koester.joschka-default
+Channel com.gmail.koester.joschka
 Master :com.gmail.koester.joschka-remote:
-Slave :com.gmail.koester.joschka-local:Inbox
+Slave :com.gmail.koester.joschka-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-sent
-Master :com.gmail.koester.joschka-remote:"[Google Mail]/Sent Mail"
-slave  :com.gmail.koester.joschka-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-drafts
-Master :com.gmail.koester.joschka-remote:"[Google Mail]/Drafts"
-slave  :com.gmail.koester.joschka-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-trash
-Master :com.gmail.koester.joschka-remote:"[Google Mail]/Trash"
-slave  :com.gmail.koester.joschka-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-spam
-Master :com.gmail.koester.joschka-remote:"[Google Mail]/Spam"
-slave  :com.gmail.koester.joschka-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-BrePark
-Master :com.gmail.koester.joschka-remote:INBOX/"BrePark"
-slave  :com.gmail.koester.joschka-local:BrePark
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-DHL
-Master :com.gmail.koester.joschka-remote:INBOX/"DHL"
-slave  :com.gmail.koester.joschka-local:DHL
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Elgato
-Master :com.gmail.koester.joschka-remote:INBOX/"Elgato"
-slave  :com.gmail.koester.joschka-local:Elgato
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-EMP
-Master :com.gmail.koester.joschka-remote:INBOX/"EMP"
-slave  :com.gmail.koester.joschka-local:EMP
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Eventim
-Master :com.gmail.koester.joschka-remote:INBOX/"Eventim"
-slave  :com.gmail.koester.joschka-local:Eventim
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-FAX
-Master :com.gmail.koester.joschka-remote:INBOX/"FAX"
-slave  :com.gmail.koester.joschka-local:FAX
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-FlightSimulatorX
-Master :com.gmail.koester.joschka-remote:INBOX/"FlightSimulatorX"
-slave  :com.gmail.koester.joschka-local:FlightSimulatorX
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-FritzBox
-Master :com.gmail.koester.joschka-remote:INBOX/"FritzBox"
-slave  :com.gmail.koester.joschka-local:FritzBox
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Google
-Master :com.gmail.koester.joschka-remote:INBOX/"Google"
-slave  :com.gmail.koester.joschka-local:Google
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-GuitarPro
-Master :com.gmail.koester.joschka-remote:INBOX/"GuitarPro"
-slave  :com.gmail.koester.joschka-local:GuitarPro
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-IndieGala
-Master :com.gmail.koester.joschka-remote:INBOX/"IndieGala"
-slave  :com.gmail.koester.joschka-local:IndieGala
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-kultbahnhof
-Master :com.gmail.koester.joschka-remote:INBOX/"KultbahnhofGifhorn"
-slave  :com.gmail.koester.joschka-local:KultbahnhofGifhorn
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-LetsEncrypt
-Master :com.gmail.koester.joschka-remote:INBOX/"LetsEncrypt"
-slave  :com.gmail.koester.joschka-local:LetsEncrypt
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Magix
-Master :com.gmail.koester.joschka-remote:INBOX/"Magix"
-slave  :com.gmail.koester.joschka-local:Magix
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-MERKEN
-Master :com.gmail.koester.joschka-remote:INBOX/"MERKEN"
-slave  :com.gmail.koester.joschka-local:MERKEN
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-MyDays
-Master :com.gmail.koester.joschka-remote:INBOX/"MyDays"
-slave  :com.gmail.koester.joschka-local:MyDays
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-MySongbook
-Master :com.gmail.koester.joschka-remote:INBOX/"MySongbook"
-slave  :com.gmail.koester.joschka-local:MySongbook
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Navigon
-Master :com.gmail.koester.joschka-remote:INBOX/"Navigon"
-slave  :com.gmail.koester.joschka-local:Navigon
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-O2
-Master :com.gmail.koester.joschka-remote:INBOX/"O2-Handy"
-slave  :com.gmail.koester.joschka-local:O2
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Payback
-Master :com.gmail.koester.joschka-remote:INBOX/"Payback"
-slave  :com.gmail.koester.joschka-local:Payback
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-NIEDERHOELLE-ORG
-Master :com.gmail.koester.joschka-remote:INBOX/"NIEDERHOELLE-ORG_RESTE"
-slave  :com.gmail.koester.joschka-local:Niederhoelle-Org
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Server4You
-Master :com.gmail.koester.joschka-remote:INBOX/"Server4You"
-slave  :com.gmail.koester.joschka-local:Server4You
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Strato
-Master :com.gmail.koester.joschka-remote:INBOX/"Strato"
-slave  :com.gmail.koester.joschka-local:Strato
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-Thrustmaster
-Master :com.gmail.koester.joschka-remote:INBOX/"Thrustmaster"
-slave  :com.gmail.koester.joschka-local:Thrustmaster
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.koester.joschka-WDCloud
-Master :com.gmail.koester.joschka-remote:INBOX/"WDCloud"
-slave  :com.gmail.koester.joschka-local:WDCloud
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # HRINGRIIN@GMAIL.COM {{{
 
-IMAPAccount com.gmail.hringriin
+IMAPStore com.gmail.hringriin-remote
 Host imap.gmail.com
 User hringriin@gmail.com
 Pass "password.com.gmail.hringriin"
@@ -576,570 +63,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.hringriin-remote
-Account com.gmail.hringriin
-
 MaildirStore com.gmail.hringriin-local
 Path ~/.mailfolder/com.gmail.hringriin/
-Inbox ~/.mailfolder/com.gmail.hringriin/inbox
+Inbox ~/.mailfolder/com.gmail.hringriin/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.hringriin-default
+Channel com.gmail.hringriin
 Master :com.gmail.hringriin-remote:
-Slave :com.gmail.hringriin-local:Inbox
+Slave :com.gmail.hringriin-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-sent
-Master :com.gmail.hringriin-remote:"[Google Mail]/Sent Mail"
-slave  :com.gmail.hringriin-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-drafts
-Master :com.gmail.hringriin-remote:"[Google Mail]/Drafts"
-slave  :com.gmail.hringriin-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-trash
-Master :com.gmail.hringriin-remote:"[Google Mail]/Trash"
-slave  :com.gmail.hringriin-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-spam
-Master :com.gmail.hringriin-remote:"[Google Mail]/Spam"
-slave  :com.gmail.hringriin-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-AliExpress
-Master :com.gmail.hringriin-remote:INBOX/"AliExpress"
-slave  :com.gmail.hringriin-local:AliExpress
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Alternate
-Master :com.gmail.hringriin-remote:INBOX/"Alternate"
-slave  :com.gmail.hringriin-local:Alternate
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Amazon
-Master :com.gmail.hringriin-remote:INBOX/"Amazon"
-slave  :com.gmail.hringriin-local:Amazon
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Archlinux
-Master :com.gmail.hringriin-remote:INBOX/"Archlinux"
-slave  :com.gmail.hringriin-local:Archlinux
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-BladeAndSoul
-Master :com.gmail.hringriin-remote:INBOX/"BladeAndSoul"
-slave  :com.gmail.hringriin-local:BladeAndSoul
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Box
-Master :com.gmail.hringriin-remote:INBOX/"Box"
-slave  :com.gmail.hringriin-local:Box
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Bremer-Bonbon-Manufaktur
-Master :com.gmail.hringriin-remote:INBOX/"Bremer-Bonbon-Manufaktur"
-slave  :com.gmail.hringriin-local:Bremer-Bonbon-Manufaktur
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Chefkoch
-Master :com.gmail.hringriin-remote:INBOX/"Chefkoch"
-slave  :com.gmail.hringriin-local:Chefkoch
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Codecademy
-Master :com.gmail.hringriin-remote:INBOX/"Codecademy"
-slave  :com.gmail.hringriin-local:Codecademy
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-DHL
-Master :com.gmail.hringriin-remote:INBOX/"DHL"
-slave  :com.gmail.hringriin-local:DHL
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Doodle
-Master :com.gmail.hringriin-remote:INBOX/"Doodle"
-slave  :com.gmail.hringriin-local:Doodle
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-EA
-Master :com.gmail.hringriin-remote:INBOX/"EA"
-slave  :com.gmail.hringriin-local:EA
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Dropbox
-Master :com.gmail.hringriin-remote:INBOX/"Dropbox"
-slave  :com.gmail.hringriin-local:Dropbox
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Ebay
-Master :com.gmail.hringriin-remote:INBOX/"Ebay"
-slave  :com.gmail.hringriin-local:Ebay
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-ElderScrollsOnline
-Master :com.gmail.hringriin-remote:INBOX/"ElderScrollsOnline"
-slave  :com.gmail.hringriin-local:ElderScrollsOnline
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-EliteDangerous
-Master :com.gmail.hringriin-remote:INBOX/"EliteDangerous"
-slave  :com.gmail.hringriin-local:EliteDangerous
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Ello
-Master :com.gmail.hringriin-remote:INBOX/"Ello"
-slave  :com.gmail.hringriin-local:Ello
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Elyra
-Master :com.gmail.hringriin-remote:INBOX/"Elyra"
-slave  :com.gmail.hringriin-local:Elyra
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-EMP
-Master :com.gmail.hringriin-remote:INBOX/"EMP"
-slave  :com.gmail.hringriin-local:EMP
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Facebook
-Master :com.gmail.hringriin-remote:INBOX/"Facebook"
-slave  :com.gmail.hringriin-local:Facebook
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Fanatical
-Master :com.gmail.hringriin-remote:INBOX/"Fanatical"
-slave  :com.gmail.hringriin-local:Fanatical
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Fastfood
-Master :com.gmail.hringriin-remote:INBOX/"Fastfood"
-slave  :com.gmail.hringriin-local:Fastfood
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-FuelRats
-Master :com.gmail.hringriin-remote:INBOX/"FuelRats"
-slave  :com.gmail.hringriin-local:FuelRats
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-FunCom
-Master :com.gmail.hringriin-remote:INBOX/"FunCom"
-slave  :com.gmail.hringriin-local:FunCom
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-G2A
-Master :com.gmail.hringriin-remote:INBOX/"G2A"
-slave  :com.gmail.hringriin-local:G2A
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-GetDigital
-Master :com.gmail.hringriin-remote:INBOX/"GetDigital"
-slave  :com.gmail.hringriin-local:GetDigital
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Github
-Master :com.gmail.hringriin-remote:INBOX/"Github"
-slave  :com.gmail.hringriin-local:Github
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Github_Issues
-Master :com.gmail.hringriin-remote:INBOX/"Github_Issues"
-slave  :com.gmail.hringriin-local:Github_Issues
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-GitKraken
-Master :com.gmail.hringriin-remote:INBOX/"GitKraken"
-slave  :com.gmail.hringriin-local:GitKraken
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-GOG
-Master :com.gmail.hringriin-remote:INBOX/"GOG"
-slave  :com.gmail.hringriin-local:GOG
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Google
-Master :com.gmail.hringriin-remote:INBOX/"Google"
-slave  :com.gmail.hringriin-local:Google
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Hertie
-Master :com.gmail.hringriin-remote:INBOX/"Hertie"
-slave  :com.gmail.hringriin-local:Hertie
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-HumbleBundle
-Master :com.gmail.hringriin-remote:INBOX/"HumbleBundle"
-slave  :com.gmail.hringriin-local:HumbleBundle
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-iFixit
-Master :com.gmail.hringriin-remote:INBOX/"iFixit"
-slave  :com.gmail.hringriin-local:iFixit
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Imgur
-Master :com.gmail.hringriin-remote:INBOX/"Imgur"
-slave  :com.gmail.hringriin-local:Imgur
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-IsNichWahr
-Master :com.gmail.hringriin-remote:INBOX/"IsNichWahr"
-slave  :com.gmail.hringriin-local:IsNichWahr
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-InstantGaming
-Master :com.gmail.hringriin-remote:INBOX/"InstantGaming"
-slave  :com.gmail.hringriin-local:InstantGaming
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-JMS-Hardware
-Master :com.gmail.hringriin-remote:INBOX/"JMS-Hardware"
-slave  :com.gmail.hringriin-local:JMS-Hardware
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-MasteringVim
-Master :com.gmail.hringriin-remote:INBOX/"MasteringVim"
-slave  :com.gmail.hringriin-local:MasteringVim
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Maxdome
-Master :com.gmail.hringriin-remote:INBOX/"Maxdome"
-slave  :com.gmail.hringriin-local:Maxdome
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-McDonalds
-Master :com.gmail.hringriin-remote:INBOX/"McDonalds"
-slave  :com.gmail.hringriin-local:McDonalds
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-MechWarriorOnline
-Master :com.gmail.hringriin-remote:INBOX/"MechWarriorOnline"
-slave  :com.gmail.hringriin-local:MechWarriorOnline
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-MMOGA
-Master :com.gmail.hringriin-remote:INBOX/"MMOGA"
-slave  :com.gmail.hringriin-local:MMOGA
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Mojang
-Master :com.gmail.hringriin-remote:INBOX/"Mojang"
-slave  :com.gmail.hringriin-local:Mojang
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Motor-Talk
-Master :com.gmail.hringriin-remote:INBOX/"Motor-Talk"
-slave  :com.gmail.hringriin-local:Motor-Talk
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Netflix
-Master :com.gmail.hringriin-remote:INBOX/"Netflix"
-slave  :com.gmail.hringriin-local:Netflix
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-NEUERRECHNER
-Master :com.gmail.hringriin-remote:INBOX/"NeuerRechner"
-slave  :com.gmail.hringriin-local:NeuerRechner
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-NoIp
-Master :com.gmail.hringriin-remote:INBOX/"NoIp"
-slave  :com.gmail.hringriin-local:NoIp
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Nvidia
-Master :com.gmail.hringriin-remote:INBOX/"Nvidia"
-slave  :com.gmail.hringriin-local:Nvidia
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-OwnCloud
-Master :com.gmail.hringriin-remote:INBOX/"OwnCloud"
-slave  :com.gmail.hringriin-local:OwnCloud
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Paradox-Interactive
-Master :com.gmail.hringriin-remote:INBOX/"Paradox-Interactive"
-slave  :com.gmail.hringriin-local:Paradox-Interactive
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Pastebin
-Master :com.gmail.hringriin-remote:INBOX/"Pastebin"
-slave  :com.gmail.hringriin-local:Pastebin
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-PayPal
-Master :com.gmail.hringriin-remote:INBOX/"PayPal"
-slave  :com.gmail.hringriin-local:PayPal
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-ProMods
-Master :com.gmail.hringriin-remote:INBOX/"ProMods"
-slave  :com.gmail.hringriin-local:ProMods
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-qutebrowser
-Master :com.gmail.hringriin-remote:INBOX/"qutebrowser"
-slave  :com.gmail.hringriin-local:qutebrowser
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Raspberry-Pi-Store
-Master :com.gmail.hringriin-remote:INBOX/"Raspberry-Pi-Store"
-slave  :com.gmail.hringriin-local:Raspberry-Pi-Store
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Rift
-Master :com.gmail.hringriin-remote:INBOX/"Rift"
-slave  :com.gmail.hringriin-local:Rift
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Robocraft
-Master :com.gmail.hringriin-remote:INBOX/"Robocraft"
-slave  :com.gmail.hringriin-local:Robocraft
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Sony
-Master :com.gmail.hringriin-remote:INBOX/"Sony"
-slave  :com.gmail.hringriin-local:Sony
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Spotify
-Master :com.gmail.hringriin-remote:INBOX/"Spotify"
-slave  :com.gmail.hringriin-local:Spotify
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Stack-Overflow
-Master :com.gmail.hringriin-remote:INBOX/"Stack-Overflow"
-slave  :com.gmail.hringriin-local:Stack-Overflow
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Steam
-Master :com.gmail.hringriin-remote:INBOX/"Steam"
-slave  :com.gmail.hringriin-local:Steam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-SWTOR
-Master :com.gmail.hringriin-remote:INBOX/"SWToR"
-slave  :com.gmail.hringriin-local:SWToR
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-TAP
-Master :com.gmail.hringriin-remote:INBOX/"TAP"
-slave  :com.gmail.hringriin-local:TAP
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-TeamViewer
-Master :com.gmail.hringriin-remote:INBOX/"TeamViewer"
-slave  :com.gmail.hringriin-local:TeamViewer
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Trashy
-Master :com.gmail.hringriin-remote:INBOX/"Trashy"
-slave  :com.gmail.hringriin-local:Trashy
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Twitch
-Master :com.gmail.hringriin-remote:INBOX/"Twitch"
-slave  :com.gmail.hringriin-local:Twitch
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Twitter
-Master :com.gmail.hringriin-remote:INBOX/"Twitter"
-slave  :com.gmail.hringriin-local:Twitter
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Ubisoft
-Master :com.gmail.hringriin-remote:INBOX/"Ubisoft"
-slave  :com.gmail.hringriin-local:Ubisoft
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Ultimate-Guitar
-Master :com.gmail.hringriin-remote:INBOX/"Ultimate-Guitar"
-slave  :com.gmail.hringriin-local:Ultimate-Guitar
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Volkswagen-Classic
-Master :com.gmail.hringriin-remote:INBOX/"Volkswagen-Classic"
-slave  :com.gmail.hringriin-local:Volkswagen-Classic
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-WDCloud
-Master :com.gmail.hringriin-remote:INBOX/"WDCloud"
-slave  :com.gmail.hringriin-local:WDCloud
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-Wuala
-Master :com.gmail.hringriin-remote:INBOX/"Wuala"
-slave  :com.gmail.hringriin-local:Wuala
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.hringriin-YouTube
-Master :com.gmail.hringriin-remote:INBOX/"YouTube"
-slave  :com.gmail.hringriin-local:YouTube
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # JOSH.ETS2MP@GMAIL.COM {{{
 
-IMAPAccount com.gmail.josh.ets2mp
+IMAPStore com.gmail.josh.ets2mp-remote
 Host imap.gmail.com
 User josh.ets2mp@gmail.com
 Pass "password.com.gmail.josh.ets2mp"
@@ -1148,59 +88,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.josh.ets2mp-remote
-Account com.gmail.josh.ets2mp
-
 MaildirStore com.gmail.josh.ets2mp-local
 Path ~/.mailfolder/com.gmail.josh.ets2mp/
-Inbox ~/.mailfolder/com.gmail.josh.ets2mp/inbox
+Inbox ~/.mailfolder/com.gmail.josh.ets2mp/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.josh.ets2mp-default
+Channel com.gmail.josh.ets2mp
 Master :com.gmail.josh.ets2mp-remote:
-Slave :com.gmail.josh.ets2mp-local:Inbox
+Slave :com.gmail.josh.ets2mp-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.josh.ets2mp-sent
-Master :com.gmail.josh.ets2mp-remote:"[Gmail]/Sent Mail"
-slave  :com.gmail.josh.ets2mp-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.josh.ets2mp-drafts
-Master :com.gmail.josh.ets2mp-remote:"[Gmail]/Drafts"
-slave  :com.gmail.josh.ets2mp-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.josh.ets2mp-trash
-Master :com.gmail.josh.ets2mp-remote:"[Gmail]/Trash"
-slave  :com.gmail.josh.ets2mp-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.josh.ets2mp-spam
-Master :com.gmail.josh.ets2mp-remote:"[Gmail]/Spam"
-slave  :com.gmail.josh.ets2mp-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.josh.ets2mp-Google
-Master :com.gmail.josh.ets2mp-remote:INBOX/"Google"
-slave  :com.gmail.josh.ets2mp-local:Google
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # BLUTIGE.KODOLEBER.ESSER@GMAIL.COM {{{
 
-IMAPAccount com.gmail.blutige.kodoleber.esser
+IMAPStore com.gmail.blutige.kodoleber.esser-remote
 Host imap.gmail.com
 User blutige.kodoleber.esser@gmail.com
 Pass "password.com.gmail.blutige.kodoleber.esser"
@@ -1209,59 +113,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.blutige.kodoleber.esser-remote
-Account com.gmail.blutige.kodoleber.esser
-
 MaildirStore com.gmail.blutige.kodoleber.esser-local
 Path ~/.mailfolder/com.gmail.blutige.kodoleber.esser/
-Inbox ~/.mailfolder/com.gmail.blutige.kodoleber.esser/inbox
+Inbox ~/.mailfolder/com.gmail.blutige.kodoleber.esser/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.blutige.kodoleber.esser-default
+Channel com.gmail.blutige.kodoleber.esser
 Master :com.gmail.blutige.kodoleber.esser-remote:
-Slave :com.gmail.blutige.kodoleber.esser-local:Inbox
+Slave :com.gmail.blutige.kodoleber.esser-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.blutige.kodoleber.esser-sent
-Master :com.gmail.blutige.kodoleber.esser-remote:"[Google Mail]/Sent Mail"
-slave  :com.gmail.blutige.kodoleber.esser-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.blutige.kodoleber.esser-drafts
-Master :com.gmail.blutige.kodoleber.esser-remote:"[Google Mail]/Drafts"
-slave  :com.gmail.blutige.kodoleber.esser-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.blutige.kodoleber.esser-trash
-Master :com.gmail.blutige.kodoleber.esser-remote:"[Google Mail]/Trash"
-slave  :com.gmail.blutige.kodoleber.esser-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.blutige.kodoleber.esser-spam
-Master :com.gmail.blutige.kodoleber.esser-remote:"[Google Mail]/Spam"
-slave  :com.gmail.blutige.kodoleber.esser-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.blutige.kodoleber.esser-Google
-Master :com.gmail.blutige.kodoleber.esser-remote:INBOX/"Google"
-slave  :com.gmail.blutige.kodoleber.esser-local:Google
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # JK.SGS4I9505@GMAIL.COM {{{
 
-IMAPAccount com.gmail.jk.sgs4i9505
+IMAPStore com.gmail.jk.sgs4i9505-remote
 Host imap.gmail.com
 User jk.sgs4i9505@gmail.com
 Pass "password.com.gmail.jk.sgs4i9505"
@@ -1270,59 +138,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.jk.sgs4i9505-remote
-Account com.gmail.jk.sgs4i9505
-
 MaildirStore com.gmail.jk.sgs4i9505-local
 Path ~/.mailfolder/com.gmail.jk.sgs4i9505/
-Inbox ~/.mailfolder/com.gmail.jk.sgs4i9505/inbox
+Inbox ~/.mailfolder/com.gmail.jk.sgs4i9505/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.jk.sgs4i9505-default
+Channel com.gmail.jk.sgs4i9505
 Master :com.gmail.jk.sgs4i9505-remote:
-Slave :com.gmail.jk.sgs4i9505-local:Inbox
+Slave :com.gmail.jk.sgs4i9505-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.jk.sgs4i9505-sent
-Master :com.gmail.jk.sgs4i9505-remote:"[Gmail]/Sent Mail"
-slave  :com.gmail.jk.sgs4i9505-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.sgs4i9505-drafts
-Master :com.gmail.jk.sgs4i9505-remote:"[Gmail]/Drafts"
-slave  :com.gmail.jk.sgs4i9505-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.sgs4i9505-trash
-Master :com.gmail.jk.sgs4i9505-remote:"[Gmail]/Trash"
-slave  :com.gmail.jk.sgs4i9505-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.sgs4i9505-spam
-Master :com.gmail.jk.sgs4i9505-remote:"[Gmail]/Spam"
-slave  :com.gmail.jk.sgs4i9505-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.sgs4i9505-Google
-Master :com.gmail.jk.sgs4i9505-remote:INBOX/"Google"
-slave  :com.gmail.jk.sgs4i9505-local:Google
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # JK.IPTAID@GMAIL.COM {{{
 
-IMAPAccount com.gmail.jk.iptaid
+IMAPStore com.gmail.jk.iptaid-remote
 Host imap.gmail.com
 User jk.iptaid@gmail.com
 Pass "password.com.gmail.jk.iptaid"
@@ -1331,59 +163,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.jk.iptaid-remote
-Account com.gmail.jk.iptaid
-
 MaildirStore com.gmail.jk.iptaid-local
 Path ~/.mailfolder/com.gmail.jk.iptaid/
-Inbox ~/.mailfolder/com.gmail.jk.iptaid/inbox
+Inbox ~/.mailfolder/com.gmail.jk.iptaid/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.jk.iptaid-default
+Channel com.gmail.jk.iptaid
 Master :com.gmail.jk.iptaid-remote:
-Slave :com.gmail.jk.iptaid-local:Inbox
+Slave :com.gmail.jk.iptaid-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.jk.iptaid-sent
-Master :com.gmail.jk.iptaid-remote:"[Gmail]/Sent Mail"
-slave  :com.gmail.jk.iptaid-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.iptaid-drafts
-Master :com.gmail.jk.iptaid-remote:"[Gmail]/Drafts"
-slave  :com.gmail.jk.iptaid-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.iptaid-trash
-Master :com.gmail.jk.iptaid-remote:"[Gmail]/Trash"
-slave  :com.gmail.jk.iptaid-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.iptaid-spam
-Master :com.gmail.jk.iptaid-remote:"[Gmail]/Spam"
-slave  :com.gmail.jk.iptaid-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.jk.iptaid-Google
-Master :com.gmail.jk.iptaid-remote:INBOX/"Google"
-slave  :com.gmail.jk.iptaid-local:Google
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # AHLIAZHIA@GMAIL.COM {{{
 
-IMAPAccount com.gmail.ahliazhia
+IMAPStore com.gmail.ahliazhia-remote
 Host imap.gmail.com
 User ahliazhia@gmail.com
 Pass "password.com.gmail.ahliazhia"
@@ -1392,59 +188,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.ahliazhia-remote
-Account com.gmail.ahliazhia
-
 MaildirStore com.gmail.ahliazhia-local
 Path ~/.mailfolder/com.gmail.ahliazhia/
-Inbox ~/.mailfolder/com.gmail.ahliazhia/inbox
+Inbox ~/.mailfolder/com.gmail.ahliazhia/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.ahliazhia-default
+Channel com.gmail.ahliazhia
 Master :com.gmail.ahliazhia-remote:
-Slave :com.gmail.ahliazhia-local:Inbox
+Slave :com.gmail.ahliazhia-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.ahliazhia-sent
-Master :com.gmail.ahliazhia-remote:"[Google Mail]/Sent Mail"
-slave  :com.gmail.ahliazhia-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.ahliazhia-drafts
-Master :com.gmail.ahliazhia-remote:"[Google Mail]/Drafts"
-slave  :com.gmail.ahliazhia-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.ahliazhia-trash
-Master :com.gmail.ahliazhia-remote:"[Google Mail]/Trash"
-slave  :com.gmail.ahliazhia-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.ahliazhia-spam
-Master :com.gmail.ahliazhia-remote:"[Google Mail]/Spam"
-slave  :com.gmail.ahliazhia-local:Spam
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.ahliazhia-Google
-Master :com.gmail.ahliazhia-remote:INBOX/"Google"
-slave  :com.gmail.ahliazhia-local:Google
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # MK.HHK.SMARTTV@GMAIL.COM {{{
 
-IMAPAccount com.gmail.mk.hhk.smarttv
+IMAPStore com.gmail.mk.hhk.smarttv-remote
 Host imap.gmail.com
 User mk.hhk.smarttv@gmail.com
 Pass "password.com.gmail.mk.hhk.smarttv"
@@ -1453,52 +213,23 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore com.gmail.mk.hhk.smarttv-remote
-Account com.gmail.mk.hhk.smarttv
-
 MaildirStore com.gmail.mk.hhk.smarttv-local
 Path ~/.mailfolder/com.gmail.mk.hhk.smarttv/
-Inbox ~/.mailfolder/com.gmail.mk.hhk.smarttv/inbox
+Inbox ~/.mailfolder/com.gmail.mk.hhk.smarttv/Inbox
+Subfolders Verbatim
 
-Channel com.gmail.mk.hhk.smarttv-default
+Channel com.gmail.mk.hhk.smarttv
 Master :com.gmail.mk.hhk.smarttv-remote:
-Slave :com.gmail.mk.hhk.smarttv-local:Inbox
+Slave :com.gmail.mk.hhk.smarttv-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel com.gmail.mk.hhk.smarttv-sent
-Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Sent Mail"
-slave  :com.gmail.mk.hhk.smarttv-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.mk.hhk.smarttv-drafts
-Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Drafts"
-slave  :com.gmail.mk.hhk.smarttv-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.mk.hhk.smarttv-trash
-Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Trash"
-slave  :com.gmail.mk.hhk.smarttv-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel com.gmail.mk.hhk.smarttv-spam
-Master :com.gmail.mk.hhk.smarttv-remote:"[Gmail]/Spam"
-slave  :com.gmail.mk.hhk.smarttv-local:Spam
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 # HRINGRIIN@LIVE.DE {{{
 
-IMAPAccount de.live.hringriin
+IMAPStore de.live.hringriin-remote
 Host imap-mail.outlook.com
 User hringriin@live.de
 Pass "password.de.live.hringriin"
@@ -1507,311 +238,38 @@ AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore de.live.hringriin-remote
-Account de.live.hringriin
-
 MaildirStore de.live.hringriin-local
 Path ~/.mailfolder/de.live.hringriin/
-Inbox ~/.mailfolder/de.live.hringriin/inbox
+Inbox ~/.mailfolder/de.live.hringriin/INBOX
+Subfolders Verbatim
 
-Channel de.live.hringriin-default
+Channel de.live.hringriin
 Master :de.live.hringriin-remote:
-Slave :de.live.hringriin-local:Inbox
+Slave :de.live.hringriin-local:
 Create Both
 Expunge Both
-SyncState *
-
-Channel de.live.hringriin-sent
-Master :de.live.hringriin-remote:"Sent"
-slave  :de.live.hringriin-local:Sent
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.live.hringriin-drafts
-Master :de.live.hringriin-remote:"Drafts"
-slave  :de.live.hringriin-local:Drafts
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.live.hringriin-trash
-Master :de.live.hringriin-remote:"Deleted"
-slave  :de.live.hringriin-local:Trash
-Create Both
-Expunge Both
-SyncState *
-
-Channel de.live.hringriin-spam
-Master :de.live.hringriin-remote:"Junk"
-slave  :de.live.hringriin-local:Spam
-Create Both
-Expunge Both
+Patterns *
 SyncState *
 
 # }}}
 
 # }}}
+
 # GROUPS {{{
 
 # inboxes {{{
 
-Group inboxes
-Channel de.uni-bremen.jkoester-default
-Channel com.gmail.koester.joschka-default
-Channel com.gmail.hringriin-default
-Channel com.gmail.josh.ets2mp-default
-Channel com.gmail.blutige.kodoleber.esser-default
-Channel com.gmail.jk.sgs4i9505-default
-Channel com.gmail.jk.iptaid-default
-Channel com.gmail.ahliazhia-default
-Channel com.gmail.mk.hhk.smarttv-default
-Channel de.live.hringriin-default
-
-# }}}
-
-# account wise {{{
-
-# jkoester-uni {{{
-
-Group jkoester-uni
-Channel de.uni-bremen.jkoester-default
-Channel de.uni-bremen.jkoester-sent
-Channel de.uni-bremen.jkoester-drafts
-Channel de.uni-bremen.jkoester-trash
-Channel de.uni-bremen.jkoester-spam
-Channel de.uni-bremen.jkoester-spam-jana
-Channel de.uni-bremen.jkoester-1und1
-Channel de.uni-bremen.jkoester-2012
-Channel de.uni-bremen.jkoester-2013
-Channel de.uni-bremen.jkoester-2014
-Channel de.uni-bremen.jkoester-2015
-Channel de.uni-bremen.jkoester-2016
-Channel de.uni-bremen.jkoester-2017
-Channel de.uni-bremen.jkoester-Allgemein
-Channel de.uni-bremen.jkoester-AStAEDV
-Channel de.uni-bremen.jkoester-Dropbox
-Channel de.uni-bremen.jkoester-DreamSpark
-Channel de.uni-bremen.jkoester-FB3Tickets
-Channel de.uni-bremen.jkoester-FBMI
-Channel de.uni-bremen.jkoester-GitlabCommitMessages
-Channel de.uni-bremen.jkoester-GitlabIssues
-Channel de.uni-bremen.jkoester-INWX
-Channel de.uni-bremen.jkoester-MEMS
-Channel de.uni-bremen.jkoester-Mentoren
-Channel de.uni-bremen.jkoester-MentorenTeam
-Channel de.uni-bremen.jkoester-PABO
-Channel de.uni-bremen.jkoester-PI3
-Channel de.uni-bremen.jkoester-StudIP
-Channel de.uni-bremen.jkoester-StugA
-Channel de.uni-bremen.jkoester-StugAFacebook
-Channel de.uni-bremen.jkoester-StugATwitter
-Channel de.uni-bremen.jkoester-StugAAdmin
-Channel de.uni-bremen.jkoester-StugAAdminBackup
-Channel de.uni-bremen.jkoester-StugAAdminCertificates
-Channel de.uni-bremen.jkoester-StugAAdminCron
-Channel de.uni-bremen.jkoester-StugAAdminHostEurope
-Channel de.uni-bremen.jkoester-StugAAdminMailmanFoo
-Channel de.uni-bremen.jkoester-StugAAdminNagios
-Channel de.uni-bremen.jkoester-StugAAdminRaumzugang
-Channel de.uni-bremen.jkoester-StugAAdminRootKitHunter
-Channel de.uni-bremen.jkoester-StugAAdminSecurityIssues
-Channel de.uni-bremen.jkoester-StugAAdminTrashy
-Channel de.uni-bremen.jkoester-StugAAdminSMART
-Channel de.uni-bremen.jkoester-StugAAdminWordpress
-Channel de.uni-bremen.jkoester-SWP2
-
-# }}}
-# koester.joschka-gmail {{{
-Group koester.joschka-gmail
-Channel com.gmail.koester.joschka-default
-Channel com.gmail.koester.joschka-sent
-Channel com.gmail.koester.joschka-drafts
-Channel com.gmail.koester.joschka-trash
-Channel com.gmail.koester.joschka-spam
-Channel com.gmail.koester.joschka-BrePark
-Channel com.gmail.koester.joschka-DHL
-Channel com.gmail.koester.joschka-Elgato
-Channel com.gmail.koester.joschka-EMP
-Channel com.gmail.koester.joschka-Eventim
-Channel com.gmail.koester.joschka-FAX
-Channel com.gmail.koester.joschka-FlightSimulatorX
-Channel com.gmail.koester.joschka-FritzBox
-Channel com.gmail.koester.joschka-Google
-Channel com.gmail.koester.joschka-GuitarPro
-Channel com.gmail.koester.joschka-IndieGala
-Channel com.gmail.koester.joschka-kultbahnhof
-Channel com.gmail.koester.joschka-LetsEncrypt
-Channel com.gmail.koester.joschka-Magix
-Channel com.gmail.koester.joschka-MERKEN
-Channel com.gmail.koester.joschka-MyDays
-Channel com.gmail.koester.joschka-MySongbook
-Channel com.gmail.koester.joschka-Navigon
-Channel com.gmail.koester.joschka-O2
-Channel com.gmail.koester.joschka-Payback
-Channel com.gmail.koester.joschka-NIEDERHOELLE-ORG
-Channel com.gmail.koester.joschka-Server4You
-Channel com.gmail.koester.joschka-Thrustmaster
-Channel com.gmail.koester.joschka-WDCloud
-
-# }}}
-# hringriin-gmail {{{
-
-Group hringriin-gmail
-Channel com.gmail.hringriin-default
-Channel com.gmail.hringriin-sent
-Channel com.gmail.hringriin-drafts
-Channel com.gmail.hringriin-trash
-Channel com.gmail.hringriin-spam
-Channel com.gmail.hringriin-AliExpress
-Channel com.gmail.hringriin-Alternate
-Channel com.gmail.hringriin-Amazon
-Channel com.gmail.hringriin-Archlinux
-Channel com.gmail.hringriin-BladeAndSoul
-Channel com.gmail.hringriin-Box
-Channel com.gmail.hringriin-Bremer-Bonbon-Manufaktur
-Channel com.gmail.hringriin-Chefkoch
-Channel com.gmail.hringriin-Codecademy
-Channel com.gmail.hringriin-DHL
-Channel com.gmail.hringriin-Doodle
-Channel com.gmail.hringriin-Dropbox
-Channel com.gmail.hringriin-EA
-Channel com.gmail.hringriin-Ebay
-Channel com.gmail.hringriin-ElderScrollsOnline
-Channel com.gmail.hringriin-EliteDangerous
-Channel com.gmail.hringriin-Ello
-Channel com.gmail.hringriin-Elyra
-Channel com.gmail.hringriin-EMP
-Channel com.gmail.hringriin-Facebook
-Channel com.gmail.hringriin-Fanatical
-Channel com.gmail.hringriin-Fastfood
-Channel com.gmail.hringriin-FuelRats
-Channel com.gmail.hringriin-FunCom
-Channel com.gmail.hringriin-G2A
-Channel com.gmail.hringriin-GetDigital
-Channel com.gmail.hringriin-Github
-Channel com.gmail.hringriin-Github_Issues
-Channel com.gmail.hringriin-GitKraken
-Channel com.gmail.hringriin-GOG
-Channel com.gmail.hringriin-Google
-Channel com.gmail.hringriin-Hertie
-Channel com.gmail.hringriin-HumbleBundle
-Channel com.gmail.hringriin-iFixit
-Channel com.gmail.hringriin-Imgur
-Channel com.gmail.hringriin-IsNichWahr
-Channel com.gmail.hringriin-InstantGaming
-Channel com.gmail.hringriin-JMS-Hardware
-Channel com.gmail.hringriin-MasteringVim
-Channel com.gmail.hringriin-Maxdome
-Channel com.gmail.hringriin-McDonalds
-Channel com.gmail.hringriin-MechWarriorOnline
-Channel com.gmail.hringriin-MMOGA
-Channel com.gmail.hringriin-Mojang
-Channel com.gmail.hringriin-Motor-Talk
-Channel com.gmail.hringriin-Netflix
-Channel com.gmail.hringriin-NEUERRECHNER
-Channel com.gmail.hringriin-NoIp
-Channel com.gmail.hringriin-Nvidia
-Channel com.gmail.hringriin-OwnCloud
-Channel com.gmail.hringriin-Paradox-Interactive
-Channel com.gmail.hringriin-Pastebin
-Channel com.gmail.hringriin-PayPal
-Channel com.gmail.hringriin-ProMods
-Channel com.gmail.hringriin-qutebrowser
-Channel com.gmail.hringriin-Raspberry-Pi-Store
-Channel com.gmail.hringriin-Rift
-Channel com.gmail.hringriin-Robocraft
-Channel com.gmail.hringriin-Sony
-Channel com.gmail.hringriin-Spotify
-Channel com.gmail.hringriin-Stack-Overflow
-Channel com.gmail.hringriin-Steam
-Channel com.gmail.hringriin-SWTOR
-Channel com.gmail.hringriin-TAP
-Channel com.gmail.hringriin-TeamViewer
-Channel com.gmail.hringriin-Trashy
-Channel com.gmail.hringriin-Twitch
-Channel com.gmail.hringriin-Twitter
-Channel com.gmail.hringriin-Ubisoft
-Channel com.gmail.hringriin-Ultimate-Guitar
-Channel com.gmail.hringriin-Volkswagen-Classic
-Channel com.gmail.hringriin-WDCloud
-Channel com.gmail.hringriin-Wuala
-Channel com.gmail.hringriin-YouTube
-
-# }}}
-# josh.ets2mp-gmail {{{
-
-Group josh.ets2mp-gmail
-Channel com.gmail.josh.ets2mp-default
-Channel com.gmail.josh.ets2mp-sent
-Channel com.gmail.josh.ets2mp-drafts
-Channel com.gmail.josh.ets2mp-trash
-Channel com.gmail.josh.ets2mp-spam
-Channel com.gmail.josh.ets2mp-Google
-
-# }}}
-# blutige.kodoleber.esser-gmail {{{
- Group blutige.kodoleber.esser-gmail
-Channel com.gmail.blutige.kodoleber.esser-default
-Channel com.gmail.blutige.kodoleber.esser-sent
-Channel com.gmail.blutige.kodoleber.esser-drafts
-Channel com.gmail.blutige.kodoleber.esser-trash
-Channel com.gmail.blutige.kodoleber.esser-spam
-Channel com.gmail.blutige.kodoleber.esser-Google
-# }}}
-# jk.sgs4i9505-gmail {{{
-
-Group jk.sgs4i9505-gmail
-Channel com.gmail.jk.sgs4i9505-default
-Channel com.gmail.jk.sgs4i9505-sent
-Channel com.gmail.jk.sgs4i9505-drafts
-Channel com.gmail.jk.sgs4i9505-trash
-Channel com.gmail.jk.sgs4i9505-spam
-Channel com.gmail.jk.sgs4i9505-Google
-
-# }}}
-# jk.iptaid-gmail {{{
-
-Group jk.iptaid-gmail
-Channel com.gmail.jk.iptaid-default
-Channel com.gmail.jk.iptaid-sent
-Channel com.gmail.jk.iptaid-drafts
-Channel com.gmail.jk.iptaid-trash
-Channel com.gmail.jk.iptaid-spam
-Channel com.gmail.jk.iptaid-Google
-
-# }}}
-# ahliazhia-gmail {{{
-
-Group ahliazhia-gmail
-Channel com.gmail.ahliazhia-default
-Channel com.gmail.ahliazhia-sent
-Channel com.gmail.ahliazhia-drafts
-Channel com.gmail.ahliazhia-trash
-Channel com.gmail.ahliazhia-spam
-Channel com.gmail.ahliazhia-Google
-
-# }}}
-# mk.hhk.smarttv-gmail {{{
-
-Group mk.hhk.smarttv-gmail
-Channel com.gmail.mk.hhk.smarttv-default
-Channel com.gmail.mk.hhk.smarttv-sent
-Channel com.gmail.mk.hhk.smarttv-drafts
-Channel com.gmail.mk.hhk.smarttv-trash
-Channel com.gmail.mk.hhk.smarttv-spam
-
-# }}}
-# hringriin-gmail {{{
-
-Group hringriin-gmail
-Channel de.live.hringriin-default
-Channel de.live.hringriin-sent
-Channel de.live.hringriin-drafts
-Channel de.live.hringriin-trash
-Channel de.live.hringriin-spam
-
-# }}}
+#Group inboxes
+#Channel de.uni-bremen.jkoester-default
+#Channel com.gmail.koester.joschka-default
+#Channel com.gmail.hringriin-default
+#Channel com.gmail.josh.ets2mp-default
+#Channel com.gmail.blutige.kodoleber.esser-default
+#Channel com.gmail.jk.sgs4i9505-default
+#Channel com.gmail.jk.iptaid-default
+#Channel com.gmail.ahliazhia-default
+#Channel com.gmail.mk.hhk.smarttv-default
+#Channel de.live.hringriin-default
 
 # }}}
 
