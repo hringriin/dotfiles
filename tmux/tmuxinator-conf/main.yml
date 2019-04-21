@@ -57,7 +57,7 @@ startup_window: SHELL
 windows:
     - Mail:
         panes:
-            - mutt
+            - neomutt
     - Chat:
         panes:
             - mosh barzh.eu -- tmux a -t CHAT
