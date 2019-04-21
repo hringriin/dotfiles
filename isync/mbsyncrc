@@ -8,8 +8,7 @@
 IMAPStore de.uni-bremen.jkoester-remote
 Host imap.uni-bremen.de
 User jkoester
-Pass "password.de.uni-bremen.jkoester"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.uni-bremen.jkoester | awk '{print $2}'"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -32,8 +31,7 @@ SyncState *
 IMAPStore com.gmail.koester.joschka-remote
 Host imap.gmail.com
 User koester.joschka@gmail.com
-Pass "password.com.gmail.koester.joschka"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.koester.joschka | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -57,8 +55,7 @@ SyncState *
 IMAPStore com.gmail.hringriin-remote
 Host imap.gmail.com
 User hringriin@gmail.com
-Pass "password.com.gmail.hringriin"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.hringriin | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -82,8 +79,7 @@ SyncState *
 IMAPStore com.gmail.josh.ets2mp-remote
 Host imap.gmail.com
 User josh.ets2mp@gmail.com
-Pass "password.com.gmail.josh.ets2mp"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.josh.ets2mp | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -107,8 +103,7 @@ SyncState *
 IMAPStore com.gmail.blutige.kodoleber.esser-remote
 Host imap.gmail.com
 User blutige.kodoleber.esser@gmail.com
-Pass "password.com.gmail.blutige.kodoleber.esser"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.blutige.kodoleber.esser | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -132,8 +127,7 @@ SyncState *
 IMAPStore com.gmail.jk.sgs4i9505-remote
 Host imap.gmail.com
 User jk.sgs4i9505@gmail.com
-Pass "password.com.gmail.jk.sgs4i9505"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.jk.sgs4i9505 | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -157,8 +151,7 @@ SyncState *
 IMAPStore com.gmail.jk.iptaid-remote
 Host imap.gmail.com
 User jk.iptaid@gmail.com
-Pass "password.com.gmail.jk.iptaid"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.jk.iptaid | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -182,8 +175,7 @@ SyncState *
 IMAPStore com.gmail.ahliazhia-remote
 Host imap.gmail.com
 User ahliazhia@gmail.com
-Pass "password.com.gmail.ahliazhia"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.ahliazhia | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -207,8 +199,7 @@ SyncState *
 IMAPStore com.gmail.mk.hhk.smarttv-remote
 Host imap.gmail.com
 User mk.hhk.smarttv@gmail.com
-Pass "password.com.gmail.mk.hhk.smarttv"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep com.gmail.mk.hhk.smarttv | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -232,8 +223,7 @@ SyncState *
 IMAPStore de.live.hringriin-remote
 Host imap-mail.outlook.com
 User hringriin@live.de
-Pass "password.de.live.hringriin"
-#PassCmd "gpg -d ~/.mutt/isyncpassword.gpg"
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.live.hringriin | awk '{print $2}'"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
