@@ -6,18 +6,6 @@ order += "cpu_usage"
 order += "tztime berlin"
 order += "volume master"
 
-battery 0 {
-    path = "/sys/class/power_supply/BAT0/uevent"
-    format = "BAT0: %status %percentage %remaining"
-    format_down = "BAT0: No battery"
-    status_chr = "  "
-    status_bat = " "
-    status_full = "  "
-    status_unk = " "
-    low_threshold = 15
-    threshold_type = "percentage"
-}
-
 cpu_temperature 0 {
     format = " %degrees °C"
     path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
