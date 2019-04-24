@@ -40,7 +40,8 @@ bar {
     mode hide
     separator_symbol $sep-symbol
     workspace_buttons no
-    status_command i3status --config ~/.config/i3status/bottom_bar
+    #status_command i3status --config ~/.config/i3status/bottom_bar
+    status_command i3blocks -c ~/.config/i3blocks/sorth_bottom
 
     colors {
         # Whole color setting
