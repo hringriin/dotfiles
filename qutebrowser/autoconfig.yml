@@ -59,6 +59,8 @@ settings:
         <F2>: config-cycle -t tabs.show never multiple
         <F5>: null
         <Forward>: null
+        SB: open -t qute://bookmarks
+        SH: open -t qute://history
         SS: open -t qute://settings
         Sk: :bind
         YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript
