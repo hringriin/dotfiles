@@ -6,7 +6,9 @@ myShell=
 # select an available (installed) terminal emulator
 function selShell ()
 {
-    if [[ $(command -v termite) > /dev/null ]] ; then
+    if [[ $(command -v st) > /dev/null ]] ; then
+        myShell=st
+    elif [[ $(command -v termite) > /dev/null ]] ; then
         myShell=termite
     elif [[ $(command -v terminator) > /dev/null ]] ; then
         myShell=terminator
