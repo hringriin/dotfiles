@@ -558,9 +558,6 @@ set ttyfast
     set list listchars=tab:¶¤,trail:·,extends:>,precedes:<,nbsp:•
     set list
 
-    " do not erase background
-    set t_ut=
-
     " Folding
     set fdm=marker      " fold method
     set fdc=4           " fold column width
