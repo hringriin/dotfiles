@@ -8,7 +8,7 @@
 #URxvt*foreground:       white
 
 
-URxvt*font:             xft:DejaVu Sans Mono:size=10
+URxvt*font:             xft:Hack:size=9
 URxvt*letterSpace:      -1
 URxvt*termName:         rxvt
 URxvt*background:       #000000
@@ -16,7 +16,7 @@ URxvt*foreground:       #ffffff
 URxvt*scrollBar:        false
 URxvt*perl-lib:         /usr/lib/urxvt/perl/
 URxvt*perl-ext-common:  default,matcher
-URxvt*urlLauncher:      /usr/bin/vivaldi-stable
+URxvt*urlLauncher:      /usr/bin/qutebrowser
 URxvt*matcher.button:   1
 #urxvt*fading:          50
 #urxvt*fadeColor:       #000000
