@@ -138,6 +138,7 @@ neededProgrammes=(
     'which'
     'wireless_tools'
     'wpa_supplicant'
+    'wtf'
     'xdotool'
     'xorg-server'
     'xorg-xdpyinfo'
