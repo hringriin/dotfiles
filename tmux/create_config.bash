@@ -21,13 +21,13 @@ linkFiles ()
 installtmuxinator ()
 {
     if [[ ! $(uname -r)  == *"icrosoft"* ]] ; then
-        if [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
+        if [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
             # adding ruby bin to path variable
-            export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+            export PATH=/home/hringriin/.gem/ruby/2.6.0/bin:${PATH}
         else
             echo "Installing tmuxinator ..."
             sudo gem install tmuxinator
-            export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+            export PATH=/home/hringriin/.gem/ruby/2.6.0/bin:${PATH}
             tmuxinator doctor
             read -p
         fi
