@@ -1,12 +1,18 @@
 # hotkeys to remember {{{
-#   CTRL + g      =   cancel a prompt
-#   y             =   change to different mailboxes
-#   $             =   sync-mailbox
+
+#   CTRL + g        =   cancel a prompt
+#   y               =   change to different mailboxes
+#   $               =   sync-mailbox
+#   %               =   lock mailbox
+
 # }}}
 # Addressbook (abook) {{{
+
 set query_command   =   "abook --mutt-query '%s'"
+
 # }}}
 # Folder Hooks {{{
+
 folder-hook     'accounts/account.de.tzi.jkoester'               'source ~/.mailfolder/de.tzi.jkoester'
 folder-hook     'accounts/account.de.uni-bremen.jkoester'        'source ~/.mailfolder/de.uni-bremen.jkoester'
 folder-hook     'accounts/account.com.gmail.koester.joschka'     'source ~/.mailfolder/com.gmail.koester.joschka'
@@ -17,18 +23,21 @@ folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mail
 folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
 folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'      'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
 folder-hook     'accounts/account.de.live.hringriin'             'source ~/.mailfolder/de.live.hringriin'
-# }}}
-# Attachments Save Dir {{{
-macro attach s "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
+
 # }}}
 # Default account config file {{{
+
 source ~/.mutt/accounts/account.de.uni-bremen.jkoester
+
 # }}}
 # Crypt Hooks (Per Recipients Rules) {{{
+
 set crypt_confirmhook       =   no      # do not prompt for confirmation for pre-selected keys (unsafe)
 source ~/.mutt/crypt-hooks.muttrc
+
 # }}}
 # Macros for switching accounts {{{
+
 # Uni
 macro index     ,1<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.uni-bremen.jkoester<enter><change-folder>!<enter>'
 
@@ -58,54 +67,48 @@ macro index     ,9<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 
 # ahliazhia
 macro index     ,10<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
-# }}}
-# Fetch mail shortcut {{{
-#bind index      G           imap-fetch-mail    # using isync (mbsync), thus no need to fetch by mutt
-# }}}
-# Set default text editor {{{
-set editor                  =   "$EDITOR"
+
 # }}}
 # Basic config {{{
+
+set editor                  =   "$EDITOR"
 set mbox_type               =   Maildir
 set mailcap_path            =   "~/.mutt/mailcap"
-auto_view text/html                                     # view html automatically
-alternative_order text/plain text/enriched text/html    # save html for last
-#unset imap_passive
+auto_view text/html                                         # view html automatically
+alternative_order text/plain text/enriched text/html        # save html for last
 set ssl_starttls            =   yes
 set ssl_force_tls           =   yes
-set imap_check_subscribed   =   yes
+#set imap_check_subscribed   =   yes
 set timeout                 =   2                           # idle time before scanning
 set mail_check              =   0                           # minimum time between scans
 set move                    =   no
-unset mark_old                                          # no difference between "new" and "unread old" messages.
-set pipe_decode                                         # strip headers and eval mimes when piping
-set thorough_search                                     # strip headers and eval mimes before searching
-set include                                             # whether or not a copy of the message(s) you are replying to is included in your reply.
-set sort                    =   'reverse-date'          # this and the following line for NON-THREADED mail view
-#set sort_aux                =   'reverse-date'
-#set sort                    =   'reverse-threads'       # this and the following line for THREADED mail view
-#set sort_aux                =   'last-date-received'
+unset mark_old                                              # no difference between "new" and "unread old" messages.
+set pipe_decode                                             # strip headers and eval mimes when piping
+set thorough_search                                         # strip headers and eval mimes before searching
+set include                                                 # whether or not a copy of the message(s) you are replying to is included in your reply.
+set sort                    =   'reverse-date'              # this and the following line for NON-THREADED mail view
 set auto_tag                =   yes
-bind editor <Tab> complete-query
-bind editor ^T complete
-bind editor <space> noop
+set wait_key                =   no                          # shut up, mutt
+unset confirmappend                                         # don't ask, just do!
+set quit                                                    # don't ask, just do!!
+set beep                    =   yes
+set beep_new                =   yes                         # bell on new mails
+set send_charset            =   "utf-8"                     # UTF-8 is the future, and the presence ;)
+set charset                 =   "utf-8"
+set edit_headers            =   yes                         # Full Header control
+set header_cache            =   "~/.mutt/cache/headers"     # See all mail headers in editor, cache headers and bodies
+set message_cachedir        =   "~/.mutt/cache/bodies"
+set rfc2047_parameters                                      # This line gets rid of iso 8859 issues with attachments
 
-set wait_key            =   no                          # shut up, mutt
-unset confirmappend                                     # don't ask, just do!
-set quit                                              # don't ask, just do!!
-set beep                =   yes
-set beep_new            =   yes                         # bell on new mails
-set send_charset        =   "utf-8"                     # UTF-8 is the future, and the presence ;)
-set charset             =   "utf-8"
-set edit_headers        =   yes                         # Full Header control
-set header_cache        =   "~/.mutt/cache/headers"     # See all mail headers in editor, cache headers and bodies
-set message_cachedir    =   "~/.mutt/cache/bodies"
 # }}}
 # Status Bar {{{
-set status_chars        =   "-!%A"
-set status_format       =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s | %S ]═%>══%V═[ %P ]══[ %v ]══"
+
+set status_chars            =   "-!%A"
+set status_format           =   "══[ %f ]══[ Status: %r ]══[ Messages: %m%?n? | New: %n? ]%?p?══[ Postponed: %p ]?%?d?══[ Deleted: %d ]?%?t?══[ Tagged: %t ]?══[ Sorting: %s | %S ]═%>══%V═[ %P ]══[ %v ]══"
+
 # }}}
 # Header Options {{{
+
 # Ignoring headers
 #ignore "Authentication-Results:"
 #ignore "DomainKey-Signature:"
@@ -114,15 +117,19 @@ ignore *                                                # ignore all headers
 unignore from: to: cc: date: subject:                   # show only these
 unhdr_order *                                           # some distros order things by default
 hdr_order from: to: cc: date: subject:                  # and in this order
+
 # }}}
 # Index View Options {{{
+
 set date_format         =   "| %F | %H:%M:%S ||"
 set index_format        =   "[%Z] [%-2.2X] %D %-25.25F | %s"
 set uncollapse_jump                                     # don't collapse on an unread message
 unset collapse_unread
 set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
 # }}}
 # Key Bindings {{{
+
 bind index,pager    g               noop
 bind index          gg              first-entry
 bind pager          gg              top
@@ -134,18 +141,28 @@ bind index          <space>         collapse-thread
 bind attach         <return>        view-mailcap
 bind index,pager    \Cd             half-down
 bind index,pager    \Cu             half-up
-# Ctrl-R to mark all as read
+
+# Ctrl-r to mark all as read
 macro index         \Cr             "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><sync-mailbox>" "mark all messages as read"
+
 bind pager          k               previous-line
 bind pager          j               next-line
 bind pager,index    a               noop
 macro pager,index   abook<Return>   '<pipe-message>${HOME}/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-to-abook.bash<enter>'
+macro attach        s               "<save-entry><bol>~/Downloads/Mail-Attachments/<eol>" "Save to desktop"
+bind editor         <Tab>           complete-query
+bind editor         ^T              complete
+bind editor         <space>         noop
+
 # }}}
 # Saner copy/move dialogs {{{
+
 #macro index     C           "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 #macro index     M           "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
 # }}}
 # Pager View Options {{{
+
 set pager_index_lines   = 4                             # number of index lines to show
 set pager_context       = 4                             # number of context lines to show
 set pager_stop                                          # don't go to next message automatically
@@ -153,9 +170,11 @@ set menu_scroll                                         # scroll in menus
 set tilde                                               # show tildes like in vim
 unset markers                                           # no ugly plus signs
 set quote_regexp        =   "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
 # }}}
 # GPG {{{
- source ~/.mutt/gpg.rc
+
+source ~/.mutt/gpg.rc
 set pgp_sign_as                 =   D02BE422            # default key to sign messages with
 set pgp_encrypt_only_command    =   "pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
 set pgp_encrypt_sign_command    =   "pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
@@ -171,25 +190,32 @@ set pgp_verify_sig              =   yes
 
 # enigmail does not tag messages correct per default
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+
 # }}}
 # Open Links {{{
+
 #macro pager     \Cu         "|urlview<enter>" "call urlview to open links"     # CTRL + B is default, I guess
+
 # }}}
 # Mail Content Overrides {{{
+
 set forward_format              =   "Fwd: %s"
 set attribution                 =   "\n%n wrote on %d something like this:"
+
 # }}}
 # Startup Commands {{{
-# toggle sidebar_visible
+
 source ~/.mutt/sidebar.muttrc
+
 # }}}
 # Signatures {{{
+
 set sig_dashes                  =   yes         # ```-- \n`` expected by many handlers to identify sig
 set sig_on_top                  =   yes         # Quote text after my text
+
 # }}}
 # Colors {{{
+
 source ~/.mutt/colors/hringriin
-# }}}
-# This line gets rid of iso 8859 issues with attachments {{{
-set rfc2047_parameters
+
 # }}}
