@@ -377,49 +377,34 @@ function linkConfigs()
     # dunst
     ${repoPath}/dunst/create_config.bash
 
-    # gitlab clone script
-    sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
-
-    # youtube downloader :-)
-    sudo ln -fsv ${repoPath}/bash/youtubedl.bash ${ulbin}/youtubedl
-
     # git configs
     ${repoPath}/git/create_config.bash
 
-    # i3 - create the i3 configs
-    ${repoPath}/i3/createConfig.bash
-
-    # mcabber - create the mcabber configs
-    ${repoPath}/mcabber/createConfig.bash
-
-    # rofi
-    ${repoPath}/rofi/create_config.bash
-
-    # ssh
-    ${repoPath}/ssh/create_config.bash
-
-    # terminator
-    ${repoPath}/terminator/create_config.bash
-
-    # termite
-    ${repoPath}/termite/create_config.bash
-
-    # tider
-    ${repoPath}/tider/create_config.bash inst
+    # gitlab clone script
+    sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
 
     # htop
     ${repoPath}/htop/create_config.bash
 
+    # i3 - create the i3 configs
+    ${repoPath}/i3/createConfig.bash
+
     # lolban
     ln -sfv ${repoPath}/bash/lolban.bash /usr/local/bin/lolban
+
+    # mcabber - create the mcabber configs
+    ${repoPath}/mcabber/createConfig.bash
 
     # mimeapps
     ${repoPath}/mimeapps/create_config.bash
 
+    # moc / mocp
+    ${repoPath}/moc/create_config.bash
+
     # mpv
     ${repoPath}/mpv/create_config.bash
 
-    # mutt
+    # mutt / neomutt
     ${repoPath}/mutt/create_config.bash
 
     # neofetch
@@ -437,11 +422,29 @@ function linkConfigs()
     # redshift
     ${repoPath}/redshift/create_config.bash
 
+    # rofi
+    ${repoPath}/rofi/create_config.bash
+
     # setBrightness
     ${repoPath}/xrandr/create_config.bash
 
+    # ssh
+    ${repoPath}/ssh/create_config.bash
+
+    # st
+    ${repoPath}/st/create_config.bash
+
     # streamlink
     ${repoPath}/streamlink/create_config.bash
+
+    # terminator
+    ${repoPath}/terminator/create_config.bash
+
+    # termite
+    #${repoPath}/termite/create_config.bash
+
+    # tider
+    ${repoPath}/tider/create_config.bash inst
 
     # timescript
     ${repoPath}/TIMESCRIPT/create_config.bash
@@ -460,6 +463,9 @@ function linkConfigs()
 
     # xorg
     ${repoPath}/X/create_config.bash
+
+    # youtube downloader :-)
+    #sudo ln -fsv ${repoPath}/bash/youtubedl.bash ${ulbin}/youtubedl
 
     # zathura
     ${repoPath}/zathura/create_config.bash
