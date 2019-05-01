@@ -1,3 +1,5 @@
+# vim: ft=dosini cms=#%s
+
 [options]
 allow_bold = true
 audible_bell = false
@@ -9,7 +11,7 @@ fullscreen = false
 schrollbar = off
 scroll_on_output = false
 scroll_on_keystroke = true
-scollback_lines = 10000
+scollback_lines = 5000
 search_wrap = true
 urgent_on_bell = true
 
@@ -40,7 +42,7 @@ filter_unmatched_urls = true
 # from terminator
 
 #black
-color0=#282828
+color0=#3c3836
 color8=#928374
 
 #red
@@ -75,10 +77,10 @@ foreground = #ebdbb2
 foreground_bold = #ebdbb2
 
 # 20% background transparency (requires a compositor)
-background = rgba(20, 20, 20, 0.80)
+background = rgba(60, 56, 54, 0.80)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #2f2f2f
 
 
 [hints]
@@ -91,5 +93,3 @@ padding = 4
 border = #8ec07c
 border_width = 3
 roundness = 5
-
-# vim: ft=dosini cms=#%s
