@@ -86,6 +86,7 @@ neededProgrammes=(
     'openssl'
     'openvpn'
     'owncloud-client'
+    'p7zip'
     'pacman'
     'pacman-contrib'
     'pacmatic'
