@@ -19,11 +19,6 @@ send-hook   'jan-peter\.arndt@arcor\.de'                    'set crypt_autoencry
 crypt-hook  'jpa@ummon\.de'                                 '0x6F355D4C'
 crypt-hook  'jan-peter\.arndt@arcor\.de'                    '0x6F355D4C'
 # }}}
-# AStA,                     EDV {{{
-send-hook   'edv@asta\.uni-bremen\.de'                      'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'edv@asta\.uni-bremen\.de'                      '0xAE1AC4C2'
-# }}}
 # Berthe,                   Mikael {{{
 send-hook   'coworker@company\.com'                         'set crypt_autoencrypt  ;   set crypt_autosign'
 crypt-hook  'coworker@company\.com'                         '0xDEADBEEF'
@@ -58,11 +53,6 @@ send-hook   'gdithmer@math\.uni-bremen\.de'                 'set crypt_autoencry
 
 crypt-hook  'gdithmer@math\.uni-bremen\.de'                 '0x6342B0BA'
 # }}}
-# Feske,                    Nils {{{
-send-hook   'nfeske@uni-bremen\.de'                         'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'nfeske@uni-bremen\.de'                         '0x4CB0711E'
-# }}}
 # Gehrke,                   Tom {{{
 send-hook   'tgehrke@tzi\.de'                               'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   'tgehrke@informatik\.uni-bremen\.de'            'set crypt_autoencrypt  ;   set crypt_autosign'
@@ -83,19 +73,6 @@ crypt-hook  'tom\.gehrke@uni-bremen\.de'                    '0x0AFEB915'
 crypt-hook  'tom@cognitive-coding\.com'                     '0x0AFEB915'
 crypt-hook  'tgehrke@fb3\.uni-bremen\.de'                   '0x0AFEB915'
 crypt-hook  'tgehrke@cognitive-coding\.com'                 '0x0AFEB915'
-# }}}
-# Görmer,                   Robin {{{
-send-hook   'robin01@informatik\.uni-bremen\.de'            'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'robin01@tzi\.de'                               'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'robin01@math\.uni-bremen\.de'                  'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'robin01@tzi\.org'                              'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'ro_go@uni-bremen\.de'                          'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'robin01@informatik\.uni-bremen\.de'            '0xC3059273'
-crypt-hook  'robin01@tzi\.de'                               '0xC3059273'
-crypt-hook  'robin01@math\.uni-bremen\.de'                  '0xC3059273'
-crypt-hook  'robin01@tzi\.org'                              '0xC3059273'
-crypt-hook  'ro_go@uni-bremen\.de'                          '0xC3059273'
 # }}}
 # Graef,                    Sascha {{{
 send-hook   'saschagraef@web\.de'                           'set crypt_autoencrypt  ;   set crypt_autosign'
@@ -158,23 +135,6 @@ send-hook   'robustus@rightsrestricted\.com'                'set crypt_autoencry
 
 crypt-hook  'robustus@rightsrestricted\.com'                '0x8C402438'
 # }}}
-# Rieckers,                 Jan-Frederik {{{
-send-hook   'info@jan-frederik-rieckers\.de'                'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'jan@rieckers\.it'                              'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'rieckers@tzi\.de'                              'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'rieckers@uni-bremen\.de'                       'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'jan-frederik@rieckers\.net'                    'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'janfrederik\.rieckers@fbmi\.de'                'set crypt_autoencrypt  ;   set crypt_autosign'
-send-hook   'rieckers@informatik\.uni-bremen\.de'           'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'info@jan-frederik-rieckers\.de'                '0x5EA04DEF'
-crypt-hook  'jan@rieckers\.it'                              '0x5EA04DEF'
-crypt-hook  'rieckers@tzi\.de'                              '0x5EA04DEF'
-crypt-hook  'rieckers@uni-bremen\.de'                       '0x5EA04DEF'
-crypt-hook  'jan-frederik@rieckers\.net'                    '0x5EA04DEF'
-crypt-hook  'janfrederik\.rieckers@fbmi\.de'                '0x5EA04DEF'
-crypt-hook  'rieckers@informatik\.uni-bremen\.de'           '0x5EA04DEF'
-# }}}
 # Rohde,                    Florian {{{
 send-hook   'florian@rohdeIT.de'                            'set crypt_autoencrypt  ;   set crypt_autosign'
 send-hook   's_78f5kj@uni-bremen\.de'                       'set crypt_autoencrypt  ;   set crypt_autosign'
@@ -233,11 +193,6 @@ crypt-hook  'deschuer@fb3\.uni-bremen\.de'                  '0xF4567356'
 crypt-hook  'schuerholz@fb3\.uni-bremen\.de'                '0xF4567356'
 crypt-hook  'deschuer@informatik\.uni-bremen\.de'           '0xF4567356'
 crypt-hook  'schuerholz@informatik\.uni-bremen\.de'         '0xF4567356'
-# }}}
-# Sitarz,                   Antje Manuela {{{
-send-hook   'sitarz@uni-bremen\.de'                         'set crypt_autoencrypt  ;   set crypt_autosign'
-
-crypt-hook  'coworker@company\.com'                         '0xD132CE7C'
 # }}}
 # Stugen Administratoren {{{
 send-hook   'admin@stugen\.de'                              'set crypt_autoencrypt  ;   set crypt_autosign'
