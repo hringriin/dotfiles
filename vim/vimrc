@@ -456,6 +456,11 @@ set ttyfast
         autocmd Filetype html,php,xhtml inoremap <buffer> ß         &szlig;
         " umlauts, accents, ... }}}
 
+        " symbols, quotation, ... {{{
+        autocmd Filetype html,php,xhtml inoremap <buffer> ,,        &bdquo;
+        autocmd Filetype html,php,xhtml inoremap <buffer> ''        &ldquo;
+        " symbols, quotation, ... }}}
+
         " headlines {{{
         autocmd Filetype html,php,xhtml inoremap <buffer> ,h1       <h1 id="<++>"><Enter></h1><Enter><Enter><++><ESC>2kO
         autocmd Filetype html,php,xhtml inoremap <buffer> ,h2       <h2 id="<++>"><Enter></h2><Enter><Enter><++><ESC>2kO
