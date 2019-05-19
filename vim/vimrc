@@ -108,7 +108,7 @@ nnoremap <silent> <leader>md :InstantMarkdownPreview<CR>
 
 " By default, the server only listens on localhost. To make the server available to others in your network, edit your .vimrc and add *this*
 " !!! Only use this setting on trusted networks !!!
-let g:instant_markdown_open_to_the_world = 0
+let g:instant_markdown_open_to_the_world = 1
 
 " By default, scripts are blocked. To allow scripts to run, edit your .vimrc and add
 let g:instant_markdown_allow_unsafe_content = 0
