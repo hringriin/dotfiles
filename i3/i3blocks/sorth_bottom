@@ -41,7 +41,7 @@ markup=pango        # for colors
 #markup=pango
 
 [mail]
-command=~/.config/i3blocks/i3blocks-gate/mail.sh
+command=~/.config/i3blocks/i3blocks-gate/mail.zsh
 interval=300
 markup=pango
 
