@@ -7,14 +7,12 @@ pacmanGames=(
     '0ad-data'
     'curseofwar'
     'nethack'
-    'simutrans'
+    'openttd'
     'warzone2100'
     'wesnoth'
 )
 
 yayGames=(
     'ballerburg'
-    'dangerdeep'
-    'dangerdeep-data'
     'nudoku-git'
 )
