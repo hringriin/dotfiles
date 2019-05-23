@@ -1,4 +1,10 @@
 # vim: ft=sh
+
+# ----- pacman / pacmatic find pacnew, pacoric and pacsave files {{{
+
+alias 'pacman-find-pacnew'='find /etc/ \( -name \*.pacnew -o -name \*.pacorig -o -name \*.pacsave \)'
+
+# -----pacman / pacmatic find pacnew, pacoric and pacsave files }}}
 # ----- Alias (Substitution) {{{
 # -----------------------------------------------
 
