@@ -1,63 +1,59 @@
 # vim: ft=sh
 
 # Generic paths seem to work fine, even on MacOS {{{
+
 source ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases
 source ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/functions
 tmuxi="${HOME}/Repositories/github.com/hringriin/dotfiles/repo/tmux/tmuxinator"
+
 # Generic paths seem to work fine, even on MacOS }}}
 
 # Editor {{{
+
 export EDITOR=vim
 export VISUAL=vim
+
 # Editor }}}
 
 # Ranger (file browser) {{{
+
 RANGER_LOAD_DEFAULT_RC=FALSE
+
 # Ranger (file browser) }}}
 
 # Homebrew token {{{
+
 if [[ -e ${HOME}/.github-homebrew-token ]] ; then
     source ${HOME}/.github-homebrew-token
 fi
+
 # Homebrew token }}}
 
-# tmuxinator {{{
-# adding ruby bin to path variable
-if [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
-    export PATH=${HOME}/.gem/ruby/2.6.0/bin:${PATH}
-elif [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
-    export PATH=${HOME}/.gem/ruby/2.5.0/bin:${PATH}
-fi
-# tmuxinator }}}
-
-# /usr/local/lib to path {{{
-if [[ -d /usr/local/lib ]] ; then
-    # adding ruby bin to path variable
-    export PATH=/usr/local/lib:${PATH}
-fi
-# /usr/local/lib to path }}}
-
 # ccache {{{
-if [[ -d /usr/lib/ccache/bin ]] ; then
-    export PATH=/usr/lib/ccache/bin/:${PATH}
-fi
 
 if [[ -e ${tmuxi}/completion/tmuxinator.zsh ]] ; then
     # sourcing tmuxinator completion
     source ${tmuxi}/completion/tmuxinator.zsh
 fi
+
 # ccache }}}
 
 # mosh locale {{{
+
 unset LC_CTYPE
+
 # mosh locale }}}
 
 # prevent tmux autocorrection for certain commands {{{
+
+# this does not work, but why? source order?
 alias 'cd ...'='nocorrect cd ../..'
 alias 'tmux'='nocorrect tmux'
+
 # prevent tmux autocorrection for certain commands }}}
 
 # MACOS shit ... {{{
+
 if [[ -d /usr/local/Cellar/vim/8.1.0250/bin/ ]] ; then
     export PATH=/usr/local/Cellar/vim/8.1.0250/bin:${PATH}
 fi
@@ -69,6 +65,7 @@ fi
 # MACOS shit ... }}}
 
 # Fuzzy Finder (fzf) {{{
+
 fzf_history()
 {
     zle -I
@@ -115,7 +112,7 @@ fzf_gitvimopen()
         done <<< ${vopen}
     fi
 }
-alias 'gvim'='fzf_gitvimopen'
+#alias 'gvim'='fzf_gitvimopen'
 
 fzf_gitadd()
 {
@@ -130,8 +127,11 @@ fzf_gitadd()
     fi
 }
 alias 'gadd'='fzf_gitadd'
+
 # Fuzzy Finder (fzf) }}}
 
 # Stupid stuff... this is not recommended to use ;-) {{{
+
 alias 'yolo'='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
+
 # Stupid stuff... this is not recommended to use ;-) }}}
