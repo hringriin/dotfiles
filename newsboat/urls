@@ -3,21 +3,21 @@ https://www.archlinux.org/feeds/news/
 http://www.awkwardzombie.com/awkward.php
 https://barzh.eu/rss.xml
 https://niederhoelle.no-ip.biz/rss.xml
-https://feeds2.feedburner.com/Command-line-fu "~Command-Line-Fu"
+#https://feeds2.feedburner.com/Command-line-fu "~Command-Line-Fu"
 https://feeds.feedburner.com/Explosm "~Cyanide and Happiness"
-https://feeds.feedburner.com/labnol
+#https://feeds.feedburner.com/labnol
 https://www.comicsrss.com/rss/dilbert-classics.rss
 https://blog.guitar-pro.com/feed/
 http://feeds.kodi.tv/xbmc
 https://feeds.feedburner.com/LookingForGroup
 https://www.netflixinvestor.com/rss/presentation.aspx
-https://www.netflixinvestor.com/rss/pressrelease.aspx
-https://www.netflixinvestor.com/rss/SECFiling.aspx?Exchange=CIK&Symbol=0001065280
+#https://www.netflixinvestor.com/rss/pressrelease.aspx
+#https://www.netflixinvestor.com/rss/SECFiling.aspx?Exchange=CIK&Symbol=0001065280
 https://oglaf.com/feeds/rss/
 http://www.giantitp.com/comics/oots.rss
 https://podcastohnenamen.podigee.io/feed/aac
-https://projecteuler.net/rss2_euler.xml
+#https://projecteuler.net/rss2_euler.xml
 https://rss.simplecast.com/podcasts/7603/rss
-https://twitrss.me/twitter_user_to_rss/?user=climagic "~Twitter: Climagic"
-http://feeds.vimgolf.com/latest-challenges
+#https://twitrss.me/twitter_user_to_rss/?user=climagic "~Twitter: Climagic"
+#http://feeds.vimgolf.com/latest-challenges
 https://xkcd.com/rss.xml "~xkcd"
