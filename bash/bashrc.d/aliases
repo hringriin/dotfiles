@@ -26,6 +26,14 @@ alias 'yay'='yay -a --answerclean All --answeredit None --answerdiff None'      
 alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
 alias 'mutt'='neomutt'                                                                          # dumping mutt in favor of neomutt
 
+# Stupid stuff... this is not recommended to use ;-) {{{
+# -----------------------------------------------
+
+alias 'yolo'='git commit -S -m "$(curl -s whatthecommit.com/index.txt)"'
+
+# -----------------------------------------------
+# Stupid stuff... this is not recommended to use ;-) }}}
+
 # -----------------------------------------------
 # ----- Alias (Substitution) }}}
 # ----- Alias (Custom) {{{
