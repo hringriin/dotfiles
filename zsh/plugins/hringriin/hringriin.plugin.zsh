@@ -129,9 +129,3 @@ fzf_gitadd()
 alias 'gadd'='fzf_gitadd'
 
 # Fuzzy Finder (fzf) }}}
-
-# Stupid stuff... this is not recommended to use ;-) {{{
-
-alias 'yolo'='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
-
-# Stupid stuff... this is not recommended to use ;-) }}}
