@@ -3,6 +3,9 @@
     email = hringriin@gmail.com
     signingkey = 1172D302479EC8A21A7422384721D218D02BE422
 
+[commit]
+    gpgSign = true
+
 [core]
     editor = vim
     pager = less
@@ -13,6 +16,7 @@
 
 [alias]
     bunch = log --graph --decorate --all
+    bunchs = log --graph --decorate --all --show-signature
     buncho = log --oneline --graph --decorate --all
     bunchoo = log --pretty=format:"%C(yellow)%h%Creset %Cblue%aN%Creset %Cgreen%ar%Creset%Cred%d%Creset %s" --all --graph
     logg = !git log | vim -c 'set nowrap ft=git | nnoremap q :q!<cr>' -R -
