@@ -1,15 +1,6 @@
 # vim: ft=i3
 # SORTH SPECIFIC CONFIG
 
-# Network Manager Applet
-exec nm-applet
-
-# start program (default: dmenu, want to change to rofi)
-#bindsym $mod+d exec dmenu_run -l 10
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec --no-startup-id zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
-bindsym $mod+Shift+Control+d exec --no-startup-id /usr/bin/rofi-twitch
-
 # top status bar (battery, load, time, volume)
 bar {
     separator_symbol $sep-symbol

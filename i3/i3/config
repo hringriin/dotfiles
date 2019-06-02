@@ -50,6 +50,19 @@ set $workspace-urgent-text              #282828
 # Set modifier key, in this case the 'windows'-key or 'super-'key'
 set $mod Mod4
 
+# Network Manager Applet
+exec nm-applet
+
+# start program (application launcher)
+bindsym $mod+d exec rofi -show run
+
+# use rofi as well to watch twitch.tv :-)
+bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
+bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
+
+# password manager
+bindsym $mod+p exec ~/Repositories/github.com/hringriin/dotfiles/repo/pass/rofipassmenu --type
+
 # window border
 default_border pixel 2
 default_floating_border pixel 2
