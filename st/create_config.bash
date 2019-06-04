@@ -13,9 +13,8 @@ source INSTALL_ALL/pacman.bash
 stRepo="${HOME}/Repositories/suckless.org/st/repo"
 main()
 {
-    if [[ ! -d ${stRepo} ]] ; then
-        mkdir -p ${stRepo}
-    fi
+    rm -rf ${stRepo}
+    mkdir -p ${stRepo}
 
     cd ${stRepo}
 
