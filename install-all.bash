@@ -413,6 +413,9 @@ function linkConfigs()
     # newsboat
     ${repoPath}/newsboat/create_config.bash
 
+    # pass
+    ${repoPath}/pass/create_config.bash
+
     # qutebrowser
     ${repoPath}/qutebrowser/create_config.bash
 
