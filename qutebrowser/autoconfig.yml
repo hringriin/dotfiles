@@ -37,9 +37,9 @@ settings:
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
         ;Y: null
-        ;YR: hint --rapid links userscript video-spool.bash -s
-        ;YS: hint links userscript video-spool.bash -s
-        ;YT: hint links userscript video-spool.bash
+        ;YR: hint --rapid links userscript video-spool.bash
+        ;YS: hint links userscript video-spool.bash
+        ;YT: hint links userscript video.bash
         <Back>: null
         <Ctrl+Alt+p>: null
         <Ctrl+F5>: null
@@ -63,9 +63,8 @@ settings:
         SH: open -t qute://history
         SS: open -t qute://settings
         Sk: :bind
-        YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript
-          video-spool.bash -s'
-        YT: 'message-info "Opening with mpv: {url:pretty}" ;; spawn --userscript video-spool.bash'
+        YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript video-spool.bash'
+        YT: 'message-info "Opening with mpv: {url:pretty}" ;; spawn --userscript video.bash'
         ZQ: null
         ZZ: null
         \o: download-open
