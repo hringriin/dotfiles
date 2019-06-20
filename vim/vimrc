@@ -51,8 +51,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }      " live previewing LaTeX files
         Plug 'ctrlpvim/ctrlp.vim'                                   " full path fuzzy file, buffer, mru, tag, ... finder
         "Plug 'scrooloose/syntastic'                                " vim syntax check for maaaany filetypes
+        Plug 'Valloric/YouCompleteMe'
         "Plug 'lervag/vimtex'
-        "Plug 'Valloric/YouCompleteMe'
         " General }}}
 
         " Colors {{{
