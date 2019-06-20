@@ -351,172 +351,176 @@ set ttyfast
     " insert the date
     "inoremap ,date <C-R>=strftime("%Y%m%d_%H%m")<CR>
 
+    function LeaderSpace()
+        map <buffer> <leader><Space> <Esc>/<++><Enter>"_c4l
+        inoremap <buffer> <leader><Space> <Esc>/<++><Enter>"_c4l
+        vnoremap <buffer> <leader><Space> <Esc>/<++><Enter>"_c4l
+    endfunction
+
     " press <leader><Space> to select the next <++> tag in the document, delete it and place the cursor at its former beginning position of
     " the <++> tag.
-    inoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-    vnoremap <leader><Space> <Esc>/<++><Enter>"_c4l
-    map <leader><Space> <Esc>/<++><Enter>"_c4l
+    au FileType xml,html,xhtml,php,rmd,markdown,md,vimwiki,tex call LeaderSpace()
 
     " delete trailing whitespaces and convert tabs to whitespaces when opening/saving a buffer
     autocmd Filetype markdown,md,rmd,vimwiki autocmd BufWinEnter,BufWritePre <buffer> retab
     autocmd Filetype tex,html,php,xhtml autocmd BufWinEnter,BufWritePre <buffer> retab | call TrailingWhitespaces()
 
-    " lua {{{
-    autocmd FileType lua setlocal shiftwidth=2
-    autocmd FileType lua setlocal tabstop=2
-    " }}}
+" lua {{{
+autocmd FileType lua setlocal shiftwidth=2
+autocmd FileType lua setlocal tabstop=2
+" }}}
 
-    " lilypond {{{
-    autocmd FileType lilypond setlocal shiftwidth=2
-    autocmd FileType lilypond setlocal tabstop=2
-    " }}}
+" lilypond {{{
+autocmd FileType lilypond setlocal shiftwidth=2
+autocmd FileType lilypond setlocal tabstop=2
+" }}}
 
-    " LaTeX {{{
-    " Press F12 to trigger LaTeX Makefile and compile the pdf
-    autocmd Filetype tex nnoremap <buffer> <F12> :w<CR>:!make<CR>
-    " Press Control+F12 to open pdf
-    autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
+" LaTeX {{{
+" Press F12 to trigger LaTeX Makefile and compile the pdf
+autocmd Filetype tex nnoremap <buffer> <F12> :w<CR>:!make<CR>
+" Press Control+F12 to open pdf
+autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
-        " umlauts, accents, ... {{{
-        autocmd Filetype tex inoremap <buffer> ö        \"{o}
-        autocmd Filetype tex inoremap <buffer> ü        \"{u}
-        autocmd Filetype tex inoremap <buffer> ä        \"{a}
-        autocmd Filetype tex inoremap <buffer> Ö        \"{O}
-        autocmd Filetype tex inoremap <buffer> Ü        \"{U}
-        autocmd Filetype tex inoremap <buffer> Ä        \"{A}
-        autocmd Filetype tex inoremap <buffer> ß        \ss{}
-        " umlauts, accents, ... }}}
+    " umlauts, accents, ... {{{
+    autocmd Filetype tex inoremap <buffer> ö        \"{o}
+    autocmd Filetype tex inoremap <buffer> ü        \"{u}
+    autocmd Filetype tex inoremap <buffer> ä        \"{a}
+    autocmd Filetype tex inoremap <buffer> Ö        \"{O}
+    autocmd Filetype tex inoremap <buffer> Ü        \"{U}
+    autocmd Filetype tex inoremap <buffer> Ä        \"{A}
+    autocmd Filetype tex inoremap <buffer> ß        \ss{}
+    " umlauts, accents, ... }}}
 
-        " Misc {{{
-        autocmd Filetype tex inoremap <buffer> ...      \ldots
-        " Misc }}}
+    " Misc {{{
+    autocmd Filetype tex inoremap <buffer> ...      \ldots
+    " Misc }}}
 
-        " text decoration {{{
-        autocmd Filetype tex inoremap <buffer> ,bf      \textbf{}<Space><++><ESC>T{i
-        autocmd Filetype tex inoremap <buffer> ,it      \textit{}<Space><++><ESC>T{i
-        autocmd Filetype tex inoremap <buffer> ,tt      \texttt{}<Space><++><ESC>T{i
-        autocmd Filetype tex inoremap <buffer> ,em      \emph{} <++><ESC>T{i
-        autocmd Filetype tex inoremap <buffer> ,sc      \textsc{<Space><++><ESC>T{i
-        " text decoration }}}
+    " text decoration {{{
+    autocmd Filetype tex inoremap <buffer> ,bf      \textbf{}<Space><++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,it      \textit{}<Space><++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,tt      \texttt{}<Space><++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,em      \emph{} <++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,sc      \textsc{<Space><++><ESC>T{i
+    " text decoration }}}
 
-        " lists {{{
-        autocmd Filetype tex inoremap <buffer> ,ol      \begin{enumerate}<Enter>\end{enumerate}<Enter><Enter><++><ESC>3ko\item<Space>
-        autocmd Filetype tex inoremap <buffer> ,ul      \begin{itemize}<Enter>\end{itemize}<Enter><Enter><++><ESC>3ko\item<Space>
-        autocmd Filetype tex inoremap <buffer> ,li      <Enter>\item<Space>
-        " lists }}}
+    " lists {{{
+    autocmd Filetype tex inoremap <buffer> ,ol      \begin{enumerate}<Enter>\end{enumerate}<Enter><Enter><++><ESC>3ko\item<Space>
+    autocmd Filetype tex inoremap <buffer> ,ul      \begin{itemize}<Enter>\end{itemize}<Enter><Enter><++><ESC>3ko\item<Space>
+    autocmd Filetype tex inoremap <buffer> ,li      <Enter>\item<Space>
+    " lists }}}
 
-        " references {{{
-        autocmd Filetype tex inoremap <buffer> ,ref     \ref{}<Space><++><ESC>T{i
-        " references }}}
+    " references {{{
+    autocmd Filetype tex inoremap <buffer> ,ref     \ref{}<Space><++><ESC>T{i
+    " references }}}
 
-        " tables {{{
-        "autocmd Filetype tex inoremap <buffer> ,tab     \begin{table}<Enter>\begin{tabular}<Enter><++><Enter>\end{tabular}<Enter>\caption{<++>}<Enter>\end{table}<Enter><Enter><++><Esc>6kA{}<ESC>i
-        autocmd Filetype tex inoremap <buffer> ,tabl    \begin{table}<Enter><++><Enter>\end{table}<Enter><Enter><++><Esc>4kA[]<ESC>i
-        autocmd Filetype tex inoremap <buffer> ,tabu    \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><ESC>4kA{}<ESC>i
-        autocmd Filetype tex inoremap <buffer> ,arr     \begin{array}<Enter><++><Enter>\end{array}<Enter><Enter><++><ESC>4kA{}<ESC>i
-        " tables }}}
+    " tables {{{
+    "autocmd Filetype tex inoremap <buffer> ,tab     \begin{table}<Enter>\begin{tabular}<Enter><++><Enter>\end{tabular}<Enter>\caption{<++>}<Enter>\end{table}<Enter><Enter><++><Esc>6kA{}<ESC>i
+    autocmd Filetype tex inoremap <buffer> ,tabl    \begin{table}<Enter><++><Enter>\end{table}<Enter><Enter><++><Esc>4kA[]<ESC>i
+    autocmd Filetype tex inoremap <buffer> ,tabu    \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><ESC>4kA{}<ESC>i
+    autocmd Filetype tex inoremap <buffer> ,arr     \begin{array}<Enter><++><Enter>\end{array}<Enter><Enter><++><ESC>4kA{}<ESC>i
+    " tables }}}
 
-        " packages {{{
-        autocmd Filetype tex inoremap <buffer> ,up      \usepackage{}<TAB><TAB>% <++><ESC>T{i
-        autocmd Filetype tex inoremap <buffer> ,up      \RequirePackage{}<TAB><TAB>% <++><ESC>T{i
-        " packages }}}
+    " packages {{{
+    autocmd Filetype tex inoremap <buffer> ,up      \usepackage{}<TAB><TAB>% <++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,up      \RequirePackage{}<TAB><TAB>% <++><ESC>T{i
+    " packages }}}
 
-        " unknown {{{
-        "autocmd Filetype tex inoremap , <ESC>`<i\{ESC}`>2la}<ESC>?\\{<Enter>a      " what does this do?
-        " unknown }}}
+    " unknown {{{
+    "autocmd Filetype tex inoremap , <ESC>`<i\{ESC}`>2la}<ESC>?\\{<Enter>a      " what does this do?
+    " unknown }}}
 
-    " }}}
+" }}}
 
-    " markdown {{{
+" markdown {{{
 
-        " decoration {{{
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,bf      ****<Space><++><ESC>F*hi
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,em      **<Space><++><ESC>F*i
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,bfem    ******<Space><++><ESC>F*2hi
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,st      ~~~~<Space><++><ESC>F~hi
-        " decoration }}}
+    " decoration {{{
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,bf      ****<Space><++><ESC>F*hi
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,em      **<Space><++><ESC>F*i
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,bfem    ******<Space><++><ESC>F*2hi
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,st      ~~~~<Space><++><ESC>F~hi
+    " decoration }}}
 
-        " headlines {{{
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h1      #<Space><Enter><Enter><++><ESC>2kA
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h2      ##<Space><Enter><Enter><++><ESC>2kA
-        autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h3      ###<Space><Enter><Enter><++><ESC>2kA
-        " headlines }}}
+    " headlines {{{
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h1      #<Space><Enter><Enter><++><ESC>2kA
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h2      ##<Space><Enter><Enter><++><ESC>2kA
+    autocmd Filetype markdown,md,rmd,vimwiki inoremap <buffer> ,h3      ###<Space><Enter><Enter><++><ESC>2kA
+    " headlines }}}
 
-        " rmarkdown {{{
-        " compile
-        autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
-        " open pdf
-        autocmd Filetype rmd nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
-
-            " headlines {{{
-            autocmd Filetype rmd inoremap <buffer> ,java        ```{java}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,tex         ```{tex}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,latex       ```{LaTeX}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,css         ```{css}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,r           ```{r}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,rscript     ```{Rscript}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,zsh         ```{zsh}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,bash        ```{bash}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,tikz        ```{tikz}<Enter>```<Enter><Enter><++><ESC>2kO
-            autocmd Filetype rmd inoremap <buffer> ,sql         ```{sql}<Enter>```<Enter><Enter><++><ESC>2kO
-            " headlines }}}
-
-        " rmarkdown }}}
-
-    " markdown }}}
-
-    " html {{{
-        " umlauts, accents, ... {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ö         &ouml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> ü         &uuml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> ä         &auml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> Ö         &Ouml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> Ü         &Uuml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> Ä         &Auml;
-        autocmd Filetype html,php,xhtml inoremap <buffer> ß         &szlig;
-        " umlauts, accents, ... }}}
-
-        " symbols, quotation, ... {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,,        &bdquo;
-        autocmd Filetype html,php,xhtml inoremap <buffer> ''        &ldquo;
-        " symbols, quotation, ... }}}
+    " rmarkdown {{{
+    " compile
+    autocmd Filetype rmd nnoremap <buffer> <F12> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+    " open pdf
+    autocmd Filetype rmd nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
         " headlines {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h1       <h1 id="<++>"><Enter></h1><Enter><Enter><++><ESC>2kO
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h2       <h2 id="<++>"><Enter></h2><Enter><Enter><++><ESC>2kO
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h3       <h3 id="<++>"><Enter></h3><Enter><Enter><++><ESC>2kO
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h4       <h4 id="<++>"><Enter></h4><Enter><Enter><++><ESC>2kO
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h5       <h5 id="<++>"><Enter></h5><Enter><Enter><++><ESC>2kO
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,h6       <h6 id="<++>"><Enter></h6><Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,java        ```{java}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,tex         ```{tex}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,latex       ```{LaTeX}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,css         ```{css}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,r           ```{r}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,rscript     ```{Rscript}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,zsh         ```{zsh}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,bash        ```{bash}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,tikz        ```{tikz}<Enter>```<Enter><Enter><++><ESC>2kO
+        autocmd Filetype rmd inoremap <buffer> ,sql         ```{sql}<Enter>```<Enter><Enter><++><ESC>2kO
         " headlines }}}
 
-        " text decoration {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,bf       <b><++></b><Space><++><ESC>_/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,it       <i><++></i><Space><++><ESC>_/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,em       <em><++></em><Space><++><ESC>_/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,st       <strong><++></strong><Space><++><ESC>_/<++><Enter>"_c4l
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,tt       class="tt"
-        " text decoration }}}
+    " rmarkdown }}}
 
-        " lists {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,ol       <ol><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ol><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,ul       <ul><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ul><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,li       <li><Enter><++><Enter></li><Enter><Enter><++><ESC>4k/<++><Enter>"_4cl
-        " lists }}}
+" markdown }}}
 
-        " references {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,href     <a href="<++>"><++></a><ESC>_/<++><Enter>"_4cl
-        " references }}}
+" html {{{
+    " umlauts, accents, ... {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ö         &ouml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> ü         &uuml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> ä         &auml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> Ö         &Ouml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> Ü         &Uuml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> Ä         &Auml;
+    autocmd Filetype html,php,xhtml inoremap <buffer> ß         &szlig;
+    " umlauts, accents, ... }}}
 
-        " article {{{
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,pa       <p><Enter></p><Enter><Enter><++><ESC>2kO<TAB>
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,pid      <p id="<++>"><Enter></p><Enter><Enter><++><ESC>2kO<TAB>
-        autocmd Filetype html,php,xhtml inoremap <buffer> ,art      <div class="article"><Enter><h3 id="<++>"><Enter><++><Enter></h3><Enter><Enter><p><Enter><TAB><++><Enter></p><Enter><Enter><++><Enter></div><ESC>9k/<++><Enter>"_4cl
-        " article }}}
+    " symbols, quotation, ... {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,,        &bdquo;
+    autocmd Filetype html,php,xhtml inoremap <buffer> ''        &ldquo;
+    " symbols, quotation, ... }}}
 
-    " html }}}
+    " headlines {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h1       <h1 id="<++>"><Enter></h1><Enter><Enter><++><ESC>2kO
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h2       <h2 id="<++>"><Enter></h2><Enter><Enter><++><ESC>2kO
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h3       <h3 id="<++>"><Enter></h3><Enter><Enter><++><ESC>2kO
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h4       <h4 id="<++>"><Enter></h4><Enter><Enter><++><ESC>2kO
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h5       <h5 id="<++>"><Enter></h5><Enter><Enter><++><ESC>2kO
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,h6       <h6 id="<++>"><Enter></h6><Enter><Enter><++><ESC>2kO
+    " headlines }}}
 
-    " xml {{{
+    " text decoration {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,bf       <b><++></b><Space><++><ESC>_/<++><Enter>"_c4l
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,it       <i><++></i><Space><++><ESC>_/<++><Enter>"_c4l
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,em       <em><++></em><Space><++><ESC>_/<++><Enter>"_c4l
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,st       <strong><++></strong><Space><++><ESC>_/<++><Enter>"_c4l
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,tt       class="tt"
+    " text decoration }}}
+
+    " lists {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,ol       <ol><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ol><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,ul       <ul><Enter><li><Enter><++><Enter></li><Enter><Enter><++><Enter></ul><Enter><Enter><++><ESC>6k/<++><Enter>"_4cl
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,li       <li><Enter><++><Enter></li><Enter><Enter><++><ESC>4k/<++><Enter>"_4cl
+    " lists }}}
+
+    " references {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,href     <a href="<++>"><++></a><ESC>_/<++><Enter>"_4cl
+    " references }}}
+
+    " article {{{
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,pa       <p><Enter></p><Enter><Enter><++><ESC>2kO<TAB>
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,pid      <p id="<++>"><Enter></p><Enter><Enter><++><ESC>2kO<TAB>
+    autocmd Filetype html,php,xhtml inoremap <buffer> ,art      <div class="article"><Enter><h3 id="<++>"><Enter><++><Enter></h3><Enter><Enter><p><Enter><TAB><++><Enter></p><Enter><Enter><++><Enter></div><ESC>9k/<++><Enter>"_4cl
+    " article }}}
+
+" html }}}
+
+" xml {{{
 autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++><Enter></pubDate><Enter><title><Enter><++><Enter></title><Enter><guid><Enter><++><Enter></guid><Enter><description><Enter><![CDATA[<Enter><++><Enter>]]><Enter></description><Enter></item><Esc>14k/<++><Enter>"_4cl
 " xml }}}
 
