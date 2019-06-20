@@ -631,6 +631,7 @@ EOF
 
     " Highlight trailing whitespaces
     match ErrorMsg '\s\+$'
+    match ErrorMsg /\s\+$/
 
     " Do not erase background
     set t_ut=
