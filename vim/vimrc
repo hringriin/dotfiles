@@ -92,6 +92,17 @@ call plug#end()
 
 " PLUG Addon-Manager }}}
 
+" PLUGin Settings {{{
+
+    " Syntastic {{{
+
+    let g:syntastic_always_populate_loc_list = 1
+    nnoremap <silent> <leader>l :Errors<CR>
+
+    " Syntastic }}}
+
+" PLUGin Settings }}}
+
 " Vim-Instant-Markdown {{{
 
 " By default, vim-instant-markdown will update the display in realtime. If that taxes your system too much, you can specify *slow* before
