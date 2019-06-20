@@ -50,8 +50,10 @@ call plug#begin('~/.vim/plugged')
         Plug 'wikitopian/hardmode'                                  " vim hard mode
         Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }      " live previewing LaTeX files
         Plug 'ctrlpvim/ctrlp.vim'                                   " full path fuzzy file, buffer, mru, tag, ... finder
-        "Plug 'scrooloose/syntastic'                                " vim syntax check for maaaany filetypes
+        Plug 'vim-scripts/indentpython.vim'                         " indention for python
         Plug 'Valloric/YouCompleteMe'
+        Plug 'scrooloose/syntastic'                                 " vim syntax check for maaaany filetypes
+        Plug 'nvie/vim-flake8'                                      " pep8 checking (python)
         "Plug 'lervag/vimtex'
         " General }}}
 
