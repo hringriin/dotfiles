@@ -499,8 +499,39 @@ set ttyfast
     " html }}}
 
     " xml {{{
-    autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++><Enter></pubDate><Enter><title><Enter><++><Enter></title><Enter><guid><Enter><++><Enter></guid><Enter><description><Enter><![CDATA[<Enter><++><Enter>]]><Enter></description><Enter></item><Esc>14k/<++><Enter>"_4cl
-    " xml }}}
+autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++><Enter></pubDate><Enter><title><Enter><++><Enter></title><Enter><guid><Enter><++><Enter></guid><Enter><description><Enter><![CDATA[<Enter><++><Enter>]]><Enter></description><Enter></item><Esc>14k/<++><Enter>"_4cl
+" xml }}}
+
+" python {{{
+
+" python with virtualenv support {{{
+" KEEP THE INDENTION OTHERWISE IT WILL NOT WORK!
+
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+" python with virtualenv support }}}
+
+    let python_highlight_all=1
+
+    function SetPythonFormat()
+        set tabstop=4
+        set softtabstop=4
+        set shiftwidth=4
+        set textwidth=79
+        set expandtab
+        set autoindent
+        set fileformat=unix
+    endfunction
+
+    au BufNewFile,BufRead *.py call SetPythonFormat()
+
+    " python }}}
 
 " Filetype Options }}}
 
