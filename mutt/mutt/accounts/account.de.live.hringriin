@@ -3,7 +3,7 @@
 # Clear the sidebar off unwanted mailboxes
 unmailboxes *
 
-set smtp_url            =   "smtps://hringriin@smtp-mail.outlook.com:465/"
+set smtp_url            =   "smtp://hringriin@smtp.office365.com:587/"
 set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.live.hringriin | awk '{print $2}'`
 set from                =   "hringriin@live.de"
 set realname            =   "Joschka Köster"
@@ -11,10 +11,10 @@ set folder              =   "~/.mailfolder/de.live.hringriin/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+Drafts"
 set record              =   "+Sent"
+set ssl_starttls        =   yes
+set pgp_sign_as         =
 unset signature
-set ssl_force_tls       =   yes
-unset ssl_starttls
-unset pgp_sign_as
+unset ssl_force_tls
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox
