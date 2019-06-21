@@ -13,16 +13,17 @@ set query_command   =   "abook --mutt-query '%s'"
 # }}}
 # Folder Hooks {{{
 
-folder-hook     'accounts/account.de.tzi.jkoester'               'source ~/.mailfolder/de.tzi.jkoester'
-folder-hook     'accounts/account.de.uni-bremen.jkoester'        'source ~/.mailfolder/de.uni-bremen.jkoester'
-folder-hook     'accounts/account.com.gmail.koester.joschka'     'source ~/.mailfolder/com.gmail.koester.joschka'
-folder-hook     'accounts/account.com.gmail.hringriin'           'source ~/.mailfolder/com.gmail.hringriin'
-folder-hook     'accounts/account.com.gmail.jk.sgs4i9505'        'source ~/.mailfolder/com.gmail.jk.sgs4i9505'
-folder-hook     'accounts/account.com.gmail.jk.iptaid'           'source ~/.mailfolder/com.gmail.jk.iptaid'
-folder-hook     'accounts/account.com.gmail.josh.ets2mp'         'source ~/.mailfolder/com.gmail.josh.ets2mp'
-folder-hook     'accounts/account.com.gmail.ahliazhia'           'source ~/.mailfolder/com.gmail.ahliazhia'
-folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'      'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
-folder-hook     'accounts/account.de.live.hringriin'             'source ~/.mailfolder/de.live.hringriin'
+folder-hook     'accounts/account.de.tzi.jkoester'                  'source ~/.mailfolder/de.tzi.jkoester'
+folder-hook     'accounts/account.de.uni-bremen.jkoester'           'source ~/.mailfolder/de.uni-bremen.jkoester'
+folder-hook     'accounts/account.com.gmail.koester.joschka'        'source ~/.mailfolder/com.gmail.koester.joschka'
+folder-hook     'accounts/account.com.gmail.hringriin'              'source ~/.mailfolder/com.gmail.hringriin'
+folder-hook     'accounts/account.com.gmail.jk.sgs4i9505'           'source ~/.mailfolder/com.gmail.jk.sgs4i9505'
+folder-hook     'accounts/account.com.gmail.jk.iptaid'              'source ~/.mailfolder/com.gmail.jk.iptaid'
+folder-hook     'accounts/account.com.gmail.josh.ets2mp'            'source ~/.mailfolder/com.gmail.josh.ets2mp'
+folder-hook     'accounts/account.com.gmail.ahliazhia'              'source ~/.mailfolder/com.gmail.ahliazhia'
+folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'         'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
+folder-hook     'accounts/account.de.live.hringriin'                'source ~/.mailfolder/de.live.hringriin'
+#folder-hook     'accounts/account.eu.barzh.hringriin'               'source ~/.mailfolder/eu.barzh.hringriin'
 
 # }}}
 # Default account config file {{{
@@ -65,8 +66,11 @@ macro index     ,8<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 # smarttv wohnzimmer
 macro index     ,9<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.mk.hhk.smarttv<enter><change-folder>!<enter>'
 
-# ahliazhia
+# live
 macro index     ,10<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
+
+# barzh
+#macro index     ,11<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.eu.barzh.hringriin<enter><change-folder>!<enter>'
 
 # }}}
 # Basic config {{{

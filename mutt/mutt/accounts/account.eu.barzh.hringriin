@@ -1,0 +1,22 @@
+# vim: ft=muttrc
+
+# Clear the sidebar off unwanted mailboxes
+unmailboxes *
+
+set smtp_url            =   "smtps://hringriin@smtp.barzh.eu:465/"
+set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep eu.barzh.hringriin | awk '{print $2}'`
+set from                =   "hringriin@barzh.eu"
+set realname            =   "Joschka Köster"
+set folder              =   "~/.mailfolder/eu.barzh.hringriin/"
+set spoolfile           =   "+INBOX"
+set postponed           =   "+Drafts"
+set record              =   "+Sent"
+unset signature
+set ssl_force_tls       =   yes
+unset ssl_starttls
+unset pgp_sign_as
+
+# Add mailboxes to sidebar.
+# The Box "+----------" is just a separator and no real mailbox
+mailboxes +INBOX +Sent +Drafts +Deleted +Junk +----------
+source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

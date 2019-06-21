@@ -2,8 +2,10 @@
 # configuration file
 
 # ACCOUNTS {{{
+# -----------------------------------------------
 
 # JKOESTER@UNI-BREMEN.DE {{{
+# -----------------------------------------------
 
 IMAPStore de.uni-bremen.jkoester-remote
 Host imap.uni-bremen.de
@@ -25,8 +27,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# JKOESTER@UNI-BREMEN.DE }}}
 # KOESTER.JOSCHKA@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.koester.joschka-remote
 Host imap.gmail.com
@@ -49,8 +53,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# KOESTER.JOSCHKA@GMAIL.COM }}}
 # HRINGRIIN@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.hringriin-remote
 Host imap.gmail.com
@@ -73,8 +79,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# HRINGRIIN@GMAIL.COM }}}
 # JOSH.ETS2MP@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.josh.ets2mp-remote
 Host imap.gmail.com
@@ -97,8 +105,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# JOSH.ETS2MP@GMAIL.COM }}}
 # BLUTIGE.KODOLEBER.ESSER@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.blutige.kodoleber.esser-remote
 Host imap.gmail.com
@@ -121,8 +131,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# BLUTIGE.KODOLEBER.ESSER@GMAIL.COM }}}
 # JK.SGS4I9505@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.jk.sgs4i9505-remote
 Host imap.gmail.com
@@ -145,8 +157,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# JK.SGS4I9505@GMAIL.COM }}}
 # JK.IPTAID@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.jk.iptaid-remote
 Host imap.gmail.com
@@ -169,8 +183,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# JK.IPTAID@GMAIL.COM }}}
 # AHLIAZHIA@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.ahliazhia-remote
 Host imap.gmail.com
@@ -193,8 +209,10 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# AHLIAZHIA@GMAIL.COM }}}
 # MK.HHK.SMARTTV@GMAIL.COM {{{
+# -----------------------------------------------
 
 IMAPStore com.gmail.mk.hhk.smarttv-remote
 Host imap.gmail.com
@@ -217,11 +235,13 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# MK.HHK.SMARTTV@GMAIL.COM }}}
 # HRINGRIIN@LIVE.DE {{{
+# -----------------------------------------------
 
 IMAPStore de.live.hringriin-remote
-Host imap-mail.outlook.com
+Host outlook.office365.com
 User hringriin@live.de
 PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.live.hringriin | awk '{print $2}'"
 AuthMechs LOGIN
@@ -241,13 +261,43 @@ Expunge Both
 Patterns *
 SyncState *
 
-# }}}
+# -----------------------------------------------
+# HRINGRIIN@LIVE.DE }}}
+# HRINGRIIN@BARZH.EU {{{
+# -----------------------------------------------
 
-# }}}
+#IMAPStore eu.barzh.hringriin-remote
+#Host imap.barzh.eu
+#User hringriin
+#PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep eu.barzh.hringriin | awk '{print $2}'"
+#AuthMechs LOGIN
+#SSLType IMAPS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+#MaildirStore eu.barzh.hringriin-local
+#Path ~/.mailfolder/eu.barzh.hringriin/
+#Inbox ~/.mailfolder/eu.barzh.hringriin/INBOX
+#Subfolders Verbatim
+
+#Channel eu.barzh.hringriin
+#Master :eu.barzh.hringriin-remote:
+#Slave :eu.barzh.hringriin-local:
+#Create Both
+#Expunge Both
+#Patterns *
+#SyncState *
+
+# -----------------------------------------------
+# HRINGRIIN@BARZH.EU }}}
+
+# -----------------------------------------------
+# ACCOUNTS }}}
 
 # GROUPS {{{
+# -----------------------------------------------
 
-# inboxes {{{
+# INBOXES {{{
+# -----------------------------------------------
 
 #Group inboxes
 #Channel de.uni-bremen.jkoester-default
@@ -261,6 +311,8 @@ SyncState *
 #Channel com.gmail.mk.hhk.smarttv-default
 #Channel de.live.hringriin-default
 
-# }}}
+# -----------------------------------------------
+# INBOXES }}}
 
-# }}}
+# -----------------------------------------------
+# GROUPS }}}
