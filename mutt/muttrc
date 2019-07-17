@@ -125,8 +125,8 @@ hdr_order from: to: cc: date: subject:                  # and in this order
 # }}}
 # Index View Options {{{
 
-set date_format         =   "| %F | %H:%M:%S ||"
-set index_format        =   "[%Z] [%-2.2X] %D %-25.25F | %s"
+set date_format         =   "‖ %F | %H:%M:%S ‖"
+set index_format        =   "[%Z]  %-2.2X  %D %-25.25F | %-25.25a ‖ %s"
 set uncollapse_jump                                     # don't collapse on an unread message
 unset collapse_unread
 set reply_regexp        =   "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
