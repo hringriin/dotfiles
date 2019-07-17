@@ -346,6 +346,114 @@ augroup END
 set ttyfast
 " fast terminal? }}}
 
+" General Settings {{{
+
+    " matchit, additional matchings like if/elseif/end for `%` key
+    packadd! matchit
+
+    " wildmenu
+    set wildmenu
+
+    " Always use vertical diffs
+    set diffopt+=vertical
+
+    " Open new split panes to right and bottom, which feels more natural
+    set splitbelow
+    set splitright
+
+    " also for help
+    ":cabbrev h vert h
+    ":cabbrev help vert h
+
+    " Encoding
+    scriptencoding utf-8
+    set encoding=utf-8
+
+    " Dark Background
+    set background=dark
+
+    " Paper Format
+    set printoptions=paper:A4
+
+    " highlight search matches
+    set hlsearch
+
+    " show at least 7 lines below or above the current line, except, if reaching
+    " the bottom or the top of the file
+    set scrolloff=5
+
+    " show at least 20  characters to each side of the cursor, except, if reaching
+    " beginning or end of line. if reaching beginning / end of line, scroll one
+    " character to each direction
+    set sidescrolloff=20
+    set sidescroll=1
+
+    " use \C for case-sensitive search, like '/\CJava' to search for 'Java', 'java' will not be found.
+    set ignorecase
+
+    " whitespaces instead of tabulators
+    set expandtab
+
+    " default tab size (4 whitespaces)
+    set tabstop=4
+    set shiftwidth=4
+
+    " listchars
+    "   ¶¤¤¤  : tabulators
+    "   ·     : whitespaces
+    "   <     : preceds
+    "   >     : extends
+    "   •     : non-breakable space
+    set list listchars=tab:¶¤,trail:·,extends:>,precedes:<,nbsp:•
+    set list
+
+    " Folding
+    set fdm=marker      " fold method
+    set fdc=4           " fold column width
+    " fold and unfold with <space>
+    nnoremap <space> za
+
+    " Set which parantheses to match
+    set matchpairs=(:),{:},[:],<:>
+
+    " Show matching brackets
+    set showmatch
+
+    " Highlight lines longer than 120 characters
+    "autocmd Filetype md :2mat WarningMsg '\%>120v.'
+
+    " Highlight trailing whitespaces
+    match ErrorMsg '\s\+$'
+    match ErrorMsg /\s\+$/
+
+    " Do not erase background
+    set t_ut=
+
+    " Command line history
+    set history=9999
+
+    " Symbol for wrapped lines
+    let &showbreak=' '
+
+    " No line wrapping
+    set nowrap
+
+    " encryption
+    set cm=blowfish
+
+    " Line Numbers
+    set numberwidth=4
+    set relativenumber
+    set number
+
+    " Get off my lawn
+    noremap <Left> :echoe "Use h"<CR>
+    noremap <Right> :echoe "Use l"<CR>
+    noremap <Up> :echoe "Use k"<CR>
+    noremap <Down> :echoe "Use j"<CR>
+
+" General Settings }}}
+
 " Filetype Options {{{
 
     " insert the date
@@ -527,7 +635,10 @@ autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++
 " python {{{
 
 " python with virtualenv support {{{
-" KEEP THE INDENTION OTHERWISE IT WILL NOT WORK!
+"
+" ####################################################
+" ## KEEP THE INDENTION OTHERWISE IT WILL NOT WORK! ##
+" ####################################################
 
 py << EOF
 import os
@@ -542,128 +653,33 @@ EOF
     let python_highlight_all=1
 
     function SetPythonFormat()
-        set tabstop=4
-        set softtabstop=4
-        set shiftwidth=4
-        set textwidth=79
-        set expandtab
-        set autoindent
-        set fileformat=unix
+        setlocal tabstop=4
+        setlocal softtabstop=4
+        setlocal shiftwidth=4
+        setlocal textwidth=79
+        setlocal expandtab
+        setlocal autoindent
+        setlocal fileformat=unix
+        setlocal fdm=syntax
     endfunction
 
     au BufNewFile,BufRead *.py call SetPythonFormat()
 
     " python }}}
 
+    " java {{{
+
+    au Filetype java :setlocal fdm=syntax
+
+        " abbreviations {{{
+
+        au Filetype java inoremap <buffer> syso     System.out.println
+
+        " abbreviations }}}
+
+    " java }}}
+
 " Filetype Options }}}
-
-" General Settings {{{
-
-    " matchit, additional matchings like if/elseif/end for `%` key
-    packadd! matchit
-
-    " wildmenu
-    set wildmenu
-
-    " Always use vertical diffs
-    set diffopt+=vertical
-
-    " Open new split panes to right and bottom, which feels more natural
-    set splitbelow
-    set splitright
-
-    " also for help
-    ":cabbrev h vert h
-    ":cabbrev help vert h
-
-    " Encoding
-    scriptencoding utf-8
-    set encoding=utf-8
-
-    " Dark Background
-    set background=dark
-
-    " Paper Format
-    set printoptions=paper:A4
-
-    " highlight search matches
-    set hlsearch
-
-    " show at least 7 lines below or above the current line, except, if reaching
-    " the bottom or the top of the file
-    set scrolloff=5
-
-    " show at least 20  characters to each side of the cursor, except, if reaching
-    " beginning or end of line. if reaching beginning / end of line, scroll one
-    " character to each direction
-    set sidescrolloff=20
-    set sidescroll=1
-
-    " use \C for case-sensitive search, like '/\CJava' to search for 'Java', 'java' will not be found.
-    set ignorecase
-
-    " whitespaces instead of tabulators
-    set expandtab
-
-    " default tab size (4 whitespaces)
-    set tabstop=4
-    set shiftwidth=4
-
-    " listchars
-    "   ¶¤¤¤  : tabulators
-    "   ·     : whitespaces
-    "   <     : preceds
-    "   >     : extends
-    "   •     : non-breakable space
-    set list listchars=tab:¶¤,trail:·,extends:>,precedes:<,nbsp:•
-    set list
-
-    " Folding
-    set fdm=marker      " fold method
-    set fdc=4           " fold column width
-    " fold and unfold with <space>
-    nnoremap <space> za
-
-    " Set which parantheses to match
-    set matchpairs=(:),{:},[:],<:>
-
-    " Show matching brackets
-    set showmatch
-
-    " Highlight lines longer than 120 characters
-    "autocmd Filetype md :2mat WarningMsg '\%>120v.'
-
-    " Highlight trailing whitespaces
-    match ErrorMsg '\s\+$'
-    match ErrorMsg /\s\+$/
-
-    " Do not erase background
-    set t_ut=
-
-    " Command line history
-    set history=9999
-
-    " Symbol for wrapped lines
-    let &showbreak=' '
-
-    " No line wrapping
-    set nowrap
-
-    " encryption
-    set cm=blowfish
-
-    " Line Numbers
-    set numberwidth=4
-    set relativenumber
-    set number
-
-    " Get off my lawn
-    noremap <Left> :echoe "Use h"<CR>
-    noremap <Right> :echoe "Use l"<CR>
-    noremap <Up> :echoe "Use k"<CR>
-    noremap <Down> :echoe "Use j"<CR>
-
-" General Settings }}}
 
 " Functions {{{
 
