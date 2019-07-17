@@ -21,9 +21,9 @@ image/ttiff; mupdf %s
 image/svg+xml; eog %s
 
 # PDFs
-application/pdf; mupdf %s
-application/x-octet-stream; mupdf %s
-application/force-download; mupdf %s
+application/pdf; zathura %s
+application/x-octet-stream; zathura %s
+application/force-download; zathura %s
 
 # HTML
 text/html; "qutebrowser" %s & sleep 3; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal
