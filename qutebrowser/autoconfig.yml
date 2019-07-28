@@ -63,7 +63,8 @@ settings:
         SH: open -t qute://history
         SS: open -t qute://settings
         Sk: :bind
-        YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript video-spool.bash'
+        YS: 'message-info "Adding to yt-task-spooler: {url:pretty}" ;; spawn --userscript
+          video-spool.bash'
         YT: 'message-info "Opening with mpv: {url:pretty}" ;; spawn --userscript video.bash'
         ZQ: null
         ZZ: null
@@ -98,6 +99,8 @@ settings:
     global: '#282828'
   colors.completion.item.selected.fg:
     global: '#ebdbb2'
+  colors.completion.item.selected.match.fg:
+    global: '#fe8019'
   colors.completion.match.fg:
     global: '#fb4934'
   colors.completion.odd.bg:
@@ -205,7 +208,7 @@ settings:
   colors.statusbar.url.warn.fg:
     global: '#fabd2f'
   colors.tabs.bar.bg:
-    global: '#1d2021'
+    global: 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1d2021, stop:1 #32302f)'
   colors.tabs.even.bg:
     global: '#1d2021'
   colors.tabs.even.fg:
@@ -222,6 +225,22 @@ settings:
     global: '#1d2021'
   colors.tabs.odd.fg:
     global: '#a89984'
+  colors.tabs.pinned.even.bg:
+    global: '#1d2021'
+  colors.tabs.pinned.even.fg:
+    global: '#a89984'
+  colors.tabs.pinned.odd.bg:
+    global: '#1d2021'
+  colors.tabs.pinned.odd.fg:
+    global: '#a89984'
+  colors.tabs.pinned.selected.even.bg:
+    global: '#282828'
+  colors.tabs.pinned.selected.even.fg:
+    global: '#83a598'
+  colors.tabs.pinned.selected.odd.bg:
+    global: '#282828'
+  colors.tabs.pinned.selected.odd.fg:
+    global: '#83a598'
   colors.tabs.selected.even.bg:
     global: '#282828'
   colors.tabs.selected.even.fg:
@@ -383,9 +402,9 @@ settings:
   tabs.show:
     global: multiple
   tabs.title.format:
-    global: '{private}{perc}{audio}{index}: {title}'
+    global: '{private}{perc}{audio}{index}: {current_title}'
   tabs.title.format_pinned:
-    global: '(P){private}{perc}{audio}{index}: {title}'
+    global: '(P){private}{perc}{audio}{index}: {current_title}'
   tabs.width:
     global: 220
   tabs.wrap:
