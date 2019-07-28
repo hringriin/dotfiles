@@ -20,6 +20,10 @@ image/tiff; mupdf %s
 image/ttiff; mupdf %s
 image/svg+xml; eog %s
 
+# Audio
+#audio/mpeg; mocp -S && mocp -cap %s
+audio/mpeg; mpv '%s'
+
 # PDFs
 application/pdf; zathura %s
 application/x-octet-stream; zathura %s
