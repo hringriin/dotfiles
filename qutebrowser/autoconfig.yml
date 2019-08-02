@@ -299,6 +299,8 @@ settings:
     global: false
   content.plugins:
     global: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
   content.xss_auditing:
     global: true
   downloads.location.directory:
