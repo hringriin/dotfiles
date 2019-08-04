@@ -9,8 +9,8 @@ muxPath=
 
 # check, if the path exists (tmuxinator is installed) and set the variable
 # muxPath respectively
-if [[ -e ${HOME}/.gem/ruby/2.5.0/bin/tmuxinator ]] ; then
-    muxPath="${HOME}/.gem/ruby/2.5.0/bin/tmuxinator"
+if [[ -e ${HOME}/.gem/ruby/2.6.0/bin/tmuxinator ]] ; then
+    muxPath="${HOME}/.gem/ruby/2.6.0/bin/tmuxinator"
 elif [[ -e /usr/local/bin/tmuxinator ]] ; then
     muxPath="/usr/local/bin/tmuxinator"
 else

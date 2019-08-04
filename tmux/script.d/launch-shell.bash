@@ -29,7 +29,6 @@ function startShell ()
     else
         ${myShell}
     fi
-    #${myShell}
 }
 
 # start the filemanager
@@ -49,7 +48,6 @@ function main ()
         selShell
         startFm
     else
-
         exit 2
     fi
 }
