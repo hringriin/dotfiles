@@ -1,58 +1,67 @@
 # vim: ft=sh
 
 # Generic paths seem to work fine, even on MacOS {{{
+# -----------------------------------------------
 
 source ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases
 source ${HOME}/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/functions
 tmuxi="${HOME}/Repositories/github.com/hringriin/dotfiles/repo/tmux/tmuxinator"
 
+# -----------------------------------------------
 # Generic paths seem to work fine, even on MacOS }}}
-
 # Editor {{{
+# -----------------------------------------------
 
 export EDITOR=vim
 export VISUAL=vim
 
+# -----------------------------------------------
 # Editor }}}
-
 # Ranger (file browser) {{{
+# -----------------------------------------------
 
 RANGER_LOAD_DEFAULT_RC=FALSE
 
+# -----------------------------------------------
 # Ranger (file browser) }}}
-
 # Homebrew token {{{
+# -----------------------------------------------
 
 if [[ -e ${HOME}/.github-homebrew-token ]] ; then
     source ${HOME}/.github-homebrew-token
 fi
 
+# -----------------------------------------------
 # Homebrew token }}}
-
 # ccache {{{
+# -----------------------------------------------
 
 if [[ -e ${tmuxi}/completion/tmuxinator.zsh ]] ; then
     # sourcing tmuxinator completion
     source ${tmuxi}/completion/tmuxinator.zsh
 fi
 
+# -----------------------------------------------
 # ccache }}}
-
 # mosh locale {{{
+# -----------------------------------------------
 
 unset LC_CTYPE
 
+# -----------------------------------------------
 # mosh locale }}}
-
 # prevent tmux autocorrection for certain commands {{{
+# -----------------------------------------------
 
 # this does not work, but why? source order?
 alias 'cd ...'='nocorrect cd ../..'
 alias 'tmux'='nocorrect tmux'
 
+# -----------------------------------------------
 # prevent tmux autocorrection for certain commands }}}
 
 # MACOS shit ... {{{
+# -----------------------------------------------
 
 if [[ -d /usr/local/Cellar/vim/8.1.0250/bin/ ]] ; then
     export PATH=/usr/local/Cellar/vim/8.1.0250/bin:${PATH}
@@ -62,9 +71,10 @@ if [[ -d /usr/local/opt/openssl/bin ]] ; then
     export PATH=/usr/local/opt/openssl/bin:${PATH}
 fi
 
+# -----------------------------------------------
 # MACOS shit ... }}}
-
 # Fuzzy Finder (fzf) {{{
+# -----------------------------------------------
 
 fzf_history()
 {
@@ -128,4 +138,5 @@ fzf_gitadd()
 }
 alias 'gadd'='fzf_gitadd'
 
+# -----------------------------------------------
 # Fuzzy Finder (fzf) }}}
