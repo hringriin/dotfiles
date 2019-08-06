@@ -62,14 +62,13 @@ alias 'tmux'='nocorrect tmux'
 # tmuxinator to path {{{
 # -----------------------------------------------
 
-# adding ruby bin to path variable
-#if [[ -d /home/hringriin/.gem/ruby/2.7.0/bin ]] ; then
-    #export PATH=/home/hringriin/.gem/ruby/2.7.0/bin:${PATH}
-#elif [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
-    #export PATH=/home/hringriin/.gem/ruby/2.6.0/bin:${PATH}
-#else
-    #export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
-#fi
+if [[ -d /home/hringriin/.gem/ruby/2.7.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.7.0/bin ]] ; then
+    export PATH=/home/hringriin/.gem/ruby/2.7.0/bin:${PATH}
+elif [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
+    export PATH=/home/hringriin/.gem/ruby/2.6.0/bin:${PATH}
+elif [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
+    export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+fi
 
 # -----------------------------------------------
 # tmuxinator to path }}}
