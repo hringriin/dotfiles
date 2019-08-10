@@ -290,6 +290,8 @@ settings:
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
+    '*://mail.google.com/*': true
+    '*://accounts.google.com/*': true
     global: false
     http://localhost:8090/: true
     https://inf.stugen.de/: true
