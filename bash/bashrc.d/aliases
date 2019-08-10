@@ -63,6 +63,11 @@ if [[ $(uname -a) == *"arm"* ]] && [[ $(uname -a) == *"lulila"* ]] ; then
     }
 fi
 
+# REMIND ME, ITS IMPORTANT!
+# usage: remindme <time> <text>
+# e.g.: remindme 10m "omg, the pizza"
+remindme() { sleep $1 && notify-send -u critical -i info -t 60000 "Reminder" "\n$2" && zenity --info --title "Reminder" --text "$2" & }
+
 # ----- functions }}}
 # -----------------------------------------------
 
