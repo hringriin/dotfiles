@@ -73,6 +73,7 @@ remindme() { sleep $1 && notify-send -u critical -i info -t 60000 "Reminder" "\n
 
 alias 'cfg-alias'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases'
 alias 'cfg-i3'="vim -O ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/config ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/$(hostname)"
+alias 'cfg-qutebrowser'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/autoconfig.yml'
 alias 'cfg-tmux'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/tmux.conf'
 alias 'cfg-vim'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/vim/vimrc'
 alias 'cfg-zsh'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/zsh/plugins/hringriin/hringriin.plugin.zsh'
