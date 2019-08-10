@@ -36,6 +36,8 @@ settings:
         ',nh': open -t https://niederhoelle.no-ip.biz
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
+        ',gm': open -t https://mail.google.com
+        ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
         ;Y: null
         ;YR: hint --rapid links userscript video-spool.bash
         ;YS: hint links userscript video-spool.bash
