@@ -33,11 +33,11 @@ settings:
       normal:
         ',ba': open -t https://barzh.eu
         ',fb': open -t https://fritz.box
+        ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
+        ',gm': open -t https://mail.google.com
         ',nh': open -t https://niederhoelle.no-ip.biz
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
-        ',gm': open -t https://mail.google.com
-        ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
         ;Y: null
         ;YR: hint --rapid links userscript video-spool.bash
         ;YS: hint links userscript video-spool.bash
@@ -271,15 +271,20 @@ settings:
     global: no-unknown-3rdparty
   content.default_encoding:
     global: utf-8
+  content.geolocation:
+    https://stromausfall.org: true
   content.host_blocking.enabled:
     global: true
   content.javascript.enabled:
     '*://*.barzh.eu/*': true
     '*://*.tri-optimum.eu/*': true
     '*://9gag.com/*': true
+    '*://accounts.google.com/*': true
     '*://config.stratoserver.net/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
+    '*://mail.google.com/*': true
+    '*://stromausfall.org/*': true
     '*://twitter.com/*': true
     '*://www.amazon.de/*': true
     '*://www.facebook.com/*': true
@@ -290,8 +295,6 @@ settings:
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
-    '*://mail.google.com/*': true
-    '*://accounts.google.com/*': true
     global: false
     http://localhost:8090/: true
     https://inf.stugen.de/: true
