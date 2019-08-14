@@ -5,7 +5,7 @@ unmailboxes *
 
 set smtp_url            =   "smtps://jkoester@smtp.uni-bremen.de:465/"
 set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.uni-bremen.jkoester | awk '{print $2}'`
-set from                =   "jkoester@tzi.de"
+set from                =   "jkoester@uni-bremen.de"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/de.uni-bremen.jkoester/"
 set spoolfile           =   "+Inbox"
