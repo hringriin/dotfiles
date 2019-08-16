@@ -273,6 +273,7 @@ settings:
     global: utf-8
   content.geolocation:
     https://stromausfall.org: true
+    https://www.apc.com: false
   content.host_blocking.enabled:
     global: true
   content.javascript.enabled:
