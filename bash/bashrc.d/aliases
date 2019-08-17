@@ -73,6 +73,7 @@ remindme() { sleep $1 && notify-send -u critical -i info -t 60000 "Reminder" "\n
 
 alias 'cfg-alias'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases'
 alias 'cfg-i3'="vim -O ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/config ~/Repositories/github.com/hringriin/dotfiles/repo/i3/i3/$(hostname)"
+alias 'cfg-crypt-hooks'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/crypt-hooks.muttrc'
 alias 'cfg-qutebrowser'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/qutebrowser/autoconfig.yml'
 alias 'cfg-tmux'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/tmux.conf'
 alias 'cfg-vim'='vim ~/Repositories/github.com/hringriin/dotfiles/repo/vim/vimrc'
@@ -88,6 +89,14 @@ alias 'holdmybeer'='sudo'
 # -----------------------------------------------
 # ----- Funny / Stupid }}}
 
+# ----- Reload {{{
+# -----------------------------------------------
+
+rld-mutt () { cd ~/Repositories/github.com/hringriin/dotfiles/repo/ && ./mutt/create_config.bash }
+rld-aliases () { source ~/Repositories/github.com/hringriin/dotfiles/repo/bash/bashrc.d/aliases }
+
+# -----------------------------------------------
+# ----- Reload }}}
 
 # -----------------------------------------------
 # ----- Alias (Custom) }}}
@@ -171,7 +180,7 @@ alias 'sm-green'='sm --foreground=#00FF00 --background=#000000'
 # ----- Syslinux {{{
 # -----------------------------------------------
 
-    rld-syslinux () { syslinux-install_update -iam ; }          # rebuild syslinux on current drive
+rld-syslinux () { syslinux-install_update -iam ; }          # rebuild syslinux on current drive
 
 # -----------------------------------------------
 # ----- Syslinux }}}
