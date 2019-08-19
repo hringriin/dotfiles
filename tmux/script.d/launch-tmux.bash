@@ -23,6 +23,8 @@ fi
 # start either the main tmux-session or just the terminal
 if [[ ${HOSTNAME} == "lulila" || ${HOST} == "lulila" ]] ; then
     ${muxPath} start main-lulila
+elif [[ ${HOSTNAME} == "sorth" || ${HOST} == "sorth" ]] ; then
+    ${muxPath} start main-sorth
 else
     ${muxPath} start main
 fi
