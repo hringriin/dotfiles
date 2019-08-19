@@ -14,6 +14,14 @@ main()
 {
     sudo ln -sfv ${repoPath}/blog/blogscript.bash /usr/local/bin/blogscript
     sudo ln -sfv ${repoPath}/blog/blogscript.bash /usr/local/bin/lb
+
+    if [[ ! -d ${HOME}/barzh.eu ]] ; then
+        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.eu ${HOME}/barzh.eu
+    fi
+
+    if [[ ! -d ${HOME}/barzh.eu-wartung ]] ; then
+        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.eu-wartung ${HOME}/barzh.eu-wartung
+    fi
 }
 
 main
