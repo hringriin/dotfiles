@@ -64,9 +64,9 @@ windows:
     - RSS:
         panes:
             - newsboat
-    - VimWiki:
-        panes:
-            - cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear ; vim Home.md
+    #- VimWiki:
+        #panes:
+            #- cd ~/Repositories/github.com/hringriin/dotfiles/wiki ; clear ; vim Home.md
     #- music:
         #panes:
             #- cd ~/Music/ ; clear ; mocp
