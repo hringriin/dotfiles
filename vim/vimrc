@@ -219,7 +219,8 @@ let g:quickmenu_options = "HL"
 
     " Compiler {{{
     call quickmenu#append("# Compiler"                                 , '')
-    call quickmenu#append("Markdown" , "!exec pandoc --pdf-engine=xelatex -o %.pdf %"   , "enable/disable spell check (:set spell!)")
+    call quickmenu#append("Markdown"           , "!exec pandoc --pdf-engine=xelatex -o %.pdf %"                       , "Compile markdown to pdf")
+    call quickmenu#append("Markdown Landscape" , "!exec pandoc -V geometry:landscape --pdf-engine=xelatex -o %.pdf %" , "Compile markdown in landscape to pdf")
     " Compiler }}}
 
     " Misc {{{
