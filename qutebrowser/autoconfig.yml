@@ -274,11 +274,13 @@ settings:
   content.geolocation:
     https://stromausfall.org: true
     https://www.apc.com: false
+    https://www.dhl.de: false
   content.host_blocking.enabled:
     global: true
   content.javascript.enabled:
     '*://*.barzh.eu/*': true
     '*://*.tri-optimum.eu/*': true
+    '*://*.idealo.de/*': true
     '*://9gag.com/*': true
     '*://accounts.google.com/*': true
     '*://config.stratoserver.net/*': true
