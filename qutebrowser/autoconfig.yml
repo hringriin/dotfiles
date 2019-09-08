@@ -307,6 +307,7 @@ settings:
     global: false
   content.notifications:
     https://www.facebook.com: false
+    https://www.reddit.com: false
   content.pdfjs:
     global: false
   content.plugins:
