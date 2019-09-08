@@ -305,6 +305,8 @@ settings:
     https://web.threema.ch/#!/welcome: true
   content.media_capture:
     global: false
+  content.notifications:
+    https://www.facebook.com: false
   content.pdfjs:
     global: false
   content.plugins:
