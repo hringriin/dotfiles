@@ -54,6 +54,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'Valloric/YouCompleteMe'
         Plug 'scrooloose/syntastic'                                 " vim syntax check for maaaany filetypes
         Plug 'nvie/vim-flake8'                                      " pep8 checking (python)
+
+        Plug 'jamessan/vim-gnupg'                                   " edit gnugpg files directly with vim
         "Plug 'lervag/vimtex'
         " General }}}
 
