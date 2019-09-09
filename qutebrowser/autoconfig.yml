@@ -433,9 +433,11 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://www.google.de/search?q={}
+      amazon: https://www.amazon.de/s?k={}
       arch: https://wiki.archlinux.org/?search={}
       aur: https://aur.archlinux.org/packages/?O=0&K={}
       dict: http://www.dict.cc/?s={}
+      duck: https://duckduckgo.com/?q={}
       git: https://github.com/search?q={}
       imdb: https://www.imdb.com/find?q={}
       wikide: https://de.wikipedia.org/wiki/Special:Search?search={}
