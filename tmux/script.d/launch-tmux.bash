@@ -5,6 +5,7 @@
 # session will be started or attached via tmuxinator start. If the session
 # exists and is attached, a new nameless tmux session will be started.
 
+
 muxPath=
 
 # check, if the path exists (tmuxinator is installed) and set the variable
@@ -19,14 +20,29 @@ else
     fi
 fi
 
+startMyShell ()
+{
+    # start either the main tmux-session or just the terminal
+    if [[ ${HOSTNAME} == "lulila" || ${HOST} == "lulila" ]] ; then
+        ${muxPath} start main-lulila
+    elif [[ ${HOSTNAME} == "sorth" || ${HOST} == "sorth" ]] ; then
+        ${muxPath} start main-sorth
+    else
+        ${muxPath} start main
+    fi
+}
 
-# start either the main tmux-session or just the terminal
-if [[ ${HOSTNAME} == "lulila" || ${HOST} == "lulila" ]] ; then
-    ${muxPath} start main-lulila
-elif [[ ${HOSTNAME} == "sorth" || ${HOST} == "sorth" ]] ; then
-    ${muxPath} start main-sorth
-else
-    ${muxPath} start main
+startRanger ()
+{
+    # start ranger
+    ${muxPath} start ranger
+}
+
+
+if [[ $1 == "ranger" ]] ; then
+    startRanger
+elif [[ $1 == "myShell" ]] ; then
+    startMyShell
 fi
 
 exit 0

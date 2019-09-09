@@ -25,7 +25,7 @@ function selShell ()
 function startShell ()
 {
     if [[ $(tmux ls | grep main | grep attached) == "" ]] ; then
-        ${myShell} -e ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash
+        ${myShell} -e ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash myShell
     else
         ${myShell}
     fi
@@ -34,7 +34,11 @@ function startShell ()
 # start the filemanager
 function startFm ()
 {
-    ${myShell} -e ranger
+    if [[ $(tmux ls | grep ranger | grep attached) == "" ]] ; then
+        ${myShell} -e ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash ranger
+    else
+        ${myShell} -e ranger
+    fi
 }
 
 
