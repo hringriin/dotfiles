@@ -279,8 +279,8 @@ settings:
     global: true
   content.javascript.enabled:
     '*://*.barzh.eu/*': true
-    '*://*.tri-optimum.eu/*': true
     '*://*.idealo.de/*': true
+    '*://*.tri-optimum.eu/*': true
     '*://9gag.com/*': true
     '*://accounts.google.com/*': true
     '*://config.stratoserver.net/*': true
