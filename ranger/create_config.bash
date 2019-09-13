@@ -30,6 +30,7 @@ main()
     ln -sfv ${repoPath}/ranger/rifle.conf ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/scope.sh ${HOME}/.config/ranger/
     ln -sfv ${repoPath}/ranger/tagged ${HOME}/.config/ranger/
+    ln -sfv ${repoPath}/ranger/colorschemes ${HOME}/.config/ranger
 
     cd ${repoPath}/ranger/ranger_devicons
     make && make install
