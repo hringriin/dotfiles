@@ -6,6 +6,7 @@
 neededProgrammes=(
     'abook'
     'acpi'
+    'alacritty'
     'archlinux-keyring'
     'atool'
     'autoconf'
@@ -143,8 +144,6 @@ neededProgrammes=(
     'ttf-hack'
     'util-linux'
     'variety'
-    'vivaldi-snapshot'
-    'vivaldi-snapshot-ffmpeg-codecs'
     'vpnc'
     'w3m'
     'weechat'
