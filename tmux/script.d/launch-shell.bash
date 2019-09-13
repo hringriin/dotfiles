@@ -34,11 +34,13 @@ function startShell ()
 # start the filemanager
 function startFm ()
 {
-    if [[ $(tmux ls | grep ranger | grep attached) == "" ]] ; then
-        ${myShell} -e ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash ranger
-    else
-        ${myShell} -e ranger
-    fi
+    #if [[ $(tmux ls | grep ranger | grep attached) == "" ]] ; then
+        #${myShell} -e ~/Repositories/github.com/hringriin/dotfiles/repo/tmux/script.d/launch-tmux.bash ranger
+    #else
+        #${myShell} -e ranger
+    #fi
+
+    ${myShell} -e ranger
 }
 
 
