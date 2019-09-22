@@ -23,6 +23,7 @@ neededProgrammes=(
     'cups'
     'cups-pdf'
     'curl'
+    'dialog'
     'dunst'
     'etckeeper'
     'evince'
