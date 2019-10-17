@@ -35,6 +35,7 @@ clean:
 	rm -f *.nav;
 	rm -f *.out;
 	rm -f *.snm;
+	rm -f *.synctex.gz;
 	rm -f *.tdo;
 	rm -f *.toc;
 
