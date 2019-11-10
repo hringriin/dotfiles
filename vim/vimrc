@@ -511,7 +511,7 @@ autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
     autocmd Filetype tex inoremap <buffer> ,it      \textit{}<Space><++><ESC>T{i
     autocmd Filetype tex inoremap <buffer> ,tt      \texttt{}<Space><++><ESC>T{i
     autocmd Filetype tex inoremap <buffer> ,em      \emph{} <++><ESC>T{i
-    autocmd Filetype tex inoremap <buffer> ,sc      \textsc{<Space><++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,sc      \textsc{}<Space><++><ESC>T{i
     " text decoration }}}
 
     " lists {{{
