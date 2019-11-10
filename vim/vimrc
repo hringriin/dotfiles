@@ -503,7 +503,7 @@ autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
     " umlauts, accents, ... }}}
 
     " Misc {{{
-    autocmd Filetype tex inoremap <buffer> ...      \ldots
+    "autocmd Filetype tex inoremap <buffer> ....     \ldots
     " Misc }}}
 
     " text decoration {{{
@@ -533,12 +533,25 @@ autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
     " packages {{{
     autocmd Filetype tex inoremap <buffer> ,up      \usepackage{}<TAB><TAB>% <++><ESC>T{i
-    autocmd Filetype tex inoremap <buffer> ,up      \RequirePackage{}<TAB><TAB>% <++><ESC>T{i
+    autocmd Filetype tex inoremap <buffer> ,rp      \RequirePackage{}<TAB><TAB>% <++><ESC>T{i
     " packages }}}
 
     " unknown {{{
     "autocmd Filetype tex inoremap , <ESC>`<i\{ESC}`>2la}<ESC>?\\{<Enter>a      " what does this do?
     " unknown }}}
+
+
+    " functions {{{
+    function RefactorUmlauts()
+        :%s/ä/\"{a}/g
+        :%s/ü/\"{u}/g
+        :%s/ö/\"{o}/g
+        :%s/Ä/\"{A}/g
+        :%s/Ü/\"{U}/g
+        :%s/Ö/\"{O}/g
+        :%s/ß/\ss{}/g
+    endfunction
+    " functions }}}
 
 " }}}
 
@@ -914,4 +927,5 @@ iab Latex       LaTeX
 iab latex       LaTeX
 iab etwsa       etwas
 iab wsa         was
+iab BEwerbung   Bewerbung
 " Typo correction }}}
