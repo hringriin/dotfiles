@@ -18,5 +18,5 @@ unset pgp_sign_as
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox
-mailboxes +INBOX +Sent +Drafts +Deleted +Junk +----------
+mailboxes +INBOX +Sent +Drafts +Deleted +Junk
 source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

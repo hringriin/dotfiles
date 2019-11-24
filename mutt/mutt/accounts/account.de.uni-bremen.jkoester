@@ -17,5 +17,5 @@ unset ssl_starttls
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox
-mailboxes +Inbox +Sent +Drafts +Junk +Spam +Trash +----------
+mailboxes +Inbox +Sent +Drafts +Junk +Spam +Trash
 source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"

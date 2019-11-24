@@ -18,5 +18,5 @@ unset pgp_sign_as
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox
-mailboxes +Inbox +"[Google Mail]/Sent Mail" +"[Google Mail]/Drafts" +"[Google Mail]/Spam" +"[Google Mail]/Trash" +----------
+mailboxes +Inbox +"[Google Mail]/Sent Mail" +"[Google Mail]/Drafts" +"[Google Mail]/Spam" +"[Google Mail]/Trash"
 source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"
