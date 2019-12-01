@@ -24,6 +24,8 @@ settings:
         <Return>: null
         <Space>: null
       command:
+        <Alt+n>: command-history-next
+        <Alt+p>: command-history-prev
         <Ctrl+Shift+n>: completion-item-focus --history next
         <Ctrl+Shift+p>: completion-item-focus --history prev
         <Ctrl+n>: completion-item-focus next
