@@ -543,13 +543,13 @@ autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
     " functions {{{
     function RefactorUmlauts()
-        :%s/ä/\"{a}/g
-        :%s/ü/\"{u}/g
-        :%s/ö/\"{o}/g
-        :%s/Ä/\"{A}/g
-        :%s/Ü/\"{U}/g
-        :%s/Ö/\"{O}/g
-        :%s/ß/\ss{}/g
+        :%s/ä/\\"{a}/g
+        :%s/ü/\\"{u}/g
+        :%s/ö/\\"{o}/g
+        :%s/Ä/\\"{A}/g
+        :%s/Ü/\\"{U}/g
+        :%s/Ö/\\"{O}/g
+        :%s/ß/\\ss{}/g
     endfunction
     " functions }}}
 
