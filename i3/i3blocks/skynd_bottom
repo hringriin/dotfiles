@@ -53,13 +53,13 @@ interval=5
 signal=10
 
 [disk]
-label= /boot :
+label= /boot: 
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /boot
 interval=60
 markup=pango
 
 [disk]
-label= / :
+label= /: 
 command=~/.config/i3blocks/i3blocks-gate/disk.sh -f /
 interval=60
 markup=pango
