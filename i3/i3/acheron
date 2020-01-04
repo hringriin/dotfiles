@@ -79,7 +79,7 @@ bindsym $mod+XF86AudioMicMute exec urxvt -name PULSEAUDIO -e ~/Repositories/gith
 bindsym XF86MonBrightnessUp exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash raise                                    # increase screen brightness
 bindsym XF86MonBrightnessDown exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash lower                                  # decrease screen brightness
 # both following keybindings "reset" to "default" brightness, i.e. my default brightness
-bindsym $mod+XF86MonBrightnessUp exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash reset                               # reset screen brightness
+bindsym $mod+XF86MonBrightnessUp exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash movie                               # reset screen brightness
 bindsym $mod+XF86MonBrightnessDown exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/brightnessControl.bash reset                             # reset screen brightness
 
 # Screen Rotation

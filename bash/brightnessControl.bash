@@ -73,15 +73,21 @@ function lower()
 
     #printf "Calculation:\n\tLevel:\t%.0f\n\tStep:\t%.0f\n\n\tResult:\t%.0f\n" ${level} ${step} $((${level} - ${step}))
     dec=$((${level} - ${step}))
-    xbacklight -set ${dec} -time 0
+    xbacklight -set ${dec} -time 200
     notify
 }
 
 # reset backlight to 10
 function reset()
 {
-    xbacklight -set 10 -time 0
     notify
+    xbacklight -set 10 -time 1000
+}
+
+function movie()
+{
+    notify
+    xbacklight -set 40 -time 1000
 }
 
 main ()
@@ -92,6 +98,8 @@ main ()
         lower
     elif [[ $1 == "reset" ]] ; then
         reset
+    elif [[ $1 == "movie" ]] ; then
+        movie
     fi
 }
 
