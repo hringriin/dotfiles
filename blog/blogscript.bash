@@ -323,6 +323,11 @@ function uploadLive()
 
 }
 
+function uploadEverything ()
+{
+    scp ${serverDir}/{*html,*css,*xml} ${scpPath}/
+}
+
 # main menu, select what to do
 function main()
 {
@@ -336,7 +341,8 @@ function main()
             30 "Delete one or more blogposts" \
             20 "Publish one or more blogposts" \
             50 "Upload to live server" \
-            60 "Exit")
+            60 "Upload EVERYTHING" \
+            70 "Exit")
 
     # if arguments are passed, check for flags
     case ${actionSelect} in
@@ -369,6 +375,11 @@ function main()
             main
             ;;
         "60")
+            selectServer
+            uploadEverything
+            main
+            ;;
+        "70")
             exit 0
             ;;
     esac
