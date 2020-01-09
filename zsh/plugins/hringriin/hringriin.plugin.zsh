@@ -59,19 +59,22 @@ alias 'tmux'='nocorrect tmux'
 
 # -----------------------------------------------
 # prevent tmux autocorrection for certain commands }}}
-# tmuxinator to path {{{
+# ruby to path {{{
 # -----------------------------------------------
 
-if [[ -d /home/hringriin/.gem/ruby/2.7.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.7.0/bin ]] ; then
-    export PATH=/home/hringriin/.gem/ruby/2.7.0/bin:${PATH}
-elif [[ -d /home/hringriin/.gem/ruby/2.6.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.6.0/bin ]] ; then
-    export PATH=/home/hringriin/.gem/ruby/2.6.0/bin:${PATH}
-elif [[ -d /home/hringriin/.gem/ruby/2.5.0/bin ]] && [[ ! "$PATH" =~ /home/hringriin/.gem/ruby/2.5.0/bin ]] ; then
-    export PATH=/home/hringriin/.gem/ruby/2.5.0/bin:${PATH}
+export PATH="$(ruby -e 'puts Gem.user_dir')/bin:${PATH}"
+
+# -----------------------------------------------
+# ruby to path }}}
+# adb-fastboot {{{
+# -----------------------------------------------
+
+if [[ -d ${HOME}/adb ]] ; then
+    export PATH=${HOME}/adb:${PATH}
 fi
 
 # -----------------------------------------------
-# tmuxinator to path }}}
+# adb-fastboot }}}
 # MACOS shit ... {{{
 # -----------------------------------------------
 
