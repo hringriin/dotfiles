@@ -19,8 +19,8 @@ main()
         ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.eu ${HOME}/barzh.eu
     fi
 
-    if [[ ! -d ${HOME}/barzh.eu-wartung ]] ; then
-        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.eu-wartung ${HOME}/barzh.eu-wartung
+    if [[ ! -d ${HOME}/barzh.ddns.net ]] ; then
+        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.ddns.net ${HOME}/barzh.ddns.net
     fi
 }
 

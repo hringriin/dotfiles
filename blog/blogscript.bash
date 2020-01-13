@@ -120,7 +120,7 @@ function selectServer()
         --title "Blogscript" \
         --radiolist "Select your server." 0 0 0 \
             10 "barzh.eu - Blog" on \
-            20 "barzh.eu - Wartung" off)
+            20 "barzh.ddns.net - Wartung" off)
 
     case ${selServ} in
         "10")
@@ -132,7 +132,7 @@ function selectServer()
             ;;
         "20")
             server="https:\/\/niederhoelle\.no-ip\.biz"
-            serverDir="${HOME}/barzh.eu-wartung"
+            serverDir="${HOME}/barzh.ddns.net"
             blog="index.html"
             rss="rss.xml"
             scpPath="chamus:/var/www/html"
@@ -170,7 +170,7 @@ function writeToBlog()
 
     # looks nasty, but it is necessary to add whitespaces in front of the
     # list-entry-string
-    repString="\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a href=\"#${id}\">$(date -d $(cut -d '_' -f 1 <<< ${theDate}) "+%d.%m.%Y"), $(date -d $(cut -d '_' -f 2 <<< ${theDate}) "+%H:%M"):<br \/>$(sed -e "s/${theDate}_//" <<< $1 | cut -d '.' -f 1 | sed -e "s/_/ /g")<\/a><\/li>"
+    repString="\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li class=\"nav\"><a class=\"nav\" href=\"#${id}\">$(date -d $(cut -d '_' -f 1 <<< ${theDate}) "+%d.%m.%Y"), $(date -d $(cut -d '_' -f 2 <<< ${theDate}) "+%H:%M"):<br \/>$(sed -e "s/${theDate}_//" <<< $1 | cut -d '.' -f 1 | sed -e "s/_/ /g")<\/a><\/li>"
 
     # add the list entry in the nav bar
     sed -i -e "/${matchNav}/a ${repString}" ${serverDir}/${blog}
