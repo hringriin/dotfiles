@@ -107,7 +107,7 @@ alias 'REPOSITORIES'='cd ~/Repositories/'
 alias 'GITHUB'='cd ~/Repositories/github.com/'
 alias 'GITLAB'='cd ~/Repositories/gitlab.informatik.uni-bremen.de/'
 alias 'DOTFILES'='cd ~/Repositories/github.com/hringriin/dotfiles/repo'
-alias 'CHORDBOOK'='cd ~/Repositories/github.com/hringriin/Chordbook/repo'
+alias 'CHORDBOOK'='cd ~/Repositories/github.com/hringriin/chordbook/repo'
 
 # -----------------------------------------------
 # ----- dir shortcuts }}}
