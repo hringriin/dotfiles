@@ -488,9 +488,9 @@ autocmd FileType lilypond setlocal tabstop=2
 
 " LaTeX {{{
 " Press F12 to trigger LaTeX Makefile and compile the pdf
-autocmd Filetype tex nnoremap <buffer> <F12> :w<CR>:!make<CR>
+autocmd Filetype tex,lilypond nnoremap <buffer> <F12> :w<CR>:!make<CR>
 " Press Control+F12 to open pdf
-autocmd Filetype tex nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
+autocmd Filetype tex,lilypond nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
 
     " umlauts, accents, ... {{{
     autocmd Filetype tex inoremap <buffer> ö        \"{o}
