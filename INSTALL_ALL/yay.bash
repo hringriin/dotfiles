@@ -9,7 +9,6 @@ neededYayProgrammes=(
     'dropbox'
     'dropbox-cli'
     'frescobaldi'
-    'gitkraken'
     'htop-vim-git'
     'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
