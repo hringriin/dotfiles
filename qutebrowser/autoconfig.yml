@@ -337,6 +337,11 @@ settings:
     global: 10pt Hack
   fonts.debug_console:
     global: 10pt Hack
+  fonts.default_family:
+    global:
+    - Hack
+    - DejaVu Sans Mono
+    - Monospace
   fonts.downloads:
     global: 10pt Hack
   fonts.hints:
@@ -349,10 +354,6 @@ settings:
     global: 10pt Hack
   fonts.messages.warning:
     global: 10pt Hack
-  fonts.monospace:
-    global: Hack, "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco,
-      "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation
-      Mono", monospace, Fixed, Consolas, Terminal
   fonts.prompts:
     global: 10pt Hack
   fonts.statusbar:
