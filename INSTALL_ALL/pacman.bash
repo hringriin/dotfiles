@@ -18,7 +18,7 @@ neededProgrammes=(
     'bison'
     'blueman'
     'chromium'
-    'compton'
+    'picom'
     'cronie'
     'cups'
     'cups-pdf'
