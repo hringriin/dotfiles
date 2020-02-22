@@ -241,21 +241,21 @@ settings:
   colors.tabs.pinned.odd.fg:
     global: '#a89984'
   colors.tabs.pinned.selected.even.bg:
-    global: '#282828'
+    global: '#3c3836'
   colors.tabs.pinned.selected.even.fg:
-    global: '#83a598'
+    global: '#fabd2f'
   colors.tabs.pinned.selected.odd.bg:
-    global: '#282828'
+    global: '#3c3836'
   colors.tabs.pinned.selected.odd.fg:
-    global: '#83a598'
+    global: '#fabd2f'
   colors.tabs.selected.even.bg:
-    global: '#282828'
+    global: '#3c3836'
   colors.tabs.selected.even.fg:
-    global: '#83a598'
+    global: '#fabd2f'
   colors.tabs.selected.odd.bg:
-    global: '#282828'
+    global: '#3c3836'
   colors.tabs.selected.odd.fg:
-    global: '#83a598'
+    global: '#fabd2f'
   colors.webpage.bg:
     global: '#f3f1f2'
   completion.cmd_history_max_items:
