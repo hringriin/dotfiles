@@ -57,7 +57,7 @@ exec nm-applet
 bindsym $mod+d exec rofi -show run
 
 # use rofi as well to watch twitch.tv :-)
-bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/hringriin/rofi-twitch/repo/rofi-twitch
+bindsym $mod+Shift+d exec zsh /home/hringriin/Repositories/github.com/indeedwatson/rofi-twitch/repo/rofi-twitch
 bindsym $mod+Shift+Control+d exec /usr/bin/rofi-twitch
 
 # password manager
