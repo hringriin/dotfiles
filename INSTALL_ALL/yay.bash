@@ -27,6 +27,7 @@ neededYayProgrammes=(
     'toilet'
     'ttf-fantasque-sans-mono'
     'ttf-font-awesome-4'
+    'twitchnotifier-git'
     'vivaldi-widevine'
     'whatsie'
 )
