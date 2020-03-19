@@ -6,6 +6,7 @@
 neededYayProgrammes=(
     'adduser'
     'clipster'
+    'chromium-widevine'
     'dropbox'
     'dropbox-cli'
     'frescobaldi'
@@ -18,7 +19,6 @@ neededYayProgrammes=(
     'mdp'
     'ncpamixer'
     'otf-fantasque-sans-mono'
-    'qt5-webengine-widevine'
     'rofi-twitch'
     'samsung-unified-driver'
     'spotify'
@@ -28,6 +28,5 @@ neededYayProgrammes=(
     'ttf-fantasque-sans-mono'
     'ttf-font-awesome-4'
     'twitchnotifier-git'
-    'vivaldi-widevine'
     'whatsie'
 )
