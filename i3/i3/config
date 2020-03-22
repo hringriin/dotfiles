@@ -139,6 +139,9 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+# switch to last used workspace (back and forth)
+bindsym Mod1+Tab workspace back_and_forth
+
 # workspace names
 set $workspace1 "1: "
 set $workspace2 "2: "
