@@ -23,7 +23,7 @@ neededYayProgrammes=(
     'samsung-unified-driver'
     'spotify'
     'task-spooler'
-    'tider-git'
+    'tider'
     'toilet'
     'ttf-fantasque-sans-mono'
     'ttf-font-awesome-4'
