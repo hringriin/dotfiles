@@ -131,7 +131,6 @@ neededProgrammes=(
     'seahorse'
     'sed'
     'sox'
-    'stellarium'
     'sudo'
     'sxiv'
     'sysstat'
