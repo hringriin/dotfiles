@@ -57,7 +57,6 @@ neededProgrammes=(
     'i3status'
     'isync'
     'jshon'
-    'keepassx2'
     'libtool'
     'lilypond'
     'lm_sensors'

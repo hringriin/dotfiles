@@ -14,6 +14,7 @@ neededYayProgrammes=(
     'i3-vim-syntax-git'
     'i3lock-fancy-dualmonitors-git'
     'jabref'
+    'keepassx2'
     'lcdtest'
     'lgogdownloader'
     'mdp'
