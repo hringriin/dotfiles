@@ -26,7 +26,7 @@ neededYayProgrammes=(
     'task-spooler'
     'tider'
     'toilet'
-    'ttf-fantasque-sans-mono'
+    'ttf-fantasque-sans-git'
     'ttf-font-awesome-4'
     'twitchnotifier-git'
     'whatsie'
