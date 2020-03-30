@@ -19,7 +19,6 @@ neededYayProgrammes=(
     'lgogdownloader'
     'mdp-git'
     'ncpamixer'
-    'otf-fantasque-sans-mono'
     'rofi-twitch'
     'samsung-unified-driver'
     'spotify'
@@ -29,5 +28,4 @@ neededYayProgrammes=(
     'ttf-fantasque-sans-git'
     'ttf-font-awesome-4'
     'twitchnotifier-git'
-    'whatsie'
 )
