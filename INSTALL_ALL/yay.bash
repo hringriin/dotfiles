@@ -17,7 +17,7 @@ neededYayProgrammes=(
     'keepassx2'
     'lcdtest'
     'lgogdownloader'
-    'mdp'
+    'mdp-git'
     'ncpamixer'
     'otf-fantasque-sans-mono'
     'rofi-twitch'
