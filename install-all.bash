@@ -29,7 +29,7 @@ function ownCloudInstall()
     echo -e "\e[1;31mYou need to install 'ownCloud' manually first!\e[0m"
     echo -e "\e[1;31mDo it now! Use a seperate terminal for this operation!\e[0m"
     echo -e "\e[1;31mYou won't be able to install mutt or isync/mbsync without ownCloud!\e[0m\n\n"
-    read -r "Press any key to continue."
+    read -p "Press any key to continue."
 }
 
 # information regarding arch linux
