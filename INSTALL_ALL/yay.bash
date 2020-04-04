@@ -19,6 +19,7 @@ neededYayProgrammes=(
     'lgogdownloader'
     'mdp-git'
     'ncpamixer'
+    'nerd-fonts-source-code-pro'
     'rofi-twitch'
     'samsung-unified-driver'
     'spotify'
