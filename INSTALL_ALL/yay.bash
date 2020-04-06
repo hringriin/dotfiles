@@ -16,7 +16,6 @@ neededYayProgrammes=(
     'jabref'
     'keepassx2'
     'lcdtest'
-    'lgogdownloader'
     'mdp-git'
     'ncpamixer'
     'nerd-fonts-source-code-pro'
