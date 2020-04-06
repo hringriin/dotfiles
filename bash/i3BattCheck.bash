@@ -42,7 +42,7 @@ function checkBatt()
             # Check, if the battery level is below 12 percent (According to
             # `acpi -b`). If true, issue notify-send and i3-nagbar to make the
             # user aware of the critical battery level.
-            elif [[ $(getBatLevel "$1") -lt 13 ]] ; then
+            elif [[ $(getBatLevel "$1") -lt 11 ]] ; then
 
                 # only issue warning, if the warning file is not present
                 if [[ ! -e ${critical0} ]] ; then
