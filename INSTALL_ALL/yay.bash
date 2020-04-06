@@ -21,6 +21,7 @@ neededYayProgrammes=(
     'nerd-fonts-source-code-pro'
     'rofi-twitch'
     'samsung-unified-driver'
+    'screen-message'
     'spotify'
     'task-spooler'
     'tider'
