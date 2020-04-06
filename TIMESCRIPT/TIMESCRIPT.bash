@@ -15,5 +15,5 @@ if [[ ${NEWREMAINING} -lt -3600 ]] ; then
     echo -e "Zeit aufgebraucht!"
 else
     echo -e "$(date "+%T") Uhr\n"
-    echo -e "Restzeit: $(date -d @${NEWREMAINING} "+%T")"
+    echo -e "Rest: $(date -d @${NEWREMAINING} "+%T")"
 fi
