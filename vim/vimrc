@@ -51,7 +51,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }      " live previewing LaTeX files
         Plug 'ctrlpvim/ctrlp.vim'                                   " full path fuzzy file, buffer, mru, tag, ... finder
         Plug 'vim-scripts/indentpython.vim'                         " indention for python
-        Plug 'Valloric/YouCompleteMe'
+        Plug 'ycm-core/YouCompleteMe'
         Plug 'scrooloose/syntastic'                                 " vim syntax check for maaaany filetypes
         Plug 'nvie/vim-flake8'                                      " pep8 checking (python)
         Plug 'vim/killersheep'
@@ -268,6 +268,7 @@ let g:vim_markdown_toc_autofit = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
+let g:syntastic_java_checkers = []
 " syntastic settings }}}
 
 " Nerdtree {{{
@@ -650,22 +651,6 @@ autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++
 " xml }}}
 
 " python {{{
-
-" python with virtualenv support {{{
-"
-" ####################################################
-" ## KEEP THE INDENTION OTHERWISE IT WILL NOT WORK! ##
-" ####################################################
-
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-" python with virtualenv support }}}
 
     let python_highlight_all=1
 
