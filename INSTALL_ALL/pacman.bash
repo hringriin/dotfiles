@@ -119,6 +119,7 @@ neededProgrammes=(
     'qutebrowser'
     'ranger'
     'redshift'
+    'reflector'
     'rofi'
     'rubygems'
     'rxvt-unicode'
