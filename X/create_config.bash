@@ -12,6 +12,7 @@ main()
 {
     ln -fsv ${repoPath}/X/Xdefaults ~/.Xdefaults
     ln -fsv ${repoPath}/X/xinitrc ~/.xinitrc
+    ln -fsv ${repoPath}/X/Xresources ~/.Xresources
 }
 
 main

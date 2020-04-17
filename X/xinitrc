@@ -18,6 +18,8 @@ xinput --map-to-output $(xinput list --id-only "Wacom ISDv4 E6 Finger touch") LV
 eval $(ssh-agent)
 exec bluetooth off &
 
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 export SSH_ASKPASS=/usr/lib/ssh/ssh-askpass
 exec i3
 #exec gnome-session
