@@ -97,7 +97,7 @@ workspace $workspace10 output LVDS1
 
 # Startup Applications (Autostart)
 exec owncloud
-exec dropbox
+#exec dropbox
 #exec --no-startup-id nagstamon
 exec --no-startup-id tider
 

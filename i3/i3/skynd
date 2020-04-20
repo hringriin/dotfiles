@@ -117,7 +117,7 @@ workspace $workspace20 output DVI-D-0
 
 # Startup Applications
 exec owncloud
-exec dropbox
+#exec dropbox
 exec --no-startup-id nagstamon
 exec --no-startup-id tider
 
