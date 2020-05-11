@@ -445,6 +445,7 @@ settings:
       aur: https://aur.archlinux.org/packages/?O=0&K={}
       dict: http://www.dict.cc/?s={}
       duck: https://duckduckgo.com/?q={}
+      eco: https://wiki.play.eco/en/index.php?search={}
       git: https://github.com/search?q={}
       imdb: https://www.imdb.com/find?q={}
       wikide: https://de.wikipedia.org/wiki/Special:Search?search={}
