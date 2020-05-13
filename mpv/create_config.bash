@@ -14,7 +14,12 @@ main()
         mkdir -p ${HOME}/.config/mpv
     fi
 
-    ln -sfv ${repoPath}/mpv/mpv.conf ${HOME}/.config/mpv/mpv.conf
+    ln -sfv ${repoPath}/mpv/mpv.conf ${HOME}/.config/mpv/
+    ln -sfv ${repoPath}/mpv/input.conf ${HOME}/.config/mpv/
+    ln -sfv ${repoPath}/mpv/scripts ${HOME}/.config/mpv/
+    ln -sfv ${repoPath}/mpv/script-opts ${HOME}/.config/mpv/
+    ln -sfv ${repoPath}/mpv/lua-settings ${HOME}/.config/mpv/
+
 }
 
 main
