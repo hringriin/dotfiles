@@ -116,6 +116,18 @@ settings:
     global: '#1d2021'
   colors.completion.scrollbar.fg:
     global: '#a89984'
+  colors.contextmenu.disabled.bg:
+    global: '#7c6f64'
+  colors.contextmenu.disabled.fg:
+    global: '#1d2021'
+  colors.contextmenu.menu.bg:
+    global: '#282828'
+  colors.contextmenu.menu.fg:
+    global: '#ebdbb2'
+  colors.contextmenu.selected.bg:
+    global: '#504945'
+  colors.contextmenu.selected.fg:
+    global: '#ebdbb2'
   colors.downloads.bar.bg:
     global: '#282828'
   colors.downloads.error.bg:
