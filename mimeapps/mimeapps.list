@@ -101,7 +101,6 @@ application/vnd.powdertoy.save=powdertoy-tpt-open.desktop
 x-scheme-handler/ptsave=powdertoy-tpt-ptsave.desktop
 
 [Added Associations]
-x-scheme-handler/mailto=userapp-Thunderbird-0CAEKY.desktop;thunderbird.desktop;evolution.desktop;
 message/rfc822=userapp-Thunderbird-0CAEKY.desktop;
 x-scheme-handler/news=userapp-Thunderbird-0CAEKY.desktop;
 x-scheme-handler/snews=userapp-Thunderbird-0CAEKY.desktop;
@@ -211,3 +210,4 @@ video/x-matroska=mplayer.desktop;
 application/vnd.adobe.flash.movie=flashplayer.desktop;mpv.desktop;
 video/x-msvideo=mpv.desktop;org.gnome.Totem.desktop;
 video/x-flv=mpv.desktop;
+
