@@ -444,7 +444,7 @@ set ttyfast
     set nowrap
 
     " encryption
-    set cm=blowfish
+    "set cm=blowfish
 
     " Line Numbers
     set numberwidth=4
