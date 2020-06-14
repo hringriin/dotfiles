@@ -300,6 +300,7 @@ settings:
     '*://*.tri-optimum.eu/*': true
     '*://9gag.com/*': true
     '*://accounts.google.com/*': true
+    '*://belial.fritz.box/*': true
     '*://config.stratoserver.net/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
