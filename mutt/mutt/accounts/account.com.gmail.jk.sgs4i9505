@@ -10,10 +10,16 @@ set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/com.gmail.jk.sgs4i9505/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+[Gmail]/Drafts"
-set record              =   "+[Gmail]/Sent Mail"
+
+# due to duplicates in sent-mail folder
+#set record              =   "+[Gmail]/Sent Mail"
+unset record
+
 unset signature
+
 set ssl_force_tls       =   yes
 unset ssl_starttls
+
 unset pgp_sign_as
 
 # Add mailboxes to sidebar.

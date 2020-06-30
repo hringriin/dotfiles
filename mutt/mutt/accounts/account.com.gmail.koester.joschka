@@ -16,8 +16,11 @@ set postponed           =   "+[Google Mail]/Drafts"
 unset record
 
 set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Privat/thunderbird.signatures.privat.txt"
+
 set ssl_force_tls       =   yes
 unset ssl_starttls
+
+set pgp_sign_as         =   1172D302479EC8A21A7422384721D218D02BE422
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox

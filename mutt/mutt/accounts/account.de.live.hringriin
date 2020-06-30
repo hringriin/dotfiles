@@ -10,11 +10,17 @@ set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/de.live.hringriin/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+Drafts"
-set record              =   "+Sent"
-set ssl_starttls        =   yes
-set pgp_sign_as         =
+
+# due to duplicates in sent-mail folder
+#set record              =   "+Sent"
+unset record
+
 unset signature
+
+set ssl_starttls        =   yes
 unset ssl_force_tls
+
+unset pgp_sign_as
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox

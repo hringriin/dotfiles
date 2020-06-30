@@ -179,7 +179,9 @@ set quote_regexp        =   "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 # GPG {{{
 
 source ~/.mutt/gpg.rc
-set pgp_sign_as                 =   D02BE422            # default key to sign messages with
+unset pgp_default_key
+#set pgp_default_key             =   1172D302479EC8A21A7422384721D218D02BE422
+#set pgp_sign_as                 =   1172D302479EC8A21A7422384721D218D02BE422            # default key to sign messages with
 #set pgp_encrypt_only_command    =   "/usr/lib/neomutt/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
 set pgp_encrypt_only_command    =   "/usr/lib/neomutt/pgpewrap gpg --batch --quiet --no-verbose --output - --textmode --armor -- --recipient %r -- --encrypt %f --encrypt-to 0xD02BE422"
 set pgp_encrypt_sign_command    =   "/usr/lib/neomutt/pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xD02BE422 -- -r %r -- %f"
