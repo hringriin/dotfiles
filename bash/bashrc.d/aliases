@@ -25,6 +25,7 @@ alias -g 'xterm'='xterm -bg black -fg white -fa "Hack" -fs 10'                  
 alias 'yay'='yay -a --answerclean All --answeredit None --answerdiff None'                      # only from AUR, no questions, clean build
 alias 'packer'='yay -a --answeredit None'                                                       # in case something still uses packer
 alias 'mutt'='neomutt'                                                                          # dumping mutt in favor of neomutt
+alias 'bctl'='bluetoothctl'                                                                     # bluetoothctl
 
 # Stupid stuff... this is not recommended to use ;-) {{{
 # -----------------------------------------------
