@@ -12,16 +12,8 @@ source INSTALL_ALL/pacman.bash
 
 main()
 {
-    sudo ln -sfv ${repoPath}/blog/blogscript.bash /usr/local/bin/blogscript
-    sudo ln -sfv ${repoPath}/blog/blogscript.bash /usr/local/bin/lb
-
-    if [[ ! -d ${HOME}/barzh.eu ]] ; then
-        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.eu ${HOME}/barzh.eu
-    fi
-
-    if [[ ! -d ${HOME}/barzh.ddns.net ]] ; then
-        ln -sfv ${HOME}/ownCloud/Documents/websites/barzh.ddns.net ${HOME}/barzh.ddns.net
-    fi
+    git clone git@github.com:hringriin/barzh.eu ~/barzh.eu
+    git clone git@github.com:hringriin/barzh.ddns.net ~/barzh.ddns.net
 }
 
 main
