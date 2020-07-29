@@ -371,7 +371,9 @@ settings:
     global: 10pt Hack
   fonts.statusbar:
     global: 10pt Hack
-  fonts.tabs:
+  fonts.tabs.selected:
+    global: 8pt Hack
+  fonts.tabs.unselected:
     global: 8pt Hack
   hints.border:
     global: '1px solid #8ec07c'
@@ -402,8 +404,8 @@ settings:
     global: true
   spellcheck.languages:
     global: null
-  statusbar.hide:
-    global: false
+  statusbar.show:
+    global: always
   tabs.background:
     global: true
   tabs.close_mouse_button_on_bar:
