@@ -40,7 +40,7 @@ settings:
         ',fb': open -t https://fritz.box
         ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
         ',gm': open -t https://mail.google.com
-        ',nh': open -t https://niederhoelle.no-ip.biz
+        ',nh': open -t https://barzh.ddns.net
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
         ;Y: null
