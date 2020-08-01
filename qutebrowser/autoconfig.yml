@@ -381,8 +381,8 @@ settings:
     global: asdfghjk
   input.insert_mode.auto_leave:
     global: false
-  input.rocker_gestures:
-    global: true
+  input.mouse.rocker_gestures:
+    global: false
   keyhint.delay:
     global: 0
   keyhint.radius:
