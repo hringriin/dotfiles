@@ -47,6 +47,7 @@ settings:
         ;YR: hint --rapid links userscript video-spool.bash
         ;YS: hint links userscript video-spool.bash
         ;YT: hint links userscript video.bash
+        ;c: hint images yank
         <Back>: null
         <Ctrl+Alt+p>: null
         <Ctrl+F5>: null
