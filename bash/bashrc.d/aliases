@@ -206,10 +206,19 @@ alias -g 'tsp-youtube'='TS_SOCKET=/tmp/tsp-youtube tsp'
 # ----- tmux {{{
 # -----------------------------------------------
 
+# reattach a session by name, e.g. `ts apache` or `ts thesis`
 alias ta='tmux a -t'
+
+# like `ta`, but detaching every other client currently attached
 alias tad='tmux a -d -t'
+
+# create a new tmux session with a name, e.g. `ts apache` or `ts thesis`
 alias ts='tmux new-session -s'
+
+# list tmux sessions
 alias tl='tmux ls'
+
+# kill a session by name, e.g. `tq apache` or `tq thesis`
 alias tq='tmux kill-session -t'
 
 # -----------------------------------------------
