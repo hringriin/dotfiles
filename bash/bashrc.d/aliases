@@ -27,6 +27,16 @@ alias 'packer'='yay -a --answeredit None'                                       
 alias 'mutt'='neomutt'                                                                          # dumping mutt in favor of neomutt
 alias 'bctl'='bluetoothctl'                                                                     # bluetoothctl
 
+# ----- Pacmatic {{{
+# -----------------------------------------------
+
+if [[ "${HOSTNAME}" != "sorth" ]] ; then
+    alias 'pacman'='pacmatic'
+fi
+
+# -----------------------------------------------
+# ----- Pacmatic }}}
+
 # Stupid stuff... this is not recommended to use ;-) {{{
 # -----------------------------------------------
 
@@ -157,15 +167,6 @@ alias 'SCAN-NETWORK'=scanNetWork
 
 # -----------------------------------------------
 # ----- Networking }}}
-# ----- Pacmatic {{{
-# -----------------------------------------------
-
-if [[ "${HOSTNAME}" != "sorth" ]] ; then
-    alias 'pacman'='pacmatic'
-fi
-
-# -----------------------------------------------
-# ----- Pacmatic }}}
 # ----- Screen Message - Display the time {{{
 # -----------------------------------------------
 # Joachim Breiter
