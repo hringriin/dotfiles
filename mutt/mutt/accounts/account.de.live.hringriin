@@ -8,7 +8,7 @@ set smtp_pass           =   `gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/pas
 set from                =   "hringriin@live.de"
 set realname            =   "Joschka Köster"
 set folder              =   "~/.mailfolder/de.live.hringriin/"
-set spoolfile           =   "+Inbox"
+set spoolfile           =   "+INBOX"
 set postponed           =   "+Drafts"
 
 # due to duplicates in sent-mail folder
@@ -24,5 +24,5 @@ unset pgp_sign_as
 
 # Add mailboxes to sidebar.
 # The Box "+----------" is just a separator and no real mailbox
-mailboxes +Inbox +Sent +Drafts +Deleted +Junk
+mailboxes +INBOX +Sent +Drafts +Deleted +Junk
 source "~/Repositories/github.com/hringriin/dotfiles/repo/mutt/mutt/mutt-sidebar-fill.bash $folder|"
