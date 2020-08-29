@@ -39,7 +39,6 @@ set ignore_self_presence = 0
 # for candidate values).
 set ssl = 0
 set ssl_ignore_checks = 1
-set ssl_verify = 0
 #set ssl_cafile = /usr/share/ssl/certs/ca-bundle.crt
 #set ssl_capath =
 #set ssl_ciphers =
