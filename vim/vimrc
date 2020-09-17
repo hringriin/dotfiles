@@ -739,6 +739,13 @@ autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++
 
     " jump to first / last character of line or beginning / end of line }}}
 
+    " AggressiveSave {{{
+    " function to save while writing in current buffer
+    function! EnableAggressiveSave()
+        autocmd TextChanged,TextChangedI <buffer> silent write
+    endfunction
+    " AggressiveSave }}}
+
 " Functions }}}
 
 " Keybindings {{{
