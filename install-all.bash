@@ -416,6 +416,9 @@ function linkConfigs()
     # pass
     ${repoPath}/pass/create_config.bash
 
+    # picom
+    ${repoPath}/picom/create_config.bash
+
     # qutebrowser
     ${repoPath}/qutebrowser/create_config.bash
 
