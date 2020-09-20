@@ -254,7 +254,7 @@ client.urgent               $window-urgent-border           $window-urgent-backg
 
 # Startup Applications
 # transparency for window manager
-exec picom -f
+exec picom
 
 # screenshot
 bindsym Print exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/bash/makeScreenshot.bash
