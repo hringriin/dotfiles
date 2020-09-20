@@ -30,3 +30,12 @@ else
     echo " ERROR ; UNSUPPORTED OPERATING SYSTEM ! "
     exit 127
 fi
+
+check_installed ()
+{
+    if [[ $(command -v $1) == "" ]] ; then
+        echo 0
+    else
+        echo 1
+    fi
+}
