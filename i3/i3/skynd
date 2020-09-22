@@ -64,7 +64,7 @@ bindcode $mod+Shift+62 exec killall -u hringriin -9 watch
 bindsym XF86Calculator exec galculator
 
 # Set default Display Setup and Resolution
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 60 --primary --output DVI-D-0 --mode 1920x1080 --rate 60 --right-of DP-0 --output HDMI-0 --mode 1920x1080 --rate 60 --same-as DVI-D-0
+exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 165 --primary --output HDMI-0 --mode 1920x1080 --rate 60 --right-of DP-0
 
 # Pulse Audio controls
 for_window [class="URxvt" instance="PULSEAUDIO"] floating enable border pixel 3
