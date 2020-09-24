@@ -116,5 +116,8 @@ macro i set browser "feh %u" ; open-in-browser ; set browser "qutebrowser %u"
 # clibrowser
 macro o set browser "w3m %u"; open-in-browser ; set browser "$BROWSER %u"
 
+# open in browser
+macro b open-in-browser
+
 # -----------------------------------------------
 # ----- macros }}}
