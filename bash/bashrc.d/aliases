@@ -51,6 +51,7 @@ alias 'yolo'='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
 # -----------------------------------------------
 
 alias 'lsx'='ls -lahX'                                                                                      # sort by entry extension
+alias 'vban_e'='vban_emitter -r 48000 -i 192.168.2.25 -p 6980 -s Spotify -b pulseaudio'                     # stream audio from pulseaudio to my main machine via VBAN
 alias 'vnc-server-start'='x11vnc -display :0 -clip 1366x768 -forever -viewonly -passwdfile ~/.vnc/passwd'   # start vnc-server on local machine
 alias 'vnc-lulila'='vncviewer -passwd ~/.vnc/passwd lulila'                                                 # vncviewer to my raspberry pi (kodi)
 
