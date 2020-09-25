@@ -122,7 +122,13 @@ main()
     fi
 }
 
+install ()
+{
+    if [[ $(check_installed neomutt) -eq 0 ]] ; then
+        sudo pacman -S neomutt
+    fi
+}
 
-
+install
 main
 exit 0

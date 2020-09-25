@@ -23,8 +23,8 @@ installation()
 
 configuration()
 {
-    if [[ $(file -ib /etc/xdg/picom.conf | awk '{ print $1 }') != "inode/symlink;" ]] ; then
-        sudo rm -rf /etc/xdg/picom.conf
+    if [[ $(check_symlink /etc/xdg/picom.conf) == "false" ]] ; then
+        sudo rm -f /etc/xdg/picom.conf
         sudo ln -sfv ${repoPath}/picom/picom.conf /etc/xdg/picom.conf
     fi
 }

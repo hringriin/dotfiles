@@ -164,6 +164,30 @@ function installGTK
     ln -sfv ${HOME}/Repositories/github.com/tim241/dots/repo/.icons/gruvbox-soft ${HOME}/.icons
 }
 
+install ()
+{
+    if [[ $(check_installed i3-gaps) -eq 0 ]] ; then
+        sudo pacman -S i3-gaps i3blocks i3status
+    fi
+
+    if [[ $(check_installed i3blocks) -eq 0 ]] ; then
+        sudo pacman -S i3blocks
+    fi
+
+    if [[ $(check_installed i3status) -eq 0 ]] ; then
+        sudo pacman -S i3status
+    fi
+
+    if [[ $(check_installed i3-vim-syntax-git) -eq 0 ]] ; then
+        yay -S i3-vim-syntax-git
+    fi
+
+    if [[ $(check_installed i3lock-fancy-dualmonitors-git) -eq 0 ]] ; then
+        yay -S i3lock-fancy-dualmonitors-git
+    fi
+}
+
+install
 checkDirs
 displayConfig
 writeConfigToConfig

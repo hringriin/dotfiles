@@ -12,7 +12,23 @@ source INSTALL_ALL/pacman.bash
 
 main()
 {
-    ln -fsv ${repoPath}/mimeapps/mimeapps.list ${HOME}/.config/mimeapps.list
+    #installation
+    configuration
+}
+
+installation()
+{
+    if [[ $(check_installed ${prgname}) -eq 0 ]] ; then
+        sudo pacman -S ${prgname}
+    fi
+}
+
+configuration()
+{
+    if [[ $(check_symlink ~/.config/mimeapps.list) == "false" ]] ; then
+        rm -f ~/.config/mimeapps.list
+        ln -fsv ${repoPath}/mimeapps/mimeapps.list ${HOME}/.config/mimeapps.list
+    fi
 }
 
 main

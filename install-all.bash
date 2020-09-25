@@ -368,6 +368,9 @@ function linkConfigs()
     # bashrc
     #sudo ln -fsv ${repoPath}/bash/bashrc /etc/bash.bashrc
 
+    # alacritty
+    ${repoPath}/alacritty/create_config.bash
+
     # blogscript
     ${repoPath}/blog/create_config.bash
 
@@ -381,7 +384,9 @@ function linkConfigs()
     ${repoPath}/git/create_config.bash
 
     # gitlab clone script
-    sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
+    if [[ $(check_symlink ${ulbin}/myGitlabClone) == "false" ]] ; then
+        sudo ln -fsv ${repoPath}/bash/myGitlabClone.bash ${ulbin}/myGitlabClone
+    fi
 
     # htop
     ${repoPath}/htop/create_config.bash

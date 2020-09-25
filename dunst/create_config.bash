@@ -7,15 +7,30 @@ echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
 sleep 1
 
 source INSTALL_ALL/config.bash
-source INSTALL_ALL/yay.bash
-source INSTALL_ALL/pacman.bash
 
 main()
+{
+    installation
+    configuration
+}
+
+installation()
+{
+    if [[ $(check_installed ${prgname}) -eq 0 ]] ; then
+        sudo pacman -S ${prgname}
+    fi
+}
+
+configuration()
 {
     if [[ ! ( -d ~/.config/dunst ) ]] ; then
         mkdir --mode=700 -p ~/.config/dunst
     fi
-    ln -fsv ${repoPath}/dunst/dunstrc ~/.config/dunst/
+
+    if [[ $(check_symlink ~/.config/dunst/dunstrc) == "false" ]] ; then
+        rm -f ~/.config/dunst/dunstrc
+        ln -fsv ${repoPath}/dunst/dunstrc ~/.config/dunst/
+    fi
 }
 
 main

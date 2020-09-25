@@ -1,7 +1,7 @@
 #!/bin/bash
 # createConfig - sets the config files
 
-prgname="MCABBER"
+prgname="mcabber"
 
 echo -e "\e[1;36mInstalling ... ${prgname} ... configuration files ...\e[0m"
 sleep 1
@@ -164,4 +164,12 @@ function mergeConf()
     done
 }
 
+install ()
+{
+    if [[ $(check_installed mcabber) -eq 0 ]] ; then
+        sudo pacman -S ${prgname}
+    fi
+}
+
+install
 mergeConf

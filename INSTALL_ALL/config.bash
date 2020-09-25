@@ -39,3 +39,12 @@ check_installed ()
         echo 1
     fi
 }
+
+check_symlink ()
+{
+    if [[ $(file -ib $1 | awk '{ print $1 }') != "inode/symlink;" ]] ; then
+        echo "false"
+    else
+        echo "true"
+    fi
+}

@@ -12,6 +12,19 @@ source INSTALL_ALL/pacman.bash
 
 main()
 {
+    installation
+    configuration
+}
+
+installation()
+{
+    if [[ $(check_installed ${prgname}) -eq 0 ]] ; then
+        sudo yay -S ${prgname}
+    fi
+}
+
+configuration()
+{
     if [[ ! -d ${HOME}/.nagstamon ]] ; then
         mkdir -p ${HOME}/.nagstamon
     fi
