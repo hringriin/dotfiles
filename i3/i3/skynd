@@ -104,16 +104,16 @@ workspace $workspace7 output DP-0
 workspace $workspace8 output DP-0
 workspace $workspace9 output DP-0
 workspace $workspace10 output DP-0
-workspace $workspace11 output DVI-D-0
-workspace $workspace12 output DVI-D-0
-workspace $workspace13 output DVI-D-0
-workspace $workspace14 output DVI-D-0
-workspace $workspace15 output DVI-D-0
-workspace $workspace16 output DVI-D-0
-workspace $workspace17 output DVI-D-0
-workspace $workspace18 output DVI-D-0
-workspace $workspace19 output DVI-D-0
-workspace $workspace20 output DVI-D-0
+workspace $workspace11 output HDMI-0
+workspace $workspace12 output HDMI-0
+workspace $workspace13 output HDMI-0
+workspace $workspace14 output HDMI-0
+workspace $workspace15 output HDMI-0
+workspace $workspace16 output HDMI-0
+workspace $workspace17 output HDMI-0
+workspace $workspace18 output HDMI-0
+workspace $workspace19 output HDMI-0
+workspace $workspace20 output HDMI-0
 
 # Startup Applications
 exec owncloud
