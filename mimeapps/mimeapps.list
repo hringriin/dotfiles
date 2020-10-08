@@ -195,6 +195,7 @@ application/x-compressed-tar=org.gnome.FileRoller.desktop;
 application/vnd.oasis.opendocument.spreadsheet-template=libreoffice-calc.desktop;
 application/octet-stream=atom.desktop;com.teamviewer.TeamViewer.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+application/vnd.oasis.opendocument.spreadsheet-template=libreoffice-calc.desktop;
 application/force-download=leafpad.desktop;
 application/vnd.rar=org.gnome.FileRoller.desktop;
 application/x-java-archive=org.gnome.FileRoller.desktop;
