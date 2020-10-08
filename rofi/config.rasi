@@ -1,0 +1,6 @@
+configuration {
+	modi: "run,window";
+	theme: "~/.config/rofi/gruvbox_hringriin.rasi";
+	display-window: "search open windows:";
+	display-run: ">$";
+}

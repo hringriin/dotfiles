@@ -1,7 +1,0 @@
-! ----- ----- -----
-! ROFI CONFIG
-! ----- ----- -----
-rofi.theme: ~/.config/rofi/gruvbox_hringriin.rasi
-rofi.display-run: >$
-rofi.display-window: search open windows:
-rofi.modi: run,window
