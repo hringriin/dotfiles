@@ -7,25 +7,25 @@
 # JKOESTER@UNI-BREMEN.DE {{{
 # -----------------------------------------------
 
-IMAPStore de.uni-bremen.jkoester-remote
-Host imap.uni-bremen.de
-User jkoester
-PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.uni-bremen.jkoester | awk '{print $2}'"
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+#IMAPStore de.uni-bremen.jkoester-remote
+#Host imap.uni-bremen.de
+#User jkoester
+#PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mutt/passwords/pwdfile.gpg | grep de.uni-bremen.jkoester | awk '{print $2}'"
+#SSLType IMAPS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore de.uni-bremen.jkoester-local
-Path ~/.mailfolder/de.uni-bremen.jkoester/
-Inbox ~/.mailfolder/de.uni-bremen.jkoester/Inbox
-Subfolders Verbatim
+#MaildirStore de.uni-bremen.jkoester-local
+#Path ~/.mailfolder/de.uni-bremen.jkoester/
+#Inbox ~/.mailfolder/de.uni-bremen.jkoester/Inbox
+#Subfolders Verbatim
 
-Channel de.uni-bremen.jkoester
-Master :de.uni-bremen.jkoester-remote:
-Slave :de.uni-bremen.jkoester-local:
-Create Both
-Expunge Both
-Patterns *
-SyncState *
+#Channel de.uni-bremen.jkoester
+#Master :de.uni-bremen.jkoester-remote:
+#Slave :de.uni-bremen.jkoester-local:
+#Create Both
+#Expunge Both
+#Patterns *
+#SyncState *
 
 # -----------------------------------------------
 # JKOESTER@UNI-BREMEN.DE }}}
