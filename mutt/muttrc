@@ -4,6 +4,7 @@
 #   y               =   change to different mailboxes
 #   $               =   sync-mailbox
 #   %               =   lock mailbox
+#   ESC-k           =   attach public pgp-key
 
 # }}}
 # Addressbook (abook) {{{
