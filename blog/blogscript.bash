@@ -183,7 +183,7 @@ function writeToBlog()
         mkdir -p ${serverDir}/.tmp
     fi
     tmpFile="${serverDir}/.tmp/$$_tmp.html"
-    cat ${serverDir}/.drafts/$1 | sed -e "/div/d" | tail -n +2 > ${tmpFile}
+    cat ${serverDir}/.drafts/$1 | sed -e "/div/d" | sed -e "/<\!--/d" | tail -n +1 > ${tmpFile}
 
     # if the rss.xml templates does not exist, exit
     if [[ ! -e ${serverDir}/.templates/RSS.xml ]] ; then
@@ -280,7 +280,7 @@ function publishBlogPost ()
             --stdout \
             --backtitle "by hringriin" \
             --title "Blogscript" \
-            --msgbox "Blog fipe \"${blog}\" in\n${serverDir}\nnot present." 0 0
+            --msgbox "Blog file \"${blog}\" in\n${serverDir}\nnot present." 0 0
 
         exit 1
     fi
