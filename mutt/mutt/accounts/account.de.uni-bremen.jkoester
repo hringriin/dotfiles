@@ -11,6 +11,8 @@ set folder              =   "~/.mailfolder/de.uni-bremen.jkoester/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+Drafts"
 
+macro index     <F2>        "!mbsync de.uni-bremen.jkoester"
+
 set record              =   "+Sent"
 
 set signature           =   "/home/hringriin/ownCloud/Documents/Thunderbird/Signatures/Uni Bremen ZfN und TZi/thunderbird.signatures.uni-bremen.txt"

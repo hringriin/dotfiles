@@ -11,6 +11,8 @@ set folder              =   "~/.mailfolder/eu.barzh.hringriin/"
 set spoolfile           =   "+INBOX"
 set postponed           =   "+Drafts"
 
+macro index     <F2>        "!mbsync eu.barzh.hringriin"
+
 set record              =   "+Sent"
 
 unset signature

@@ -11,6 +11,8 @@ set folder              =   "~/.mailfolder/de.live.hringriin/"
 set spoolfile           =   "+INBOX"
 set postponed           =   "+Drafts"
 
+macro index     <F2>        "!mbsync de.live.hringriin"
+
 # due to duplicates in sent-mail folder
 #set record              =   "+Sent"
 unset record

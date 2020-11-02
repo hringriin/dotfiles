@@ -11,6 +11,8 @@ set folder              =   "~/.mailfolder/com.gmail.josh.ets2mp/"
 set spoolfile           =   "+Inbox"
 set postponed           =   "+[Gmail]/Drafts"
 
+macro index     <F2>        "!mbsync com.gmail.josh.ets2mp"
+
 # due to duplicates in sent-mail folder
 #set record              =   "+[Gmail]/Sent Mail"
 unset record
