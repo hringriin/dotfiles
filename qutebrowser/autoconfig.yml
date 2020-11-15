@@ -323,9 +323,14 @@ settings:
     https://inf.stugen.de/: true
     https://wdcloud.fritz.box/UI/: true
     https://web.threema.ch/#!/welcome: true
-  content.media_capture:
+  content.media.audio_capture:
+    global: false
+  content.media.audio_video_capture:
+    global: false
+  content.media.video_capture:
     global: false
   content.notifications:
+    https://nextcloud.barzh.de: true
     https://www.facebook.com: false
     https://www.reddit.com: false
   content.pdfjs:
