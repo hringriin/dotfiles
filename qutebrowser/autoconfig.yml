@@ -333,6 +333,7 @@ settings:
     https://nextcloud.barzh.de: true
     https://www.facebook.com: false
     https://www.reddit.com: false
+    https://www.youtube.com: false
   content.pdfjs:
     global: false
   content.plugins:
