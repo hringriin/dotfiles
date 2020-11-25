@@ -23,9 +23,10 @@ installation()
 
 configuration()
 {
-    if [[ $(check_symlink ~/.password-store) == "false" ]] ; then
-        rm -rf ${HOME}/.password-store
-        ln -sfv ${HOME}/ownCloud/Documents/pass ${HOME}/.password-store
+    if [[ ! -d ~/.password-store ]] ; then
+        echo "Pass Repository URL: "
+        read -r pwdURL
+        git clone ${pwdURL} ~/.password-store
     fi
 }
 
