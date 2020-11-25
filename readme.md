@@ -5,8 +5,10 @@ Feel free to adapt what you see to your own configs.
 
 ## INSTALL ALL (?)
 
-This script will do quite a few things, primarily in regard of installing
-necessary applications. But there are some things to do manually, though.
+~~This script will do quite a few things, primarily in regard of installing
+necessary applications. But there are some things to do manually, though.~~
+
+Actually, this script is quite broken, I do not recommend to use it.
 
 ### Install mandatory programmes
 
