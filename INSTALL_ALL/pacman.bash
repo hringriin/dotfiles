@@ -60,6 +60,7 @@ neededProgrammes=(
     'm4'
     'make'
     'meld'
+    'mdp'
     'mlocate'
     'mosh'
     'mumble'

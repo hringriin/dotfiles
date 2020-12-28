@@ -13,7 +13,6 @@ neededYayProgrammes=(
     'jabref'
     'keepassx2'
     'lcdtest'
-    'mdp-git'
     'ncpamixer'
     'nerd-fonts-source-code-pro'
     'rofi-twitch'
