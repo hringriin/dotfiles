@@ -104,6 +104,7 @@ set edit_headers            =   yes                         # Full Header contro
 set header_cache            =   "~/.mutt/cache/headers"     # See all mail headers in editor, cache headers and bodies
 set message_cachedir        =   "~/.mutt/cache/bodies"
 set rfc2047_parameters                                      # This line gets rid of iso 8859 issues with attachments
+set fast_reply              =   yes                         # omit asking for recipient and subject while replying/forwarding
 
 # }}}
 # Status Bar {{{
