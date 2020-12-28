@@ -802,6 +802,9 @@ autocmd Filetype xml inoremap <buffer> ,pa      <item><Enter><pubDate><Enter><++
     " Keybinding for sorting under visual block
     vnoremap <F8> :'<,'>sort /\ze\%V/<CR>
 
+    " Markdown Presentation (mdp)
+    nnoremap <Leader>mdp :!mdp -et %<CR>
+
 " Keybindings }}}
 
 " Indention rules {{{
