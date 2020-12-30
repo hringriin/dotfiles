@@ -315,14 +315,14 @@ function usage ()
 function uploadLive()
 {
     scp ${serverDir}/${blog} ${serverDir}/${rss} ${scpPath}/
-    echo "\n\n... FINISHED!"
+    echo -e "\n\n... FINISHED!"
     read -r
 }
 
 function uploadEverything ()
 {
     scp ${serverDir}/{*html,*css,*xml} ${scpPath}/
-    echo "\n\n... FINISHED!"
+    echo -e "\n\n... FINISHED!"
     read -r
 }
 
