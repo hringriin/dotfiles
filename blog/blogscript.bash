@@ -315,17 +315,15 @@ function usage ()
 function uploadLive()
 {
     scp ${serverDir}/${blog} ${serverDir}/${rss} ${scpPath}/
-    dialog --no-tags \
-        --stdout \
-        --backtitle "by hringriin" \
-        --title "Blogscript" \
-        --msgbox "Blog uploaded! Check ${server}" 0 0
-
+    echo "\n\n... FINISHED!"
+    read -r
 }
 
 function uploadEverything ()
 {
     scp ${serverDir}/{*html,*css,*xml} ${scpPath}/
+    echo "\n\n... FINISHED!"
+    read -r
 }
 
 # main menu, select what to do
