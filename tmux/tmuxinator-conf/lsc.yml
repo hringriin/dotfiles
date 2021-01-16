@@ -40,11 +40,11 @@ root: ~/ownCloud/Documents/Games/GTA-5/Homestate.eu/LSC/
 
 # Specifies (by name or index) which window will be selected on project
 # startup. If not set, the first window is used.
-startup_window: Reparatur
+#startup_window: Reparatur
 
 # Specifies (by index) which pane of the specified window will be selected on
 # project startup. If not set, the first pane is used.
-# startup_pane: 1
+startup_pane: 1
 
 # Controls whether the tmux session should be attached to automatically.
 # Defaults to true.
@@ -65,12 +65,21 @@ startup_window: Reparatur
 #  - server: bundle exec rails s
 #  - logs: tail -f log/development.log
 
+#windows:
+    #- Reparatur:
+        #panes:
+            #- vim arbeitsliste.md
+            #- vim fahrzeugpreise.md
+            #- vim preisliste.md
+    #- Leitstelle:
+        #panes:
+            #- vim leitstelle.md
+
 windows:
-    - Reparatur:
+    - LSC:
+        layout: ff2d,191x48,0,0{45x48,0,0,31,145x48,46,0[145x28,46,0,32,145x19,46,29,33]}
         panes:
-            - vim arbeitsliste.md
-            - vim fahrzeugpreise.md
-            - vim preisliste.md
-    - Leitstelle:
-        panes:
-            - vim leitstelle.md
+          - vim fahrzeugpreise.md
+          - vim leitstelle.md
+          - vim preisliste.md
+
