@@ -285,6 +285,8 @@ settings:
     - downloads
   content.autoplay:
     global: false
+  content.blocking.enabled:
+    global: true
   content.cookies.accept:
     global: no-unknown-3rdparty
   content.default_encoding:
@@ -293,8 +295,6 @@ settings:
     https://stromausfall.org: true
     https://www.apc.com: false
     https://www.dhl.de: false
-  content.host_blocking.enabled:
-    global: true
   content.javascript.enabled:
     '*://*.barzh.eu/*': true
     '*://*.idealo.de/*': true
@@ -351,6 +351,14 @@ settings:
     - termite
     - -e
     - vim {}
+  fileselect.handler:
+    global: external
+  fileselect.multiple_files.command:
+    global:
+    - alacritty
+    - -e
+    - ranger
+    - --choosefiles={}
   fonts.completion.category:
     global: bold 10pt Hack
   fonts.completion.entry:
