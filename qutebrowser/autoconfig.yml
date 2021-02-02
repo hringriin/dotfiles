@@ -348,7 +348,9 @@ settings:
     global: top
   editor.command:
     global:
-    - termite
+    - alacritty
+    - -t
+    - floatmedammit
     - -e
     - vim {}
   fileselect.handler:
@@ -356,6 +358,8 @@ settings:
   fileselect.multiple_files.command:
     global:
     - alacritty
+    - -t
+    - floatmedammit
     - -e
     - ranger
     - --choosefiles={}
