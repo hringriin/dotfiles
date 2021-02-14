@@ -305,6 +305,7 @@ settings:
     '*://config.stratoserver.net/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
+    '*://imgur.com/*': true
     '*://mail.google.com/*': true
     '*://stromausfall.org/*': true
     '*://twitter.com/*': true
