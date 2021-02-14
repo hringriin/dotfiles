@@ -75,8 +75,12 @@ for_window [title="Battery Warning"] sticky enable
 for_window [class="mpv"] floating enable
 for_window [class="Vimb"] floating enable
 
+# calculator enable floating
+for_window [class="Galculator"] floating enable, resize set 400px 400px
+
 # float windows with this title
-for_window [title="floatmedammit"] floating enable
+for_window [title="floatmedammit"] floating enable, resize set 1200 600px, move position 80px 80px
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
