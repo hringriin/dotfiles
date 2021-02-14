@@ -80,14 +80,14 @@ function lower()
 # reset backlight to 10
 function reset()
 {
-    notify
     xbacklight -set 10 -time 1000
+    notify
 }
 
 function movie()
 {
-    notify
     xbacklight -set 40 -time 1000
+    notify
 }
 
 main ()
