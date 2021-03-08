@@ -20,8 +20,8 @@
 #Subfolders Verbatim
 
 #Channel de.uni-bremen.jkoester
-#Master :de.uni-bremen.jkoester-remote:
-#Slave :de.uni-bremen.jkoester-local:
+#Far :de.uni-bremen.jkoester-remote:
+#Near :de.uni-bremen.jkoester-local:
 #Create Both
 #Expunge Both
 #Patterns *
@@ -46,8 +46,8 @@ Inbox ~/.mailfolder/com.gmail.koester.joschka/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.koester.joschka
-Master :com.gmail.koester.joschka-remote:
-Slave :com.gmail.koester.joschka-local:
+Far :com.gmail.koester.joschka-remote:
+Near :com.gmail.koester.joschka-local:
 Create Both
 Expunge Both
 Patterns *
@@ -72,8 +72,8 @@ Inbox ~/.mailfolder/com.gmail.hringriin/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.hringriin
-Master :com.gmail.hringriin-remote:
-Slave :com.gmail.hringriin-local:
+Far :com.gmail.hringriin-remote:
+Near :com.gmail.hringriin-local:
 Create Both
 Expunge Both
 Patterns *
@@ -98,8 +98,8 @@ Inbox ~/.mailfolder/com.gmail.josh.ets2mp/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.josh.ets2mp
-Master :com.gmail.josh.ets2mp-remote:
-Slave :com.gmail.josh.ets2mp-local:
+Far :com.gmail.josh.ets2mp-remote:
+Near :com.gmail.josh.ets2mp-local:
 Create Both
 Expunge Both
 Patterns *
@@ -124,8 +124,8 @@ Inbox ~/.mailfolder/com.gmail.blutige.kodoleber.esser/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.blutige.kodoleber.esser
-Master :com.gmail.blutige.kodoleber.esser-remote:
-Slave :com.gmail.blutige.kodoleber.esser-local:
+Far :com.gmail.blutige.kodoleber.esser-remote:
+Near :com.gmail.blutige.kodoleber.esser-local:
 Create Both
 Expunge Both
 Patterns *
@@ -150,8 +150,8 @@ Inbox ~/.mailfolder/com.gmail.jk.sgs4i9505/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.jk.sgs4i9505
-Master :com.gmail.jk.sgs4i9505-remote:
-Slave :com.gmail.jk.sgs4i9505-local:
+Far :com.gmail.jk.sgs4i9505-remote:
+Near :com.gmail.jk.sgs4i9505-local:
 Create Both
 Expunge Both
 Patterns *
@@ -176,8 +176,8 @@ Inbox ~/.mailfolder/com.gmail.jk.iptaid/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.jk.iptaid
-Master :com.gmail.jk.iptaid-remote:
-Slave :com.gmail.jk.iptaid-local:
+Far :com.gmail.jk.iptaid-remote:
+Near :com.gmail.jk.iptaid-local:
 Create Both
 Expunge Both
 Patterns *
@@ -202,8 +202,8 @@ Inbox ~/.mailfolder/com.gmail.ahliazhia/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.ahliazhia
-Master :com.gmail.ahliazhia-remote:
-Slave :com.gmail.ahliazhia-local:
+Far :com.gmail.ahliazhia-remote:
+Near :com.gmail.ahliazhia-local:
 Create Both
 Expunge Both
 Patterns *
@@ -228,8 +228,8 @@ Inbox ~/.mailfolder/com.gmail.mk.hhk.smarttv/Inbox
 Subfolders Verbatim
 
 Channel com.gmail.mk.hhk.smarttv
-Master :com.gmail.mk.hhk.smarttv-remote:
-Slave :com.gmail.mk.hhk.smarttv-local:
+Far :com.gmail.mk.hhk.smarttv-remote:
+Near :com.gmail.mk.hhk.smarttv-local:
 Create Both
 Expunge Both
 Patterns *
@@ -254,8 +254,8 @@ Inbox ~/.mailfolder/de.live.hringriin/INBOX
 Subfolders Verbatim
 
 Channel de.live.hringriin
-Master :de.live.hringriin-remote:
-Slave :de.live.hringriin-local:
+Far :de.live.hringriin-remote:
+Near :de.live.hringriin-local:
 Create Both
 Expunge Both
 Patterns *
@@ -280,8 +280,8 @@ SyncState *
 #Subfolders Verbatim
 
 #Channel eu.barzh.hringriin
-#Master :eu.barzh.hringriin-remote:
-#Slave :eu.barzh.hringriin-local:
+#Far :eu.barzh.hringriin-remote:
+#Near :eu.barzh.hringriin-local:
 #Create Both
 #Expunge Both
 #Patterns *
