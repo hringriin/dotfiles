@@ -321,7 +321,7 @@ function uploadLive()
 
 function uploadEverything ()
 {
-    scp ${serverDir}/{*html,*css,*xml} ${scpPath}/
+    scp ${serverDir}/{*html,*php,*css,*xml} ${scpPath}/
     echo -e "\n\n... FINISHED!"
     read -r
 }
