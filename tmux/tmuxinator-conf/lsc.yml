@@ -79,7 +79,7 @@ windows:
     - LSC:
         layout: ff2d,191x48,0,0{45x48,0,0,31,145x48,46,0[145x28,46,0,32,145x19,46,29,33]}
         panes:
-          - vim fahrzeugpreise.md
+          - vim Preislisten/Fahrzeug-Preisliste.md
           - vim leitstelle.md
-          - vim preisliste.md
+          - vim Preislisten/Fahrzeug-Reparatur-Preisliste.md
 
