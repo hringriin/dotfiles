@@ -111,12 +111,24 @@ chooseInDevice ()
     fi
 }
 
+
 # turn volume up for default speaker
 volUp ()
 {
     #if [[ $1 -gt 0 && $($1+$(pactl list sinks | grep ${outDevice} | grep -v 'Base Volume' | grep Volume | cut -d '/' -f 4 | sed -e 's/ //g')) -le 120 ]] ; then
     if [[ $(getVol) -eq 100 ]] ; then
         exit 0
+    fi
+
+    # define step size for volume up/dn
+    if [[ $(getVol) -lt 6 ]] ; then
+        stepCount=1
+    elif [[ $(getVol) -lt 20 ]] ; then
+        stepCount=2
+    elif [[ $(getVol) -lt 50 ]] ; then
+        stepCount=5
+    elif [[ $(getVol) -ge 50 ]] ; then
+        stepCount=10
     fi
 
     if [[ $1 -gt 0 && $1 -le 25 ]] ; then
@@ -128,8 +140,8 @@ volUp ()
             notifyVolume
         fi
     else
-        if [[ $(echo 5 + $(getVol) | bc) -lt 100 ]] ; then
-            pactl set-sink-volume ${outDevice} +5%
+        if [[ $(echo ${stepCount} + $(getVol) | bc) -lt 100 ]] ; then
+            pactl set-sink-volume ${outDevice} +${stepCount}%
             notifyVolume
         else
             pactl set-sink-volume ${outDevice} 100%
@@ -146,8 +158,19 @@ volDn ()
         exit 0
     fi
 
-    if [[ $1 -gt 0 && $1 -le 25 ]] ; then
-        pactl set-sink-volume ${outDevice} -$1%
+    # define step size for volume up/dn
+    if [[ $(getVol) -le 6 ]] ; then
+        stepCount=1
+    elif [[ $(getVol) -le 20 ]] ; then
+        stepCount=2
+    elif [[ $(getVol) -le 50 ]] ; then
+        stepCount=5
+    elif [[ $(getVol) -gt 50 ]] ; then
+        stepCount=10
+    fi
+
+    if [[ ${stepCount} -gt 0 && $1 -le 25 ]] ; then
+        pactl set-sink-volume ${outDevice} -${stepCount}%
         notifyVolume
     else
         pactl set-sink-volume ${outDevice} -5%
