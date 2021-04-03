@@ -41,6 +41,7 @@ settings:
         ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
         ',gm': open -t https://mail.google.com
         ',nh': open -t https://barzh.ddns.net
+        ',nas': open -t https://nas.fritz.box
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
         ;Y: null
