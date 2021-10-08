@@ -241,7 +241,8 @@ let g:quickmenu_options = "HL"
 " QuickMenu }}}
 
 " autoread {{{
-au FocusGained,BufEnter * :checktime
+"au FocusGained,BufEnter * :checktime
+set autoread
 " autoread }}}
 
 " Vim Hard Mode {{{
@@ -353,11 +354,19 @@ set ttyfast
 
 " General Settings {{{
 
+    " ignore file endings while opening files
+    set suffixes=.aux,.bak,.dvi,.ps,.swp,.tar,.pdf,.exe
+
     " matchit, additional matchings like if/elseif/end for `%` key
     packadd! matchit
 
     " wildmenu
     set wildmenu
+    set wildignore+=*.a,*.o
+    set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
+    set wildignore+=/.git/*,*/.hg/*,*/.svn/*
+    set wildignore+=*.swp,*~
+    set wildignore+=*.zip
 
     " Always use vertical diffs
     set diffopt+=vertical
@@ -371,8 +380,9 @@ set ttyfast
     ":cabbrev help vert h
 
     " Encoding
-    scriptencoding utf-8
     set encoding=utf-8
+    scriptencoding utf-8
+    set fileencoding=utf-8
 
     " Dark Background
     set background=dark
