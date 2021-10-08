@@ -10,6 +10,7 @@ bar {
     strip_workspace_numbers yes
     status_command i3status --config ~/.config/i3status/top_bar
     #status_command i3blocks -c ~/.config/i3blocks/acheron_top
+    #status_command i3pystatus -c ~/.config/i3pystatus/config.py
 
     colors {
         # Whole color setting
