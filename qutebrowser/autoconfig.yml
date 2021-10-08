@@ -40,8 +40,8 @@ settings:
         ',fb': open -t https://fritz.box
         ',gf': open -t https://mail.google.com/mail/u/0/#settings/filters
         ',gm': open -t https://mail.google.com
+        ',nas': open -t https://ds920.fritz.box
         ',nh': open -t https://barzh.ddns.net
-        ',nas': open -t https://nas.fritz.box
         ',oc': open -t https://owncloud.barzh.eu
         ',ts': open -t https://barzh.eu/ts.html
         ;Y: null
@@ -304,10 +304,12 @@ settings:
     '*://accounts.google.com/*': true
     '*://belial.fritz.box/*': true
     '*://config.stratoserver.net/*': true
+    '*://ds920.fritz.box/*': true
     '*://fritz.box/*': true
     '*://github.com/*': true
     '*://imgur.com/*': true
     '*://mail.google.com/*': true
+    '*://nas.fritz.box/*': true
     '*://stromausfall.org/*': true
     '*://twitter.com/*': true
     '*://www.amazon.de/*': true
@@ -331,9 +333,10 @@ settings:
     global: false
   content.media.video_capture:
     global: false
-  content.notifications:
+  content.notifications.enabled:
     https://nextcloud.barzh.de: true
     https://www.facebook.com: false
+    https://www.hagebau.de: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.pdfjs:
