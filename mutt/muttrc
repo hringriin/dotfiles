@@ -24,6 +24,8 @@ folder-hook     'accounts/account.com.gmail.josh.ets2mp'            'source ~/.m
 folder-hook     'accounts/account.com.gmail.ahliazhia'              'source ~/.mailfolder/com.gmail.ahliazhia'
 folder-hook     'accounts/account.com.gmail.mk.hhk.smarttv'         'source ~/.mailfolder/com.gmail.mk.hhk.smarttv'
 folder-hook     'accounts/account.de.live.hringriin'                'source ~/.mailfolder/de.live.hringriin'
+folder-hook     'accounts/account.com.gmail.guffelkartoffel'        'source ~/.mailfolder/com.gmail.guffelkartoffel'
+folder-hook     'accounts/account.com.gmail.barzh.tv'               'source ~/.mailfolder/com.gmail.barzh.tv'
 #folder-hook     'accounts/account.eu.barzh.hringriin'               'source ~/.mailfolder/eu.barzh.hringriin'
 
 # }}}
@@ -70,8 +72,11 @@ macro index     ,9<Return>      '<sync-mailbox><refresh><enter-command>source ~/
 # live
 macro index     ,10<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.de.live.hringriin<enter><change-folder>!<enter>'
 
-# barzh
-#macro index     ,11<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.eu.barzh.hringriin<enter><change-folder>!<enter>'
+# guffelkartoffel
+macro index     ,11<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.guffelkartoffel<enter><change-folder>!<enter>'
+
+# barzh.tv
+macro index     ,12<Return>      '<sync-mailbox><refresh><enter-command>source ~/.mutt/accounts/account.com.gmail.barzh.tv<enter><change-folder>!<enter>'
 
 # }}}
 # Basic config {{{

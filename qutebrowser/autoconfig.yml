@@ -300,6 +300,7 @@ settings:
     '*://*.barzh.eu/*': true
     '*://*.idealo.de/*': true
     '*://*.tri-optimum.eu/*': true
+    '*://*.vault.bitwarden.com/*': true
     '*://9gag.com/*': true
     '*://accounts.google.com/*': true
     '*://belial.fritz.box/*': true
@@ -310,6 +311,7 @@ settings:
     '*://imgur.com/*': true
     '*://mail.google.com/*': true
     '*://nas.fritz.box/*': true
+    '*://pwd.barzh.de/*': true
     '*://stromausfall.org/*': true
     '*://twitter.com/*': true
     '*://www.amazon.de/*': true
@@ -318,6 +320,7 @@ settings:
     '*://www.imdb.com/*': true
     '*://www.instagram.com/*': true
     '*://www.netflix.com/*': true
+    '*://www.office.com/*': true
     '*://www.ted.com/*': true
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
