@@ -1,6 +1,5 @@
 configuration {
     modi: "run,window";
-    theme: "~/.config/rofi/hringriin.rasi";
     display-window: "search open windows:";
     display-run: ">$";
     display-ssh: "ssh";
@@ -8,3 +7,4 @@ configuration {
     font: "Hack 12";
     max-history-size: 200;
 }
+/*@theme: "~/.config/rofi/hringriin.rasi";*/

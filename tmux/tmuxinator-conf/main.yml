@@ -58,9 +58,9 @@ windows:
     - Mail:
         panes:
             - neomutt
-    - Chat:
-        panes:
-            - mosh barzh.eu -- tmux a -t CHAT
+    #- Chat:
+        #panes:
+            #- mosh barzh.eu -- tmux a -t CHAT
     - RSS:
         panes:
             - newsboat
