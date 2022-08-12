@@ -119,16 +119,16 @@ function selectServer()
         --backtitle "by hringriin" \
         --title "Blogscript" \
         --radiolist "Select your server." 0 0 0 \
-            10 "barzh.eu - Blog" on \
+            10 "barzh.de - Blog" on \
             20 "barzh.ddns.net - Wartung" off)
 
     case ${selServ} in
         "10")
-            server="https:\/\/barzh\.eu"
-            serverDir="${HOME}/barzh.eu"
+            server="https:\/\/barzh\.de"
+            serverDir="${HOME}/barzh.de"
             blog="blog.html"
             rss="rss.xml"
-            scpPath="barzh.eu:/var/www/barzh.eu"
+            scpPath="barzh.de:/var/www/barzh"
             ;;
         "20")
             server="https:\/\/niederhoelle\.no-ip\.biz"
