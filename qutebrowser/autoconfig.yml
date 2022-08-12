@@ -303,6 +303,7 @@ settings:
     '*://*.vault.bitwarden.com/*': true
     '*://9gag.com/*': true
     '*://accounts.google.com/*': true
+    '*://barzh.de/*': true
     '*://belial.fritz.box/*': true
     '*://config.stratoserver.net/*': true
     '*://ds920.fritz.box/*': true
@@ -325,6 +326,7 @@ settings:
     '*://www.twitch.tv/*': true
     '*://www.wetteronline.de/*': true
     '*://www.youtube.com/*': true
+    '*://zabbix.barzh.de/*': true
     global: false
     http://localhost:8090/: true
     https://inf.stugen.de/: true
