@@ -7,7 +7,7 @@
 articlelist-format  "%4i | %f | %D | %-30a | %t%?T? (%T)%?"
 articlelist-title-format "%N %V -- Feed: (%u/%t) %T -- %U"
 auto-reload yes
-browser "qutebrowser %u"
+browser "firefox %u"
 cleanup-on-quit yes
 confirm-exit yes
 cookie-cache "~/.newsboat/cookies.txt"
@@ -108,10 +108,10 @@ unbind-key ^K
 
 # use macro prefix key ( default: , )
 # audio/video player
-macro p set browser "tsp mpv --force-window=yes %u" ; open-in-browser ; set browser "qutebrowser %u"
+macro p set browser "tsp mpv --force-window=yes %u" ; open-in-browser ; set browser "firefox %u"
 
 # images
-macro i set browser "feh %u" ; open-in-browser ; set browser "qutebrowser %u"
+macro i set browser "feh %u" ; open-in-browser ; set browser "firefox %u"
 
 # clibrowser
 macro o set browser "w3m %u"; open-in-browser ; set browser "$BROWSER %u"
