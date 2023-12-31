@@ -75,11 +75,11 @@ label=
 command=~/.config/i3blocks/i3blocks-gate/net.sh -e
 interval=10
 
-[net]
-markup=pango
-label=  
-command=~/.config/i3blocks/i3blocks-gate/net.sh -l
-interval=10
+#[net]
+#markup=pango
+#label=  
+#command=~/.config/i3blocks/i3blocks-gate/net.sh -l
+#interval=10
 
 [layout]
 command=~/.config/i3blocks/i3blocks-gate/lang.sh
