@@ -21,7 +21,7 @@ xdg-mime default mupdf.desktop \
     application/force-download
 
 # HTML
-xdg-mime default qutebrowser.desktop \
+xdg-mime default firefox.desktop \
     text/html
 
 # pgp keys

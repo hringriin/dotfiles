@@ -106,7 +106,7 @@ bindsym $mod+Control+Return exec ~/Repositories/github.com/hringriin/dotfiles/re
 bindsym $mod+Shift+q kill
 
 # start webbrowser
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec firefox
 
 # change focus
 bindsym $mod+h focus left
@@ -230,6 +230,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec ~/Repositories/github.com/hringriin/dotfiles/repo/bash/shutdown.bash
 
+# Scratchpad
+bindsym $mod+Shift+Next move scratchpad
+bindsym $mod+Shift+Prior scratchpad show
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -266,8 +270,7 @@ exec picom
 # screenshot
 bindsym Print exec --no-startup-id ~/Repositories/github.com/hringriin/dotfiles/repo/bash/makeScreenshot.bash
 
-assign [class="Vivaldi-snapshot"] $workspace2
-assign [class="qutebrowser"] $workspace2
+assign [class="firefox"] $workspace2
 
 assign [class="Steam"] $workspace10
 assign [class="Wine"] $workspace10
