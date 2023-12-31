@@ -128,10 +128,10 @@ function selectServer()
             serverDir="${HOME}/barzh.de"
             blog="blog.html"
             rss="rss.xml"
-            scpPath="barzh.de:/var/www/barzh"
+            scpPath="barzh.de:/srv/http/barzh"
             ;;
         "20")
-            server="https:\/\/niederhoelle\.no-ip\.biz"
+            server="https:\/\/barzh\.ddns\.net"
             serverDir="${HOME}/barzh.ddns.net"
             blog="index.html"
             rss="rss.xml"
