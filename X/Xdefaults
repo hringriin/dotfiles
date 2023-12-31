@@ -16,7 +16,7 @@ URxvt*foreground:       #ffffff
 URxvt*scrollBar:        false
 URxvt*perl-lib:         /usr/lib/urxvt/perl/
 URxvt*perl-ext-common:  default,matcher
-URxvt*urlLauncher:      /usr/bin/qutebrowser
+URxvt*urlLauncher:      /usr/bin/firefox
 URxvt*matcher.button:   1
 #urxvt*fading:          50
 #urxvt*fadeColor:       #000000
