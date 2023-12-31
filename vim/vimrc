@@ -503,6 +503,8 @@ autocmd FileType lilypond setlocal tabstop=2
 autocmd Filetype tex,lilypond nnoremap <buffer> <F12> :w<CR>:!make<CR>
 " Press Control+F12 to open pdf
 autocmd Filetype tex,lilypond nnoremap <buffer> <C-F12> :!zathura %<.pdf<CR>
+" Press ALT+F12 to compile minimum pdf in LaTeX
+autocmd Filetype tex nnoremap <buffer> <S-C-F12> :w<CR>:!make minimum<CR>
 
     " umlauts, accents, ... {{{
     autocmd Filetype tex inoremap <buffer> ö        \"{o}
