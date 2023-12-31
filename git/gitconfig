@@ -1,10 +1,10 @@
 [user]
     name = Joschka Köster
     email = koester.joschka@gmail.com
-    signingkey = 54C521B0463213D3E20ACDED550F212819A0008A
+    ;signingkey = 54C521B0463213D3E20ACDED550F212819A0008A
 
-[commit]
-    gpgSign = true
+;[commit]
+    ;gpgSign = true
 
 [core]
     editor = vim
