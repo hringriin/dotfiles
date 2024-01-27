@@ -28,8 +28,8 @@ configuration()
     fi
 
     if [[ $(check_symlink ${HOME}/.config/alacritty/alacritty.yml) == "false" ]] ; then
-        rm -f ~/.config/alacritty/alacritty.yml
-        ln -vsf ${repoPath}/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+        rm -f ~/.config/alacritty/alacritty.toml
+        ln -vsf ${repoPath}/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml
     fi
 }
 
