@@ -1,7 +1,7 @@
-enable_experimental_conpty_backend = false
+#enable_experimental_conpty_backend = false
 live_config_reload = true
-"window.dynamic_title" = true
-"window.option_as_alt" = true
+#"window.dynamic_title" = true
+#"window.option_as_alt" = true
 working_directory = "None"
 
 [bell]
@@ -45,7 +45,7 @@ unfocused_hollow = true
 log_level = "Warn"
 persistent_logging = false
 print_events = false
-ref_test = false
+#ref_test = false
 render_timer = false
 
 [env]
@@ -595,16 +595,16 @@ hide_when_typing = false
 action = "PasteSelection"
 mouse = "Middle"
 
-[mouse.double_click]
-threshold = 300
+#[mouse.double_click]
+#threshold = 300
 
-[mouse.triple_click]
-threshold = 300
+#[mouse.triple_click]
+#threshold = 300
 
 [scrolling]
 history = 10000
 multiplier = 3
-"scrolling.multiplier" = 3
+#"scrolling.multiplier" = 3
 
 [selection]
 save_to_clipboard = false
