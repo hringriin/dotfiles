@@ -24,9 +24,14 @@ clean:
 	@echo "+--------------------------------------+";
 	@echo "|  Loesche ueberfluessige Dateien ...  |";
 	@echo "+--------------------------------------+";
+	rm -f *.acn;
+	rm -f *.acr;
 	rm -f *.aux;
+	rm -f *.alg;
 	rm -f *.bbl;
+	rm -f *.bcf;
 	rm -f *.blg;
+	rm -f *-blx.bib;
 	rm -f *.glg;
 	rm -f *.glo;
 	rm -f *.gls;
@@ -34,6 +39,7 @@ clean:
 	rm -f *.log;
 	rm -f *.nav;
 	rm -f *.out;
+	rm -f *.run.xml;
 	rm -f *.snm;
 	rm -f *.synctex.gz;
 	rm -f *.tdo;
@@ -52,27 +58,15 @@ document:
 	@echo "+------------------------------------------------------+";
 	@echo "|  Kompiliere das Dokument. Das kann jetzt dauern ...  |";
 	@echo "+------------------------------------------------------+";
-	pdflatex -synctex=1 $(FILENAME).tex;
-	@if(grep "citation" $(FILENAME).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
+	pdflatex -file-line-error -synctex=1 $(FILENAME).tex;
+	@if(grep "cite" $(FILENAME).aux > /dev/null); then \
+		biber $(FILENAME); \
 	fi;
-
-	@if(grep "istfilename" $(FILENAME).aux > /dev/null); \
-		then \
-			makeglossaries $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
-			makeglossaries $(FILENAME); \
+	@if(grep "istfilename" $(FILENAME).aux > /dev/null); then \
+		makeglossaries $(FILENAME); \
 	fi;
-
-	@if(grep "citation" $(FILENAME).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
-	fi;
-	pdflatex -synctex=1 $(FILENAME).tex;
-	pdflatex -synctex=1 $(FILENAME).tex;
+	pdflatex -file-line-error -synctex=1 $(FILENAME).tex;
+	pdflatex -file-line-error -synctex=1 $(FILENAME).tex;
 
 # copies or moves (depending on settings) the pdf binary into
 # a 'build' directory.
