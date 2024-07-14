@@ -24,7 +24,9 @@ function setImage()
 
 function setLevel()
 {
-    level=$(printf "%.0f\n" $(xbacklight -get))
+    tmp=$(xbacklight -get)
+    level=${tmp%.*}
+    #level=$(printf "%.0f\n" $(xbacklight -get))
 }
 
 function setStep()
