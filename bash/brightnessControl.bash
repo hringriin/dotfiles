@@ -12,11 +12,11 @@ function setImage()
 {
     setLevel
 
-    if [[ ${level} -le 10 ]] ; then
+    if [[ ${level} -lt 10 ]] ; then
         image="${imagePath}/display-brightness-low-symbolic.png"
-    elif [[ ${level} -gt 25 ]] ; then
+    elif [[ ${level} -gt 45 ]] ; then
         image="${imagePath}/display-brightness-high-symbolic.png"
-    elif [[ ${level} -gt 10 ]] ; then
+    elif [[ ${level} -ge 10 ]] ; then
         image="${imagePath}/display-brightness-medium-symbolic.png"
     fi
 
