@@ -51,7 +51,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }      " live previewing LaTeX files
         Plug 'ctrlpvim/ctrlp.vim'                                   " full path fuzzy file, buffer, mru, tag, ... finder
         Plug 'vim-scripts/indentpython.vim'                         " indention for python
-        Plug 'ycm-core/YouCompleteMe'
+        "Plug 'ycm-core/YouCompleteMe'
         Plug 'scrooloose/syntastic'                                 " vim syntax check for maaaany filetypes
         Plug 'nvie/vim-flake8'                                      " pep8 checking (python)
         Plug 'vim/killersheep'
