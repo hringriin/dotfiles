@@ -836,7 +836,7 @@ endif
     " Don't wake up system with blinking cursor: }}}
 
     " Clipboard {{{
-    set clipboard=unnamedplus
+    set clipboard^=unnamedplus,unnamed
     "set guioptions+=a
     " Clipboard }}}
 
