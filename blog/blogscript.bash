@@ -3,6 +3,9 @@
 
 # This script does some funny things to put some html code on my website(s)
 
+# config {{{
+# ------------------------------
+
 matchBlog="<!-- BLOG INPUT HERE -->"
 matchNav="<!-- NAV INPUT HERE -->"
 scpPath=
@@ -13,8 +16,12 @@ rss=
 content=
 files=()
 
-function newEntry()
-{
+# ------------------------------
+# config }}}
+# function newEntry {{{
+# ------------------------------
+
+function newEntry() {
     # check if the directories are present
     if [[ ! -d ${serverDir} ]] ; then
         mkdir -p ${serverDir}
@@ -93,11 +100,15 @@ function newEntry()
         --msgbox "Blogpost created." 0 0
 }
 
+# ------------------------------
+# function newEntry }}}
+# function checkDrafts {{{
+# ------------------------------
+
 # checks for the drafts folder to be not empty of html files. if NOT empty,
 # initialize the ${files} array variable with all the html files in the drafts
 # folder
-function checkDrafts()
-{
+function checkDrafts() {
     if [[ -d ${serverDir}/.drafts ]] && [[ $(ls -1 ${serverDir}/.drafts | wc -l) -gt 0 ]] ; then
         files=($(cd ${serverDir}/.drafts && ls -1 *html))
     else
@@ -111,9 +122,13 @@ function checkDrafts()
     fi
 }
 
+# ------------------------------
+# function checkDrafts }}}
+# function selectServer {{{
+# ------------------------------
+
 # select the server to write/delete/publish a blogpost from
-function selectServer()
-{
+function selectServer() {
     local selServ=$(dialog --no-tags \
         --stdout \
         --backtitle "by hringriin" \
@@ -143,13 +158,17 @@ function selectServer()
     esac
 }
 
+# ------------------------------
+# function selectServer }}}
+# function getDir {{{
+# ------------------------------
+
 # the dialog needs a differently formated list, i.e. a string with:
 #   - a number
 #   - the flie name
 #   - it's initial checklist state
 # so, the original ${files} array is not suitable, but will be used later on
-function getDir()
-{
+function getDir() {
     local NUM=0
 
     for f in ${files[@]} ; do
@@ -158,10 +177,14 @@ function getDir()
     done
 }
 
+# ------------------------------
+# function getDir }}}
+# function writeToBlog {{{
+# ------------------------------
+
 # publishes a blog post, i.e. writes to the local blogs on your machine.
 # NO UPLOAD WILL BE DONE BY THIS FUNCTION!
-function writeToBlog()
-{
+function writeToBlog() {
     # date to be used later for id and title replacements
     local theDate="$(cut -d '_' -f 1 <<< $1)_$(cut -d '_' -f 2 <<< $1)"
 
@@ -222,9 +245,13 @@ function writeToBlog()
     rm ${tmpFile}
 }
 
+# ------------------------------
+# function writeToBlog }}}
+# function delBlogPost {{{
+# ------------------------------
+
 # delete selected blog posts
-function delBlogPost ()
-{
+function delBlogPost () {
     local tmpFiles=$(getDir)
 
     if [[ ${tmpFiles[@]} > 0 ]] ; then
@@ -247,9 +274,13 @@ function delBlogPost ()
     fi
 }
 
+# ------------------------------
+# function delBLogPost }}}
+# function editBlogPost {{{
+# ------------------------------
+
 # edit selected blog post
-function editBlogPost ()
-{
+function editBlogPost () {
     local tmpFiles=$(getDir)
 
     if [[ ${tmpFiles[@]} > 0 ]] ; then
@@ -270,9 +301,13 @@ function editBlogPost ()
     fi
 }
 
+# ------------------------------
+# function editBlogPost }}}
+# function publishBlogPost {{{
+# ------------------------------
+
 # publish selected blog posts
-function publishBlogPost ()
-{
+function publishBlogPost () {
     local tmpFiles=$(getDir)
 
     if [[ ! -e ${serverDir}/${blog} ]] ; then
@@ -298,9 +333,13 @@ function publishBlogPost ()
     fi
 }
 
+# ------------------------------
+# function publishBlogPost }}}
+# function usage {{{
+# ------------------------------
+
 # print usesage information to the shell
-function usage ()
-{
+function usage () {
             echo -e "Blogscript by hringriin.\nFunny things for my blog(s).\n"
             echo -e "Usage: ./blogscript.bash [OPTION]\n"
 
@@ -312,23 +351,35 @@ function usage ()
             exit 0
 }
 
-function uploadLive()
-{
+# ------------------------------
+# function usage }}}
+# function uploadLive {{{
+# ------------------------------
+
+function uploadLive() {
     scp ${serverDir}/${blog} ${serverDir}/${rss} ${scpPath}/
     echo -e "\n\n... FINISHED!"
     read -r
 }
 
-function uploadEverything ()
-{
+# ------------------------------
+# function uploadLive }}}
+# function uploadEverything {{{
+# ------------------------------
+
+function uploadEverything () {
     scp ${serverDir}/{*html,*php,*css,*xml} ${scpPath}/
     echo -e "\n\n... FINISHED!"
     read -r
 }
 
+# ------------------------------
+# function uploadEverything }}}
+# function main {{{
+# ------------------------------
+
 # main menu, select what to do
-function main()
-{
+function main() {
     local actionSelect=$(dialog --no-tags \
         --stdout \
         --backtitle "by hringriin" \
@@ -382,6 +433,9 @@ function main()
             ;;
     esac
 }
+
+# ------------------------------
+# function main }}}
 
 main
 exit 0
