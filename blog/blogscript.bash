@@ -15,6 +15,13 @@ blog=
 rss=
 content=
 files=()
+dateString="+%Y-%m-%d_%H:%M"
+dateStringDate="+%d.%m.%Y"
+dateStringTime="+%H:%M"
+theDate=
+theDateDate=
+theDateTime=
+fn=
 
 # ------------------------------
 # config }}}
@@ -53,20 +60,34 @@ function newEntry() {
     fi
 
     # make sure the name does not contain whitespaces
-    local fn=$(sed -e 's/\s/_/gm' <<< ${fname})
+    if [[ $(uname -a) == *"Darwin"* ]] ; then
+        fn=$(sed -e 's/[[:space:]]/_/g' <<< ${fname})
+    else
+        fn=$(sed -e 's/\s/_/gm' <<< ${fname})
+    fi
 
     # store the current date as blogpost date in date's default output to
     # modify it later
-    local rawDate=$(date)
+    if [[ $(uname -a) == *"Darwin"* ]] ; then
+        local rawDate=$(date +%s)
+    else
+        local rawDate=$(date)
+    fi
 
-    # the date for id and url
-    local theDate=$(date -d "${rawDate}" "+%Y-%m-%d_%H:%M")
+
+    # redefining the theDate for the title
+    if [[ $(uname -a) == *"Darwin"* ]] ; then
+        theDate=$(date -r "${rawDate}" ${dateString})
+        theDateDate=$(date -r "${rawDate}" ${dateStringDate})
+        theDateTime=$(date -r "${rawDate}" ${dateStringTime})
+    else
+        theDate=$(date -d "${rawDate}" ${dateString})
+        theDateDate=$(date -d "${rawDate}" ${dateStringDate})
+        theDateTime=$(date -d "${rawDate}" ${dateStringTime})
+    fi
 
     # the filename combined with the date for id and url
     fn="${theDate}_${fn}"
-
-    # redefining the theDate for the title
-    theDate=$(sed -e "s/${theDate}/$(date -d "${rawDate}" "+%d.%m.%Y"), $(date -d "${rawDate}" "+%H:%M") Uhr/" <<< ${theDate})
 
     # the file to be created
     file=${serverDir}/.drafts/${fn}.html
@@ -88,7 +109,7 @@ function newEntry() {
 
     # replace the title place holder with the correct date and modified file
     # name as entered by the user
-    sed -i -e "s/<TITLEREPLACE>/${theDate} -- ${fname}/" ${file}
+    sed -i -e "s/<TITLEREPLACE>/${theDateDate}, ${theDateTime} Uhr -- ${fname}/" ${file}
 
     # open the file with the user's default editor.
     ${EDITOR} ${file}
